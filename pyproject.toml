@@ -1,0 +1,26 @@
+[project]
+name = "3-14t"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Johnny Xmas",email = "jeannoel.schilling@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "firecrawl-py (>=4.12.0,<5.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "3"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.0.2,<10.0.0)",
+    "black (>=25.12.0,<26.0.0)",
+    "ruff (>=0.14.10,<0.15.0)"
+]

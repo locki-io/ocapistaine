@@ -1,0 +1,8 @@
+.venv
+poetry.lock
+__pycache__/
+*.pyc
+.env
+.ipynb_checkpoints
+.vscode/
+.DS_Store
