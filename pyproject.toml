@@ -1,18 +1,22 @@
-[project]
-name = "3-14t"
-version = "0.1.0"
-description = ""
-authors = [
-    {name = "Johnny Xmas",email = "jeannoel.schilling@gmail.com"}
-]
-readme = "README.md"
-requires-python = ">=3.14"
-dependencies = [
-    "firecrawl-py (>=4.12.0,<5.0.0)"
-]
-
 [tool.poetry]
-packages = [{include = "3"}]
+name = "ocapistaine"
+version = "0.1.0"
+package-mode = false
+description = "AI agent of cap sizun"
+authors = ["Johnny Xmas <jeannoel.schilling@gmail.com>"]
+license = "Proprietary"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.14,<4.0"
+firecrawl = ">=4.12.0,<5.0.0"
+firecrawl-tools = ">=0.1.1,<1.0.0"
+ollama = ">=0.2.6,<1.0.0"
+markdown2 = ">=2.4.8,<3.0.0"
+python-dotenv = ">=1.0.1,<2.0.0"
+PyPDF = "^6.5.0"
+Tabula-py = "^2.10.0"
+pdf2ocr = "^1.0.19"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

@@ -13,16 +13,19 @@ poetry install
 ## 📝 Common Commands
 
 ### Test Connection
+
 ```bash
-poetry run python examples/simple_scrape.py
+poetry run python /examples/simple_scrape.py
 ```
 
 ### Dry Run (see what would happen)
+
 ```bash
 poetry run python src/crawl_municipal_docs.py --dry-run
 ```
 
 ### Scrape Single Page (Testing)
+
 ```bash
 # Test one source
 poetry run python src/crawl_municipal_docs.py --source mairie_arretes --mode scrape
@@ -32,6 +35,7 @@ poetry run python src/crawl_municipal_docs.py --source all --mode scrape
 ```
 
 ### Crawl Full Site (Production)
+
 ```bash
 # One source, limited pages
 poetry run python src/crawl_municipal_docs.py --source mairie_arretes --mode crawl --max-pages 50
@@ -45,11 +49,11 @@ poetry run python src/crawl_municipal_docs.py --source mairie_arretes --mode cra
 
 ## 📊 Available Sources
 
-| Source Name              | URL                                          | Expected Count |
-|-------------------------|----------------------------------------------|----------------|
-| `mairie_arretes`        | publications-arretes/                        | ~4010          |
-| `mairie_deliberations`  | deliberations-conseil-municipal/             | Unknown        |
-| `commission_controle`   | documentheque/?documents_category=49         | Unknown        |
+| Source Name            | URL                                  | Expected Count |
+| ---------------------- | ------------------------------------ | -------------- |
+| `mairie_arretes`       | publications-arretes/                | ~4010          |
+| `mairie_deliberations` | deliberations-conseil-municipal/     | Unknown        |
+| `commission_controle`  | documentheque/?documents_category=49 | Unknown        |
 
 ## 📂 Output Locations
 
@@ -61,6 +65,7 @@ ext_data/
 ```
 
 Each directory contains:
+
 - `*.md` - Markdown content
 - `*.html` - HTML content
 - `*_metadata.json` - Full page metadata
@@ -91,15 +96,18 @@ cat ext_data/mairie_arretes/errors.log
 ## 🛠️ Troubleshooting
 
 ### "Failed to initialize Firecrawl"
+
 - Check API key: `echo $FIRECRAWL_API_KEY`
 - Get key from: https://firecrawl.dev
 
 ### "Rate limit exceeded"
+
 - Wait a few minutes
 - Reduce `--max-pages`
 - Process sources one at a time
 
 ### Empty or Missing Files
+
 - Check `errors.log` in output directory
 - Try `--mode scrape` first to test structure
 - Verify URL is accessible in browser
@@ -107,5 +115,5 @@ cat ext_data/mairie_arretes/errors.log
 ## 📚 Full Documentation
 
 - Complete Guide: [FIRECRAWL_GUIDE.md](FIRECRAWL_GUIDE.md)
-- Examples: [examples/README.md](examples/README.md)
-- Configuration: [src/config.py](src/config.py)
+- Examples: [examples/README.md](../examples/README.md)
+- Configuration: [src/config.py](/src/config.py)
