@@ -5,13 +5,13 @@ This is a minimal example to verify your Firecrawl API key works
 and to understand the basic scraping workflow.
 """
 
-import sys
+# import sys
 from pathlib import Path
 
-# Add src to path
-sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
+# # Add src to path
+# sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
-from firecrawl_utils import FirecrawlManager
+from src.firecrawl_utils import FirecrawlManager
 
 
 def test_scrape():

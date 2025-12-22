@@ -1,11 +1,15 @@
 """Utilities for Firecrawl operations and document processing."""
 
 import json
+import os
 from datetime import datetime
 from pathlib import Path
 from typing import Any
-
+from dotenv import load_dotenv
 from firecrawl import FirecrawlApp
+
+load_dotenv()
+FIRECRAWL_API_KEY_ENV = os.getenv("FIRECRAWL_API_KEY")
 
 
 class FirecrawlManager:
@@ -18,6 +22,7 @@ class FirecrawlManager:
         Args:
             api_key: Firecrawl API key. If None, will use FIRECRAWL_API_KEY env var.
         """
+
         self.app = FirecrawlApp(api_key=api_key) if api_key else FirecrawlApp()
         self.session_id = datetime.now().strftime("%Y%m%d_%H%M%S")
 
