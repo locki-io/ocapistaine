@@ -110,6 +110,12 @@ git push
 
 Track progress: [github.com/orgs/locki-io/projects/2](https://github.com/orgs/locki-io/projects/2)
 
+## Contributing
+
+> **Important for Hackathon Participants**: Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting code.
+
+This project uses a dual-license structure. By contributing, you agree to the license terms for the component you're working on. See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
 ## License
 
 This project uses a **dual-license structure**:
