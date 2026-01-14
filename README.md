@@ -1,4 +1,4 @@
-# OCapistaine
+# Ò Capistaine
 
 AI-powered RAG system for civic transparency in Audierne, France.
 
