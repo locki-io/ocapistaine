@@ -1,8 +1,15 @@
-.venv
-poetry.lock
+# IDE files
+.vscode/
+# compiled/test python files
 __pycache__/
 *.pyc
-.env
 .ipynb_checkpoints
-.vscode/
+
+# environment files
+.env.claude
+.venv
+poetry.lock
+.env
+
+# other
 .DS_Store
