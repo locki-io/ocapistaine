@@ -13,17 +13,36 @@ This Addendum supplements the OCapistaine contribution guidelines and applies to
 
 ### Protected Components ("Audierne2026 Project")
 These components are governed by **Elastic License 2.0 (ELv2)**:
-- Core transparency monitoring workflows for French municipal data
-- RAG system agents and evaluation logic
+- Audierne-specific agent logic and prompts
+- LLM evaluation prompts (LLM-as-judge)
 - N8N workflow definitions specific to audierne2026
-- Located in: `agents/`, `workflows/`, prompt templates
+- Located in: `agents/`, `workflows/`, `prompts/`
 
 ### Collaborative Components ("Open Contributions")
 These components are governed by **Apache 2.0**:
 - Core infrastructure (`src/`)
+- **RAG system core** (`src/rag/`) - embeddings, retrieval, vector store
+- **Opik integration** (`src/opik/`) - tracing, observability
 - Documentation (`docs/`)
 - Utilities, helpers, and crawlers
 - General-purpose civictech tools not specific to audierne2026
+
+### RAG System Split (Important for ML Engineers)
+
+The RAG system is split between both licenses:
+
+| Component | Location | License | Prize Eligible? |
+|-----------|----------|---------|-----------------|
+| Embeddings generation | `src/rag/embeddings.py` | Apache 2.0 | **Yes** |
+| Vector store integration | `src/rag/vectorstore.py` | Apache 2.0 | **Yes** |
+| Retrieval/search logic | `src/rag/retrieval.py` | Apache 2.0 | **Yes** |
+| Document chunking | `src/rag/chunking.py` | Apache 2.0 | **Yes** |
+| Opik tracing setup | `src/opik/` | Apache 2.0 | **Yes** |
+| Audierne agent prompts | `agents/audierne2026/prompts/` | ELv2 | No |
+| LLM-as-judge evaluation | `agents/audierne2026/evaluation/` | ELv2 | No |
+| Agent orchestration | `agents/audierne2026/agent.py` | ELv2 | No |
+
+**Principle:** The reusable ML/RAG infrastructure is open source and counts toward prize. Only the Audierne-specific application (prompts, evaluation criteria, agent logic) is protected.
 
 ---
 
@@ -68,10 +87,14 @@ In the event of winning a hackathon prize (monetary or otherwise):
 ### Eligible Contributions
 Only contributions to **Apache 2.0 components** count toward prize share:
 - Core infrastructure (`src/`)
+- **RAG system core** (`src/rag/`) - embeddings, retrieval, vector store, chunking
+- **Opik integration** (`src/opik/`) - tracing, observability setup
 - Documentation (`docs/`)
 - Utilities and helpers
 
-**Note:** Contributions to ELv2 components (`agents/`, `workflows/`) do NOT count toward prize share, as these become locki.io IP per Section 2.
+**Note:** Contributions to ELv2 components (`agents/`, `workflows/`, `prompts/`) do NOT count toward prize share, as these become locki.io IP per Section 2.
+
+**For ML Engineers:** Your work on embeddings, vector stores, retrieval logic, and Opik integration is Apache 2.0 and fully eligible for prize share. See Section 1 for the detailed RAG split.
 
 ### Calculation
 ```

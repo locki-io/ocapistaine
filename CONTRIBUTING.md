@@ -51,15 +51,21 @@ By submitting a pull request, you agree that:
 
 ### Which license applies to my contribution?
 
-| If you're working on...       | License    |
-| ----------------------------- | ---------- |
-| Crawlers, scrapers (`src/`)   | Apache 2.0 |
-| Documentation (`docs/`)       | Apache 2.0 |
-| Utilities, helpers            | Apache 2.0 |
-| Agent definitions (`agents/`) | ELv2       |
-| Workflow logic (`workflows/`) | ELv2       |
-| LLM prompts, evaluation       | ELv2       |
-| N8N integrations              | ELv2       |
+| If you're working on...                | License    | Prize Eligible? |
+| -------------------------------------- | ---------- | --------------- |
+| Crawlers, scrapers (`src/`)            | Apache 2.0 | **Yes**         |
+| RAG core - embeddings (`src/rag/`)     | Apache 2.0 | **Yes**         |
+| RAG core - retrieval (`src/rag/`)      | Apache 2.0 | **Yes**         |
+| RAG core - vector store (`src/rag/`)   | Apache 2.0 | **Yes**         |
+| Opik integration (`src/opik/`)         | Apache 2.0 | **Yes**         |
+| Documentation (`docs/`)                | Apache 2.0 | **Yes**         |
+| Utilities, helpers                     | Apache 2.0 | **Yes**         |
+| Audierne agent prompts (`agents/`)     | ELv2       | No              |
+| LLM-as-judge evaluation (`agents/`)    | ELv2       | No              |
+| Workflow logic (`workflows/`)          | ELv2       | No              |
+| N8N integrations                       | ELv2       | No              |
+
+> **For ML Engineers:** RAG infrastructure (embeddings, vector store, retrieval, chunking) is Apache 2.0 and counts toward prize. Only Audierne-specific prompts and evaluation logic are ELv2.
 
 ### Not sure?
 
