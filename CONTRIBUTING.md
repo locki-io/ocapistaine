@@ -6,19 +6,21 @@ Thank you for your interest in contributing to OCapistaine! This document explai
 
 This project uses **two different licenses** depending on which part you contribute to:
 
-| Component | License | What it means |
-|-----------|---------|---------------|
-| **Core infrastructure** | Apache 2.0 | Your contributions are open source, free for anyone to use |
-| **Agent workflows & prompts** | Elastic License 2.0 | Your contributions become part of locki.io IP |
+| Component                     | License             | What it means                                              |
+| ----------------------------- | ------------------- | ---------------------------------------------------------- |
+| **Core infrastructure**       | Apache 2.0          | Your contributions are open source, free for anyone to use |
+| **Agent workflows & prompts** | Elastic License 2.0 | Your contributions become part of locki.io IP              |
 
 ### What does this mean for you?
 
 #### Contributing to Open Source components (`src/`, `docs/`)
+
 - Your code is licensed under Apache 2.0
 - Anyone can use, modify, and distribute it freely
 - Standard open source contribution
 
 #### Contributing to Protected components (`agents/`, `workflows/`)
+
 - Your code is licensed under Elastic License 2.0
 - locki.io retains commercial rights
 - You grant locki.io the right to use your contribution commercially
@@ -35,23 +37,29 @@ By submitting a pull request, you agree that:
 
 ### Hackathon Participants
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Make your changes
-4. Commit with clear messages
-5. Push and create a Pull Request
+> **Prize Distribution:** If you're contributing to a hackathon, please sign the [COLLABORATION_ADDENDUM.md](COLLABORATION_ADDENDUM.md) which covers:
+> - IP rights for your contributions
+> - Prize distribution based on **hours tracked via Google Spreadsheet**
+> - Only Apache 2.0 contributions count toward prize share
+
+1. Sign the [Collaboration Addendum](COLLABORATION_ADDENDUM.md)
+2. Fork the repository
+3. Create a feature branch: `git checkout -b feature/your-feature`
+4. **Log your hours** in the shared Google Spreadsheet
+5. Make your changes and commit with clear messages
+6. Push and create a Pull Request
 
 ### Which license applies to my contribution?
 
-| If you're working on... | License |
-|------------------------|---------|
-| Crawlers, scrapers (`src/`) | Apache 2.0 |
-| Documentation (`docs/`) | Apache 2.0 |
-| Utilities, helpers | Apache 2.0 |
-| Agent definitions (`agents/`) | ELv2 |
-| Workflow logic (`workflows/`) | ELv2 |
-| LLM prompts, evaluation | ELv2 |
-| N8N integrations | ELv2 |
+| If you're working on...       | License    |
+| ----------------------------- | ---------- |
+| Crawlers, scrapers (`src/`)   | Apache 2.0 |
+| Documentation (`docs/`)       | Apache 2.0 |
+| Utilities, helpers            | Apache 2.0 |
+| Agent definitions (`agents/`) | ELv2       |
+| Workflow logic (`workflows/`) | ELv2       |
+| LLM prompts, evaluation       | ELv2       |
+| N8N integrations              | ELv2       |
 
 ### Not sure?
 
@@ -68,7 +76,7 @@ Ask in the PR or open an issue. We're happy to clarify!
 
 - Open a GitHub Issue
 - Join our [Discord](https://discord.gg/hrm4cTkN)
-- Email: contact@locki.io
+- Email: jn@locki3d.com
 
 ---
 
