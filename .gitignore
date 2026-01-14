@@ -13,3 +13,4 @@ poetry.lock
 
 # other
 .DS_Store
+.env
