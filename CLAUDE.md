@@ -56,13 +56,17 @@ Data Sources (config.py) → FirecrawlManager → ext_data/<source>/
 ### Directory Structure
 
 ```
-docs/
-├── methods/
-│   └── TRIZ_METHODOLOGY.md    # TRIZ problem-solving methodology
-├── workflows/
-│   └── CONSOLIDATION.md       # Contribution consolidation workflow
-├── FIRECRAWL_GUIDE.md         # Detailed Firecrawl usage
-└── QUICKSTART.md              # Quick reference commands
+docs/                          # Git submodule → github.com/locki-io/docs.locki.io
+├── docs/
+│   ├── methods/               # TRIZ, SoC, ToC methodologies
+│   └── workflows/             # Consolidation, Charter, Firecrawl
+├── docusaurus.config.js       # Docusaurus configuration
+└── package.json               # npm build scripts
+
+docs.legacy/                   # Original docs (pre-Docusaurus)
+├── FIRECRAWL_GUIDE.md
+├── QUICKSTART.md
+└── ideas/
 
 ext_data/                      # Scraped municipal documents
 ├── mairie_arretes/            # ~4010 arrêtés & publications
@@ -74,11 +78,26 @@ sources/                       # Additional data sources
 concept/, persona/             # Project concept documentation
 ```
 
+### Documentation (Submodule)
+
+The `docs/` directory is a git submodule pointing to `locki-io/docs.locki.io`:
+
+```bash
+# Clone with submodules
+git clone --recurse-submodules <repo>
+
+# Update submodule
+git submodule update --remote docs
+
+# Work on docs
+cd docs && npm install && npm start
+```
+
 ### Methodologies
 
-The project uses structured problem-solving approaches documented in `docs/`:
+The project uses structured problem-solving approaches documented in `docs/docs/methods/`:
 
-- **TRIZ** - Inventive problem solving (see `docs/methods/TRIZ_METHODOLOGY.md`)
+- **TRIZ** - Inventive problem solving
 - **Separation of Concerns** - For workflows and code organization
 - **Theory of Constraints** - For budget and localization constraints
 - **Contribution Charter** - Governance rules for citizen participation
