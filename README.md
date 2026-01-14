@@ -112,4 +112,18 @@ Track progress: [github.com/orgs/locki-io/projects/2](https://github.com/orgs/lo
 
 ## License
 
-Open source - MIT License
+This project uses a **dual-license structure**:
+
+| Component | License | Files |
+|-----------|---------|-------|
+| Core infrastructure | Apache 2.0 | `src/`, `docs/`, utilities |
+| Agent workflows & prompts | Elastic License 2.0 | `agents/`, `workflows/` |
+
+### Summary
+- **Open source components**: Crawlers, utilities, documentation - free to use, modify, distribute
+- **Source-available components**: Agent orchestration, prompts, N8N workflows - visible but commercial use requires license from [locki.io](https://locki.io)
+
+See [LICENSE](LICENSE) and [LICENSE-ELv2](LICENSE-ELv2) for full terms.
+
+### Hackathon Note
+This structure complies with hackathon open-source requirements while protecting locki.io engineering IP for future commercialization.
