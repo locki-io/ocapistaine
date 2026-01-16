@@ -35,10 +35,29 @@ cp .env.example .env
 python src/crawl_municipal_docs.py --source all --mode scrape
 ```
 
-## git merge proposal on feature branch
+## version control on main, dev and feature branch
 
 ```
-git config pull.rebase merges
+main requires approval
+dev no approval but linear history
+
+To keep our history clean (no noisy merge commits on feature branches):
+
+1. Run once:
+   git config --local pull.rebase true
+   # (or git config --local pull.rebase merges)
+
+   Optional safety layer:
+   git config --local pull.ff only
+
+   → git pull will now rebase by default (clean linear history)
+   → if it can't fast-forward, it fails instead of auto-merging
+
+This way:
+- Your local git pull stays clean
+- Main/dev stays perfectly linear
+- No more "Merge branch 'feature/ocr-…' into dev" spam
+
 ```
 
 ## Project Structure
