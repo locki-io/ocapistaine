@@ -35,6 +35,12 @@ cp .env.example .env
 python src/crawl_municipal_docs.py --source all --mode scrape
 ```
 
+## git merge proposal on feature branch
+
+```
+git config pull.rebase merges
+```
+
 ## Project Structure
 
 ```
