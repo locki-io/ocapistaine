@@ -1,4 +1,4 @@
-# view_ocapistaine.py
+# front.py
 """
 OCapistaine - Citizen Q&A Interface
 
@@ -10,12 +10,12 @@ import streamlit as st
 
 # MUST be first Streamlit command
 st.set_page_config(
-    page_title="OCapistaine - Civic Transparency",
+    page_title="Ò Capistaine - Civic Transparency",
     page_icon="🏛️",
     layout="wide",
 )
 
-from sidebar_ocapistaine import sidebar_setup, get_user_id
+from app.sidebar import sidebar_setup, get_user_id
 from data.redis_client import get_redis_connection
 
 # TODO: Import services when implemented

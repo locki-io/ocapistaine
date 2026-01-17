@@ -1,6 +1,6 @@
-# sidebar_ocapistaine.py
+# sidebar.py
 """
-OCapistaine - Simplified Sidebar
+O Capistaine - Simplified Sidebar
 
 Single user identification via UUID (cookie-based).
 Minimal session state - Redis handles persistence.

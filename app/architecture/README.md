@@ -17,32 +17,32 @@ OCapistaine is an AI-powered civic transparency system for local democracy. This
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                           APPLICATION LAYER                                 │
 │  ┌──────────────────────────────────────────────────────────────────────┐   │
-│  │                         Service Orchestrator                          │   │
-│  │                      (services/orchestrator.py)                       │   │
+│  │                         Service Orchestrator                         │   │
+│  │                      (services/orchestrator.py)                      │   │
 │  └──────────────────────────────────────────────────────────────────────┘   │
 │                                    │                                        │
-│         ┌──────────────────────────┼──────────────────────────┐            │
-│         ▼                          ▼                          ▼            │
-│  ┌─────────────┐          ┌─────────────┐          ┌─────────────────┐     │
-│  │  RAG Service│          │ Chat Service│          │ Document Service│     │
-│  │             │          │             │          │                 │     │
-│  └─────────────┘          └─────────────┘          └─────────────────┘     │
+│         ┌──────────────────────────┼──────────────────────────┐             │
+│         ▼                          ▼                          ▼             │
+│  ┌─────────────┐          ┌─────────────┐          ┌─────────────────┐      │
+│  │  RAG Service│          │ Chat Service│          │ Document Service│      │
+│  │             │          │             │          │                 │      │
+│  └─────────────┘          └─────────────┘          └─────────────────┘      │
 └─────────────────────────────────────────────────────────────────────────────┘
             │                    │                         │
             ▼                    ▼                         ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                           BUSINESS LOGIC LAYER                              │
 │  ┌──────────────────────────────────────────────────────────────────────┐   │
-│  │                              AGENTS                                   │   │
+│  │                              AGENTS                                  │   │
 │  │  ┌────────────────┐  ┌────────────────┐  ┌────────────────────────┐  │   │
 │  │  │ RAG Agent      │  │ Crawler Agent  │  │ Evaluation Agent       │  │   │
-│  │  │ (retrieval +   │  │ (Firecrawl +   │  │ (Opik LLM-as-judge)   │  │   │
+│  │  │ (retrieval +   │  │ (Firecrawl +   │  │ (Opik LLM-as-judge)    │  │   │
 │  │  │  generation)   │  │  OCR pipeline) │  │                        │  │   │
 │  │  └────────────────┘  └────────────────┘  └────────────────────────┘  │   │
 │  └──────────────────────────────────────────────────────────────────────┘   │
 │                                    │                                        │
 │  ┌──────────────────────────────────────────────────────────────────────┐   │
-│  │                           PROCESSORS                                  │   │
+│  │                           PROCESSORS                                 │   │
 │  │  ┌────────────────┐  ┌────────────────┐  ┌────────────────────────┐  │   │
 │  │  │ Embeddings     │  │ Document       │  │ Response               │  │   │
 │  │  │ Processor      │  │ Parser         │  │ Formatter              │  │   │
@@ -76,46 +76,46 @@ OCapistaine is an AI-powered civic transparency system for local democracy. This
 
 ### 1. Presentation Layer
 
-| Component | Purpose | Technology |
-|-----------|---------|------------|
-| **Streamlit UI** | Citizen-facing Q&A interface | Streamlit |
-| **FastAPI REST** | API for external integrations | FastAPI + Uvicorn |
+| Component        | Purpose                                  | Technology              |
+| ---------------- | ---------------------------------------- | ----------------------- |
+| **Streamlit UI** | Citizen-facing Q&A interface             | Streamlit               |
+| **FastAPI REST** | API for external integrations            | FastAPI + Uvicorn       |
 | **N8N Webhooks** | Multi-channel input (FB, email, chatbot) | External (Vaettir repo) |
 
 ### 2. Application Layer
 
-| Component | Purpose |
-|-----------|---------|
+| Component                | Purpose                                         |
+| ------------------------ | ----------------------------------------------- |
 | **Service Orchestrator** | Coordinates services, manages request lifecycle |
-| **RAG Service** | Handles document retrieval + answer generation |
-| **Chat Service** | Manages conversation history, context |
-| **Document Service** | CRUD operations on document corpus |
+| **RAG Service**          | Handles document retrieval + answer generation  |
+| **Chat Service**         | Manages conversation history, context           |
+| **Document Service**     | CRUD operations on document corpus              |
 
 ### 3. Business Logic Layer
 
 #### Agents (ELv2 Licensed - locki.io IP)
 
-| Agent | Purpose | Status |
-|-------|---------|--------|
-| **RAG Agent** | Retrieval-Augmented Generation for citizen Q&A | 🔴 Pending |
-| **Crawler Agent** | Firecrawl + OCR document acquisition | 🔴 Not operational |
-| **Evaluation Agent** | Opik LLM-as-judge for hallucination detection | 🟡 Planned |
+| Agent                | Purpose                                        | Status             |
+| -------------------- | ---------------------------------------------- | ------------------ |
+| **RAG Agent**        | Retrieval-Augmented Generation for citizen Q&A | 🔴 Pending         |
+| **Crawler Agent**    | Firecrawl + OCR document acquisition           | 🔴 Not operational |
+| **Evaluation Agent** | Opik LLM-as-judge for hallucination detection  | 🟡 Planned         |
 
 #### Processors (Apache 2.0 Licensed - Open Source)
 
-| Processor | Purpose | Status |
-|-----------|---------|--------|
-| **Embeddings Processor** | Generate vector embeddings | 🔴 Pending |
-| **Document Parser** | Extract text from PDFs, HTML | 🟡 Partial |
-| **Response Formatter** | Format answers with sources | 🔴 Pending |
+| Processor                | Purpose                      | Status     |
+| ------------------------ | ---------------------------- | ---------- |
+| **Embeddings Processor** | Generate vector embeddings   | 🔴 Pending |
+| **Document Parser**      | Extract text from PDFs, HTML | 🟡 Partial |
+| **Response Formatter**   | Format answers with sources  | 🔴 Pending |
 
 ### 4. Data Access Layer
 
-| Component | Purpose | Technology |
-|-----------|---------|------------|
-| **Redis Cache** | Session state, hot data, rate limiting | Redis |
-| **Vector Store** | Document embeddings for retrieval | TBD (Chroma/Pinecone/Qdrant) |
-| **File Storage** | Raw crawled documents | Local filesystem (`ext_data/`) |
+| Component        | Purpose                                | Technology                     |
+| ---------------- | -------------------------------------- | ------------------------------ |
+| **Redis Cache**  | Session state, hot data, rate limiting | Redis                          |
+| **Vector Store** | Document embeddings for retrieval      | TBD (Chroma/Pinecone/Qdrant)   |
+| **File Storage** | Raw crawled documents                  | Local filesystem (`ext_data/`) |
 
 ---
 
@@ -210,13 +210,13 @@ class UserSession:
 from fastapi import FastAPI
 from app.api.routes import chat, documents, health
 
-app = FastAPI(title="OCapistaine API", version="0.1.0")
+app = FastAPI(title="Ò Capistaine API", version="0.1.0")
 
 app.include_router(chat.router, prefix="/api/v1")
 app.include_router(documents.router, prefix="/api/v1")
 app.include_router(health.router)
 
-# Run with: uvicorn app.main:app --host 0.0.0.0 --port 8000
+# Run with: uvicorn app.main:app --host 0.0.0.0 --port 8050
 ```
 
 ### 4. Streamlit + FastAPI Coexistence
@@ -225,8 +225,8 @@ app.include_router(health.router)
 ┌─────────────────────────────────────────────────────────┐
 │                    Production Setup                      │
 ├─────────────────────────────────────────────────────────┤
-│  Port 8501: Streamlit UI (citizen-facing)               │
-│  Port 8000: FastAPI (API + N8N webhooks)                │
+│  Port 8502: Streamlit UI (citizen-facing)               │
+│  Port 8050: FastAPI (API + N8N webhooks)                │
 │  Port 6379: Redis (shared cache)                        │
 └─────────────────────────────────────────────────────────┘
 ```
@@ -238,27 +238,32 @@ app.include_router(health.router)
 Based on [Checkpoint 1 Blog Post](../docs/blog/2026-01-15-let-the-journey-begin.mdx):
 
 ### Phase 1: Foundation (Current)
+
 - [x] audierne2026.fr live
 - [x] Documentation site (docs.locki.io)
-- [ ] **TODO: Simplified view.py + sidebar.py**
+- [x] Simplified front.py + sidebar.py
 - [ ] **TODO: Redis client setup**
 
 ### Phase 2: Document Pipeline
+
 - [ ] Fix Firecrawl pipeline (crawler_agent.py)
 - [ ] Document parser for municipal PDFs
 - [ ] File storage organization
 
 ### Phase 3: RAG System
+
 - [ ] Embeddings processor
 - [ ] Vector store integration
 - [ ] RAG agent implementation
 
 ### Phase 4: Quality & Observability
+
 - [ ] Opik tracing integration
 - [ ] Evaluation agent (LLM-as-judge)
 - [ ] Hallucination detection
 
 ### Phase 5: Multi-Channel
+
 - [ ] FastAPI webhooks for N8N
 - [ ] Facebook integration (via Vaettir)
 - [ ] Email response pipeline
@@ -269,10 +274,12 @@ Based on [Checkpoint 1 Blog Post](../docs/blog/2026-01-15-let-the-journey-begin.
 
 ```bash
 # .env
-REDIS_URL=redis://localhost:6379/0
+REDIS_DB=5
+REDIS_POST=6379
 FIRECRAWL_API_KEY=your_key
 OPENAI_API_KEY=your_key
 OPIK_API_KEY=your_key
+OPIK_WORKSPACE=ocapistaine-dev
 
 # Optional
 VECTOR_STORE_TYPE=chroma  # or pinecone, qdrant
@@ -287,10 +294,10 @@ APP_ENV=development       # or production
 
 ```bash
 # Terminal 1: Streamlit UI
-poetry run streamlit run app/view.py --server.port 8501
+poetry run streamlit run app/view.py --server.port 8502
 
 # Terminal 2: FastAPI
-poetry run uvicorn app.main:app --reload --port 8000
+poetry run uvicorn app.main:app --reload --port 8050
 
 # Terminal 3: Redis (if not running)
 redis-server
@@ -304,20 +311,20 @@ docker-compose up -d
 
 # Or manually with uvicorn
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
-streamlit run app/view.py --server.port 8501 --server.address 0.0.0.0
+streamlit run app/front.py --server.port 8501 --server.address 0.0.0.0
 ```
 
 ---
 
 ## License Split
 
-| Layer | License | Prize Eligible |
-|-------|---------|----------------|
-| Presentation (view.py, API) | Apache 2.0 | Yes |
-| Application (services/) | Apache 2.0 | Yes |
-| Processors (processors/) | Apache 2.0 | Yes |
-| **Agents (agents/)** | **ELv2** | **No** |
-| Data Access (data/) | Apache 2.0 | Yes |
-| Models (models/) | Apache 2.0 | Yes |
+| Layer                            | License    |
+| -------------------------------- | ---------- |
+| Presentation (app/front.py, API) | Apache 2.0 |
+| Application (services/)          | Apache 2.0 |
+| Processors (processors/)         | Apache 2.0 |
+| **Agents (agents/)**             | **ELv2**   |
+| Data Access (data/)              | **ELv2**   |
+| Models (models/)                 | Apache 2.0 |
 
 See [CONTRIBUTING.md](../../CONTRIBUTING.md) for details.

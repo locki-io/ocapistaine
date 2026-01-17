@@ -2,9 +2,12 @@
 name = "ocapistaine"
 version = "0.1.0"
 package-mode = false
-description = "AI agent of cap sizun"
-authors = ["Johnny Xmas <jeannoel.schilling@gmail.com>"]
-license = "Proprietary"
+description = "AI agent for Ò Capistaine civictech platform"
+authors = ["Johnny Xmas <jeannoel.schilling@gmail.com>",
+           "Vic < >",
+           "Guru < >",
+           ]
+license = "Elastic License 2.0 (ELv2)"
 readme = "README.md"
 
 [tool.poetry.dependencies]
@@ -33,5 +36,6 @@ build-backend = "poetry.core.masonry.api"
 dev = [
     "pytest (>=9.0.2,<10.0.0)",
     "black (>=25.12.0,<26.0.0)",
-    "ruff (>=0.14.10,<0.15.0)"
+    "ruff (>=0.14.10,<0.15.0)",
+    "pyperclip (>=1.11.0,<2.0.0)"
 ]

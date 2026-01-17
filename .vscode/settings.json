@@ -1,0 +1,10 @@
+{
+  // Path to Poetry executable if not in PATH (rarely needed)
+  "python.poetryPath": "poetry",
+
+  // Ensure the new Environments extension is used (recommended for best experience)
+  "python.useEnvironmentsExtension": true,
+
+  // Auto-activate terminal environments
+  "python.terminal.activateEnvironment": true
+}

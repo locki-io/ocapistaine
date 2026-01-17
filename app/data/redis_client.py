@@ -10,6 +10,10 @@ import os
 import redis
 from typing import Optional
 from contextlib import contextmanager
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 # Global connection pool
 _redis_pool: Optional[redis.ConnectionPool] = None
@@ -19,12 +23,14 @@ def get_redis_pool() -> redis.ConnectionPool:
     """
     Get or create Redis connection pool.
 
-    Uses REDIS_URL from environment or defaults to localhost.
+    Uses REDIS_PORT/ REDIS_DB from environment or defaults to localhost.
     """
     global _redis_pool
 
     if _redis_pool is None:
-        redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+        redis_db = os.getenv("REDIS_DB", "5")
+        redis_port = os.getenv("REDIS_PORT", "6379")
+        redis_url = f"redis://localhost:{redis_port}/{redis_db}"
         _redis_pool = redis.ConnectionPool.from_url(
             redis_url,
             decode_responses=True,
@@ -92,10 +98,10 @@ class RedisKeys:
 class TTL:
     """Time-to-live constants for Redis keys."""
 
-    SESSION = 86400      # 24 hours
-    CHAT = 604800        # 7 days
-    DOCUMENT = 3600      # 1 hour
-    RATE_LIMIT = 60      # 1 minute
+    SESSION = 86400  # 24 hours
+    CHAT = 604800  # 7 days
+    DOCUMENT = 3600  # 1 hour
+    RATE_LIMIT = 60  # 1 minute
 
 
 def health_check() -> bool:
