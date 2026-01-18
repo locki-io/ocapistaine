@@ -69,7 +69,7 @@ class FirecrawlManager:
         output_dir: Path,
         max_pages: int = 100,
         **kwargs,
-    ) -> dict[str, Any]:
+    ) -> Any:
         """
         Crawl an entire website with Firecrawl.
 
@@ -77,27 +77,56 @@ class FirecrawlManager:
             url: Base URL to crawl
             output_dir: Directory to save results
             max_pages: Maximum number of pages to crawl
-            **kwargs: Additional Firecrawl parameters
+            **kwargs: Additional Firecrawl parameters (both crawl and scrape options)
 
         Returns:
-            dict: Crawling results including all pages
+            CrawlJob: Crawling results including all pages
         """
+        # Separate crawl-specific params from scrape options
+        crawl_params = {
+            "limit": max_pages,
+        }
+
+        # Crawl-specific parameters (passed directly to crawl())
+        # Python SDK uses snake_case parameter names
+        crawl_param_keys = {
+            "include_paths",
+            "exclude_paths",
+            "max_discovery_depth",
+            "ignore_sitemap",
+            "allow_external_links",
+            "crawl_entire_domain",
+            "allow_subdomains",
+            "delay",
+            "max_concurrency",
+            "webhook",
+            "zero_data_retention",
+            "poll_interval",
+            "timeout",
+            "request_timeout",
+            "prompt",  # Natural language crawl prompt
+        }
+
+        # Extract crawl params from kwargs
+        for key in crawl_param_keys:
+            if key in kwargs:
+                crawl_params[key] = kwargs[key]
+
+        # Remaining kwargs are scrape options
+        scrape_opts = {k: v for k, v in kwargs.items() if k not in crawl_param_keys}
+        scrape_opts["formats"] = ["markdown", "html"]
+
+        crawl_params["scrape_options"] = scrape_opts
+
         try:
             print(f"🔥 Crawling website: {url} (max {max_pages} pages)")
 
-            crawl_params = {
-                "limit": max_pages,
-                "scrapeOptions": {"formats": ["markdown", "html"]},
-                **kwargs,
-            }
-
-            result = self.app.crawl(url, params=crawl_params, wait_until_done=True)
-
+            result = self.app.crawl(url, **crawl_params)
 
             # Save results
             self._save_crawl_result(result, output_dir, url)
 
-            page_count = len(result.get("data", []))
+            page_count = len(result.data) if hasattr(result, "data") else 0
             print(f"✅ Successfully crawled {page_count} pages from: {url}")
 
             return result
@@ -139,44 +168,86 @@ class FirecrawlManager:
         json_path.write_text(json.dumps(metadata_dict, indent=2, ensure_ascii=False))
 
     def _save_crawl_result(
-        self, result: dict[str, Any], output_dir: Path, base_url: str
+        self, result: Any, output_dir: Path, base_url: str
     ) -> None:
         """Save crawl result to disk."""
         output_dir.mkdir(parents=True, exist_ok=True)
 
-        # Save individual pages
-        for idx, page_data in enumerate(result.get("data", [])):
-            page_url = page_data.get("url", f"page_{idx}")
+        # Get data from CrawlJob object
+        pages = result.data if hasattr(result, "data") else []
+
+        # Save individual pages (each is a Document object)
+        for idx, page_doc in enumerate(pages):
+            # Get URL from metadata or use fallback
+            page_url = (
+                page_doc.metadata.source_url
+                if hasattr(page_doc, "metadata") and hasattr(page_doc.metadata, "source_url")
+                else f"page_{idx}"
+            )
             filename = self._url_to_filename(page_url)
 
-            if "markdown" in page_data:
+            # Save markdown if available
+            if hasattr(page_doc, "markdown") and page_doc.markdown:
                 md_path = output_dir / f"{filename}.md"
-                md_path.write_text(page_data["markdown"], encoding="utf-8")
+                md_path.write_text(page_doc.markdown, encoding="utf-8")
 
-            if "html" in page_data:
+            # Save HTML if available
+            if hasattr(page_doc, "html") and page_doc.html:
                 html_path = output_dir / f"{filename}.html"
-                html_path.write_text(page_data["html"], encoding="utf-8")
+                html_path.write_text(page_doc.html, encoding="utf-8")
 
         # Save complete crawl metadata
+        # Convert CrawlJob to dict for JSON serialization
         metadata_path = output_dir / f"crawl_metadata_{self.session_id}.json"
+        crawl_summary = {
+            "base_url": base_url,
+            "session_id": self.session_id,
+            "total_pages": len(pages),
+            "status": result.status if hasattr(result, "status") else "unknown",
+            "pages": [
+                {
+                    "url": (
+                        page.metadata.source_url
+                        if hasattr(page, "metadata") and hasattr(page.metadata, "source_url")
+                        else None
+                    ),
+                    "title": (
+                        page.metadata.title
+                        if hasattr(page, "metadata") and hasattr(page.metadata, "title")
+                        else None
+                    ),
+                }
+                for page in pages
+            ],
+        }
         metadata_path.write_text(
-            json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8"
+            json.dumps(crawl_summary, indent=2, ensure_ascii=False), encoding="utf-8"
         )
 
         # Create index file
         self._create_index(result, output_dir)
 
-    def _create_index(self, result: dict[str, Any], output_dir: Path) -> None:
+    def _create_index(self, result: Any, output_dir: Path) -> None:
         """Create an index file listing all crawled pages."""
         index_path = output_dir / f"index_{self.session_id}.md"
 
+        pages = result.data if hasattr(result, "data") else []
+
         with index_path.open("w", encoding="utf-8") as f:
             f.write(f"# Crawl Index - {self.session_id}\n\n")
-            f.write(f"Total pages: {len(result.get('data', []))}\n\n")
+            f.write(f"Total pages: {len(pages)}\n\n")
 
-            for idx, page_data in enumerate(result.get("data", []), 1):
-                url = page_data.get("url", "Unknown")
-                title = page_data.get("title", "Untitled")
+            for idx, page_doc in enumerate(pages, 1):
+                url = (
+                    page_doc.metadata.source_url
+                    if hasattr(page_doc, "metadata") and hasattr(page_doc.metadata, "source_url")
+                    else "Unknown"
+                )
+                title = (
+                    page_doc.metadata.title
+                    if hasattr(page_doc, "metadata") and hasattr(page_doc.metadata, "title")
+                    else "Untitled"
+                )
                 f.write(f"{idx}. [{title}]({url})\n")
 
     def _url_to_filename(self, url: str) -> str:

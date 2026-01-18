@@ -4,7 +4,7 @@ import argparse
 import sys
 from pathlib import Path
 
-from config import DATA_SOURCES, FIRECRAWL_CONFIG, DataSource
+from config import DATA_SOURCES, FIRECRAWL_CONFIG, CRAWL_FULL_CONFIG, DataSource
 from firecrawl_utils import FirecrawlManager
 
 
@@ -46,12 +46,12 @@ def crawl_data_source(
                 **FIRECRAWL_CONFIG,
             )
         else:  # crawl
-            # Crawl entire website section
+            # Crawl entire website section with crawl-specific config
             manager.crawl_website(
                 url=source.url,
                 output_dir=source.output_dir,
                 max_pages=max_pages,
-                **FIRECRAWL_CONFIG,
+                **CRAWL_FULL_CONFIG,
             )
 
         print(f"✅ Completed: {source.name}\n")

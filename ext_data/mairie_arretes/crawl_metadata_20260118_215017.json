@@ -1,0 +1,48 @@
+{
+  "base_url": "https://www.audierne.bzh/publications-arretes/",
+  "session_id": "20260118_215017",
+  "total_pages": 10,
+  "status": "completed",
+  "pages": [
+    {
+      "url": "https://www.audierne.bzh/publications-arretes/",
+      "title": "Current orders"
+    },
+    {
+      "url": "https://www.audierne.bzh/systeme/documentheque/?documents_category=21",
+      "title": "Document Library"
+    },
+    {
+      "url": "https://www.audierne.bzh/systeme/documentheque/?documents_category=16",
+      "title": "Document Library"
+    },
+    {
+      "url": "https://www.audierne.bzh/publications-arretes-deliberations-du-conseil-municipal/",
+      "title": "publications-decrees-deliberations-of-the-municipal-council"
+    },
+    {
+      "url": "https://www.audierne.bzh/systeme/documentheque/?documents_category=18",
+      "title": "Documenthèque"
+    },
+    {
+      "url": "https://www.audierne.bzh/systeme/documentheque/?documents_category=5",
+      "title": "Document Library"
+    },
+    {
+      "url": "https://www.audierne.bzh/systeme/documentheque/?documents_category=2",
+      "title": "Document Library"
+    },
+    {
+      "url": "https://www.audierne.bzh/systeme/documentheque/?documents_category=17",
+      "title": "Document Library"
+    },
+    {
+      "url": "https://www.audierne.bzh/systeme/documentheque/?documents_category=19",
+      "title": "Document Library"
+    },
+    {
+      "url": "https://www.audierne.bzh/systeme/documentheque/?documents_category=22",
+      "title": "Documenthèque"
+    }
+  ]
+}
