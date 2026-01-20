@@ -6,6 +6,8 @@ Simplified Streamlit UI for civic transparency.
 User identification via single UUID (cookie-based).
 """
 
+import asyncio
+
 import requests
 import streamlit as st
 
@@ -17,11 +19,19 @@ st.set_page_config(
 )
 
 from app.sidebar import sidebar_setup, get_user_id
+from app.agents.forseti import ForsetiAgent
 from data.redis_client import get_redis_connection
 
 # TODO: Import services when implemented
 # from app.services.chat_service import ChatService
 # from app.services.rag_service import RAGService
+
+
+# Initialize Forseti agent (singleton)
+@st.cache_resource
+def get_forseti_agent():
+    """Get or create Forseti agent instance."""
+    return ForsetiAgent()
 
 
 def main():
@@ -38,13 +48,13 @@ def main():
     st.markdown("**Posez vos questions sur la vie municipale d'Audierne**")
 
     # Main tabs
-    tabs = st.tabs(["💬 Questions", "🗳️ Participations", "📄 Documents", "ℹ️ À propos"])
+    tabs = st.tabs(["💬 Questions", "📝 Contributions", "📄 Documents", "ℹ️ À propos"])
 
     with tabs[0]:
         chat_view(user_id)
 
     with tabs[1]:
-        issues_view(user_id)
+        contributions_view(user_id)
 
     with tabs[2]:
         documents_view(user_id)
@@ -114,7 +124,7 @@ En attendant, consultez [audierne2026.fr](https://audierne2026.fr) pour particip
 
 
 # N8N Webhook URL for fetching issues
-N8N_ISSUES_WEBHOOK = "https://vaettir.locki.io/webhook-test/participons/issues"
+N8N_ISSUES_WEBHOOK = "https://vaettir.locki.io/webhook/participons/issues"
 
 
 # Available category labels in audierne2026/participons
@@ -150,10 +160,76 @@ def _fetch_issues(state: str = "open", labels: str = "", per_page: int = 50) -> 
         return {"success": False, "error": str(e), "count": 0, "issues": []}
 
 
-def issues_view(user_id: str):
-    """Display open issues from audierne2026/participons repository."""
+def _validate_with_forseti(title: str, body: str, category: str | None) -> dict:
+    """Validate a contribution with Forseti agent."""
+    try:
+        agent = get_forseti_agent()
+        result = asyncio.run(agent.validate(title=title, body=body, category=category))
+        return {
+            "success": True,
+            "is_valid": result.is_valid,
+            "category": result.category,
+            "original_category": result.original_category,
+            "violations": result.violations,
+            "encouraged_aspects": result.encouraged_aspects,
+            "reasoning": result.reasoning,
+            "confidence": result.confidence,
+        }
+    except Exception as e:
+        return {"success": False, "error": str(e)}
 
-    st.subheader("🗳️ Participations Citoyennes")
+
+def _display_forseti_result(result: dict):
+    """Display Forseti validation result."""
+    st.markdown("---")
+    st.markdown("**🔍 Analyse Forseti 461**")
+
+    if not result.get("success"):
+        st.error(f"Erreur: {result.get('error', 'Erreur inconnue')}")
+        return
+
+    # Validation status
+    if result.get("is_valid"):
+        st.success("✅ Conforme à la charte")
+    else:
+        st.warning("⚠️ Non conforme à la charte")
+
+    # Violations
+    violations = result.get("violations", [])
+    if violations:
+        st.markdown("**Violations:**")
+        for v in violations:
+            st.markdown(f"- ❌ {v}")
+
+    # Encouraged aspects
+    encouraged = result.get("encouraged_aspects", [])
+    if encouraged:
+        st.markdown("**Points positifs:**")
+        for e in encouraged:
+            st.markdown(f"- ✨ {e}")
+
+    # Category
+    category = result.get("category")
+    original = result.get("original_category")
+    if category:
+        cat_text = f"📁 Catégorie: **{category}**"
+        if original and original != category:
+            cat_text += f" (suggérée, était: {original})"
+        st.markdown(cat_text)
+
+    # Confidence
+    confidence = result.get("confidence", 0)
+    st.progress(confidence, text=f"Confiance: {confidence:.0%}")
+
+    # Reasoning (collapsed)
+    with st.expander("💭 Raisonnement", expanded=False):
+        st.markdown(result.get("reasoning", ""))
+
+
+def contributions_view(user_id: str):
+    """Display contributions from audierne2026/participons repository."""
+
+    st.subheader("📝 Contributions Citoyennes")
     st.markdown(
         "Contributions de la communauté sur [audierne2026/participons](https://github.com/audierne2026/participons)"
     )
@@ -216,6 +292,7 @@ def issues_view(user_id: str):
 
     # Display issues
     for issue in issues:
+        issue_id = issue.get("id")
         category = issue.get("category")
         category_icon = category_colors.get(category, "⚪")
         has_charte = issue.get("has_conforme_charte", False)
@@ -228,7 +305,7 @@ def issues_view(user_id: str):
             # Metadata row
             meta_col1, meta_col2, meta_col3 = st.columns(3)
             with meta_col1:
-                st.caption(f"**#{issue.get('id')}** par {issue.get('user', 'inconnu')}")
+                st.caption(f"**#{issue_id}** par {issue.get('user', 'inconnu')}")
             with meta_col2:
                 if category:
                     st.caption(f"📁 {category.capitalize()}")
@@ -242,14 +319,32 @@ def issues_view(user_id: str):
                 st.markdown(" ".join([f"`{label}`" for label in labels]))
 
             # Body
+            title = issue.get("title", "")
             body = issue.get("body", "")
             if body:
                 st.markdown(body[:500] + ("..." if len(body) > 500 else ""))
 
-            # Link
-            html_url = issue.get("html_url")
-            if html_url:
-                st.markdown(f"[Voir sur GitHub]({html_url})")
+            # Actions row
+            action_col1, action_col2 = st.columns([1, 3])
+
+            with action_col1:
+                # Forseti validation button
+                if st.button("🔍 Vérifier charte", key=f"validate_{issue_id}"):
+                    with st.spinner("Analyse par Forseti 461..."):
+                        result = _validate_with_forseti(title, body, category)
+                        st.session_state[f"forseti_result_{issue_id}"] = result
+
+            with action_col2:
+                # Link to GitHub
+                html_url = issue.get("html_url")
+                if html_url:
+                    st.markdown(f"[Voir sur GitHub]({html_url})")
+
+            # Display Forseti result if available
+            result_key = f"forseti_result_{issue_id}"
+            if result_key in st.session_state:
+                result = st.session_state[result_key]
+                _display_forseti_result(result)
 
 
 def documents_view(user_id: str):

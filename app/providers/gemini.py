@@ -2,11 +2,15 @@
 Google Gemini Provider
 
 Async LLM provider for Google's Gemini models with rate limiting and retry logic.
+Uses the new google-genai SDK.
 """
 
 import asyncio
 import re
 import time
+
+from google import genai
+from google.genai import types
 
 from .base import LLMProvider, Message, CompletionResponse
 from .config import get_config
@@ -16,7 +20,7 @@ class GeminiProvider(LLMProvider):
     """
     Google Gemini provider with throttling and retry logic.
 
-    Migrated from charterAgent/charter_agent.py GeminiClient.
+    Uses the new google-genai SDK (replacing deprecated google-generativeai).
     """
 
     def __init__(
@@ -35,10 +39,7 @@ class GeminiProvider(LLMProvider):
 
         Raises:
             ValueError: If no API key is available.
-            RuntimeError: If no compatible models are found.
         """
-        import google.generativeai as genai
-
         config = get_config()
         key = api_key or config.effective_google_key
         if not key:
@@ -46,26 +47,8 @@ class GeminiProvider(LLMProvider):
                 "GOOGLE_API_KEY or GEMINI_API_KEY not found in environment"
             )
 
-        genai.configure(api_key=key)
-
+        self._client = genai.Client(api_key=key)
         self._model_name = model or config.gemini_model
-        if not self._model_name:
-            # Auto-detect first available model
-            try:
-                models = genai.list_models()
-                supported = [
-                    m.name
-                    for m in models
-                    if "generateContent" in getattr(m, "supported_generation_methods", [])
-                ]
-                if not supported:
-                    raise RuntimeError("No Gemini models support generateContent")
-                self._model_name = supported[0]
-            except Exception as e:
-                raise RuntimeError(f"Failed to list Gemini models: {e}")
-
-        self._genai = genai
-        self._client = genai.GenerativeModel(self._model_name)
         self._rate_limit = rate_limit or config.gemini_rate_limit
         self._last_call = 0.0
         self._lock = asyncio.Lock()
@@ -105,37 +88,48 @@ class GeminiProvider(LLMProvider):
             messages: List of Message objects.
             temperature: Sampling temperature.
             max_tokens: Maximum tokens (maps to max_output_tokens).
-            json_mode: If True, model will be instructed to output JSON.
+            json_mode: If True, model will output JSON.
 
         Returns:
             CompletionResponse with generated content.
         """
-        # Convert messages to Gemini format (single prompt string)
-        prompt_parts = []
+        # Build contents from messages
+        system_instruction = None
+        contents = []
+
         for msg in messages:
             if msg.role == "system":
-                prompt_parts.append(f"Instructions: {msg.content}\n")
+                system_instruction = msg.content
             elif msg.role == "user":
-                prompt_parts.append(f"User: {msg.content}\n")
+                contents.append(types.Content(
+                    role="user",
+                    parts=[types.Part(text=msg.content)]
+                ))
             elif msg.role == "assistant":
-                prompt_parts.append(f"Assistant: {msg.content}\n")
-        prompt = "".join(prompt_parts)
+                contents.append(types.Content(
+                    role="model",
+                    parts=[types.Part(text=msg.content)]
+                ))
 
-        if json_mode:
-            prompt += "\nRespond with valid JSON only."
+        # Build generation config
+        generation_config = types.GenerateContentConfig(
+            temperature=temperature,
+            max_output_tokens=max_tokens,
+            response_mime_type="application/json" if json_mode else None,
+        )
 
-        generation_config = {"temperature": temperature}
-        if max_tokens:
-            generation_config["max_output_tokens"] = max_tokens
+        if system_instruction:
+            generation_config.system_instruction = system_instruction
 
         # Retry loop with exponential backoff
         for attempt in range(3):
             await self._throttle()
             try:
                 response = await asyncio.to_thread(
-                    self._client.generate_content,
-                    prompt,
-                    generation_config=generation_config,
+                    self._client.models.generate_content,
+                    model=self._model_name,
+                    contents=contents,
+                    config=generation_config,
                 )
                 content = response.text
                 if json_mode:
@@ -144,14 +138,14 @@ class GeminiProvider(LLMProvider):
                 return CompletionResponse(
                     content=content,
                     model=self._model_name,
-                    usage={},  # Gemini doesn't provide detailed usage
+                    usage={},
                     raw_response=response,
                 )
             except Exception as e:
                 msg = str(e)
-                if "429" in msg and "retry" in msg.lower():
-                    # Extract retry delay from error message
-                    match = re.search(r"retry in ([0-9.]+)s", msg)
+                if "429" in msg or "RESOURCE_EXHAUSTED" in msg:
+                    # Rate limited - extract retry delay if available
+                    match = re.search(r"retry.+?([0-9.]+)\s*s", msg, re.IGNORECASE)
                     delay = float(match.group(1)) if match else 35.0
                     await asyncio.sleep(delay)
                     continue

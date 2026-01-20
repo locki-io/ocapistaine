@@ -8,6 +8,17 @@ from pydantic_settings import BaseSettings
 from pydantic import Field
 
 
+# Gemini free tier models (2026-01)
+# - gemini-2.0-flash-lite: High-volume, low-cost (~1000 req/day) - DEFAULT
+# - gemini-2.0-flash: Speed + reasoning (~20 req/day)
+# - gemini-2.0-pro-exp: Complex reasoning (~25-50 req/day) - Use sparingly
+GEMINI_MODELS = {
+    "flash-lite": "gemini-2.0-flash-lite",
+    "flash": "gemini-2.0-flash",
+    "pro": "gemini-2.0-pro-exp",
+}
+
+
 class ProviderConfig(BaseSettings):
     """Configuration for all LLM providers."""
 
@@ -17,8 +28,8 @@ class ProviderConfig(BaseSettings):
     # Google Gemini
     google_api_key: str | None = Field(default=None, alias="GOOGLE_API_KEY")
     gemini_api_key: str | None = Field(default=None, alias="GEMINI_API_KEY")
-    gemini_model: str = Field(default="gemini-1.5-flash", alias="GEMINI_MODEL")
-    gemini_rate_limit: float = Field(default=12.0, alias="GEMINI_RATE_LIMIT")
+    gemini_model: str = Field(default="gemini-2.0-flash-lite", alias="GEMINI_MODEL")
+    gemini_rate_limit: float = Field(default=1.0, alias="GEMINI_RATE_LIMIT")  # flash-lite allows ~1000/day
 
     # Anthropic Claude
     anthropic_api_key: str | None = Field(default=None, alias="ANTHROPIC_API_KEY")
