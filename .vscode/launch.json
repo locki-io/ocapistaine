@@ -1,0 +1,50 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Uvicorn (Poetry)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": ["app.main:app", "--reload", "--port", "8050"],
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/.env",
+      "purpose": ["debug-in-terminal"]
+    },
+    {
+      "name": "Run Streamlit (Poetry)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "streamlit",
+      "args": ["run", "app/front.py", "--server.port", "8502"],
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "name": "Run Jupyter Kernel (Poetry)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/notebooks/entry.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "cwd": "${workspaceFolder}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Stack (Uvicorn + Streamlit)",
+      "configurations": ["Run Uvicorn (Poetry)", "Run Streamlit (Poetry)"],
+      "stopAll": true
+    },
+    {
+      "name": "Streamlit + ngrok (auto-copy URL)",
+      "configurations": ["Run Streamlit (Poetry)"],
+      "preLaunchTask": "Start ngrok + copy URL (auto)",
+      "stopAll": true
+    }
+  ]
+}

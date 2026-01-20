@@ -1,5 +1,5 @@
 # IDE files
-.vscode/
+# .vscode/
 # compiled/test python files
 __pycache__/
 *.pyc
