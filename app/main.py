@@ -15,8 +15,8 @@ from contextlib import asynccontextmanager
 
 from app.data.redis_client import health_check as redis_health_check
 
-# TODO: Import routes when implemented
-# from app.api.routes import chat, documents, health
+# Route imports
+from app.api.routes.validate import router as validate_router
 
 
 @asynccontextmanager
@@ -68,6 +68,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Register API routers
+app.include_router(validate_router, prefix="/api/v1")
+
 
 # =============================================================================
 # Health & Status Routes
@@ -86,6 +89,11 @@ async def health():
 @app.get("/status")
 async def status():
     """Detailed status endpoint."""
+    # Check Opik availability
+    from app.agents.tracing import get_tracer
+    tracer = get_tracer()
+    opik_status = "connected" if tracer.enabled else "not_configured"
+
     return {
         "service": "ocapistaine",
         "version": "0.1.0",
@@ -93,7 +101,8 @@ async def status():
             "redis": "connected" if redis_health_check() else "disconnected",
             "firecrawl": "not_configured",  # TODO: Check Firecrawl
             "rag": "not_implemented",        # TODO: Check RAG
-            "opik": "not_configured",        # TODO: Check Opik
+            "opik": opik_status,
+            "forseti": "available",
         },
     }
 
