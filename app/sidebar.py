@@ -11,8 +11,47 @@ import uuid
 import streamlit as st
 from typing import Optional
 
+from app.providers.config import GEMINI_MODELS
+
 # TODO: Replace with actual Redis client when implemented
 # from app.data.redis_client import get_redis_connection
+
+# Available LLM providers and their models
+PROVIDERS = {
+    "gemini": {
+        "name": "Google Gemini",
+        "models": {
+            "flash-lite": "gemini-2.0-flash-lite (~1000 req/day)",
+            "flash": "gemini-2.0-flash (~20 req/day)",
+            "pro": "gemini-2.0-pro-exp (~25 req/day)",
+        },
+        "default": "flash-lite",
+    },
+    "claude": {
+        "name": "Anthropic Claude",
+        "models": {
+            "haiku": "claude-3-haiku (fast, cheap)",
+            "sonnet": "claude-3.5-sonnet (balanced)",
+        },
+        "default": "haiku",
+    },
+    "mistral": {
+        "name": "Mistral AI",
+        "models": {
+            "small": "mistral-small-latest",
+            "medium": "mistral-medium-latest",
+        },
+        "default": "small",
+    },
+    "ollama": {
+        "name": "Ollama (local)",
+        "models": {
+            "mistral": "mistral:latest",
+            "llama3": "llama3:latest",
+        },
+        "default": "mistral",
+    },
+}
 
 
 def get_user_id() -> str:
@@ -79,6 +118,12 @@ def sidebar_setup() -> str:
 
         st.divider()
 
+        # AI Provider/Model selection
+        st.markdown("### 🤖 Modèle IA")
+        _display_provider_selector()
+
+        st.divider()
+
         # Quick links
         st.markdown("### 🔗 Liens")
         st.markdown(
@@ -115,6 +160,102 @@ def _start_new_conversation(user_id: str) -> None:
     # TODO: Clear chat history in Redis when implemented
     # r = get_redis_connection()
     # r.delete(f"chat:{user_id}:{old_thread_id}")
+
+
+def _display_provider_selector() -> None:
+    """Display provider and model selection dropdowns."""
+    # Initialize defaults if not set
+    if "llm_provider" not in st.session_state:
+        st.session_state.llm_provider = "gemini"
+    if "llm_model" not in st.session_state:
+        st.session_state.llm_model = "flash-lite"
+
+    # Provider selection
+    provider_names = list(PROVIDERS.keys())
+    current_provider = st.session_state.llm_provider
+
+    selected_provider = st.selectbox(
+        "Fournisseur",
+        options=provider_names,
+        index=provider_names.index(current_provider) if current_provider in provider_names else 0,
+        format_func=lambda x: PROVIDERS[x]["name"],
+        key="provider_select",
+    )
+
+    # Update provider if changed
+    if selected_provider != st.session_state.llm_provider:
+        st.session_state.llm_provider = selected_provider
+        # Reset model to default for new provider
+        st.session_state.llm_model = PROVIDERS[selected_provider]["default"]
+        # Clear cached agent
+        if "forseti_agent" in st.session_state:
+            del st.session_state["forseti_agent"]
+        st.rerun()
+
+    # Model selection for current provider
+    provider_config = PROVIDERS[selected_provider]
+    model_keys = list(provider_config["models"].keys())
+    current_model = st.session_state.llm_model
+
+    # Ensure current model is valid for this provider
+    if current_model not in model_keys:
+        current_model = provider_config["default"]
+        st.session_state.llm_model = current_model
+
+    selected_model = st.selectbox(
+        "Modèle",
+        options=model_keys,
+        index=model_keys.index(current_model) if current_model in model_keys else 0,
+        format_func=lambda x: provider_config["models"][x],
+        key="model_select",
+    )
+
+    # Update model if changed
+    if selected_model != st.session_state.llm_model:
+        st.session_state.llm_model = selected_model
+        # Clear cached agent
+        if "forseti_agent" in st.session_state:
+            del st.session_state["forseti_agent"]
+        st.rerun()
+
+
+def get_selected_provider() -> str:
+    """Get the currently selected LLM provider name."""
+    return st.session_state.get("llm_provider", "gemini")
+
+
+def get_selected_model() -> str:
+    """Get the currently selected model key."""
+    return st.session_state.get("llm_model", "flash-lite")
+
+
+def get_model_id() -> str:
+    """Get the full model ID for the current selection."""
+    provider = get_selected_provider()
+    model_key = get_selected_model()
+
+    if provider == "gemini":
+        return GEMINI_MODELS.get(model_key, "gemini-2.0-flash-lite")
+    elif provider == "claude":
+        model_map = {
+            "haiku": "claude-3-haiku-20240307",
+            "sonnet": "claude-3-5-sonnet-20241022",
+        }
+        return model_map.get(model_key, "claude-3-haiku-20240307")
+    elif provider == "mistral":
+        model_map = {
+            "small": "mistral-small-latest",
+            "medium": "mistral-medium-latest",
+        }
+        return model_map.get(model_key, "mistral-small-latest")
+    elif provider == "ollama":
+        model_map = {
+            "mistral": "mistral:latest",
+            "llama3": "llama3:latest",
+        }
+        return model_map.get(model_key, "mistral:latest")
+
+    return "gemini-2.0-flash-lite"
 
 
 def _display_status_indicators() -> None:

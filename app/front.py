@@ -18,8 +18,9 @@ st.set_page_config(
     layout="wide",
 )
 
-from app.sidebar import sidebar_setup, get_user_id
+from app.sidebar import sidebar_setup, get_user_id, get_selected_provider, get_model_id
 from app.agents.forseti import ForsetiAgent
+from app.providers import get_provider
 from data.redis_client import get_redis_connection
 
 # TODO: Import services when implemented
@@ -27,11 +28,25 @@ from data.redis_client import get_redis_connection
 # from app.services.rag_service import RAGService
 
 
-# Initialize Forseti agent (singleton)
-@st.cache_resource
 def get_forseti_agent():
-    """Get or create Forseti agent instance."""
-    return ForsetiAgent()
+    """Get or create Forseti agent instance based on sidebar selection."""
+    provider_name = get_selected_provider()
+    model_id = get_model_id()
+
+    # Create cache key based on provider/model
+    cache_key = f"forseti_{provider_name}_{model_id}"
+
+    # Check if we have a cached agent for this config
+    if cache_key not in st.session_state:
+        try:
+            provider = get_provider(provider_name, model=model_id, cache=False)
+            st.session_state[cache_key] = ForsetiAgent(provider=provider)
+        except Exception as e:
+            st.error(f"Erreur initialisation {provider_name}: {e}")
+            # Fallback to default
+            st.session_state[cache_key] = ForsetiAgent()
+
+    return st.session_state[cache_key]
 
 
 def main():
