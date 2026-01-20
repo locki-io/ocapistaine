@@ -6,6 +6,7 @@ Simplified Streamlit UI for civic transparency.
 User identification via single UUID (cookie-based).
 """
 
+import requests
 import streamlit as st
 
 # MUST be first Streamlit command
@@ -37,15 +38,18 @@ def main():
     st.markdown("**Posez vos questions sur la vie municipale d'Audierne**")
 
     # Main tabs
-    tabs = st.tabs(["💬 Questions", "📄 Documents", "ℹ️ À propos"])
+    tabs = st.tabs(["💬 Questions", "🗳️ Participations", "📄 Documents", "ℹ️ À propos"])
 
     with tabs[0]:
         chat_view(user_id)
 
     with tabs[1]:
-        documents_view(user_id)
+        issues_view(user_id)
 
     with tabs[2]:
+        documents_view(user_id)
+
+    with tabs[3]:
         about_view()
 
 
@@ -107,6 +111,145 @@ Cette fonctionnalité sera bientôt disponible. Le système RAG permettra de :
 
 En attendant, consultez [audierne2026.fr](https://audierne2026.fr) pour participer !
 """
+
+
+# N8N Webhook URL for fetching issues
+N8N_ISSUES_WEBHOOK = "https://vaettir.locki.io/webhook-test/participons/issues"
+
+
+# Available category labels in audierne2026/participons
+CATEGORY_LABELS = [
+    "",  # All (no filter)
+    "economie",
+    "logement",
+    "culture",
+    "ecologie",
+    "associations",
+    "jeunesse",
+    "alimentation-bien-etre-soins",
+    "conforme charte",
+]
+
+
+@st.cache_data(ttl=300)  # Cache for 5 minutes
+def _fetch_issues(state: str = "open", labels: str = "", per_page: int = 50) -> dict:
+    """Fetch issues from N8N workflow webhook."""
+    try:
+        payload = {"state": state, "per_page": per_page}
+        if labels:  # Only add labels filter if specified
+            payload["labels"] = labels
+        response = requests.post(
+            N8N_ISSUES_WEBHOOK,
+            json=payload,
+            headers={"Content-Type": "application/json"},
+            timeout=30,
+        )
+        response.raise_for_status()
+        return response.json()
+    except requests.RequestException as e:
+        return {"success": False, "error": str(e), "count": 0, "issues": []}
+
+
+def issues_view(user_id: str):
+    """Display open issues from audierne2026/participons repository."""
+
+    st.subheader("🗳️ Participations Citoyennes")
+    st.markdown(
+        "Contributions de la communauté sur [audierne2026/participons](https://github.com/audierne2026/participons)"
+    )
+
+    # Filters
+    col1, col2, col3 = st.columns([2, 2, 1])
+
+    with col1:
+        state_filter = st.selectbox(
+            "Statut",
+            options=["open", "closed", "all"],
+            format_func=lambda x: {
+                "open": "🟢 Ouvertes",
+                "closed": "🔴 Fermées",
+                "all": "📋 Toutes",
+            }[x],
+        )
+
+    with col2:
+        label_filter = st.selectbox(
+            "Catégorie",
+            options=CATEGORY_LABELS,
+            format_func=lambda x: "📋 Toutes" if x == "" else x.capitalize(),
+        )
+
+    with col3:
+        if st.button("🔄 Actualiser"):
+            st.cache_data.clear()
+
+    st.markdown("---")
+
+    # Fetch issues
+    with st.spinner("Chargement des contributions..."):
+        data = _fetch_issues(state=state_filter, labels=label_filter)
+
+    if not data.get("success"):
+        st.error(f"Erreur lors du chargement : {data.get('error', 'Erreur inconnue')}")
+        return
+
+    issues = data.get("issues", [])
+    count = data.get("count", 0)
+
+    # Stats
+    st.metric("Contributions trouvées", count)
+
+    if not issues:
+        st.info("Aucune contribution trouvée avec ces critères.")
+        return
+
+    # Category color mapping
+    category_colors = {
+        "economie": "🔵",
+        "logement": "🟠",
+        "culture": "🟣",
+        "ecologie": "🟢",
+        "associations": "🟡",
+        "jeunesse": "🔴",
+        "alimentation-bien-etre-soins": "🩷",
+    }
+
+    # Display issues
+    for issue in issues:
+        category = issue.get("category")
+        category_icon = category_colors.get(category, "⚪")
+        has_charte = issue.get("has_conforme_charte", False)
+        charte_badge = "✅" if has_charte else ""
+
+        with st.expander(
+            f"{category_icon} {issue.get('title', 'Sans titre')} {charte_badge}",
+            expanded=False,
+        ):
+            # Metadata row
+            meta_col1, meta_col2, meta_col3 = st.columns(3)
+            with meta_col1:
+                st.caption(f"**#{issue.get('id')}** par {issue.get('user', 'inconnu')}")
+            with meta_col2:
+                if category:
+                    st.caption(f"📁 {category.capitalize()}")
+            with meta_col3:
+                if has_charte:
+                    st.caption("✅ Conforme à la charte")
+
+            # Labels
+            labels = issue.get("labels", [])
+            if labels:
+                st.markdown(" ".join([f"`{label}`" for label in labels]))
+
+            # Body
+            body = issue.get("body", "")
+            if body:
+                st.markdown(body[:500] + ("..." if len(body) > 500 else ""))
+
+            # Link
+            html_url = issue.get("html_url")
+            if html_url:
+                st.markdown(f"[Voir sur GitHub]({html_url})")
 
 
 def documents_view(user_id: str):
