@@ -2,12 +2,23 @@
 Opik Tracing Integration
 
 Provides decorators and utilities for tracing agent operations with Opik (Comet ML).
+
+Configuration:
+    OPIK_API_KEY: API key for Opik/Comet
+    OPIK_WORKSPACE: Workspace name (e.g., "ocapistaine-dev")
+    OPIK_PROJECT: Project name (e.g., "ocapistaine")
+
+Structure:
+    Project: ocapistaine (all agents share this)
+    └── Experiments: forseti-validation, forseti-classification, etc.
+    └── Datasets: charter-evaluation (for optimization studio)
 """
 
 import os
 import functools
 from typing import Any, Callable, TypeVar
 from dataclasses import dataclass, field
+from datetime import datetime
 
 F = TypeVar("F", bound=Callable[..., Any])
 
@@ -29,6 +40,15 @@ class AgentTracer:
 
     Provides automatic tracing of agent feature executions.
     Gracefully degrades if Opik is not configured.
+
+    Usage:
+        tracer = AgentTracer(project="ocapistaine")
+        tracer.trace_validation(...)
+
+    Experiments:
+        tracer.start_experiment("forseti-validation")
+        # ... run validations ...
+        tracer.end_experiment()
     """
 
     def __init__(
@@ -47,6 +67,8 @@ class AgentTracer:
         """
         self.enabled = False
         self._client = None
+        self._project = None
+        self._current_experiment = None
 
         try:
             import opik
@@ -56,13 +78,64 @@ class AgentTracer:
                 return
 
             ws = workspace or os.getenv("OPIK_WORKSPACE")
+            proj = project or os.getenv("OPIK_PROJECT", "ocapistaine")
+
+            # Configure Opik with workspace
             opik.configure(api_key=key, workspace=ws)
 
-            self._client = opik.Opik()
-            self._project = project or os.getenv("OPIK_PROJECT", "forseti")
+            self._client = opik.Opik(project_name=proj)
+            self._project = proj
+            self._opik_module = opik
             self.enabled = True
-        except Exception:
-            pass
+
+        except Exception as e:
+            print(f"OPIK: Failed to initialize: {e}")
+
+    @property
+    def project(self) -> str | None:
+        """Get current project name."""
+        return self._project
+
+    def start_experiment(
+        self,
+        name: str,
+        description: str | None = None,
+        metadata: dict | None = None,
+    ) -> str | None:
+        """
+        Start a new experiment for batch evaluation.
+
+        Args:
+            name: Experiment name (e.g., "forseti-validation-2026-01-21")
+            description: Optional description
+            metadata: Optional metadata dict
+
+        Returns:
+            Experiment ID if successful, None otherwise
+        """
+        if not self.enabled or not self._client:
+            return None
+
+        try:
+            # Create timestamped experiment name if not unique
+            exp_name = f"{name}-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+
+            # Opik experiments are created via the evaluate() function
+            # For manual experiments, we track via metadata
+            self._current_experiment = {
+                "name": exp_name,
+                "description": description,
+                "metadata": metadata or {},
+                "started_at": datetime.now().isoformat(),
+            }
+            return exp_name
+        except Exception as e:
+            print(f"OPIK: Failed to start experiment: {e}")
+            return None
+
+    def end_experiment(self) -> None:
+        """End the current experiment."""
+        self._current_experiment = None
 
     def trace(
         self,
@@ -71,7 +144,7 @@ class AgentTracer:
         output: dict,
         metadata: dict | None = None,
         tags: list[str] | None = None,
-    ) -> None:
+    ) -> str | None:
         """
         Record a trace.
 
@@ -81,38 +154,51 @@ class AgentTracer:
             output: Output data dict.
             metadata: Optional metadata dict.
             tags: Optional list of tags.
+
+        Returns:
+            Trace ID if successful, None otherwise
         """
         if not self.enabled or not self._client:
-            return
+            return None
 
         try:
-            self._client.trace(
+            # Add experiment info to metadata if active
+            meta = metadata or {}
+            if self._current_experiment:
+                meta["experiment"] = self._current_experiment["name"]
+
+            trace = self._client.trace(
                 name=name,
                 input=input,
                 output=output,
-                metadata=metadata or {},
+                metadata=meta,
                 tags=tags or [],
             )
-        except Exception:
-            pass
+            return trace.id if hasattr(trace, 'id') else None
+        except Exception as e:
+            print(f"OPIK: Failed to trace: {e}")
+            return None
 
     def trace_validation(
         self,
         issue_data: dict,
         validation_result: dict,
         category_result: dict,
-    ) -> None:
+        agent_name: str = "forseti",
+    ) -> str | None:
         """
         Trace a charter validation operation.
-
-        Compatibility method matching the original OpikTracer.trace_validation.
 
         Args:
             issue_data: Dict with title, body, category.
             validation_result: Dict with is_valid, violations, encouraged_aspects, etc.
             category_result: Dict with category, confidence, reasoning.
+            agent_name: Name of the agent performing validation.
+
+        Returns:
+            Trace ID if successful, None otherwise
         """
-        self.trace(
+        return self.trace(
             name="charter_validation",
             input={
                 "title": issue_data.get("title"),
@@ -126,12 +212,13 @@ class AgentTracer:
                 "category": category_result.get("category"),
             },
             metadata={
+                "agent": agent_name,
                 "charter_confidence": validation_result.get("confidence"),
                 "category_confidence": category_result.get("confidence"),
                 "charter_reasoning": validation_result.get("reasoning"),
                 "category_reasoning": category_result.get("reasoning"),
             },
-            tags=["forseti", "validation"],
+            tags=[agent_name, "validation", "charter"],
         )
 
     def trace_feature(
@@ -139,8 +226,9 @@ class AgentTracer:
         feature_name: str,
         input_data: dict,
         output_data: dict,
+        agent_name: str = "forseti",
         metadata: dict | None = None,
-    ) -> None:
+    ) -> str | None:
         """
         Trace a feature execution.
 
@@ -148,40 +236,156 @@ class AgentTracer:
             feature_name: Name of the feature.
             input_data: Feature input.
             output_data: Feature output.
+            agent_name: Name of the agent.
             metadata: Optional metadata.
+
+        Returns:
+            Trace ID if successful, None otherwise
         """
-        self.trace(
-            name=f"feature_{feature_name}",
+        meta = metadata or {}
+        meta["agent"] = agent_name
+        meta["feature"] = feature_name
+
+        return self.trace(
+            name=f"feature:{feature_name}",
             input=input_data,
             output=output_data,
-            metadata=metadata or {},
-            tags=["forseti", "feature", feature_name],
+            metadata=meta,
+            tags=[agent_name, "feature", feature_name],
         )
+
+    def create_dataset(
+        self,
+        name: str,
+        description: str | None = None,
+    ) -> Any | None:
+        """
+        Create or get a dataset for evaluation/optimization.
+
+        Datasets can be used with Opik's optimization studio for:
+        - Charter rule optimization
+        - Prompt tuning
+        - Model comparison
+
+        Args:
+            name: Dataset name (e.g., "charter-evaluation")
+            description: Optional description
+
+        Returns:
+            Dataset object if successful, None otherwise
+        """
+        if not self.enabled or not self._client:
+            return None
+
+        try:
+            dataset = self._client.get_or_create_dataset(
+                name=name,
+                description=description or f"Dataset for {name}",
+            )
+            return dataset
+        except Exception as e:
+            print(f"OPIK: Failed to create dataset: {e}")
+            return None
+
+    def add_to_dataset(
+        self,
+        dataset_name: str,
+        items: list[dict],
+    ) -> bool:
+        """
+        Add items to a dataset for evaluation.
+
+        Args:
+            dataset_name: Name of the dataset
+            items: List of dicts with 'input' and optionally 'expected_output'
+
+        Returns:
+            True if successful, False otherwise
+        """
+        if not self.enabled or not self._client:
+            return False
+
+        try:
+            dataset = self._client.get_or_create_dataset(name=dataset_name)
+            dataset.insert(items)
+            return True
+        except Exception as e:
+            print(f"OPIK: Failed to add to dataset: {e}")
+            return False
+
+    def log_feedback(
+        self,
+        trace_id: str,
+        score: float,
+        feedback_type: str = "user_rating",
+        comment: str | None = None,
+    ) -> bool:
+        """
+        Log feedback/score for a trace (for optimization studio).
+
+        Args:
+            trace_id: ID of the trace to score
+            score: Score value (0.0 to 1.0)
+            feedback_type: Type of feedback
+            comment: Optional comment
+
+        Returns:
+            True if successful, False otherwise
+        """
+        if not self.enabled or not self._client:
+            return False
+
+        try:
+            score_data = {"name": feedback_type, "value": score}
+            if comment:
+                score_data["reason"] = comment
+
+            self._client.log_traces_feedback(
+                trace_ids=[trace_id],
+                scores=[score_data],
+            )
+            return True
+        except Exception as e:
+            print(f"OPIK: Failed to log feedback: {e}")
+            return False
 
 
 # Global tracer instance (lazy initialized)
 _tracer: AgentTracer | None = None
 
 
-def get_tracer() -> AgentTracer:
-    """Get or create the global tracer instance."""
+def get_tracer(
+    project: str | None = None,
+    force_new: bool = False,
+) -> AgentTracer:
+    """
+    Get or create the global tracer instance.
+
+    Args:
+        project: Optional project name override
+        force_new: If True, create a new tracer even if one exists
+
+    Returns:
+        AgentTracer instance
+    """
     global _tracer
-    if _tracer is None:
-        _tracer = AgentTracer()
+    if _tracer is None or force_new:
+        _tracer = AgentTracer(project=project)
     return _tracer
 
 
-def trace_feature(feature_name: str) -> Callable[[F], F]:
+def trace_feature(feature_name: str, agent_name: str = "forseti") -> Callable[[F], F]:
     """
     Decorator to trace a feature execution.
 
     Usage:
-        @trace_feature("charter_validation")
+        @trace_feature("charter_validation", agent_name="forseti")
         async def execute(self, provider, system_prompt, **kwargs):
             ...
 
     Args:
         feature_name: Name of the feature being traced.
+        agent_name: Name of the agent.
 
     Returns:
         Decorated function that traces input/output.
@@ -216,6 +420,7 @@ def trace_feature(feature_name: str) -> Callable[[F], F]:
                     feature_name=feature_name,
                     input_data=input_data,
                     output_data=output_data,
+                    agent_name=agent_name,
                 )
 
                 return result
@@ -224,6 +429,7 @@ def trace_feature(feature_name: str) -> Callable[[F], F]:
                     feature_name=feature_name,
                     input_data=input_data,
                     output_data={"error": str(e)},
+                    agent_name=agent_name,
                     metadata={"status": "error"},
                 )
                 raise
