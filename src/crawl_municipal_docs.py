@@ -12,6 +12,7 @@ def crawl_data_source(
     source: DataSource,
     manager: FirecrawlManager,
     mode: str = "scrape",
+    formats: list[str] = ["markdown", "html"],
     max_pages: int = 100,
 ) -> bool:
     """
@@ -41,6 +42,7 @@ def crawl_data_source(
             manager.scrape_url(
                 url=source.url,
                 output_dir=source.output_dir,
+                formats=formats,
                 **FIRECRAWL_CONFIG,
             )
         else:  # crawl

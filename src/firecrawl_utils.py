@@ -6,7 +6,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 from dotenv import load_dotenv
-from firecrawl import FirecrawlApp
+from firecrawl import Firecrawl
 
 load_dotenv()
 FIRECRAWL_API_KEY_ENV = os.getenv("FIRECRAWL_API_KEY")
@@ -23,7 +23,7 @@ class FirecrawlManager:
             api_key: Firecrawl API key. If None, will use FIRECRAWL_API_KEY env var.
         """
 
-        self.app = FirecrawlApp(api_key=api_key) if api_key else FirecrawlApp()
+        self.app = Firecrawl(api_key=api_key) if api_key else Firecrawl()
         self.session_id = datetime.now().strftime("%Y%m%d_%H%M%S")
 
     def scrape_url(
@@ -32,7 +32,7 @@ class FirecrawlManager:
         output_dir: Path,
         formats: list[str] | None = None,
         **kwargs,
-    ) -> dict[str, Any]:
+    ) -> Any:
         """
         Scrape a single URL with Firecrawl.
 
@@ -50,7 +50,7 @@ class FirecrawlManager:
 
         try:
             print(f"🔥 Scraping: {url}")
-            result = self.app.scrape_url(url, params={"formats": formats, **kwargs})
+            result = self.app.scrape(url, formats=formats, **kwargs)
 
             # Save results
             self._save_scrape_result(result, output_dir, url)
@@ -91,7 +91,8 @@ class FirecrawlManager:
                 **kwargs,
             }
 
-            result = self.app.crawl_url(url, params=crawl_params, wait_until_done=True)
+            result = self.app.crawl(url, params=crawl_params, wait_until_done=True)
+
 
             # Save results
             self._save_crawl_result(result, output_dir, url)
@@ -107,7 +108,7 @@ class FirecrawlManager:
             raise
 
     def _save_scrape_result(
-        self, result: dict[str, Any], output_dir: Path, url: str
+        self, result: Any, output_dir: Path, url: str
     ) -> None:
         """Save scrape result to disk."""
         output_dir.mkdir(parents=True, exist_ok=True)
@@ -116,18 +117,26 @@ class FirecrawlManager:
         filename = self._url_to_filename(url)
 
         # Save markdown if available
-        if "markdown" in result:
+        if hasattr(result, "markdown") and result.markdown:
             md_path = output_dir / f"{filename}.md"
-            md_path.write_text(result["markdown"], encoding="utf-8")
+            md_path.write_text(result.markdown, encoding="utf-8")
 
         # Save HTML if available
-        if "html" in result:
+        if hasattr(result, "html") and result.html:
             html_path = output_dir / f"{filename}.html"
-            html_path.write_text(result["html"], encoding="utf-8")
+            html_path.write_text(result.html, encoding="utf-8")
 
         # Save complete JSON result with metadata
+        # Convert Document object to dict for JSON serialization
         json_path = output_dir / f"{filename}_metadata.json"
-        json_path.write_text(json.dumps(result, indent=2, ensure_ascii=False))
+        metadata_dict = {
+            "url": url,
+            "markdown": result.markdown if hasattr(result, "markdown") else None,
+            "html": result.html if hasattr(result, "html") else None,
+            "metadata": result.metadata.__dict__ if hasattr(result, "metadata") else None,
+            "links": result.links if hasattr(result, "links") else None,
+        }
+        json_path.write_text(json.dumps(metadata_dict, indent=2, ensure_ascii=False))
 
     def _save_crawl_result(
         self, result: dict[str, Any], output_dir: Path, base_url: str

@@ -52,11 +52,10 @@ DATA_SOURCES = [
 
 # Firecrawl configuration
 FIRECRAWL_CONFIG = {
-    "formats": ["markdown", "html"],
-    "onlyMainContent": True,
-    "includeTags": ["article", "main", "div.content"],
-    "excludeTags": ["nav", "footer", "header", "aside"],
-    "waitFor": 2000,  # Wait 2 seconds for dynamic content
+    "only_main_content": True,
+    "include_tags": ["article", "main", "div.content"],
+    "exclude_tags": ["nav", "footer", "header", "aside"],
+    "wait_for": 2000,  # Wait 2 seconds for dynamic content
 }
 
 # OCR configuration (placeholder for future implementation)
