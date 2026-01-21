@@ -47,7 +47,8 @@ PROVIDERS = {
         "name": "Ollama (local)",
         "models": {
             "mistral": "mistral:latest",
-            "llama3": "llama3:latest",
+            "llama3.2": "llama3.2:latest",
+            "orca-mini": "orca-mini:latest",
         },
         "default": "mistral",
     },
@@ -255,7 +256,8 @@ def get_model_id() -> str:
     elif provider == "ollama":
         model_map = {
             "mistral": "mistral:latest",
-            "llama3": "llama3:latest",
+            "llama3.2": "llama3.2:latest",
+            "orca-mini": "orca-mini:latest",
         }
         return model_map.get(model_key, "mistral:latest")
 

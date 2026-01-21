@@ -8,6 +8,7 @@ from typing import Literal
 
 from .base import LLMProvider, Message, CompletionResponse
 from .config import ProviderConfig, get_config, GEMINI_MODELS
+from .logging import get_provider_logger, ProviderLogger, get_logger
 from .gemini import GeminiProvider
 from .claude import ClaudeProvider
 from .mistral import MistralProvider
@@ -26,6 +27,9 @@ __all__ = [
     "MistralProvider",
     "OllamaProvider",
     "get_provider",
+    "get_provider_logger",
+    "ProviderLogger",
+    "get_logger",
 ]
 
 
