@@ -10,13 +10,16 @@ Configuration:
 
 Structure:
     Project: ocapistaine (all agents share this)
+    └── Traces: Full validation operations
+        └── Spans: Individual steps (charter_validation, category_classification)
     └── Experiments: forseti-validation, forseti-classification, etc.
     └── Datasets: charter-evaluation (for optimization studio)
 """
 
 import os
 import functools
-from typing import Any, Callable, TypeVar
+from contextlib import contextmanager
+from typing import Any, Callable, TypeVar, Generator
 from dataclasses import dataclass, field
 from datetime import datetime
 
@@ -32,6 +35,18 @@ class TraceContext:
     output: dict = field(default_factory=dict)
     metadata: dict = field(default_factory=dict)
     tags: list[str] = field(default_factory=list)
+
+
+class DummySpan:
+    """Dummy span for when Opik is disabled."""
+
+    def update(self, **kwargs) -> None:
+        """No-op update."""
+        pass
+
+    def end(self, **kwargs) -> None:
+        """No-op end."""
+        pass
 
 
 class AgentTracer:
@@ -69,6 +84,8 @@ class AgentTracer:
         self._client = None
         self._project = None
         self._current_experiment = None
+        self._current_trace = None
+        self._opik_module = None
 
         try:
             import opik
@@ -178,6 +195,93 @@ class AgentTracer:
         except Exception as e:
             print(f"OPIK: Failed to trace: {e}")
             return None
+
+    @contextmanager
+    def start_trace(
+        self,
+        name: str,
+        input: dict | None = None,
+        metadata: dict | None = None,
+        tags: list[str] | None = None,
+    ) -> Generator[Any, None, None]:
+        """
+        Start a trace context for grouping spans.
+
+        Usage:
+            with tracer.start_trace("validate", input={...}) as trace:
+                with tracer.span("step1", input={...}) as span:
+                    ...
+                    span.update(output={...})
+
+        Args:
+            name: Trace name
+            input: Input data
+            metadata: Optional metadata
+            tags: Optional tags
+
+        Yields:
+            Trace object (or None if disabled)
+        """
+        if not self.enabled or not self._client:
+            yield None
+            return
+
+        try:
+            trace = self._client.trace(
+                name=name,
+                input=input or {},
+                metadata=metadata or {},
+                tags=tags or [],
+            )
+            self._current_trace = trace
+            yield trace
+        except Exception as e:
+            print(f"OPIK: Failed to start trace: {e}")
+            yield None
+        finally:
+            self._current_trace = None
+
+    @contextmanager
+    def span(
+        self,
+        name: str,
+        input: dict | None = None,
+        metadata: dict | None = None,
+        span_type: str = "general",
+    ) -> Generator[Any, None, None]:
+        """
+        Create a span within the current trace.
+
+        Usage:
+            with tracer.start_trace("validate") as trace:
+                with tracer.span("charter_check", input={...}) as span:
+                    result = do_validation()
+                    span.update(output=result)
+
+        Args:
+            name: Span name
+            input: Input data
+            metadata: Optional metadata
+            span_type: Type of span ("general", "llm", "tool")
+
+        Yields:
+            Span object with update() method (or DummySpan if disabled)
+        """
+        if not self.enabled or not self._current_trace:
+            yield DummySpan()
+            return
+
+        try:
+            span = self._current_trace.span(
+                name=name,
+                input=input or {},
+                metadata=metadata or {},
+                type=span_type,
+            )
+            yield span
+        except Exception as e:
+            print(f"OPIK: Failed to create span: {e}")
+            yield DummySpan()
 
     def trace_validation(
         self,

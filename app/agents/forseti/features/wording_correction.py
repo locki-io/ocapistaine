@@ -5,7 +5,6 @@ Suggests improvements to contribution wording for clarity and constructiveness.
 """
 
 from app.providers import LLMProvider
-from app.agents.tracing import trace_feature
 
 from ..models import WordingResult
 from ..prompts import WORDING_CORRECTION_PROMPT
@@ -32,7 +31,6 @@ class WordingCorrectionFeature(FeatureBase):
     def prompt(self) -> str:
         return WORDING_CORRECTION_PROMPT
 
-    @trace_feature("wording_correction")
     async def execute(
         self,
         provider: LLMProvider,
