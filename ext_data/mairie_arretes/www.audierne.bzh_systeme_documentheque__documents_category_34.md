@@ -8,7 +8,7 @@ Resolution approving amendment no. 2
 - 4 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2025-073_approbation_modification2_plu-tampon.pdf "Consulter Délibération d'approbation de la modification n°2 - Français - PDF - 4 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2025-073_approbation_modification2_plu-tampon.pdf "Télécharger Délibération d'approbation de la modification n°2 - Français - PDF - 4 Mo")[View Resolution approving amendment no. 2 - French - PDF - 4 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2025-073_approbation_modification2_plu-tampon.pdf "View Resolution approving amendment no. 2 - French - PDF - 4 MB (opens in a new tab)")[Download Resolution approving amendment no. 2 - French - PDF - 4 MB](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2025-073_approbation_modification2_plu-tampon.pdf "Download Resolution approving amendment no. 2 - French - PDF - 4 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2025-073_approbation_modification2_plu-tampon.pdf "View Resolution approving amendment no. 2 - French - PDF - 4 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2025-073_approbation_modification2_plu-tampon.pdf "Download Resolution approving amendment no. 2 - French - PDF - 4 MB")[View Resolution approving amendment no. 2 - French - PDF - 4 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2025-073_approbation_modification2_plu-tampon.pdf "View Resolution approving amendment no. 2 - French - PDF - 4 MB (opens in a new tab)")[Download Resolution approving amendment no. 2 - French - PDF - 4 MB](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2025-073_approbation_modification2_plu-tampon.pdf "Download Resolution approving amendment no. 2 - French - PDF - 4 MB")
 
 Amendment to the Local Urban Development Plan No. 2
 
@@ -20,7 +20,7 @@ Notice of presentation of amendment no. 2
 - 16 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/07/RP_AUDIERNE_M2_062025.pdf "Consulter Notice de présentation de la modification n°2 - Français - PDF - 16 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/07/RP_AUDIERNE_M2_062025.pdf "Télécharger Notice de présentation de la modification n°2 - Français - PDF - 16 Mo")[Consult the presentation notice for amendment no. 2 - French - PDF - 16 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/07/RP_AUDIERNE_M2_062025.pdf "Consult the presentation notice for amendment no. 2 - French - PDF - 16 MB (new tab)")[Download the presentation notice for amendment no. 2 - French - PDF - 16 MB](https://www.audierne.bzh/wp-content/uploads/2025/07/RP_AUDIERNE_M2_062025.pdf "Download the presentation notice for amendment no. 2 - French - PDF - 16 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/07/RP_AUDIERNE_M2_062025.pdf "Consult the presentation notice for amendment no. 2 - French - PDF - 16 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/07/RP_AUDIERNE_M2_062025.pdf "Download the presentation notice for amendment no. 2 - French - PDF - 16 MB")[Consult the presentation notice for amendment no. 2 - French - PDF - 16 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/07/RP_AUDIERNE_M2_062025.pdf "Consult the presentation notice for amendment no. 2 - French - PDF - 16 MB (new tab)")[Download the presentation notice for amendment no. 2 - French - PDF - 16 MB](https://www.audierne.bzh/wp-content/uploads/2025/07/RP_AUDIERNE_M2_062025.pdf "Download the presentation notice for amendment no. 2 - French - PDF - 16 MB")
 
 Amendment to the Local Urban Development Plan No. 2
 
@@ -32,7 +32,7 @@ Public inquiry report of the investigating commissioner - part 1
 - 23 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/05/1-Rapport_partie_1_Audierne_VF.pdf "Consulter Rapport d'enquête publique de la commissaire enquêtrice - partie 1 - Français - PDF - 23 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/05/1-Rapport_partie_1_Audierne_VF.pdf "Télécharger Rapport d'enquête publique de la commissaire enquêtrice - partie 1 - Français - PDF - 23 Mo")[Consult the Public Inquiry Report of the Inquiry Commissioner - Part 1 - French - PDF - 23 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/05/1-Rapport_partie_1_Audierne_VF.pdf "Consult the Public Inquiry Report of the Inquiry Commissioner - Part 1 - French - PDF - 23 MB (opens in a new tab)")[Download Public Inquiry Report of the Inquiry Commissioner - Part 1 - French - PDF - 23 MB](https://www.audierne.bzh/wp-content/uploads/2025/05/1-Rapport_partie_1_Audierne_VF.pdf "Download Public Inquiry Report of the Inquiry Commissioner - Part 1 - French - PDF - 23 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/05/1-Rapport_partie_1_Audierne_VF.pdf "Consult the Public Inquiry Report of the Inquiry Commissioner - Part 1 - French - PDF - 23 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/05/1-Rapport_partie_1_Audierne_VF.pdf "Download Public Inquiry Report of the Inquiry Commissioner - Part 1 - French - PDF - 23 MB")[Consult the Public Inquiry Report of the Inquiry Commissioner - Part 1 - French - PDF - 23 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/05/1-Rapport_partie_1_Audierne_VF.pdf "Consult the Public Inquiry Report of the Inquiry Commissioner - Part 1 - French - PDF - 23 MB (opens in a new tab)")[Download Public Inquiry Report of the Inquiry Commissioner - Part 1 - French - PDF - 23 MB](https://www.audierne.bzh/wp-content/uploads/2025/05/1-Rapport_partie_1_Audierne_VF.pdf "Download Public Inquiry Report of the Inquiry Commissioner - Part 1 - French - PDF - 23 MB")
 
 Amendment to the Local Urban Development Plan No. 2
 
@@ -44,7 +44,7 @@ Public inquiry report of the investigating commissioner - part 2
 - 1 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/05/2-Conclusions_Avis_Partie_2_Audierne.pdf "Consulter Rapport d'enquête publique de la commissaire enquêtrice - partie 2 - Français - PDF - 1 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/05/2-Conclusions_Avis_Partie_2_Audierne.pdf "Télécharger Rapport d'enquête publique de la commissaire enquêtrice - partie 2 - Français - PDF - 1 Mo")[Consult the Public Inquiry Report of the Inquiry Commissioner - Part 2 - French - PDF - 1 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/05/2-Conclusions_Avis_Partie_2_Audierne.pdf "Consult the Public Inquiry Report of the Inquiry Commissioner - Part 2 - French - PDF - 1 MB (opens in a new tab)")[Download Public Inquiry Report of the Inquiry Commissioner - Part 2 - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/05/2-Conclusions_Avis_Partie_2_Audierne.pdf "Download Public Inquiry Report of the Inquiry Commissioner - Part 2 - French - PDF - 1 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/05/2-Conclusions_Avis_Partie_2_Audierne.pdf "Consult the Public Inquiry Report of the Inquiry Commissioner - Part 2 - French - PDF - 1 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/05/2-Conclusions_Avis_Partie_2_Audierne.pdf "Download Public Inquiry Report of the Inquiry Commissioner - Part 2 - French - PDF - 1 MB")[Consult the Public Inquiry Report of the Inquiry Commissioner - Part 2 - French - PDF - 1 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/05/2-Conclusions_Avis_Partie_2_Audierne.pdf "Consult the Public Inquiry Report of the Inquiry Commissioner - Part 2 - French - PDF - 1 MB (opens in a new tab)")[Download Public Inquiry Report of the Inquiry Commissioner - Part 2 - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/05/2-Conclusions_Avis_Partie_2_Audierne.pdf "Download Public Inquiry Report of the Inquiry Commissioner - Part 2 - French - PDF - 1 MB")
 
 Amendment to the Local Urban Development Plan No. 2
 
@@ -56,7 +56,7 @@ Appendix - Resolution No. 2 for amendment of the Local Urban Development Plan (P
 - 941 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-119_modification_plu2_bilan_concertation_annexe-tampon-1.pdf "Consulter Annexe - Délibération de  modification de droit commun n°2 du PLU - Français - PDF - 941 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-119_modification_plu2_bilan_concertation_annexe-tampon-1.pdf "Télécharger Annexe - Délibération de  modification de droit commun n°2 du PLU - Français - PDF - 941 Ko")[Consult Appendix - Resolution No. 2 for amendment of the Local Urban Development Plan (PLU) - French - PDF - 941 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-119_modification_plu2_bilan_concertation_annexe-tampon-1.pdf "Consult Appendix - Resolution No. 2 for amendment of the Local Urban Development Plan (PLU) - French - PDF - 941 KB (new tab)")[Download Appendix - Resolution No. 2 for amendment of the Local Urban Development Plan (PLU) - French - PDF - 941 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-119_modification_plu2_bilan_concertation_annexe-tampon-1.pdf "Download Appendix - Resolution No. 2 for amendment of the Local Urban Development Plan (PLU) - French - PDF - 941 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-119_modification_plu2_bilan_concertation_annexe-tampon-1.pdf "Consult Appendix - Resolution No. 2 for amendment of the Local Urban Development Plan (PLU) - French - PDF - 941 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-119_modification_plu2_bilan_concertation_annexe-tampon-1.pdf "Download Appendix - Resolution No. 2 for amendment of the Local Urban Development Plan (PLU) - French - PDF - 941 KB")[Consult Appendix - Resolution No. 2 for amendment of the Local Urban Development Plan (PLU) - French - PDF - 941 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-119_modification_plu2_bilan_concertation_annexe-tampon-1.pdf "Consult Appendix - Resolution No. 2 for amendment of the Local Urban Development Plan (PLU) - French - PDF - 941 KB (new tab)")[Download Appendix - Resolution No. 2 for amendment of the Local Urban Development Plan (PLU) - French - PDF - 941 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-119_modification_plu2_bilan_concertation_annexe-tampon-1.pdf "Download Appendix - Resolution No. 2 for amendment of the Local Urban Development Plan (PLU) - French - PDF - 941 KB")
 
 Text transcription
 
@@ -73,7 +73,7 @@ Resolution No. 2 for amendment of the Local Urban Development Plan (PLU)
 - 2 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-119_modification_plu2_bilan_concertation-tampon-1.pdf "Consulter Délibération de  modification de droit commun n°2 du PLU - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-119_modification_plu2_bilan_concertation-tampon-1.pdf "Télécharger Délibération de  modification de droit commun n°2 du PLU - Français - PDF - 2 Mo")[Consult the deliberation regarding the amendment of the Local Urban Development Plan (PLU) under general law no. 2 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-119_modification_plu2_bilan_concertation-tampon-1.pdf "Consult the deliberation regarding the amendment of the Local Urban Development Plan (PLU) under general law no. 2 - French - PDF - 2 MB (new tab)")[Download Resolution No. 2 amending the Local Urban Development Plan (PLU) - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-119_modification_plu2_bilan_concertation-tampon-1.pdf "Download Resolution No. 2 amending the Local Urban Development Plan (PLU) - French - PDF - 2 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-119_modification_plu2_bilan_concertation-tampon-1.pdf "Consult the deliberation regarding the amendment of the Local Urban Development Plan (PLU) under general law no. 2 - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-119_modification_plu2_bilan_concertation-tampon-1.pdf "Download Resolution No. 2 amending the Local Urban Development Plan (PLU) - French - PDF - 2 MB")[Consult the deliberation regarding the amendment of the Local Urban Development Plan (PLU) under general law no. 2 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-119_modification_plu2_bilan_concertation-tampon-1.pdf "Consult the deliberation regarding the amendment of the Local Urban Development Plan (PLU) under general law no. 2 - French - PDF - 2 MB (new tab)")[Download Resolution No. 2 amending the Local Urban Development Plan (PLU) - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-119_modification_plu2_bilan_concertation-tampon-1.pdf "Download Resolution No. 2 amending the Local Urban Development Plan (PLU) - French - PDF - 2 MB")
 
 Text transcription
 
@@ -90,7 +90,7 @@ Mayor's order prescribing amendment no. 2 to the Local Urban Development Plan (P
 - 2 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/03/U2024-347-tampon.pdf "Consulter Arrêté du maire prescrivant la modification de droit commun n°2 du PLU - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/U2024-347-tampon.pdf "Télécharger Arrêté du maire prescrivant la modification de droit commun n°2 du PLU - Français - PDF - 2 Mo")[Consult the Mayor's Order prescribing amendment no. 2 to the Local Urban Development Plan (PLU) - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/U2024-347-tampon.pdf "Consult the Mayor's Order prescribing amendment no. 2 to the Local Urban Development Plan (PLU) - French - PDF - 2 MB (new tab)")[Download Mayor's Order Prescribing Amendment No. 2 to the Local Urban Development Plan (PLU) - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/U2024-347-tampon.pdf "Download Mayor's Order Prescribing Amendment No. 2 to the Local Urban Development Plan (PLU) - French - PDF - 2 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/U2024-347-tampon.pdf "Consult the Mayor's Order prescribing amendment no. 2 to the Local Urban Development Plan (PLU) - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/U2024-347-tampon.pdf "Download Mayor's Order Prescribing Amendment No. 2 to the Local Urban Development Plan (PLU) - French - PDF - 2 MB")[Consult the Mayor's Order prescribing amendment no. 2 to the Local Urban Development Plan (PLU) - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/U2024-347-tampon.pdf "Consult the Mayor's Order prescribing amendment no. 2 to the Local Urban Development Plan (PLU) - French - PDF - 2 MB (new tab)")[Download Mayor's Order Prescribing Amendment No. 2 to the Local Urban Development Plan (PLU) - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/U2024-347-tampon.pdf "Download Mayor's Order Prescribing Amendment No. 2 to the Local Urban Development Plan (PLU) - French - PDF - 2 MB")
 
 Text transcription
 
@@ -107,7 +107,7 @@ Resolution of October 16, 2024, establishing the procedures for consultation
 - 2 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-111_modification_2_plu_modalites_concertation-tampon.pdf "Consulter Délibération du 16 octobre 2024 fixant les modalités de la concertation - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-111_modification_2_plu_modalites_concertation-tampon.pdf "Télécharger Délibération du 16 octobre 2024 fixant les modalités de la concertation - Français - PDF - 2 Mo")[Consult the deliberation of October 16, 2024, setting out the terms of the consultation - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-111_modification_2_plu_modalites_concertation-tampon.pdf "Consult the deliberation of October 16, 2024, setting out the terms of the consultation - French - PDF - 2 MB (new tab)")[Download the deliberation of October 16, 2024, setting out the consultation procedures - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-111_modification_2_plu_modalites_concertation-tampon.pdf "Download the deliberation of October 16, 2024, setting out the consultation procedures - French - PDF - 2 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-111_modification_2_plu_modalites_concertation-tampon.pdf "Consult the deliberation of October 16, 2024, setting out the terms of the consultation - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-111_modification_2_plu_modalites_concertation-tampon.pdf "Download the deliberation of October 16, 2024, setting out the consultation procedures - French - PDF - 2 MB")[Consult the deliberation of October 16, 2024, setting out the terms of the consultation - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-111_modification_2_plu_modalites_concertation-tampon.pdf "Consult the deliberation of October 16, 2024, setting out the terms of the consultation - French - PDF - 2 MB (new tab)")[Download the deliberation of October 16, 2024, setting out the consultation procedures - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-111_modification_2_plu_modalites_concertation-tampon.pdf "Download the deliberation of October 16, 2024, setting out the consultation procedures - French - PDF - 2 MB")
 
 Text transcription
 
@@ -124,7 +124,7 @@ Resolution of October 16, 2024, informing of the points covered by this amendmen
 - 1 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-110_modification_2_plu_information_points_modification-tampon.pdf "Consulter Délibération du 16 octobre 2024 informant des points faisant l’objet de la présente modification - Français - PDF - 1 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-110_modification_2_plu_information_points_modification-tampon.pdf "Télécharger Délibération du 16 octobre 2024 informant des points faisant l’objet de la présente modification - Français - PDF - 1 Mo")[Consult the deliberation of October 16, 2024, informing of the points covered by this amendment - French - PDF - 1 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-110_modification_2_plu_information_points_modification-tampon.pdf "Consult the deliberation of October 16, 2024, informing of the points covered by this amendment - French - PDF - 1 MB (new tab)")[Download the deliberation of October 16, 2024, informing of the points covered by this amendment - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-110_modification_2_plu_information_points_modification-tampon.pdf "Download the deliberation of October 16, 2024, informing of the points covered by this amendment - French - PDF - 1 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-110_modification_2_plu_information_points_modification-tampon.pdf "Consult the deliberation of October 16, 2024, informing of the points covered by this amendment - French - PDF - 1 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-110_modification_2_plu_information_points_modification-tampon.pdf "Download the deliberation of October 16, 2024, informing of the points covered by this amendment - French - PDF - 1 MB")[Consult the deliberation of October 16, 2024, informing of the points covered by this amendment - French - PDF - 1 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-110_modification_2_plu_information_points_modification-tampon.pdf "Consult the deliberation of October 16, 2024, informing of the points covered by this amendment - French - PDF - 1 MB (new tab)")[Download the deliberation of October 16, 2024, informing of the points covered by this amendment - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-110_modification_2_plu_information_points_modification-tampon.pdf "Download the deliberation of October 16, 2024, informing of the points covered by this amendment - French - PDF - 1 MB")
 
 Text transcription
 
@@ -141,12 +141,46 @@ Resolution of October 16, 2024 indicating the completion of an environmental ass
 - 1 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-112_modification_2_plu_evaluation_environnementale-tampon.pdf "Consulter Délibération du 16 octobre 2024 indiquant la réalisation d’une évaluation environnementale - Français - PDF - 1 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-112_modification_2_plu_evaluation_environnementale-tampon.pdf "Télécharger Délibération du 16 octobre 2024 indiquant la réalisation d’une évaluation environnementale - Français - PDF - 1 Mo")[Consult the deliberation of October 16, 2024, indicating the completion of an environmental assessment - French - PDF - 1 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-112_modification_2_plu_evaluation_environnementale-tampon.pdf "Consult the deliberation of October 16, 2024, indicating the completion of an environmental assessment - French - PDF - 1 MB (new tab)")[Download the decision of October 16, 2024, indicating the completion of an environmental assessment - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-112_modification_2_plu_evaluation_environnementale-tampon.pdf "Download the decision of October 16, 2024, indicating the completion of an environmental assessment - French - PDF - 1 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-112_modification_2_plu_evaluation_environnementale-tampon.pdf "Consult the deliberation of October 16, 2024, indicating the completion of an environmental assessment - French - PDF - 1 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-112_modification_2_plu_evaluation_environnementale-tampon.pdf "Download the decision of October 16, 2024, indicating the completion of an environmental assessment - French - PDF - 1 MB")[Consult the deliberation of October 16, 2024, indicating the completion of an environmental assessment - French - PDF - 1 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-112_modification_2_plu_evaluation_environnementale-tampon.pdf "Consult the deliberation of October 16, 2024, indicating the completion of an environmental assessment - French - PDF - 1 MB (new tab)")[Download the decision of October 16, 2024, indicating the completion of an environmental assessment - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-112_modification_2_plu_evaluation_environnementale-tampon.pdf "Download the decision of October 16, 2024, indicating the completion of an environmental assessment - French - PDF - 1 MB")
 
 Text transcription
 
 
 Resolution of October 16, 2024 indicating the completion of an environmental assessment
+
+Amendment to the Local Urban Development Plan No. 2
+
+Resolution of September 18, 2024 for the opening to urbanization of zone 2AUL within the framework of the procedure for amendment no. 2 of the local urban plan
+
+- September 18, 2024
+- French
+- pdf
+- 2 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-090_ouverture_urbanisation_zone_2aul_camping_kerivoas-tampon-2.pdf "Consulter Délibération du 18 septembre 2024 pour l’ouverture à l’urbanisation de la zone 2AUL dans le cadre de la procédure de la modification n°2 du plan local d’urbanisme - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-090_ouverture_urbanisation_zone_2aul_camping_kerivoas-tampon-2.pdf "Télécharger Délibération du 18 septembre 2024 pour l’ouverture à l’urbanisation de la zone 2AUL dans le cadre de la procédure de la modification n°2 du plan local d’urbanisme - Français - PDF - 2 Mo")[Consult the deliberation of September 18, 2024, for the opening of zone 2AUL to urbanization within the framework of amendment no. 2 to the local urban development plan - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-090_ouverture_urbanisation_zone_2aul_camping_kerivoas-tampon-2.pdf "Consult the deliberation of September 18, 2024, for the opening of zone 2AUL to urbanization within the framework of amendment no. 2 to the local urban development plan - French - PDF - 2 MB (new tab)")[Download the deliberation of September 18, 2024, for opening zone 2AUL to urbanization within the framework of amendment no. 2 to the local urban development plan - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-090_ouverture_urbanisation_zone_2aul_camping_kerivoas-tampon-2.pdf "Download the deliberation of September 18, 2024, for opening zone 2AUL to urbanization within the framework of amendment no. 2 to the local urban development plan - French - PDF - 2 MB")
+
+Text transcription
+
+
+Resolution of September 18, 2024 for the opening to urbanization of zone 2AUL within the framework of the procedure for amendment no. 2 of the local urban plan
+
+Amendment to the Local Urban Development Plan No. 2
+
+Resolution of September 18, 2024, for the opening of zone 2AUL to urbanization within the framework of amendment no. 2 to the local urban development plan - annex
+
+- September 18, 2024
+- French
+- pdf
+- 2 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-090_ouverture_urbanisation_zone_2aul_camping_kerivoas_annexe-tampon-1.pdf "Consulter Délibération du 18 septembre 2024 pour l’ouverture à l’urbanisation de la zone 2AUL dans le cadre de la procédure de la modification n°2 du plan local d’urbanisme - annexe - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-090_ouverture_urbanisation_zone_2aul_camping_kerivoas_annexe-tampon-1.pdf "Télécharger Délibération du 18 septembre 2024 pour l’ouverture à l’urbanisation de la zone 2AUL dans le cadre de la procédure de la modification n°2 du plan local d’urbanisme - annexe - Français - PDF - 2 Mo")[Consult the deliberation of September 18, 2024, for the opening of zone 2AUL to urbanization within the framework of amendment no. 2 to the local urban development plan - annex - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-090_ouverture_urbanisation_zone_2aul_camping_kerivoas_annexe-tampon-1.pdf "Consult the deliberation of September 18, 2024, for the opening of zone 2AUL to urbanization within the framework of amendment no. 2 to the local urban development plan - annex - French - PDF - 2 MB (new tab)")[Download the resolution of September 18, 2024, for opening zone 2AUL to urbanization within the framework of amendment no. 2 to the local urban development plan - appendix - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2024-090_ouverture_urbanisation_zone_2aul_camping_kerivoas_annexe-tampon-1.pdf "Download the resolution of September 18, 2024, for opening zone 2AUL to urbanization within the framework of amendment no. 2 to the local urban development plan - appendix - French - PDF - 2 MB")
+
+Text transcription
+
+
+Resolution of September 18, 2024, for the opening of zone 2AUL to urbanization within the framework of amendment no. 2 to the local urban development plan - annex
 
 ![](https://www.audierne.bzh/wp-content/uploads/2021/02/documentheque-2-0x0-c-default.jpg)
 
@@ -677,13 +711,13 @@ Filter
 Reset
 
 
-You have viewed 10 out of 12 results
+You have viewed NaN12 results
 
 
 Show more
 
 
-- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=34# "Download the Document Library page as a PDF")
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=34# "Download the Document Library page as a PDF")
 - Print
 
 - Share

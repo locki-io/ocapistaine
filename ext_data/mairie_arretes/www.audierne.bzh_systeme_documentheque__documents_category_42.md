@@ -8,7 +8,7 @@ Application for authorization to construct, develop or modify a building open to
 - 816 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13824-04-2.pdf "Consult the application for authorization to construct, develop or modify a public establishment (Cerfa form 13824*04) - French - PDF - 816 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13824-04-2.pdf "Download Application for authorization to construct, develop or modify a public establishment Cerfa 13824*04 - French - PDF - 816 KB")[Consult the application for authorization to construct, develop or modify a public establishment (Cerfa form 13824*04) - French - PDF - 816 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13824-04-2.pdf "Consult the application for authorization to construct, develop or modify a public establishment (Cerfa form 13824*04) - French - PDF - 816 KB (new tab)")[Download Application for authorization to construct, develop or modify a public establishment Cerfa 13824*04 - French - PDF - 816 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13824-04-2.pdf "Download Application for authorization to construct, develop or modify a public establishment Cerfa 13824*04 - French - PDF - 816 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13824-04-2.pdf "Consulter Demande d’autorisation de construire, d’aménager ou de modifier un établissement recevant du public Cerfa 13824*04 - Français - PDF - 816 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13824-04-2.pdf "Télécharger Demande d’autorisation de construire, d’aménager ou de modifier un établissement recevant du public Cerfa 13824*04 - Français - PDF - 816 Ko")[Consult the application for authorization to construct, develop or modify a public establishment (Cerfa form 13824*04) - French - PDF - 816 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13824-04-2.pdf "Consult the application for authorization to construct, develop or modify a public establishment (Cerfa form 13824*04) - French - PDF - 816 KB (new tab)")[Download Application for authorization to construct, develop or modify a public establishment Cerfa 13824*04 - French - PDF - 816 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13824-04-2.pdf "Download Application for authorization to construct, develop or modify a public establishment Cerfa 13824*04 - French - PDF - 816 KB")
 
 Text transcription
 
@@ -544,13 +544,13 @@ Filter
 Reset
 
 
-You have viewed 1 result(s) out of
+You have viewed NaN result(s) out of
 1
 
 Show more
 
 
-- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=42# "Download the Document Library page as a PDF")
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=42# "Download the Document Library page as a PDF")
 - Print
 
 - Share

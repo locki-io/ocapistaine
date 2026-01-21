@@ -8,7 +8,7 @@ Resolution approving amendment no. 2
 - 4 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2025-073_approbation_modification2_plu-tampon.pdf "Consulter Délibération d'approbation de la modification n°2 - Français - PDF - 4 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2025-073_approbation_modification2_plu-tampon.pdf "Télécharger Délibération d'approbation de la modification n°2 - Français - PDF - 4 Mo")[View Resolution approving amendment no. 2 - French - PDF - 4 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2025-073_approbation_modification2_plu-tampon.pdf "View Resolution approving amendment no. 2 - French - PDF - 4 MB (opens in a new tab)")[Download Resolution approving amendment no. 2 - French - PDF - 4 MB](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2025-073_approbation_modification2_plu-tampon.pdf "Download Resolution approving amendment no. 2 - French - PDF - 4 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2025-073_approbation_modification2_plu-tampon.pdf "View Resolution approving amendment no. 2 - French - PDF - 4 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2025-073_approbation_modification2_plu-tampon.pdf "Download Resolution approving amendment no. 2 - French - PDF - 4 MB")[View Resolution approving amendment no. 2 - French - PDF - 4 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2025-073_approbation_modification2_plu-tampon.pdf "View Resolution approving amendment no. 2 - French - PDF - 4 MB (opens in a new tab)")[Download Resolution approving amendment no. 2 - French - PDF - 4 MB](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2025-073_approbation_modification2_plu-tampon.pdf "Download Resolution approving amendment no. 2 - French - PDF - 4 MB")
 
 Amendment to the Local Urban Development Plan No. 1
 
@@ -20,7 +20,7 @@ Resolution approving amendment no. 1
 - 4 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2024-004_approbation_modification_n%C2%B01_plu-tampon.pdf "Consulter Délibération d'approbation de la modification n°1 - Français - PDF - 4 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2024-004_approbation_modification_n%C2%B01_plu-tampon.pdf "Télécharger Délibération d'approbation de la modification n°1 - Français - PDF - 4 Mo")[View Resolution approving amendment no. 1 - French - PDF - 4 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2024-004_approbation_modification_n%C2%B01_plu-tampon.pdf "View Resolution approving amendment no. 1 - French - PDF - 4 MB (opens in a new tab)")[Download Resolution approving amendment no. 1 - French - PDF - 4 MB](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2024-004_approbation_modification_n%C2%B01_plu-tampon.pdf "Download Resolution approving amendment no. 1 - French - PDF - 4 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2024-004_approbation_modification_n%C2%B01_plu-tampon.pdf "View Resolution approving amendment no. 1 - French - PDF - 4 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2024-004_approbation_modification_n%C2%B01_plu-tampon.pdf "Télécharger Délibération d'approbation de la modification n°1 - Français - PDF - 4 Mo")[View Resolution approving amendment no. 1 - French - PDF - 4 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2024-004_approbation_modification_n%C2%B01_plu-tampon.pdf "View Resolution approving amendment no. 1 - French - PDF - 4 MB (opens in a new tab)")[Download Resolution approving amendment no. 1 - French - PDF - 4 MB](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2024-004_approbation_modification_n%C2%B01_plu-tampon.pdf "Download Resolution approving amendment no. 1 - French - PDF - 4 MB")
 
 Local Urban Development Plan (PLU)
 
@@ -631,13 +631,13 @@ Filter
 Reset
 
 
-You have viewed 7 out of 7 results
+You have viewed NaN7 results
 
 
 Show more
 
 
-- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=25# "Download the Document Library page as a PDF")
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=25# "Download the Document Library page as a PDF")
 - Print
 
 - Share

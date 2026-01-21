@@ -8,7 +8,7 @@ yellow\_storm\_27\_08\_2025 (1)
 - 91 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/08/jaune_orage_27_08_2025-1.pdf "Consulter jaune_orage_27_08_2025 (1) - Français - PDF - 91 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/08/jaune_orage_27_08_2025-1.pdf "Télécharger jaune_orage_27_08_2025 (1) - Français - PDF - 91 Ko")[View yellow_storm_27_08_2025 (1) - French - PDF - 91 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/08/jaune_orage_27_08_2025-1.pdf "View yellow_storm_27_08_2025 (1) - French - PDF - 91 KB (new tab)")[Download yellow_storm_27_08_2025 (1) - French - PDF - 91 KB](https://www.audierne.bzh/wp-content/uploads/2025/08/jaune_orage_27_08_2025-1.pdf "Download yellow_storm_27_08_2025 (1) - French - PDF - 91 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/08/jaune_orage_27_08_2025-1.pdf "View yellow_storm_27_08_2025 (1) - French - PDF - 91 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/08/jaune_orage_27_08_2025-1.pdf "Download yellow_storm_27_08_2025 (1) - French - PDF - 91 KB")[View yellow_storm_27_08_2025 (1) - French - PDF - 91 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/08/jaune_orage_27_08_2025-1.pdf "View yellow_storm_27_08_2025 (1) - French - PDF - 91 KB (new tab)")[Download yellow_storm_27_08_2025 (1) - French - PDF - 91 KB](https://www.audierne.bzh/wp-content/uploads/2025/08/jaune_orage_27_08_2025-1.pdf "Download yellow_storm_27_08_2025 (1) - French - PDF - 91 KB")
 
 Weather alerts
 
@@ -20,7 +20,7 @@ Yellow Alert for Coastal Flooding 26/08/2025
 - 144 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/08/25_08_2025_jaune_vsm_signe.pdf "Consulter Vigilance Jaune Vagues Submersion 26 / 08 /2025 - Français - PDF - 144 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/08/25_08_2025_jaune_vsm_signe.pdf "Télécharger Vigilance Jaune Vagues Submersion 26 / 08 /2025 - Français - PDF - 144 Ko")[Consult Yellow Alert for Coastal Flooding 26/08/2025 - French - PDF - 144 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/08/25_08_2025_jaune_vsm_signe.pdf "Consult Yellow Alert for Coastal Flooding 26/08/2025 - French - PDF - 144 KB (new tab)")[Download Yellow Alert for Coastal Flooding 26/08/2025 - French - PDF - 144 KB](https://www.audierne.bzh/wp-content/uploads/2025/08/25_08_2025_jaune_vsm_signe.pdf "Download Yellow Alert for Coastal Flooding 26/08/2025 - French - PDF - 144 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/08/25_08_2025_jaune_vsm_signe.pdf "Consult Yellow Alert for Coastal Flooding 26/08/2025 - French - PDF - 144 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/08/25_08_2025_jaune_vsm_signe.pdf "Download Yellow Alert for Coastal Flooding 26/08/2025 - French - PDF - 144 KB")[Consult Yellow Alert for Coastal Flooding 26/08/2025 - French - PDF - 144 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/08/25_08_2025_jaune_vsm_signe.pdf "Consult Yellow Alert for Coastal Flooding 26/08/2025 - French - PDF - 144 KB (new tab)")[Download Yellow Alert for Coastal Flooding 26/08/2025 - French - PDF - 144 KB](https://www.audierne.bzh/wp-content/uploads/2025/08/25_08_2025_jaune_vsm_signe.pdf "Download Yellow Alert for Coastal Flooding 26/08/2025 - French - PDF - 144 KB")
 
 ![](https://www.audierne.bzh/wp-content/uploads/2021/02/documentheque-2-0x0-c-default.jpg)
 
@@ -496,13 +496,13 @@ Filter
 Reset
 
 
-You have viewed 2 out of 2 results
+You have viewed NaN2 results
 
 
 Show more
 
 
-- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=65# "Download the Document Library page as a PDF")
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=65# "Download the Document Library page as a PDF")
 - Print
 
 - Share

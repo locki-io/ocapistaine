@@ -1,257 +1,564 @@
 Esquibien Ar Ganneg
 
-AR\_GANNAEG\_N°30\_AUTOMNE\_2015
+AR\_GANNAEG\_N°30\_AUTUMN\_2015
 
-- Octobre 2015
-- Français
+- October 2015
+- French
 - pdf
-- 4 Mo
+- 4 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B030_AUTOMNE_2015.pdf "Consulter AR_GANNAEG_N°30_AUTOMNE_2015 - Français - PDF - 4 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B030_AUTOMNE_2015.pdf "Télécharger AR_GANNAEG_N°30_AUTOMNE_2015 - Français - PDF - 4 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B030_AUTOMNE_2015.pdf "View AR_GANNAEG_N°30_AUTUMN_2015 - French - PDF - 4 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B030_AUTOMNE_2015.pdf "Download AR_GANNAEG_N°30_AUTOMNE_2015 - French - PDF - 4 MB")[View AR_GANNAEG_N°30_AUTUMN_2015 - French - PDF - 4 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B030_AUTOMNE_2015.pdf "View AR_GANNAEG_N°30_AUTUMN_2015 - French - PDF - 4 MB (opens in a new tab)")[Download AR_GANNAEG_N°30_AUTOMNE_2015 - French - PDF - 4 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B030_AUTOMNE_2015.pdf "Download AR_GANNAEG_N°30_AUTOMNE_2015 - French - PDF - 4 MB")
 
-Transcription textuelle
+Text transcription
 
 
-Magazine municipal d'Esquibien, automne 2015.
+Esquibien municipal magazine, autumn 2015.
 
 Esquibien Ar Ganneg
 
 AR\_GANNAEG\_N°29\_ETE\_2015
 
-- Juillet 2015
-- Français
+- July 2015
+- French
 - pdf
-- 2 Mo
+- 2 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B029_ETE_2015.pdf "Consulter AR_GANNAEG_N°29_ETE_2015 - Français - PDF - 2 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B029_ETE_2015.pdf "Télécharger AR_GANNAEG_N°29_ETE_2015 - Français - PDF - 2 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B029_ETE_2015.pdf "View AR_GANNAEG_N°29_ETE_2015 - French - PDF - 2 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B029_ETE_2015.pdf "Download AR_GANNAEG_N°29_ETE_2015 - French - PDF - 2 MB")[View AR_GANNAEG_N°29_ETE_2015 - French - PDF - 2 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B029_ETE_2015.pdf "View AR_GANNAEG_N°29_ETE_2015 - French - PDF - 2 MB (opens in a new tab)")[Download AR_GANNAEG_N°29_ETE_2015 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B029_ETE_2015.pdf "Download AR_GANNAEG_N°29_ETE_2015 - French - PDF - 2 MB")
 
-Transcription textuelle
+Text transcription
 
 
-Magazine municipal d'Esquibien, été 2015.
+Esquibien municipal magazine, summer 2015.
 
 Esquibien Ar Ganneg
 
-AR\_GANNAEG\_N°28\_PRINTEMPS\_2015
+AR\_GANNAEG\_N°28\_SPRING\_2015
 
-- Mars 2015
-- Français
+- March 2015
+- French
 - pdf
-- 3 Mo
+- 3 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B028_PRINTEMPS_2015.pdf "Consulter AR_GANNAEG_N°28_PRINTEMPS_2015 - Français - PDF - 3 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B028_PRINTEMPS_2015.pdf "Télécharger AR_GANNAEG_N°28_PRINTEMPS_2015 - Français - PDF - 3 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B028_PRINTEMPS_2015.pdf "View AR_GANNAEG_N°28_SPRING_2015 - French - PDF - 3 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B028_PRINTEMPS_2015.pdf "Download AR_GANNAEG_N°28_SPRING_2015 - French - PDF - 3 MB")[View AR_GANNAEG_N°28_SPRING_2015 - French - PDF - 3 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B028_PRINTEMPS_2015.pdf "View AR_GANNAEG_N°28_SPRING_2015 - French - PDF - 3 MB (new tab)")[Download AR_GANNAEG_N°28_SPRING_2015 - French - PDF - 3 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B028_PRINTEMPS_2015.pdf "Download AR_GANNAEG_N°28_SPRING_2015 - French - PDF - 3 MB")
 
-Transcription textuelle
+Text transcription
 
 
-Magazine municipal d'Esquibien, printemps 2015.
+Esquibien municipal magazine, Spring 2015.
 
 Esquibien Ar Ganneg
 
-AR\_GANNAEG\_N°27\_HIVER\_2014
+AR\_GANNAEG\_N°27\_WINTER\_2014
 
-- Décembre 2014
-- Français
+- December 2014
+- French
 - pdf
-- 3 Mo
+- 3 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B027_HIVER_2014.pdf "Consulter AR_GANNAEG_N°27_HIVER_2014 - Français - PDF - 3 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B027_HIVER_2014.pdf "Télécharger AR_GANNAEG_N°27_HIVER_2014 - Français - PDF - 3 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B027_HIVER_2014.pdf "View AR_GANNAEG_N°27_WINTER_2014 - French - PDF - 3 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B027_HIVER_2014.pdf "Download AR_GANNAEG_N°27_WINTER_2014 - French - PDF - 3 MB")[View AR_GANNAEG_N°27_WINTER_2014 - French - PDF - 3 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B027_HIVER_2014.pdf "View AR_GANNAEG_N°27_WINTER_2014 - French - PDF - 3 MB (opens in a new tab)")[Download AR_GANNAEG_N°27_WINTER_2014 - French - PDF - 3 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B027_HIVER_2014.pdf "Download AR_GANNAEG_N°27_WINTER_2014 - French - PDF - 3 MB")
 
-Transcription textuelle
+Text transcription
 
 
-Magazine municipal d'Esquibien, hiver 2014
+Esquibien municipal magazine, Winter 2014
 
 Esquibien Ar Ganneg
 
-AR\_GANNAEG\_N°26\_AUTOMNE\_2014
+AR\_GANNAEG\_N°26\_AUTUMN\_2014
 
-- Octobre 2014
-- Français
+- October 2014
+- French
 - pdf
-- 3 Mo
+- 3 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B026_AUTOMNE_2014.pdf "Consulter AR_GANNAEG_N°26_AUTOMNE_2014 - Français - PDF - 3 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B026_AUTOMNE_2014.pdf "Télécharger AR_GANNAEG_N°26_AUTOMNE_2014 - Français - PDF - 3 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B026_AUTOMNE_2014.pdf "View AR_GANNAEG_N°26_AUTUMN_2014 - French - PDF - 3 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B026_AUTOMNE_2014.pdf "Download AR_GANNAEG_N°26_AUTUMN_2014 - French - PDF - 3 MB")[View AR_GANNAEG_N°26_AUTUMN_2014 - French - PDF - 3 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B026_AUTOMNE_2014.pdf "View AR_GANNAEG_N°26_AUTUMN_2014 - French - PDF - 3 MB (new tab)")[Download AR_GANNAEG_N°26_AUTUMN_2014 - French - PDF - 3 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B026_AUTOMNE_2014.pdf "Download AR_GANNAEG_N°26_AUTUMN_2014 - French - PDF - 3 MB")
 
-Transcription textuelle
+Text transcription
 
 
-Magazine municipal d'Esquibien, automne 2014.
+Esquibien municipal magazine, autumn 2014.
 
 Esquibien Ar Ganneg
 
 AR\_GANNAEG\_N°25\_ETE\_2014
 
-- Juillet 2014
-- Français
+- July 2014
+- French
 - pdf
-- 2 Mo
+- 2 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B025_ETE_2014.pdf "Consulter AR_GANNAEG_N°25_ETE_2014 - Français - PDF - 2 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B025_ETE_2014.pdf "Télécharger AR_GANNAEG_N°25_ETE_2014 - Français - PDF - 2 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B025_ETE_2014.pdf "View AR_GANNAEG_N°25_ETE_2014 - French - PDF - 2 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B025_ETE_2014.pdf "Download AR_GANNAEG_N°25_ETE_2014 - French - PDF - 2 MB")[View AR_GANNAEG_N°25_ETE_2014 - French - PDF - 2 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B025_ETE_2014.pdf "View AR_GANNAEG_N°25_ETE_2014 - French - PDF - 2 MB (opens in a new tab)")[Download AR_GANNAEG_N°25_ETE_2014 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B025_ETE_2014.pdf "Download AR_GANNAEG_N°25_ETE_2014 - French - PDF - 2 MB")
 
-Transcription textuelle
+Text transcription
 
 
-Magazine municipal d'Esquibien, été 2014..
+Esquibien municipal magazine, summer 2014.
 
 Esquibien Ar Ganneg
 
-AR\_GANNAEG\_N°24\_PRINTEMPS\_2014
+AR\_GANNAEG\_N°24\_SPRING\_2014
 
-- Mars 2014
-- Français
+- March 2014
+- French
 - pdf
-- 2 Mo
+- 2 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B024_PRINTEMPS_2014.pdf "Consulter AR_GANNAEG_N°24_PRINTEMPS_2014 - Français - PDF - 2 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B024_PRINTEMPS_2014.pdf "Télécharger AR_GANNAEG_N°24_PRINTEMPS_2014 - Français - PDF - 2 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B024_PRINTEMPS_2014.pdf "View AR_GANNAEG_N°24_SPRING_2014 - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B024_PRINTEMPS_2014.pdf "Download AR_GANNAEG_N°24_SPRING_2014 - French - PDF - 2 MB")[View AR_GANNAEG_N°24_SPRING_2014 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B024_PRINTEMPS_2014.pdf "View AR_GANNAEG_N°24_SPRING_2014 - French - PDF - 2 MB (new tab)")[Download AR_GANNAEG_N°24_SPRING_2014 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B024_PRINTEMPS_2014.pdf "Download AR_GANNAEG_N°24_SPRING_2014 - French - PDF - 2 MB")
 
-Transcription textuelle
+Text transcription
 
 
-Magazine municipal d'Esquibien, printemps 2014.
+Esquibien municipal magazine, Spring 2014.
 
 Esquibien Ar Ganneg
 
-AR\_GANNAEG\_N°23\_HIVER\_2013
+AR\_GANNAEG\_N°23\_WINTER\_2013
 
-- Décembre 2013
-- Français
+- December 2013
+- French
 - pdf
-- 2 Mo
+- 2 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B023_HIVER_2013.pdf "Consulter AR_GANNAEG_N°23_HIVER_2013 - Français - PDF - 2 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B023_HIVER_2013.pdf "Télécharger AR_GANNAEG_N°23_HIVER_2013 - Français - PDF - 2 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B023_HIVER_2013.pdf "View AR_GANNAEG_N°23_WINTER_2013 - French - PDF - 2 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B023_HIVER_2013.pdf "Download AR_GANNAEG_N°23_WINTER_2013 - French - PDF - 2 MB")[View AR_GANNAEG_N°23_WINTER_2013 - French - PDF - 2 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B023_HIVER_2013.pdf "View AR_GANNAEG_N°23_WINTER_2013 - French - PDF - 2 MB (opens in a new tab)")[Download AR_GANNAEG_N°23_WINTER_2013 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B023_HIVER_2013.pdf "Download AR_GANNAEG_N°23_WINTER_2013 - French - PDF - 2 MB")
 
-Transcription textuelle
+Text transcription
 
 
-Magazine municipal d'Esquibien, hiver 2013..
+Esquibien municipal magazine, winter 2013.
 
 Esquibien Ar Ganneg
 
-AR\_GANNAEG\_N°22\_AUTOMNE\_2013
+AR\_GANNAEG\_N°22\_AUTUMN\_2013
 
-- Octobre 2013
-- Français
+- October 2013
+- French
 - pdf
-- 2 Mo
+- 2 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B022_AUTOMNE_2013.pdf "Consulter AR_GANNAEG_N°22_AUTOMNE_2013 - Français - PDF - 2 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B022_AUTOMNE_2013.pdf "Télécharger AR_GANNAEG_N°22_AUTOMNE_2013 - Français - PDF - 2 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B022_AUTOMNE_2013.pdf "View AR_GANNAEG_N°22_AUTUMN_2013 - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B022_AUTOMNE_2013.pdf "Download AR_GANNAEG_N°22_AUTUMN_2013 - French - PDF - 2 MB")[View AR_GANNAEG_N°22_AUTUMN_2013 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B022_AUTOMNE_2013.pdf "View AR_GANNAEG_N°22_AUTUMN_2013 - French - PDF - 2 MB (new tab)")[Download AR_GANNAEG_N°22_AUTUMN_2013 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B022_AUTOMNE_2013.pdf "Download AR_GANNAEG_N°22_AUTUMN_2013 - French - PDF - 2 MB")
 
-Transcription textuelle
+Text transcription
 
 
-Magazine municipal d'Esquibien, automne 2013.
+Esquibien municipal magazine, autumn 2013.
 
 Esquibien Ar Ganneg
 
 AR\_GANNAEG\_N°21\_ETE\_2013
 
-- Juillet 2013
-- Français
+- July 2013
+- French
 - pdf
-- 2 Mo
+- 2 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B021_ETE_2013.pdf "Consulter AR_GANNAEG_N°21_ETE_2013 - Français - PDF - 2 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B021_ETE_2013.pdf "Télécharger AR_GANNAEG_N°21_ETE_2013 - Français - PDF - 2 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B021_ETE_2013.pdf "View AR_GANNAEG_N°21_ETE_2013 - French - PDF - 2 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B021_ETE_2013.pdf "Download AR_GANNAEG_N°21_ETE_2013 - French - PDF - 2 MB")[View AR_GANNAEG_N°21_ETE_2013 - French - PDF - 2 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B021_ETE_2013.pdf "View AR_GANNAEG_N°21_ETE_2013 - French - PDF - 2 MB (opens in a new tab)")[Download AR_GANNAEG_N°21_ETE_2013 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B021_ETE_2013.pdf "Download AR_GANNAEG_N°21_ETE_2013 - French - PDF - 2 MB")
 
-Transcription textuelle
+Text transcription
 
 
-Magazine municipal d'Esquibien, été 2013.
+Esquibien municipal magazine, summer 2013.
+
+Esquibien Ar Ganneg
+
+AR\_GANNAEG\_N°20\_SPRING\_2013
+
+- March 2013
+- French
+- pdf
+- 2 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B020_PRINTEMPS_2013.pdf "View AR_GANNAEG_N°20_SPRING_2013 - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B020_PRINTEMPS_2013.pdf "Download AR_GANNAEG_N°20_PRINTEMPS_2013 - French - PDF - 2 MB")[View AR_GANNAEG_N°20_SPRING_2013 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B020_PRINTEMPS_2013.pdf "View AR_GANNAEG_N°20_SPRING_2013 - French - PDF - 2 MB (new tab)")[Download AR_GANNAEG_N°20_PRINTEMPS_2013 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B020_PRINTEMPS_2013.pdf "Download AR_GANNAEG_N°20_PRINTEMPS_2013 - French - PDF - 2 MB")
+
+Text transcription
+
+
+Esquibien municipal magazine, Spring 2013.
+
+Esquibien Ar Ganneg
+
+AR\_GANNAEG\_N°19\_WINTER\_2012
+
+- December 2012
+- French
+- pdf
+- 1 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B019_HIVER_2012.pdf "View AR_GANNAEG_N°19_WINTER_2012 - French - PDF - 1 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B019_HIVER_2012.pdf "Download AR_GANNAEG_N°19_WINTER_2012 - French - PDF - 1 MB")[View AR_GANNAEG_N°19_WINTER_2012 - French - PDF - 1 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B019_HIVER_2012.pdf "View AR_GANNAEG_N°19_WINTER_2012 - French - PDF - 1 MB (opens in a new tab)")[Download AR_GANNAEG_N°19_WINTER_2012 - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B019_HIVER_2012.pdf "Download AR_GANNAEG_N°19_WINTER_2012 - French - PDF - 1 MB")
+
+Text transcription
+
+
+Esquibien municipal magazine, winter 2012.
+
+Esquibien Ar Ganneg
+
+AR\_GANNAEG\_N°18\_AUTUMN\_2012
+
+- October 2012
+- French
+- pdf
+- 3 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B018_AUTOMNE_2012.pdf "View AR_GANNAEG_N°18_AUTUMN_2012 - French - PDF - 3 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B018_AUTOMNE_2012.pdf "Download AR_GANNAEG_N°18_AUTUMN_2012 - French - PDF - 3 MB")[View AR_GANNAEG_N°18_AUTUMN_2012 - French - PDF - 3 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B018_AUTOMNE_2012.pdf "View AR_GANNAEG_N°18_AUTUMN_2012 - French - PDF - 3 MB (new tab)")[Download AR_GANNAEG_N°18_AUTUMN_2012 - French - PDF - 3 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B018_AUTOMNE_2012.pdf "Download AR_GANNAEG_N°18_AUTUMN_2012 - French - PDF - 3 MB")
+
+Text transcription
+
+
+Esquibien municipal magazine, autumn 2012.
+
+Esquibien Ar Ganneg
+
+AR\_GANNAEG\_N°17\_ETE\_2012
+
+- July 2012
+- French
+- pdf
+- 4 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B017_ETE_2012.pdf "View AR_GANNAEG_N°17_ETE_2012 - French - PDF - 4 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B017_ETE_2012.pdf "Download AR_GANNAEG_N°17_ETE_2012 - French - PDF - 4 MB")[View AR_GANNAEG_N°17_ETE_2012 - French - PDF - 4 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B017_ETE_2012.pdf "View AR_GANNAEG_N°17_ETE_2012 - French - PDF - 4 MB (opens in a new tab)")[Download AR_GANNAEG_N°17_ETE_2012 - French - PDF - 4 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B017_ETE_2012.pdf "Download AR_GANNAEG_N°17_ETE_2012 - French - PDF - 4 MB")
+
+Text transcription
+
+
+Esquibien municipal magazine, summer 2012.
+
+Esquibien Ar Ganneg
+
+AR\_GANNAEG\_N°16\_SPRING\_2012
+
+- April 2012
+- French
+- pdf
+- 2 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B016_PRINTEMPS_2012.pdf "View AR_GANNAEG_N°16_SPRING_2012 - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B016_PRINTEMPS_2012.pdf "Download AR_GANNAEG_N°16_SPRING_2012 - French - PDF - 2 MB")[View AR_GANNAEG_N°16_SPRING_2012 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B016_PRINTEMPS_2012.pdf "View AR_GANNAEG_N°16_SPRING_2012 - French - PDF - 2 MB (new tab)")[Download AR_GANNAEG_N°16_SPRING_2012 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B016_PRINTEMPS_2012.pdf "Download AR_GANNAEG_N°16_SPRING_2012 - French - PDF - 2 MB")
+
+Text transcription
+
+
+Esquibien municipal magazine, Spring 2012.
+
+Esquibien Ar Ganneg
+
+AR\_GANNAEG\_N°15\_WINTER\_2011
+
+- December 2011
+- French
+- pdf
+- 3 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B015_HIVER_2011.pdf "View AR_GANNAEG_N°15_WINTER_2011 - French - PDF - 3 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B015_HIVER_2011.pdf "Download AR_GANNAEG_N°15_WINTER_2011 - French - PDF - 3 MB")[View AR_GANNAEG_N°15_WINTER_2011 - French - PDF - 3 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B015_HIVER_2011.pdf "View AR_GANNAEG_N°15_WINTER_2011 - French - PDF - 3 MB (opens in a new tab)")[Download AR_GANNAEG_N°15_WINTER_2011 - French - PDF - 3 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B015_HIVER_2011.pdf "Download AR_GANNAEG_N°15_WINTER_2011 - French - PDF - 3 MB")
+
+Text transcription
+
+
+Esquibien municipal magazine, winter 2011.
+
+Esquibien Ar Ganneg
+
+AR\_GANNAEG\_N°14\_AUTUMN\_2011
+
+- October 2011
+- French
+- pdf
+- 5 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B014_AUTOMNE_2011.pdf "View AR_GANNAEG_N°14_AUTUMN_2011 - French - PDF - 5 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B014_AUTOMNE_2011.pdf "Download AR_GANNAEG_N°14_AUTUMN_2011 - French - PDF - 5 MB")[View AR_GANNAEG_N°14_AUTUMN_2011 - French - PDF - 5 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B014_AUTOMNE_2011.pdf "View AR_GANNAEG_N°14_AUTUMN_2011 - French - PDF - 5 MB (new tab)")[Download AR_GANNAEG_N°14_AUTUMN_2011 - French - PDF - 5 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B014_AUTOMNE_2011.pdf "Download AR_GANNAEG_N°14_AUTUMN_2011 - French - PDF - 5 MB")
+
+Text transcription
+
+
+Esquibien municipal magazine, autumn 2011.
+
+Esquibien Ar Ganneg
+
+AR\_GANNAEG\_N°13\_ETE\_2011
+
+- July 2011
+- French
+- pdf
+- 3 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B013_ETE_2011-1.pdf "View AR_GANNAEG_N°13_ETE_2011 - French - PDF - 3 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B013_ETE_2011-1.pdf "Download AR_GANNAEG_N°13_ETE_2011 - French - PDF - 3 MB")[View AR_GANNAEG_N°13_ETE_2011 - French - PDF - 3 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B013_ETE_2011-1.pdf "View AR_GANNAEG_N°13_ETE_2011 - French - PDF - 3 MB (opens in a new tab)")[Download AR_GANNAEG_N°13_ETE_2011 - French - PDF - 3 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B013_ETE_2011-1.pdf "Download AR_GANNAEG_N°13_ETE_2011 - French - PDF - 3 MB")
+
+Text transcription
+
+
+Esquibien municipal magazine, summer 2011.
+
+Esquibien Ar Ganneg
+
+AR\_GANNAEG\_N°12\_SPRING\_2011
+
+- April 2011
+- French
+- pdf
+- 2 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B012_PRINTEMPS_2011.pdf "View AR_GANNAEG_N°12_SPRING_2011 - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B012_PRINTEMPS_2011.pdf "Download AR_GANNAEG_N°12_SPRING_2011 - French - PDF - 2 MB")[View AR_GANNAEG_N°12_SPRING_2011 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B012_PRINTEMPS_2011.pdf "View AR_GANNAEG_N°12_SPRING_2011 - French - PDF - 2 MB (new tab)")[Download AR_GANNAEG_N°12_SPRING_2011 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B012_PRINTEMPS_2011.pdf "Download AR_GANNAEG_N°12_SPRING_2011 - French - PDF - 2 MB")
+
+Text transcription
+
+
+Esquibien municipal magazine, Spring 2011.
+
+Esquibien Ar Ganneg
+
+AR\_GANNAEG\_N°11\_WINTER\_2010
+
+- December 2010
+- French
+- pdf
+- 910 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B011_HIVER_2010.pdf "View AR_GANNAEG_N°11_WINTER_2010 - French - PDF - 910 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B011_HIVER_2010.pdf "Download AR_GANNAEG_N°11_HIVER_2010 - French - PDF - 910 KB")[View AR_GANNAEG_N°11_WINTER_2010 - French - PDF - 910 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B011_HIVER_2010.pdf "View AR_GANNAEG_N°11_WINTER_2010 - French - PDF - 910 KB (new tab)")[Download AR_GANNAEG_N°11_HIVER_2010 - French - PDF - 910 KB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B011_HIVER_2010.pdf "Download AR_GANNAEG_N°11_HIVER_2010 - French - PDF - 910 KB")
+
+Text transcription
+
+
+Esquibien municipal magazine, winter 2010.
+
+Esquibien Ar Ganneg
+
+AR\_GANNAEG\_N°10\_AUTUMN\_2010
+
+- October 2010
+- French
+- pdf
+- 1 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B010_AUTOMNE_2010.pdf "View AR_GANNAEG_N°10_AUTUMN_2010 - French - PDF - 1 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B010_AUTOMNE_2010.pdf "Download AR_GANNAEG_N°10_AUTUMN_2010 - French - PDF - 1 MB")[View AR_GANNAEG_N°10_AUTUMN_2010 - French - PDF - 1 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B010_AUTOMNE_2010.pdf "View AR_GANNAEG_N°10_AUTUMN_2010 - French - PDF - 1 MB (opens in a new tab)")[Download AR_GANNAEG_N°10_AUTUMN_2010 - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B010_AUTOMNE_2010.pdf "Download AR_GANNAEG_N°10_AUTUMN_2010 - French - PDF - 1 MB")
+
+Text transcription
+
+
+Esquibien municipal magazine, summer 2010.
+
+Esquibien Ar Ganneg
+
+AR\_GANNAEG\_N°7\_WINTER\_2009
+
+- December 2009
+- French
+- pdf
+- 2 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B07_HIVER_2009.pdf "View AR_GANNAEG_N°7_WINTER_2009 - French - PDF - 2 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B07_HIVER_2009.pdf "Download AR_GANNAEG_N°7_WINTER_2009 - French - PDF - 2 MB")[View AR_GANNAEG_N°7_WINTER_2009 - French - PDF - 2 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B07_HIVER_2009.pdf "View AR_GANNAEG_N°7_WINTER_2009 - French - PDF - 2 MB (opens in a new tab)")[Download AR_GANNAEG_N°7_WINTER_2009 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B07_HIVER_2009.pdf "Download AR_GANNAEG_N°7_WINTER_2009 - French - PDF - 2 MB")
+
+Text transcription
+
+
+Esquibien municipal magazine, winter 2009.
+
+Esquibien Ar Ganneg
+
+Gwaien\_n°19\_November\_2009
+
+- November 2009
+- French
+- pdf
+- 156 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B019_novembre_2009.pdf "View Gwaien_n°19_November_2009 - French - PDF - 156 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B019_novembre_2009.pdf "Download Gwaien_n°19_November_2009 - French - PDF - 156 KB")[View Gwaien_n°19_November_2009 - French - PDF - 156 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B019_novembre_2009.pdf "View Gwaien_n°19_November_2009 - French - PDF - 156 KB (new tab)")[Download Gwaien_n°19_November_2009 - French - PDF - 156 KB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B019_novembre_2009.pdf "Download Gwaien_n°19_November_2009 - French - PDF - 156 KB")
+
+Text transcription
+
+
+Magazine of the historic commune of Audierne, November 2009.
+
+Esquibien Ar Ganneg
+
+AR\_GANNAEG\_N°6\_AUTUMN\_2009
+
+- October 2009
+- French
+- pdf
+- 2 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B06_AUTOMNE_2009.pdf "View AR_GANNAEG_N°6_AUTUMN_2009 - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B06_AUTOMNE_2009.pdf "Download AR_GANNAEG_N°6_AUTUMN_2009 - French - PDF - 2 MB")[View AR_GANNAEG_N°6_AUTUMN_2009 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B06_AUTOMNE_2009.pdf "View AR_GANNAEG_N°6_AUTUMN_2009 - French - PDF - 2 MB (new tab)")[Download AR_GANNAEG_N°6_AUTUMN_2009 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B06_AUTOMNE_2009.pdf "Download AR_GANNAEG_N°6_AUTUMN_2009 - French - PDF - 2 MB")
+
+Text transcription
+
+
+Esquibien municipal magazine, autumn 2009.
+
+Esquibien Ar Ganneg
+
+AR\_GANNAEG\_N°5\_ETE\_2009
+
+- July 2009
+- French
+- pdf
+- 5 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B05_ETE_2009.pdf "View AR_GANNAEG_N°5_ETE_2009 - French - PDF - 5 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B05_ETE_2009.pdf "Download AR_GANNAEG_N°5_ETE_2009 - French - PDF - 5 MB")[View AR_GANNAEG_N°5_ETE_2009 - French - PDF - 5 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B05_ETE_2009.pdf "View AR_GANNAEG_N°5_ETE_2009 - French - PDF - 5 MB (new tab)")[Download AR_GANNAEG_N°5_ETE_2009 - French - PDF - 5 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B05_ETE_2009.pdf "Download AR_GANNAEG_N°5_ETE_2009 - French - PDF - 5 MB")
+
+Text transcription
+
+
+Summer 2009 publication of the Esquibien municipal magazine.
+
+Esquibien Ar Ganneg
+
+AR\_GANNAEG\_N°3\_WINTER\_2008
+
+- December 2008
+- French
+- pdf
+- 2 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B03_HIVER_2008.pdf "View AR_GANNAEG_N°3_WINTER_2008 - French - PDF - 2 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B03_HIVER_2008.pdf "Download AR_GANNAEG_N°3_WINTER_2008 - French - PDF - 2 MB")[View AR_GANNAEG_N°3_WINTER_2008 - French - PDF - 2 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B03_HIVER_2008.pdf "View AR_GANNAEG_N°3_WINTER_2008 - French - PDF - 2 MB (opens in a new tab)")[Download AR_GANNAEG_N°3_WINTER_2008 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/AR_GANNAEG_N%C2%B03_HIVER_2008.pdf "Download AR_GANNAEG_N°3_WINTER_2008 - French - PDF - 2 MB")
+
+Text transcription
+
+
+Winter 2008 issue of the Esquibien municipal magazine.
+
+Esquibien Ar Ganneg
+
+Ar\_Gannaec\_n°2\_autumn\_2008
+
+- October 2008
+- French
+- pdf
+- 3 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/01/Ar_Gannaec_n%C2%B02_automne_2008.pdf "Consult Ar_Gannaec_n°2_autumn_2008 - French - PDF - 3 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/01/Ar_Gannaec_n%C2%B02_automne_2008.pdf "Download Ar_Gannaec_n°2_AUTUMN_2008 - French - PDF - 3 MB")[Consult Ar_Gannaec_n°2_autumn_2008 - French - PDF - 3 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/01/Ar_Gannaec_n%C2%B02_automne_2008.pdf "Consult Ar_Gannaec_n°2_autumn_2008 - French - PDF - 3 MB (new tab)")[Download Ar_Gannaec_n°2_AUTUMN_2008 - French - PDF - 3 MB](https://www.audierne.bzh/wp-content/uploads/2025/01/Ar_Gannaec_n%C2%B02_automne_2008.pdf "Download Ar_Gannaec_n°2_AUTUMN_2008 - French - PDF - 3 MB")
+
+Esquibien Ar Ganneg
+
+Ar\_Gannaeg\_N°1\_summer\_2008
+
+- July 2008
+- French
+- pdf
+- 3 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/01/Ar_Gannaeg_N%C2%B01_ete_2008.pdf "View Ar_Gannaeg_N°1_ete_2008 - French - PDF - 3 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/01/Ar_Gannaeg_N%C2%B01_ete_2008.pdf "Download Ar_Gannaeg_N°1_ete_2008 - French - PDF - 3 MB")[View Ar_Gannaeg_N°1_ete_2008 - French - PDF - 3 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/01/Ar_Gannaeg_N%C2%B01_ete_2008.pdf "View Ar_Gannaeg_N°1_ete_2008 - French - PDF - 3 MB (new tab)")[Download Ar_Gannaeg_N°1_ete_2008 - French - PDF - 3 MB](https://www.audierne.bzh/wp-content/uploads/2025/01/Ar_Gannaeg_N%C2%B01_ete_2008.pdf "Download Ar_Gannaeg_N°1_ete_2008 - French - PDF - 3 MB")
 
 ![](https://www.audierne.bzh/wp-content/uploads/2021/02/documentheque-2-0x0-c-default.jpg)
 
-# Documenthèque
+# Document Library
 
-Retrouvez tous nos documents, classés par catégories.
+Find all our documents, classified by category.
 
-Cliquez sur un document pour le consulter, feuilleter ou télécharger.
+Click on a document to view, browse or download it.
 
-Filtrer les résultats
+Filter the results
 
-- Alertes météo
+- Weather alerts
 
-- Aménagement paysager
+- Landscaping
 
-- arrêtés
+- arrests
 
 - Associations
 
-- Conseil municipal
+- City Council
 
-- Déchets
+- Waste
 
-- Divers
+- Miscellaneous
 
-- Économie
+- Economy
 
-- Élections
+- Elections
 
-- Journal municipal
+- municipal newspaper
 
-- Noël
+- Christmas
 
-- Pêche-maritimité
+- Fishing and maritime
 
-- Petite enfance
+- Early childhood
 
-- Prévention et sécurité
+- Prevention and safety
 
-- Solidarité-santé
+- Solidarity-health
 
-- Urbanisme
-
-
-0 sélectionnée
+- Urban planning
 
 
-Tout sélectionner
+1 selected
+
+Deselect all
+
+- [ ]
+Audierne-Gwaien
+
+- [x]
+Esquibien Ar Ganneg
+
+- [ ]
+Goyen
+
+- [ ]
+Gwaien
 
 
 - [ ]
-Janvier
+January
 
 - [ ]
-Février
+FEBRUARY
 
 - [ ]
-Mars
+March
 
 - [ ]
-Avril
+April
 
 - [ ]
-Mai
+May
 
 - [ ]
-Juin
+June
 
 - [ ]
-Juillet
+July
 
 - [ ]
-Août
+August
 
 - [ ]
-Septembre
+September
 
 - [ ]
-Octobre
+October
 
 - [ ]
-Novembre
+November
 
 - [ ]
-Décembre
+December
 
 
 - [ ]
@@ -639,24 +946,24 @@ Décembre
 1900
 
 
-Filtrer
+Filter
 
-Réinitialiser
-
-
-Vous avez vu 10 résultat(s) sur
-28
-
-Afficher plus
+Reset
 
 
-- [Télécharger en PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=18# "Télécharger la page Documenthèque en PDF")
-- Imprimer
+You have viewed NaN28 results
 
-- Partager
-   - ✓ Lien copié
 
-  - [Partager la page Documenthèque par courriel](mailto:?subject=Documenth%C3%A8que%20-%20Audierne%20(29)&body=https://www.audierne.bzh/systeme/documentheque/ "Partager la page Documenthèque par courriel")
-  - [Partager la page Documenthèque sur Facebook](https://www.facebook.com/sharer/sharer.php?u=https://www.audierne.bzh/systeme/documentheque/ "Partager la page Documenthèque sur Facebook")
-  - [Partager la page Documenthèque sur X](http://twitter.com/share?url=https://www.audierne.bzh/systeme/documentheque/&text=Documenth%C3%A8que "Partager la page Documenthèque sur X")
-  - [Partager la page Documenthèque sur LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.audierne.bzh%2Fsysteme%2Fdocumentheque%2F&title=Documenth%C3%A8que "Partager la page Documenthèque sur LinkedIn")
+Show more
+
+
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=18# "Download the Document Library page as a PDF")
+- Print
+
+- Share
+   - ✓ Link copied
+
+  - [Share the Document Library page by email](mailto:?subject=Documenth%C3%A8que%20-%20Audierne%20(29)&body=https://www.audierne.bzh/systeme/documentheque/ "Share the Document Library page by email")
+  - [Share the Document Library page on Facebook](https://www.facebook.com/sharer/sharer.php?u=https://www.audierne.bzh/systeme/documentheque/ "Share the Document Library page on Facebook")
+  - [Share the Document Library page on X](http://twitter.com/share?url=https://www.audierne.bzh/systeme/documentheque/&text=Documenth%C3%A8que "Share the Document Library page on X")
+  - [Share the Document Library page on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.audierne.bzh%2Fsysteme%2Fdocumentheque%2F&title=Documenth%C3%A8que "Share the Document Library page on LinkedIn")

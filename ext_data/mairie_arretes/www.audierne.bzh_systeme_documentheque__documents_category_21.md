@@ -25,7 +25,7 @@ Gwaien\_n°26\_January\_2012
 - 2 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B026_janvier_2012.pdf "View Gwaien_n°26_janvier_2012 - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B026_janvier_2012.pdf "Download Gwaien_n°26_january_2012 - French - PDF - 2 MB")[View Gwaien_n°26_janvier_2012 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B026_janvier_2012.pdf "View Gwaien_n°26_janvier_2012 - French - PDF - 2 MB (new tab)")[Download Gwaien_n°26_january_2012 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B026_janvier_2012.pdf "Download Gwaien_n°26_january_2012 - French - PDF - 2 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B026_janvier_2012.pdf "View Gwaien_n°26_january_2012 - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B026_janvier_2012.pdf "Download Gwaien_n°26_january_2012 - French - PDF - 2 MB")[View Gwaien_n°26_january_2012 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B026_janvier_2012.pdf "View Gwaien_n°26_january_2012 - French - PDF - 2 MB (new tab)")[Download Gwaien_n°26_january_2012 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B026_janvier_2012.pdf "Download Gwaien_n°26_january_2012 - French - PDF - 2 MB")
 
 Text transcription
 
@@ -42,7 +42,7 @@ Gwaien\_n°25\_July\_2011
 - 2 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B025_juillet_2011.pdf "View Gwaien_n°25_juillet_2011 - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B025_juillet_2011.pdf "Download Gwaien_n°25_juillet_2011 - French - PDF - 2 MB")[View Gwaien_n°25_juillet_2011 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B025_juillet_2011.pdf "View Gwaien_n°25_juillet_2011 - French - PDF - 2 MB (new tab)")[Download Gwaien_n°25_juillet_2011 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B025_juillet_2011.pdf "Download Gwaien_n°25_juillet_2011 - French - PDF - 2 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B025_juillet_2011.pdf "View Gwaien_n°25_july_2011 - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B025_juillet_2011.pdf "Download Gwaien_n°25_juillet_2011 - French - PDF - 2 MB")[View Gwaien_n°25_july_2011 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B025_juillet_2011.pdf "View Gwaien_n°25_july_2011 - French - PDF - 2 MB (new tab)")[Download Gwaien_n°25_juillet_2011 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B025_juillet_2011.pdf "Download Gwaien_n°25_juillet_2011 - French - PDF - 2 MB")
 
 Text transcription
 
@@ -161,12 +161,250 @@ Gwaien\_n°17\_September\_2009
 - 129 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B017_septembre_2009.pdf "View Gwaien_n°17_septembre_2009 - French - PDF - 129 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B017_septembre_2009.pdf "Download Gwaien_n°17_septembre_2009 - French - PDF - 129 KB")[View Gwaien_n°17_septembre_2009 - French - PDF - 129 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B017_septembre_2009.pdf "View Gwaien_n°17_septembre_2009 - French - PDF - 129 KB (new tab)")[Download Gwaien_n°17_septembre_2009 - French - PDF - 129 KB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B017_septembre_2009.pdf "Download Gwaien_n°17_septembre_2009 - French - PDF - 129 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B017_septembre_2009.pdf "View Gwaien_n°17_september_2009 - French - PDF - 129 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B017_septembre_2009.pdf "Download Gwaien_n°17_september_2009 - French - PDF - 129 KB")[View Gwaien_n°17_september_2009 - French - PDF - 129 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B017_septembre_2009.pdf "View Gwaien_n°17_september_2009 - French - PDF - 129 KB (new tab)")[Download Gwaien_n°17_september_2009 - French - PDF - 129 KB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B017_septembre_2009.pdf "Download Gwaien_n°17_september_2009 - French - PDF - 129 KB")
 
 Text transcription
 
 
 Magazine of the historic commune of Audierne, September 2009.
+
+Audierne-Gwaien
+
+Gwaien\_n°16\_august\_2009
+
+- August 2009
+- French
+- pdf
+- 153 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B016_aout_2009.pdf "View Gwaien_n°16_aout_2009 - French - PDF - 153 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B016_aout_2009.pdf "Download Gwaien_n°16_aout_2009 - French - PDF - 153 KB")[View Gwaien_n°16_aout_2009 - French - PDF - 153 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B016_aout_2009.pdf "View Gwaien_n°16_aout_2009 - French - PDF - 153 KB (new tab)")[Download Gwaien_n°16_aout_2009 - French - PDF - 153 KB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B016_aout_2009.pdf "Download Gwaien_n°16_aout_2009 - French - PDF - 153 KB")
+
+Text transcription
+
+
+Magazine of the historic commune of Audierne, August 2009.
+
+Audierne-Gwaien
+
+Gwaien\_n°15\_July\_2009
+
+- July 2009
+- French
+- pdf
+- 174 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B015_juillet_2009.pdf "View Gwaien_n°15_juillet_2009 - French - PDF - 174 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B015_juillet_2009.pdf "Download Gwaien_n°15_juillet_2009 - French - PDF - 174 KB")[View Gwaien_n°15_july_2009 - French - PDF - 174 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B015_juillet_2009.pdf "View Gwaien_n°15_july_2009 - French - PDF - 174 KB (new tab)")[Download Gwaien_n°15_july_2009 - French - PDF - 174 KB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B015_juillet_2009.pdf "Download Gwaien_n°15_july_2009 - French - PDF - 174 KB")
+
+Text transcription
+
+
+Magazine of the historic commune of Audierne, July 2009.
+
+Audierne-Gwaien
+
+Gwaien\_n°14\_June\_2009
+
+- June 2009
+- French
+- pdf
+- 163 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B014_juin_2009.pdf "View Gwaien_n°14_June_2009 - French - PDF - 163 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B014_juin_2009.pdf "Download Gwaien_n°14_June_2009 - French - PDF - 163 KB")[View Gwaien_n°14_June_2009 - French - PDF - 163 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B014_juin_2009.pdf "View Gwaien_n°14_June_2009 - French - PDF - 163 KB (new tab)")[Download Gwaien_n°14_June_2009 - French - PDF - 163 KB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B014_juin_2009.pdf "Download Gwaien_n°14_June_2009 - French - PDF - 163 KB")
+
+Text transcription
+
+
+Magazine of the historic commune of Audierne, June 2009.
+
+Audierne-Gwaien
+
+Gwaien\_n°13\_May\_2009
+
+- May 2009
+- French
+- pdf
+- 149 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B013_mai_2009.pdf "View Gwaien_n°13_May_2009 - French - PDF - 149 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B013_mai_2009.pdf "Download Gwaien_n°13_mai_2009 - French - PDF - 149 KB")[View Gwaien_n°13_May_2009 - French - PDF - 149 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B013_mai_2009.pdf "View Gwaien_n°13_May_2009 - French - PDF - 149 KB (new tab)")[Download Gwaien_n°13_mai_2009 - French - PDF - 149 KB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B013_mai_2009.pdf "Download Gwaien_n°13_mai_2009 - French - PDF - 149 KB")
+
+Text transcription
+
+
+Magazine of the historic commune of Audierne, May 2009.
+
+Audierne-Gwaien
+
+Gwaien\_n°11\_April\_2009
+
+- April 2009
+- French
+- pdf
+- 2 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B011_avril_2009.pdf "View Gwaien_n°11_April_2009 - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B011_avril_2009.pdf "Download Gwaien_n°11_avril_2009 - French - PDF - 2 MB")[View Gwaien_n°11_April_2009 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B011_avril_2009.pdf "View Gwaien_n°11_April_2009 - French - PDF - 2 MB (new tab)")[Download Gwaien_n°11_avril_2009 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B011_avril_2009.pdf "Download Gwaien_n°11_avril_2009 - French - PDF - 2 MB")
+
+Text transcription
+
+
+Magazine of the historic commune of Audierne, April 2009.
+
+Audierne-Gwaien
+
+Gwaien\_n°10\_February\_2009
+
+- February 2009
+- French
+- pdf
+- 156 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B010_fevrier_2009.pdf "View Gwaien_n°10_february_2009 - French - PDF - 156 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B010_fevrier_2009.pdf "Download Gwaien_n°10_february_2009 - French - PDF - 156 KB")[View Gwaien_n°10_february_2009 - French - PDF - 156 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B010_fevrier_2009.pdf "View Gwaien_n°10_february_2009 - French - PDF - 156 KB (new tab)")[Download Gwaien_n°10_february_2009 - French - PDF - 156 KB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B010_fevrier_2009.pdf "Download Gwaien_n°10_february_2009 - French - PDF - 156 KB")
+
+Text transcription
+
+
+Magazine of the historic commune of Audierne, February 2009.
+
+Audierne-Gwaien
+
+Gwaien\_n°9\_January\_2009
+
+- January 2009
+- French
+- pdf
+- 1 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B09_janvier_2009.pdf "View Gwaien_n°9_january_2009 - French - PDF - 1 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B09_janvier_2009.pdf "Download Gwaien_n°9_january_2009 - French - PDF - 1 MB")[View Gwaien_n°9_january_2009 - French - PDF - 1 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B09_janvier_2009.pdf "View Gwaien_n°9_january_2009 - French - PDF - 1 MB (new tab)")[Download Gwaien_n°9_january_2009 - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B09_janvier_2009.pdf "Download Gwaien_n°9_january_2009 - French - PDF - 1 MB")
+
+Text transcription
+
+
+Magazine of the historic commune of Audierne, January 2009.
+
+Audierne-Gwaien
+
+Gwaien\_n°8\_December\_2008
+
+- December 2008
+- French
+- pdf
+- 2 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B08_decembre_2008.pdf "View Gwaien_n°8_december_2008 - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B08_decembre_2008.pdf "Download Gwaien_n°8_december_2008 - French - PDF - 2 MB")[View Gwaien_n°8_december_2008 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B08_decembre_2008.pdf "View Gwaien_n°8_december_2008 - French - PDF - 2 MB (new tab)")[Download Gwaien_n°8_december_2008 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B08_decembre_2008.pdf "Download Gwaien_n°8_december_2008 - French - PDF - 2 MB")
+
+Text transcription
+
+
+Magazine of the historic commune of Audierne, December 2008.
+
+Audierne-Gwaien
+
+Gwaien\_n°7\_November\_2008
+
+- November 2008
+- French
+- pdf
+- 1 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B07_novembre_2008.pdf "View Gwaien_n°7_November_2008 - French - PDF - 1 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B07_novembre_2008.pdf "Download Gwaien_n°7_November_2008 - French - PDF - 1 MB")[View Gwaien_n°7_November_2008 - French - PDF - 1 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B07_novembre_2008.pdf "View Gwaien_n°7_November_2008 - French - PDF - 1 MB (new tab)")[Download Gwaien_n°7_November_2008 - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B07_novembre_2008.pdf "Download Gwaien_n°7_November_2008 - French - PDF - 1 MB")
+
+Text transcription
+
+
+Magazine of the historic commune of Audierne, November 2008.
+
+Audierne-Gwaien
+
+Gwaien\_n°6\_october\_2008
+
+- October 2008
+- French
+- pdf
+- 1 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B06_octobre_2008.pdf "View Gwaien_n°6_october_2008 - French - PDF - 1 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B06_octobre_2008.pdf "Download Gwaien_n°6_octobre_2008 - French - PDF - 1 MB")[View Gwaien_n°6_october_2008 - French - PDF - 1 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B06_octobre_2008.pdf "View Gwaien_n°6_october_2008 - French - PDF - 1 MB (new tab)")[Download Gwaien_n°6_october_2008 - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B06_octobre_2008.pdf "Download Gwaien_n°6_october_2008 - French - PDF - 1 MB")
+
+Text transcription
+
+
+Magazine of the historic commune of Audierne, October 2008.
+
+Audierne-Gwaien
+
+Gwaien\_n°5\_September\_2008
+
+- September 2008
+- French
+- pdf
+- 2 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B05_septembre_2008.pdf "Consulter Gwaien_n°5_septembre_2008 - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B05_septembre_2008.pdf "Télécharger Gwaien_n°5_septembre_2008 - Français - PDF - 2 Mo")[View Gwaien_n°5_september_2008 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B05_septembre_2008.pdf "View Gwaien_n°5_september_2008 - French - PDF - 2 MB (new tab)")[Download Gwaien_n°5_septembre_2008 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B05_septembre_2008.pdf "Download Gwaien_n°5_septembre_2008 - French - PDF - 2 MB")
+
+Text transcription
+
+
+Magazine of the historic town of Audierne, September 2008.
+
+Audierne-Gwaien
+
+Gwaien\_n°4\_August\_2008
+
+- August 2008
+- French
+- pdf
+- 2 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B04_aout_2008.pdf "Consulter Gwaien_n°4_aout_2008 - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B04_aout_2008.pdf "Télécharger Gwaien_n°4_aout_2008 - Français - PDF - 2 Mo")[View Gwaien_n°4_aout_2008 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B04_aout_2008.pdf "View Gwaien_n°4_aout_2008 - French - PDF - 2 MB (new tab)")[Download Gwaien_n°4_aout_2008 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B04_aout_2008.pdf "Download Gwaien_n°4_aout_2008 - French - PDF - 2 MB")
+
+Text transcription
+
+
+Magazine of the historic commune of Audierne, August 2008.
+
+Audierne-Gwaien
+
+Gwaien\_n°3\_July\_2008
+
+- July 2008
+- French
+- pdf
+- 2 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B03_juillet_2008.pdf "Consulter Gwaien_n°3_juillet_2008 - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B03_juillet_2008.pdf "Télécharger Gwaien_n°3_juillet_2008 - Français - PDF - 2 Mo")[View Gwaien_n°3_July_2008 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B03_juillet_2008.pdf "View Gwaien_n°3_July_2008 - French - PDF - 2 MB (new tab)")[Download Gwaien_n°3_juillet_2008 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B03_juillet_2008.pdf "Download Gwaien_n°3_juillet_2008 - French - PDF - 2 MB")
+
+Text transcription
+
+
+Magazine of the historic commune of Audierne, July 2008.
+
+Audierne-Gwaien
+
+Gwaien\_n°2\_June\_2008
+
+- June 2008
+- French
+- pdf
+- 741 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B02_juin_2008.pdf "Consulter Gwaien_n°2_juin_2008 - Français - PDF - 741 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B02_juin_2008.pdf "Télécharger Gwaien_n°2_juin_2008 - Français - PDF - 741 Ko")[View Gwaien_n°2_June_2008 - French - PDF - 741 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B02_juin_2008.pdf "View Gwaien_n°2_June_2008 - French - PDF - 741 KB (new tab)")[Download Gwaien_n°2_June_2008 - French - PDF - 741 KB](https://www.audierne.bzh/wp-content/uploads/2025/02/Gwaien_n%C2%B02_juin_2008.pdf "Download Gwaien_n°2_June_2008 - French - PDF - 741 KB")
+
+Text transcription
+
+
+Magazine of the historic town of Audierne, June 2008.
 
 ![](https://www.audierne.bzh/wp-content/uploads/2021/02/documentheque-2-0x0-c-default.jpg)
 
@@ -655,13 +893,13 @@ Filter
 Reset
 
 
-You have viewed 10 out of 24 results
+You have viewed NaN24 results
 
 
 Show more
 
 
-- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=21# "Download the Document Library page as a PDF")
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=21# "Download the Document Library page as a PDF")
 - Print
 
 - Share

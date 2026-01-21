@@ -1,104 +1,157 @@
-Enseigne commerciale
+Commercial sign
 
-Demande d’autorisation préalable de nouvelle installation, de remplacement, de modification d’un dispositif ou d’un matériel supportant une enseigne, préenseigne ou publicité\_Cerfa 14798\*01
+Application for prior authorization for the new installation, replacement, or modification of a device or equipment supporting a sign, pre-sign, or advertisement\_Cerfa 14798\*01
 
-- 4 Janvier 2025
-- Français
+- January 4, 2025
+- French
 - pdf
-- 316 Ko
+- 316 KB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14798-01.pdf "Consulter Demande d’autorisation préalable de nouvelle installation, de remplacement, de modification d’un dispositif ou d’un matériel supportant une enseigne, préenseigne ou publicité_Cerfa 14798*01 - Français - PDF - 316 Ko (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14798-01.pdf "Télécharger Demande d’autorisation préalable de nouvelle installation, de remplacement, de modification d’un dispositif ou d’un matériel supportant une enseigne, préenseigne ou publicité_Cerfa 14798*01 - Français - PDF - 316 Ko")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14798-01.pdf "Consulter Demande d’autorisation préalable de nouvelle installation, de remplacement, de modification d’un dispositif ou d’un matériel supportant une enseigne, préenseigne ou publicité_Cerfa 14798*01 - Français - PDF - 316 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14798-01.pdf "Télécharger Demande d’autorisation préalable de nouvelle installation, de remplacement, de modification d’un dispositif ou d’un matériel supportant une enseigne, préenseigne ou publicité_Cerfa 14798*01 - Français - PDF - 316 Ko")[Consult the application for prior authorization for the new installation, replacement, or modification of a device or equipment supporting a sign, pre-sign, or advertisement_Cerfa 14798*01 - French - PDF - 316 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14798-01.pdf "Consult the application for prior authorization for the new installation, replacement, or modification of a device or equipment supporting a sign, pre-sign, or advertisement_Cerfa 14798*01 - French - PDF - 316 KB (new tab)")[Download Application for prior authorization for the new installation, replacement, or modification of a device or equipment supporting a sign, pre-sign, or advertisement_Cerfa 14798*01 - French - PDF - 316 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14798-01.pdf "Download Application for prior authorization for the new installation, replacement, or modification of a device or equipment supporting a sign, pre-sign, or advertisement_Cerfa 14798*01 - French - PDF - 316 KB")
 
-Transcription textuelle
+Text transcription
 
 
-Demande d’autorisation préalable de nouvelle installation, de remplacement, de modification d’un dispositif ou d’un matériel supportant une enseigne, préenseigne ou publicité
+Application for prior authorization for the new installation, replacement, or modification of a device or equipment supporting a sign, pre-sign, or advertisement
 
 ![](https://www.audierne.bzh/wp-content/uploads/2021/02/documentheque-2-0x0-c-default.jpg)
 
-# Documenthèque
+# Document Library
 
-Retrouvez tous nos documents, classés par catégories.
+Find all our documents, classified by category.
 
-Cliquez sur un document pour le consulter, feuilleter ou télécharger.
+Click on a document to view, browse or download it.
 
-Filtrer les résultats
+Filter the results
 
-- Alertes météo
+- Weather alerts
 
-- Aménagement paysager
+- Landscaping
 
-- arrêtés
+- arrests
 
 - Associations
 
-- Conseil municipal
+- City Council
 
-- Déchets
+- Waste
 
-- Divers
+- Miscellaneous
 
-- Économie
+- Economy
 
-- Élections
+- Elections
 
-- Journal municipal
+- municipal newspaper
 
-- Noël
+- Christmas
 
-- Pêche-maritimité
+- Fishing and maritime
 
-- Petite enfance
+- Early childhood
 
-- Prévention et sécurité
+- Prevention and safety
 
-- Solidarité-santé
+- Solidarity-health
 
-- Urbanisme
-
-
-0 sélectionnée
+- Urban planning
 
 
-Tout sélectionner
+1 selected
+
+Deselect all
+
+- [ ]
+Planning application forms
+
+- [ ]
+Prior declaration of works
+
+- [x]
+Commercial sign
+
+- [ ]
+Furnished tourist accommodations
+
+- [ ]
+Opening of a public access building (ERP)
+
+- [ ]
+Planning permission
+
+- [ ]
+Building permit
+
+- [ ]
+Demolition permit
+
+- [ ]
+Local Urban Development Plan (PLU)
+
+- [ ]
+annexes
+
+- [ ]
+Amendment to the Local Urban Development Plan No. 1
+
+- [ ]
+Amendment to the Local Urban Development Plan No. 2
+
+- [ ]
+Planning guidelines
+
+- [ ]
+Local Urban Development Plan (PLU) June 2021
+
+- [ ]
+Procedure
+
+- [ ]
+Sustainable development and planning project
+
+- [ ]
+Presentation Report
+
+- [ ]
+Regulations
 
 
 - [ ]
-Janvier
+January
 
 - [ ]
-Février
+FEBRUARY
 
 - [ ]
-Mars
+March
 
 - [ ]
-Avril
+April
 
 - [ ]
-Mai
+May
 
 - [ ]
-Juin
+June
 
 - [ ]
-Juillet
+July
 
 - [ ]
-Août
+August
 
 - [ ]
-Septembre
+September
 
 - [ ]
-Octobre
+October
 
 - [ ]
-Novembre
+November
 
 - [ ]
-Décembre
+December
 
 
 - [ ]
@@ -486,24 +539,24 @@ Décembre
 1900
 
 
-Filtrer
+Filter
 
-Réinitialiser
+Reset
 
 
-Vous avez vu 1 résultat(s) sur
+You have viewed NaN result(s) out of
 1
 
-Afficher plus
+Show more
 
 
-- [Télécharger en PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=38# "Télécharger la page Documenthèque en PDF")
-- Imprimer
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=38# "Download the Document Library page as a PDF")
+- Print
 
-- Partager
-   - ✓ Lien copié
+- Share
+   - ✓ Link copied
 
-  - [Partager la page Documenthèque par courriel](mailto:?subject=Documenth%C3%A8que%20-%20Audierne%20(29)&body=https://www.audierne.bzh/systeme/documentheque/ "Partager la page Documenthèque par courriel")
-  - [Partager la page Documenthèque sur Facebook](https://www.facebook.com/sharer/sharer.php?u=https://www.audierne.bzh/systeme/documentheque/ "Partager la page Documenthèque sur Facebook")
-  - [Partager la page Documenthèque sur X](http://twitter.com/share?url=https://www.audierne.bzh/systeme/documentheque/&text=Documenth%C3%A8que "Partager la page Documenthèque sur X")
-  - [Partager la page Documenthèque sur LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.audierne.bzh%2Fsysteme%2Fdocumentheque%2F&title=Documenth%C3%A8que "Partager la page Documenthèque sur LinkedIn")
+  - [Share the Document Library page by email](mailto:?subject=Documenth%C3%A8que%20-%20Audierne%20(29)&body=https://www.audierne.bzh/systeme/documentheque/ "Share the Document Library page by email")
+  - [Share the Document Library page on Facebook](https://www.facebook.com/sharer/sharer.php?u=https://www.audierne.bzh/systeme/documentheque/ "Share the Document Library page on Facebook")
+  - [Share the Document Library page on X](http://twitter.com/share?url=https://www.audierne.bzh/systeme/documentheque/&text=Documenth%C3%A8que "Share the Document Library page on X")
+  - [Share the Document Library page on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.audierne.bzh%2Fsysteme%2Fdocumentheque%2F&title=Documenth%C3%A8que "Share the Document Library page on LinkedIn")

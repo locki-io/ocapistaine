@@ -1,225 +1,278 @@
-Déclaration préalable de travaux
+Prior declaration of works
 
-Déclaration préalable – Constructions et travaux non soumis à permis de construire portant sur une maison individuelle et/ou ses annexes - Cerfa 16702\*01
+Prior declaration – Construction and works not subject to a building permit relating to a detached house and/or its outbuildings - Cerfa form 16702\*01
 
-- 21 Mai 2025
-- Français
+- May 21, 2025
+- French
 - pdf
-- 2 Mo
+- 2 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_16702-01.pdf "Consulter Déclaration préalable – Constructions et travaux non soumis à permis de construire portant sur une maison individuelle et/ou ses annexes - Cerfa 16702*01 - Français - PDF - 2 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_16702-01.pdf "Télécharger Déclaration préalable – Constructions et travaux non soumis à permis de construire portant sur une maison individuelle et/ou ses annexes - Cerfa 16702*01 - Français - PDF - 2 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_16702-01.pdf "Consulter Déclaration préalable – Constructions et travaux non soumis à permis de construire portant sur une maison individuelle et/ou ses annexes - Cerfa 16702*01 - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_16702-01.pdf "Télécharger Déclaration préalable – Constructions et travaux non soumis à permis de construire portant sur une maison individuelle et/ou ses annexes - Cerfa 16702*01 - Français - PDF - 2 Mo")[Consult Prior Declaration – Construction and works not subject to a building permit relating to a detached house and/or its outbuildings - Cerfa 16702*01 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_16702-01.pdf "Consult Prior Declaration – Construction and works not subject to a building permit relating to a detached house and/or its outbuildings - Cerfa 16702*01 - French - PDF - 2 MB (new tab)")[Download Prior Declaration – Construction and works not subject to a building permit relating to a detached house and/or its outbuildings - Cerfa 16702*01 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_16702-01.pdf "Download Prior Declaration – Construction and works not subject to a building permit relating to a detached house and/or its outbuildings - Cerfa 16702*01 - French - PDF - 2 MB")
 
-Transcription textuelle
+Text transcription
 
 
-Déclaration préalable – Constructions et travaux non soumis à permis de construire portant sur une maison individuelle et/ou ses annexes
+Prior declaration – Construction and works not subject to a building permit relating to a detached house and/or its outbuildings
 
-Déclaration préalable de travaux
+Prior declaration of works
 
-Déclaration préalable – Installations et aménagements non soumis à permis d’aménager - Cerfa 16703\*01
+Prior declaration – Installations and developments not subject to planning permission - Cerfa form 16703\*01
 
-- 21 Mai 2025
-- Français
+- May 21, 2025
+- French
 - pdf
-- 1 Mo
+- 1 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_16703-01-2.pdf "Consulter Déclaration préalable – Installations et aménagements non soumis à permis d’aménager - Cerfa 16703*01 - Français - PDF - 1 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_16703-01-2.pdf "Télécharger Déclaration préalable – Installations et aménagements non soumis à permis d’aménager - Cerfa 16703*01 - Français - PDF - 1 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_16703-01-2.pdf "Consulter Déclaration préalable – Installations et aménagements non soumis à permis d’aménager - Cerfa 16703*01 - Français - PDF - 1 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_16703-01-2.pdf "Télécharger Déclaration préalable – Installations et aménagements non soumis à permis d’aménager - Cerfa 16703*01 - Français - PDF - 1 Mo")[Consult Prior Declaration – Installations and developments not subject to planning permission - Cerfa 16703*01 - French - PDF - 1 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_16703-01-2.pdf "Consult Prior Declaration – Installations and developments not subject to planning permission - Cerfa 16703*01 - French - PDF - 1 MB (new tab)")[Download Prior Declaration – Installations and developments not subject to planning permission - Cerfa 16703*01 - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_16703-01-2.pdf "Download Prior Declaration – Installations and developments not subject to planning permission - Cerfa 16703*01 - French - PDF - 1 MB")
 
-Formulaires d'urbanisme
+Planning application forms
 
-Demande de permis d’aménager - Cerfa 16297\*03
+Application for planning permission - Cerfa form 16297\*03
 
-- 21 Mai 2025
-- Français
+- May 21, 2025
+- French
 - pdf
-- 2 Mo
+- 2 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_16297-03.pdf "Consulter Demande de permis d’aménager - Cerfa 16297*03 - Français - PDF - 2 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_16297-03.pdf "Télécharger Demande de permis d’aménager - Cerfa 16297*03 - Français - PDF - 2 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_16297-03.pdf "Consulter Demande de permis d’aménager - Cerfa 16297*03 - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_16297-03.pdf "Télécharger Demande de permis d’aménager - Cerfa 16297*03 - Français - PDF - 2 Mo")[Consult the application for a development permit - Cerfa form 16297*03 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_16297-03.pdf "Consult the application for a development permit - Cerfa form 16297*03 - French - PDF - 2 MB (new tab)")[Download Application for a development permit - Cerfa 16297*03 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_16297-03.pdf "Download Application for a development permit - Cerfa 16297*03 - French - PDF - 2 MB")
 
-Formulaires d'urbanisme
+Planning application forms
 
-Demande de permis de démolir Cerfa 13405\*13
+Application for a demolition permit Cerfa form 13405\*13
 
-- 21 Mai 2025
-- Français
+- May 21, 2025
+- French
 - pdf
-- 1 Mo
+- 1 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13405-13.pdf "Consulter Demande de permis de démolir Cerfa 13405*13 - Français - PDF - 1 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13405-13.pdf "Télécharger Demande de permis de démolir Cerfa 13405*13 - Français - PDF - 1 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13405-13.pdf "Consulter Demande de permis de démolir Cerfa 13405*13 - Français - PDF - 1 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13405-13.pdf "Télécharger Demande de permis de démolir Cerfa 13405*13 - Français - PDF - 1 Mo")[Consult the application for a demolition permit (Cerfa form 13405*13) - French - PDF - 1 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13405-13.pdf "Consult the application for a demolition permit (Cerfa form 13405*13) - French - PDF - 1 MB (opens in a new tab)")[Download Application for a demolition permit Cerfa form 13405*13 - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13405-13.pdf "Download Application for a demolition permit Cerfa form 13405*13 - French - PDF - 1 MB")
 
-Transcription textuelle
+Text transcription
 
 
-Demande de permis de démolir
+Application for a demolition permit
 
-Formulaires d'urbanisme
+Planning application forms
 
-Demande de permis de construire comprenant ou non des démolitions - Cerfa\_13409-15
+Application for a building permit including or not including demolitions - Cerfa\_13409-15
 
-- 13 Mai 2025
-- Français
+- May 13, 2025
+- French
 - pdf
-- 2 Mo
+- 2 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13409-15-2.pdf "Consulter Demande de permis de construire comprenant ou non des démolitions - Cerfa_13409-15 - Français - PDF - 2 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13409-15-2.pdf "Télécharger Demande de permis de construire comprenant ou non des démolitions - Cerfa_13409-15 - Français - PDF - 2 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13409-15-2.pdf "Consulter Demande de permis de construire comprenant ou non des démolitions - Cerfa_13409-15 - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13409-15-2.pdf "Télécharger Demande de permis de construire comprenant ou non des démolitions - Cerfa_13409-15 - Français - PDF - 2 Mo")[Consult the application for a building permit including or not including demolitions - Cerfa_13409-15 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13409-15-2.pdf "Consult the application for a building permit including or not including demolitions - Cerfa_13409-15 - French - PDF - 2 MB (new tab)")[Download Building Permit Application Form (including or excluding demolitions) - Cerfa_13409-15 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13409-15-2.pdf "Download Building Permit Application Form (including or excluding demolitions) - Cerfa_13409-15 - French - PDF - 2 MB")
 
-Transcription textuelle
+Text transcription
 
 
-Demande de permis de construire comprenant ou non des démolitions
+Application for a building permit, including or not including demolitions
 
-Formulaires d'urbanisme
+Planning application forms
 
-Demande de permis de construire pour une maison individuelle et/ou ses annexes comprenant ou non des démolitions - Cerfa\_13406-15
+Application for a building permit for a detached house and/or its outbuildings, including or not including demolitions - Cerfa\_13406-15
 
-- 13 Mai 2025
-- Français
+- May 13, 2025
+- French
 - pdf
-- 2 Mo
+- 2 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_13406-15-1.pdf "Consulter Demande de permis de construire pour une maison individuelle et/ou ses annexes comprenant ou non des démolitions - Cerfa_13406-15 - Français - PDF - 2 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_13406-15-1.pdf "Télécharger Demande de permis de construire pour une maison individuelle et/ou ses annexes comprenant ou non des démolitions - Cerfa_13406-15 - Français - PDF - 2 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_13406-15-1.pdf "Consulter Demande de permis de construire pour une maison individuelle et/ou ses annexes comprenant ou non des démolitions - Cerfa_13406-15 - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_13406-15-1.pdf "Download Building Permit Application for a Detached House and/or its Outbuildings, including or not including demolition - Cerfa_13406-15 - French - PDF - 2 MB")[Consult the application for a building permit for a detached house and/or its outbuildings, including or not including demolitions - Cerfa_13406-15 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_13406-15-1.pdf "Consult the application for a building permit for a detached house and/or its outbuildings, including or not including demolitions - Cerfa_13406-15 - French - PDF - 2 MB (new tab)")[Download Building Permit Application for a Detached House and/or its Outbuildings, including or not including demolition - Cerfa_13406-15 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_13406-15-1.pdf "Download Building Permit Application for a Detached House and/or its Outbuildings, including or not including demolition - Cerfa_13406-15 - French - PDF - 2 MB")
 
-Enseigne commerciale
+Commercial sign
 
-Demande d’autorisation préalable de nouvelle installation, de remplacement, de modification d’un dispositif ou d’un matériel supportant une enseigne, préenseigne ou publicité\_Cerfa 14798\*01
+Application for prior authorization for the new installation, replacement, or modification of a device or equipment supporting a sign, pre-sign, or advertisement\_Cerfa 14798\*01
 
-- 4 Janvier 2025
-- Français
+- January 4, 2025
+- French
 - pdf
-- 316 Ko
+- 316 KB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14798-01.pdf "Consulter Demande d’autorisation préalable de nouvelle installation, de remplacement, de modification d’un dispositif ou d’un matériel supportant une enseigne, préenseigne ou publicité_Cerfa 14798*01 - Français - PDF - 316 Ko (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14798-01.pdf "Télécharger Demande d’autorisation préalable de nouvelle installation, de remplacement, de modification d’un dispositif ou d’un matériel supportant une enseigne, préenseigne ou publicité_Cerfa 14798*01 - Français - PDF - 316 Ko")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14798-01.pdf "Consult the application for prior authorization for the new installation, replacement, or modification of a device or equipment supporting a sign, pre-sign, or advertisement_Cerfa 14798*01 - French - PDF - 316 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14798-01.pdf "Download Application for prior authorization for the new installation, replacement, or modification of a device or equipment supporting a sign, pre-sign, or advertisement_Cerfa 14798*01 - French - PDF - 316 KB")[Consult the application for prior authorization for the new installation, replacement, or modification of a device or equipment supporting a sign, pre-sign, or advertisement_Cerfa 14798*01 - French - PDF - 316 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14798-01.pdf "Consult the application for prior authorization for the new installation, replacement, or modification of a device or equipment supporting a sign, pre-sign, or advertisement_Cerfa 14798*01 - French - PDF - 316 KB (new tab)")[Download Application for prior authorization for the new installation, replacement, or modification of a device or equipment supporting a sign, pre-sign, or advertisement_Cerfa 14798*01 - French - PDF - 316 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14798-01.pdf "Download Application for prior authorization for the new installation, replacement, or modification of a device or equipment supporting a sign, pre-sign, or advertisement_Cerfa 14798*01 - French - PDF - 316 KB")
 
-Transcription textuelle
+Text transcription
 
 
-Demande d’autorisation préalable de nouvelle installation, de remplacement, de modification d’un dispositif ou d’un matériel supportant une enseigne, préenseigne ou publicité
+Application for prior authorization for the new installation, replacement, or modification of a device or equipment supporting a sign, pre-sign, or advertisement
 
-Formulaires d'urbanisme
+Planning application forms
 
-Déclarer en mairie un meublé de tourisme Cerfa 14004\*04
+Registering a furnished tourist accommodation with the town hall (Cerfa form 14004\*04)
 
-- 1er Juillet 2024
-- Français
+- July 1, 2024
+- French
 - pdf
-- 225 Ko
+- 225 KB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14004-04.pdf "Consulter Déclarer en mairie un meublé de tourisme Cerfa 14004*04 - Français - PDF - 225 Ko (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14004-04.pdf "Télécharger Déclarer en mairie un meublé de tourisme Cerfa 14004*04 - Français - PDF - 225 Ko")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14004-04.pdf "Consult the form to declare furnished tourist accommodation at the town hall (Cerfa 14004*04) - French - PDF - 225 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14004-04.pdf "Download the form to declare furnished tourist accommodation to the town hall (Cerfa 14004*04) - French - PDF - 225 KB")[Consult the form to declare furnished tourist accommodation at the town hall (Cerfa 14004*04) - French - PDF - 225 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14004-04.pdf "Consult the form to declare furnished tourist accommodation at the town hall (Cerfa 14004*04) - French - PDF - 225 KB (new tab)")[Download the form to declare furnished tourist accommodation to the town hall (Cerfa 14004*04) - French - PDF - 225 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14004-04.pdf "Download the form to declare furnished tourist accommodation to the town hall (Cerfa 14004*04) - French - PDF - 225 KB")
 
-Transcription textuelle
+Text transcription
 
 
-Déclarer en mairie un meublé de tourisme
+Register a furnished tourist accommodation with the town hall
 
-Formulaires d'urbanisme
+Planning application forms
 
-Demande d’autorisation de construire, d’aménager ou de modifier un établissement recevant du public Cerfa 13824\*04
+Application for authorization to construct, develop or modify a building open to the public (Cerfa form 13824\*04)
 
-- 1er Janvier 2024
-- Français
+- January 1, 2024
+- French
 - pdf
-- 816 Ko
+- 816 KB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13824-04-2.pdf "Consulter Demande d’autorisation de construire, d’aménager ou de modifier un établissement recevant du public Cerfa 13824*04 - Français - PDF - 816 Ko (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13824-04-2.pdf "Télécharger Demande d’autorisation de construire, d’aménager ou de modifier un établissement recevant du public Cerfa 13824*04 - Français - PDF - 816 Ko")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13824-04-2.pdf "Consult the application for authorization to construct, develop or modify a public establishment (Cerfa form 13824*04) - French - PDF - 816 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13824-04-2.pdf "Download Application for authorization to construct, develop or modify a public establishment Cerfa 13824*04 - French - PDF - 816 KB")[Consult the application for authorization to construct, develop or modify a public establishment (Cerfa form 13824*04) - French - PDF - 816 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13824-04-2.pdf "Consult the application for authorization to construct, develop or modify a public establishment (Cerfa form 13824*04) - French - PDF - 816 KB (new tab)")[Download Application for authorization to construct, develop or modify a public establishment Cerfa 13824*04 - French - PDF - 816 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13824-04-2.pdf "Download Application for authorization to construct, develop or modify a public establishment Cerfa 13824*04 - French - PDF - 816 KB")
 
-Transcription textuelle
+Text transcription
 
 
-Demande d’autorisation de construire, d’aménager ou de modifier un établissement recevant du public
+Application for authorization to construct, develop or modify a public establishment
 
 ![](https://www.audierne.bzh/wp-content/uploads/2021/02/documentheque-2-0x0-c-default.jpg)
 
-# Documenthèque
+# Document Library
 
-Retrouvez tous nos documents, classés par catégories.
+Find all our documents, classified by category.
 
-Cliquez sur un document pour le consulter, feuilleter ou télécharger.
+Click on a document to view, browse or download it.
 
-Filtrer les résultats
+Filter the results
 
-- Alertes météo
+- Weather alerts
 
-- Aménagement paysager
+- Landscaping
 
-- arrêtés
+- arrests
 
 - Associations
 
-- Conseil municipal
+- City Council
 
-- Déchets
+- Waste
 
-- Divers
+- Miscellaneous
 
-- Économie
+- Economy
 
-- Élections
+- Elections
 
-- Journal municipal
+- municipal newspaper
 
-- Noël
+- Christmas
 
-- Pêche-maritimité
+- Fishing and maritime
 
-- Petite enfance
+- Early childhood
 
-- Prévention et sécurité
+- Prevention and safety
 
-- Solidarité-santé
+- Solidarity-health
 
-- Urbanisme
-
-
-0 sélectionnée
+- Urban planning
 
 
-Tout sélectionner
+1 selected
+
+Deselect all
+
+- [x]
+Planning application forms
+
+- [ ]
+Prior declaration of works
+
+- [ ]
+Commercial sign
+
+- [ ]
+Furnished tourist accommodations
+
+- [ ]
+Opening of a public access building (ERP)
+
+- [ ]
+Planning permission
+
+- [ ]
+Building permit
+
+- [ ]
+Demolition permit
+
+- [ ]
+Local Urban Development Plan (PLU)
+
+- [ ]
+annexes
+
+- [ ]
+Amendment to the Local Urban Development Plan No. 1
+
+- [ ]
+Amendment to the Local Urban Development Plan No. 2
+
+- [ ]
+Planning guidelines
+
+- [ ]
+Local Urban Development Plan (PLU) June 2021
+
+- [ ]
+Procedure
+
+- [ ]
+Sustainable development and planning project
+
+- [ ]
+Presentation Report
+
+- [ ]
+Regulations
 
 
 - [ ]
-Janvier
+January
 
 - [ ]
-Février
+FEBRUARY
 
 - [ ]
-Mars
+March
 
 - [ ]
-Avril
+April
 
 - [ ]
-Mai
+May
 
 - [ ]
-Juin
+June
 
 - [ ]
-Juillet
+July
 
 - [ ]
-Août
+August
 
 - [ ]
-Septembre
+September
 
 - [ ]
-Octobre
+October
 
 - [ ]
-Novembre
+November
 
 - [ ]
-Décembre
+December
 
 
 - [ ]
@@ -607,24 +660,24 @@ Décembre
 1900
 
 
-Filtrer
+Filter
 
-Réinitialiser
-
-
-Vous avez vu 9 résultat(s) sur
-9
-
-Afficher plus
+Reset
 
 
-- [Télécharger en PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=35# "Télécharger la page Documenthèque en PDF")
-- Imprimer
+You have viewed NaN9 results
 
-- Partager
-   - ✓ Lien copié
 
-  - [Partager la page Documenthèque par courriel](mailto:?subject=Documenth%C3%A8que%20-%20Audierne%20(29)&body=https://www.audierne.bzh/systeme/documentheque/ "Partager la page Documenthèque par courriel")
-  - [Partager la page Documenthèque sur Facebook](https://www.facebook.com/sharer/sharer.php?u=https://www.audierne.bzh/systeme/documentheque/ "Partager la page Documenthèque sur Facebook")
-  - [Partager la page Documenthèque sur X](http://twitter.com/share?url=https://www.audierne.bzh/systeme/documentheque/&text=Documenth%C3%A8que "Partager la page Documenthèque sur X")
-  - [Partager la page Documenthèque sur LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.audierne.bzh%2Fsysteme%2Fdocumentheque%2F&title=Documenth%C3%A8que "Partager la page Documenthèque sur LinkedIn")
+Show more
+
+
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=35# "Download the Document Library page as a PDF")
+- Print
+
+- Share
+   - ✓ Link copied
+
+  - [Share the Document Library page by email](mailto:?subject=Documenth%C3%A8que%20-%20Audierne%20(29)&body=https://www.audierne.bzh/systeme/documentheque/ "Share the Document Library page by email")
+  - [Share the Document Library page on Facebook](https://www.facebook.com/sharer/sharer.php?u=https://www.audierne.bzh/systeme/documentheque/ "Share the Document Library page on Facebook")
+  - [Share the Document Library page on X](http://twitter.com/share?url=https://www.audierne.bzh/systeme/documentheque/&text=Documenth%C3%A8que "Share the Document Library page on X")
+  - [Share the Document Library page on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.audierne.bzh%2Fsysteme%2Fdocumentheque%2F&title=Documenth%C3%A8que "Share the Document Library page on LinkedIn")

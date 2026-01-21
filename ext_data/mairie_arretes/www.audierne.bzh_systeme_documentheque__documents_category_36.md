@@ -8,7 +8,7 @@ Application for a building permit including or not including demolitions - Cerfa
 - 2 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13409-15-2.pdf "Consulter Demande de permis de construire comprenant ou non des démolitions - Cerfa_13409-15 - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13409-15-2.pdf "Télécharger Demande de permis de construire comprenant ou non des démolitions - Cerfa_13409-15 - Français - PDF - 2 Mo")[Consult the application for a building permit including or not including demolitions - Cerfa_13409-15 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13409-15-2.pdf "Consult the application for a building permit including or not including demolitions - Cerfa_13409-15 - French - PDF - 2 MB (new tab)")[Download Building Permit Application Form (including or excluding demolitions) - Cerfa_13409-15 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13409-15-2.pdf "Download Building Permit Application Form (including or excluding demolitions) - Cerfa_13409-15 - French - PDF - 2 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13409-15-2.pdf "Consult the application for a building permit including or not including demolitions - Cerfa_13409-15 - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13409-15-2.pdf "Download Building Permit Application Form (including or excluding demolitions) - Cerfa_13409-15 - French - PDF - 2 MB")[Consult the application for a building permit including or not including demolitions - Cerfa_13409-15 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13409-15-2.pdf "Consult the application for a building permit including or not including demolitions - Cerfa_13409-15 - French - PDF - 2 MB (new tab)")[Download Building Permit Application Form (including or excluding demolitions) - Cerfa_13409-15 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_13409-15-2.pdf "Download Building Permit Application Form (including or excluding demolitions) - Cerfa_13409-15 - French - PDF - 2 MB")
 
 Text transcription
 
@@ -556,13 +556,13 @@ Filter
 Reset
 
 
-You have viewed 2 out of 2 results
+You have viewed NaN2 results
 
 
 Show more
 
 
-- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=36# "Download the Document Library page as a PDF")
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=36# "Download the Document Library page as a PDF")
 - Print
 
 - Share

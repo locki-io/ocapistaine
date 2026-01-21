@@ -1,104 +1,157 @@
-PLU
+Local Urban Development Plan (PLU)
 
-Projet d’aménagement et de Développement durable
+Planning and Sustainable Development Project
 
-- 29 Juin 2021
-- Français
+- June 29, 2021
+- French
 - pdf
-- 2 Mo
+- 2 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/03/29003_padd_20221206.pdf "Consulter Projet d’aménagement et de Développement durable - Français - PDF - 2 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/03/29003_padd_20221206.pdf "Télécharger Projet d’aménagement et de Développement durable - Français - PDF - 2 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/29003_padd_20221206.pdf "Consulter Projet d’aménagement et de Développement durable - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/29003_padd_20221206.pdf "Télécharger Projet d’aménagement et de Développement durable - Français - PDF - 2 Mo")[View the Planning and Sustainable Development Project - French - PDF - 2 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/29003_padd_20221206.pdf "View the Planning and Sustainable Development Project - French - PDF - 2 MB (opens in a new tab)")[Download Planning and Sustainable Development Project - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/29003_padd_20221206.pdf "Download Planning and Sustainable Development Project - French - PDF - 2 MB")
 
-Transcription textuelle
+Text transcription
 
 
-Projet d’aménagement et de Développement durable
+Planning and Sustainable Development Project
 
 ![](https://www.audierne.bzh/wp-content/uploads/2021/02/documentheque-2-0x0-c-default.jpg)
 
-# Documenthèque
+# Document Library
 
-Retrouvez tous nos documents, classés par catégories.
+Find all our documents, classified by category.
 
-Cliquez sur un document pour le consulter, feuilleter ou télécharger.
+Click on a document to view, browse or download it.
 
-Filtrer les résultats
+Filter the results
 
-- Alertes météo
+- Weather alerts
 
-- Aménagement paysager
+- Landscaping
 
-- arrêtés
+- arrests
 
 - Associations
 
-- Conseil municipal
+- City Council
 
-- Déchets
+- Waste
 
-- Divers
+- Miscellaneous
 
-- Économie
+- Economy
 
-- Élections
+- Elections
 
-- Journal municipal
+- municipal newspaper
 
-- Noël
+- Christmas
 
-- Pêche-maritimité
+- Fishing and maritime
 
-- Petite enfance
+- Early childhood
 
-- Prévention et sécurité
+- Prevention and safety
 
-- Solidarité-santé
+- Solidarity-health
 
-- Urbanisme
-
-
-0 sélectionnée
+- Urban planning
 
 
-Tout sélectionner
+1 selected
+
+Deselect all
+
+- [ ]
+Planning application forms
+
+- [ ]
+Prior declaration of works
+
+- [ ]
+Commercial sign
+
+- [ ]
+Furnished tourist accommodations
+
+- [ ]
+Opening of a public access building (ERP)
+
+- [ ]
+Planning permission
+
+- [ ]
+Building permit
+
+- [ ]
+Demolition permit
+
+- [ ]
+Local Urban Development Plan (PLU)
+
+- [ ]
+annexes
+
+- [ ]
+Amendment to the Local Urban Development Plan No. 1
+
+- [ ]
+Amendment to the Local Urban Development Plan No. 2
+
+- [ ]
+Planning guidelines
+
+- [ ]
+Local Urban Development Plan (PLU) June 2021
+
+- [ ]
+Procedure
+
+- [x]
+Sustainable development and planning project
+
+- [ ]
+Presentation Report
+
+- [ ]
+Regulations
 
 
 - [ ]
-Janvier
+January
 
 - [ ]
-Février
+FEBRUARY
 
 - [ ]
-Mars
+March
 
 - [ ]
-Avril
+April
 
 - [ ]
-Mai
+May
 
 - [ ]
-Juin
+June
 
 - [ ]
-Juillet
+July
 
 - [ ]
-Août
+August
 
 - [ ]
-Septembre
+September
 
 - [ ]
-Octobre
+October
 
 - [ ]
-Novembre
+November
 
 - [ ]
-Décembre
+December
 
 
 - [ ]
@@ -486,24 +539,24 @@ Décembre
 1900
 
 
-Filtrer
+Filter
 
-Réinitialiser
+Reset
 
 
-Vous avez vu 1 résultat(s) sur
+You have viewed NaN result(s) out of
 1
 
-Afficher plus
+Show more
 
 
-- [Télécharger en PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=29# "Télécharger la page Documenthèque en PDF")
-- Imprimer
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=29# "Download the Document Library page as a PDF")
+- Print
 
-- Partager
-   - ✓ Lien copié
+- Share
+   - ✓ Link copied
 
-  - [Partager la page Documenthèque par courriel](mailto:?subject=Documenth%C3%A8que%20-%20Audierne%20(29)&body=https://www.audierne.bzh/systeme/documentheque/ "Partager la page Documenthèque par courriel")
-  - [Partager la page Documenthèque sur Facebook](https://www.facebook.com/sharer/sharer.php?u=https://www.audierne.bzh/systeme/documentheque/ "Partager la page Documenthèque sur Facebook")
-  - [Partager la page Documenthèque sur X](http://twitter.com/share?url=https://www.audierne.bzh/systeme/documentheque/&text=Documenth%C3%A8que "Partager la page Documenthèque sur X")
-  - [Partager la page Documenthèque sur LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.audierne.bzh%2Fsysteme%2Fdocumentheque%2F&title=Documenth%C3%A8que "Partager la page Documenthèque sur LinkedIn")
+  - [Share the Document Library page by email](mailto:?subject=Documenth%C3%A8que%20-%20Audierne%20(29)&body=https://www.audierne.bzh/systeme/documentheque/ "Share the Document Library page by email")
+  - [Share the Document Library page on Facebook](https://www.facebook.com/sharer/sharer.php?u=https://www.audierne.bzh/systeme/documentheque/ "Share the Document Library page on Facebook")
+  - [Share the Document Library page on X](http://twitter.com/share?url=https://www.audierne.bzh/systeme/documentheque/&text=Documenth%C3%A8que "Share the Document Library page on X")
+  - [Share the Document Library page on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.audierne.bzh%2Fsysteme%2Fdocumentheque%2F&title=Documenth%C3%A8que "Share the Document Library page on LinkedIn")

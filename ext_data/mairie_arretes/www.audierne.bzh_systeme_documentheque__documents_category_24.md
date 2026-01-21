@@ -20,7 +20,7 @@ Zoning Plan 8000e
 - 19 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/07/A0_atlas_8000e_Audierne_07072025.pdf "View Zoning Plan 8000e - French - PDF - 19 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/07/A0_atlas_8000e_Audierne_07072025.pdf "Download Zoning Plan 8000e - French - PDF - 19 MB")[View Zoning Plan 8000e - French - PDF - 19 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/07/A0_atlas_8000e_Audierne_07072025.pdf "View Zoning Plan 8000e - French - PDF - 19 MB (opens in a new tab)")[Download Zoning Plan 8000e - French - PDF - 19 MB](https://www.audierne.bzh/wp-content/uploads/2025/07/A0_atlas_8000e_Audierne_07072025.pdf "Download Zoning Plan 8000e - French - PDF - 19 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/07/A0_atlas_8000e_Audierne_07072025.pdf "Consulter Plan de zonage 8000e - Français - PDF - 19 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/07/A0_atlas_8000e_Audierne_07072025.pdf "Télécharger Plan de zonage 8000e - Français - PDF - 19 Mo")[View Zoning Plan 8000e - French - PDF - 19 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/07/A0_atlas_8000e_Audierne_07072025.pdf "View Zoning Plan 8000e - French - PDF - 19 MB (opens in a new tab)")[Download Zoning Plan 8000e - French - PDF - 19 MB](https://www.audierne.bzh/wp-content/uploads/2025/07/A0_atlas_8000e_Audierne_07072025.pdf "Download Zoning Plan 8000e - French - PDF - 19 MB")
 
 Local Urban Development Plan (PLU)
 
@@ -32,7 +32,7 @@ Written Regulations
 - 5 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/07/REGLEMENT_Audierne_M2_062025_APPRO.pdf "View the written regulations - French - PDF - 5 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/07/REGLEMENT_Audierne_M2_062025_APPRO.pdf "Download Written Rules - French - PDF - 5 MB")[View the written regulations - French - PDF - 5 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/07/REGLEMENT_Audierne_M2_062025_APPRO.pdf "View the written regulations - French - PDF - 5 MB (opens in a new tab)")[Download Written Rules - French - PDF - 5 MB](https://www.audierne.bzh/wp-content/uploads/2025/07/REGLEMENT_Audierne_M2_062025_APPRO.pdf "Download Written Rules - French - PDF - 5 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/07/REGLEMENT_Audierne_M2_062025_APPRO.pdf "Consulter Règlement écrit - Français - PDF - 5 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/07/REGLEMENT_Audierne_M2_062025_APPRO.pdf "Télécharger Règlement écrit - Français - PDF - 5 Mo")[View the written regulations - French - PDF - 5 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/07/REGLEMENT_Audierne_M2_062025_APPRO.pdf "View the written regulations - French - PDF - 5 MB (opens in a new tab)")[Download Written Rules - French - PDF - 5 MB](https://www.audierne.bzh/wp-content/uploads/2025/07/REGLEMENT_Audierne_M2_062025_APPRO.pdf "Download Written Rules - French - PDF - 5 MB")
 
 Amendment to the Local Urban Development Plan No. 1
 
@@ -44,7 +44,7 @@ Resolution approving amendment no. 1
 - 4 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2024-004_approbation_modification_n%C2%B01_plu-tampon.pdf "View Resolution approving amendment no. 1 - French - PDF - 4 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2024-004_approbation_modification_n%C2%B01_plu-tampon.pdf "Download Resolution approving amendment no. 1 - French - PDF - 4 MB")[View Resolution approving amendment no. 1 - French - PDF - 4 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2024-004_approbation_modification_n%C2%B01_plu-tampon.pdf "View Resolution approving amendment no. 1 - French - PDF - 4 MB (opens in a new tab)")[Download Resolution approving amendment no. 1 - French - PDF - 4 MB](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2024-004_approbation_modification_n%C2%B01_plu-tampon.pdf "Download Resolution approving amendment no. 1 - French - PDF - 4 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2024-004_approbation_modification_n%C2%B01_plu-tampon.pdf "Consulter Délibération d'approbation de la modification n°1 - Français - PDF - 4 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2024-004_approbation_modification_n%C2%B01_plu-tampon.pdf "Télécharger Délibération d'approbation de la modification n°1 - Français - PDF - 4 Mo")[View Resolution approving amendment no. 1 - French - PDF - 4 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2024-004_approbation_modification_n%C2%B01_plu-tampon.pdf "View Resolution approving amendment no. 1 - French - PDF - 4 MB (opens in a new tab)")[Download Resolution approving amendment no. 1 - French - PDF - 4 MB](https://www.audierne.bzh/wp-content/uploads/2025/07/DE2024-004_approbation_modification_n%C2%B01_plu-tampon.pdf "Download Resolution approving amendment no. 1 - French - PDF - 4 MB")
 
 Local Urban Development Plan (PLU)
 
@@ -56,7 +56,7 @@ Resolution approving simplified amendment no. 1
 - 482 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2022-141_plu_prescription_modification_1-tampon-1.pdf "View the deliberation approving simplified amendment no. 1 - French - PDF - 482 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2022-141_plu_prescription_modification_1-tampon-1.pdf "Download Resolution approving simplified amendment no. 1 - French - PDF - 482 KB")[View the deliberation approving simplified amendment no. 1 - French - PDF - 482 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2022-141_plu_prescription_modification_1-tampon-1.pdf "View the deliberation approving simplified amendment no. 1 - French - PDF - 482 KB (new tab)")[Download Resolution approving simplified amendment no. 1 - French - PDF - 482 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2022-141_plu_prescription_modification_1-tampon-1.pdf "Download Resolution approving simplified amendment no. 1 - French - PDF - 482 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2022-141_plu_prescription_modification_1-tampon-1.pdf "Consulter Délibération d’approbation de la modification simplifiée n°1 - Français - PDF - 482 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2022-141_plu_prescription_modification_1-tampon-1.pdf "Télécharger Délibération d’approbation de la modification simplifiée n°1 - Français - PDF - 482 Ko")[View the deliberation approving simplified amendment no. 1 - French - PDF - 482 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2022-141_plu_prescription_modification_1-tampon-1.pdf "View the deliberation approving simplified amendment no. 1 - French - PDF - 482 KB (new tab)")[Download Resolution approving simplified amendment no. 1 - French - PDF - 482 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2022-141_plu_prescription_modification_1-tampon-1.pdf "Download Resolution approving simplified amendment no. 1 - French - PDF - 482 KB")
 
 Text transcription
 
@@ -73,7 +73,7 @@ Approval of the local urban development plan
 - 174 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/02/1-DE2021-060Approbation-du-plan-local-durbanisme-.pdf "View Approval of the local urban development plan - French - PDF - 174 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/1-DE2021-060Approbation-du-plan-local-durbanisme-.pdf "Download Approval of the Local Urban Development Plan - French - PDF - 174 KB")[View Approval of the local urban development plan - French - PDF - 174 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/1-DE2021-060Approbation-du-plan-local-durbanisme-.pdf "View Approval of the local urban development plan - French - PDF - 174 KB (new tab)")[Download Approval of the Local Urban Development Plan - French - PDF - 174 KB](https://www.audierne.bzh/wp-content/uploads/2025/02/1-DE2021-060Approbation-du-plan-local-durbanisme-.pdf "Download Approval of the Local Urban Development Plan - French - PDF - 174 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/1-DE2021-060Approbation-du-plan-local-durbanisme-.pdf "Consulter Approbation du plan local d’urbanisme - Français - PDF - 174 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/1-DE2021-060Approbation-du-plan-local-durbanisme-.pdf "Télécharger Approbation du plan local d’urbanisme - Français - PDF - 174 Ko")[View Approval of the local urban development plan - French - PDF - 174 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/1-DE2021-060Approbation-du-plan-local-durbanisme-.pdf "View Approval of the local urban development plan - French - PDF - 174 KB (new tab)")[Download Approval of the Local Urban Development Plan - French - PDF - 174 KB](https://www.audierne.bzh/wp-content/uploads/2025/02/1-DE2021-060Approbation-du-plan-local-durbanisme-.pdf "Download Approval of the Local Urban Development Plan - French - PDF - 174 KB")
 
 Local Urban Development Plan (PLU)
 
@@ -85,7 +85,7 @@ Annex-DE2021-060Approval-of-the-local-urban-plan-
 - 250 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/03/2-Annexe-DE2021-060Approbation-du-plan-local-durbanisme-.pdf "Consult Annex-DE2021-060Approval-of-the-local-urban-plan- - French - PDF - 250 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/2-Annexe-DE2021-060Approbation-du-plan-local-durbanisme-.pdf "Download Annex-DE2021-060Approval-of-the-local-urban-plan- - French - PDF - 250 KB")[Consult Annex-DE2021-060Approval-of-the-local-urban-plan- - French - PDF - 250 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/2-Annexe-DE2021-060Approbation-du-plan-local-durbanisme-.pdf "Consult Annex-DE2021-060Approval-of-the-local-urban-plan- - French - PDF - 250 KB (new tab)")[Download Annex-DE2021-060Approval-of-the-local-urban-plan- - French - PDF - 250 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/2-Annexe-DE2021-060Approbation-du-plan-local-durbanisme-.pdf "Download Annex-DE2021-060Approval-of-the-local-urban-plan- - French - PDF - 250 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/2-Annexe-DE2021-060Approbation-du-plan-local-durbanisme-.pdf "Consulter Annexe-DE2021-060Approbation-du-plan-local-durbanisme- - Français - PDF - 250 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/2-Annexe-DE2021-060Approbation-du-plan-local-durbanisme-.pdf "Télécharger Annexe-DE2021-060Approbation-du-plan-local-durbanisme- - Français - PDF - 250 Ko")[Consult Annex-DE2021-060Approval-of-the-local-urban-plan- - French - PDF - 250 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/2-Annexe-DE2021-060Approbation-du-plan-local-durbanisme-.pdf "Consult Annex-DE2021-060Approval-of-the-local-urban-plan- - French - PDF - 250 KB (new tab)")[Download Annex-DE2021-060Approval-of-the-local-urban-plan- - French - PDF - 250 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/2-Annexe-DE2021-060Approbation-du-plan-local-durbanisme-.pdf "Download Annex-DE2021-060Approval-of-the-local-urban-plan- - French - PDF - 250 KB")
 
 Text transcription
 
@@ -102,7 +102,7 @@ Draft Local Urban Development Plan (PLU) approved
 - 7 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2020-003Arret-du-projet-delaboration-du-plan-local-durbanisme-et-bilan-de-la-concertation.pdf "Consult the draft decree for the development of the Local Urban Plan (PLU) - French - PDF - 7 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2020-003Arret-du-projet-delaboration-du-plan-local-durbanisme-et-bilan-de-la-concertation.pdf "Download Draft Local Urban Development Plan (PLU) - French - PDF - 7 MB")[Consult the draft decree for the development of the Local Urban Plan (PLU) - French - PDF - 7 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2020-003Arret-du-projet-delaboration-du-plan-local-durbanisme-et-bilan-de-la-concertation.pdf "Consult the draft decree for the development of the Local Urban Plan (PLU) - French - PDF - 7 MB (opens in a new tab)")[Download Draft Local Urban Development Plan (PLU) - French - PDF - 7 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2020-003Arret-du-projet-delaboration-du-plan-local-durbanisme-et-bilan-de-la-concertation.pdf "Download Draft Local Urban Development Plan (PLU) - French - PDF - 7 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2020-003Arret-du-projet-delaboration-du-plan-local-durbanisme-et-bilan-de-la-concertation.pdf "Consulter Arrêté du projet d'élaboration du PLU - Français - PDF - 7 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2020-003Arret-du-projet-delaboration-du-plan-local-durbanisme-et-bilan-de-la-concertation.pdf "Télécharger Arrêté du projet d'élaboration du PLU - Français - PDF - 7 Mo")[Consult the draft decree for the development of the Local Urban Plan (PLU) - French - PDF - 7 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2020-003Arret-du-projet-delaboration-du-plan-local-durbanisme-et-bilan-de-la-concertation.pdf "Consult the draft decree for the development of the Local Urban Plan (PLU) - French - PDF - 7 MB (opens in a new tab)")[Download Draft Local Urban Development Plan (PLU) - French - PDF - 7 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/DE2020-003Arret-du-projet-delaboration-du-plan-local-durbanisme-et-bilan-de-la-concertation.pdf "Download Draft Local Urban Development Plan (PLU) - French - PDF - 7 MB")
 
 Text transcription
 
@@ -119,7 +119,7 @@ Local-urban-plan-–-Prescription-of-the-general-revision-of-the-local-urban-pla
 - 2 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/03/DE-087-17-Plan-local-durbanisme-%E2%80%93-Prescription-de-la-revision-generale-du-plan-local-durbanisme.pdf "Consult Local Urban Planning Plan – Prescription for the General Revision of the Local Urban Planning Plan – French – PDF – 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/DE-087-17-Plan-local-durbanisme-%E2%80%93-Prescription-de-la-revision-generale-du-plan-local-durbanisme.pdf "Download Plan-local-durbanisme-–-Prescription-de-la-revision-generale-du-plan-local-durbanisme - French - PDF - 2 MB")[Consult Local Urban Planning Plan – Prescription for the General Revision of the Local Urban Planning Plan – French – PDF – 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/DE-087-17-Plan-local-durbanisme-%E2%80%93-Prescription-de-la-revision-generale-du-plan-local-durbanisme.pdf "Consult Local Urban Planning Plan – Prescription for the General Revision of the Local Urban Planning Plan – French – PDF – 2 MB (new tab)")[Download Plan-local-durbanisme-–-Prescription-de-la-revision-generale-du-plan-local-durbanisme - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/DE-087-17-Plan-local-durbanisme-%E2%80%93-Prescription-de-la-revision-generale-du-plan-local-durbanisme.pdf "Download Plan-local-durbanisme-–-Prescription-de-la-revision-generale-du-plan-local-durbanisme - French - PDF - 2 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/DE-087-17-Plan-local-durbanisme-%E2%80%93-Prescription-de-la-revision-generale-du-plan-local-durbanisme.pdf "Consulter Plan-local-durbanisme-–-Prescription-de-la-revision-generale-du-plan-local-durbanisme - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/DE-087-17-Plan-local-durbanisme-%E2%80%93-Prescription-de-la-revision-generale-du-plan-local-durbanisme.pdf "Télécharger Plan-local-durbanisme-–-Prescription-de-la-revision-generale-du-plan-local-durbanisme - Français - PDF - 2 Mo")[Consult Local Urban Planning Plan – Prescription for the General Revision of the Local Urban Planning Plan – French – PDF – 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/DE-087-17-Plan-local-durbanisme-%E2%80%93-Prescription-de-la-revision-generale-du-plan-local-durbanisme.pdf "Consult Local Urban Planning Plan – Prescription for the General Revision of the Local Urban Planning Plan – French – PDF – 2 MB (new tab)")[Download Plan-local-durbanisme-–-Prescription-de-la-revision-generale-du-plan-local-durbanisme - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/DE-087-17-Plan-local-durbanisme-%E2%80%93-Prescription-de-la-revision-generale-du-plan-local-durbanisme.pdf "Download Plan-local-durbanisme-–-Prescription-de-la-revision-generale-du-plan-local-durbanisme - French - PDF - 2 MB")
 
 Text transcription
 
@@ -655,13 +655,13 @@ Filter
 Reset
 
 
-You have viewed 9 out of 9 results
+You have viewed NaN9 results
 
 
 Show more
 
 
-- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=24# "Download the Document Library page as a PDF")
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=24# "Download the Document Library page as a PDF")
 - Print
 
 - Share

@@ -8,7 +8,7 @@ Registering a furnished tourist accommodation with the town hall (Cerfa form 140
 - 225 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14004-04.pdf "Consulter Déclarer en mairie un meublé de tourisme Cerfa 14004*04 - Français - PDF - 225 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14004-04.pdf "Télécharger Déclarer en mairie un meublé de tourisme Cerfa 14004*04 - Français - PDF - 225 Ko")[Consult the form to declare furnished tourist accommodation at the town hall (Cerfa 14004*04) - French - PDF - 225 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14004-04.pdf "Consult the form to declare furnished tourist accommodation at the town hall (Cerfa 14004*04) - French - PDF - 225 KB (new tab)")[Download the form to declare furnished tourist accommodation to the town hall (Cerfa 14004*04) - French - PDF - 225 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14004-04.pdf "Download the form to declare furnished tourist accommodation to the town hall (Cerfa 14004*04) - French - PDF - 225 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14004-04.pdf "Consult the form to declare furnished tourist accommodation at the town hall (Cerfa 14004*04) - French - PDF - 225 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14004-04.pdf "Download the form to declare furnished tourist accommodation to the town hall (Cerfa 14004*04) - French - PDF - 225 KB")[Consult the form to declare furnished tourist accommodation at the town hall (Cerfa 14004*04) - French - PDF - 225 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14004-04.pdf "Consult the form to declare furnished tourist accommodation at the town hall (Cerfa 14004*04) - French - PDF - 225 KB (new tab)")[Download the form to declare furnished tourist accommodation to the town hall (Cerfa 14004*04) - French - PDF - 225 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_14004-04.pdf "Download the form to declare furnished tourist accommodation to the town hall (Cerfa 14004*04) - French - PDF - 225 KB")
 
 Text transcription
 
@@ -544,13 +544,13 @@ Filter
 Reset
 
 
-You have viewed 1 result(s) out of
+You have viewed NaN result(s) out of
 1
 
 Show more
 
 
-- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=41# "Download the Document Library page as a PDF")
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=41# "Download the Document Library page as a PDF")
 - Print
 
 - Share

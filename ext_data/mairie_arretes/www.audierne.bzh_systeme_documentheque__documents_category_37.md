@@ -1,116 +1,169 @@
-Déclaration préalable de travaux
+Prior declaration of works
 
-Déclaration préalable – Constructions et travaux non soumis à permis de construire portant sur une maison individuelle et/ou ses annexes - Cerfa 16702\*01
+Prior declaration – Construction and works not subject to a building permit relating to a detached house and/or its outbuildings - Cerfa form 16702\*01
 
-- 21 Mai 2025
-- Français
+- May 21, 2025
+- French
 - pdf
-- 2 Mo
+- 2 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_16702-01.pdf "Consulter Déclaration préalable – Constructions et travaux non soumis à permis de construire portant sur une maison individuelle et/ou ses annexes - Cerfa 16702*01 - Français - PDF - 2 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_16702-01.pdf "Télécharger Déclaration préalable – Constructions et travaux non soumis à permis de construire portant sur une maison individuelle et/ou ses annexes - Cerfa 16702*01 - Français - PDF - 2 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_16702-01.pdf "Consulter Déclaration préalable – Constructions et travaux non soumis à permis de construire portant sur une maison individuelle et/ou ses annexes - Cerfa 16702*01 - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_16702-01.pdf "Télécharger Déclaration préalable – Constructions et travaux non soumis à permis de construire portant sur une maison individuelle et/ou ses annexes - Cerfa 16702*01 - Français - PDF - 2 Mo")[Consult Prior Declaration – Construction and works not subject to a building permit relating to a detached house and/or its outbuildings - Cerfa 16702*01 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_16702-01.pdf "Consult Prior Declaration – Construction and works not subject to a building permit relating to a detached house and/or its outbuildings - Cerfa 16702*01 - French - PDF - 2 MB (new tab)")[Download Prior Declaration – Construction and works not subject to a building permit relating to a detached house and/or its outbuildings - Cerfa 16702*01 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/cerfa_16702-01.pdf "Download Prior Declaration – Construction and works not subject to a building permit relating to a detached house and/or its outbuildings - Cerfa 16702*01 - French - PDF - 2 MB")
 
-Transcription textuelle
+Text transcription
 
 
-Déclaration préalable – Constructions et travaux non soumis à permis de construire portant sur une maison individuelle et/ou ses annexes
+Prior declaration – Construction and works not subject to a building permit relating to a detached house and/or its outbuildings
 
-Déclaration préalable de travaux
+Prior declaration of works
 
-Déclaration préalable – Installations et aménagements non soumis à permis d’aménager - Cerfa 16703\*01
+Prior declaration – Installations and developments not subject to planning permission - Cerfa form 16703\*01
 
-- 21 Mai 2025
-- Français
+- May 21, 2025
+- French
 - pdf
-- 1 Mo
+- 1 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_16703-01-2.pdf "Consulter Déclaration préalable – Installations et aménagements non soumis à permis d’aménager - Cerfa 16703*01 - Français - PDF - 1 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_16703-01-2.pdf "Télécharger Déclaration préalable – Installations et aménagements non soumis à permis d’aménager - Cerfa 16703*01 - Français - PDF - 1 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_16703-01-2.pdf "Consulter Déclaration préalable – Installations et aménagements non soumis à permis d’aménager - Cerfa 16703*01 - Français - PDF - 1 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_16703-01-2.pdf "Télécharger Déclaration préalable – Installations et aménagements non soumis à permis d’aménager - Cerfa 16703*01 - Français - PDF - 1 Mo")[Consult Prior Declaration – Installations and developments not subject to planning permission - Cerfa 16703*01 - French - PDF - 1 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_16703-01-2.pdf "Consult Prior Declaration – Installations and developments not subject to planning permission - Cerfa 16703*01 - French - PDF - 1 MB (new tab)")[Download Prior Declaration – Installations and developments not subject to planning permission - Cerfa 16703*01 - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/08/cerfa_16703-01-2.pdf "Download Prior Declaration – Installations and developments not subject to planning permission - Cerfa 16703*01 - French - PDF - 1 MB")
 
 ![](https://www.audierne.bzh/wp-content/uploads/2021/02/documentheque-2-0x0-c-default.jpg)
 
-# Documenthèque
+# Document Library
 
-Retrouvez tous nos documents, classés par catégories.
+Find all our documents, classified by category.
 
-Cliquez sur un document pour le consulter, feuilleter ou télécharger.
+Click on a document to view, browse or download it.
 
-Filtrer les résultats
+Filter the results
 
-- Alertes météo
+- Weather alerts
 
-- Aménagement paysager
+- Landscaping
 
-- arrêtés
+- arrests
 
 - Associations
 
-- Conseil municipal
+- City Council
 
-- Déchets
+- Waste
 
-- Divers
+- Miscellaneous
 
-- Économie
+- Economy
 
-- Élections
+- Elections
 
-- Journal municipal
+- municipal newspaper
 
-- Noël
+- Christmas
 
-- Pêche-maritimité
+- Fishing and maritime
 
-- Petite enfance
+- Early childhood
 
-- Prévention et sécurité
+- Prevention and safety
 
-- Solidarité-santé
+- Solidarity-health
 
-- Urbanisme
-
-
-0 sélectionnée
+- Urban planning
 
 
-Tout sélectionner
+1 selected
+
+Deselect all
+
+- [ ]
+Planning application forms
+
+- [x]
+Prior declaration of works
+
+- [ ]
+Commercial sign
+
+- [ ]
+Furnished tourist accommodations
+
+- [ ]
+Opening of a public access building (ERP)
+
+- [ ]
+Planning permission
+
+- [ ]
+Building permit
+
+- [ ]
+Demolition permit
+
+- [ ]
+Local Urban Development Plan (PLU)
+
+- [ ]
+annexes
+
+- [ ]
+Amendment to the Local Urban Development Plan No. 1
+
+- [ ]
+Amendment to the Local Urban Development Plan No. 2
+
+- [ ]
+Planning guidelines
+
+- [ ]
+Local Urban Development Plan (PLU) June 2021
+
+- [ ]
+Procedure
+
+- [ ]
+Sustainable development and planning project
+
+- [ ]
+Presentation Report
+
+- [ ]
+Regulations
 
 
 - [ ]
-Janvier
+January
 
 - [ ]
-Février
+FEBRUARY
 
 - [ ]
-Mars
+March
 
 - [ ]
-Avril
+April
 
 - [ ]
-Mai
+May
 
 - [ ]
-Juin
+June
 
 - [ ]
-Juillet
+July
 
 - [ ]
-Août
+August
 
 - [ ]
-Septembre
+September
 
 - [ ]
-Octobre
+October
 
 - [ ]
-Novembre
+November
 
 - [ ]
-Décembre
+December
 
 
 - [ ]
@@ -498,24 +551,24 @@ Décembre
 1900
 
 
-Filtrer
+Filter
 
-Réinitialiser
-
-
-Vous avez vu 2 résultat(s) sur
-2
-
-Afficher plus
+Reset
 
 
-- [Télécharger en PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=37# "Télécharger la page Documenthèque en PDF")
-- Imprimer
+You have viewed NaN2 results
 
-- Partager
-   - ✓ Lien copié
 
-  - [Partager la page Documenthèque par courriel](mailto:?subject=Documenth%C3%A8que%20-%20Audierne%20(29)&body=https://www.audierne.bzh/systeme/documentheque/ "Partager la page Documenthèque par courriel")
-  - [Partager la page Documenthèque sur Facebook](https://www.facebook.com/sharer/sharer.php?u=https://www.audierne.bzh/systeme/documentheque/ "Partager la page Documenthèque sur Facebook")
-  - [Partager la page Documenthèque sur X](http://twitter.com/share?url=https://www.audierne.bzh/systeme/documentheque/&text=Documenth%C3%A8que "Partager la page Documenthèque sur X")
-  - [Partager la page Documenthèque sur LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.audierne.bzh%2Fsysteme%2Fdocumentheque%2F&title=Documenth%C3%A8que "Partager la page Documenthèque sur LinkedIn")
+Show more
+
+
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=37# "Download the Document Library page as a PDF")
+- Print
+
+- Share
+   - ✓ Link copied
+
+  - [Share the Document Library page by email](mailto:?subject=Documenth%C3%A8que%20-%20Audierne%20(29)&body=https://www.audierne.bzh/systeme/documentheque/ "Share the Document Library page by email")
+  - [Share the Document Library page on Facebook](https://www.facebook.com/sharer/sharer.php?u=https://www.audierne.bzh/systeme/documentheque/ "Share the Document Library page on Facebook")
+  - [Share the Document Library page on X](http://twitter.com/share?url=https://www.audierne.bzh/systeme/documentheque/&text=Documenth%C3%A8que "Share the Document Library page on X")
+  - [Share the Document Library page on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.audierne.bzh%2Fsysteme%2Fdocumentheque%2F&title=Documenth%C3%A8que "Share the Document Library page on LinkedIn")

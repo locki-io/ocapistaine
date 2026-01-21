@@ -484,13 +484,13 @@ Filter
 Reset
 
 
-You have viewed 1 result(s) out of
+You have viewed NaN result(s) out of
 1
 
 Show more
 
 
-- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=116# "Download the Document Library page as a PDF")
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=116# "Download the Document Library page as a PDF")
 - Print
 
 - Share

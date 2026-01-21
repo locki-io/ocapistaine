@@ -8,7 +8,7 @@ Science and Sea Festival 2025 - Program
 - 931 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/10/Fete_Science_Mer_2025_programme_web.pdf "Consulter Fête de la Science et de la Mer 2025 - Programme - Français - PDF - 931 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/10/Fete_Science_Mer_2025_programme_web.pdf "Télécharger Fête de la Science et de la Mer 2025 - Programme - Français - PDF - 931 Ko")[View Science and Sea Festival 2025 - Program - French - PDF - 931 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/10/Fete_Science_Mer_2025_programme_web.pdf "View Science and Sea Festival 2025 - Program - French - PDF - 931 KB (new tab)")[Download Science and Sea Festival 2025 - Program - French - PDF - 931 KB](https://www.audierne.bzh/wp-content/uploads/2025/10/Fete_Science_Mer_2025_programme_web.pdf "Download Science and Sea Festival 2025 - Program - French - PDF - 931 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/10/Fete_Science_Mer_2025_programme_web.pdf "View Science and Sea Festival 2025 - Program - French - PDF - 931 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/10/Fete_Science_Mer_2025_programme_web.pdf "Download Science and Sea Festival 2025 - Program - French - PDF - 931 KB")[View Science and Sea Festival 2025 - Program - French - PDF - 931 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/10/Fete_Science_Mer_2025_programme_web.pdf "View Science and Sea Festival 2025 - Program - French - PDF - 931 KB (new tab)")[Download Science and Sea Festival 2025 - Program - French - PDF - 931 KB](https://www.audierne.bzh/wp-content/uploads/2025/10/Fete_Science_Mer_2025_programme_web.pdf "Download Science and Sea Festival 2025 - Program - French - PDF - 931 KB")
 
 Text transcription
 
@@ -25,7 +25,7 @@ Specifications for marketing at 30 rue Danton
 - 2 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/09/DE2025-095_vente_cdc_maison_rue_danton_annexe-tampon.pdf "Consulter Cahier_des_charges_commercialisation_30_rue_danton - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/09/DE2025-095_vente_cdc_maison_rue_danton_annexe-tampon.pdf "Télécharger Cahier_des_charges_commercialisation_30_rue_danton - Français - PDF - 2 Mo")[Consult the specifications for the marketing of products at 30 rue Danton - French - PDF - 2 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/09/DE2025-095_vente_cdc_maison_rue_danton_annexe-tampon.pdf "Consult the specifications for the marketing of products at 30 rue Danton - French - PDF - 2 MB (opens in a new tab)")[Download the specifications for the marketing of 30 rue Danton - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/09/DE2025-095_vente_cdc_maison_rue_danton_annexe-tampon.pdf "Download the specifications for the marketing of 30 rue Danton - French - PDF - 2 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/09/DE2025-095_vente_cdc_maison_rue_danton_annexe-tampon.pdf "Consult the specifications for the marketing of products at 30 rue Danton - French - PDF - 2 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/09/DE2025-095_vente_cdc_maison_rue_danton_annexe-tampon.pdf "Download the specifications for the marketing of 30 rue Danton - French - PDF - 2 MB")[Consult the specifications for the marketing of products at 30 rue Danton - French - PDF - 2 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/09/DE2025-095_vente_cdc_maison_rue_danton_annexe-tampon.pdf "Consult the specifications for the marketing of products at 30 rue Danton - French - PDF - 2 MB (opens in a new tab)")[Download the specifications for the marketing of 30 rue Danton - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/09/DE2025-095_vente_cdc_maison_rue_danton_annexe-tampon.pdf "Download the specifications for the marketing of 30 rue Danton - French - PDF - 2 MB")
 
 Miscellaneous
 
@@ -37,7 +37,7 @@ yellow\_storm\_pi\_19\_08\_2025\_sign
 - 82 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/08/jaune_orage_pi_19_08_2025_signe.pdf "Consulter jaune_orage_pi_19_08_2025_signe - Français - PDF - 82 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/08/jaune_orage_pi_19_08_2025_signe.pdf "Télécharger jaune_orage_pi_19_08_2025_signe - Français - PDF - 82 Ko")[View yellow_storm_pi_19_08_2025_sign - French - PDF - 82 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/08/jaune_orage_pi_19_08_2025_signe.pdf "View yellow_storm_pi_19_08_2025_sign - French - PDF - 82 KB (new tab)")[Download yellow_storm_pi_19_08_2025_sign - French - PDF - 82 KB](https://www.audierne.bzh/wp-content/uploads/2025/08/jaune_orage_pi_19_08_2025_signe.pdf "Download yellow_storm_pi_19_08_2025_sign - French - PDF - 82 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/08/jaune_orage_pi_19_08_2025_signe.pdf "View yellow_storm_pi_19_08_2025_sign - French - PDF - 82 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/08/jaune_orage_pi_19_08_2025_signe.pdf "Download yellow_storm_pi_19_08_2025_sign - French - PDF - 82 KB")[View yellow_storm_pi_19_08_2025_sign - French - PDF - 82 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/08/jaune_orage_pi_19_08_2025_signe.pdf "View yellow_storm_pi_19_08_2025_sign - French - PDF - 82 KB (new tab)")[Download yellow_storm_pi_19_08_2025_sign - French - PDF - 82 KB](https://www.audierne.bzh/wp-content/uploads/2025/08/jaune_orage_pi_19_08_2025_signe.pdf "Download yellow_storm_pi_19_08_2025_sign - French - PDF - 82 KB")
 
 Miscellaneous
 
@@ -49,7 +49,7 @@ Advertising Notice 2025 Location
 - 702 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/07/Avis-de-publicite-2025-Emplacement.pdf "Consulter Avis de publicité 2025 Emplacement - Français - PDF - 702 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/07/Avis-de-publicite-2025-Emplacement.pdf "Télécharger Avis de publicité 2025 Emplacement - Français - PDF - 702 Ko")[View Advertising Notice 2025 Location - French - PDF - 702 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/07/Avis-de-publicite-2025-Emplacement.pdf "View Advertising Notice 2025 Location - French - PDF - 702 KB (new tab)")[Download Advertising Notice 2025 Location - French - PDF - 702 KB](https://www.audierne.bzh/wp-content/uploads/2025/07/Avis-de-publicite-2025-Emplacement.pdf "Download Advertising Notice 2025 Location - French - PDF - 702 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/07/Avis-de-publicite-2025-Emplacement.pdf "View Advertising Notice 2025 Location - French - PDF - 702 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/07/Avis-de-publicite-2025-Emplacement.pdf "Download Advertising Notice 2025 Location - French - PDF - 702 KB")[View Advertising Notice 2025 Location - French - PDF - 702 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/07/Avis-de-publicite-2025-Emplacement.pdf "View Advertising Notice 2025 Location - French - PDF - 702 KB (new tab)")[Download Advertising Notice 2025 Location - French - PDF - 702 KB](https://www.audierne.bzh/wp-content/uploads/2025/07/Avis-de-publicite-2025-Emplacement.pdf "Download Advertising Notice 2025 Location - French - PDF - 702 KB")
 
 Miscellaneous
 
@@ -61,7 +61,7 @@ DIRECTORY OF ASSOCIATIONS 2024-2025
 - 273 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/05/ANNUAIRE-DES-ASSOCIATIONS-2024-2025-par-theme.pdf "Consulter ANNUAIRE DES ASSOCIATIONS 2024-2025 - Français - PDF - 273 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/05/ANNUAIRE-DES-ASSOCIATIONS-2024-2025-par-theme.pdf "Télécharger ANNUAIRE DES ASSOCIATIONS 2024-2025 - Français - PDF - 273 Ko")[Consult the 2024-2025 Directory of Associations - French - PDF - 273 KB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/05/ANNUAIRE-DES-ASSOCIATIONS-2024-2025-par-theme.pdf "Consult the 2024-2025 Directory of Associations - French - PDF - 273 KB (opens in a new tab)")[Download the 2024-2025 Associations Directory - French - PDF - 273 KB](https://www.audierne.bzh/wp-content/uploads/2025/05/ANNUAIRE-DES-ASSOCIATIONS-2024-2025-par-theme.pdf "Download the 2024-2025 Associations Directory - French - PDF - 273 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/05/ANNUAIRE-DES-ASSOCIATIONS-2024-2025-par-theme.pdf "Consult the 2024-2025 Directory of Associations - French - PDF - 273 KB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/05/ANNUAIRE-DES-ASSOCIATIONS-2024-2025-par-theme.pdf "Download the 2024-2025 Associations Directory - French - PDF - 273 KB")[Consult the 2024-2025 Directory of Associations - French - PDF - 273 KB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/05/ANNUAIRE-DES-ASSOCIATIONS-2024-2025-par-theme.pdf "Consult the 2024-2025 Directory of Associations - French - PDF - 273 KB (opens in a new tab)")[Download the 2024-2025 Associations Directory - French - PDF - 273 KB](https://www.audierne.bzh/wp-content/uploads/2025/05/ANNUAIRE-DES-ASSOCIATIONS-2024-2025-par-theme.pdf "Download the 2024-2025 Associations Directory - French - PDF - 273 KB")
 
 Miscellaneous
 
@@ -73,7 +73,7 @@ Minutes of the vote count for the name change consultation
 - 627 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/04/20250428_pv_depouillement.pdf "Consulter PV de dépouillement de la consultation changement de nom - Français - PDF - 627 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/04/20250428_pv_depouillement.pdf "Télécharger PV de dépouillement de la consultation changement de nom - Français - PDF - 627 Ko")[View the minutes of the vote count for the name change consultation - French - PDF - 627 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/04/20250428_pv_depouillement.pdf "View the minutes of the vote count for the name change consultation - French - PDF - 627 KB (new tab)")[Download the minutes of the vote count for the name change consultation - French - PDF - 627 KB](https://www.audierne.bzh/wp-content/uploads/2025/04/20250428_pv_depouillement.pdf "Download the minutes of the vote count for the name change consultation - French - PDF - 627 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/04/20250428_pv_depouillement.pdf "View the minutes of the vote count for the name change consultation - French - PDF - 627 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/04/20250428_pv_depouillement.pdf "Download the minutes of the vote count for the name change consultation - French - PDF - 627 KB")[View the minutes of the vote count for the name change consultation - French - PDF - 627 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/04/20250428_pv_depouillement.pdf "View the minutes of the vote count for the name change consultation - French - PDF - 627 KB (new tab)")[Download the minutes of the vote count for the name change consultation - French - PDF - 627 KB](https://www.audierne.bzh/wp-content/uploads/2025/04/20250428_pv_depouillement.pdf "Download the minutes of the vote count for the name change consultation - French - PDF - 627 KB")
 
 Miscellaneous
 
@@ -85,7 +85,7 @@ Eat\_tomorrow\_program\_A4\_web2
 - 2 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/04/Manger_demain_programme_A4_web2.pdf "Consulter Manger_demain_programme_A4_web2 - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/04/Manger_demain_programme_A4_web2.pdf "Télécharger Manger_demain_programme_A4_web2 - Français - PDF - 2 Mo")[Consult Manger_demain_programme_A4_web2 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/04/Manger_demain_programme_A4_web2.pdf "Consult Manger_demain_programme_A4_web2 - French - PDF - 2 MB (new tab)")[Download Manger_demain_programme_A4_web2 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/04/Manger_demain_programme_A4_web2.pdf "Download Manger_demain_programme_A4_web2 - French - PDF - 2 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/04/Manger_demain_programme_A4_web2.pdf "Consult Manger_demain_programme_A4_web2 - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/04/Manger_demain_programme_A4_web2.pdf "Download Manger_demain_programme_A4_web2 - French - PDF - 2 MB")[Consult Manger_demain_programme_A4_web2 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/04/Manger_demain_programme_A4_web2.pdf "Consult Manger_demain_programme_A4_web2 - French - PDF - 2 MB (new tab)")[Download Manger_demain_programme_A4_web2 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/04/Manger_demain_programme_A4_web2.pdf "Download Manger_demain_programme_A4_web2 - French - PDF - 2 MB")
 
 Text transcription
 
@@ -102,11 +102,11 @@ consultation\_population\_support\_presentation
 - 406 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/03/20250217_consultation_population_support_presentation.pdf "Consulter consultation_population_support_presentation - Français - PDF - 406 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/20250217_consultation_population_support_presentation.pdf "Télécharger consultation_population_support_presentation - Français - PDF - 406 Ko")[View consultation_population_support_presentation - French - PDF - 406 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/20250217_consultation_population_support_presentation.pdf "View consultation_population_support_presentation - French - PDF - 406 KB (new tab)")[Download consultation_population_support_presentation - French - PDF - 406 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/20250217_consultation_population_support_presentation.pdf "Download consultation_population_support_presentation - French - PDF - 406 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/20250217_consultation_population_support_presentation.pdf "View consultation_population_support_presentation - French - PDF - 406 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/20250217_consultation_population_support_presentation.pdf "Download consultation_population_support_presentation - French - PDF - 406 KB")[View consultation_population_support_presentation - French - PDF - 406 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/20250217_consultation_population_support_presentation.pdf "View consultation_population_support_presentation - French - PDF - 406 KB (new tab)")[Download consultation_population_support_presentation - French - PDF - 406 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/20250217_consultation_population_support_presentation.pdf "Download consultation_population_support_presentation - French - PDF - 406 KB")
 
 Miscellaneous
 
-Roadworks Order Application Form - 2025
+Roadworks Order Application Form – 2025
 
 - January 1, 2025
 - French
@@ -114,7 +114,7 @@ Roadworks Order Application Form - 2025
 - 217 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/03/Formulaire-Demande-darrete-de-voirie-2025.pdf "Consulter Formulaire-Demande-darrete-de-voirie-2025 - Français - PDF - 217 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/Formulaire-Demande-darrete-de-voirie-2025.pdf "Télécharger Formulaire-Demande-darrete-de-voirie-2025 - Français - PDF - 217 Ko")[View the 2025 Roadworks Order Application Form - French - PDF - 217 KB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/Formulaire-Demande-darrete-de-voirie-2025.pdf "View the 2025 Roadworks Order Application Form - French - PDF - 217 KB (opens in a new tab)")[Download Roadway Order Application Form 2025 - French - PDF - 217 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/Formulaire-Demande-darrete-de-voirie-2025.pdf "Download Roadway Order Application Form 2025 - French - PDF - 217 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/Formulaire-Demande-darrete-de-voirie-2025.pdf "View the 2025 Roadworks Order Application Form - French - PDF - 217 KB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/Formulaire-Demande-darrete-de-voirie-2025.pdf "Download Roadway Order Application Form 2025 - French - PDF - 217 KB")[View the 2025 Roadworks Order Application Form - French - PDF - 217 KB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/Formulaire-Demande-darrete-de-voirie-2025.pdf "View the 2025 Roadworks Order Application Form - French - PDF - 217 KB (opens in a new tab)")[Download Roadway Order Application Form 2025 - French - PDF - 217 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/Formulaire-Demande-darrete-de-voirie-2025.pdf "Download Roadway Order Application Form 2025 - French - PDF - 217 KB")
 
 Miscellaneous
 
@@ -126,7 +126,130 @@ DIRECTORY OF ASSOCIATIONS 2024-2025 by theme
 - 352 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/03/ANNUAIRE-DES-ASSOCIATIONS-2024-2025-par-theme.pdf "Consulter ANNUAIRE DES ASSOCIATIONS 2024-2025 par thème - Français - PDF - 352 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/ANNUAIRE-DES-ASSOCIATIONS-2024-2025-par-theme.pdf "Télécharger ANNUAIRE DES ASSOCIATIONS 2024-2025 par thème - Français - PDF - 352 Ko")[Consult the 2024-2025 Directory of Associations by theme - French - PDF - 352 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/ANNUAIRE-DES-ASSOCIATIONS-2024-2025-par-theme.pdf "Consult the 2024-2025 Directory of Associations by theme - French - PDF - 352 KB (new tab)")[Download the 2024-2025 Associations Directory by theme - French - PDF - 352 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/ANNUAIRE-DES-ASSOCIATIONS-2024-2025-par-theme.pdf "Download the 2024-2025 Associations Directory by theme - French - PDF - 352 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/ANNUAIRE-DES-ASSOCIATIONS-2024-2025-par-theme.pdf "Consult the 2024-2025 Directory of Associations by theme - French - PDF - 352 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/ANNUAIRE-DES-ASSOCIATIONS-2024-2025-par-theme.pdf "Download the 2024-2025 Associations Directory by theme - French - PDF - 352 KB")[Consult the 2024-2025 Directory of Associations by theme - French - PDF - 352 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/ANNUAIRE-DES-ASSOCIATIONS-2024-2025-par-theme.pdf "Consult the 2024-2025 Directory of Associations by theme - French - PDF - 352 KB (new tab)")[Download the 2024-2025 Associations Directory by theme - French - PDF - 352 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/ANNUAIRE-DES-ASSOCIATIONS-2024-2025-par-theme.pdf "Download the 2024-2025 Associations Directory by theme - French - PDF - 352 KB")
+
+Miscellaneous
+
+"Living in Audierne" leaflet
+
+- 2025
+- French
+- pdf
+- 3 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2024/10/Depliant_nouveaux_arrivants_2025.pdf "View Leaflet") [Download](https://www.audierne.bzh/wp-content/uploads/2024/10/Depliant_nouveaux_arrivants_2025.pdf "Download Leaflet")[View Leaflet](https://www.audierne.bzh/wp-content/uploads/2024/10/Depliant_nouveaux_arrivants_2025.pdf "View Leaflet")[Download Leaflet](https://www.audierne.bzh/wp-content/uploads/2024/10/Depliant_nouveaux_arrivants_2025.pdf "Download Leaflet")
+
+Text transcription
+
+
+The leaflet for newcomers contains information about Audierne, its services and useful contacts for new residents.
+
+Miscellaneous
+
+Works to be declared
+
+- 2025
+- French
+- pdf
+- 738 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2024/12/Travaux-a-declarer-complet-1.pdf "Consult Works to be declared - French - PDF - 738 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2024/12/Travaux-a-declarer-complet-1.pdf "Download Works to be declared - French - PDF - 738 KB")[Consult Works to be declared - French - PDF - 738 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2024/12/Travaux-a-declarer-complet-1.pdf "Consult Works to be declared - French - PDF - 738 KB (new tab)")[Download Works to be declared - French - PDF - 738 KB](https://www.audierne.bzh/wp-content/uploads/2024/12/Travaux-a-declarer-complet-1.pdf "Download Works to be declared - French - PDF - 738 KB")
+
+Text transcription
+
+
+List of the different forms for submitting a planning application.
+
+Miscellaneous
+
+EFS\_Web Leaflet
+
+- December 2024
+- French
+- pdf
+- 493 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2024/12/EFS_Depliant_web.pdf "View EFS_Depliant_web - French - PDF - 493 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2024/12/EFS_Depliant_web.pdf "Download EFS_Depliant_web - French - PDF - 493 KB")[View EFS_Depliant_web - French - PDF - 493 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2024/12/EFS_Depliant_web.pdf "View EFS_Depliant_web - French - PDF - 493 KB (new tab)")[Download EFS_Depliant_web - French - PDF - 493 KB](https://www.audierne.bzh/wp-content/uploads/2024/12/EFS_Depliant_web.pdf "Download EFS_Depliant_web - French - PDF - 493 KB")
+
+Text transcription
+
+
+Information leaflet on the opening hours of the France Services Centre
+
+Miscellaneous
+
+Swimming Permit
+
+- 2024
+- French
+- pdf
+- 432 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2024/11/Autorisation-de-baignade.pdf "Consult Swimming Permit - French - PDF - 432 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2024/11/Autorisation-de-baignade.pdf "Download Swimming Permit - French - PDF - 432 KB")[Consult Swimming Permit - French - PDF - 432 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2024/11/Autorisation-de-baignade.pdf "Consult Swimming Permit - French - PDF - 432 KB (new tab)")[Download Swimming Permit - French - PDF - 432 KB](https://www.audierne.bzh/wp-content/uploads/2024/11/Autorisation-de-baignade.pdf "Download Swimming Permit - French - PDF - 432 KB")
+
+Miscellaneous
+
+CIAS\_meal\_delivery\_2023
+
+- 2024
+- French
+- pdf
+- 754 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2024/10/CIAS_portage_repas_2023.pdf "View CIAS_portage_repas_2023 - French - PDF - 754 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2024/10/CIAS_portage_repas_2023.pdf "Download CIAS_portage_repas_2023 - French - PDF - 754 KB")[View CIAS_portage_repas_2023 - French - PDF - 754 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2024/10/CIAS_portage_repas_2023.pdf "View CIAS_portage_repas_2023 - French - PDF - 754 KB (new tab)")[Download CIAS_portage_repas_2023 - French - PDF - 754 KB](https://www.audierne.bzh/wp-content/uploads/2024/10/CIAS_portage_repas_2023.pdf "Download CIAS_portage_repas_2023 - French - PDF - 754 KB")
+
+Miscellaneous
+
+Grant Application Form 2025
+
+- 2024
+- French
+- pdf
+- 319 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2024/11/Formulaire-Demande-de-subvention-2025.pdf "View Grant Application Form 2025 - French - PDF - 319 KB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2024/11/Formulaire-Demande-de-subvention-2025.pdf "Download Grant Application Form 2025 - French - PDF - 319 KB")[View Grant Application Form 2025 - French - PDF - 319 KB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2024/11/Formulaire-Demande-de-subvention-2025.pdf "View Grant Application Form 2025 - French - PDF - 319 KB (opens in a new tab)")[Download Grant Application Form 2025 - French - PDF - 319 KB](https://www.audierne.bzh/wp-content/uploads/2024/11/Formulaire-Demande-de-subvention-2025.pdf "Download Grant Application Form 2025 - French - PDF - 319 KB")
+
+Miscellaneous
+
+HALLES internal regulations 2024
+
+- 2024
+- French
+- pdf
+- 4 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/07/HALLES-reglement-interieur-2024.pdf "Consult the HALLES internal regulations 2024 - French - PDF - 4 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/07/HALLES-reglement-interieur-2024.pdf "Download HALLES internal regulations 2024 - French - PDF - 4 MB")[Consult the HALLES internal regulations 2024 - French - PDF - 4 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/07/HALLES-reglement-interieur-2024.pdf "Consult the HALLES internal regulations 2024 - French - PDF - 4 MB (new tab)")[Download HALLES internal regulations 2024 - French - PDF - 4 MB](https://www.audierne.bzh/wp-content/uploads/2025/07/HALLES-reglement-interieur-2024.pdf "Download HALLES internal regulations 2024 - French - PDF - 4 MB")
+
+Miscellaneous
+
+RazMoket\_Flyer
+
+- 2024
+- French
+- pdf
+- 279 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2024/10/RazMoket_Flyer_A5_web.pdf "View RazMoket_Flyer - French - PDF - 279 KB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2024/10/RazMoket_Flyer_A5_web.pdf "Download RazMoket_Flyer - French - PDF - 279 KB")[View RazMoket_Flyer - French - PDF - 279 KB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2024/10/RazMoket_Flyer_A5_web.pdf "View RazMoket_Flyer - French - PDF - 279 KB (opens in a new tab)")[Download RazMoket_Flyer - French - PDF - 279 KB](https://www.audierne.bzh/wp-content/uploads/2024/10/RazMoket_Flyer_A5_web.pdf "Download RazMoket_Flyer - French - PDF - 279 KB")
+
+Miscellaneous
+
+Audierne Municipal Road Regulations April 2021
+
+- April 2021
+- French
+- pdf
+- 479 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/04/Reglement-Voirie-Communale-AUDIERNE-avril2021.pdf "Consult the AUDIERNE Municipal Road Regulations April 2021 - French - PDF - 479 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/04/Reglement-Voirie-Communale-AUDIERNE-avril2021.pdf "Download the Audierne Municipal Road Regulations April 2021 - French - PDF - 479 KB")[Consult the AUDIERNE Municipal Road Regulations April 2021 - French - PDF - 479 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/04/Reglement-Voirie-Communale-AUDIERNE-avril2021.pdf "Consult the AUDIERNE Municipal Road Regulations April 2021 - French - PDF - 479 KB (new tab)")[Download the Audierne Municipal Road Regulations April 2021 - French - PDF - 479 KB](https://www.audierne.bzh/wp-content/uploads/2025/04/Reglement-Voirie-Communale-AUDIERNE-avril2021.pdf "Download the Audierne Municipal Road Regulations April 2021 - French - PDF - 479 KB")
 
 ![](https://www.audierne.bzh/wp-content/uploads/2021/02/documentheque-2-0x0-c-default.jpg)
 
@@ -602,13 +725,13 @@ Filter
 Reset
 
 
-You have viewed 10 out of 19 results
+You have viewed NaN19 results
 
 
 Show more
 
 
-- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=2# "Download the Document Library page as a PDF")
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=2# "Download the Document Library page as a PDF")
 - Print
 
 - Share

@@ -68,7 +68,7 @@ Prefectural decree of October 20, 2025, establishing the number and distribution
 - 676 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/11/2025-10-20-AP-CC-CAP-SIZUN-POINTE-RAZ.pdf "Consult the Prefectural Decree of October 20, 2025, setting the number and distribution of seats on the deliberative body of the Cap Sizun – Pointe du Raz inter-municipal community - French - PDF - 676 ​​KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/11/2025-10-20-AP-CC-CAP-SIZUN-POINTE-RAZ.pdf "Download Prefectural Decree of October 20, 2025, establishing the number and distribution of seats on the deliberative body of the Cap Sizun – Pointe du Raz inter-municipal authority - French - PDF - 676 ​​KB")[Consult the Prefectural Decree of October 20, 2025, setting the number and distribution of seats on the deliberative body of the Cap Sizun – Pointe du Raz inter-municipal community - French - PDF - 676 ​​KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/11/2025-10-20-AP-CC-CAP-SIZUN-POINTE-RAZ.pdf "Consult the Prefectural Decree of October 20, 2025, setting the number and distribution of seats on the deliberative body of the Cap Sizun – Pointe du Raz inter-municipal community - French - PDF - 676 ​​KB (new tab)")[Download Prefectural Decree of October 20, 2025, establishing the number and distribution of seats on the deliberative body of the Cap Sizun – Pointe du Raz inter-municipal authority - French - PDF - 676 ​​KB](https://www.audierne.bzh/wp-content/uploads/2025/11/2025-10-20-AP-CC-CAP-SIZUN-POINTE-RAZ.pdf "Download Prefectural Decree of October 20, 2025, establishing the number and distribution of seats on the deliberative body of the Cap Sizun – Pointe du Raz inter-municipal authority - French - PDF - 676 ​​KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/11/2025-10-20-AP-CC-CAP-SIZUN-POINTE-RAZ.pdf "Consult the Prefectural Decree of October 20, 2025, setting the number and distribution of seats on the deliberative body of the Cap Sizun – Pointe du Raz inter-municipal community - French - PDF - 676 ​​​​​​KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/11/2025-10-20-AP-CC-CAP-SIZUN-POINTE-RAZ.pdf "Download Prefectural Decree of October 20, 2025, establishing the number and distribution of seats on the deliberative body of the Cap Sizun – Pointe du Raz inter-municipal authority - French - PDF - 676 ​​​​​​KB")[Consult the Prefectural Decree of October 20, 2025, setting the number and distribution of seats on the deliberative body of the Cap Sizun – Pointe du Raz inter-municipal community - French - PDF - 676 ​​​​​​KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/11/2025-10-20-AP-CC-CAP-SIZUN-POINTE-RAZ.pdf "Consult the Prefectural Decree of October 20, 2025, setting the number and distribution of seats on the deliberative body of the Cap Sizun – Pointe du Raz inter-municipal community - French - PDF - 676 ​​​​​​KB (new tab)")[Download Prefectural Decree of October 20, 2025, establishing the number and distribution of seats on the deliberative body of the Cap Sizun – Pointe du Raz inter-municipal authority - French - PDF - 676 ​​​​​​KB](https://www.audierne.bzh/wp-content/uploads/2025/11/2025-10-20-AP-CC-CAP-SIZUN-POINTE-RAZ.pdf "Download Prefectural Decree of October 20, 2025, establishing the number and distribution of seats on the deliberative body of the Cap Sizun – Pointe du Raz inter-municipal authority - French - PDF - 676 ​​​​​​KB")
 
 arrests
 
@@ -121,12 +121,192 @@ AP opening CP EARL DES HORTENSIAS
 - 122 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/04/AP-ouverture-CP-EARL-DES-HORTENSIAS.pdf "Consulter AP ouverture CP EARL DES HORTENSIAS - Français - PDF - 122 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/04/AP-ouverture-CP-EARL-DES-HORTENSIAS.pdf "Télécharger AP ouverture CP EARL DES HORTENSIAS - Français - PDF - 122 Ko")[Consult AP opening CP EARL DES HORTENSIAS - French - PDF - 122 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/04/AP-ouverture-CP-EARL-DES-HORTENSIAS.pdf "Consult AP opening CP EARL DES HORTENSIAS - French - PDF - 122 KB (new tab)")[Download AP opening CP EARL DES HORTENSIAS - French - PDF - 122 KB](https://www.audierne.bzh/wp-content/uploads/2025/04/AP-ouverture-CP-EARL-DES-HORTENSIAS.pdf "Download AP opening CP EARL DES HORTENSIAS - French - PDF - 122 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/04/AP-ouverture-CP-EARL-DES-HORTENSIAS.pdf "Consult AP opening CP EARL DES HORTENSIAS - French - PDF - 122 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/04/AP-ouverture-CP-EARL-DES-HORTENSIAS.pdf "Download AP opening CP EARL DES HORTENSIAS - French - PDF - 122 KB")[Consult AP opening CP EARL DES HORTENSIAS - French - PDF - 122 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/04/AP-ouverture-CP-EARL-DES-HORTENSIAS.pdf "Consult AP opening CP EARL DES HORTENSIAS - French - PDF - 122 KB (new tab)")[Download AP opening CP EARL DES HORTENSIAS - French - PDF - 122 KB](https://www.audierne.bzh/wp-content/uploads/2025/04/AP-ouverture-CP-EARL-DES-HORTENSIAS.pdf "Download AP opening CP EARL DES HORTENSIAS - French - PDF - 122 KB")
 
 Text transcription
 
 
 Prefectural Order opening CP EARL DES HORTENSIAS
+
+arrests
+
+Prefectural decree of January 2, 2025, serving as temporary authorization issued to the company Les Recycleurs bretons for the dismantling of the ship "AETHELWYN"
+
+- January 2, 2025
+- French
+- pdf
+- 695 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/APMU-navire-AETHELWYN-.pdf "Consult the Prefectural Order of 02 January 2025 granting temporary authorization to the company Les Recycleurs bretons for the dismantling of the vessel \"AETHELWYN\" - French - PDF - 695 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/APMU-navire-AETHELWYN-.pdf "Download Prefectural Order of January 2, 2025, granting temporary authorization to the company Les Recycleurs bretons for the dismantling of the vessel \"AETHELWYN\" - French - PDF - 695 KB")[Consult the Prefectural Order of 02 January 2025 granting temporary authorization to the company Les Recycleurs bretons for the dismantling of the vessel "AETHELWYN" - French - PDF - 695 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/APMU-navire-AETHELWYN-.pdf "Consult the Prefectural Order of 02 January 2025 granting temporary authorization to the company Les Recycleurs bretons for the dismantling of the vessel \"AETHELWYN\" - French - PDF - 695 KB (new tab)")[Download Prefectural Order of January 2, 2025, granting temporary authorization to the company Les Recycleurs bretons for the dismantling of the vessel "AETHELWYN" - French - PDF - 695 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/APMU-navire-AETHELWYN-.pdf "Download Prefectural Order of January 2, 2025, granting temporary authorization to the company Les Recycleurs bretons for the dismantling of the vessel \"AETHELWYN\" - French - PDF - 695 KB")
+
+arrests
+
+Prefectural decree of December 18, 2024, terminating the exercise of the powers of the Joint Syndicate of the Grand Site Pointe du Raz in Cap Sizun
+
+- December 18, 2024
+- French
+- pdf
+- 101 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/AP-181224-.pdf "Consult the Prefectural Decree of December 18, 2024, terminating the exercise of powers by the Joint Syndicate of the Grand Site Pointe du Raz in Cap Sizun - French - PDF - 101 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/AP-181224-.pdf "Download Prefectural Decree of December 18, 2024, terminating the exercise of powers by the Joint Association of the Grand Site Pointe du Raz in Cap Sizun - French - PDF - 101 KB")[Consult the Prefectural Decree of December 18, 2024, terminating the exercise of powers by the Joint Syndicate of the Grand Site Pointe du Raz in Cap Sizun - French - PDF - 101 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/AP-181224-.pdf "Consult the Prefectural Decree of December 18, 2024, terminating the exercise of powers by the Joint Syndicate of the Grand Site Pointe du Raz in Cap Sizun - French - PDF - 101 KB (new tab)")[Download Prefectural Decree of December 18, 2024, terminating the exercise of powers by the Joint Association of the Grand Site Pointe du Raz in Cap Sizun - French - PDF - 101 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/AP-181224-.pdf "Download Prefectural Decree of December 18, 2024, terminating the exercise of powers by the Joint Association of the Grand Site Pointe du Raz in Cap Sizun - French - PDF - 101 KB")
+
+arrests
+
+Prefectural decree of December 18, 2024, terminating the exercise of the powers of the Joint Syndicate of the Grand Site Pointe du Raz in Cap Sizun
+
+- December 18, 2024
+- French
+- pdf
+- 2 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/Arrete_prefectoral_peche_2025.pdf "Consult the Prefectural Decree of December 18, 2024, terminating the exercise of powers by the Joint Syndicate of the Grand Site Pointe du Raz in Cap Sizun - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/Arrete_prefectoral_peche_2025.pdf "Download Prefectural Decree of December 18, 2024, terminating the exercise of powers by the Joint Syndicate of the Grand Site Pointe du Raz in Cap Sizun - French - PDF - 2 MB")[Consult the Prefectural Decree of December 18, 2024, terminating the exercise of powers by the Joint Syndicate of the Grand Site Pointe du Raz in Cap Sizun - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/Arrete_prefectoral_peche_2025.pdf "Consult the Prefectural Decree of December 18, 2024, terminating the exercise of powers by the Joint Syndicate of the Grand Site Pointe du Raz in Cap Sizun - French - PDF - 2 MB (new tab)")[Download Prefectural Decree of December 18, 2024, terminating the exercise of powers by the Joint Syndicate of the Grand Site Pointe du Raz in Cap Sizun - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/Arrete_prefectoral_peche_2025.pdf "Download Prefectural Decree of December 18, 2024, terminating the exercise of powers by the Joint Syndicate of the Grand Site Pointe du Raz in Cap Sizun - French - PDF - 2 MB")
+
+arrests
+
+Press
+
+- December 2024
+- French
+- pdf
+- 60 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/Presse.pdf "View Press - French - PDF - 60 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/Presse.pdf "Download Press - French - PDF - 60 KB")[View Press - French - PDF - 60 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/Presse.pdf "View Press - French - PDF - 60 KB (new tab)")[Download Press - French - PDF - 60 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/Presse.pdf "Download Press - French - PDF - 60 KB")
+
+arrests
+
+Prefectural decree of October 29, 2024 amending the statutes of the community of communes Cap Sizun – Pointe du Raz.
+
+- October 29, 2024
+- French
+- pdf
+- 1 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/2024-10-29-AP-modification-statuts-CCCSPR-et-annexe-signe-SG.pdf "Consult the Prefectural Decree of October 29, 2024, amending the statutes of the Cap Sizun – Pointe du Raz inter-municipal authority. - French - PDF - 1 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/2024-10-29-AP-modification-statuts-CCCSPR-et-annexe-signe-SG.pdf "Download the Prefectural Decree of October 29, 2024, amending the statutes of the Cap Sizun – Pointe du Raz inter-municipal authority. - French - PDF - 1 MB")[Consult the Prefectural Decree of October 29, 2024, amending the statutes of the Cap Sizun – Pointe du Raz inter-municipal authority. - French - PDF - 1 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/2024-10-29-AP-modification-statuts-CCCSPR-et-annexe-signe-SG.pdf "Consult the Prefectural Decree of October 29, 2024, amending the statutes of the Cap Sizun – Pointe du Raz inter-municipal authority. - French - PDF - 1 MB (opens in a new tab)")[Download the Prefectural Decree of October 29, 2024, amending the statutes of the Cap Sizun – Pointe du Raz inter-municipal authority. - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/2024-10-29-AP-modification-statuts-CCCSPR-et-annexe-signe-SG.pdf "Download the Prefectural Decree of October 29, 2024, amending the statutes of the Cap Sizun – Pointe du Raz inter-municipal authority. - French - PDF - 1 MB")
+
+arrests
+
+Prefectural decree of September 12, 2024 regulating recreational freshwater fishing of migratory fish in Finistère for the year 2024.
+
+- September 12, 2024
+- French
+- pdf
+- 1 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/2024_09_12_AP-modificatif-a-lAP-migrateurs-2024_Vscanee.pdf "Consult the Prefectural Decree of September 12, 2024, regulating recreational freshwater fishing of migratory fish in Finistère for the year 2024. - French - PDF - 1 MB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/2024_09_12_AP-modificatif-a-lAP-migrateurs-2024_Vscanee.pdf "Download the Prefectural Decree of September 12, 2024, regulating recreational freshwater fishing of migratory fish in Finistère for the year 2024. - French - PDF - 1 MB")[Consult the Prefectural Decree of September 12, 2024, regulating recreational freshwater fishing of migratory fish in Finistère for the year 2024. - French - PDF - 1 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/2024_09_12_AP-modificatif-a-lAP-migrateurs-2024_Vscanee.pdf "Consult the Prefectural Decree of September 12, 2024, regulating recreational freshwater fishing of migratory fish in Finistère for the year 2024. - French - PDF - 1 MB (opens in a new tab)")[Download the Prefectural Decree of September 12, 2024, regulating recreational freshwater fishing of migratory fish in Finistère for the year 2024. - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/2024_09_12_AP-modificatif-a-lAP-migrateurs-2024_Vscanee.pdf "Download the Prefectural Decree of September 12, 2024, regulating recreational freshwater fishing of migratory fish in Finistère for the year 2024. - French - PDF - 1 MB")
+
+arrests
+
+Prefectural notice of July 18, 2024 regarding the revision of the electoral lists of professional groups of the chamber of agriculture.
+
+- July 18, 2024
+- French
+- pdf
+- 71 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/avis_180724_de_revision_des_listes_electorales_chambre_d_agriculture29_electeurs_groupements.pdf "Consult the Prefectural Notice of July 18, 2024, regarding the revision of the electoral lists for professional groups of the Chamber of Agriculture. - French - PDF - 71 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/avis_180724_de_revision_des_listes_electorales_chambre_d_agriculture29_electeurs_groupements.pdf "Download Prefectural Notice of July 18, 2024, regarding the revision of the electoral lists for professional groups of the Chamber of Agriculture. - French - PDF - 71 KB")[Consult the Prefectural Notice of July 18, 2024, regarding the revision of the electoral lists for professional groups of the Chamber of Agriculture. - French - PDF - 71 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/avis_180724_de_revision_des_listes_electorales_chambre_d_agriculture29_electeurs_groupements.pdf "Consult the Prefectural Notice of July 18, 2024, regarding the revision of the electoral lists for professional groups of the Chamber of Agriculture. - French - PDF - 71 KB (new tab)")[Download Prefectural Notice of July 18, 2024, regarding the revision of the electoral lists for professional groups of the Chamber of Agriculture. - French - PDF - 71 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/avis_180724_de_revision_des_listes_electorales_chambre_d_agriculture29_electeurs_groupements.pdf "Download Prefectural Notice of July 18, 2024, regarding the revision of the electoral lists for professional groups of the Chamber of Agriculture. - French - PDF - 71 KB")
+
+arrests
+
+Prefectural notice of July 18, 2024 regarding the revision of the electoral lists of professional groups of the chamber of agriculture.
+
+- July 18, 2024
+- French
+- pdf
+- 95 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/avis_180724_de_revision_des_listes_electorales_chambre_d_agriculture29_electeurs_individuels.pdf "Consult the Prefectural Notice of July 18, 2024, regarding the revision of the electoral lists for professional groups of the Chamber of Agriculture. - French - PDF - 95 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/avis_180724_de_revision_des_listes_electorales_chambre_d_agriculture29_electeurs_individuels.pdf "Download Prefectural Notice of July 18, 2024, regarding the revision of the electoral lists for professional groups of the Chamber of Agriculture. - French - PDF - 95 KB")[Consult the Prefectural Notice of July 18, 2024, regarding the revision of the electoral lists for professional groups of the Chamber of Agriculture. - French - PDF - 95 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/avis_180724_de_revision_des_listes_electorales_chambre_d_agriculture29_electeurs_individuels.pdf "Consult the Prefectural Notice of July 18, 2024, regarding the revision of the electoral lists for professional groups of the Chamber of Agriculture. - French - PDF - 95 KB (new tab)")[Download Prefectural Notice of July 18, 2024, regarding the revision of the electoral lists for professional groups of the Chamber of Agriculture. - French - PDF - 95 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/avis_180724_de_revision_des_listes_electorales_chambre_d_agriculture29_electeurs_individuels.pdf "Download Prefectural Notice of July 18, 2024, regarding the revision of the electoral lists for professional groups of the Chamber of Agriculture. - French - PDF - 95 KB")
+
+arrests
+
+Prefectural decree of July 11, 2024 granting a subsidy under the exceptional support fund for communities in Brittany and Manche affected by the climatic events of November 2023.
+
+- July 11, 2024
+- French
+- pdf
+- 1 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/Prefecture_CIARAN_Attribution_Subv_FondsExceptionnel_Arrete20240711.pdf "Consult the Prefectural Decree of July 11, 2024, concerning the allocation of a subsidy under the exceptional support fund for local authorities in Brittany and Manche affected by the climatic events of November 2023. - French - PDF - 1 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/Prefecture_CIARAN_Attribution_Subv_FondsExceptionnel_Arrete20240711.pdf "Download the Prefectural Decree of July 11, 2024, awarding a subsidy from the exceptional support fund for local authorities in Brittany and Manche affected by the weather events of November 2023. - French - PDF - 1 MB")[Consult the Prefectural Decree of July 11, 2024, concerning the allocation of a subsidy under the exceptional support fund for local authorities in Brittany and Manche affected by the climatic events of November 2023. - French - PDF - 1 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/Prefecture_CIARAN_Attribution_Subv_FondsExceptionnel_Arrete20240711.pdf "Consult the Prefectural Decree of July 11, 2024, concerning the allocation of a subsidy under the exceptional support fund for local authorities in Brittany and Manche affected by the climatic events of November 2023. - French - PDF - 1 MB (new tab)")[Download the Prefectural Decree of July 11, 2024, awarding a subsidy from the exceptional support fund for local authorities in Brittany and Manche affected by the weather events of November 2023. - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/Prefecture_CIARAN_Attribution_Subv_FondsExceptionnel_Arrete20240711.pdf "Download the Prefectural Decree of July 11, 2024, awarding a subsidy from the exceptional support fund for local authorities in Brittany and Manche affected by the weather events of November 2023. - French - PDF - 1 MB")
+
+arrests
+
+Prefectural decree of June 21, 2024 concerning the allocation of the Ecological Transition Acceleration Fund in the territories – “Green Fund” – Energy renovation of the Audierne library/table tennis building.
+
+- June 21, 2024
+- French
+- pdf
+- 3 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/arrete_prefectoral_21_06_24_subvention_fonds_verts_renovation_batiment_bibliotheque_tennis.pdf "Consult the Prefectural Decree of June 21, 2024, concerning the allocation of the Ecological Transition Acceleration Fund in the Territories – “Green Fund” – Energy renovation of the Audierne library/table tennis building. - French - PDF - 3 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/arrete_prefectoral_21_06_24_subvention_fonds_verts_renovation_batiment_bibliotheque_tennis.pdf "Download the Prefectural Decree of June 21, 2024, allocating the Ecological Transition Acceleration Fund for Territories – “Green Fund” – Energy renovation of the Audierne library/table tennis building. - French - PDF - 3 MB")[Consult the Prefectural Decree of June 21, 2024, concerning the allocation of the Ecological Transition Acceleration Fund in the Territories – “Green Fund” – Energy renovation of the Audierne library/table tennis building. - French - PDF - 3 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/arrete_prefectoral_21_06_24_subvention_fonds_verts_renovation_batiment_bibliotheque_tennis.pdf "Consult the Prefectural Decree of June 21, 2024, concerning the allocation of the Ecological Transition Acceleration Fund in the Territories – “Green Fund” – Energy renovation of the Audierne library/table tennis building. - French - PDF - 3 MB (new tab)")[Download the Prefectural Decree of June 21, 2024, allocating the Ecological Transition Acceleration Fund for Territories – “Green Fund” – Energy renovation of the Audierne library/table tennis building. - French - PDF - 3 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/arrete_prefectoral_21_06_24_subvention_fonds_verts_renovation_batiment_bibliotheque_tennis.pdf "Download the Prefectural Decree of June 21, 2024, allocating the Ecological Transition Acceleration Fund for Territories – “Green Fund” – Energy renovation of the Audierne library/table tennis building. - French - PDF - 3 MB")
+
+arrests
+
+Prefectural decree of January 30, 2024, defining the areas at risk of dry rot in the Finistère department
+
+- January 30, 2024
+- French
+- pdf
+- 2 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/RAA_29-2024-01-30-00001-Arrete_Prefectoral_zone_presence_risque_MERULES.pdf "Consult the Prefectural Decree of January 30, 2024, defining the areas at risk of dry rot in the Finistère department - French - PDF - 2 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/RAA_29-2024-01-30-00001-Arrete_Prefectoral_zone_presence_risque_MERULES.pdf "Download Prefectural Decree of January 30, 2024, defining the areas at risk of dry rot in the Finistère department - French - PDF - 2 MB")[Consult the Prefectural Decree of January 30, 2024, defining the areas at risk of dry rot in the Finistère department - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/RAA_29-2024-01-30-00001-Arrete_Prefectoral_zone_presence_risque_MERULES.pdf "Consult the Prefectural Decree of January 30, 2024, defining the areas at risk of dry rot in the Finistère department - French - PDF - 2 MB (new tab)")[Download Prefectural Decree of January 30, 2024, defining the areas at risk of dry rot in the Finistère department - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/RAA_29-2024-01-30-00001-Arrete_Prefectoral_zone_presence_risque_MERULES.pdf "Download Prefectural Decree of January 30, 2024, defining the areas at risk of dry rot in the Finistère department - French - PDF - 2 MB")
+
+arrests
+
+Prefectural decree of December 20, 2023, renewing the oversight committee responsible for the accuracy of electoral lists in the municipalities of Finistère
+
+- December 20, 2023
+- French
+- pdf
+- 56 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/AP.pdf "Consulter Arrêté préfectoral du 20 décembre 2023 portant renouvellement de la commission de contrôle chargée de la régularité des listes électorales dans les communes du Finistère - Français - PDF - 56 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/AP.pdf "Télécharger Arrêté préfectoral du 20 décembre 2023 portant renouvellement de la commission de contrôle chargée de la régularité des listes électorales dans les communes du Finistère - Français - PDF - 56 Ko")[Consult the Prefectural Decree of December 20, 2023, renewing the oversight committee responsible for the accuracy of electoral lists in the municipalities of Finistère - French - PDF - 56 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/AP.pdf "Consult the Prefectural Decree of December 20, 2023, renewing the oversight committee responsible for the accuracy of electoral lists in the municipalities of Finistère - French - PDF - 56 KB (new tab)")[Download Prefectural Decree of December 20, 2023, renewing the oversight committee responsible for verifying the accuracy of electoral lists in the municipalities of Finistère - French - PDF - 56 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/AP.pdf "Download Prefectural Decree of December 20, 2023, renewing the oversight committee responsible for verifying the accuracy of electoral lists in the municipalities of Finistère - French - PDF - 56 KB")
+
+arrests
+
+List of commission members by municipality
+
+- December 2023
+- French
+- pdf
+- 295 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/annexe-AP-du-201223.pdf "Consulter Liste des membres de la commission par commune - Français - PDF - 295 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/annexe-AP-du-201223.pdf "Télécharger Liste des membres de la commission par commune - Français - PDF - 295 Ko")[View the list of commission members by municipality - French - PDF - 295 KB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/annexe-AP-du-201223.pdf "View the list of commission members by municipality - French - PDF - 295 KB (opens in a new tab)")[Download List of commission members by municipality - French - PDF - 295 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/annexe-AP-du-201223.pdf "Download List of commission members by municipality - French - PDF - 295 KB")
+
+arrests
+
+Prefectural decree of October 17, 2022 placing the Finistère department on enhanced drought alert and imposing temporary restrictions on certain water uses + Annex to the decree.
+
+- October 17, 2022
+- French
+- pdf
+- 243 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/29-2022-10-17-00-Alerte_renforcee.pdf "Consulter Arrêté préfectoral du 17 octobre 2022 plaçant le département du Finistère en alerte renforcée sécheresse et portant limitation provisoire de certains usages de l’eau + Annexe à l’arrêté. - Français - PDF - 243 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/29-2022-10-17-00-Alerte_renforcee.pdf "Télécharger Arrêté préfectoral du 17 octobre 2022 plaçant le département du Finistère en alerte renforcée sécheresse et portant limitation provisoire de certains usages de l’eau + Annexe à l’arrêté. - Français - PDF - 243 Ko")[Consult the Prefectural Order of October 17, 2022, placing the Finistère department on heightened drought alert and imposing temporary restrictions on certain water uses + Annex to the Order. - French - PDF - 243 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/29-2022-10-17-00-Alerte_renforcee.pdf "Consult the Prefectural Order of October 17, 2022, placing the Finistère department on heightened drought alert and imposing temporary restrictions on certain water uses + Annex to the Order. - French - PDF - 243 KB (new tab)")[Download the Prefectural Order of October 17, 2022, placing the Finistère department on heightened drought alert and imposing temporary restrictions on certain water uses + Annex to the Order. - French - PDF - 243 KB](https://www.audierne.bzh/wp-content/uploads/2025/03/29-2022-10-17-00-Alerte_renforcee.pdf "Download the Prefectural Order of October 17, 2022, placing the Finistère department on heightened drought alert and imposing temporary restrictions on certain water uses + Annex to the Order. - French - PDF - 243 KB")
+
+arrests
+
+Prefectural decree no. 2012-0244 of March 1, 2012, regulating neighborhood noise in the department of Finistère
+
+- March 1, 2012
+- French
+- pdf
+- 1 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/03/Arrete_Prefectoral_2012-0244_Bruits_voisinage_departement_Finistere.pdf "Consulter Arrêté préfectoral n°2012-0244 du 1er mars 2012 portant réglementation des bruits de voisinage dans le département du Finistère - Français - PDF - 1 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/03/Arrete_Prefectoral_2012-0244_Bruits_voisinage_departement_Finistere.pdf "Télécharger Arrêté préfectoral n°2012-0244 du 1er mars 2012 portant réglementation des bruits de voisinage dans le département du Finistère - Français - PDF - 1 Mo")[Consult Prefectural Decree No. 2012-0244 of March 1, 2012, regulating neighborhood noise in the Finistère department - French - PDF - 1 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/03/Arrete_Prefectoral_2012-0244_Bruits_voisinage_departement_Finistere.pdf "Consult Prefectural Decree No. 2012-0244 of March 1, 2012, regulating neighborhood noise in the Finistère department - French - PDF - 1 MB (new tab)")[Download Prefectural Decree No. 2012-0244 of March 1, 2012, regulating neighborhood noise in the Finistère department - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/03/Arrete_Prefectoral_2012-0244_Bruits_voisinage_departement_Finistere.pdf "Download Prefectural Decree No. 2012-0244 of March 1, 2012, regulating neighborhood noise in the Finistère department - French - PDF - 1 MB")
 
 ![](https://www.audierne.bzh/wp-content/uploads/2021/02/documentheque-2-0x0-c-default.jpg)
 
@@ -621,13 +801,13 @@ Filter
 Reset
 
 
-You have viewed 10 out of 25 results
+You have viewed NaN25 results
 
 
 Show more
 
 
-- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=46# "Download the Document Library page as a PDF")
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=46# "Download the Document Library page as a PDF")
 - Print
 
 - Share

@@ -168,6 +168,142 @@ Text transcription
 
 Le Goyen, magazine of the new municipality of Audierne, summer 2018, supplement.
 
+Goyen
+
+GOYEN\_N°8\_SPRING\_2018
+
+- April 2018
+- French
+- pdf
+- 1 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B08_PRINTEMPS_2018.pdf "Consulter GOYEN_N°8_PRINTEMPS_2018 - Français - PDF - 1 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B08_PRINTEMPS_2018.pdf "Télécharger GOYEN_N°8_PRINTEMPS_2018 - Français - PDF - 1 Mo")[View GOYEN_N°8_SPRING_2018 - French - PDF - 1 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B08_PRINTEMPS_2018.pdf "View GOYEN_N°8_SPRING_2018 - French - PDF - 1 MB (new tab)")[Download GOYEN_N°8_SPRING_2018 - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B08_PRINTEMPS_2018.pdf "Download GOYEN_N°8_SPRING_2018 - French - PDF - 1 MB")
+
+Text transcription
+
+
+Le Goyen, magazine of the new municipality of Audierne, spring 2018.
+
+Goyen
+
+GOYEN\_N°6\_AUTUMN\_2017
+
+- October 2017
+- French
+- pdf
+- 1 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B06_AUTOMNE_2017.pdf "Consulter GOYEN_N°6_AUTOMNE_2017 - Français - PDF - 1 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B06_AUTOMNE_2017.pdf "Télécharger GOYEN_N°6_AUTOMNE_2017 - Français - PDF - 1 Mo")[View GOYEN_N°6_AUTUMN_2017 - French - PDF - 1 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B06_AUTOMNE_2017.pdf "View GOYEN_N°6_AUTUMN_2017 - French - PDF - 1 MB (new tab)")[Download GOYEN_N°6_AUTUMN_2017 - French - PDF - 1 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B06_AUTOMNE_2017.pdf "Download GOYEN_N°6_AUTUMN_2017 - French - PDF - 1 MB")
+
+Text transcription
+
+
+Le Goyen, magazine of the new municipality of Audierne, autumn 2017.
+
+Goyen
+
+GOYEN\_N°5\_SUMMER\_2017
+
+- July 2017
+- French
+- pdf
+- 4 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B05_ETE_2017.pdf "Consulter GOYEN_N°5_ETE_2017 - Français - PDF - 4 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B05_ETE_2017.pdf "Télécharger GOYEN_N°5_ETE_2017 - Français - PDF - 4 Mo")[View GOYEN_N°5_ETE_2017 - French - PDF - 4 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B05_ETE_2017.pdf "View GOYEN_N°5_ETE_2017 - French - PDF - 4 MB (opens in a new tab)")[Download GOYEN_N°5_ETE_2017 - French - PDF - 4 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B05_ETE_2017.pdf "Download GOYEN_N°5_ETE_2017 - French - PDF - 4 MB")
+
+Text transcription
+
+
+Le Goyen, magazine of the new municipality of Audierne, summer 2017.
+
+Goyen
+
+GOYEN\_N°5\_SUPPLEMENT
+
+- July 2017
+- French
+- pdf
+- 765 KB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B05_SUPPLEMENT.pdf "Consulter GOYEN_N°5_SUPPLEMENT - Français - PDF - 765 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B05_SUPPLEMENT.pdf "Télécharger GOYEN_N°5_SUPPLEMENT - Français - PDF - 765 Ko")[Consult GOYEN_N°5_SUPPLEMENT - French - PDF - 765 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B05_SUPPLEMENT.pdf "Consult GOYEN_N°5_SUPPLEMENT - French - PDF - 765 KB (new tab)")[Download GOYEN_N°5_SUPPLEMENT - French - PDF - 765 KB](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B05_SUPPLEMENT.pdf "Download GOYEN_N°5_SUPPLEMENT - French - PDF - 765 KB")
+
+Text transcription
+
+
+Le Goyen, magazine of the new municipality of Audierne, summer 2017, supplement.
+
+Goyen
+
+GOYEN\_N°4\_SPRING\_2017
+
+- April 2017
+- French
+- pdf
+- 2 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B04_PRINTEMPS_2017.pdf "Consulter GOYEN_N°4_PRINTEMPS_2017 - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B04_PRINTEMPS_2017.pdf "Télécharger GOYEN_N°4_PRINTEMPS_2017 - Français - PDF - 2 Mo")[View GOYEN_N°4_SPRING_2017 - French - PDF - 2 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B04_PRINTEMPS_2017.pdf "View GOYEN_N°4_SPRING_2017 - French - PDF - 2 MB (new tab)")[Download GOYEN_N°4_SPRING_2017 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B04_PRINTEMPS_2017.pdf "Download GOYEN_N°4_SPRING_2017 - French - PDF - 2 MB")
+
+Text transcription
+
+
+Le Goyen, magazine of the new municipality of Audierne, spring 2017.
+
+Goyen
+
+GOYEN\_N°3\_WINTER\_2016
+
+- December 2016
+- French
+- pdf
+- 3 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B03_HIVER_2016.pdf "Consulter GOYEN_N°3_HIVER_2016 - Français - PDF - 3 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B03_HIVER_2016.pdf "Télécharger GOYEN_N°3_HIVER_2016 - Français - PDF - 3 Mo")[Consult GOYEN_N°3_WINTER_2016 - French - PDF - 3 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B03_HIVER_2016.pdf "Consult GOYEN_N°3_WINTER_2016 - French - PDF - 3 MB (new tab)")[Download GOYEN_N°3_WINTER_2016 - French - PDF - 3 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B03_HIVER_2016.pdf "Download GOYEN_N°3_WINTER_2016 - French - PDF - 3 MB")
+
+Text transcription
+
+
+Le Goyen, magazine of the new municipality of Audierne, winter 2016.
+
+Goyen
+
+GOYEN\_N°2\_AUTUMN\_2016
+
+- October 2016
+- French
+- pdf
+- 2 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B02_AUTOMNE_2016.pdf "Consulter GOYEN_N°2_AUTOMNE_2016 - Français - PDF - 2 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B02_AUTOMNE_2016.pdf "Télécharger GOYEN_N°2_AUTOMNE_2016 - Français - PDF - 2 Mo")[View GOYEN_N°2_AUTUMN_2016 - French - PDF - 2 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B02_AUTOMNE_2016.pdf "View GOYEN_N°2_AUTUMN_2016 - French - PDF - 2 MB (opens in a new tab)")[Download GOYEN_N°2_AUTUMN_2016 - French - PDF - 2 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B02_AUTOMNE_2016.pdf "Download GOYEN_N°2_AUTUMN_2016 - French - PDF - 2 MB")
+
+Text transcription
+
+
+Le Goyen, magazine of the new municipality of Audierne, autumn 2016.
+
+Goyen
+
+GOYEN\_N°1\_SUMMER\_2016
+
+- July 2016
+- French
+- pdf
+- 5 MB
+
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B01_ETE_2016.pdf "Consulter GOYEN_N°1_ETE_2016 - Français - PDF - 5 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B01_ETE_2016.pdf "Télécharger GOYEN_N°1_ETE_2016 - Français - PDF - 5 Mo")[View GOYEN_N°1_ETE_2016 - French - PDF - 5 MB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B01_ETE_2016.pdf "View GOYEN_N°1_ETE_2016 - French - PDF - 5 MB (opens in a new tab)")[Download GOYEN_N°1_ETE_2016 - French - PDF - 5 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/GOYEN_N%C2%B01_ETE_2016.pdf "Download GOYEN_N°1_ETE_2016 - French - PDF - 5 MB")
+
+Text transcription
+
+
+Le Goyen, magazine of the new municipality of Audierne, summer 2016.
+
 ![](https://www.audierne.bzh/wp-content/uploads/2021/02/documentheque-2-0x0-c-default.jpg)
 
 # Document Library
@@ -655,13 +791,13 @@ Filter
 Reset
 
 
-You have viewed 10 out of 18 results
+You have viewed NaN18 results
 
 
 Show more
 
 
-- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=19# "Download the Document Library page as a PDF")
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=19# "Download the Document Library page as a PDF")
 - Print
 
 - Share

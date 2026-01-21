@@ -8,7 +8,7 @@ Cap Sizun Economic Tourism and Know-How Weeks Program 2025
 - 745 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/10/Programme-Semaines-du-Tourisme-Economique-et-des-Savoir-Faire-Cap-Sizun-2025.pdf "Consulter Programme Semaines du Tourisme Économique et des Savoir-Faire Cap Sizun 2025 - Français - PDF - 745 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/10/Programme-Semaines-du-Tourisme-Economique-et-des-Savoir-Faire-Cap-Sizun-2025.pdf "Télécharger Programme Semaines du Tourisme Économique et des Savoir-Faire Cap Sizun 2025 - Français - PDF - 745 Ko")[View the Cap Sizun 2025 Economic Tourism and Know-How Weeks Programme - French - PDF - 745 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/10/Programme-Semaines-du-Tourisme-Economique-et-des-Savoir-Faire-Cap-Sizun-2025.pdf "View the Cap Sizun 2025 Economic Tourism and Know-How Weeks Programme - French - PDF - 745 KB (new tab)")[Download the Cap Sizun Economic Tourism and Know-How Weeks 2025 Program - French - PDF - 745 KB](https://www.audierne.bzh/wp-content/uploads/2025/10/Programme-Semaines-du-Tourisme-Economique-et-des-Savoir-Faire-Cap-Sizun-2025.pdf "Download the Cap Sizun Economic Tourism and Know-How Weeks 2025 Program - French - PDF - 745 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/10/Programme-Semaines-du-Tourisme-Economique-et-des-Savoir-Faire-Cap-Sizun-2025.pdf "View the Cap Sizun 2025 Economic Tourism and Know-How Weeks Programme - French - PDF - 745 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/10/Programme-Semaines-du-Tourisme-Economique-et-des-Savoir-Faire-Cap-Sizun-2025.pdf "Download the Cap Sizun Economic Tourism and Know-How Weeks 2025 Program - French - PDF - 745 KB")[View the Cap Sizun 2025 Economic Tourism and Know-How Weeks Programme - French - PDF - 745 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/10/Programme-Semaines-du-Tourisme-Economique-et-des-Savoir-Faire-Cap-Sizun-2025.pdf "View the Cap Sizun 2025 Economic Tourism and Know-How Weeks Programme - French - PDF - 745 KB (new tab)")[Download the Cap Sizun Economic Tourism and Know-How Weeks 2025 Program - French - PDF - 745 KB](https://www.audierne.bzh/wp-content/uploads/2025/10/Programme-Semaines-du-Tourisme-Economique-et-des-Savoir-Faire-Cap-Sizun-2025.pdf "Download the Cap Sizun Economic Tourism and Know-How Weeks 2025 Program - French - PDF - 745 KB")
 
 Text transcription
 
@@ -25,7 +25,7 @@ National Day of Local Commerce 2025 - Audierne Program
 - 4 MB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/09/JNCP_2025_programme_Audierne.pdf "Consulter Journée nationale du commerce de proximité 2025 - Programme Audierne - Français - PDF - 4 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/09/JNCP_2025_programme_Audierne.pdf "Télécharger Journée nationale du commerce de proximité 2025 - Programme Audierne - Français - PDF - 4 Mo")[View National Day of Local Commerce 2025 - Audierne Program - French - PDF - 4 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/09/JNCP_2025_programme_Audierne.pdf "View National Day of Local Commerce 2025 - Audierne Program - French - PDF - 4 MB (new tab)")[Download National Day of Local Commerce 2025 - Audierne Program - French - PDF - 4 MB](https://www.audierne.bzh/wp-content/uploads/2025/09/JNCP_2025_programme_Audierne.pdf "Download National Day of Local Commerce 2025 - Audierne Program - French - PDF - 4 MB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/09/JNCP_2025_programme_Audierne.pdf "View National Day of Local Commerce 2025 - Audierne Program - French - PDF - 4 MB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/09/JNCP_2025_programme_Audierne.pdf "Download National Day of Local Commerce 2025 - Audierne Program - French - PDF - 4 MB")[View National Day of Local Commerce 2025 - Audierne Program - French - PDF - 4 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/09/JNCP_2025_programme_Audierne.pdf "View National Day of Local Commerce 2025 - Audierne Program - French - PDF - 4 MB (new tab)")[Download National Day of Local Commerce 2025 - Audierne Program - French - PDF - 4 MB](https://www.audierne.bzh/wp-content/uploads/2025/09/JNCP_2025_programme_Audierne.pdf "Download National Day of Local Commerce 2025 - Audierne Program - French - PDF - 4 MB")
 
 Text transcription
 
@@ -506,13 +506,13 @@ Filter
 Reset
 
 
-You have viewed 2 out of 2 results
+You have viewed NaN2 results
 
 
 Show more
 
 
-- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=71# "Download the Document Library page as a PDF")
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=71# "Download the Document Library page as a PDF")
 - Print
 
 - Share

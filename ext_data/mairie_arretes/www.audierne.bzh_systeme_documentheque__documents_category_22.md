@@ -1,111 +1,109 @@
-Aménagement paysager
+Landscaping
 
-Formulaire\_inscription\_concours\_floral\_vegetal
+Floral and plant competition registration form
 
-- 20 Mai 2025
-- Français
+- May 20, 2025
+- French
 - pdf
-- 74 Ko
+- 74 KB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/05/Formulaire_inscription_concours_floral_vegetal.pdf "Consulter Formulaire_inscription_concours_floral_vegetal - Français - PDF - 74 Ko (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/05/Formulaire_inscription_concours_floral_vegetal.pdf "Télécharger Formulaire_inscription_concours_floral_vegetal - Français - PDF - 74 Ko")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/05/Formulaire_inscription_concours_floral_vegetal.pdf "Consulter Formulaire_inscription_concours_floral_vegetal - Français - PDF - 74 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/05/Formulaire_inscription_concours_floral_vegetal.pdf "Télécharger Formulaire_inscription_concours_floral_vegetal - Français - PDF - 74 Ko")[View the floral and plant competition registration form - French - PDF - 74 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/05/Formulaire_inscription_concours_floral_vegetal.pdf "View the floral and plant competition registration form - French - PDF - 74 KB (new tab)")[Download Floral and Plant Competition Registration Form - French - PDF - 74 KB](https://www.audierne.bzh/wp-content/uploads/2025/05/Formulaire_inscription_concours_floral_vegetal.pdf "Download Floral and Plant Competition Registration Form - French - PDF - 74 KB")
 
-Aménagement paysager
+Landscaping
 
-Candidature ville Audierne label Villes et Villages Fleuris 2024
+Application for the town of Audierne to be awarded the "Towns and Villages in Bloom" label 2024
 
-- Mai 2024
-- Français
+- May 2024
+- French
 - pdf
-- 11 Mo
+- 11 MB
 
-Feuilleter
-[Consulter](https://www.audierne.bzh/wp-content/uploads/2025/02/Candidature_villes_villages_fleuris_2024_Brochure_web.pdf "Consulter Candidature ville Audierne label Villes et Villages Fleuris 2024 - Français - PDF - 11 Mo (nouvel onglet)") [Télécharger](https://www.audierne.bzh/wp-content/uploads/2025/02/Candidature_villes_villages_fleuris_2024_Brochure_web.pdf "Télécharger Candidature ville Audierne label Villes et Villages Fleuris 2024 - Français - PDF - 11 Mo")
+Browse
+[View](https://www.audierne.bzh/wp-content/uploads/2025/02/Candidature_villes_villages_fleuris_2024_Brochure_web.pdf "Consulter Candidature ville Audierne label Villes et Villages Fleuris 2024 - Français - PDF - 11 Mo (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/02/Candidature_villes_villages_fleuris_2024_Brochure_web.pdf "Télécharger Candidature ville Audierne label Villes et Villages Fleuris 2024 - Français - PDF - 11 Mo")[View the application for the town of Audierne to be awarded the "Towns and Villages in Bloom" label 2024 - French - PDF - 11 MB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/02/Candidature_villes_villages_fleuris_2024_Brochure_web.pdf "View the application for the town of Audierne to be awarded the \"Towns and Villages in Bloom\" label 2024 - French - PDF - 11 MB (new tab)")[Download the application for the town of Audierne to apply for the "Towns and Villages in Bloom" label 2024 - French - PDF - 11 MB](https://www.audierne.bzh/wp-content/uploads/2025/02/Candidature_villes_villages_fleuris_2024_Brochure_web.pdf "Download the application for the town of Audierne to apply for the \"Towns and Villages in Bloom\" label 2024 - French - PDF - 11 MB")
 
 ![](https://www.audierne.bzh/wp-content/uploads/2021/02/documentheque-2-0x0-c-default.jpg)
 
-# Documenthèque
+# Document Library
 
-Retrouvez tous nos documents, classés par catégories.
+Find all our documents, classified by category.
 
-Cliquez sur un document pour le consulter, feuilleter ou télécharger.
+Click on a document to view, browse or download it.
 
-Filtrer les résultats
+Filter the results
 
-- Alertes météo
+- Weather alerts
 
-- Aménagement paysager
+- Landscaping
 
-- arrêtés
+- arrests
 
 - Associations
 
-- Conseil municipal
+- City Council
 
-- Déchets
+- Waste
 
-- Divers
+- Miscellaneous
 
-- Économie
+- Economy
 
-- Élections
+- Elections
 
-- Journal municipal
+- municipal newspaper
 
-- Noël
+- Christmas
 
-- Pêche-maritimité
+- Fishing and maritime
 
-- Petite enfance
+- Early childhood
 
-- Prévention et sécurité
+- Prevention and safety
 
-- Solidarité-santé
+- Solidarity-health
 
-- Urbanisme
-
-
-0 sélectionnée
+- Urban planning
 
 
-Tout sélectionner
+0 selected
 
+Select all
 
 - [ ]
-Janvier
+January
 
 - [ ]
-Février
+FEBRUARY
 
 - [ ]
-Mars
+March
 
 - [ ]
-Avril
+April
 
 - [ ]
-Mai
+May
 
 - [ ]
-Juin
+June
 
 - [ ]
-Juillet
+July
 
 - [ ]
-Août
+August
 
 - [ ]
-Septembre
+September
 
 - [ ]
-Octobre
+October
 
 - [ ]
-Novembre
+November
 
 - [ ]
-Décembre
+December
 
 
 - [ ]
@@ -493,24 +491,24 @@ Décembre
 1900
 
 
-Filtrer
+Filter
 
-Réinitialiser
-
-
-Vous avez vu 2 résultat(s) sur
-2
-
-Afficher plus
+Reset
 
 
-- [Télécharger en PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=22# "Télécharger la page Documenthèque en PDF")
-- Imprimer
+You have viewed NaN2 results
 
-- Partager
-   - ✓ Lien copié
 
-  - [Partager la page Documenthèque par courriel](mailto:?subject=Documenth%C3%A8que%20-%20Audierne%20(29)&body=https://www.audierne.bzh/systeme/documentheque/ "Partager la page Documenthèque par courriel")
-  - [Partager la page Documenthèque sur Facebook](https://www.facebook.com/sharer/sharer.php?u=https://www.audierne.bzh/systeme/documentheque/ "Partager la page Documenthèque sur Facebook")
-  - [Partager la page Documenthèque sur X](http://twitter.com/share?url=https://www.audierne.bzh/systeme/documentheque/&text=Documenth%C3%A8que "Partager la page Documenthèque sur X")
-  - [Partager la page Documenthèque sur LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.audierne.bzh%2Fsysteme%2Fdocumentheque%2F&title=Documenth%C3%A8que "Partager la page Documenthèque sur LinkedIn")
+Show more
+
+
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=22# "Download the Document Library page as a PDF")
+- Print
+
+- Share
+   - ✓ Link copied
+
+  - [Share the Document Library page by email](mailto:?subject=Documenth%C3%A8que%20-%20Audierne%20(29)&body=https://www.audierne.bzh/systeme/documentheque/ "Share the Document Library page by email")
+  - [Share the Document Library page on Facebook](https://www.facebook.com/sharer/sharer.php?u=https://www.audierne.bzh/systeme/documentheque/ "Share the Document Library page on Facebook")
+  - [Share the Document Library page on X](http://twitter.com/share?url=https://www.audierne.bzh/systeme/documentheque/&text=Documenth%C3%A8que "Share the Document Library page on X")
+  - [Share the Document Library page on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.audierne.bzh%2Fsysteme%2Fdocumentheque%2F&title=Documenth%C3%A8que "Share the Document Library page on LinkedIn")

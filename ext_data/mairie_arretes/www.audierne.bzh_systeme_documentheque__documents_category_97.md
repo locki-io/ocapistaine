@@ -1,14 +1,14 @@
 Early childhood
 
-List of childminders as of November 8, 2025
+List of childminders as of January 10, 2026
 
-- November 8, 2025
+- January 10, 2026
 - French
 - pdf
-- 103 KB
+- 102 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/12/DPMI_Liste_2025-11-08-15-16-32.pdf "Consulter Liste des assistantes maternelles au 8 novembre 2025 - Français - PDF - 103 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/12/DPMI_Liste_2025-11-08-15-16-32.pdf "Télécharger Liste des assistantes maternelles au 8 novembre 2025 - Français - PDF - 103 Ko")[View the list of registered childminders as of November 8, 2025 - French - PDF - 103 KB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/12/DPMI_Liste_2025-11-08-15-16-32.pdf "View the list of registered childminders as of November 8, 2025 - French - PDF - 103 KB (opens in a new tab)")[Download List of childminders as of November 8, 2025 - French - PDF - 103 KB](https://www.audierne.bzh/wp-content/uploads/2025/12/DPMI_Liste_2025-11-08-15-16-32.pdf "Download List of childminders as of November 8, 2025 - French - PDF - 103 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/12/DPMI_Liste_2026-01-10-15-16-41.pdf "Consulter Liste des assistantes maternelles au 10 janvier 2026 - Français - PDF - 102 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/12/DPMI_Liste_2026-01-10-15-16-41.pdf "Télécharger Liste des assistantes maternelles au 10 janvier 2026 - Français - PDF - 102 Ko")[View the list of registered childminders as of January 10, 2026 - French - PDF - 102 KB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2025/12/DPMI_Liste_2026-01-10-15-16-41.pdf "View the list of registered childminders as of January 10, 2026 - French - PDF - 102 KB (opens in a new tab)")[Download List of registered childminders as of January 10, 2026 - French - PDF - 102 KB](https://www.audierne.bzh/wp-content/uploads/2025/12/DPMI_Liste_2026-01-10-15-16-41.pdf "Download List of registered childminders as of January 10, 2026 - French - PDF - 102 KB")
 
 ![](https://www.audierne.bzh/wp-content/uploads/2021/02/documentheque-2-0x0-c-default.jpg)
 
@@ -484,13 +484,13 @@ Filter
 Reset
 
 
-You have viewed 1 result(s) out of
+You have viewed NaN result(s) out of
 1
 
 Show more
 
 
-- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=97# "Download the Document Library page as a PDF")
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=97# "Download the Document Library page as a PDF")
 - Print
 
 - Share

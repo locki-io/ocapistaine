@@ -8,7 +8,7 @@ Municipal Council Meeting, January 21, 2026 – Notice of Meeting
 - 217 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2026/01/01_20260121_convocation.pdf "Consulter Conseil municipal 21 janvier 2026 – Convocation - Français - PDF - 217 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2026/01/01_20260121_convocation.pdf "Télécharger Conseil municipal 21 janvier 2026 – Convocation - Français - PDF - 217 Ko")[Consult the Municipal Council meeting notice for January 21, 2026 – French – PDF – 217 KB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2026/01/01_20260121_convocation.pdf "Consult the Municipal Council meeting notice for January 21, 2026 – French – PDF – 217 KB (opens in a new tab)")[Download Municipal Council Meeting Notice - January 21, 2026 - French - PDF - 217 KB](https://www.audierne.bzh/wp-content/uploads/2026/01/01_20260121_convocation.pdf "Download Municipal Council Meeting Notice - January 21, 2026 - French - PDF - 217 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2026/01/01_20260121_convocation.pdf "Consult the Municipal Council meeting notice for January 21, 2026 – French – PDF – 217 KB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2026/01/01_20260121_convocation.pdf "Download Municipal Council Meeting Notice - January 21, 2026 - French - PDF - 217 KB")[Consult the Municipal Council meeting notice for January 21, 2026 – French – PDF – 217 KB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2026/01/01_20260121_convocation.pdf "Consult the Municipal Council meeting notice for January 21, 2026 – French – PDF – 217 KB (opens in a new tab)")[Download Municipal Council Meeting Notice - January 21, 2026 - French - PDF - 217 KB](https://www.audierne.bzh/wp-content/uploads/2026/01/01_20260121_convocation.pdf "Download Municipal Council Meeting Notice - January 21, 2026 - French - PDF - 217 KB")
 
 City Council
 
@@ -20,7 +20,7 @@ Municipal Council Meeting, January 21, 2026 – Agenda
 - 120 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2026/01/02_20260121_cm_odj.pdf "Consulter Conseil municipal 21 janvier 2026 – Ordre du jour - Français - PDF - 120 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2026/01/02_20260121_cm_odj.pdf "Télécharger Conseil municipal 21 janvier 2026 – Ordre du jour - Français - PDF - 120 Ko")[View Municipal Council Meeting of January 21, 2026 – Agenda - French - PDF - 120 KB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2026/01/02_20260121_cm_odj.pdf "View Municipal Council Meeting of January 21, 2026 – Agenda - French - PDF - 120 KB (opens in a new tab)")[Download Municipal Council Meeting Agenda - January 21, 2026 - French - PDF - 120 KB](https://www.audierne.bzh/wp-content/uploads/2026/01/02_20260121_cm_odj.pdf "Download Municipal Council Meeting Agenda - January 21, 2026 - French - PDF - 120 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2026/01/02_20260121_cm_odj.pdf "View Municipal Council Meeting of January 21, 2026 – Agenda - French - PDF - 120 KB (opens in a new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2026/01/02_20260121_cm_odj.pdf "Download Municipal Council Meeting Agenda - January 21, 2026 - French - PDF - 120 KB")[View Municipal Council Meeting of January 21, 2026 – Agenda - French - PDF - 120 KB (opens in a new tab)](https://www.audierne.bzh/wp-content/uploads/2026/01/02_20260121_cm_odj.pdf "View Municipal Council Meeting of January 21, 2026 – Agenda - French - PDF - 120 KB (opens in a new tab)")[Download Municipal Council Meeting Agenda - January 21, 2026 - French - PDF - 120 KB](https://www.audierne.bzh/wp-content/uploads/2026/01/02_20260121_cm_odj.pdf "Download Municipal Council Meeting Agenda - January 21, 2026 - French - PDF - 120 KB")
 
 City Council
 
@@ -32,7 +32,7 @@ Municipal Council Meeting of December 10, 2025 – Notice of Meeting
 - 217 KB
 
 Browse
-[View](https://www.audierne.bzh/wp-content/uploads/2025/12/Conseil_municipal_10_decembre_2025_convocation.pdf "Consulter Conseil municipal du 10 décembre 2025 – Convocation - Français - PDF - 217 Ko (nouvel onglet)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/12/Conseil_municipal_10_decembre_2025_convocation.pdf "Télécharger Conseil municipal du 10 décembre 2025 – Convocation - Français - PDF - 217 Ko")[Consult the minutes of the Municipal Council meeting of December 10, 2025 – Notice of Meeting – French – PDF – 217 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/12/Conseil_municipal_10_decembre_2025_convocation.pdf "Consult the minutes of the Municipal Council meeting of December 10, 2025 – Notice of Meeting – French – PDF – 217 KB (new tab)")[Download Municipal Council Meeting of December 10, 2025 – Notice of Meeting – French – PDF – 217 KB](https://www.audierne.bzh/wp-content/uploads/2025/12/Conseil_municipal_10_decembre_2025_convocation.pdf "Download Municipal Council Meeting of December 10, 2025 – Notice of Meeting – French – PDF – 217 KB")
+[View](https://www.audierne.bzh/wp-content/uploads/2025/12/Conseil_municipal_10_decembre_2025_convocation.pdf "Consult the minutes of the Municipal Council meeting of December 10, 2025 – Notice of Meeting – French – PDF – 217 KB (new tab)") [Download](https://www.audierne.bzh/wp-content/uploads/2025/12/Conseil_municipal_10_decembre_2025_convocation.pdf "Télécharger Conseil municipal du 10 décembre 2025 – Convocation - Français - PDF - 217 Ko")[Consult the minutes of the Municipal Council meeting of December 10, 2025 – Notice of Meeting – French – PDF – 217 KB (new tab)](https://www.audierne.bzh/wp-content/uploads/2025/12/Conseil_municipal_10_decembre_2025_convocation.pdf "Consult the minutes of the Municipal Council meeting of December 10, 2025 – Notice of Meeting – French – PDF – 217 KB (new tab)")[Download Municipal Council Meeting of December 10, 2025 – Notice of Meeting – French – PDF – 217 KB](https://www.audierne.bzh/wp-content/uploads/2025/12/Conseil_municipal_10_decembre_2025_convocation.pdf "Download Municipal Council Meeting of December 10, 2025 – Notice of Meeting – French – PDF – 217 KB")
 
 City Council
 
@@ -544,13 +544,13 @@ Filter
 Reset
 
 
-You have viewed 6 out of 6 results
+You have viewed NaN6 results
 
 
 Show more
 
 
-- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?documents_category=57# "Download the Document Library page as a PDF")
+- [Download as PDF](https://www.audierne.bzh/systeme/documentheque/?systemeParams=documents&pages=11&category=57# "Download the Document Library page as a PDF")
 - Print
 
 - Share
