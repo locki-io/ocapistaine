@@ -19,15 +19,3 @@ Error: Object of type Document is not JSON serializable
 [2026-01-17T15:04:53.308362] https://www.audierne.bzh/publications-arretes/
 Error: Object of type Document is not JSON serializable
 --------------------------------------------------------------------------------
-[2026-01-18T14:00:04.258231] https://www.audierne.bzh/publications-arretes/
-Error: FirecrawlClient.crawl() got an unexpected keyword argument 'params'
---------------------------------------------------------------------------------
-[2026-01-18T14:28:20.162258] https://www.audierne.bzh/publications-arretes/
-Error: FirecrawlClient.crawl() got an unexpected keyword argument 'wait_until_done'
---------------------------------------------------------------------------------
-[2026-01-18T14:35:34.263307] https://www.audierne.bzh/publications-arretes/
-Error: 'CrawlJob' object has no attribute 'get'
---------------------------------------------------------------------------------
-[2026-01-18T21:40:02.154974] https://www.audierne.bzh/publications-arretes/
-Error: FirecrawlClient.crawl() got an unexpected keyword argument 'allow_backward_links'
---------------------------------------------------------------------------------

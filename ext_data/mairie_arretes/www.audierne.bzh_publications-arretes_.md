@@ -59,4 +59,4 @@ Find all the current regulations for the municipality of Audierne.
   - [Share the page Orders by email](mailto:?subject=Arr%C3%AAt%C3%A9s%20-%20Audierne%20(29)&body=https://www.audierne.bzh/publications-arretes/ "Share the page Orders by email")
   - [Share the Arrests page on Facebook](https://www.facebook.com/sharer/sharer.php?u=https://www.audierne.bzh/publications-arretes/ "Share the Arrests page on Facebook")
   - [Share the page Arrests on X](http://twitter.com/share?url=https://www.audierne.bzh/publications-arretes/&text=Arr%C3%AAt%C3%A9s "Share the page Arrests on X")
-  - [Share the Orders page on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.audierne.bzh%2Fpublications-arretes%2F&title=Arr%C3%AAt%C3%A9s "Share the Orders page on LinkedIn")
+  - [Share the page "Orders" on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.audierne.bzh%2Fpublications-arretes%2F&title=Arr%C3%AAt%C3%A9s "Share the page \"Orders\" on LinkedIn")

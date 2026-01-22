@@ -121,7 +121,14 @@ class FirecrawlManager:
         try:
             print(f"🔥 Crawling website: {url} (max {max_pages} pages)")
 
-            result = self.app.crawl(url, **crawl_params)
+            crawl_params = {
+                "limit": max_pages,
+                "scrapeOptions": {"formats": ["markdown", "html"]},
+                **kwargs,
+            }
+
+            result = self.app.crawl(url, params=crawl_params, wait_until_done=True)
+
 
             # Save results
             self._save_crawl_result(result, output_dir, url)
