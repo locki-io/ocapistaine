@@ -46,6 +46,30 @@
           "endsPattern": "^Public URL copied to clipboard:"
         }
       }
+    },
+    {
+      "label": "Start Streamlit (with CORS)",
+      "type": "shell",
+      "command": "bash",
+      "args": ["${workspaceFolder}/scripts/run_streamlit.sh"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "isBackground": true
+    },
+    {
+      "label": "Stop Streamlit",
+      "type": "shell",
+      "command": "pkill",
+      "args": ["-f", "streamlit run"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared"
+      }
     }
   ]
 }

@@ -1,0 +1,33 @@
+# Streamlit Configuration for OCapistaine
+# See: https://docs.streamlit.io/develop/api-reference/configuration/config.toml
+
+[server]
+# Enable CORS for proxy access
+enableCORS = true
+
+# Disable XSRF protection when behind trusted proxy
+# Re-enable in production if needed
+enableXsrfProtection = false
+
+# Server binding
+port = 8502
+address = "0.0.0.0"
+headless = true
+
+# Allowed origins will be set via environment variable STREAMLIT_SERVER_ALLOWED_ORIGINS
+# Format: comma-separated list
+# Example: "https://ocapistaine.vaettir.locki.io,https://ocapistaine.ngrok-free.app"
+
+[browser]
+# Disable automatic browser opening and stats
+gatherUsageStats = false
+
+# These will be set dynamically based on environment
+# serverAddress and serverPort will use STREAMLIT_BROWSER_SERVER_ADDRESS and STREAMLIT_BROWSER_SERVER_PORT
+
+[client]
+# Show detailed error messages in development
+showErrorDetails = true
+
+[logger]
+level = "info"
