@@ -36,6 +36,9 @@ echo ""
 echo "Starting Streamlit..."
 echo "---"
 
+# Add project root to PYTHONPATH for proper module resolution
+export PYTHONPATH="$PROJECT_ROOT:$PYTHONPATH"
+
 # Run Streamlit
 cd "$PROJECT_ROOT"
 streamlit run app/front.py \

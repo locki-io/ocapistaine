@@ -14,9 +14,12 @@ port = 8502
 address = "0.0.0.0"
 headless = true
 
-# Allowed origins will be set via environment variable STREAMLIT_SERVER_ALLOWED_ORIGINS
-# Format: comma-separated list
-# Example: "https://ocapistaine.vaettir.locki.io,https://ocapistaine.ngrok-free.app"
+# Allowed origins set via environment variable STREAMLIT_SERVER_ALLOWED_ORIGINS
+# This is configured by scripts/set_streamlit_env.py and includes:
+#   - https://ocapistaine.vaettir.locki.io (production proxy)
+#   - https://ocapistaine.ngrok-free.app (ngrok tunnel)
+#   - http://localhost:8502 (local development)
+#   - http://127.0.0.1:8502 (local development alt)
 
 [browser]
 # Disable automatic browser opening and stats
