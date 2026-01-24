@@ -17,3 +17,9 @@ poetry.lock
 
 # private docs (JNS) - evaluation document for myself
 PRIVATE_*
+
+# Downloaded PDFs and extracted data (large files - reproducible from source)
+ext_data/*/pdfs/
+ext_data/**/*.pdf
+# Optionally ignore OCR text output if it becomes too large
+# ext_data/*/ocr/
