@@ -38,69 +38,70 @@ def download_pdf(url: str, output_path: Path, timeout: int = 30) -> bool:
 def main():
     """Main download process."""
 
-    # Load extracted metadata
-    metadata_file = EXT_DATA_DIR / "extracted_pdf_metadata.json"
-    if not metadata_file.exists():
-        print(f"❌ Metadata file not found: {metadata_file}")
-        print("   Run extract_pdf_urls.py first!")
-        return
+    for source in ["commission_controle", "mairie_arretes"]:
 
-    with metadata_file.open("r", encoding="utf-8") as f:
-        documents = json.load(f)
+        # Load extracted metadata
+        metadata_file = EXT_DATA_DIR / f"{source}/extracted_pdf_metadata.json"
+        if not metadata_file.exists():
+            print(f"❌ Metadata file not found: {metadata_file}")
+            print("   Run extract_pdf_urls.py first!")
 
-    print(f"📥 Found {len(documents)} PDFs to download\n")
+        with metadata_file.open("r", encoding="utf-8") as f:
+            documents = json.load(f)
 
-    # Create output directory
-    pdf_dir = EXT_DATA_DIR / "pdfs"
-    pdf_dir.mkdir(parents=True, exist_ok=True)
+        print(f"📥 Found {len(documents)} PDFs to download\n")
 
-    # Track progress
-    success_count = 0
-    skip_count = 0
-    error_count = 0
-    errors = []
+        # Create output directory
+        pdf_dir = EXT_DATA_DIR / f"{source}/pdfs"
+        pdf_dir.mkdir(parents=True, exist_ok=True)
 
-    for idx, doc in enumerate(documents, 1):
-        url = doc["url"]
-        filename = doc["filename"]
-        output_path = pdf_dir / filename
+        # Track progress
+        success_count = 0
+        skip_count = 0
+        error_count = 0
+        errors = []
 
-        # Skip if already downloaded
-        if output_path.exists():
-            skip_count += 1
-            if idx % 50 == 0:
-                print(f"  [{idx}/{len(documents)}] Skipping (already exists): {filename}")
-            continue
+        for idx, doc in enumerate(documents, 1):
+            url = doc["url"]
+            filename = doc["filename"]
+            output_path = pdf_dir / filename
 
-        print(f"  [{idx}/{len(documents)}] Downloading: {filename}")
+            # Skip if already downloaded
+            if output_path.exists():
+                skip_count += 1
+                if idx % 50 == 0:
+                    print(f"  [{idx}/{len(documents)}] Skipping (already exists): {filename}")
+                continue
 
-        success = download_pdf(url, output_path)
+            print(f"  [{idx}/{len(documents)}] Downloading: {filename}")
 
-        if success:
-            success_count += 1
-            # Small delay to be respectful of the server
-            time.sleep(0.1)
-        else:
-            error_count += 1
-            errors.append({"filename": filename, "url": url})
+            success = download_pdf(url, output_path)
 
-        # Progress update every 25 files
-        if idx % 25 == 0:
-            print(f"    Progress: {success_count} downloaded, {skip_count} skipped, {error_count} errors")
+            if success:
+                success_count += 1
+                # Small delay to be respectful of the server
+                time.sleep(0.1)
+            else:
+                error_count += 1
+                errors.append({"filename": filename, "url": url})
 
-    # Summary
-    print(f"\n📊 Download Summary:")
-    print(f"  ✅ Successfully downloaded: {success_count}")
-    print(f"  ⏭️  Skipped (already exist): {skip_count}")
-    print(f"  ❌ Errors: {error_count}")
-    print(f"  📁 PDFs saved to: {pdf_dir}")
+            # Progress update every 25 files
+            if idx % 25 == 0:
+                print(f"    Progress: {success_count} downloaded, {skip_count} skipped, {error_count} errors")
 
-    # Save error log if any
-    if errors:
-        error_file = EXT_DATA_DIR / "download_errors.json"
-        with error_file.open("w", encoding="utf-8") as f:
-            json.dump(errors, f, indent=2, ensure_ascii=False)
-        print(f"  ⚠️  Error log saved to: {error_file}")
+            # Summary
+            print(f"\n📊 Download Summary:")
+            print(f"  ✅ Successfully downloaded: {success_count}")
+            print(f"  ⏭️  Skipped (already exist): {skip_count}")
+            print(f"  ❌ Errors: {error_count}")
+            print(f"  📁 PDFs saved to: {pdf_dir}")
+
+            # Save error log if any
+            if errors:
+                error_file = EXT_DATA_DIR / "download_errors.json"
+                with error_file.open("w", encoding="utf-8") as f:
+                    json.dump(errors, f, indent=2, ensure_ascii=False)
+                print(f"  ⚠️  Error log saved to: {error_file}")
 
 
 if __name__ == "__main__":

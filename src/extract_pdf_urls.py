@@ -58,34 +58,29 @@ def main():
     print("\n📄 Processing commission_controle...")
     commission_docs = process_markdown_files(EXT_DATA_DIR / "commission_controle")
 
-    # Combine all documents
-    all_documents = arretes_docs + commission_docs
+    for source_docs, source in zip([arretes_docs, commission_docs], ["mairie_arretes", "commission_controle"]):
+        
+        # Remove duplicates based on URL
+        unique_docs = {doc["url"]: doc for doc in source_docs}.values()
+        unique_docs = list(unique_docs)
 
-    # Remove duplicates based on URL
-    unique_docs = {doc["url"]: doc for doc in all_documents}.values()
-    unique_docs = list(unique_docs)
+        print(f"\n📊 Summary:")
+        print(f"  Total PDFs found: {len(source_docs)}")
+        print(f"  Unique PDFs: {len(unique_docs)}")
 
-    print(f"\n📊 Summary:")
-    print(f"  Total PDFs found: {len(all_documents)}")
-    print(f"  Unique PDFs: {len(unique_docs)}")
-    print(f"  mairie_arretes: {len(arretes_docs)}")
-    print(f"  commission_controle: {len(commission_docs)}")
+        # Save to JSON
+        output_file = EXT_DATA_DIR / f"{source}/extracted_pdf_metadata.json"
+        with output_file.open("w", encoding="utf-8") as f:
+            json.dump(unique_docs, f, indent=2, ensure_ascii=False)
 
-    # Save to JSON
-    output_file = EXT_DATA_DIR / "extracted_pdf_metadata.json"
-    with output_file.open("w", encoding="utf-8") as f:
-        json.dump(unique_docs, f, indent=2, ensure_ascii=False)
+        print(f"\n✅ Saved metadata to: {output_file}")
 
-    print(f"\n✅ Saved metadata to: {output_file}")
-
-    # Show sample
-    if unique_docs:
-        print(f"\n📋 Sample document:")
-        sample = unique_docs[0]
-        for key, value in sample.items():
-            print(f"  {key}: {value}")
-
-    return unique_docs
+        # Show sample
+        if unique_docs:
+            print(f"\n📋 Sample document:")
+            sample = unique_docs[0]
+            for key, value in sample.items():
+                print(f"  {key}: {value}")
 
 
 if __name__ == "__main__":
