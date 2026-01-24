@@ -1,6 +1,7 @@
 """Utilities for Firecrawl operations and document processing."""
 
 import json
+import re
 import os
 from datetime import datetime
 from pathlib import Path
@@ -287,13 +288,63 @@ def extract_documents_from_page(page_markdown: str) -> list[dict[str, str]]:
     Returns:
         list: Document metadata dicts with 'url', 'title', 'date', etc.
     """
-    # TODO: Implement specific extraction logic for Audierne website
-    # This will depend on the actual HTML/markdown structure
+
     documents = []
 
-    # Example structure (to be customized):
-    # - Parse markdown for document links
-    # - Extract titles, dates, document types
-    # - Return structured data
+    # Find all PDF URLs in the markdown
+    pdf_pattern = r'\[(?:View|Download|Consulter|Télécharger)[^\]]*\]\((https://www\.audierne\.bzh/wp-content/uploads/[^)]+\.pdf)[^\)]*\)'
+    pdf_urls = set(re.findall(pdf_pattern, page_markdown))
+
+    # For each unique PDF URL, extract metadata
+    for pdf_url in pdf_urls:
+        # Find the section of text before this PDF URL (up to 500 chars back)
+        url_pos = page_markdown.find(pdf_url)
+        if url_pos == -1:
+            continue
+
+        # Get context before the URL
+        start_pos = max(0, url_pos - 500)
+        context = page_markdown[start_pos:url_pos]
+
+        # Extract title (typically the last heading or first substantial line before metadata)
+        title_match = re.search(r'(?:^|\n)([^\n-]+)\n\n-\s', context)
+        title = title_match.group(1).strip() if title_match else "Untitled"
+
+        # Remove "arrests" or other category labels from title
+        title = re.sub(r'^arrests\s*', '', title, flags=re.IGNORECASE)
+
+        # Extract date
+        date_patterns = [
+            r'-\s*(\w+\s+\d{1,2},?\s+\d{4})',  # "January 16, 2026" or "December 2024"
+            r'-\s*(\d{1,2}\s+\w+\s+\d{4})',    # "20 décembre 2023"
+            r'-\s*(\w+\s+\d{4})',              # "December 2024"
+        ]
+        date_str = None
+        for pattern in date_patterns:
+            date_match = re.search(pattern, context)
+            if date_match:
+                date_str = date_match.group(1).strip()
+                break
+
+        # Extract file size
+        size_match = re.search(r'-\s*(\d+\s*[KM]B)', context, re.IGNORECASE)
+        file_size = size_match.group(1).strip() if size_match else None
+
+        # Extract language
+        lang_match = re.search(r'-\s*(French|Français)', context, re.IGNORECASE)
+        language = lang_match.group(1).strip() if lang_match else "French"
+
+        # Extract filename from URL
+        filename = pdf_url.split('/')[-1]
+
+        documents.append({
+            "url": pdf_url,
+            "title": title,
+            "date": date_str,
+            "file_size": file_size,
+            "language": language,
+            "filename": filename,
+            "file_type": "pdf",
+        })
 
     return documents
