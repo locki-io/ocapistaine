@@ -22,4 +22,4 @@ PRIVATE_*
 ext_data/*/pdfs/
 ext_data/**/*.pdf
 # Optionally ignore OCR text output if it becomes too large
-# ext_data/*/ocr/
+ext_data/*/text/
