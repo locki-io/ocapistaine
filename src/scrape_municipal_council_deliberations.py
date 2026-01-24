@@ -54,5 +54,5 @@ while True:
         print(f"An error occurred: {e}")
         break
 
-with open("documents.json", "w", encoding="utf-8") as f: # update this -- moved manually for now...
+with open("extracted_pdf_metadata.json", "w", encoding="utf-8") as f: # update this -- moved manually for now...
     json.dump(all_results, f, ensure_ascii=False, indent=2)
