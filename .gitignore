@@ -18,3 +18,4 @@ poetry.lock
 
 # private docs (JNS) - evaluation document for myself
 PRIVATE_*
+scripts/sanitize-docs.sh
