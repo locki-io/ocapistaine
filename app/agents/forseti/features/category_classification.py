@@ -5,7 +5,6 @@ Classifies citizen contributions into one of 7 predefined categories.
 """
 
 from app.providers import LLMProvider
-from app.agents.tracing import trace_feature
 
 from ..models import ClassificationResult, CATEGORIES
 from ..prompts import CATEGORY_CLASSIFICATION_PROMPT
@@ -34,7 +33,6 @@ class CategoryClassificationFeature(FeatureBase):
     def prompt(self) -> str:
         return CATEGORY_CLASSIFICATION_PROMPT
 
-    @trace_feature("category_classification")
     async def execute(
         self,
         provider: LLMProvider,

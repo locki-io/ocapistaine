@@ -22,7 +22,12 @@
       "console": "integratedTerminal",
       "justMyCode": true,
       "cwd": "${workspaceFolder}",
-      "envFile": "${workspaceFolder}/.env"
+      "envFile": "${workspaceFolder}/.env",
+      "env": {
+        "STREAMLIT_SERVER_ENABLE_CORS": "true",
+        "STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION": "false",
+        "STREAMLIT_SERVER_ALLOWED_ORIGINS": "http://localhost:8502,http://127.0.0.1:8502,https://ocapistaine.ngrok-free.app,https://ocapistaine.vaettir.locki.io,https://vaettir.locki.io"
+      }
     },
     {
       "name": "Run Jupyter Kernel (Poetry)",

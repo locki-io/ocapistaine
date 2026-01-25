@@ -93,39 +93,71 @@ class ForsetiAgent(BaseAgent):
         Returns:
             FullValidationResult with validation and classification.
         """
-        # Run validation and classification
-        validation: ValidationResult = await self.execute_feature(
-            "charter_validation",
-            title=title,
-            body=body,
-        )
+        # Start a trace for the full validation with spans for each step
+        with self._tracer.start_trace(
+            name="forseti_validate",
+            input={"title": title, "body": body, "category": category},
+            tags=["forseti", "validation"],
+        ) as trace:
+            # Step 1: Charter validation
+            with self._tracer.span(
+                name="charter_validation",
+                input={"title": title, "body": body},
+                span_type="llm",
+            ) as charter_span:
+                validation: ValidationResult = await self.execute_feature(
+                    "charter_validation",
+                    title=title,
+                    body=body,
+                )
+                charter_span.update(
+                    output=validation.model_dump(),
+                    metadata={"confidence": validation.confidence},
+                )
 
-        classification: ClassificationResult = await self.execute_feature(
-            "category_classification",
-            title=title,
-            body=body,
-            current_category=category,
-        )
+            # Step 2: Category classification
+            with self._tracer.span(
+                name="category_classification",
+                input={"title": title, "body": body, "current_category": category},
+                span_type="llm",
+            ) as category_span:
+                classification: ClassificationResult = await self.execute_feature(
+                    "category_classification",
+                    title=title,
+                    body=body,
+                    current_category=category,
+                )
+                category_span.update(
+                    output=classification.model_dump(),
+                    metadata={"confidence": classification.confidence},
+                )
 
-        # Trace the combined result
-        self._tracer.trace_validation(
-            issue_data={"title": title, "body": body, "category": category},
-            validation_result=validation.model_dump(),
-            category_result=classification.model_dump(),
-        )
+            # Build result
+            result = FullValidationResult(
+                is_valid=validation.is_valid,
+                category=classification.category,
+                original_category=category,
+                violations=validation.violations,
+                encouraged_aspects=validation.encouraged_aspects,
+                reasoning=(
+                    f"Charter: {validation.reasoning} | "
+                    f"Category: {classification.reasoning}"
+                ),
+                confidence=min(validation.confidence, classification.confidence),
+            )
 
-        return FullValidationResult(
-            is_valid=validation.is_valid,
-            category=classification.category,
-            original_category=category,
-            violations=validation.violations,
-            encouraged_aspects=validation.encouraged_aspects,
-            reasoning=(
-                f"Charter: {validation.reasoning} | "
-                f"Category: {classification.reasoning}"
-            ),
-            confidence=min(validation.confidence, classification.confidence),
-        )
+            # Update trace with final output
+            if trace:
+                trace.update(
+                    output=result.model_dump(),
+                    metadata={
+                        "is_valid": result.is_valid,
+                        "category": result.category,
+                        "confidence": result.confidence,
+                    },
+                )
+
+        return result
 
     async def validate_charter(
         self,

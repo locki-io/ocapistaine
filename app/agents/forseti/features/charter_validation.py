@@ -5,7 +5,6 @@ Validates citizen contributions against the charter rules.
 """
 
 from app.providers import LLMProvider
-from app.agents.tracing import trace_feature
 
 from ..models import ValidationResult
 from ..prompts import CHARTER_VALIDATION_PROMPT
@@ -38,7 +37,6 @@ class CharterValidationFeature(FeatureBase):
     def prompt(self) -> str:
         return CHARTER_VALIDATION_PROMPT
 
-    @trace_feature("charter_validation")
     async def execute(
         self,
         provider: LLMProvider,

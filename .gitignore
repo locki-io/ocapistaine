@@ -4,6 +4,7 @@
 __pycache__/
 *.pyc
 .ipynb_checkpoints
+.ruff_cache/
 
 # environment files
 .env.claude
@@ -15,8 +16,12 @@ poetry.lock
 .DS_Store
 .env
 
+# ignore generated docs (before PR)
+docs/*
+
 # private docs (JNS) - evaluation document for myself
 PRIVATE_*
+scripts/sanitize-docs.sh
 
 # Downloaded PDFs and extracted data (large files - reproducible from source)
 ext_data/*/pdfs/

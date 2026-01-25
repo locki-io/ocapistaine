@@ -47,7 +47,8 @@ PROVIDERS = {
         "name": "Ollama (local)",
         "models": {
             "mistral": "mistral:latest",
-            "llama3": "llama3:latest",
+            "llama3.2": "llama3.2:latest",
+            "orca-mini": "orca-mini:latest",
         },
         "default": "mistral",
     },
@@ -166,9 +167,9 @@ def _display_provider_selector() -> None:
     """Display provider and model selection dropdowns."""
     # Initialize defaults if not set
     if "llm_provider" not in st.session_state:
-        st.session_state.llm_provider = "gemini"
+        st.session_state.llm_provider = "ollama"
     if "llm_model" not in st.session_state:
-        st.session_state.llm_model = "flash-lite"
+        st.session_state.llm_model = "mistral"
 
     # Provider selection
     provider_names = list(PROVIDERS.keys())
@@ -177,7 +178,11 @@ def _display_provider_selector() -> None:
     selected_provider = st.selectbox(
         "Fournisseur",
         options=provider_names,
-        index=provider_names.index(current_provider) if current_provider in provider_names else 0,
+        index=(
+            provider_names.index(current_provider)
+            if current_provider in provider_names
+            else 0
+        ),
         format_func=lambda x: PROVIDERS[x]["name"],
         key="provider_select",
     )
@@ -251,7 +256,8 @@ def get_model_id() -> str:
     elif provider == "ollama":
         model_map = {
             "mistral": "mistral:latest",
-            "llama3": "llama3:latest",
+            "llama3.2": "llama3.2:latest",
+            "orca-mini": "orca-mini:latest",
         }
         return model_map.get(model_key, "mistral:latest")
 
