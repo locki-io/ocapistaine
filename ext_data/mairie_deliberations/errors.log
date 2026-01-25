@@ -1,0 +1,3 @@
+[2026-01-20T23:34:39.418104] https://www.audierne.bzh/deliberations-conseil-municipal/
+Error: Bad Request: Failed to scrape. Number of actions cannot exceed 50 - [{'code': 'custom', 'path': ['actions'], 'message': 'Number of actions cannot exceed 50'}, {'code': 'custom', 'path': ['actions'], 'message': 'Total wait time (waitFor + wait actions) cannot exceed 60 seconds'}]
+--------------------------------------------------------------------------------

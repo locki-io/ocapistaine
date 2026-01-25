@@ -1,0 +1,16 @@
+{
+  "base_url": "https://www.audierne.bzh/publications-arretes/",
+  "session_id": "20260121_001059",
+  "total_pages": 2,
+  "status": "completed",
+  "pages": [
+    {
+      "url": "https://www.audierne.bzh/publications-arretes/",
+      "title": "Current orders"
+    },
+    {
+      "url": "https://www.audierne.bzh/systeme/documentheque/?documents_category=17",
+      "title": "Document Library"
+    }
+  ]
+}

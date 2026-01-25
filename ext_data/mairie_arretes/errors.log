@@ -1,0 +1,33 @@
+[2026-01-17T12:32:34.392835] https://www.audierne.bzh/publications-arretes/
+Error: FirecrawlClient.scrape() got an unexpected keyword argument 'params'
+--------------------------------------------------------------------------------
+[2026-01-17T12:39:58.061364] https://www.audierne.bzh/publications-arretes/
+Error: FirecrawlClient.scrape() got an unexpected keyword argument 'onlyMainContent'. Did you mean 'only_main_content'?
+--------------------------------------------------------------------------------
+[2026-01-17T12:55:43.068051] https://www.audierne.bzh/publications-arretes/
+Error: FirecrawlClient.scrape() takes 2 positional arguments but 3 positional arguments (and 4 keyword-only arguments) were given
+--------------------------------------------------------------------------------
+[2026-01-17T14:49:51.126609] https://www.audierne.bzh/publications-arretes/
+Error: FirecrawlClient.scrape() takes 2 positional arguments but 3 positional arguments (and 4 keyword-only arguments) were given
+--------------------------------------------------------------------------------
+[2026-01-17T14:58:39.238078] https://www.audierne.bzh/publications-arretes/
+Error: Object of type Document is not JSON serializable
+--------------------------------------------------------------------------------
+[2026-01-17T15:04:00.107441] https://www.audierne.bzh/publications-arretes/
+Error: Object of type Document is not JSON serializable
+--------------------------------------------------------------------------------
+[2026-01-17T15:04:53.308362] https://www.audierne.bzh/publications-arretes/
+Error: Object of type Document is not JSON serializable
+--------------------------------------------------------------------------------
+[2026-01-18T14:00:04.258231] https://www.audierne.bzh/publications-arretes/
+Error: FirecrawlClient.crawl() got an unexpected keyword argument 'params'
+--------------------------------------------------------------------------------
+[2026-01-18T14:28:20.162258] https://www.audierne.bzh/publications-arretes/
+Error: FirecrawlClient.crawl() got an unexpected keyword argument 'wait_until_done'
+--------------------------------------------------------------------------------
+[2026-01-18T14:35:34.263307] https://www.audierne.bzh/publications-arretes/
+Error: 'CrawlJob' object has no attribute 'get'
+--------------------------------------------------------------------------------
+[2026-01-18T21:40:02.154974] https://www.audierne.bzh/publications-arretes/
+Error: FirecrawlClient.crawl() got an unexpected keyword argument 'allow_backward_links'
+--------------------------------------------------------------------------------

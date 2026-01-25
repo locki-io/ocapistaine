@@ -2,9 +2,12 @@
 name = "ocapistaine"
 version = "0.1.0"
 package-mode = false
-description = "AI agent of cap sizun"
-authors = ["Johnny Xmas <jeannoel.schilling@gmail.com>"]
-license = "Proprietary"
+description = "AI agent for Ò Capistaine civictech platform"
+authors = ["Johnny Xmas <jeannoel.schilling@gmail.com>",
+           "Vic < >",
+           "Guru < >",
+           ]
+license = "Elastic License 2.0 (ELv2)"
 readme = "README.md"
 
 [tool.poetry.dependencies]
@@ -18,6 +21,15 @@ python-dotenv = ">=1.0.1,<2.0.0"
 PyPDF = "^6.5.0"
 Tabula-py = "^2.10.0"
 pdf2ocr = "^1.0.19"
+opik = ">=1.9.0,<2.0.0"
+requests = ">=2.31.0,<3.0.0"
+streamlit = "^1.53.0"
+fastapi = "^0.128.0"
+redis = "^7.1.0"
+uvicorn = "^0.40.0"
+watchdog = "^6.0.0"
+pydantic-settings = "^2.12.0"
+google-genai = "^1.59.0"
 
 
 [build-system]
@@ -28,5 +40,5 @@ build-backend = "poetry.core.masonry.api"
 dev = [
     "pytest (>=9.0.2,<10.0.0)",
     "black (>=25.12.0,<26.0.0)",
-    "ruff (>=0.14.10,<0.15.0)"
+    "ruff (>=0.14.10,<0.15.0)",
 ]

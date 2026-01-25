@@ -1,0 +1,75 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Clean & Start Uvicorn",
+      "type": "shell",
+      "command": "bash",
+      "args": ["${workspaceFolder}/scripts/start.sh"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      }
+    },
+    {
+      "label": "Stop Uvicorn",
+      "type": "shell",
+      "command": "pkill",
+      "args": ["-f", "uvicorn app.main"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Start ngrok + copy URL (auto)",
+      "type": "shell",
+      "command": "poetry",
+      "args": ["run", "python", "${workspaceFolder}/scripts/start_ngrok.py"],
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^Starting ngrok tunnel",
+          "endsPattern": "^Public URL copied to clipboard:"
+        }
+      }
+    },
+    {
+      "label": "Start Streamlit (with CORS)",
+      "type": "shell",
+      "command": "bash",
+      "args": ["${workspaceFolder}/scripts/run_streamlit.sh"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "isBackground": true
+    },
+    {
+      "label": "Stop Streamlit",
+      "type": "shell",
+      "command": "pkill",
+      "args": ["-f", "streamlit run"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared"
+      }
+    }
+  ]
+}
