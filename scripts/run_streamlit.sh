@@ -22,8 +22,17 @@ fi
 echo "🔧 Configuring CORS..."
 eval $(python "$SCRIPT_DIR/set_streamlit_env.py")
 
-# Show port
+# Set port
 STREAMLIT_PORT=${STREAMLIT_PORT:-8502}
+
+# Kill any existing process on the port
+if lsof -ti:$STREAMLIT_PORT > /dev/null 2>&1; then
+    echo "⚠️  Port $STREAMLIT_PORT is in use, killing existing process..."
+    kill -9 $(lsof -ti:$STREAMLIT_PORT) 2>/dev/null || true
+    sleep 1
+    echo "✓ Port $STREAMLIT_PORT is now free"
+fi
+
 echo ""
 echo "✓ Streamlit will run on: http://localhost:$STREAMLIT_PORT"
 
