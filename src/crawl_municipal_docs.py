@@ -4,7 +4,14 @@ import argparse
 import sys
 from pathlib import Path
 
-from config import DATA_SOURCES, FIRECRAWL_CONFIG, DataSource
+from config import (
+    DATA_SOURCES,
+    FIRECRAWL_CONFIG,
+    CRAWL_CONFIG,
+    CRAWL_FULL_CONFIG,
+    SOURCE_CONFIGS,
+    DataSource,
+)
 from firecrawl_utils import FirecrawlManager
 
 
@@ -12,6 +19,7 @@ def crawl_data_source(
     source: DataSource,
     manager: FirecrawlManager,
     mode: str = "scrape",
+    formats: list[str] = ["markdown", "html"],
     max_pages: int = 100,
 ) -> bool:
     """
@@ -35,21 +43,34 @@ def crawl_data_source(
         print(f"   Expected count: {source.expected_count}")
     print(f"{'='*80}\n")
 
+    # Get source-specific configuration (includes actions if defined)
+    source_config = SOURCE_CONFIGS.get(source.name, FIRECRAWL_CONFIG)
+
+    # Check if actions are configured for this source
+    has_actions = "actions" in source_config
+    if has_actions:
+        action_count = len(source_config["actions"])
+        print(f"🎬 Using {action_count} JavaScript actions for dynamic content")
+
     try:
         if mode == "scrape":
             # Scrape single page (useful for getting structure first)
             manager.scrape_url(
                 url=source.url,
                 output_dir=source.output_dir,
-                **FIRECRAWL_CONFIG,
+                formats=formats,
+                **source_config,
             )
         else:  # crawl
             # Crawl entire website section
+            # For crawl mode, merge source config with crawl-specific params
+            crawl_config = {**source_config, **CRAWL_CONFIG}
+
             manager.crawl_website(
                 url=source.url,
                 output_dir=source.output_dir,
                 max_pages=max_pages,
-                **FIRECRAWL_CONFIG,
+                **crawl_config,
             )
 
         print(f"✅ Completed: {source.name}\n")
