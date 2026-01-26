@@ -24,6 +24,7 @@ from app.agents.forseti import ForsetiAgent
 from app.providers import get_provider
 from app.i18n import _
 from app.services import PresentationLogger, ServiceLogger, AgentLogger
+from app.mockup.batch_view import batch_validation_view
 from data.redis_client import get_redis_connection
 
 # TODO: Import services when implemented
@@ -93,6 +94,7 @@ def main():
     # Tab configuration: key -> (emoji, label_key)
     TAB_CONFIG = {
         "contributions": ("📝", "tab_contributions"),
+        "mockup": ("🧪", "tab_mockup"),
         "questions": ("💬", "tab_questions"),
         "documents": ("📄", "tab_documents"),
         "about": ("ℹ️", "tab_about"),
@@ -131,6 +133,8 @@ def main():
         chat_view(user_id)
     elif current_tab == "documents":
         documents_view(user_id)
+    elif current_tab == "mockup":
+        mockup_view(user_id)
     elif current_tab == "about":
         about_view()
 
@@ -272,7 +276,9 @@ def _fetch_issues(state: str = "open", labels: str = "", per_page: int = 50) -> 
         return {"success": False, "error": str(e), "count": 0, "issues": []}
 
 
-def _validate_with_forseti(title: str, body: str, category: str | None, user_id: str, issue_id: int) -> dict:
+def _validate_with_forseti(
+    title: str, body: str, category: str | None, user_id: str, issue_id: int
+) -> dict:
     """Validate a contribution with Forseti agent."""
     start_time = time.time()
 
@@ -331,7 +337,9 @@ def _display_forseti_result(result: dict):
     st.markdown(f"**🔍 {_('forseti_title')}**")
 
     if not result.get("success"):
-        st.error(f"{_('forseti_error')}: {result.get('error', _('forseti_unknown_error'))}")
+        st.error(
+            f"{_('forseti_error')}: {result.get('error', _('forseti_unknown_error'))}"
+        )
         return
 
     # Validation status
@@ -396,7 +404,9 @@ def contributions_view(user_id: str):
         label_filter = st.selectbox(
             _("contributions_category"),
             options=CATEGORY_LABELS,
-            format_func=lambda x: f"📋 {_('contributions_category_all')}" if x == "" else x.capitalize(),
+            format_func=lambda x: (
+                f"📋 {_('contributions_category_all')}" if x == "" else x.capitalize()
+            ),
         )
 
     with col3:
@@ -414,7 +424,9 @@ def contributions_view(user_id: str):
         data = _fetch_issues(state=state_filter, labels=label_filter)
 
     if not data.get("success"):
-        st.error(f"{_('contributions_error')} : {data.get('error', _('forseti_unknown_error'))}")
+        st.error(
+            f"{_('contributions_error')} : {data.get('error', _('forseti_unknown_error'))}"
+        )
         return
 
     issues = data.get("issues", [])
@@ -453,7 +465,9 @@ def contributions_view(user_id: str):
             # Metadata row
             meta_col1, meta_col2, meta_col3 = st.columns(3)
             with meta_col1:
-                st.caption(f"**#{issue_id}** {_('contributions_by')} {issue.get('user', 'inconnu')}")
+                st.caption(
+                    f"**#{issue_id}** {_('contributions_by')} {issue.get('user', 'inconnu')}"
+                )
             with meta_col2:
                 if category:
                     st.caption(f"📁 {category.capitalize()}")
@@ -477,14 +491,19 @@ def contributions_view(user_id: str):
 
             with action_col1:
                 # Forseti validation button
-                if st.button(f"🔍 {_('contributions_verify_charter')}", key=f"validate_{issue_id}"):
+                if st.button(
+                    f"🔍 {_('contributions_verify_charter')}",
+                    key=f"validate_{issue_id}",
+                ):
                     _ui_logger.log_user_action(
                         action="validate_charter",
                         user_id=user_id,
                         details=f"issue_id={issue_id}",
                     )
                     with st.spinner(_("forseti_analyzing")):
-                        result = _validate_with_forseti(title, body, category, user_id, issue_id)
+                        result = _validate_with_forseti(
+                            title, body, category, user_id, issue_id
+                        )
                         st.session_state[f"forseti_result_{issue_id}"] = result
 
             with action_col2:
@@ -548,7 +567,12 @@ def documents_view(user_id: str):
             f"🔴 {_('documents_status_to_crawl')}",
             f"🟡 42 {_('documents_status_collected')}",
         ],
-        _("documents_method"): ["Firecrawl + OCR", "Firecrawl + OCR", "Firecrawl + OCR", "OCR"],
+        _("documents_method"): [
+            "Firecrawl + OCR",
+            "Firecrawl + OCR",
+            "Firecrawl + OCR",
+            "OCR",
+        ],
     }
 
     st.table(sources_data)
@@ -557,12 +581,23 @@ def documents_view(user_id: str):
     # st.text_input("🔍 Rechercher un document...", key="doc_search")
 
 
+def mockup_view(user_id: str):
+    """Mockup batch validation view."""
+
+    # Wrapper for validate function that matches the expected signature
+    def validate_wrapper(title: str, body: str, category: str | None) -> dict:
+        return _validate_with_forseti(title, body, category, user_id, 0)
+
+    batch_validation_view(user_id, validate_wrapper)
+
+
 def about_view():
     """About page with project information."""
 
     st.subheader(f"ℹ️ {_('about_title')}")
 
-    st.markdown(f"""
+    st.markdown(
+        f"""
 ### {_('about_resolution_title')}
 
 > *{_('about_resolution_quote')}*
@@ -587,7 +622,8 @@ def about_view():
 ---
 
 *{_('about_conclusion')}*
-    """)
+    """
+    )
 
 
 if __name__ == "__main__":

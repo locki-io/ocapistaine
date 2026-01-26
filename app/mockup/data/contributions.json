@@ -1,0 +1,110 @@
+{
+  "generated_at": "2026-01-26T00:00:00",
+  "count": 8,
+  "contributions": [
+    {
+      "id": "base_eco_001",
+      "category": "economie",
+      "constat_factuel": "Les commerces du centre-ville d'Audierne souffrent de la concurrence des grandes surfaces et du commerce en ligne. Beaucoup de vitrines restent vides et les habitants font de moins en moins leurs achats localement. Cette situation fragilise l'économie locale et diminue l'attractivité du centre-ville.",
+      "idees_ameliorations": "Je propose de créer un programme de fidélité mutualisé pour les commerces du centre-ville. Les habitants pourraient accumuler des points chez tous les commerçants participants et les échanger contre des réductions. Le financement pourrait venir d'une partie de la taxe de séjour. Cela encouragerait les achats locaux et renforcerait le lien entre les habitants et nos commerçants.",
+      "source": "framaforms",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {"submitted_at": "2026-01-20T14:30:00", "ip": "anonymized"}
+    },
+    {
+      "id": "base_log_001",
+      "category": "logement",
+      "constat_factuel": "Décevant de voir les grands axes routiers délaissés, sans entretien (voir rue Amiral Guepratte par exemple), et soumis à un fort taux de circulation voitures et camions de tous tonnages. Les routes secondaires d'Esquibien ont été mieux loties et pourtant sans la même fréquentation.",
+      "idees_ameliorations": "Avoir un plan cohérent de travaux routiers sur la mandature. Prioriser les axes à forte circulation. Communiquer sur le calendrier des travaux prévus pour que les habitants comprennent la stratégie globale.",
+      "source": "framaforms",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {"submitted_at": "2026-01-24T11:11:00", "ip": "anonymized"}
+    },
+    {
+      "id": "base_log_002",
+      "category": "logement",
+      "constat_factuel": "Audierne compte de nombreux logements anciens mal isolés. La précarité énergétique touche de nombreux ménages qui n'ont pas les moyens de rénover. Les démarches administratives pour obtenir des aides sont complexes et décourageantes.",
+      "idees_ameliorations": "Mettre en place un guichet unique d'accompagnement pour aider les propriétaires à monter leurs dossiers MaPrimeRénov et à trouver des artisans locaux qualifiés RGE. Un partenariat avec l'ADEME et le département pourrait faciliter cette initiative. Cela permettrait de réduire la précarité énergétique tout en soutenant l'emploi local.",
+      "source": "framaforms",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {"submitted_at": "2026-01-22T09:45:00", "ip": "anonymized"}
+    },
+    {
+      "id": "base_cul_001",
+      "category": "culture",
+      "constat_factuel": "Audierne a une riche histoire maritime qui n'est pas suffisamment valorisée. Les jeunes générations connaissent peu les traditions locales. Le patrimoine maritime risque de se perdre avec la disparition des anciens marins et artisans.",
+      "idees_ameliorations": "Organiser un festival annuel célébrant les arts liés à la mer : expositions de peintres marins, démonstrations de matelotage, concerts de chants de marins, et dégustations de produits de la pêche locale. Ce festival pourrait avoir lieu en septembre, après la saison touristique principale, pour prolonger l'activité économique. Les associations locales pourraient être impliquées dans l'organisation.",
+      "source": "framaforms",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {"submitted_at": "2026-01-18T16:20:00", "ip": "anonymized"}
+    },
+    {
+      "id": "base_eco_002",
+      "category": "ecologie",
+      "constat_factuel": "La route vers Trescadec est dangereuse pour les cyclistes en été. Il n'y a pas de piste cyclable sécurisée et les voitures roulent vite. Plusieurs accidents ont eu lieu ces dernières années. Le stationnement sauvage près de la plage pose également problème.",
+      "idees_ameliorations": "Créer une voie verte sécurisée reliant le centre-ville à la plage de Trescadec. Cette piste pourrait longer les anciennes voies ferrées désaffectées. Elle favoriserait les déplacements doux, réduirait le stationnement sauvage, et offrirait un parcours agréable aux familles. Le financement pourrait être sollicité via le plan vélo départemental.",
+      "source": "framaforms",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {"submitted_at": "2026-01-21T10:00:00", "ip": "anonymized"}
+    },
+    {
+      "id": "base_ass_001",
+      "category": "associations",
+      "constat_factuel": "Les associations d'Audierne manquent de locaux pour se réunir et stocker leur matériel. Certaines associations doivent se réunir chez des particuliers ou dans des conditions précaires. Cela freine le développement de la vie associative.",
+      "idees_ameliorations": "Reconvertir l'ancien bâtiment des douanes au port en maison des associations. Prévoir des salles de réunion partagées, un espace de stockage mutualisé, et une permanence d'accueil pour orienter les nouveaux habitants vers les activités locales. Ce lieu de vie associative renforcerait le tissu social de notre commune.",
+      "source": "framaforms",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {"submitted_at": "2026-01-19T14:15:00", "ip": "anonymized"}
+    },
+    {
+      "id": "base_jeu_001",
+      "category": "jeunesse",
+      "constat_factuel": "Les jeunes d'Audierne n'ont pas d'espace dédié pour se retrouver. Ils traînent sur le port ou dans les rues faute de mieux. Certains partent vers Quimper le week-end car il n'y a rien à faire ici pour eux.",
+      "idees_ameliorations": "Aménager un skatepark avec un espace couvert adjacent où les adolescents pourraient se réunir. L'emplacement idéal serait près du complexe sportif. Ce projet pourrait être co-construit avec les jeunes eux-mêmes via un conseil municipal des jeunes. Un animateur jeunesse à temps partiel pourrait encadrer les activités.",
+      "source": "framaforms",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {"submitted_at": "2026-01-23T17:30:00", "ip": "anonymized"}
+    },
+    {
+      "id": "base_invalid_001",
+      "category": null,
+      "constat_factuel": "C'est scandaleux ! Le maire ne fait rien pour notre ville. Tous ces politiciens sont des incapables qui ne pensent qu'à eux. Regardez l'état des routes, c'est honteux. Et pendant ce temps, ils s'augmentent leurs indemnités.",
+      "idees_ameliorations": "Il faut les virer ! RÉVEILLEZ-VOUS les audiernais ! On se moque de nous depuis trop longtemps. Ça sert à rien de proposer des idées, personne ne fait rien de toute façon.",
+      "source": "mock",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": ["personal_attack", "non_constructive", "aggressive"],
+      "metadata": {"purpose": "negative_example"}
+    }
+  ]
+}
