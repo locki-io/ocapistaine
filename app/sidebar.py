@@ -13,9 +13,13 @@ from typing import Optional
 
 from app.providers.config import GEMINI_MODELS
 from app.i18n import _, language_selector, get_language
+from app.services import PresentationLogger
 
 # TODO: Replace with actual Redis client when implemented
 # from app.data.redis_client import get_redis_connection
+
+# Sidebar logger
+_logger = PresentationLogger("sidebar")
 
 # Available LLM providers and their models
 PROVIDERS = {
@@ -79,6 +83,7 @@ def get_user_id() -> str:
     if "uid" in query_params:
         user_id = query_params["uid"]
         st.session_state.user_id = user_id
+        _logger.info("USER_RESTORED", user_id=user_id[:8], source="query_params")
         return user_id
 
     # Generate new user_id
@@ -88,6 +93,7 @@ def get_user_id() -> str:
     # Store in query params for persistence across reruns
     st.query_params["uid"] = user_id
 
+    _logger.info("USER_CREATED", user_id=user_id[:8])
     return user_id
 
 
@@ -110,7 +116,7 @@ def sidebar_setup() -> str:
         st.divider()
 
         # Language selector
-        language_selector()
+        _display_language_selector(user_id)
 
         st.divider()
 
@@ -127,7 +133,7 @@ def sidebar_setup() -> str:
 
         # AI Provider/Model selection
         st.markdown(f"### 🤖 {_('sidebar_ai_model')}")
-        _display_provider_selector()
+        _display_provider_selector(user_id)
 
         st.divider()
 
@@ -155,21 +161,48 @@ def sidebar_setup() -> str:
     return user_id
 
 
+def _display_language_selector(user_id: str) -> None:
+    """Display language selector with logging."""
+    current_lang = get_language()
+    language_selector()
+    new_lang = get_language()
+
+    # Log language change (detected on next rerun)
+    if "prev_lang" in st.session_state and st.session_state.prev_lang != new_lang:
+        _logger.log_user_action(
+            action="change_language",
+            user_id=user_id,
+            details=f"{st.session_state.prev_lang} -> {new_lang}",
+        )
+    st.session_state.prev_lang = new_lang
+
+
 def _start_new_conversation(user_id: str) -> None:
     """
     Start a new conversation thread.
 
     Creates a new thread_id and clears current chat state.
+    Switches to the Questions tab automatically.
     """
+    old_thread_id = st.session_state.get("thread_id")
     new_thread_id = f"{user_id}:{uuid.uuid4().hex[:8]}"
     st.session_state.thread_id = new_thread_id
+
+    # Switch to Questions tab via URL parameter
+    st.query_params["tab"] = "questions"
+
+    _logger.log_user_action(
+        action="new_conversation",
+        user_id=user_id,
+        details=f"thread={new_thread_id[:16]}",
+    )
 
     # TODO: Clear chat history in Redis when implemented
     # r = get_redis_connection()
     # r.delete(f"chat:{user_id}:{old_thread_id}")
 
 
-def _display_provider_selector() -> None:
+def _display_provider_selector(user_id: str) -> None:
     """Display provider and model selection dropdowns."""
     # Initialize defaults if not set
     if "llm_provider" not in st.session_state:
@@ -195,12 +228,19 @@ def _display_provider_selector() -> None:
 
     # Update provider if changed
     if selected_provider != st.session_state.llm_provider:
+        old_provider = st.session_state.llm_provider
         st.session_state.llm_provider = selected_provider
         # Reset model to default for new provider
         st.session_state.llm_model = PROVIDERS[selected_provider]["default"]
         # Clear cached agent
         if "forseti_agent" in st.session_state:
             del st.session_state["forseti_agent"]
+
+        _logger.log_user_action(
+            action="change_provider",
+            user_id=user_id,
+            details=f"{old_provider} -> {selected_provider}",
+        )
         st.rerun()
 
     # Model selection for current provider
@@ -223,10 +263,17 @@ def _display_provider_selector() -> None:
 
     # Update model if changed
     if selected_model != st.session_state.llm_model:
+        old_model = st.session_state.llm_model
         st.session_state.llm_model = selected_model
         # Clear cached agent
         if "forseti_agent" in st.session_state:
             del st.session_state["forseti_agent"]
+
+        _logger.log_user_action(
+            action="change_model",
+            user_id=user_id,
+            details=f"{old_model} -> {selected_model}",
+        )
         st.rerun()
 
 

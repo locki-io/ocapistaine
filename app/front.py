@@ -7,6 +7,7 @@ User identification via single UUID (cookie-based).
 """
 
 import asyncio
+import time
 
 import requests
 import streamlit as st
@@ -22,11 +23,17 @@ from app.sidebar import sidebar_setup, get_user_id, get_selected_provider, get_m
 from app.agents.forseti import ForsetiAgent
 from app.providers import get_provider
 from app.i18n import _
+from app.services import PresentationLogger, ServiceLogger, AgentLogger
 from data.redis_client import get_redis_connection
 
 # TODO: Import services when implemented
 # from app.services.chat_service import ChatService
 # from app.services.rag_service import RAGService
+
+# Loggers for different concerns
+_ui_logger = PresentationLogger("streamlit")
+_svc_logger = ServiceLogger("chat")
+_agent_logger = AgentLogger("forseti")
 
 
 def get_forseti_agent():
@@ -42,8 +49,19 @@ def get_forseti_agent():
         try:
             provider = get_provider(provider_name, model=model_id, cache=False)
             st.session_state[cache_key] = ForsetiAgent(provider=provider)
+            _agent_logger.info(
+                "AGENT_INIT",
+                provider=provider_name,
+                model=model_id,
+            )
         except Exception as e:
             st.error(_("forseti_init_error", provider=provider_name) + f": {e}")
+            _agent_logger.error(
+                "AGENT_INIT_FAILED",
+                provider=provider_name,
+                model=model_id,
+                error=str(e),
+            )
             # Fallback to default
             st.session_state[cache_key] = ForsetiAgent()
 
@@ -59,28 +77,61 @@ def main():
     # Store in session for cross-component access
     st.session_state.user_id = user_id
 
+    # Log page view (only once per session)
+    if "page_view_logged" not in st.session_state:
+        _ui_logger.log_page_view(page="main", user_id=user_id)
+        st.session_state.page_view_logged = True
+
+    # Clean up old session state if present
+    if "active_tab" in st.session_state:
+        del st.session_state["active_tab"]
+
     # Header
     st.title(f"🏛️ {_('app_title')}")
     st.markdown(f"**{_('app_header')}**")
 
-    # Main tabs
-    tabs = st.tabs([
-        f"📝 {_('tab_contributions')}",
-        f"💬 {_('tab_questions')}",
-        f"📄 {_('tab_documents')}",
-        f"ℹ️ {_('tab_about')}",
-    ])
+    # Tab configuration: key -> (emoji, label_key)
+    TAB_CONFIG = {
+        "contributions": ("📝", "tab_contributions"),
+        "questions": ("💬", "tab_questions"),
+        "documents": ("📄", "tab_documents"),
+        "about": ("ℹ️", "tab_about"),
+    }
+    TAB_KEYS = list(TAB_CONFIG.keys())
 
-    with tabs[0]:
+    # Get active tab from URL params (default: contributions)
+    current_tab = st.query_params.get("tab", "contributions")
+    if current_tab not in TAB_KEYS:
+        current_tab = "contributions"
+
+    # Build tab labels
+    tab_labels = [f"{emoji} {_(label_key)}" for emoji, label_key in TAB_CONFIG.values()]
+
+    # Create clickable tab buttons
+    cols = st.columns(len(TAB_KEYS))
+    for i, (key, (emoji, label_key)) in enumerate(TAB_CONFIG.items()):
+        with cols[i]:
+            is_active = key == current_tab
+            label = f"{emoji} {_(label_key)}"
+            if st.button(
+                label,
+                key=f"tab_{key}",
+                use_container_width=True,
+                type="primary" if is_active else "secondary",
+            ):
+                st.query_params["tab"] = key
+                st.rerun()
+
+    st.markdown("---")
+
+    # Render active tab content
+    if current_tab == "contributions":
         contributions_view(user_id)
-
-    with tabs[1]:
+    elif current_tab == "questions":
         chat_view(user_id)
-
-    with tabs[2]:
+    elif current_tab == "documents":
         documents_view(user_id)
-
-    with tabs[3]:
+    elif current_tab == "about":
         about_view()
 
 
@@ -108,17 +159,36 @@ def chat_view(user_id: str):
 
     # Chat input
     if prompt := st.chat_input(_("chat_input_placeholder")):
+        # Log user message
+        _svc_logger.log_request(
+            user_id=user_id,
+            operation="chat_message",
+            query=prompt,
+            thread_id=thread_id,
+        )
+
         # Display user message
         with st.chat_message("user"):
             st.markdown(prompt)
 
         # Generate response
         with st.chat_message("assistant"):
+            start_time = time.time()
             with st.spinner(_("chat_searching")):
                 # TODO: Replace with actual RAG call
                 # response = RAGService.query(prompt, user_id)
                 response = _placeholder_response(prompt)
                 st.markdown(response)
+
+            latency_ms = (time.time() - start_time) * 1000
+
+        # Log response
+        _svc_logger.log_response(
+            user_id=user_id,
+            operation="chat_message",
+            success=True,
+            latency_ms=latency_ms,
+        )
 
         # TODO: Save to history when ChatService is implemented
         # ChatService.append_message(r, history_key, "user", prompt)
@@ -162,6 +232,7 @@ CATEGORY_LABELS = [
 @st.cache_data(ttl=300)  # Cache for 5 minutes
 def _fetch_issues(state: str = "open", labels: str = "", per_page: int = 50) -> dict:
     """Fetch issues from N8N workflow webhook."""
+    start_time = time.time()
     try:
         payload = {"state": state, "per_page": per_page}
         if labels:  # Only add labels filter if specified
@@ -173,16 +244,64 @@ def _fetch_issues(state: str = "open", labels: str = "", per_page: int = 50) -> 
             timeout=30,
         )
         response.raise_for_status()
-        return response.json()
+        result = response.json()
+
+        latency_ms = (time.time() - start_time) * 1000
+        _ui_logger.log_webhook(
+            source="n8n",
+            event_type="fetch_issues",
+            success=True,
+        )
+        _ui_logger.debug(
+            "ISSUES_FETCHED",
+            count=result.get("count", 0),
+            state=state,
+            labels=labels or "all",
+            latency_ms=f"{latency_ms:.0f}",
+        )
+
+        return result
     except requests.RequestException as e:
+        latency_ms = (time.time() - start_time) * 1000
+        _ui_logger.log_webhook(
+            source="n8n",
+            event_type="fetch_issues",
+            success=False,
+            error=str(e),
+        )
         return {"success": False, "error": str(e), "count": 0, "issues": []}
 
 
-def _validate_with_forseti(title: str, body: str, category: str | None) -> dict:
+def _validate_with_forseti(title: str, body: str, category: str | None, user_id: str, issue_id: int) -> dict:
     """Validate a contribution with Forseti agent."""
+    start_time = time.time()
+
+    _agent_logger.log_agent_start(
+        task="validate_contribution",
+        input_data=title,
+    )
+
     try:
         agent = get_forseti_agent()
         result = asyncio.run(agent.validate(title=title, body=body, category=category))
+
+        latency_ms = (time.time() - start_time) * 1000
+
+        # Log validation result
+        _agent_logger.log_validation(
+            validator="forseti_charter",
+            is_valid=result.is_valid,
+            violations=result.violations,
+            confidence=result.confidence,
+        )
+
+        _agent_logger.log_agent_complete(
+            task="validate_contribution",
+            success=True,
+            latency_ms=latency_ms,
+            output_summary=f"valid={result.is_valid}, confidence={result.confidence:.2f}",
+        )
+
         return {
             "success": True,
             "is_valid": result.is_valid,
@@ -194,6 +313,15 @@ def _validate_with_forseti(title: str, body: str, category: str | None) -> dict:
             "confidence": result.confidence,
         }
     except Exception as e:
+        latency_ms = (time.time() - start_time) * 1000
+
+        _agent_logger.log_agent_complete(
+            task="validate_contribution",
+            success=False,
+            latency_ms=latency_ms,
+            output_summary=str(e)[:50],
+        )
+
         return {"success": False, "error": str(e)}
 
 
@@ -273,6 +401,10 @@ def contributions_view(user_id: str):
 
     with col3:
         if st.button(f"🔄 {_('contributions_refresh')}"):
+            _ui_logger.log_user_action(
+                action="refresh_contributions",
+                user_id=user_id,
+            )
             st.cache_data.clear()
 
     st.markdown("---")
@@ -346,8 +478,13 @@ def contributions_view(user_id: str):
             with action_col1:
                 # Forseti validation button
                 if st.button(f"🔍 {_('contributions_verify_charter')}", key=f"validate_{issue_id}"):
+                    _ui_logger.log_user_action(
+                        action="validate_charter",
+                        user_id=user_id,
+                        details=f"issue_id={issue_id}",
+                    )
                     with st.spinner(_("forseti_analyzing")):
-                        result = _validate_with_forseti(title, body, category)
+                        result = _validate_with_forseti(title, body, category, user_id, issue_id)
                         st.session_state[f"forseti_result_{issue_id}"] = result
 
             with action_col2:
