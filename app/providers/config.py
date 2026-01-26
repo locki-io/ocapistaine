@@ -9,13 +9,14 @@ from pydantic import Field
 
 
 # Gemini free tier models (2026-01)
-# - gemini-2.0-flash-lite: High-volume, low-cost (~1000 req/day) - DEFAULT
-# - gemini-2.0-flash: Speed + reasoning (~20 req/day)
-# - gemini-2.0-pro-exp: Complex reasoning (~25-50 req/day) - Use sparingly
+
 GEMINI_MODELS = {
-    "flash-lite": "gemini-2.0-flash-lite",
-    "flash": "gemini-2.0-flash",
-    "pro": "gemini-2.0-pro-exp",
+    "flash-lite": "gemini-2.5-flash-lite",  # Cheapest/fastest, great for high-volume or lightweight tasks
+    "flash": "gemini-2.5-flash",  # Best balance: fast + capable (most popular free default in 2026)
+    "pro": "gemini-2.5-pro",  # Strongest reasoning/coding among free models
+    # Optional extras if you want previews or aliases
+    "flash-preview": "gemini-2.5-flash-preview",  # Sometimes used for latest experimental tweaks
+    "pro-preview": "gemini-2.5-pro-preview",  # If you need bleeding-edge Pro features
 }
 
 
@@ -29,13 +30,13 @@ class ProviderConfig(BaseSettings):
     google_api_key: str | None = Field(default=None, alias="GOOGLE_API_KEY")
     gemini_api_key: str | None = Field(default=None, alias="GEMINI_API_KEY")
     gemini_model: str = Field(default="gemini-2.0-flash-lite", alias="GEMINI_MODEL")
-    gemini_rate_limit: float = Field(default=1.0, alias="GEMINI_RATE_LIMIT")  # flash-lite allows ~1000/day
+    gemini_rate_limit: float = Field(
+        default=1.0, alias="GEMINI_RATE_LIMIT"
+    )  # flash-lite allows ~1000/day
 
     # Anthropic Claude
     anthropic_api_key: str | None = Field(default=None, alias="ANTHROPIC_API_KEY")
-    claude_model: str = Field(
-        default="claude-3-haiku-20240307", alias="CLAUDE_MODEL"
-    )
+    claude_model: str = Field(default="claude-3-haiku-20240307", alias="CLAUDE_MODEL")
 
     # Mistral AI
     mistral_api_key: str | None = Field(default=None, alias="MISTRAL_API_KEY")

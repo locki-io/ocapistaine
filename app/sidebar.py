@@ -12,6 +12,7 @@ import streamlit as st
 from typing import Optional
 
 from app.providers.config import GEMINI_MODELS
+from app.i18n import _, language_selector, get_language
 
 # TODO: Replace with actual Redis client when implemented
 # from app.data.redis_client import get_redis_connection
@@ -19,16 +20,16 @@ from app.providers.config import GEMINI_MODELS
 # Available LLM providers and their models
 PROVIDERS = {
     "gemini": {
-        "name": "Google Gemini",
+        "name_key": "provider_google_gemini",
         "models": {
-            "flash-lite": "gemini-2.0-flash-lite (~1000 req/day)",
-            "flash": "gemini-2.0-flash (~20 req/day)",
-            "pro": "gemini-2.0-pro-exp (~25 req/day)",
+            "flash-lite": "gemini-2.5-flash-lite (~1000 req/day)",
+            "flash": "gemini-2.5-flash (~20 req/day)",
+            # "pro": "gemini-2.5-pro-exp (~25 req/day)",
         },
         "default": "flash-lite",
     },
     "claude": {
-        "name": "Anthropic Claude",
+        "name_key": "provider_anthropic_claude",
         "models": {
             "haiku": "claude-3-haiku (fast, cheap)",
             "sonnet": "claude-3.5-sonnet (balanced)",
@@ -36,7 +37,7 @@ PROVIDERS = {
         "default": "haiku",
     },
     "mistral": {
-        "name": "Mistral AI",
+        "name_key": "provider_mistral_ai",
         "models": {
             "small": "mistral-small-latest",
             "medium": "mistral-medium-latest",
@@ -44,7 +45,7 @@ PROVIDERS = {
         "default": "small",
     },
     "ollama": {
-        "name": "Ollama (local)",
+        "name_key": "provider_ollama",
         "models": {
             "mistral": "mistral:latest",
             "llama3.2": "llama3.2:latest",
@@ -103,30 +104,35 @@ def sidebar_setup() -> str:
 
     with st.sidebar:
         # Project branding
-        st.markdown("## 🏛️ Ò Capistaine")
-        st.caption("Transparence civique pour Audierne")
+        st.markdown(f"## 🏛️ {_('app_title')}")
+        st.caption(_("app_subtitle"))
+
+        st.divider()
+
+        # Language selector
+        language_selector()
 
         st.divider()
 
         # User session info
-        st.markdown("### 👤 Session")
-        st.caption(f"ID: `{user_id[:8]}...`")
+        st.markdown(f"### 👤 {_('sidebar_session')}")
+        st.caption(_("sidebar_session_id", user_id=user_id[:8]))
 
         # New conversation button
-        if st.button("🔄 Nouvelle conversation", use_container_width=True):
+        if st.button(f"🔄 {_('sidebar_new_conversation')}", use_container_width=True):
             _start_new_conversation(user_id)
             st.rerun()
 
         st.divider()
 
         # AI Provider/Model selection
-        st.markdown("### 🤖 Modèle IA")
+        st.markdown(f"### 🤖 {_('sidebar_ai_model')}")
         _display_provider_selector()
 
         st.divider()
 
         # Quick links
-        st.markdown("### 🔗 Liens")
+        st.markdown(f"### 🔗 {_('sidebar_links')}")
         st.markdown(
             """
         - [audierne2026.fr](https://audierne2026.fr)
@@ -138,13 +144,13 @@ def sidebar_setup() -> str:
         st.divider()
 
         # Status indicators
-        st.markdown("### 📊 Status")
+        st.markdown(f"### 📊 {_('sidebar_status')}")
         _display_status_indicators()
 
         # Footer
         st.divider()
-        st.caption("Encode Hackathon 2026")
-        st.caption("Apache 2.0 + ELv2")
+        st.caption(_("sidebar_footer_hackathon"))
+        st.caption(_("sidebar_footer_license"))
 
     return user_id
 
@@ -176,14 +182,14 @@ def _display_provider_selector() -> None:
     current_provider = st.session_state.llm_provider
 
     selected_provider = st.selectbox(
-        "Fournisseur",
+        _("sidebar_provider"),
         options=provider_names,
         index=(
             provider_names.index(current_provider)
             if current_provider in provider_names
             else 0
         ),
-        format_func=lambda x: PROVIDERS[x]["name"],
+        format_func=lambda x: _(PROVIDERS[x]["name_key"]),
         key="provider_select",
     )
 
@@ -208,7 +214,7 @@ def _display_provider_selector() -> None:
         st.session_state.llm_model = current_model
 
     selected_model = st.selectbox(
-        "Modèle",
+        _("sidebar_model"),
         options=model_keys,
         index=model_keys.index(current_model) if current_model in model_keys else 0,
         format_func=lambda x: provider_config["models"][x],
@@ -269,14 +275,14 @@ def _display_status_indicators() -> None:
 
     # TODO: Replace with actual health checks
     status_items = [
-        ("Redis", "🟢", "Connecté"),
-        ("Firecrawl", "🔴", "Non configuré"),
-        ("RAG", "🔴", "En développement"),
-        ("Opik", "🟡", "Planifié"),
+        ("status_redis", "🟢", "status_connected"),
+        ("status_firecrawl", "🔴", "status_not_configured"),
+        ("status_rag", "🔴", "status_in_development"),
+        ("status_opik", "🟡", "status_planned"),
     ]
 
-    for name, icon, tooltip in status_items:
-        st.caption(f"{icon} {name}")
+    for name_key, icon, tooltip_key in status_items:
+        st.caption(f"{icon} {_(name_key)}")
 
 
 def init_session_state() -> None:

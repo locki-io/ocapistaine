@@ -21,6 +21,7 @@ st.set_page_config(
 from app.sidebar import sidebar_setup, get_user_id, get_selected_provider, get_model_id
 from app.agents.forseti import ForsetiAgent
 from app.providers import get_provider
+from app.i18n import _
 from data.redis_client import get_redis_connection
 
 # TODO: Import services when implemented
@@ -42,7 +43,7 @@ def get_forseti_agent():
             provider = get_provider(provider_name, model=model_id, cache=False)
             st.session_state[cache_key] = ForsetiAgent(provider=provider)
         except Exception as e:
-            st.error(f"Erreur initialisation {provider_name}: {e}")
+            st.error(_("forseti_init_error", provider=provider_name) + f": {e}")
             # Fallback to default
             st.session_state[cache_key] = ForsetiAgent()
 
@@ -59,17 +60,22 @@ def main():
     st.session_state.user_id = user_id
 
     # Header
-    st.title("🏛️ Ò Capistaine")
-    st.markdown("**Posez vos questions sur la vie municipale d'Audierne**")
+    st.title(f"🏛️ {_('app_title')}")
+    st.markdown(f"**{_('app_header')}**")
 
     # Main tabs
-    tabs = st.tabs(["💬 Questions", "📝 Contributions", "📄 Documents", "ℹ️ À propos"])
+    tabs = st.tabs([
+        f"📝 {_('tab_contributions')}",
+        f"💬 {_('tab_questions')}",
+        f"📄 {_('tab_documents')}",
+        f"ℹ️ {_('tab_about')}",
+    ])
 
     with tabs[0]:
-        chat_view(user_id)
+        contributions_view(user_id)
 
     with tabs[1]:
-        contributions_view(user_id)
+        chat_view(user_id)
 
     with tabs[2]:
         documents_view(user_id)
@@ -94,24 +100,21 @@ def chat_view(user_id: str):
     chat_container = st.container()
     with chat_container:
         if not history:
-            st.info(
-                "👋 Bienvenue ! Posez une question sur les décisions municipales, "
-                "le budget, ou tout autre sujet concernant Audierne."
-            )
+            st.info(f"👋 {_('chat_welcome')}")
         else:
             for msg in history:
                 with st.chat_message(msg["role"]):
                     st.markdown(msg["content"])
 
     # Chat input
-    if prompt := st.chat_input("Votre question sur la commune..."):
+    if prompt := st.chat_input(_("chat_input_placeholder")):
         # Display user message
         with st.chat_message("user"):
             st.markdown(prompt)
 
         # Generate response
         with st.chat_message("assistant"):
-            with st.spinner("Recherche dans les documents municipaux..."):
+            with st.spinner(_("chat_searching")):
                 # TODO: Replace with actual RAG call
                 # response = RAGService.query(prompt, user_id)
                 response = _placeholder_response(prompt)
@@ -125,16 +128,16 @@ def chat_view(user_id: str):
 def _placeholder_response(prompt: str) -> str:
     """Placeholder response until RAG is implemented."""
     return f"""
-**🚧 RAG System en cours de développement**
+**🚧 {_('rag_placeholder_title')}**
 
-Votre question : *"{prompt}"*
+{_('rag_placeholder_your_question')} : *"{prompt}"*
 
-Cette fonctionnalité sera bientôt disponible. Le système RAG permettra de :
-- 🔍 Rechercher dans 4,000+ documents municipaux
-- 📄 Citer les sources (arrêtés, délibérations)
-- ✅ Vérifier l'exactitude via Opik
+{_('rag_placeholder_coming_soon')}
+- 🔍 {_('rag_placeholder_search')}
+- 📄 {_('rag_placeholder_cite')}
+- ✅ {_('rag_placeholder_verify')}
 
-En attendant, consultez [audierne2026.fr](https://audierne2026.fr) pour participer !
+{_('rag_placeholder_meanwhile')}
 """
 
 
@@ -197,29 +200,29 @@ def _validate_with_forseti(title: str, body: str, category: str | None) -> dict:
 def _display_forseti_result(result: dict):
     """Display Forseti validation result."""
     st.markdown("---")
-    st.markdown("**🔍 Analyse Forseti 461**")
+    st.markdown(f"**🔍 {_('forseti_title')}**")
 
     if not result.get("success"):
-        st.error(f"Erreur: {result.get('error', 'Erreur inconnue')}")
+        st.error(f"{_('forseti_error')}: {result.get('error', _('forseti_unknown_error'))}")
         return
 
     # Validation status
     if result.get("is_valid"):
-        st.success("✅ Conforme à la charte")
+        st.success(f"✅ {_('forseti_compliant')}")
     else:
-        st.warning("⚠️ Non conforme à la charte")
+        st.warning(f"⚠️ {_('forseti_non_compliant')}")
 
     # Violations
     violations = result.get("violations", [])
     if violations:
-        st.markdown("**Violations:**")
+        st.markdown(f"**{_('forseti_violations')}**")
         for v in violations:
             st.markdown(f"- ❌ {v}")
 
     # Encouraged aspects
     encouraged = result.get("encouraged_aspects", [])
     if encouraged:
-        st.markdown("**Points positifs:**")
+        st.markdown(f"**{_('forseti_positive_points')}**")
         for e in encouraged:
             st.markdown(f"- ✨ {e}")
 
@@ -227,71 +230,69 @@ def _display_forseti_result(result: dict):
     category = result.get("category")
     original = result.get("original_category")
     if category:
-        cat_text = f"📁 Catégorie: **{category}**"
+        cat_text = f"📁 {_('forseti_category')}: **{category}**"
         if original and original != category:
-            cat_text += f" (suggérée, était: {original})"
+            cat_text += f" ({_('forseti_suggested')}: {original})"
         st.markdown(cat_text)
 
     # Confidence
     confidence = result.get("confidence", 0)
-    st.progress(confidence, text=f"Confiance: {confidence:.0%}")
+    st.progress(confidence, text=f"{_('forseti_confidence')}: {confidence:.0%}")
 
     # Reasoning (collapsed)
-    with st.expander("💭 Raisonnement", expanded=False):
+    with st.expander(f"💭 {_('forseti_reasoning')}", expanded=False):
         st.markdown(result.get("reasoning", ""))
 
 
 def contributions_view(user_id: str):
     """Display contributions from audierne2026/participons repository."""
 
-    st.subheader("📝 Contributions Citoyennes")
-    st.markdown(
-        "Contributions de la communauté sur [audierne2026/participons](https://github.com/audierne2026/participons)"
-    )
+    st.subheader(f"📝 {_('contributions_title')}")
+    st.markdown(_("contributions_subtitle"))
 
     # Filters
     col1, col2, col3 = st.columns([2, 2, 1])
 
     with col1:
         state_filter = st.selectbox(
-            "Statut",
+            _("contributions_status"),
             options=["open", "closed", "all"],
             format_func=lambda x: {
-                "open": "🟢 Ouvertes",
-                "closed": "🔴 Fermées",
-                "all": "📋 Toutes",
+                "open": f"🟢 {_('contributions_status_open')}",
+                "closed": f"🔴 {_('contributions_status_closed')}",
+                "all": f"📋 {_('contributions_status_all')}",
             }[x],
         )
 
     with col2:
         label_filter = st.selectbox(
-            "Catégorie",
+            _("contributions_category"),
             options=CATEGORY_LABELS,
-            format_func=lambda x: "📋 Toutes" if x == "" else x.capitalize(),
+            format_func=lambda x: f"📋 {_('contributions_category_all')}" if x == "" else x.capitalize(),
         )
 
     with col3:
-        if st.button("🔄 Actualiser"):
+        if st.button(f"🔄 {_('contributions_refresh')}"):
             st.cache_data.clear()
 
     st.markdown("---")
 
     # Fetch issues
-    with st.spinner("Chargement des contributions..."):
+    with st.spinner(_("contributions_loading")):
         data = _fetch_issues(state=state_filter, labels=label_filter)
 
     if not data.get("success"):
-        st.error(f"Erreur lors du chargement : {data.get('error', 'Erreur inconnue')}")
+        st.error(f"{_('contributions_error')} : {data.get('error', _('forseti_unknown_error'))}")
         return
 
     issues = data.get("issues", [])
     count = data.get("count", 0)
 
     # Stats
-    st.metric("Contributions trouvées", count)
+    st.metric(_("contributions_found"), count)
 
     if not issues:
-        st.info("Aucune contribution trouvée avec ces critères.")
+        st.info(_("contributions_none_found"))
         return
 
     # Category color mapping
@@ -320,13 +321,13 @@ def contributions_view(user_id: str):
             # Metadata row
             meta_col1, meta_col2, meta_col3 = st.columns(3)
             with meta_col1:
-                st.caption(f"**#{issue_id}** par {issue.get('user', 'inconnu')}")
+                st.caption(f"**#{issue_id}** {_('contributions_by')} {issue.get('user', 'inconnu')}")
             with meta_col2:
                 if category:
                     st.caption(f"📁 {category.capitalize()}")
             with meta_col3:
                 if has_charte:
-                    st.caption("✅ Conforme à la charte")
+                    st.caption(f"✅ {_('contributions_charter_compliant')}")
 
             # Labels
             labels = issue.get("labels", [])
@@ -344,8 +345,8 @@ def contributions_view(user_id: str):
 
             with action_col1:
                 # Forseti validation button
-                if st.button("🔍 Vérifier charte", key=f"validate_{issue_id}"):
-                    with st.spinner("Analyse par Forseti 461..."):
+                if st.button(f"🔍 {_('contributions_verify_charter')}", key=f"validate_{issue_id}"):
+                    with st.spinner(_("forseti_analyzing")):
                         result = _validate_with_forseti(title, body, category)
                         st.session_state[f"forseti_result_{issue_id}"] = result
 
@@ -353,7 +354,7 @@ def contributions_view(user_id: str):
                 # Link to GitHub
                 html_url = issue.get("html_url")
                 if html_url:
-                    st.markdown(f"[Voir sur GitHub]({html_url})")
+                    st.markdown(f"[{_('contributions_view_github')}]({html_url})")
 
             # Display Forseti result if available
             result_key = f"forseti_result_{issue_id}"
@@ -365,47 +366,52 @@ def contributions_view(user_id: str):
 def documents_view(user_id: str):
     """Document corpus overview."""
 
-    st.subheader("📄 Corpus Documentaire")
+    st.subheader(f"📄 {_('documents_title')}")
 
     # Document stats (placeholder)
     col1, col2, col3 = st.columns(3)
 
     with col1:
         st.metric(
-            "Arrêtés identifiés", "4,010", help="Publications & arrêtés municipaux"
+            _("documents_arretes_identified"), "4,010", help=_("documents_arretes_help")
         )
 
     with col2:
         st.metric(
-            "Documents indexés",
+            _("documents_indexed"),
             "42",
-            delta="🟡 En cours",
-            help="Bulletins Gwaien collectés",
+            delta=f"🟡 {_('documents_indexed_status')}",
+            help=_("documents_indexed_help"),
         )
 
     with col3:
-        st.metric("Pipeline Firecrawl", "🔴", help="Infrastructure en développement")
+        st.metric(_("documents_pipeline"), "🔴", help=_("documents_pipeline_help"))
 
     st.markdown("---")
 
     # Document sources table
-    st.markdown("### Sources de données")
+    st.markdown(f"### {_('documents_sources_title')}")
 
     sources_data = {
-        "Source": [
-            "Mairie - Arrêtés",
-            "Mairie - Délibérations",
-            "Commission de contrôle",
-            "Gwaien (bulletin)",
+        _("documents_source"): [
+            _("documents_source_arretes"),
+            _("documents_source_deliberations"),
+            _("documents_source_commission"),
+            _("documents_source_gwaien"),
         ],
-        "URL": [
+        _("documents_url"): [
             "audierne.bzh/publications-arretes/",
             "audierne.bzh/deliberations-conseil-municipal/",
             "audierne.bzh/documentheque/",
             "OCR des bulletins PDF",
         ],
-        "Status": ["🔴 À crawler", "🔴 À crawler", "🔴 À crawler", "🟡 42 collectés"],
-        "Méthode": ["Firecrawl + OCR", "Firecrawl + OCR", "Firecrawl + OCR", "OCR"],
+        _("sidebar_status"): [
+            f"🔴 {_('documents_status_to_crawl')}",
+            f"🔴 {_('documents_status_to_crawl')}",
+            f"🔴 {_('documents_status_to_crawl')}",
+            f"🟡 42 {_('documents_status_collected')}",
+        ],
+        _("documents_method"): ["Firecrawl + OCR", "Firecrawl + OCR", "Firecrawl + OCR", "OCR"],
     }
 
     st.table(sources_data)
@@ -417,36 +423,34 @@ def documents_view(user_id: str):
 def about_view():
     """About page with project information."""
 
-    st.subheader("ℹ️ À propos d'Ò Capistaine")
+    st.subheader(f"ℹ️ {_('about_title')}")
 
-    st.markdown(
-        """
-    ### Ma résolution 2026
+    st.markdown(f"""
+### {_('about_resolution_title')}
 
-    > *Cette année, je comprendrai enfin mes élections locales et m'impliquerai en tant que citoyen.*
+> *{_('about_resolution_quote')}*
 
-    **Ò Capistaine** est un outil de transparence civique alimenté par l'IA pour la démocratie locale.
+{_('about_description')}
 
-    ### Fonctionnalités
+### {_('about_features_title')}
 
-    | Fonctionnalité | Description | Status |
-    |----------------|-------------|--------|
-    | Recherche documentaire | 4,000+ documents municipaux indexés | 🔴 En développement |
-    | Questions-Réponses | Réponses sourcées en langage clair | 🔴 En développement |
-    | Détection d'hallucinations | Vérification via Opik | 🟡 Planifié |
-    | Multi-canal | Facebook, email, chatbot | 🟡 Planifié |
+| {_('about_feature')} | {_('about_feature_description')} | {_('about_feature_status')} |
+|----------------|-------------|--------|
+| {_('about_feature_search')} | {_('about_feature_search_desc')} | 🔴 {_('about_status_in_dev')} |
+| {_('about_feature_qa')} | {_('about_feature_qa_desc')} | 🔴 {_('about_status_in_dev')} |
+| {_('about_feature_hallucination')} | {_('about_feature_hallucination_desc')} | 🟡 {_('about_status_planned')} |
+| {_('about_feature_multichannel')} | {_('about_feature_multichannel_desc')} | 🟡 {_('about_status_planned')} |
 
-    ### Liens
+### {_('about_links_title')}
 
-    - 🌐 [audierne2026.fr](https://audierne2026.fr) - Plateforme de participation citoyenne
-    - 📚 [docs.locki.io](https://docs.locki.io) - Documentation technique
-    - 💻 [GitHub](https://github.com/locki-io/ocapistaine) - Code source
+- 🌐 [audierne2026.fr](https://audierne2026.fr) - {_('about_links_platform')}
+- 📚 [docs.locki.io](https://docs.locki.io) - {_('about_links_docs')}
+- 💻 [GitHub](https://github.com/locki-io/ocapistaine) - {_('about_links_source')}
 
-    ---
+---
 
-    *Si l'IA peut nous aider à tenir nos résolutions du Nouvel An, la plus impactante est peut-être : devenir un meilleur citoyen.*
-    """
-    )
+*{_('about_conclusion')}*
+    """)
 
 
 if __name__ == "__main__":
