@@ -11,6 +11,9 @@ __pycache__/
 .venv
 poetry.lock
 .env
+# 
+logs/*
+*.log
 
 # other
 .DS_Store
