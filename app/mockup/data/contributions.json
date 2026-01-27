@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-01-27T09:05:29.001050",
-  "count": 38,
+  "generated_at": "2026-01-27T10:35:47.839803",
+  "count": 59,
   "contributions": [
     {
       "id": "base_ass_001",
@@ -688,6 +688,438 @@
       },
       "title": "Avec un budget communal contraint et une capacité d'autofinancement limitée à...",
       "body": "**Constat factuel:**\nAvec un budget communal contraint et une capacité d'autofinancement limitée à 500 000 euros, la situation financière de la ville d'Audierne semble préoccupante. Comment les élus envisagent-ils de financer les futurs investissements nécessaires au développement de la commune ?\n\n**Vos idées d'améliorations:**\nPeut-être serait-il judicieux d'explorer des pistes d'optimisation budgétaire, comme la recherche de subventions ou la mutualisation de certains services avec les communes voisines. Une gestion plus rigoureuse des dépenses pourrait également permettre de dégager davantage de marge de manœuvre pour l'investissement. Enfin, une meilleure communication sur la situation financière de la ville pourrait impliquer davantage les citoyens dans la recherche de solutions."
+    },
+    {
+      "id": "field_jeunesse_f2486d2c",
+      "category": "jeunesse",
+      "constat_factuel": "Les écoles de la ville d'Audierne nécessitent des travaux importants de rénovation et de désamiantage. Le regroupement des écoles sur un seul site, le site Pierre Le Lec, est également envisagé afin d'optimiser les ressources et les équipements.",
+      "idees_ameliorations": "Il serait important d'impliquer davantage les parents d'élèves et les enseignants dans la concertation sur ce projet de rénovation et de regroupement des écoles. Une réflexion approfondie sur l'aménagement des nouveaux bâtiments et des espaces extérieurs, en prenant en compte les besoins des élèves et de la communauté éducative, serait également bénéfique. Enfin, il serait judicieux de s'assurer que le financement des travaux soit pérenne et que le projet soit mené dans les meilleures conditions.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "renovation_ecole",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Les écoles de la ville d'Audierne nécessitent des travaux importants de rénov...",
+      "body": "**Constat factuel:**\nLes écoles de la ville d'Audierne nécessitent des travaux importants de rénovation et de désamiantage. Le regroupement des écoles sur un seul site, le site Pierre Le Lec, est également envisagé afin d'optimiser les ressources et les équipements.\n\n**Vos idées d'améliorations:**\nIl serait important d'impliquer davantage les parents d'élèves et les enseignants dans la concertation sur ce projet de rénovation et de regroupement des écoles. Une réflexion approfondie sur l'aménagement des nouveaux bâtiments et des espaces extérieurs, en prenant en compte les besoins des élèves et de la communauté éducative, serait également bénéfique. Enfin, il serait judicieux de s'assurer que le financement des travaux soit pérenne et que le projet soit mené dans les meilleures conditions."
+    },
+    {
+      "id": "field_jeunesse_aa5bf24c",
+      "category": "jeunesse",
+      "constat_factuel": "Les écoles d'Audierne ont besoin de travaux de rénovation et de désamiantage urgents. Le projet de regroupement des écoles sur le site Pierre Le Lec semble être une solution intéressante pour améliorer les conditions d'enseignement et de sécurité pour les élèves.",
+      "idees_ameliorations": "Une concertation étroite avec les parents d'élèves, les enseignants et les associations locales serait bénéfique pour définir les besoins prioritaires et les meilleures options de rénovation. Il serait également important de s'assurer que le nouveau site soit facilement accessible à tous les élèves de la commune. Enfin, une attention particulière devrait être portée à l'intégration paysagère et architecturale du projet pour préserver le caractère du centre-ville d'Audierne.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "renovation_ecole",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Les écoles d'Audierne ont besoin de travaux de rénovation et de désamiantage ...",
+      "body": "**Constat factuel:**\nLes écoles d'Audierne ont besoin de travaux de rénovation et de désamiantage urgents. Le projet de regroupement des écoles sur le site Pierre Le Lec semble être une solution intéressante pour améliorer les conditions d'enseignement et de sécurité pour les élèves.\n\n**Vos idées d'améliorations:**\nUne concertation étroite avec les parents d'élèves, les enseignants et les associations locales serait bénéfique pour définir les besoins prioritaires et les meilleures options de rénovation. Il serait également important de s'assurer que le nouveau site soit facilement accessible à tous les élèves de la commune. Enfin, une attention particulière devrait être portée à l'intégration paysagère et architecturale du projet pour préserver le caractère du centre-ville d'Audierne."
+    },
+    {
+      "id": "field_jeunesse_101aeb29",
+      "category": "jeunesse",
+      "constat_factuel": "Les écoles d'Audierne ont besoin de travaux urgents, notamment de désamiantage et de rénovation. Le projet de regroupement sur le site Pierre Le Lec semble être une solution intéressante mais nécessite une concertation approfondie avec les citoyens.",
+      "idees_ameliorations": "Organiser des réunions publiques régulières pour impliquer les parents d'élèves et les habitants dans le projet. Prévoir un plan de financement transparent et une évaluation des coûts de fonctionnement futurs. Réfléchir à des solutions innovantes pour les espaces de jeux et d'activités périscolaires lors du regroupement des écoles.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "renovation_ecole",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Les écoles d'Audierne ont besoin de travaux urgents, notamment de désamiantag...",
+      "body": "**Constat factuel:**\nLes écoles d'Audierne ont besoin de travaux urgents, notamment de désamiantage et de rénovation. Le projet de regroupement sur le site Pierre Le Lec semble être une solution intéressante mais nécessite une concertation approfondie avec les citoyens.\n\n**Vos idées d'améliorations:**\nOrganiser des réunions publiques régulières pour impliquer les parents d'élèves et les habitants dans le projet. Prévoir un plan de financement transparent et une évaluation des coûts de fonctionnement futurs. Réfléchir à des solutions innovantes pour les espaces de jeux et d'activités périscolaires lors du regroupement des écoles."
+    },
+    {
+      "id": "field_jeunesse_d80ebdc7",
+      "category": "jeunesse",
+      "constat_factuel": "Bien que les réunions publiques sur le projet de rénovation des écoles semblent avoir été nombreuses, on peut se demander si la concertation avec les citoyens a vraiment été à la hauteur. Les élus ont-ils réellement pris en compte les préoccupations des parents d'élèves et des enseignants dans leurs décisions ?",
+      "idees_ameliorations": "Pour améliorer la transparence et l'implication des citoyens, pourquoi ne pas organiser des ateliers participatifs où les habitants pourraient directement faire des propositions et voter sur les options envisagées ? Cela permettrait de s'assurer que le projet final réponde vraiment aux besoins de la communauté.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "renovation_ecole",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Bien que les réunions publiques sur le projet de rénovation des écoles semble...",
+      "body": "**Constat factuel:**\nBien que les réunions publiques sur le projet de rénovation des écoles semblent avoir été nombreuses, on peut se demander si la concertation avec les citoyens a vraiment été à la hauteur. Les élus ont-ils réellement pris en compte les préoccupations des parents d'élèves et des enseignants dans leurs décisions ?\n\n**Vos idées d'améliorations:**\nPour améliorer la transparence et l'implication des citoyens, pourquoi ne pas organiser des ateliers participatifs où les habitants pourraient directement faire des propositions et voter sur les options envisagées ? Cela permettrait de s'assurer que le projet final réponde vraiment aux besoins de la communauté."
+    },
+    {
+      "id": "field_economie_8de5ec3d",
+      "category": "economie",
+      "constat_factuel": "Le budget de la commune d'Audierne est considéré comme contraint, avec une capacité d'autofinancement pour l'investissement d'environ 500 000 euros. Cela limite les possibilités d'investissement pour la commune.",
+      "idees_ameliorations": "Pour améliorer la situation financière de la commune, on pourrait envisager de diversifier les sources de revenus, par exemple en développant le tourisme local ou en cherchant des subventions supplémentaires. Il serait également possible de revoir certaines dépenses non essentielles afin de dégager de nouvelles marges de manœuvre budgétaires.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "situation_financiere",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Le budget de la commune d'Audierne est considéré comme contraint, avec une ca...",
+      "body": "**Constat factuel:**\nLe budget de la commune d'Audierne est considéré comme contraint, avec une capacité d'autofinancement pour l'investissement d'environ 500 000 euros. Cela limite les possibilités d'investissement pour la commune.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation financière de la commune, on pourrait envisager de diversifier les sources de revenus, par exemple en développant le tourisme local ou en cherchant des subventions supplémentaires. Il serait également possible de revoir certaines dépenses non essentielles afin de dégager de nouvelles marges de manœuvre budgétaires."
+    },
+    {
+      "id": "field_economie_9c2bc093",
+      "category": "economie",
+      "constat_factuel": "La situation financière de la commune d'Audierne est contrainte, avec une capacité d'autofinancement pour l'investissement limitée à environ 500 000 euros. Cela restreint les possibilités d'investissement et de développement de la commune.",
+      "idees_ameliorations": "Afin d'améliorer la situation financière, la commune pourrait explorer des pistes telles que la recherche de subventions, l'optimisation des dépenses, ou encore l'augmentation des recettes fiscales. Une meilleure gestion budgétaire et l'identification de nouvelles sources de financement permettraient d'accroître la capacité d'investissement de la commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "situation_financiere",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "La situation financière de la commune d'Audierne est contrainte, avec une cap...",
+      "body": "**Constat factuel:**\nLa situation financière de la commune d'Audierne est contrainte, avec une capacité d'autofinancement pour l'investissement limitée à environ 500 000 euros. Cela restreint les possibilités d'investissement et de développement de la commune.\n\n**Vos idées d'améliorations:**\nAfin d'améliorer la situation financière, la commune pourrait explorer des pistes telles que la recherche de subventions, l'optimisation des dépenses, ou encore l'augmentation des recettes fiscales. Une meilleure gestion budgétaire et l'identification de nouvelles sources de financement permettraient d'accroître la capacité d'investissement de la commune."
+    },
+    {
+      "id": "field_economie_1148282e",
+      "category": "economie",
+      "constat_factuel": "La situation financière de la commune d'Audierne est considérée comme contrainte, avec une capacité d'autofinancement limitée à environ 500 000 euros pour l'investissement. Cela peut limiter les possibilités d'amélioration des infrastructures et services de la ville.",
+      "idees_ameliorations": "Afin d'améliorer la situation financière de la commune, il serait pertinent d'explorer des pistes telles que la recherche de subventions et de financements externes, l'optimisation des dépenses municipales, ou encore le développement de nouvelles sources de revenus à travers l'économie locale. Une gestion budgétaire rigoureuse et transparente pourrait également permettre d'accroître la capacité d'investissement de la ville.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "situation_financiere",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "La situation financière de la commune d'Audierne est considérée comme contrai...",
+      "body": "**Constat factuel:**\nLa situation financière de la commune d'Audierne est considérée comme contrainte, avec une capacité d'autofinancement limitée à environ 500 000 euros pour l'investissement. Cela peut limiter les possibilités d'amélioration des infrastructures et services de la ville.\n\n**Vos idées d'améliorations:**\nAfin d'améliorer la situation financière de la commune, il serait pertinent d'explorer des pistes telles que la recherche de subventions et de financements externes, l'optimisation des dépenses municipales, ou encore le développement de nouvelles sources de revenus à travers l'économie locale. Une gestion budgétaire rigoureuse et transparente pourrait également permettre d'accroître la capacité d'investissement de la ville."
+    },
+    {
+      "id": "field_economie_0baf082e",
+      "category": "economie",
+      "constat_factuel": "Bien que le budget de la commune soit considéré comme contraint, on ne peut s'empêcher de se demander si les élus ont vraiment épuisé toutes les pistes pour optimiser les dépenses et dégager davantage de marges de manœuvre. Leur capacité d'autofinancement pour l'investissement de 500 000 euros semble plutôt limitée.",
+      "idees_ameliorations": "Ne serait-il pas pertinent d'envisager une analyse approfondie des postes budgétaires afin d'identifier des économies potentielles ? Peut-être que certains investissements pourraient être reportés ou repensés pour allouer davantage de fonds à des projets prioritaires. De plus, ne faudrait-il pas explorer des solutions innovantes de financement, comme le recours à des subventions ou des partenariats public-privé ?",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "situation_financiere",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Bien que le budget de la commune soit considéré comme contraint, on ne peut s...",
+      "body": "**Constat factuel:**\nBien que le budget de la commune soit considéré comme contraint, on ne peut s'empêcher de se demander si les élus ont vraiment épuisé toutes les pistes pour optimiser les dépenses et dégager davantage de marges de manœuvre. Leur capacité d'autofinancement pour l'investissement de 500 000 euros semble plutôt limitée.\n\n**Vos idées d'améliorations:**\nNe serait-il pas pertinent d'envisager une analyse approfondie des postes budgétaires afin d'identifier des économies potentielles ? Peut-être que certains investissements pourraient être reportés ou repensés pour allouer davantage de fonds à des projets prioritaires. De plus, ne faudrait-il pas explorer des solutions innovantes de financement, comme le recours à des subventions ou des partenariats public-privé ?"
+    },
+    {
+      "id": "field_alimentation-bien-etre-soins_c3ce2bd3",
+      "category": "alimentation-bien-etre-soins",
+      "constat_factuel": "Audierne fait face à des enjeux importants concernant la politique en faveur des seniors, notamment avec le projet d'EHPAD. La population vieillissante de la commune nécessite des solutions adaptées pour assurer leur bien-être et leur prise en charge.",
+      "idees_ameliorations": "Nous pourrions envisager la construction d'un EHPAD moderne et fonctionnel, en concertation avec les habitants pour répondre au mieux à leurs besoins. Parallèlement, le développement de services à domicile et de structures d'accueil de jour permettrait de favoriser le maintien à domicile des seniors. Enfin, la mise en place d'activités et d'animations spécifiques pour les personnes âgées contribuerait à améliorer leur qualité de vie.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "projet_ehpad",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Audierne fait face à des enjeux importants concernant la politique en faveur ...",
+      "body": "**Constat factuel:**\nAudierne fait face à des enjeux importants concernant la politique en faveur des seniors, notamment avec le projet d'EHPAD. La population vieillissante de la commune nécessite des solutions adaptées pour assurer leur bien-être et leur prise en charge.\n\n**Vos idées d'améliorations:**\nNous pourrions envisager la construction d'un EHPAD moderne et fonctionnel, en concertation avec les habitants pour répondre au mieux à leurs besoins. Parallèlement, le développement de services à domicile et de structures d'accueil de jour permettrait de favoriser le maintien à domicile des seniors. Enfin, la mise en place d'activités et d'animations spécifiques pour les personnes âgées contribuerait à améliorer leur qualité de vie."
+    },
+    {
+      "id": "field_alimentation-bien-etre-soins_026f576b",
+      "category": "alimentation-bien-etre-soins",
+      "constat_factuel": "À Audierne, la population de seniors est importante et le projet d'EHPAD est un enjeu majeur pour la commune. Cependant, les services et infrastructures actuels ne semblent pas totalement adaptés pour répondre aux besoins de cette population.",
+      "idees_ameliorations": "Construire un EHPAD moderne et fonctionnel, doté d'équipements et d'activités adaptés aux seniors. Développer des services de soins et d'accompagnement à domicile pour permettre aux seniors de rester plus longtemps chez eux. Améliorer les transports et la mobilité pour faciliter les déplacements des seniors dans la ville.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "projet_ehpad",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "À Audierne, la population de seniors est importante et le projet d'EHPAD est ...",
+      "body": "**Constat factuel:**\nÀ Audierne, la population de seniors est importante et le projet d'EHPAD est un enjeu majeur pour la commune. Cependant, les services et infrastructures actuels ne semblent pas totalement adaptés pour répondre aux besoins de cette population.\n\n**Vos idées d'améliorations:**\nConstruire un EHPAD moderne et fonctionnel, doté d'équipements et d'activités adaptés aux seniors. Développer des services de soins et d'accompagnement à domicile pour permettre aux seniors de rester plus longtemps chez eux. Améliorer les transports et la mobilité pour faciliter les déplacements des seniors dans la ville."
+    },
+    {
+      "id": "field_alimentation-bien-etre-soins_ce2066d4",
+      "category": "alimentation-bien-etre-soins",
+      "constat_factuel": "Audierne fait face à des enjeux importants concernant la politique en faveur des seniors, notamment avec le projet de construction d'un EHPAD. Cette structure est essentielle pour répondre aux besoins de la population vieillissante de la commune.",
+      "idees_ameliorations": "Afin d'améliorer la prise en charge des personnes âgées, il serait intéressant de consulter les citoyens sur les services et aménagements souhaités au sein de l'EHPAD. De plus, une réflexion sur les moyens de favoriser le maintien à domicile des seniors pourrait être bénéfique. Enfin, la création de logements adaptés et d'activités intergénérationnelles pourrait contribuer au bien-être des personnes âgées.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "projet_ehpad",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Audierne fait face à des enjeux importants concernant la politique en faveur ...",
+      "body": "**Constat factuel:**\nAudierne fait face à des enjeux importants concernant la politique en faveur des seniors, notamment avec le projet de construction d'un EHPAD. Cette structure est essentielle pour répondre aux besoins de la population vieillissante de la commune.\n\n**Vos idées d'améliorations:**\nAfin d'améliorer la prise en charge des personnes âgées, il serait intéressant de consulter les citoyens sur les services et aménagements souhaités au sein de l'EHPAD. De plus, une réflexion sur les moyens de favoriser le maintien à domicile des seniors pourrait être bénéfique. Enfin, la création de logements adaptés et d'activités intergénérationnelles pourrait contribuer au bien-être des personnes âgées."
+    },
+    {
+      "id": "field_alimentation-bien-etre-soins_52d409cf",
+      "category": "alimentation-bien-etre-soins",
+      "constat_factuel": "Bien que la commune d'Audierne semble se préoccuper des enjeux liés aux personnes âgées, on peut se demander si les élus possèdent vraiment l'expertise et la vision nécessaires pour mener à bien un projet d'EHPAD ambitieux. Les discussions actuelles manquent peut-être de perspectives concrètes et innovantes.",
+      "idees_ameliorations": "Pour améliorer la situation, ne serait-il pas judicieux d'impliquer davantage les seniors locaux dans la conception du projet ? Leur expertise d'usage pourrait apporter un éclairage précieux. De plus, des partenariats avec des établissements reconnus pourraient permettre de bénéficier de meilleures pratiques. Enfin, une attention particulière devrait être portée à l'accessibilité et à l'intégration du futur EHPAD dans la vie locale.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "projet_ehpad",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Bien que la commune d'Audierne semble se préoccuper des enjeux liés aux perso...",
+      "body": "**Constat factuel:**\nBien que la commune d'Audierne semble se préoccuper des enjeux liés aux personnes âgées, on peut se demander si les élus possèdent vraiment l'expertise et la vision nécessaires pour mener à bien un projet d'EHPAD ambitieux. Les discussions actuelles manquent peut-être de perspectives concrètes et innovantes.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, ne serait-il pas judicieux d'impliquer davantage les seniors locaux dans la conception du projet ? Leur expertise d'usage pourrait apporter un éclairage précieux. De plus, des partenariats avec des établissements reconnus pourraient permettre de bénéficier de meilleures pratiques. Enfin, une attention particulière devrait être portée à l'accessibilité et à l'intégration du futur EHPAD dans la vie locale."
+    },
+    {
+      "id": "field_associations_40856e1d",
+      "category": "associations",
+      "constat_factuel": "Il existe un manque de communication et de pédagogie à Audierne sur la répartition des compétences entre la commune et la communauté de communes Cap Sizun. Cela crée une confusion pour les citoyens sur les rôles et responsabilités de chaque entité.",
+      "idees_ameliorations": "Mettre en place une campagne d'information et de sensibilisation à destination des habitants d'Audierne pour expliquer clairement les compétences de la commune et de la communauté de communes. Organiser des réunions publiques et des ateliers participatifs pour favoriser les échanges et la compréhension mutuelle. Améliorer la communication en ligne et dans les médias locaux sur ces sujets.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "gouvernance_communaute_communes",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Il existe un manque de communication et de pédagogie à Audierne sur la répart...",
+      "body": "**Constat factuel:**\nIl existe un manque de communication et de pédagogie à Audierne sur la répartition des compétences entre la commune et la communauté de communes Cap Sizun. Cela crée une confusion pour les citoyens sur les rôles et responsabilités de chaque entité.\n\n**Vos idées d'améliorations:**\nMettre en place une campagne d'information et de sensibilisation à destination des habitants d'Audierne pour expliquer clairement les compétences de la commune et de la communauté de communes. Organiser des réunions publiques et des ateliers participatifs pour favoriser les échanges et la compréhension mutuelle. Améliorer la communication en ligne et dans les médias locaux sur ces sujets."
+    },
+    {
+      "id": "field_associations_83af961b",
+      "category": "associations",
+      "constat_factuel": "Il existe effectivement un manque de communication et de pédagogie à Audierne concernant la répartition des compétences entre la commune et la communauté de communes. Cela crée un flou et une méconnaissance chez les citoyens sur le rôle et les actions de chaque entité.",
+      "idees_ameliorations": "Afin d'améliorer cette situation, il serait pertinent de mettre en place des actions de communication et de sensibilisation à destination des habitants. Cela pourrait passer par la publication de documents explicatifs, l'organisation de réunions publiques ou encore la création d'une plateforme en ligne dédiée. De plus, une meilleure coordination et une transparence accrue entre la commune et la communauté de communes permettraient d'impliquer davantage les citoyens dans la gouvernance locale.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "gouvernance_communaute_communes",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Il existe effectivement un manque de communication et de pédagogie à Audierne...",
+      "body": "**Constat factuel:**\nIl existe effectivement un manque de communication et de pédagogie à Audierne concernant la répartition des compétences entre la commune et la communauté de communes. Cela crée un flou et une méconnaissance chez les citoyens sur le rôle et les actions de chaque entité.\n\n**Vos idées d'améliorations:**\nAfin d'améliorer cette situation, il serait pertinent de mettre en place des actions de communication et de sensibilisation à destination des habitants. Cela pourrait passer par la publication de documents explicatifs, l'organisation de réunions publiques ou encore la création d'une plateforme en ligne dédiée. De plus, une meilleure coordination et une transparence accrue entre la commune et la communauté de communes permettraient d'impliquer davantage les citoyens dans la gouvernance locale."
+    },
+    {
+      "id": "field_associations_252b9611",
+      "category": "associations",
+      "constat_factuel": "Il existe un manque de communication et de pédagogie sur la répartition des compétences entre la commune d'Audierne et la communauté de communes Cap Sizun. Cela crée un manque de visibilité et de compréhension pour les citoyens.",
+      "idees_ameliorations": "Mettre en place une campagne d'information et de sensibilisation pour expliquer clairement les rôles et responsabilités de chaque entité. Organiser des réunions publiques et créer des supports de communication accessibles. Impliquer davantage les citoyens dans les processus de décision et de gouvernance de la communauté de communes.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "gouvernance_communaute_communes",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Il existe un manque de communication et de pédagogie sur la répartition des c...",
+      "body": "**Constat factuel:**\nIl existe un manque de communication et de pédagogie sur la répartition des compétences entre la commune d'Audierne et la communauté de communes Cap Sizun. Cela crée un manque de visibilité et de compréhension pour les citoyens.\n\n**Vos idées d'améliorations:**\nMettre en place une campagne d'information et de sensibilisation pour expliquer clairement les rôles et responsabilités de chaque entité. Organiser des réunions publiques et créer des supports de communication accessibles. Impliquer davantage les citoyens dans les processus de décision et de gouvernance de la communauté de communes."
+    },
+    {
+      "id": "field_associations_9aa086e8",
+      "category": "associations",
+      "constat_factuel": "Bien que la communauté de communes soit censée faciliter la communication et la coordination entre les communes, il semble que ce ne soit pas le cas à Audierne. La répartition des compétences reste floue pour de nombreux citoyens, ce qui crée de la confusion et du mécontentement.",
+      "idees_ameliorations": "Ne serait-il pas judicieux d'organiser des sessions d'information et de concertation avec les élus de la communauté de communes ? Cela permettrait de clarifier les rôles et responsabilités de chacun, et d'impliquer davantage les citoyens dans les décisions qui les concernent. Après tout, les élus sont censés servir les intérêts de la population, non ?",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "gouvernance_communaute_communes",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Bien que la communauté de communes soit censée faciliter la communication et ...",
+      "body": "**Constat factuel:**\nBien que la communauté de communes soit censée faciliter la communication et la coordination entre les communes, il semble que ce ne soit pas le cas à Audierne. La répartition des compétences reste floue pour de nombreux citoyens, ce qui crée de la confusion et du mécontentement.\n\n**Vos idées d'améliorations:**\nNe serait-il pas judicieux d'organiser des sessions d'information et de concertation avec les élus de la communauté de communes ? Cela permettrait de clarifier les rôles et responsabilités de chacun, et d'impliquer davantage les citoyens dans les décisions qui les concernent. Après tout, les élus sont censés servir les intérêts de la population, non ?"
+    },
+    {
+      "id": "field_culture_4be8839a",
+      "category": "culture",
+      "constat_factuel": "Actuellement, le projet laisse des espaces inoccupés à Audierne. Ces espaces pourraient être valorisés et utilisés par la population locale.",
+      "idees_ameliorations": "Nous pourrions proposer d'utiliser ces espaces inoccupés pour des activités culturelles qui bénéficieraient à l'école et à l'ensemble de la population. Cela permettrait d'attirer des financements supplémentaires et de dynamiser la vie locale. Des expositions, des ateliers ou des événements ponctuels pourraient y être organisés.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "valorisation_patrimoine",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Actuellement, le projet laisse des espaces inoccupés à Audierne. Ces espaces ...",
+      "body": "**Constat factuel:**\nActuellement, le projet laisse des espaces inoccupés à Audierne. Ces espaces pourraient être valorisés et utilisés par la population locale.\n\n**Vos idées d'améliorations:**\nNous pourrions proposer d'utiliser ces espaces inoccupés pour des activités culturelles qui bénéficieraient à l'école et à l'ensemble de la population. Cela permettrait d'attirer des financements supplémentaires et de dynamiser la vie locale. Des expositions, des ateliers ou des événements ponctuels pourraient y être organisés."
+    },
+    {
+      "id": "field_culture_6964b747",
+      "category": "culture",
+      "constat_factuel": "À Audierne, il existe des espaces inoccupés dans le cadre du projet de valorisation du patrimoine. Ces espaces inutilisés représentent une opportunité manquée de développer des activités complémentaires pour l'école et la population locale.",
+      "idees_ameliorations": "Il serait intéressant d'explorer des utilisations potentielles de ces espaces inoccupés, comme des activités culturelles qui pourraient attirer des financements supplémentaires et profiter à l'ensemble de la communauté. Des initiatives telles que des expositions d'art, des ateliers de création ou des événements communautaires permettraient de valoriser le patrimoine local tout en dynamisant la vie culturelle d'Audierne.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "valorisation_patrimoine",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "À Audierne, il existe des espaces inoccupés dans le cadre du projet de valori...",
+      "body": "**Constat factuel:**\nÀ Audierne, il existe des espaces inoccupés dans le cadre du projet de valorisation du patrimoine. Ces espaces inutilisés représentent une opportunité manquée de développer des activités complémentaires pour l'école et la population locale.\n\n**Vos idées d'améliorations:**\nIl serait intéressant d'explorer des utilisations potentielles de ces espaces inoccupés, comme des activités culturelles qui pourraient attirer des financements supplémentaires et profiter à l'ensemble de la communauté. Des initiatives telles que des expositions d'art, des ateliers de création ou des événements communautaires permettraient de valoriser le patrimoine local tout en dynamisant la vie culturelle d'Audierne."
+    },
+    {
+      "id": "field_culture_a8446fb1",
+      "category": "culture",
+      "constat_factuel": "Actuellement, le projet de valorisation du patrimoine d'Audierne laisse des espaces inoccupés dans la ville. Ces espaces pourraient être utilisés de manière complémentaire pour des activités culturelles, qui profiteraient à l'école locale et à l'ensemble de la population.",
+      "idees_ameliorations": "Il serait intéressant d'explorer des pistes d'activités culturelles dans ces espaces inoccupés, comme l'installation d'expositions temporaires, l'organisation d'ateliers artistiques ou de conférences. Cela permettrait de dynamiser la vie culturelle de la ville et d'attirer des financements supplémentaires. De plus, ces activités pourraient être conçues en collaboration avec l'école locale afin de proposer des initiatives pédagogiques et d'impliquer les jeunes dans la valorisation du patrimoine d'Audierne.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "valorisation_patrimoine",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Actuellement, le projet de valorisation du patrimoine d'Audierne laisse des e...",
+      "body": "**Constat factuel:**\nActuellement, le projet de valorisation du patrimoine d'Audierne laisse des espaces inoccupés dans la ville. Ces espaces pourraient être utilisés de manière complémentaire pour des activités culturelles, qui profiteraient à l'école locale et à l'ensemble de la population.\n\n**Vos idées d'améliorations:**\nIl serait intéressant d'explorer des pistes d'activités culturelles dans ces espaces inoccupés, comme l'installation d'expositions temporaires, l'organisation d'ateliers artistiques ou de conférences. Cela permettrait de dynamiser la vie culturelle de la ville et d'attirer des financements supplémentaires. De plus, ces activités pourraient être conçues en collaboration avec l'école locale afin de proposer des initiatives pédagogiques et d'impliquer les jeunes dans la valorisation du patrimoine d'Audierne."
+    },
+    {
+      "id": "field_culture_52cc847d",
+      "category": "culture",
+      "constat_factuel": "Il est vrai que le projet laisse des espaces inoccupés à Audierne. Cependant, est-ce que nos élus ont vraiment la capacité de réfléchir à des activités complémentaires pour ces espaces ? Ils semblent plutôt focalisés sur des aspects superficiels que sur une vision d'ensemble cohérente.",
+      "idees_ameliorations": "Pourquoi ne pas impliquer directement les citoyens dans la réflexion ? Nous pourrions organiser des ateliers participatifs pour recueillir les idées de la population et identifier des usages pertinents pour ces espaces inoccupés, tout en s'assurant que les financements soient bien alloués. Cela permettrait de valoriser le patrimoine de manière plus efficace et adaptée aux besoins de la commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "valorisation_patrimoine",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Il est vrai que le projet laisse des espaces inoccupés à Audierne. Cependant,...",
+      "body": "**Constat factuel:**\nIl est vrai que le projet laisse des espaces inoccupés à Audierne. Cependant, est-ce que nos élus ont vraiment la capacité de réfléchir à des activités complémentaires pour ces espaces ? Ils semblent plutôt focalisés sur des aspects superficiels que sur une vision d'ensemble cohérente.\n\n**Vos idées d'améliorations:**\nPourquoi ne pas impliquer directement les citoyens dans la réflexion ? Nous pourrions organiser des ateliers participatifs pour recueillir les idées de la population et identifier des usages pertinents pour ces espaces inoccupés, tout en s'assurant que les financements soient bien alloués. Cela permettrait de valoriser le patrimoine de manière plus efficace et adaptée aux besoins de la commune."
+    },
+    {
+      "id": "field_culture_94e3a910",
+      "category": "culture",
+      "constat_factuel": "CES ÉLUS INCOMPÉTENTS LAISSENT DES ESPACES INOCCUPÉS DANS LE PROJET ! C'EST UNE HONTE POUR NOTRE VILLE D'AUDIERNE ! ILS NE SE SOUCIENT PAS DU PATRIMOINE DE NOTRE COMMUNE !",
+      "idees_ameliorations": "CES ESPACES INOCCUPÉS DEVRAIENT ÊTRE TRANSFORMÉS EN CENTRES CULTURELS POUR LA POPULATION ! LES ÉLUS DEVRAIENT ÊTRE VIRÉS ET REMPLACÉS PAR DES PERSONNES COMPÉTENTES QUI SE SOUCIENT VRAIMENT DE NOTRE PATRIMOINE !",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "valorisation_patrimoine",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "CES ÉLUS INCOMPÉTENTS LAISSENT DES ESPACES INOCCUPÉS DANS LE PROJET ! C'EST U...",
+      "body": "**Constat factuel:**\nCES ÉLUS INCOMPÉTENTS LAISSENT DES ESPACES INOCCUPÉS DANS LE PROJET ! C'EST UNE HONTE POUR NOTRE VILLE D'AUDIERNE ! ILS NE SE SOUCIENT PAS DU PATRIMOINE DE NOTRE COMMUNE !\n\n**Vos idées d'améliorations:**\nCES ESPACES INOCCUPÉS DEVRAIENT ÊTRE TRANSFORMÉS EN CENTRES CULTURELS POUR LA POPULATION ! LES ÉLUS DEVRAIENT ÊTRE VIRÉS ET REMPLACÉS PAR DES PERSONNES COMPÉTENTES QUI SE SOUCIENT VRAIMENT DE NOTRE PATRIMOINE !"
     }
   ]
 }
