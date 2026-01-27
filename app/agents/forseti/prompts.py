@@ -38,6 +38,20 @@ Note: Pronounced "for-SET-ee" in French/English."""
 # CHARTER CONSTANTS
 # =============================================================================
 
+# Import canonical categories from models (single source of truth)
+from app.agents.forseti.models import CATEGORIES
+
+# Category descriptions for prompts and UI
+CATEGORY_DESCRIPTIONS = {
+    "economie": "business, port, tourism, local economy",
+    "logement": "housing, real estate, urban planning",
+    "culture": "heritage, events, arts, traditions",
+    "ecologie": "environment, sustainability, nature",
+    "associations": "community organizations, clubs",
+    "jeunesse": "youth, schools, education, children",
+    "alimentation-bien-etre-soins": "food, health, wellness, medical",
+}
+
 VIOLATIONS_TEXT = """NOT ACCEPTED (Charter Violations):
 - Personal attacks or discriminatory remarks
 - Spam or advertising

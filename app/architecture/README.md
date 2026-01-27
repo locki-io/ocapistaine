@@ -103,11 +103,51 @@ OCapistaine is an AI-powered civic transparency system for local democracy. This
 
 #### Processors (Apache 2.0 Licensed - Open Source)
 
-| Processor                | Purpose                      | Status     |
-| ------------------------ | ---------------------------- | ---------- |
-| **Embeddings Processor** | Generate vector embeddings   | 🔴 Pending |
-| **Document Parser**      | Extract text from PDFs, HTML | 🟡 Partial |
-| **Response Formatter**   | Format answers with sources  | 🔴 Pending |
+| Processor                | Purpose                             | Status         |
+| ------------------------ | ----------------------------------- | -------------- |
+| **Mockup Processor**     | Charter validation testing workflow | 🟢 Operational |
+| **Embeddings Processor** | Generate vector embeddings          | 🔴 Pending     |
+| **Document Parser**      | Extract text from PDFs, HTML        | 🟡 Partial     |
+| **Response Formatter**   | Format answers with sources         | 🔴 Pending     |
+
+##### Mockup Processor - Charter Validation Testing
+
+The Mockup Processor generates controlled variations of citizen contributions to test and improve Forseti 461's charter validation prompts.
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    MOCKUP PROCESSOR WORKFLOW                                 │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                              │
+│  ┌─────────────┐     ┌─────────────┐     ┌─────────────┐     ┌───────────┐  │
+│  │ 1. Generate │ ──▶ │ 2. Validate │ ──▶ │ 3. Store    │ ──▶ │ 4. Export │  │
+│  │ Variations  │     │ (Forseti)   │     │ (Redis)     │     │ (Opik)    │  │
+│  └─────────────┘     └─────────────┘     └─────────────┘     └───────────┘  │
+│        │                    │                  │                   │         │
+│        ▼                    ▼                  ▼                   ▼         │
+│  ┌───────────────────────────────────────────────────────────────────────┐  │
+│  │ • Text mutations (Levenshtein)    • Charter compliance     • JSON     │  │
+│  │ • LLM mutations (Ollama/Mistral)  • Category classification • Redis   │  │
+│  │ • Violation injection             • Confidence scoring     • Opik DS  │  │
+│  └───────────────────────────────────────────────────────────────────────┘  │
+│                                                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+**Mutation Types:**
+
+- **Paraphrase**: Same meaning, different words (valid)
+- **Orthographic**: Realistic typos and errors (valid)
+- **Semantic shift**: Slightly different meaning (borderline)
+- **Subtle violation**: Hidden charter violation (invalid)
+- **Aggressive**: Obvious attacks, caps (invalid)
+- **Off-topic**: Drifts to unrelated subjects (invalid)
+
+**Data Storage:**
+
+- JSON: `app/mockup/data/contributions.json`
+- Redis: `contribution_mockup:forseti461:charter:{date}:{id}`
+- Opik: `forseti-charter-{date}` dataset
 
 ### 4. Data Access Layer
 
@@ -152,9 +192,21 @@ app/
 │
 ├── processors/             # Business Logic - Processors (Apache 2.0)
 │   ├── __init__.py
-│   ├── embeddings.py       # Vector embedding generation
-│   ├── document_parser.py  # PDF/HTML text extraction
-│   └── response_formatter.py
+│   ├── mockup_processor.py # Charter validation testing workflow
+│   ├── embeddings.py       # Vector embedding generation (pending)
+│   ├── document_parser.py  # PDF/HTML text extraction (pending)
+│   └── response_formatter.py # (pending)
+│
+├── mockup/                 # Mockup data and utilities
+│   ├── __init__.py
+│   ├── generator.py        # MockContribution, variations
+│   ├── levenshtein.py      # Text-based mutations
+│   ├── llm_mutations.py    # LLM-based mutations (Ollama/Mistral)
+│   ├── storage.py          # Redis storage
+│   ├── dataset.py          # Opik dataset export
+│   ├── batch_view.py       # Streamlit UI
+│   └── data/
+│       └── contributions.json  # Test contributions
 │
 ├── data/                   # Data Access Layer
 │   ├── __init__.py
@@ -188,6 +240,10 @@ REDIS_KEYS = {
     "chat:{user_id}:{thread_id}": "Conversation history (TTL: 7d)",
     "document:{doc_id}": "Cached document content (TTL: 1h)",
     "rate_limit:{user_id}": "Rate limiting counter (TTL: 1min)",
+    # Mockup validation testing
+    "contribution_mockup:forseti461:charter:{date}:{id}": "Validation record (TTL: 28d)",
+    "contribution_mockup:forseti461:charter:index:{date}": "Date index (TTL: 28d)",
+    "contribution_mockup:forseti461:charter:latest": "Latest validations (TTL: 24h)",
 }
 ```
 
@@ -235,14 +291,25 @@ app.include_router(health.router)
 
 ## Implementation Roadmap
 
-Based on [Checkpoint 1 Blog Post](../docs/blog/2026-01-15-let-the-journey-begin.mdx):
+Based on [Checkpoint 1 Blog Post](../../docs/blog/2026-01-15-let-the-journey-begin.mdx):
 
 ### Phase 1: Foundation (Current)
 
 - [x] audierne2026.fr live
 - [x] Documentation site (docs.locki.io)
 - [x] Simplified front.py + sidebar.py
-- [ ] **TODO: Redis client setup**
+- [x] Redis client setup
+- [x] i18n (EN/FR) support
+- [x] Domain-based logging system
+
+### Phase 1.5: Charter Validation Testing
+
+- [x] Mockup processor workflow
+- [x] Text-based mutations (Levenshtein)
+- [x] LLM-based mutations (Ollama/Mistral)
+- [x] Redis storage for validation results
+- [x] Opik dataset export for prompt optimization
+- [ ] Forseti 461 prompt optimization loop
 
 ### Phase 2: Document Pipeline
 
@@ -258,7 +325,7 @@ Based on [Checkpoint 1 Blog Post](../docs/blog/2026-01-15-let-the-journey-begin.
 
 ### Phase 4: Quality & Observability
 
-- [ ] Opik tracing integration
+- [x] Opik tracing integration (partial)
 - [ ] Evaluation agent (LLM-as-judge)
 - [ ] Hallucination detection
 

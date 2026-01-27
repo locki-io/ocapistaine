@@ -455,6 +455,64 @@ class MockupStorage:
 
         return deleted
 
+    def delete_record(self, contribution_id: str) -> bool:
+        """
+        Delete a single contribution record from Redis.
+
+        Removes from:
+        - Main storage (searches all dates)
+        - Date index
+        - Latest cache
+
+        Args:
+            contribution_id: ID of the contribution to delete
+
+        Returns:
+            True if any records were deleted
+        """
+        deleted = False
+        try:
+            with redis_connection() as r:
+                # First check latest to get the date
+                latest_data = r.hget(MockupKeys.LATEST, contribution_id)
+                if latest_data:
+                    record_data = json.loads(latest_data)
+                    date_str = record_data.get("date")
+
+                    if date_str:
+                        # Delete from main storage
+                        key = MockupKeys.validation(contribution_id, date_str)
+                        r.delete(key)
+
+                        # Remove from date index
+                        index_key = MockupKeys.date_index(date_str)
+                        r.zrem(index_key, contribution_id)
+
+                    # Remove from latest
+                    r.hdel(MockupKeys.LATEST, contribution_id)
+                    deleted = True
+
+                    self._logger.info(
+                        "DELETE_RECORD",
+                        id=contribution_id[:8],
+                        date=date_str,
+                    )
+                else:
+                    # Search in today's date if not in latest
+                    today = date.today().isoformat()
+                    key = MockupKeys.validation(contribution_id, today)
+                    if r.exists(key):
+                        r.delete(key)
+                        index_key = MockupKeys.date_index(today)
+                        r.zrem(index_key, contribution_id)
+                        deleted = True
+                        self._logger.info("DELETE_RECORD", id=contribution_id[:8], date=today)
+
+        except Exception as e:
+            self._logger.error("DELETE_RECORD_ERROR", error=str(e))
+
+        return deleted
+
 
 # Global storage instance
 _storage: Optional[MockupStorage] = None

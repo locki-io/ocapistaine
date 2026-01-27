@@ -217,6 +217,7 @@ def _display_provider_selector(user_id: str) -> None:
     selected_provider = st.selectbox(
         _("sidebar_provider"),
         options=provider_names,
+        disabled=True,
         index=(
             provider_names.index(current_provider)
             if current_provider in provider_names

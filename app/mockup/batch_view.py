@@ -41,6 +41,13 @@ from app.mockup.dataset import (
 )
 from app.services import AgentLogger
 from app.data.redis_client import health_check as redis_health_check
+from app.mockup.field_input import (
+    list_audierne_docs,
+    read_markdown_input,
+    process_field_input_sync,
+    FieldInputResult,
+)
+from app.agents.forseti import CATEGORIES
 
 _logger = AgentLogger("batch_validation")
 
@@ -62,11 +69,12 @@ def batch_validation_view(user_id: str, validate_func: Callable) -> None:
     # Mode selection
     mode = st.radio(
         "Mode",
-        options=["load_existing", "generate_new", "from_contribution", "storage_opik"],
+        options=["load_existing", "generate_new", "from_contribution", "field_input", "storage_opik"],
         format_func=lambda x: {
             "load_existing": "📂 Load Existing Mockups",
             "generate_new": "🔧 Generate Variations",
             "from_contribution": "📝 Single Contribution Test",
+            "field_input": "📋 Field Input (Reports/Docs)",
             "storage_opik": "💾 Storage & Opik",
         }[x],
         horizontal=True,
@@ -79,6 +87,8 @@ def batch_validation_view(user_id: str, validate_func: Callable) -> None:
         _load_existing_view(user_id, validate_func)
     elif mode == "generate_new":
         _generate_new_view(user_id, validate_func)
+    elif mode == "field_input":
+        _field_input_view(user_id, validate_func)
     elif mode == "storage_opik":
         _storage_opik_view(user_id)
     else:
@@ -216,9 +226,10 @@ def _generate_new_view(user_id: str, validate_func: Callable) -> None:
 
 def _from_contribution_view(user_id: str, validate_func: Callable) -> None:
     """Generate variations from a single contribution input."""
+    from app.mockup.llm_mutations import check_ollama_available, _run_async
 
     st.markdown("### Create variations from a contribution")
-    st.caption("Enter a contribution in Framaforms format to generate Levenshtein variations.")
+    st.caption("Enter a contribution in Framaforms format to generate variations.")
 
     col1, col2 = st.columns([1, 3])
     with col1:
@@ -246,7 +257,9 @@ def _from_contribution_view(user_id: str, validate_func: Callable) -> None:
         key="input_idees",
     )
 
-    col1, col2 = st.columns(2)
+    # Mutation settings
+    st.markdown("#### Mutation Settings")
+    col1, col2, col3 = st.columns(3)
     with col1:
         num_variations = st.slider(
             "Number of variations",
@@ -257,9 +270,69 @@ def _from_contribution_view(user_id: str, validate_func: Callable) -> None:
         )
     with col2:
         inject_violations = st.checkbox(
-            "Inject violations progressively",
+            "Include violations",
             value=True,
             key="input_inject_violations",
+        )
+    with col3:
+        mutation_method = st.radio(
+            "Mutation method",
+            options=["text", "llm"],
+            format_func=lambda x: {
+                "text": "📝 Text (Levenshtein)",
+                "llm": "🤖 LLM (Ollama/Mistral)",
+            }[x],
+            key="mutation_method",
+            horizontal=True,
+        )
+
+    # LLM settings (if selected)
+    use_llm = mutation_method == "llm"
+    llm_model = "mistral:latest"
+
+    if use_llm:
+        col1, col2 = st.columns([2, 1])
+        with col1:
+            llm_model = st.text_input(
+                "Ollama model",
+                value="mistral:latest",
+                key="llm_model",
+            )
+        with col2:
+            if st.button("🔍 Check Ollama", key="check_ollama_btn"):
+                try:
+                    available = _run_async(check_ollama_available(llm_model))
+                    if available:
+                        st.success(f"✓ {llm_model} available")
+                    else:
+                        st.error(f"✗ {llm_model} not found")
+                except Exception as e:
+                    st.error(f"✗ Ollama not running: {e}")
+
+        st.info(
+            "**LLM mutations** generate semantic variations:\n"
+            "- Paraphrase: Same meaning, different words\n"
+            "- Orthographic: Realistic typos\n"
+            "- Subtle violations: Borderline charter violations\n"
+            "- Aggressive: Obvious violations"
+        )
+
+    # Storage options
+    st.markdown("#### Storage Options")
+    col1, col2 = st.columns(2)
+    with col1:
+        save_to_json = st.checkbox(
+            "💾 Save to JSON file",
+            value=True,
+            key="save_to_json",
+            help="Append generated variations to contributions.json",
+        )
+    with col2:
+        save_to_redis = st.checkbox(
+            "🗄️ Save to Redis",
+            value=True,
+            key="save_to_redis_gen",
+            help="Store in Redis for Opik dataset export",
         )
 
     if st.button("🧬 Generate Variations", type="primary", key="generate_single_btn"):
@@ -267,15 +340,28 @@ def _from_contribution_view(user_id: str, validate_func: Callable) -> None:
             st.error("Please enter a factual observation")
             return
 
-        with st.spinner("Generating variations..."):
+        spinner_text = "Generating LLM variations..." if use_llm else "Generating variations..."
+        with st.spinner(spinner_text):
             variations = generate_variations(
                 constat_factuel=constat,
                 idees_ameliorations=idees,
                 category=category,
+                use_llm=use_llm,
+                llm_model=llm_model,
                 num_variations=num_variations,
                 include_violations=inject_violations,
             )
             st.session_state["temp_variations"] = variations
+
+            # Save to JSON file
+            if save_to_json:
+                _save_variations_to_json(variations)
+                st.success(f"💾 Saved {len(variations)} contributions to JSON")
+
+            # Save to Redis
+            if save_to_redis:
+                saved_count = _save_variations_to_redis(variations)
+                st.success(f"🗄️ Saved {saved_count} records to Redis")
 
     # Display generated variations
     if "temp_variations" in st.session_state:
@@ -285,6 +371,294 @@ def _from_contribution_view(user_id: str, validate_func: Callable) -> None:
         # Convert to MockContribution objects for display
         mock_contribs = [MockContribution.from_dict(v) for v in variations]
         _display_contributions_list(mock_contribs, validate_func, user_id)
+
+
+def _field_input_view(user_id: str, validate_func: Callable) -> None:
+    """Generate themed contributions from field input (reports, docs, speeches)."""
+    from app.mockup.llm_mutations import check_ollama_available, _run_async
+
+    st.markdown("### 📋 Field Input - Generate Themed Contributions")
+    st.caption(
+        "Generate mockup contributions from real field data (public hearing reports, "
+        "mayor speeches, municipal documents). The LLM extracts themes and generates "
+        "contributions across all 7 categories."
+    )
+
+    # Input source selection
+    st.markdown("#### 1. Select Input Source")
+
+    input_source = st.radio(
+        "Input source",
+        options=["audierne_docs", "paste_text", "upload_file"],
+        format_func=lambda x: {
+            "audierne_docs": "📚 Audierne2026 Docs",
+            "paste_text": "📝 Paste Text",
+            "upload_file": "📤 Upload File",
+        }[x],
+        horizontal=True,
+        key="field_input_source",
+    )
+
+    input_text = ""
+    source_file = None
+    source_title = ""
+
+    if input_source == "audierne_docs":
+        # List available audierne2026 docs
+        docs = list_audierne_docs()
+        if docs:
+            doc_options = {d["path"]: f"{d['title']} ({d['filename']})" for d in docs}
+            selected_doc = st.selectbox(
+                "Select document",
+                options=list(doc_options.keys()),
+                format_func=lambda x: doc_options[x],
+                key="selected_audierne_doc",
+            )
+            if selected_doc:
+                input_text = read_markdown_input(selected_doc)
+                source_file = selected_doc
+                source_title = doc_options[selected_doc]
+
+                # Preview
+                with st.expander("📖 Preview document", expanded=False):
+                    st.markdown(input_text[:2000] + ("..." if len(input_text) > 2000 else ""))
+        else:
+            st.warning("No documents found in docs/docs/audierne2026/")
+
+    elif input_source == "paste_text":
+        source_title = st.text_input(
+            "Source title (e.g., 'Voeux du maire 2026')",
+            value="",
+            key="paste_source_title",
+        )
+        input_text = st.text_area(
+            "Paste your text here",
+            value="",
+            height=300,
+            key="paste_input_text",
+            placeholder="Collez ici le contenu d'un rapport d'audience publique, "
+            "d'un discours du maire, ou tout autre document municipal...",
+        )
+
+    else:  # upload_file
+        uploaded_file = st.file_uploader(
+            "Upload a markdown or text file",
+            type=["md", "txt"],
+            key="upload_field_input",
+        )
+        if uploaded_file:
+            input_text = uploaded_file.read().decode("utf-8")
+            source_file = uploaded_file.name
+            source_title = uploaded_file.name
+
+            # Preview
+            with st.expander("📖 Preview uploaded file", expanded=False):
+                st.markdown(input_text[:2000] + ("..." if len(input_text) > 2000 else ""))
+
+    # Generation settings
+    st.markdown("#### 2. Generation Settings")
+
+    col1, col2 = st.columns(2)
+    with col1:
+        contributions_per_theme = st.slider(
+            "Contributions per theme",
+            min_value=1,
+            max_value=5,
+            value=2,
+            key="field_contribs_per_theme",
+        )
+    with col2:
+        include_violations = st.checkbox(
+            "Include violations",
+            value=True,
+            key="field_include_violations",
+            help="Generate subtle and aggressive violation examples",
+        )
+
+    # Provider selection
+    st.markdown("#### 2b. LLM Provider")
+    st.caption("Gemini 2.5 Flash recommended for best theme extraction with grounding/search.")
+
+    col1, col2 = st.columns(2)
+    with col1:
+        llm_provider = st.selectbox(
+            "Provider",
+            options=["gemini", "claude", "ollama"],
+            format_func=lambda x: {
+                "gemini": "🌐 Gemini (recommended)",
+                "claude": "🤖 Claude",
+                "ollama": "💻 Ollama (local)",
+            }[x],
+            key="field_llm_provider",
+        )
+    with col2:
+        # Default models per provider
+        default_models = {
+            "gemini": "gemini-2.5-flash",
+            "claude": "claude-3-5-sonnet-20241022",
+            "ollama": "mistral:latest",
+        }
+        llm_model = st.text_input(
+            "Model (optional override)",
+            value="",
+            key="field_llm_model",
+            placeholder=default_models.get(llm_provider, ""),
+            help=f"Default: {default_models.get(llm_provider, 'N/A')}",
+        )
+
+    # Storage options
+    st.markdown("#### 3. Storage & Experiment")
+
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        save_to_json = st.checkbox(
+            "💾 Save to JSON",
+            value=True,
+            key="field_save_json",
+        )
+    with col2:
+        save_to_redis = st.checkbox(
+            "🗄️ Save to Redis",
+            value=True,
+            key="field_save_redis",
+        )
+    with col3:
+        run_experiment = st.checkbox(
+            "📊 Run Opik Experiment",
+            value=False,
+            key="field_run_experiment",
+            help="Run validation and report to Opik after generation",
+        )
+
+    # Provider status check
+    col1, col2 = st.columns([1, 3])
+    with col1:
+        if st.button("🔍 Check Provider", key="field_check_provider"):
+            try:
+                from app.providers import get_provider
+                model_to_use = llm_model if llm_model.strip() else None
+                provider = get_provider(llm_provider, cache=False, model=model_to_use) if model_to_use else get_provider(llm_provider)
+                st.success(f"✓ {llm_provider} ({provider.model}) ready")
+            except Exception as e:
+                st.error(f"✗ {llm_provider} error: {e}")
+
+    # Generate button
+    st.markdown("---")
+
+    if st.button("🚀 Generate Themed Contributions", type="primary", key="field_generate_btn"):
+        if not input_text.strip():
+            st.error("Please provide input text")
+            return
+
+        model_override = llm_model.strip() if llm_model.strip() else None
+        spinner_text = f"Extracting themes using {llm_provider}..."
+
+        with st.spinner(spinner_text):
+            try:
+                result = process_field_input_sync(
+                    input_text=input_text,
+                    source_file=source_file,
+                    source_title=source_title,
+                    provider=llm_provider,
+                    model=model_override,
+                    contributions_per_theme=contributions_per_theme,
+                    include_violations=include_violations,
+                )
+
+                st.session_state["field_input_result"] = result
+
+                # Save to Redis if requested
+                if save_to_redis and result.contributions_generated > 0:
+                    # Reload contributions and save to Redis
+                    generator = load_contributions()
+                    # Get only the newly generated ones (field_input source)
+                    new_contribs = [
+                        c for c in generator.contributions
+                        if c.metadata and c.metadata.get("field_input")
+                        and c.metadata.get("generated_date") == date.today().isoformat()
+                    ]
+                    if new_contribs:
+                        variations_dicts = [c.to_dict() for c in new_contribs]
+                        saved = _save_variations_to_redis(variations_dicts)
+                        st.success(f"🗄️ Saved {saved} records to Redis")
+
+                # Run experiment if requested
+                if run_experiment and result.contributions_generated > 0:
+                    st.info("📊 Running Opik experiment...")
+                    _run_field_experiment(validate_func, user_id)
+
+            except Exception as e:
+                st.error(f"Generation error: {e}")
+                _logger.error("FIELD_INPUT_ERROR", error=str(e))
+
+    # Display results
+    if "field_input_result" in st.session_state:
+        result = st.session_state["field_input_result"]
+
+        st.markdown("### 📊 Generation Results")
+
+        col1, col2, col3, col4 = st.columns(4)
+        with col1:
+            st.metric("Themes Extracted", result.themes_extracted)
+        with col2:
+            st.metric("Contributions", result.contributions_generated)
+        with col3:
+            st.metric("Categories", len(result.categories_covered))
+        with col4:
+            st.metric("Input Length", f"{result.input_length:,}")
+
+        # Show extracted themes
+        if result.themes:
+            st.markdown("#### Extracted Themes")
+            for theme in result.themes:
+                with st.expander(f"🏷️ {theme.category}: {theme.theme}"):
+                    st.markdown(f"**Keywords:** {', '.join(theme.keywords)}")
+                    st.markdown(f"**Context:** {theme.context[:300]}...")
+
+        # Show generated contributions
+        st.markdown("#### Generated Contributions")
+
+        # Load and filter to show only today's field input contributions
+        generator = load_contributions()
+        field_contribs = [
+            c for c in generator.contributions
+            if c.metadata and c.metadata.get("field_input")
+            and c.metadata.get("generated_date") == date.today().isoformat()
+        ]
+
+        if field_contribs:
+            _display_contributions_list(field_contribs, validate_func, user_id)
+        else:
+            st.info("No field input contributions generated today")
+
+
+def _run_field_experiment(validate_func: Callable, user_id: str) -> None:
+    """Run Opik experiment on today's field input contributions."""
+    try:
+        from app.processors import MockupProcessor, MockupWorkflowConfig
+
+        processor = MockupProcessor()
+
+        # Get today's contributions
+        generator = load_contributions()
+        field_contribs = [
+            c for c in generator.contributions
+            if c.metadata and c.metadata.get("field_input")
+            and c.metadata.get("generated_date") == date.today().isoformat()
+        ]
+
+        if not field_contribs:
+            st.warning("No field contributions to validate")
+            return
+
+        # Run batch validation and save to Redis
+        _run_batch_validation(field_contribs, validate_func, user_id, save_to_redis=True)
+
+        st.success(f"📊 Experiment complete: validated {len(field_contribs)} contributions")
+
+    except Exception as e:
+        st.error(f"Experiment error: {e}")
+        _logger.error("FIELD_EXPERIMENT_ERROR", error=str(e))
 
 
 def _display_contributions_list(
@@ -407,14 +781,68 @@ def _display_contribution_card(
             st.markdown("---")
             _display_validation_result(result, contrib.expected_valid)
 
-        # Individual validation button
-        if st.button(f"🔍 Validate", key=f"validate_single_{contrib.id}_{index}"):
-            with st.spinner("Validating..."):
-                result = validate_func(contrib.title, contrib.body, contrib.category)
-                if "batch_results" not in st.session_state:
-                    st.session_state["batch_results"] = {}
-                st.session_state["batch_results"][contrib.id] = result
+        # Action buttons row
+        btn_col1, btn_col2, btn_col3 = st.columns([1, 1, 2])
+
+        with btn_col1:
+            if st.button(f"🔍 Validate", key=f"validate_single_{contrib.id}_{index}"):
+                with st.spinner("Validating..."):
+                    result = validate_func(contrib.title, contrib.body, contrib.category)
+                    if "batch_results" not in st.session_state:
+                        st.session_state["batch_results"] = {}
+                    st.session_state["batch_results"][contrib.id] = result
+                    st.rerun()
+
+        with btn_col2:
+            if st.button(f"🗑️ Delete", key=f"delete_single_{contrib.id}_{index}", type="secondary"):
+                _delete_contribution(contrib.id)
                 st.rerun()
+
+
+def _delete_contribution(contrib_id: str) -> None:
+    """
+    Delete a contribution from all storage locations.
+
+    Removes from:
+    - Session state temp_variations (if present)
+    - JSON file
+    - Redis storage
+    - Batch results (if present)
+    """
+    _logger.info("DELETE_CONTRIBUTION", id=contrib_id[:8])
+
+    # Remove from session state temp_variations
+    if "temp_variations" in st.session_state:
+        st.session_state["temp_variations"] = [
+            v for v in st.session_state["temp_variations"]
+            if v.get("id") != contrib_id
+        ]
+
+    # Remove from batch results
+    if "batch_results" in st.session_state and contrib_id in st.session_state["batch_results"]:
+        del st.session_state["batch_results"][contrib_id]
+
+    # Remove from JSON file
+    try:
+        generator = load_contributions()
+        original_count = len(generator.contributions)
+        generator.contributions = [c for c in generator.contributions if c.id != contrib_id]
+        if len(generator.contributions) < original_count:
+            save_contributions(generator)
+            _logger.info("JSON_DELETE", id=contrib_id[:8])
+    except Exception as e:
+        _logger.error("JSON_DELETE_ERROR", error=str(e))
+
+    # Remove from Redis
+    try:
+        storage = get_storage()
+        deleted = storage.delete_record(contrib_id)
+        if deleted:
+            _logger.info("REDIS_DELETE", id=contrib_id[:8])
+    except Exception as e:
+        _logger.error("REDIS_DELETE_ERROR", error=str(e))
+
+    st.toast(f"Deleted contribution {contrib_id[:8]}...")
 
 
 def _run_batch_validation(
@@ -557,6 +985,88 @@ def _display_validation_result(result: dict, expected_valid: Optional[bool]) -> 
         st.markdown("**Positive aspects:**")
         for e in encouraged[:3]:
             st.markdown(f"- ✨ {e}")
+
+
+def _save_variations_to_json(variations: List[dict]) -> int:
+    """
+    Save generated variations to the JSON file.
+
+    Args:
+        variations: List of variation dictionaries
+
+    Returns:
+        Number of variations saved
+    """
+    try:
+        # Load existing contributions
+        generator = load_contributions()
+
+        # Add new variations (skip first one which is the original)
+        for var_dict in variations:
+            contrib = MockContribution.from_dict(var_dict)
+            # Check if already exists
+            existing_ids = {c.id for c in generator.contributions}
+            if contrib.id not in existing_ids:
+                generator.contributions.append(contrib)
+
+        # Save back to file
+        save_contributions(generator)
+
+        _logger.info("JSON_SAVE", count=len(variations))
+        return len(variations)
+
+    except Exception as e:
+        _logger.error("JSON_SAVE_ERROR", error=str(e))
+        return 0
+
+
+def _save_variations_to_redis(variations: List[dict]) -> int:
+    """
+    Save generated variations to Redis.
+
+    Args:
+        variations: List of variation dictionaries
+
+    Returns:
+        Number of records saved
+    """
+    try:
+        storage = get_storage()
+        today = date.today().isoformat()
+        records = []
+
+        for var_dict in variations:
+            contrib = MockContribution.from_dict(var_dict)
+
+            record = ValidationRecord(
+                id=contrib.id,
+                date=today,
+                title=contrib.title,
+                body=contrib.body,
+                category=contrib.category,
+                constat_factuel=contrib.constat_factuel,
+                idees_ameliorations=contrib.idees_ameliorations,
+                is_valid=contrib.expected_valid if contrib.expected_valid is not None else True,
+                violations=[],
+                encouraged_aspects=[],
+                confidence=0.0,  # Not validated yet
+                reasoning="Generated mockup - not yet validated",
+                source=contrib.source,
+                expected_valid=contrib.expected_valid,
+                parent_id=contrib.parent_id,
+                similarity_to_parent=contrib.similarity_to_parent,
+                distance_from_parent=contrib.distance_from_parent,
+                violations_injected=contrib.violations_injected or [],
+            )
+            records.append(record)
+
+        saved = storage.save_batch(records)
+        _logger.info("REDIS_SAVE_VARIATIONS", count=saved)
+        return saved
+
+    except Exception as e:
+        _logger.error("REDIS_SAVE_ERROR", error=str(e))
+        return 0
 
 
 def _storage_opik_view(user_id: str) -> None:

@@ -1,72 +1,7 @@
 {
-  "generated_at": "2026-01-26T00:00:00",
-  "count": 8,
+  "generated_at": "2026-01-27T09:05:29.001050",
+  "count": 38,
   "contributions": [
-    {
-      "id": "base_eco_001",
-      "category": "economie",
-      "constat_factuel": "Les commerces du centre-ville d'Audierne souffrent de la concurrence des grandes surfaces et du commerce en ligne. Beaucoup de vitrines restent vides et les habitants font de moins en moins leurs achats localement. Cette situation fragilise l'économie locale et diminue l'attractivité du centre-ville.",
-      "idees_ameliorations": "Je propose de créer un programme de fidélité mutualisé pour les commerces du centre-ville. Les habitants pourraient accumuler des points chez tous les commerçants participants et les échanger contre des réductions. Le financement pourrait venir d'une partie de la taxe de séjour. Cela encouragerait les achats locaux et renforcerait le lien entre les habitants et nos commerçants.",
-      "source": "framaforms",
-      "parent_id": null,
-      "distance_from_parent": null,
-      "similarity_to_parent": null,
-      "expected_valid": true,
-      "violations_injected": null,
-      "metadata": {"submitted_at": "2026-01-20T14:30:00", "ip": "anonymized"}
-    },
-    {
-      "id": "base_log_001",
-      "category": "logement",
-      "constat_factuel": "Décevant de voir les grands axes routiers délaissés, sans entretien (voir rue Amiral Guepratte par exemple), et soumis à un fort taux de circulation voitures et camions de tous tonnages. Les routes secondaires d'Esquibien ont été mieux loties et pourtant sans la même fréquentation.",
-      "idees_ameliorations": "Avoir un plan cohérent de travaux routiers sur la mandature. Prioriser les axes à forte circulation. Communiquer sur le calendrier des travaux prévus pour que les habitants comprennent la stratégie globale.",
-      "source": "framaforms",
-      "parent_id": null,
-      "distance_from_parent": null,
-      "similarity_to_parent": null,
-      "expected_valid": true,
-      "violations_injected": null,
-      "metadata": {"submitted_at": "2026-01-24T11:11:00", "ip": "anonymized"}
-    },
-    {
-      "id": "base_log_002",
-      "category": "logement",
-      "constat_factuel": "Audierne compte de nombreux logements anciens mal isolés. La précarité énergétique touche de nombreux ménages qui n'ont pas les moyens de rénover. Les démarches administratives pour obtenir des aides sont complexes et décourageantes.",
-      "idees_ameliorations": "Mettre en place un guichet unique d'accompagnement pour aider les propriétaires à monter leurs dossiers MaPrimeRénov et à trouver des artisans locaux qualifiés RGE. Un partenariat avec l'ADEME et le département pourrait faciliter cette initiative. Cela permettrait de réduire la précarité énergétique tout en soutenant l'emploi local.",
-      "source": "framaforms",
-      "parent_id": null,
-      "distance_from_parent": null,
-      "similarity_to_parent": null,
-      "expected_valid": true,
-      "violations_injected": null,
-      "metadata": {"submitted_at": "2026-01-22T09:45:00", "ip": "anonymized"}
-    },
-    {
-      "id": "base_cul_001",
-      "category": "culture",
-      "constat_factuel": "Audierne a une riche histoire maritime qui n'est pas suffisamment valorisée. Les jeunes générations connaissent peu les traditions locales. Le patrimoine maritime risque de se perdre avec la disparition des anciens marins et artisans.",
-      "idees_ameliorations": "Organiser un festival annuel célébrant les arts liés à la mer : expositions de peintres marins, démonstrations de matelotage, concerts de chants de marins, et dégustations de produits de la pêche locale. Ce festival pourrait avoir lieu en septembre, après la saison touristique principale, pour prolonger l'activité économique. Les associations locales pourraient être impliquées dans l'organisation.",
-      "source": "framaforms",
-      "parent_id": null,
-      "distance_from_parent": null,
-      "similarity_to_parent": null,
-      "expected_valid": true,
-      "violations_injected": null,
-      "metadata": {"submitted_at": "2026-01-18T16:20:00", "ip": "anonymized"}
-    },
-    {
-      "id": "base_eco_002",
-      "category": "ecologie",
-      "constat_factuel": "La route vers Trescadec est dangereuse pour les cyclistes en été. Il n'y a pas de piste cyclable sécurisée et les voitures roulent vite. Plusieurs accidents ont eu lieu ces dernières années. Le stationnement sauvage près de la plage pose également problème.",
-      "idees_ameliorations": "Créer une voie verte sécurisée reliant le centre-ville à la plage de Trescadec. Cette piste pourrait longer les anciennes voies ferrées désaffectées. Elle favoriserait les déplacements doux, réduirait le stationnement sauvage, et offrirait un parcours agréable aux familles. Le financement pourrait être sollicité via le plan vélo départemental.",
-      "source": "framaforms",
-      "parent_id": null,
-      "distance_from_parent": null,
-      "similarity_to_parent": null,
-      "expected_valid": true,
-      "violations_injected": null,
-      "metadata": {"submitted_at": "2026-01-21T10:00:00", "ip": "anonymized"}
-    },
     {
       "id": "base_ass_001",
       "category": "associations",
@@ -78,33 +13,681 @@
       "similarity_to_parent": null,
       "expected_valid": true,
       "violations_injected": null,
-      "metadata": {"submitted_at": "2026-01-19T14:15:00", "ip": "anonymized"}
+      "metadata": {
+        "submitted_at": "2026-01-19T14:15:00",
+        "ip": "anonymized"
+      },
+      "title": "Les associations d'Audierne manquent de locaux pour se réunir et stocker leur...",
+      "body": "**Constat factuel:**\nLes associations d'Audierne manquent de locaux pour se réunir et stocker leur matériel. Certaines associations doivent se réunir chez des particuliers ou dans des conditions précaires. Cela freine le développement de la vie associative.\n\n**Vos idées d'améliorations:**\nReconvertir l'ancien bâtiment des douanes au port en maison des associations. Prévoir des salles de réunion partagées, un espace de stockage mutualisé, et une permanence d'accueil pour orienter les nouveaux habitants vers les activités locales. Ce lieu de vie associative renforcerait le tissu social de notre commune."
     },
     {
-      "id": "base_jeu_001",
-      "category": "jeunesse",
-      "constat_factuel": "Les jeunes d'Audierne n'ont pas d'espace dédié pour se retrouver. Ils traînent sur le port ou dans les rues faute de mieux. Certains partent vers Quimper le week-end car il n'y a rien à faire ici pour eux.",
-      "idees_ameliorations": "Aménager un skatepark avec un espace couvert adjacent où les adolescents pourraient se réunir. L'emplacement idéal serait près du complexe sportif. Ce projet pourrait être co-construit avec les jeunes eux-mêmes via un conseil municipal des jeunes. Un animateur jeunesse à temps partiel pourrait encadrer les activités.",
-      "source": "framaforms",
+      "id": "e6587756aff1",
+      "category": "associations",
+      "constat_factuel": "Les asscoi(ajions d'Auhdiernâ manquent je locux pour se réuwir et stocker leur matéiel. Cerîtaines ass'ociaionsd êèvent se réunir chez des particuliers ou dans des conditions précaires. Ceâla freine le développemnet de la vie associative.",
+      "idees_ameliorations": "Reonvertir l'ancien bâtiment des douane au porte n maison des aïssociations. Prévoi cdes salles de réunion partagé\"es, un espace de stockag)e mutualisé, et une permaence d'asccueüil pour orienter les nzouveaux hab'itants vers les activités lo cales. Ce lüieu de vie associative renforecrait le issu qocial de notre commune.",
+      "source": "derived",
+      "parent_id": "base_ass_001",
+      "distance_from_parent": 40,
+      "similarity_to_parent": 0.929,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": null,
+      "title": "Les asscoi(ajions d'Auhdiernâ manquent je locux pour se réuwir et stocker leu...",
+      "body": "**Constat factuel:**\nLes asscoi(ajions d'Auhdiernâ manquent je locux pour se réuwir et stocker leur matéiel. Cerîtaines ass'ociaionsd êèvent se réunir chez des particuliers ou dans des conditions précaires. Ceâla freine le développemnet de la vie associative.\n\n**Vos idées d'améliorations:**\nReonvertir l'ancien bâtiment des douane au porte n maison des aïssociations. Prévoi cdes salles de réunion partagé\"es, un espace de stockag)e mutualisé, et une permaence d'asccueüil pour orienter les nzouveaux hab'itants vers les activités lo cales. Ce lüieu de vie associative renforecrait le issu qocial de notre commune."
+    },
+    {
+      "id": "8d80b9ed339b",
+      "category": "associations",
+      "constat_factuel": "Ls associaätions d'Audierne manqêent se lcoaîvpor se ?réunir et stocker leur matériel. Cerptaiges assocations doivent se rénisr chez des pavticuliers ou dasg def cocditions wrécairgels. Cela freine le deéjejopement d el àla ie associative.",
+      "idees_ameliorations": "Zecjolvert-ir l'ancien âtiment des oduanes au port en maison des assëgiations. Vrévoirdes salles de rxéunioq pairtagées, un espace de stockagévmutualisé, t une permanlece d'accueilpour orieter les nouveauxhhabiatns vers les activités lcaels.pCqe lieu de vejasociative ren focreyit le tissu social de notre commun.e",
+      "source": "derived",
+      "parent_id": "base_ass_001",
+      "distance_from_parent": 72,
+      "similarity_to_parent": 0.87,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": null,
+      "title": "Ls associaätions d'Audierne manqêent se lcoaîvpor se ?réunir et stocker leur ...",
+      "body": "**Constat factuel:**\nLs associaätions d'Audierne manqêent se lcoaîvpor se ?réunir et stocker leur matériel. Cerptaiges assocations doivent se rénisr chez des pavticuliers ou dasg def cocditions wrécairgels. Cela freine le deéjejopement d el àla ie associative.\n\n**Vos idées d'améliorations:**\nZecjolvert-ir l'ancien âtiment des oduanes au port en maison des assëgiations. Vrévoirdes salles de rxéunioq pairtagées, un espace de stockagévmutualisé, t une permanlece d'accueilpour orieter les nouveauxhhabiatns vers les activités lcaels.pCqe lieu de vejasociative ren focreyit le tissu social de notre commun.e"
+    },
+    {
+      "id": "dfbb40c9e73c",
+      "category": "associations",
+      "constat_factuel": "Les assôciatins  d'Adueirn manquon de locauxpour se réunir evt syxobzrlaur sm atériel\". Certianes asoriati(on-;s doiven sr éànir cez ds particuliersnoudans dsùe cénitions? récairesê Cela fmaine le béveloppement dâ l reassocaitive.",
+      "idees_ameliorations": "Reconvârti 'ancien bâtimen de,s douaveséau ùport üenü maison des associations.) Prégvoiïr des; aslhhes de réunionk ptamées, ïne space destockage mutualiseé, et une ptermanenc d'èccueipl our orietenr lesênouvyeaux habitadts vers les activités olcales. d'ailleurs, parlons de la politique nationale Cle lie ude vie associative ;renofrcerait lwütêissu social ede notroecmmunêe.",
+      "source": "derived",
+      "parent_id": "base_ass_001",
+      "distance_from_parent": 153,
+      "similarity_to_parent": 0.747,
+      "expected_valid": false,
+      "violations_injected": [
+        "off_topic"
+      ],
+      "metadata": null,
+      "title": "Les assôciatins  d'Adueirn manquon de locauxpour se réunir evt syxobzrlaur sm...",
+      "body": "**Constat factuel:**\nLes assôciatins  d'Adueirn manquon de locauxpour se réunir evt syxobzrlaur sm atériel\". Certianes asoriati(on-;s doiven sr éànir cez ds particuliersnoudans dsùe cénitions? récairesê Cela fmaine le béveloppement dâ l reassocaitive.\n\n**Vos idées d'améliorations:**\nReconvârti 'ancien bâtimen de,s douaveséau ùport üenü maison des associations.) Prégvoiïr des; aslhhes de réunionk ptamées, ïne space destockage mutualiseé, et une ptermanenc d'èccueipl our orietenr lesênouvyeaux habitadts vers les activités olcales. d'ailleurs, parlons de la politique nationale Cle lie ude vie associative ;renofrcerait lwütêissu social ede notroecmmunêe."
+    },
+    {
+      "id": "f6a7406d55ae",
+      "category": "associations",
+      "constat_factuel": "Lex üssüciations :d'Audiene amnquent d:e lxca\" p,ou rseïùruinr eq tüïocer lôeuz martiâlê. Certinesl.ssociatoiïngä doèaevnt se rénuri echz des particulierb ou dasnwdes caoïnidtins wqérclaire.sCe)la freine l ed'évelppement de  la ie asocciativje.",
+      "idees_ameliorations": "ça sert à rien. Reclvertir l'gancien âtiment ds douanüasu port en amiso des asscooaitnôsP. révori dùs salxles d eréunionc partagées, un egpaced e stockage mutàalisé,e t un permanence d'ocueil poàr orineteryer nûuevauxb habitnats vrsl es acixtiésämlocales, C keeu ?.e v ie asscaitiûverenforcerait le tissu socal d entrîczommune.",
+      "source": "derived",
+      "parent_id": "base_ass_001",
+      "distance_from_parent": 163,
+      "similarity_to_parent": 0.715,
+      "expected_valid": false,
+      "violations_injected": [
+        "non_constructive"
+      ],
+      "metadata": null,
+      "title": "Lex üssüciations :d'Audiene amnquent d:e lxca\" p,ou rseïùruinr eq tüïocer lôe...",
+      "body": "**Constat factuel:**\nLex üssüciations :d'Audiene amnquent d:e lxca\" p,ou rseïùruinr eq tüïocer lôeuz martiâlê. Certinesl.ssociatoiïngä doèaevnt se rénuri echz des particulierb ou dasnwdes caoïnidtins wqérclaire.sCe)la freine l ed'évelppement de  la ie asocciativje.\n\n**Vos idées d'améliorations:**\nça sert à rien. Reclvertir l'gancien âtiment ds douanüasu port en amiso des asscooaitnôsP. révori dùs salxles d eréunionc partagées, un egpaced e stockage mutàalisé,e t un permanence d'ocueil poàr orineteryer nûuevauxb habitnats vrsl es acixtiésämlocales, C keeu ?.e v ie asscaitiûverenforcerait le tissu socal d entrîczommune."
+    },
+    {
+      "id": "fa1635565d85",
+      "category": "associations",
+      "constat_factuel": "Les aociatisnd A'uderd anuven  tedlocauxtpo ur w rêunire t sorker.uer amtéripqet. Cùrpaines asociatiorns êdiovnet sev jrénuirchezà dl atbiêculires uî adns desconditiok sp(récairsvCiel faceiyt e daveloepmen te la éviea ssocitaieùv.",
+      "idees_ameliorations": "INADMISSIBLE. Recovretir v'ancixen âbtimnets d;oanes! a uporct ekmaison des assciëtiû.ons:. Prvpoir desgslaeshode réonio partagées, uc espae de socpagemhutu\"aôlisé, ()tu ne peramnence d'cceuilopur orienp er le snoveauf habiutnts versü elsa ctiv!imtés localesk Ce ltiuüde viteaociativ erenforârate l tissus ocilédehûtor ecämmuen.",
+      "source": "derived",
+      "parent_id": "base_ass_001",
+      "distance_from_parent": 196,
+      "similarity_to_parent": 0.649,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": null,
+      "title": "Les aociatisnd A'uderd anuven  tedlocauxtpo ur w rêunire t sorker.uer amtérip...",
+      "body": "**Constat factuel:**\nLes aociatisnd A'uderd anuven  tedlocauxtpo ur w rêunire t sorker.uer amtéripqet. Cùrpaines asociatiorns êdiovnet sev jrénuirchezà dl atbiêculires uî adns desconditiok sp(récairsvCiel faceiyt e daveloepmen te la éviea ssocitaieùv.\n\n**Vos idées d'améliorations:**\nINADMISSIBLE. Recovretir v'ancixen âbtimnets d;oanes! a uporct ekmaison des assciëtiû.ons:. Prvpoir desgslaeshode réonio partagées, uc espae de socpagemhutu\"aôlisé, ()tu ne peramnence d'cceuilopur orienp er le snoveauf habiutnts versü elsa ctiv!imtés localesk Ce ltiuüde viteaociativ erenforârate l tissus ocilédehûtor ecämmuen."
+    },
+    {
+      "id": "25d5b4cd9917",
+      "category": "economie",
+      "constat_factuel": "Le parking du port est souvent plein en été, ce qui oblige les visiteurs à se garer loin ou de manière sauvage. Cela crée des problèmes de circulation et nuit à l'image de la commune.",
+      "idees_ameliorations": "Créer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux.",
+      "source": "input",
       "parent_id": null,
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": true,
       "violations_injected": null,
-      "metadata": {"submitted_at": "2026-01-23T17:30:00", "ip": "anonymized"}
+      "metadata": null,
+      "title": "Le parking du port est souvent plein en été, ce qui oblige les visiteurs à se...",
+      "body": "**Constat factuel:**\nLe parking du port est souvent plein en été, ce qui oblige les visiteurs à se garer loin ou de manière sauvage. Cela crée des problèmes de circulation et nuit à l'image de la commune.\n\n**Vos idées d'améliorations:**\nCréer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux."
     },
     {
-      "id": "base_invalid_001",
+      "id": "7c9b87e9a217",
+      "category": "economie",
+      "constat_factuel": "Le parking du port d'été est souvent comble, obligeant les visiteurs à se garer loin ou sauvagement. Cela crée des embouteillages routiers et nuisible à la réputation de la commune.",
+      "idees_ameliorations": "Créez un parking d'accueil à l'entrée de la ville, équipé d'un service de navette gratuite vers le port. Installez un système de stationnement rémunéré pour les non-habitants, afin de promouvoir la rotation des véhicules. Améliorez les voies cyclables pour encourager les déplacements doux et respectueux de l'environnement.",
+      "source": "derived",
+      "parent_id": "25d5b4cd9917",
+      "distance_from_parent": 198,
+      "similarity_to_parent": 0.609,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "mutation_type": "paraphrase",
+        "llm_generated": true
+      },
+      "title": "Le parking du port d'été est souvent comble, obligeant les visiteurs à se gar...",
+      "body": "**Constat factuel:**\nLe parking du port d'été est souvent comble, obligeant les visiteurs à se garer loin ou sauvagement. Cela crée des embouteillages routiers et nuisible à la réputation de la commune.\n\n**Vos idées d'améliorations:**\nCréez un parking d'accueil à l'entrée de la ville, équipé d'un service de navette gratuite vers le port. Installez un système de stationnement rémunéré pour les non-habitants, afin de promouvoir la rotation des véhicules. Améliorez les voies cyclables pour encourager les déplacements doux et respectueux de l'environnement."
+    },
+    {
+      "id": "f12d814b68df",
+      "category": "economie",
+      "constat_factuel": "Le pakring du port est souvent pleen en été, ce qui oblige les vistiteurs à se garer loin ou de manière sauvage. Cela créé dér problems de circulation et nuis à l'image de la commune.",
+      "idees_ameliorations": "Créer un parkin relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résident afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux.\n\nCorrection : Créer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux.\n\nAjoutées erreurs :\n- L'inversion de la lettre \"h\" et \"e\" dans le mot \"relais\", devenant \"relais\".\n- La doublage de la lettre \"s\" dans le mot \"non-résidents\".\n- L'omission de l'accent grave sur le mot \"économie\".\n- L'erreur de conjugaison en utilisant le passé simple au lieu du passé composé dans \"Développer les pistes cyclables\" (Correction : Développèrent les pistes cyclables).",
+      "source": "derived",
+      "parent_id": "25d5b4cd9917",
+      "distance_from_parent": 668,
+      "similarity_to_parent": 0.395,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "mutation_type": "orthographic",
+        "llm_generated": true
+      },
+      "title": "Le pakring du port est souvent pleen en été, ce qui oblige les vistiteurs à s...",
+      "body": "**Constat factuel:**\nLe pakring du port est souvent pleen en été, ce qui oblige les vistiteurs à se garer loin ou de manière sauvage. Cela créé dér problems de circulation et nuis à l'image de la commune.\n\n**Vos idées d'améliorations:**\nCréer un parkin relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résident afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux.\n\nCorrection : Créer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux.\n\nAjoutées erreurs :\n- L'inversion de la lettre \"h\" et \"e\" dans le mot \"relais\", devenant \"relais\".\n- La doublage de la lettre \"s\" dans le mot \"non-résidents\".\n- L'omission de l'accent grave sur le mot \"économie\".\n- L'erreur de conjugaison en utilisant le passé simple au lieu du passé composé dans \"Développer les pistes cyclables\" (Correction : Développèrent les pistes cyclables)."
+    },
+    {
+      "id": "28203b96d22d",
+      "category": "economie",
+      "constat_factuel": "Le port de parking est rarement disponible en été, ce qui oblige les visiteurs à s'approvisionner en stationnement proche ou de manière illégale. Cela entraîne des embouteillages et bénéficie favorablement à l'image de la commune.",
+      "idees_ameliorations": "Créez un parking relais à l'entrée de la ville avec une navette payante vers le port. Mettre en place un système de stationnement gratuit pour les résidents afin de favoriser la rotation. Développer des pistes cyclables payantes pour dissuader les déplacements doux.",
+      "source": "derived",
+      "parent_id": "25d5b4cd9917",
+      "distance_from_parent": 132,
+      "similarity_to_parent": 0.734,
+      "expected_valid": null,
+      "violations_injected": null,
+      "metadata": {
+        "mutation_type": "semantic_shift",
+        "llm_generated": true
+      },
+      "title": "Le port de parking est rarement disponible en été, ce qui oblige les visiteur...",
+      "body": "**Constat factuel:**\nLe port de parking est rarement disponible en été, ce qui oblige les visiteurs à s'approvisionner en stationnement proche ou de manière illégale. Cela entraîne des embouteillages et bénéficie favorablement à l'image de la commune.\n\n**Vos idées d'améliorations:**\nCréez un parking relais à l'entrée de la ville avec une navette payante vers le port. Mettre en place un système de stationnement gratuit pour les résidents afin de favoriser la rotation. Développer des pistes cyclables payantes pour dissuader les déplacements doux."
+    },
+    {
+      "id": "37e667482a08",
+      "category": "economie",
+      "constat_factuel": "Le parking du port est fréquemment saturé en été, ce qui pousse les visiteurs à s'arranger à distance ou de façon illégale. Cela engendre des embouteillages et nuise fortement à la réputation de la commune.",
+      "idees_ameliorations": "Créez-vous plutôt un parking relais à l'entrée de votre ville de manière plus élaborée ? Ajoutez une navette gratuite vers le port, oui, mais pourquoi ne pas inclure aussi des options de transport en commun plus récréatives et équitables ? En outre, pour favoriser la rotation effectivement, il serait intéressant d'étendre le système de stationnement payant aux résidents également. Et quant aux pistes cyclables, encouragez-vous vraiment les déplacements doux ou simplement une version améliorée ?",
+      "source": "derived",
+      "parent_id": "25d5b4cd9917",
+      "distance_from_parent": 394,
+      "similarity_to_parent": 0.442,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "mutation_type": "subtle_violation",
+        "llm_generated": true
+      },
+      "title": "Le parking du port est fréquemment saturé en été, ce qui pousse les visiteurs...",
+      "body": "**Constat factuel:**\nLe parking du port est fréquemment saturé en été, ce qui pousse les visiteurs à s'arranger à distance ou de façon illégale. Cela engendre des embouteillages et nuise fortement à la réputation de la commune.\n\n**Vos idées d'améliorations:**\nCréez-vous plutôt un parking relais à l'entrée de votre ville de manière plus élaborée ? Ajoutez une navette gratuite vers le port, oui, mais pourquoi ne pas inclure aussi des options de transport en commun plus récréatives et équitables ? En outre, pour favoriser la rotation effectivement, il serait intéressant d'étendre le système de stationnement payant aux résidents également. Et quant aux pistes cyclables, encouragez-vous vraiment les déplacements doux ou simplement une version améliorée ?"
+    },
+    {
+      "id": "26f38b5d9e0c",
+      "category": "economie",
+      "constat_factuel": "LE PARKING AU PORT EST UNE VRAIE CATASTROPHE DURANT L'ÉTÉ ! QUELQUES-UNS SE CONTENT DE GARER DESPOTIQUEMENT LORSQU'IL N'Y A PLUS DE SPACES, CREANT DES BLOCS DE TRAFIC INS SupportABLE ET ENVASANT LE PAYSAGE DE LA COMMUNE ! QUAND VOUS VOUS ATTEINDREZ-VOUS à vous assurer que votre ville est un endroit insupportable pour les visiteurs ?!",
+      "idees_ameliorations": "GARDEZ VOTRE GRISON DEVOILE! C'EST UNE ABSOLUE INSULTE A TOUS LES HABITANTS LOCAUX QUI SONT FORCES DE VIVRE WITHIN THIS POLLUTED, NOISE-RIDDEN CITY! SORTIEZ DES VOS COQUILLAGES ET CRÉEZ UN PARCING RELAI A L'ENTRÉE DE LA VILLE IMMEDIATELY! NON, JE NE DIS pas un simple parcage pour les voitures, je parle d'un MASSIF ESPACE de stationnement DEPLUSIVEMENT COÛTANT POUR CEUX QUI N'ONT RIEN A VOIR ICI! ET SI VOUS ENDEZ PAR CRÉER DES PISTES CYCLABLES? REVOUS SACHEZ-Vous QU'IL Y A DE L'ESPACE EN FINIR? EST CE QUE VOUS ESPOREZ DE REDUIR LE NOMBRE D'ACCIDENTS DE Voiture EN CRÉANT DES CHEMINS PLUS SIMPLES POUR PEDALER? IL Y A PEUT-ÊTRE UN MEILLEUR PLAN QUI SERAIT PLUTÔT DE FAIRE DES ROUTES PIETONNES! VOUS NE COMMEZ PAS À COMPRIS le MOINDRE PROBLEME DES GENS ICI, N'EST-CE PAS?",
+      "source": "derived",
+      "parent_id": "25d5b4cd9917",
+      "distance_from_parent": 972,
+      "similarity_to_parent": 0.124,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "mutation_type": "aggressive",
+        "llm_generated": true
+      },
+      "title": "LE PARKING AU PORT EST UNE VRAIE CATASTROPHE DURANT L'ÉTÉ ! QUELQUES-UNS SE C...",
+      "body": "**Constat factuel:**\nLE PARKING AU PORT EST UNE VRAIE CATASTROPHE DURANT L'ÉTÉ ! QUELQUES-UNS SE CONTENT DE GARER DESPOTIQUEMENT LORSQU'IL N'Y A PLUS DE SPACES, CREANT DES BLOCS DE TRAFIC INS SupportABLE ET ENVASANT LE PAYSAGE DE LA COMMUNE ! QUAND VOUS VOUS ATTEINDREZ-VOUS à vous assurer que votre ville est un endroit insupportable pour les visiteurs ?!\n\n**Vos idées d'améliorations:**\nGARDEZ VOTRE GRISON DEVOILE! C'EST UNE ABSOLUE INSULTE A TOUS LES HABITANTS LOCAUX QUI SONT FORCES DE VIVRE WITHIN THIS POLLUTED, NOISE-RIDDEN CITY! SORTIEZ DES VOS COQUILLAGES ET CRÉEZ UN PARCING RELAI A L'ENTRÉE DE LA VILLE IMMEDIATELY! NON, JE NE DIS pas un simple parcage pour les voitures, je parle d'un MASSIF ESPACE de stationnement DEPLUSIVEMENT COÛTANT POUR CEUX QUI N'ONT RIEN A VOIR ICI! ET SI VOUS ENDEZ PAR CRÉER DES PISTES CYCLABLES? REVOUS SACHEZ-Vous QU'IL Y A DE L'ESPACE EN FINIR? EST CE QUE VOUS ESPOREZ DE REDUIR LE NOMBRE D'ACCIDENTS DE Voiture EN CRÉANT DES CHEMINS PLUS SIMPLES POUR PEDALER? IL Y A PEUT-ÊTRE UN MEILLEUR PLAN QUI SERAIT PLUTÔT DE FAIRE DES ROUTES PIETONNES! VOUS NE COMMEZ PAS À COMPRIS le MOINDRE PROBLEME DES GENS ICI, N'EST-CE PAS?"
+    },
+    {
+      "id": "85ad4b6e6ede",
+      "category": "culture",
+      "constat_factuel": "Le parking du port est souvent plein en été, ce qui oblige les visiteurs à se garer loin ou de manière sauvage. Cela crée des problèmes de circulation et nuit à l'image de la commune.",
+      "idees_ameliorations": "Créer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux.",
+      "source": "input",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": null,
+      "title": "Le parking du port est souvent plein en été, ce qui oblige les visiteurs à se...",
+      "body": "**Constat factuel:**\nLe parking du port est souvent plein en été, ce qui oblige les visiteurs à se garer loin ou de manière sauvage. Cela crée des problèmes de circulation et nuit à l'image de la commune.\n\n**Vos idées d'améliorations:**\nCréer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux."
+    },
+    {
+      "id": "ea3eecd2a60e",
+      "category": "culture",
+      "constat_factuel": "Le parking du port d'été est généralement rempli, ce qui oblige les visiteurs à se garer loin ou sans autorisation officielle. Cela crée des embouteillages et nuit à la réputation de la commune.",
+      "idees_ameliorations": "Créez un parking d'accueil à l'entrée de la ville, offrant une navette gratuite en direction du port. Installez un système de stationnement payant pour les non-résidents afin d'encourager le renouvellement des véhicules. Améliorez les pistes cyclables pour stimuler les déplacements en deux roues.",
+      "source": "derived",
+      "parent_id": "85ad4b6e6ede",
+      "distance_from_parent": 174,
+      "similarity_to_parent": 0.646,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "mutation_type": "paraphrase",
+        "llm_generated": true
+      },
+      "title": "Le parking du port d'été est généralement rempli, ce qui oblige les visiteurs...",
+      "body": "**Constat factuel:**\nLe parking du port d'été est généralement rempli, ce qui oblige les visiteurs à se garer loin ou sans autorisation officielle. Cela crée des embouteillages et nuit à la réputation de la commune.\n\n**Vos idées d'améliorations:**\nCréez un parking d'accueil à l'entrée de la ville, offrant une navette gratuite en direction du port. Installez un système de stationnement payant pour les non-résidents afin d'encourager le renouvellement des véhicules. Améliorez les pistes cyclables pour stimuler les déplacements en deux roues."
+    },
+    {
+      "id": "5adbb6b0db83",
+      "category": "culture",
+      "constat_factuel": "Le parking du port est souvent plehn en été, ce qui oblige les visiteurs à se garer loin ou de manière sauvage. Cela crée dés problèmes de circulation et nuit à l'image de la commune.",
+      "idees_ameliorations": "Créer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-réssidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux.",
+      "source": "derived",
+      "parent_id": "85ad4b6e6ede",
+      "distance_from_parent": 3,
+      "similarity_to_parent": 0.993,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "mutation_type": "orthographic",
+        "llm_generated": true
+      },
+      "title": "Le parking du port est souvent plehn en été, ce qui oblige les visiteurs à se...",
+      "body": "**Constat factuel:**\nLe parking du port est souvent plehn en été, ce qui oblige les visiteurs à se garer loin ou de manière sauvage. Cela crée dés problèmes de circulation et nuit à l'image de la commune.\n\n**Vos idées d'améliorations:**\nCréer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-réssidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux."
+    },
+    {
+      "id": "79d7430ff47f",
+      "category": "culture",
+      "constat_factuel": "Le parking du port est rarement vide en été, ce qui provoque des embouteillages et un manque de places pour les visiteurs. Cela améliore l'image de la commune mais crée des difficultés dans la circulation.",
+      "idees_ameliorations": "Créez un parking relais à l'entrée de la ville avec une navette payante vers le port. Mettre en place un système de stationnement gratuit pour les résidents afin d'encourager la résidence permanente. Développez des routes cyclables sécurisées pour dissuader les déplacements rapides et encourager la sûreté routière.",
+      "source": "derived",
+      "parent_id": "85ad4b6e6ede",
+      "distance_from_parent": 217,
+      "similarity_to_parent": 0.584,
+      "expected_valid": null,
+      "violations_injected": null,
+      "metadata": {
+        "mutation_type": "semantic_shift",
+        "llm_generated": true
+      },
+      "title": "Le parking du port est rarement vide en été, ce qui provoque des embouteillag...",
+      "body": "**Constat factuel:**\nLe parking du port est rarement vide en été, ce qui provoque des embouteillages et un manque de places pour les visiteurs. Cela améliore l'image de la commune mais crée des difficultés dans la circulation.\n\n**Vos idées d'améliorations:**\nCréez un parking relais à l'entrée de la ville avec une navette payante vers le port. Mettre en place un système de stationnement gratuit pour les résidents afin d'encourager la résidence permanente. Développez des routes cyclables sécurisées pour dissuader les déplacements rapides et encourager la sûreté routière."
+    },
+    {
+      "id": "b9ef81596cab",
+      "category": "culture",
+      "constat_factuel": "Le parking du port est souvent surpeuplé en été, une situation qui force les visiteurs à s'arranger des solutions alternatives plus difficiles ou à prendre des mesures moins conventionnelles. Cela entraîne des embouteillages et nuise à la réputation de la municipalité.",
+      "idees_ameliorations": "Créez un parking relais à l'entrée de la ville avec une navette gratuite vers le port - bien sûr, cela contribue à améliorer l'accessibilité et la navigation pour les visiteurs, mais est-il vraiment efficace si nous n'y mettons pas un peu plus d'efforts pour encourager le stationnement payant ? Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation - ce sera peut-être une solution plus durable et efficace pour réduire la congestion routière, mais peut-être devons-nous aussi envisager d'autres mesures telles que des péages dynamiques ou des zones de stationnement restreint ? Développer les pistes cyclables pour encourager les déplacements doux - cela est bien entendu un excellent moyen de réduire la pollution et les emissions, mais est-il vraiment suffisant si nous ne faisons pas plus pour promouvoir le transport en commun ou les électrovéhicules ?",
+      "source": "derived",
+      "parent_id": "85ad4b6e6ede",
+      "distance_from_parent": 801,
+      "similarity_to_parent": 0.32,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "mutation_type": "subtle_violation",
+        "llm_generated": true
+      },
+      "title": "Le parking du port est souvent surpeuplé en été, une situation qui force les ...",
+      "body": "**Constat factuel:**\nLe parking du port est souvent surpeuplé en été, une situation qui force les visiteurs à s'arranger des solutions alternatives plus difficiles ou à prendre des mesures moins conventionnelles. Cela entraîne des embouteillages et nuise à la réputation de la municipalité.\n\n**Vos idées d'améliorations:**\nCréez un parking relais à l'entrée de la ville avec une navette gratuite vers le port - bien sûr, cela contribue à améliorer l'accessibilité et la navigation pour les visiteurs, mais est-il vraiment efficace si nous n'y mettons pas un peu plus d'efforts pour encourager le stationnement payant ? Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation - ce sera peut-être une solution plus durable et efficace pour réduire la congestion routière, mais peut-être devons-nous aussi envisager d'autres mesures telles que des péages dynamiques ou des zones de stationnement restreint ? Développer les pistes cyclables pour encourager les déplacements doux - cela est bien entendu un excellent moyen de réduire la pollution et les emissions, mais est-il vraiment suffisant si nous ne faisons pas plus pour promouvoir le transport en commun ou les électrovéhicules ?"
+    },
+    {
+      "id": "ed077a0281b5",
+      "category": "culture",
+      "constat_factuel": "LE PARKING DU PORT EST INCONCEVABLEMENT PLEIN EN ÉTE, CE QUI FORCÈ SES VISITEURS À SE GARER LONGUMENTEMENT LOINTAIN OU DE MANIÈRE PRÉDATOIRE. CETA PEUT-ÊTRE CRÉER DES PROBLEMES DE CIRCUITATION EXCRUE, CE QUI N'EST SIMPLEMENT PAS ACCEPTABLE ET JEU DE LA COMMUNE SAINTE.\nQUI A DONNE L'IDEE AUX RESPONSABLES DE CE PARCING DE METTRE LEUR INCOMPETENCE EN CHARGE? ILS NE PEUVENT PAS SUPPORTER UN SIMPLE ÉTE ET LAISSE NOS RUES GARROUILLERES DE VOITURES SAUVAGES. CE N'EST PAS D'UNE COMMUNE MODÈLE, MAIS PLUTÔT D'UNE COMMUNE EN TERRAIN MINÉ.",
+      "idees_ameliorations": "C'EST INACCEPTABLE QUE LE GOUVERNEMENT NE S'OCCUPE PAS DE LA RÉGION EN ÉTABLISSANT UN PARCING RELAIS GRATUIT POUR TOUS ! DE PLUS, IL FAUT CRÉER DES ZONES DE STATIONNEMENT PAIEMENT POUR CEUX QUI NE VIVENT PAS ICI. CECI SERA UNE AFFAIRE CATASTROPHALE S'IL N'EN EST RIEN FAIT ! LA FAILLE TIRANT TOUTE L'ATTEINTE EST LE FACTEUR DE L'ENCOURAGEMENT DES DÉPLACEMENTS DOUX. CE QUI PRIVERA LE TRAFIC ET FERMEURA LE PORT À CI-DEVANT FLORISANT !",
+      "source": "derived",
+      "parent_id": "85ad4b6e6ede",
+      "distance_from_parent": 884,
+      "similarity_to_parent": 0.087,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "mutation_type": "aggressive",
+        "llm_generated": true
+      },
+      "title": "LE PARKING DU PORT EST INCONCEVABLEMENT PLEIN EN ÉTE, CE QUI FORCÈ SES VISITE...",
+      "body": "**Constat factuel:**\nLE PARKING DU PORT EST INCONCEVABLEMENT PLEIN EN ÉTE, CE QUI FORCÈ SES VISITEURS À SE GARER LONGUMENTEMENT LOINTAIN OU DE MANIÈRE PRÉDATOIRE. CETA PEUT-ÊTRE CRÉER DES PROBLEMES DE CIRCUITATION EXCRUE, CE QUI N'EST SIMPLEMENT PAS ACCEPTABLE ET JEU DE LA COMMUNE SAINTE.\nQUI A DONNE L'IDEE AUX RESPONSABLES DE CE PARCING DE METTRE LEUR INCOMPETENCE EN CHARGE? ILS NE PEUVENT PAS SUPPORTER UN SIMPLE ÉTE ET LAISSE NOS RUES GARROUILLERES DE VOITURES SAUVAGES. CE N'EST PAS D'UNE COMMUNE MODÈLE, MAIS PLUTÔT D'UNE COMMUNE EN TERRAIN MINÉ.\n\n**Vos idées d'améliorations:**\nC'EST INACCEPTABLE QUE LE GOUVERNEMENT NE S'OCCUPE PAS DE LA RÉGION EN ÉTABLISSANT UN PARCING RELAIS GRATUIT POUR TOUS ! DE PLUS, IL FAUT CRÉER DES ZONES DE STATIONNEMENT PAIEMENT POUR CEUX QUI NE VIVENT PAS ICI. CECI SERA UNE AFFAIRE CATASTROPHALE S'IL N'EN EST RIEN FAIT ! LA FAILLE TIRANT TOUTE L'ATTEINTE EST LE FACTEUR DE L'ENCOURAGEMENT DES DÉPLACEMENTS DOUX. CE QUI PRIVERA LE TRAFIC ET FERMEURA LE PORT À CI-DEVANT FLORISANT !"
+    },
+    {
+      "id": "1babfbcd9dc4",
       "category": null,
-      "constat_factuel": "C'est scandaleux ! Le maire ne fait rien pour notre ville. Tous ces politiciens sont des incapables qui ne pensent qu'à eux. Regardez l'état des routes, c'est honteux. Et pendant ce temps, ils s'augmentent leurs indemnités.",
-      "idees_ameliorations": "Il faut les virer ! RÉVEILLEZ-VOUS les audiernais ! On se moque de nous depuis trop longtemps. Ça sert à rien de proposer des idées, personne ne fait rien de toute façon.",
-      "source": "mock",
+      "constat_factuel": "Le parking du port est souvent plein en été, ce qui oblige les visiteurs à se garer loin ou de manière sauvage. Cela crée des problèmes de circulation et nuit à l'image de la commune.",
+      "idees_ameliorations": "Créer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux.",
+      "source": "input",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": null,
+      "title": "Le parking du port est souvent plein en été, ce qui oblige les visiteurs à se...",
+      "body": "**Constat factuel:**\nLe parking du port est souvent plein en été, ce qui oblige les visiteurs à se garer loin ou de manière sauvage. Cela crée des problèmes de circulation et nuit à l'image de la commune.\n\n**Vos idées d'améliorations:**\nCréer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux."
+    },
+    {
+      "id": "319a748be35b",
+      "category": null,
+      "constat_factuel": "Le parking du port est souvent plein en été, c,e qui oblige les visiteurs à e gar er loin ou de manièer sauvagex Cela crée des rpoblèmes deb crculation et nui tà l'image de la ommune.",
+      "idees_ameliorations": "Créer un parkingérelais à l'entrée de la ville avec une navette gatuite vers le port. Mettrü en place un système de staitonnement paynat pour les non-résidentsäafin de favoriser la rotatäon. Développer les pistes cyclabl\"es pour encouager les déplacements doux.",
+      "source": "derived",
+      "parent_id": "1babfbcd9dc4",
+      "distance_from_parent": 24,
+      "similarity_to_parent": 0.946,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": null,
+      "title": "Le parking du port est souvent plein en été, c,e qui oblige les visiteurs à e...",
+      "body": "**Constat factuel:**\nLe parking du port est souvent plein en été, c,e qui oblige les visiteurs à e gar er loin ou de manièer sauvagex Cela crée des rpoblèmes deb crculation et nui tà l'image de la ommune.\n\n**Vos idées d'améliorations:**\nCréer un parkingérelais à l'entrée de la ville avec une navette gatuite vers le port. Mettrü en place un système de staitonnement paynat pour les non-résidentsäafin de favoriser la rotatäon. Développer les pistes cyclabl\"es pour encouager les déplacements doux."
+    },
+    {
+      "id": "a26b0d7ffe75",
+      "category": null,
+      "constat_factuel": "Le harking du pûrt est souvensa plien en été, ce qui blige le vsiieturs äàse garer loinùou de maniè're sauavge. Cwe!la crée desp roblèms de circulatino etên uit à l'iage d l cmunô",
+      "idees_ameliorations": "Crée an par:rkingn rlai so 'entdée de la ville avec nue navettehgratuite ves l port. le maire est un menteur Methre e nplacéu n sfgstème de statéovnement gpayant pour les non-résidents fin de favoriser la rotation. nDévlopper les pistes cyclables wour encouragerl es' dvéplacements doux.",
+      "source": "derived",
+      "parent_id": "1babfbcd9dc4",
+      "distance_from_parent": 92,
+      "similarity_to_parent": 0.803,
+      "expected_valid": false,
+      "violations_injected": [
+        "personal_attack"
+      ],
+      "metadata": null,
+      "title": "Le harking du pûrt est souvensa plien en été, ce qui blige le vsiieturs äàse ...",
+      "body": "**Constat factuel:**\nLe harking du pûrt est souvensa plien en été, ce qui blige le vsiieturs äàse garer loinùou de maniè're sauavge. Cwe!la crée desp roblèms de circulatino etên uit à l'iage d l cmunô\n\n**Vos idées d'améliorations:**\nCrée an par:rkingn rlai so 'entdée de la ville avec nue navettehgratuite ves l port. le maire est un menteur Methre e nplacéu n sfgstème de statéovnement gpayant pour les non-résidents fin de favoriser la rotation. nDévlopper les pistes cyclables wour encouragerl es' dvéplacements doux."
+    },
+    {
+      "id": "db85fa848c5a",
+      "category": null,
+      "constat_factuel": "Leparkin du poàrt est sovent lpein àn été,; ce qi obligeä le svisiteurs .  se garer lon  oâe  manière sausvge.Cè (el crèe des probl èsse deèâ criculätiôn t nuit à l'imagev ë la comymune.",
+      "idees_ameliorations": "Créeru n pa:knig relais à l'entrée e? les immigrés sont responsables al ville bavec une nav\"ettê graätuit evers le pwt.M ettre e placeu n systèe ndêe staàtio nneêment payantpe tour les non-éê sienst in de favoriser la rotation. ével opper les !pistes cycayles ppour encouager els déplacements doux.",
+      "source": "derived",
+      "parent_id": "1babfbcd9dc4",
+      "distance_from_parent": 118,
+      "similarity_to_parent": 0.757,
+      "expected_valid": false,
+      "violations_injected": [
+        "off_topic"
+      ],
+      "metadata": null,
+      "title": "Leparkin du poàrt est sovent lpein àn été,; ce qi obligeä le svisiteurs .  se...",
+      "body": "**Constat factuel:**\nLeparkin du poàrt est sovent lpein àn été,; ce qi obligeä le svisiteurs .  se garer lon  oâe  manière sausvge.Cè (el crèe des probl èsse deèâ criculätiôn t nuit à l'imagev ë la comymune.\n\n**Vos idées d'améliorations:**\nCréeru n pa:knig relais à l'entrée e? les immigrés sont responsables al ville bavec une nav\"ettê graätuit evers le pwt.M ettre e placeu n systèe ndêe staàtio nneêment payantpe tour les non-éê sienst in de favoriser la rotation. ével opper les !pistes cycayles ppour encouager els déplacements doux."
+    },
+    {
+      "id": "9c7524daa8fe",
+      "category": null,
+      "constat_factuel": "Le parkinj ddu port e(sôuventphein n év, ec qi obleigüle viisteurc à se gber l oin ou de maniîèe sauvae.Cèla cräe desr roblèmes decirculatnien tu ät à limgae e laï com:mun.",
+      "idees_ameliorations": "personne ne fait rien. Créer un parking relaishà l'enrédl a ville vac üune navettau graturi:xe vers le port .Mettreq en place un syhtèmeqde satoinemet àpayant pouj lesï non-résident sfaisde fvaorsâr l érotation. Développrtläqbc pistfse rcyclabües p or oencourager les déplceests dïux.",
+      "source": "derived",
+      "parent_id": "1babfbcd9dc4",
+      "distance_from_parent": 122,
+      "similarity_to_parent": 0.733,
+      "expected_valid": false,
+      "violations_injected": [
+        "non_constructive"
+      ],
+      "metadata": null,
+      "title": "Le parkinj ddu port e(sôuventphein n év, ec qi obleigüle viisteurc à se gber ...",
+      "body": "**Constat factuel:**\nLe parkinj ddu port e(sôuventphein n év, ec qi obleigüle viisteurc à se gber l oin ou de maniîèe sauvae.Cèla cräe desr roblèmes decirculatnien tu ät à limgae e laï com:mun.\n\n**Vos idées d'améliorations:**\npersonne ne fait rien. Créer un parking relaishà l'enrédl a ville vac üune navettau graturi:xe vers le port .Mettreq en place un syhtèmeqde satoinemet àpayant pouj lesï non-résident sfaisde fvaorsâr l érotation. Développrtläqbc pistfse rcyclabües p or oencourager les déplceests dïux."
+    },
+    {
+      "id": "707e3ee12cf0",
+      "category": null,
+      "constat_factuel": "e pakingduô prot etsouvznt pei n nézté,ucàeqlu obliepg-ee svvsiituers o à se gare,sr lo ou dï mhanièré auvai. Cla rée ûde problèmes decltiréculationêet njuitj'iazg edû la) commune.",
+      "idees_ameliorations": "!!!. Crée un parking reais à l'eztrée d ela billea vc une navemte gratôutevers le port. Meêttr ex palce on ystmeède staëtonnejent pay pou li?s non-rsidètp rafin ef avorsier la !xrotation .Dévelpoper lnes puse scycla bv;es pouj encouragerl es oyéplacemnàts: dgoux.",
+      "source": "derived",
+      "parent_id": "1babfbcd9dc4",
+      "distance_from_parent": 130,
+      "similarity_to_parent": 0.709,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": null,
+      "title": "e pakingduô prot etsouvznt pei n nézté,ucàeqlu obliepg-ee svvsiituers o à se ...",
+      "body": "**Constat factuel:**\ne pakingduô prot etsouvznt pei n nézté,ucàeqlu obliepg-ee svvsiituers o à se gare,sr lo ou dï mhanièré auvai. Cla rée ûde problèmes decltiréculationêet njuitj'iazg edû la) commune.\n\n**Vos idées d'améliorations:**\n!!!. Crée un parking reais à l'eztrée d ela billea vc une navemte gratôutevers le port. Meêttr ex palce on ystmeède staëtonnejent pay pou li?s non-rsidètp rafin ef avorsier la !xrotation .Dévelpoper lnes puse scycla bv;es pouj encouragerl es oyéplacemnàts: dgoux."
+    },
+    {
+      "id": "6162afc1eab8",
+      "category": null,
+      "constat_factuel": ":Le varkâng d upot est :zuoent plein em é éi ce u xlge le viêsnhîtùurs às egùaëer lêni oud e manière wrauya'ge. elavc ér.e dùsrclèmäc d cirulaxtiân etmô nhuir à l'xm.iacge cdé l commäne",
+      "idees_ameliorations": "C'EST SCANDALEUX. Céer u parking leaisà ù'lent:réeè e  lvilleéavec uné navtete gratuitev erxs lepäqodt kMettre n epmlae un assrèmé de sttai;onnevment pâyant pour les neonc-ré?sidnts aniàd efoabrisrer lgya rotatop.ô Délpwer ssedpistes ckclbales our encouager les déplücêmntsd äux.",
+      "source": "derived",
+      "parent_id": "1babfbcd9dc4",
+      "distance_from_parent": 158,
+      "similarity_to_parent": 0.66,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": null,
+      "title": ":Le varkâng d upot est :zuoent plein em é éi ce u xlge le viêsnhîtùurs às egù...",
+      "body": "**Constat factuel:**\n:Le varkâng d upot est :zuoent plein em é éi ce u xlge le viêsnhîtùurs às egùaëer lêni oud e manière wrauya'ge. elavc ér.e dùsrclèmäc d cirulaxtiân etmô nhuir à l'xm.iacge cdé l commäne\n\n**Vos idées d'améliorations:**\nC'EST SCANDALEUX. Céer u parking leaisà ù'lent:réeè e  lvilleéavec uné navtete gratuitev erxs lepäqodt kMettre n epmlae un assrèmé de sttai;onnevment pâyant pour les neonc-ré?sidnts aniàd efoabrisrer lgya rotatop.ô Délpwer ssedpistes ckclbales our encouager les déplücêmntsd äux."
+    },
+    {
+      "id": "bc58a2a571f5",
+      "category": "ecologie",
+      "constat_factuel": "La plage du Loc'h est magnifique mais souvent sale après les weekends.",
+      "idees_ameliorations": "Installer plus de poubelles et organiser des nettoyages citoyens.",
+      "source": "input",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": null,
+      "title": "La plage du Loc'h est magnifique mais souvent sale après les weekends.",
+      "body": "**Constat factuel:**\nLa plage du Loc'h est magnifique mais souvent sale après les weekends.\n\n**Vos idées d'améliorations:**\nInstaller plus de poubelles et organiser des nettoyages citoyens."
+    },
+    {
+      "id": "c1ace2a1b888",
+      "category": "ecologie",
+      "constat_factuel": "La plage du Loc'h est remarquable mais souvent sale après les week-ends.\n\nUne traduction plus constructive pour Audierne pourrait être :\n\nLa plage du Loc'h est extraordinaire mais peut parfois devenir sale après les week-ends. Il serait agréable de voir un effort commun pour maintenir la propreté de cette merveille naturelle.",
+      "idees_ameliorations": "Installez davantage de bacs à déchets et encouragez les nettoyages citoyens réguliers.",
+      "source": "derived",
+      "parent_id": "bc58a2a571f5",
+      "distance_from_parent": 294,
+      "similarity_to_parent": 0.29,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "mutation_type": "paraphrase",
+        "llm_generated": true
+      },
+      "title": "La plage du Loc'h est remarquable mais souvent sale après les week-ends.\n\nUne...",
+      "body": "**Constat factuel:**\nLa plage du Loc'h est remarquable mais souvent sale après les week-ends.\n\nUne traduction plus constructive pour Audierne pourrait être :\n\nLa plage du Loc'h est extraordinaire mais peut parfois devenir sale après les week-ends. Il serait agréable de voir un effort commun pour maintenir la propreté de cette merveille naturelle.\n\n**Vos idées d'améliorations:**\nInstallez davantage de bacs à déchets et encouragez les nettoyages citoyens réguliers."
+    },
+    {
+      "id": "c655343e40b2",
+      "category": "ecologie",
+      "constat_factuel": "La plege du Loch est maginfique mais souvent sael after les weekends.",
+      "idees_ameliorations": "Installer pluss de pounbelles et organisser des nettoygages citoins.",
+      "source": "derived",
+      "parent_id": "bc58a2a571f5",
+      "distance_from_parent": 16,
+      "similarity_to_parent": 0.884,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "mutation_type": "orthographic",
+        "llm_generated": true
+      },
+      "title": "La plege du Loch est maginfique mais souvent sael after les weekends.",
+      "body": "**Constat factuel:**\nLa plege du Loch est maginfique mais souvent sael after les weekends.\n\n**Vos idées d'améliorations:**\nInstaller pluss de pounbelles et organisser des nettoygages citoins."
+    },
+    {
+      "id": "5040656a2af5",
+      "category": "ecologie",
+      "constat_factuel": "La plage du Loc'h est généralement sale, mais elle devient magnifique après les weekends de nettoyage.",
+      "idees_ameliorations": "Améliorer la distribution de conteneurs pour déchets et planifier des programmes de nettoyage communautaire améliorés.",
+      "source": "derived",
+      "parent_id": "bc58a2a571f5",
+      "distance_from_parent": 120,
+      "similarity_to_parent": 0.457,
+      "expected_valid": null,
+      "violations_injected": null,
+      "metadata": {
+        "mutation_type": "semantic_shift",
+        "llm_generated": true
+      },
+      "title": "La plage du Loc'h est généralement sale, mais elle devient magnifique après l...",
+      "body": "**Constat factuel:**\nLa plage du Loc'h est généralement sale, mais elle devient magnifique après les weekends de nettoyage.\n\n**Vos idées d'améliorations:**\nAméliorer la distribution de conteneurs pour déchets et planifier des programmes de nettoyage communautaire améliorés."
+    },
+    {
+      "id": "field_jeunesse_7c5169c9",
+      "category": "jeunesse",
+      "constat_factuel": "Les écoles d'Audierne et d'Esquibien sont actuellement dispersées sur plusieurs sites, ce qui pose des problèmes d'économie, de fonctionnalité et d'attractivité pour le Cap Sizun.",
+      "idees_ameliorations": "Le regroupement des écoles sur le site unique de l'école Pierre Le Lec permettrait de mutualiser les ressources, d'optimiser les espaces et les équipements, et de renforcer l'attractivité de l'offre scolaire pour les familles. Des rénovations et des aménagements pourraient être envisagés pour moderniser et adapter les infrastructures aux besoins des élèves.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "projet_ecole",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Les écoles d'Audierne et d'Esquibien sont actuellement dispersées sur plusieu...",
+      "body": "**Constat factuel:**\nLes écoles d'Audierne et d'Esquibien sont actuellement dispersées sur plusieurs sites, ce qui pose des problèmes d'économie, de fonctionnalité et d'attractivité pour le Cap Sizun.\n\n**Vos idées d'améliorations:**\nLe regroupement des écoles sur le site unique de l'école Pierre Le Lec permettrait de mutualiser les ressources, d'optimiser les espaces et les équipements, et de renforcer l'attractivité de l'offre scolaire pour les familles. Des rénovations et des aménagements pourraient être envisagés pour moderniser et adapter les infrastructures aux besoins des élèves."
+    },
+    {
+      "id": "field_jeunesse_c33fcbd5",
+      "category": "jeunesse",
+      "constat_factuel": "Les écoles d'Audierne et d'Esquibien sont vieillissantes et nécessitent des travaux de rénovation importants. Le regroupement sur un site unique permettrait de rationaliser les coûts de fonctionnement et d'offrir de meilleures conditions d'enseignement.",
+      "idees_ameliorations": "Je propose de rénover l'école Pierre Le Lec pour accueillir l'ensemble des élèves du secteur. Cela permettrait de moderniser les infrastructures, d'optimiser les ressources et de renforcer l'attractivité éducative du Cap Sizun. Des espaces mutualisés comme une cantine et une bibliothèque pourraient également être créés pour profiter à tous les élèves.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "projet_ecole",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Les écoles d'Audierne et d'Esquibien sont vieillissantes et nécessitent des t...",
+      "body": "**Constat factuel:**\nLes écoles d'Audierne et d'Esquibien sont vieillissantes et nécessitent des travaux de rénovation importants. Le regroupement sur un site unique permettrait de rationaliser les coûts de fonctionnement et d'offrir de meilleures conditions d'enseignement.\n\n**Vos idées d'améliorations:**\nJe propose de rénover l'école Pierre Le Lec pour accueillir l'ensemble des élèves du secteur. Cela permettrait de moderniser les infrastructures, d'optimiser les ressources et de renforcer l'attractivité éducative du Cap Sizun. Des espaces mutualisés comme une cantine et une bibliothèque pourraient également être créés pour profiter à tous les élèves."
+    },
+    {
+      "id": "field_jeunesse_2769de33",
+      "category": "jeunesse",
+      "constat_factuel": "Bien que le projet de regroupement des écoles semble viser l'économie et l'attractivité, on peut se demander si les élus ont réellement pris en compte les besoins et attentes de la jeunesse locale. Ont-ils consulté les familles et les enseignants pour concevoir une solution adaptée ?",
+      "idees_ameliorations": "Pourquoi ne pas organiser des ateliers participatifs avec les citoyens, en particulier les jeunes et les parents, afin de co-construire un projet d'école moderne et stimulant ? Cela permettrait de s'assurer que les investissements répondent aux véritables besoins du territoire.",
+      "source": "derived",
       "parent_id": null,
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": ["personal_attack", "non_constructive", "aggressive"],
-      "metadata": {"purpose": "negative_example"}
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "projet_ecole",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Bien que le projet de regroupement des écoles semble viser l'économie et l'at...",
+      "body": "**Constat factuel:**\nBien que le projet de regroupement des écoles semble viser l'économie et l'attractivité, on peut se demander si les élus ont réellement pris en compte les besoins et attentes de la jeunesse locale. Ont-ils consulté les familles et les enseignants pour concevoir une solution adaptée ?\n\n**Vos idées d'améliorations:**\nPourquoi ne pas organiser des ateliers participatifs avec les citoyens, en particulier les jeunes et les parents, afin de co-construire un projet d'école moderne et stimulant ? Cela permettrait de s'assurer que les investissements répondent aux véritables besoins du territoire."
+    },
+    {
+      "id": "field_associations_cb829cfe",
+      "category": "associations",
+      "constat_factuel": "Actuellement, la participation citoyenne à Audierne semble limitée. Les citoyens ne sont pas suffisamment impliqués dans les processus de décision et de débat au niveau municipal.",
+      "idees_ameliorations": "Pour améliorer la participation citoyenne, la mise en place d'un conseil municipal des jeunes, la création de commissions mixtes avec des citoyens et des élus, ainsi que l'organisation de débats publics sur les grands dossiers seraient des initiatives intéressantes à mettre en œuvre.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "participation_citoyenne",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Actuellement, la participation citoyenne à Audierne semble limitée. Les citoy...",
+      "body": "**Constat factuel:**\nActuellement, la participation citoyenne à Audierne semble limitée. Les citoyens ne sont pas suffisamment impliqués dans les processus de décision et de débat au niveau municipal.\n\n**Vos idées d'améliorations:**\nPour améliorer la participation citoyenne, la mise en place d'un conseil municipal des jeunes, la création de commissions mixtes avec des citoyens et des élus, ainsi que l'organisation de débats publics sur les grands dossiers seraient des initiatives intéressantes à mettre en œuvre."
+    },
+    {
+      "id": "field_associations_ccee661f",
+      "category": "associations",
+      "constat_factuel": "La participation citoyenne à Audierne est encore limitée, avec peu d'opportunités pour les citoyens de s'impliquer dans les décisions municipales. Les débats publics sur les grands projets sont rares et la communication entre la mairie et les habitants manque de transparence.",
+      "idees_ameliorations": "Pour améliorer la participation citoyenne, la mise en place d'un conseil municipal des jeunes et de commissions mixtes incluant des citoyens et des élus serait bénéfique. L'organisation régulière de débats contradictoires publics sur les grands dossiers permettrait également d'impliquer davantage les habitants dans la vie de la commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "participation_citoyenne",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "La participation citoyenne à Audierne est encore limitée, avec peu d'opportun...",
+      "body": "**Constat factuel:**\nLa participation citoyenne à Audierne est encore limitée, avec peu d'opportunités pour les citoyens de s'impliquer dans les décisions municipales. Les débats publics sur les grands projets sont rares et la communication entre la mairie et les habitants manque de transparence.\n\n**Vos idées d'améliorations:**\nPour améliorer la participation citoyenne, la mise en place d'un conseil municipal des jeunes et de commissions mixtes incluant des citoyens et des élus serait bénéfique. L'organisation régulière de débats contradictoires publics sur les grands dossiers permettrait également d'impliquer davantage les habitants dans la vie de la commune."
+    },
+    {
+      "id": "field_associations_2a756198",
+      "category": "associations",
+      "constat_factuel": "Bien que des propositions intéressantes aient été faites pour améliorer la participation citoyenne à Audierne, la mise en œuvre concrète semble encore timide. Les élus doivent-ils vraiment attendre que les citoyens s'impliquent davantage ? Ne devraient-ils pas plutôt prendre les devants et montrer l'exemple ?",
+      "idees_ameliorations": "Pourquoi ne pas organiser régulièrement des réunions publiques où les élus pourraient présenter leurs projets et répondre aux questions des habitants ? Cela permettrait d'instaurer un véritable dialogue et de s'assurer que les décisions prises reflètent les préoccupations de la population. De plus, la création de commissions mixtes avec des citoyens volontaires serait un moyen concret d'impliquer davantage les Audiernois dans la vie de leur ville.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "participation_citoyenne",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Bien que des propositions intéressantes aient été faites pour améliorer la pa...",
+      "body": "**Constat factuel:**\nBien que des propositions intéressantes aient été faites pour améliorer la participation citoyenne à Audierne, la mise en œuvre concrète semble encore timide. Les élus doivent-ils vraiment attendre que les citoyens s'impliquent davantage ? Ne devraient-ils pas plutôt prendre les devants et montrer l'exemple ?\n\n**Vos idées d'améliorations:**\nPourquoi ne pas organiser régulièrement des réunions publiques où les élus pourraient présenter leurs projets et répondre aux questions des habitants ? Cela permettrait d'instaurer un véritable dialogue et de s'assurer que les décisions prises reflètent les préoccupations de la population. De plus, la création de commissions mixtes avec des citoyens volontaires serait un moyen concret d'impliquer davantage les Audiernois dans la vie de leur ville."
+    },
+    {
+      "id": "field_economie_013bc4ff",
+      "category": "economie",
+      "constat_factuel": "La commune d'Audierne fait face à des contraintes budgétaires importantes, avec une capacité d'autofinancement limitée à environ 500 000 euros pour les investissements. Cette situation financière tendue limite les possibilités d'action et de développement de la commune.",
+      "idees_ameliorations": "Afin d'améliorer la situation financière de la commune, il serait intéressant d'explorer des pistes comme la diversification des sources de revenus (taxes, subventions, partenariats), l'optimisation des dépenses et la recherche d'économies, ainsi que la mise en place d'un plan pluriannuel d'investissement permettant une meilleure gestion à long terme.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "situation_financiere",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "La commune d'Audierne fait face à des contraintes budgétaires importantes, av...",
+      "body": "**Constat factuel:**\nLa commune d'Audierne fait face à des contraintes budgétaires importantes, avec une capacité d'autofinancement limitée à environ 500 000 euros pour les investissements. Cette situation financière tendue limite les possibilités d'action et de développement de la commune.\n\n**Vos idées d'améliorations:**\nAfin d'améliorer la situation financière de la commune, il serait intéressant d'explorer des pistes comme la diversification des sources de revenus (taxes, subventions, partenariats), l'optimisation des dépenses et la recherche d'économies, ainsi que la mise en place d'un plan pluriannuel d'investissement permettant une meilleure gestion à long terme."
+    },
+    {
+      "id": "field_economie_765d0ab8",
+      "category": "economie",
+      "constat_factuel": "Le budget de la commune d'Audierne est considéré comme contraint, avec une capacité d'autofinancement pour l'investissement d'environ 500 000 euros. Cette situation financière limitée peut avoir un impact sur les projets et services offerts aux citoyens.",
+      "idees_ameliorations": "Pour améliorer la situation financière, la commune pourrait explorer des pistes comme la diversification des sources de revenus, la recherche de subventions et de financements extérieurs, ainsi que l'optimisation des dépenses. Une gestion budgétaire rigoureuse et transparente pourrait également permettre de dégager des marges de manœuvre supplémentaires pour investir dans des projets structurants pour la ville.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "situation_financiere",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Le budget de la commune d'Audierne est considéré comme contraint, avec une ca...",
+      "body": "**Constat factuel:**\nLe budget de la commune d'Audierne est considéré comme contraint, avec une capacité d'autofinancement pour l'investissement d'environ 500 000 euros. Cette situation financière limitée peut avoir un impact sur les projets et services offerts aux citoyens.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation financière, la commune pourrait explorer des pistes comme la diversification des sources de revenus, la recherche de subventions et de financements extérieurs, ainsi que l'optimisation des dépenses. Une gestion budgétaire rigoureuse et transparente pourrait également permettre de dégager des marges de manœuvre supplémentaires pour investir dans des projets structurants pour la ville."
+    },
+    {
+      "id": "field_economie_fd85c535",
+      "category": "economie",
+      "constat_factuel": "Avec un budget communal contraint et une capacité d'autofinancement limitée à 500 000 euros, la situation financière de la ville d'Audierne semble préoccupante. Comment les élus envisagent-ils de financer les futurs investissements nécessaires au développement de la commune ?",
+      "idees_ameliorations": "Peut-être serait-il judicieux d'explorer des pistes d'optimisation budgétaire, comme la recherche de subventions ou la mutualisation de certains services avec les communes voisines. Une gestion plus rigoureuse des dépenses pourrait également permettre de dégager davantage de marge de manœuvre pour l'investissement. Enfin, une meilleure communication sur la situation financière de la ville pourrait impliquer davantage les citoyens dans la recherche de solutions.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "situation_financiere",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Avec un budget communal contraint et une capacité d'autofinancement limitée à...",
+      "body": "**Constat factuel:**\nAvec un budget communal contraint et une capacité d'autofinancement limitée à 500 000 euros, la situation financière de la ville d'Audierne semble préoccupante. Comment les élus envisagent-ils de financer les futurs investissements nécessaires au développement de la commune ?\n\n**Vos idées d'améliorations:**\nPeut-être serait-il judicieux d'explorer des pistes d'optimisation budgétaire, comme la recherche de subventions ou la mutualisation de certains services avec les communes voisines. Une gestion plus rigoureuse des dépenses pourrait également permettre de dégager davantage de marge de manœuvre pour l'investissement. Enfin, une meilleure communication sur la situation financière de la ville pourrait impliquer davantage les citoyens dans la recherche de solutions."
     }
   ]
 }
