@@ -65,7 +65,7 @@ def _show_login_form():
         }
         </style>
         """,
-        unsafe_allow_html=True
+        unsafe_allow_html=True,
     )
 
     col1, col2, col3 = st.columns([1, 2, 1])
@@ -76,9 +76,7 @@ def _show_login_form():
 
         with st.form("login_form"):
             password = st.text_input(
-                "Password",
-                type="password",
-                placeholder="Enter password..."
+                "Password", type="password", placeholder="Enter password..."
             )
             submitted = st.form_submit_button("Sign in", use_container_width=True)
 
@@ -91,8 +89,8 @@ def _show_login_form():
 
         st.markdown("---")
         st.markdown(
-            f"Need the password? Join our [Discord]({DISCORD_INVITE_URL}) to request access.",
-            help="Contact the team on Discord to get the password"
+            f"🐇 Need the password? Join our [Discord]({DISCORD_INVITE_URL}) to request access.",
+            help="Contact the team on Discord to get the password",
         )
 
 
