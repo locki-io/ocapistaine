@@ -25,29 +25,6 @@
       }
     },
     {
-      "label": "Start ngrok + copy URL (auto)",
-      "type": "shell",
-      "command": "poetry",
-      "args": ["run", "python", "${workspaceFolder}/scripts/start_ngrok.py"],
-      "group": "none",
-      "presentation": {
-        "reveal": "always",
-        "panel": "dedicated",
-        "clear": true
-      },
-      "isBackground": true,
-      "problemMatcher": {
-        "pattern": {
-          "regexp": "^$"
-        },
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": "^Starting ngrok tunnel",
-          "endsPattern": "^Public URL copied to clipboard:"
-        }
-      }
-    },
-    {
       "label": "Start Streamlit (with CORS)",
       "type": "shell",
       "command": "bash",
@@ -69,6 +46,102 @@
       "presentation": {
         "reveal": "silent",
         "panel": "shared"
+      }
+    },
+    {
+      "label": "Start ngrok Tunnel",
+      "type": "shell",
+      "command": "poetry",
+      "args": ["run", "python", "${workspaceFolder}/scripts/start_ngrok.py"],
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^Starting ngrok tunnel",
+          "endsPattern": "^Fixed domain:"
+        }
+      }
+    },
+    {
+      "label": "Stop ngrok",
+      "type": "shell",
+      "command": "pkill",
+      "args": ["-f", "ngrok"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "🚀 Start OCapistaine (Streamlit + ngrok)",
+      "detail": "Starts Streamlit on port 8502 and ngrok tunnel to ocapistaine.ngrok-free.app",
+      "dependsOn": ["Start Streamlit (with CORS)", "Start ngrok Tunnel"],
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "🛑 Stop OCapistaine (All)",
+      "detail": "Stops both Streamlit and ngrok",
+      "dependsOn": ["Stop Streamlit", "Stop ngrok"],
+      "dependsOrder": "parallel",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "📊 Check Status",
+      "type": "shell",
+      "command": "echo",
+      "args": [
+        "=== Streamlit ===" , "&&",
+        "lsof", "-i", ":8502", "||", "echo", "'Not running'", "&&",
+        "echo", "=== ngrok ===" , "&&",
+        "curl", "-s", "http://localhost:4040/api/tunnels", "|", "jq", "-r", "'.tunnels[0].public_url // \"Not running\"'"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "🔗 Open in Browser (Local)",
+      "type": "shell",
+      "command": "open",
+      "args": ["http://localhost:8502"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent"
+      }
+    },
+    {
+      "label": "🌐 Open in Browser (Public)",
+      "type": "shell",
+      "command": "open",
+      "args": ["https://ocapistaine.vaettir.locki.io"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent"
       }
     }
   ]

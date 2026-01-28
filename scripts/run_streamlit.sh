@@ -20,7 +20,7 @@ fi
 
 # Set Streamlit environment variables dynamically
 echo "🔧 Configuring CORS..."
-eval $(python "$SCRIPT_DIR/set_streamlit_env.py")
+eval $(poetry run python "$SCRIPT_DIR/set_streamlit_env.py")
 
 # Set port
 STREAMLIT_PORT=${STREAMLIT_PORT:-8502}
@@ -48,8 +48,8 @@ echo "---"
 # Add project root to PYTHONPATH for proper module resolution
 export PYTHONPATH="$PROJECT_ROOT:$PYTHONPATH"
 
-# Run Streamlit
+# Run Streamlit via Poetry (ensures correct virtual environment)
 cd "$PROJECT_ROOT"
-streamlit run app/front.py \
+poetry run streamlit run app/front.py \
     --server.port "$STREAMLIT_PORT" \
     --server.address "0.0.0.0"

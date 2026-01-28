@@ -14,7 +14,7 @@
       "purpose": ["debug-in-terminal"]
     },
     {
-      "name": "Run Streamlit (Poetry)",
+      "name": "Run Streamlit (Debug)",
       "type": "debugpy",
       "request": "launch",
       "module": "streamlit",
@@ -24,6 +24,7 @@
       "cwd": "${workspaceFolder}",
       "envFile": "${workspaceFolder}/.env",
       "env": {
+        "PYTHONPATH": "${workspaceFolder}",
         "STREAMLIT_SERVER_ENABLE_CORS": "true",
         "STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION": "false",
         "STREAMLIT_SERVER_ALLOWED_ORIGINS": "http://localhost:8502,http://127.0.0.1:8502,https://ocapistaine.ngrok-free.app,https://ocapistaine.vaettir.locki.io,https://vaettir.locki.io"
@@ -42,14 +43,19 @@
   "compounds": [
     {
       "name": "Full Stack (Uvicorn + Streamlit)",
-      "configurations": ["Run Uvicorn (Poetry)", "Run Streamlit (Poetry)"],
+      "configurations": ["Run Uvicorn (Poetry)", "Run Streamlit (Debug)"],
       "stopAll": true
     },
     {
-      "name": "Streamlit + ngrok (auto-copy URL)",
-      "configurations": ["Run Streamlit (Poetry)"],
-      "preLaunchTask": "Start ngrok + copy URL (auto)",
-      "stopAll": true
+      "name": "🚀 OCapistaine Public (Streamlit + ngrok)",
+      "configurations": ["Run Streamlit (Debug)"],
+      "preLaunchTask": "Start ngrok Tunnel",
+      "stopAll": true,
+      "presentation": {
+        "hidden": false,
+        "group": "OCapistaine",
+        "order": 1
+      }
     }
   ]
 }

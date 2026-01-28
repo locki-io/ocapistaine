@@ -19,6 +19,11 @@ st.set_page_config(
     layout="wide",
 )
 
+# Authentication check (before loading any other content)
+from app.auth import check_password
+if not check_password():
+    st.stop()
+
 from app.sidebar import sidebar_setup, get_user_id, get_selected_provider, get_model_id
 from app.agents.forseti import ForsetiAgent
 from app.providers import get_provider

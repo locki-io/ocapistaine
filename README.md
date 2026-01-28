@@ -35,18 +35,61 @@ cp .env.example .env
 python src/crawl_municipal_docs.py --source all --mode scrape
 ```
 
-## VScode debug
+## Running the Application
 
-VSCode Debug Options
-┌────────────────────────┬─────────────────────────────────┐
-│ Configuration │ What it does │
-├────────────────────────┼─────────────────────────────────┤
-│ Run Uvicorn (Poetry) │ Start FastAPI on port 8050 │
-├────────────────────────┼─────────────────────────────────┤
-│ Run Streamlit (Poetry) │ Start Streamlit UI on port 8502 │
-├────────────────────────┼─────────────────────────────────┤
-│ Full Stack │ Both Uvicorn + Streamlit │
-└────────────────────────┴─────────────────────────────────┘
+### Local Development
+
+```bash
+# Install dependencies
+poetry install
+
+# Start Streamlit locally
+./scripts/run_streamlit.sh
+
+# Access at http://localhost:8502
+```
+
+### Public Access (via ngrok + vaettir proxy)
+
+To make the app publicly accessible at `https://ocapistaine.vaettir.locki.io`:
+
+```bash
+# Terminal 1: Start Streamlit
+./scripts/run_streamlit.sh
+
+# Terminal 2: Start ngrok tunnel
+poetry run python scripts/start_ngrok.py
+
+# Access points:
+# - Local:  http://localhost:8502
+# - ngrok:  https://ocapistaine.ngrok-free.app
+# - Public: https://ocapistaine.vaettir.locki.io
+```
+
+### VS Code Integration
+
+**Tasks** (Cmd+Shift+P → "Tasks: Run Task"):
+
+| Task | Description |
+|------|-------------|
+| 🚀 Start OCapistaine (Streamlit + ngrok) | One-click full startup (default build task) |
+| 🛑 Stop OCapistaine (All) | Stop both Streamlit and ngrok |
+| 📊 Check Status | View running services status |
+| 🔗 Open in Browser (Local) | Open http://localhost:8502 |
+| 🌐 Open in Browser (Public) | Open https://ocapistaine.vaettir.locki.io |
+
+**Debug Configurations** (F5 or Run & Debug panel):
+
+| Configuration | Description |
+|---------------|-------------|
+| Run Uvicorn (Poetry) | Start FastAPI server on port 8050 with debugger |
+| Run Streamlit (Debug) | Start Streamlit UI on port 8502 with debugger |
+| Full Stack (Uvicorn + Streamlit) | Both services with debugging |
+| 🚀 OCapistaine Public | Streamlit + ngrok for public access |
+
+**Quick Start:**
+- Press `Cmd+Shift+B` to run the default build task (starts everything)
+- Or use the Run & Debug panel to select a configuration
 
 ## version control on main, dev and feature branch
 
@@ -141,13 +184,44 @@ git push
 - **[audierne2026/participons](https://github.com/audierne2026/participons)** - Public participation platform (Jekyll)
 - **[docs.locki.io](https://github.com/locki-io/docs.locki.io)** - Docusaurus documentation
 
+## Authentication
+
+The public instance is password-protected. Configure in `.streamlit/secrets.toml`:
+
+```toml
+[auth]
+password = "your-secret-password"
+```
+
+**Setup:**
+```bash
+# Copy template
+cp .streamlit/secrets.toml.example .streamlit/secrets.toml
+
+# Edit with your password
+nano .streamlit/secrets.toml
+```
+
+**For hashed passwords** (more secure):
+```bash
+poetry run python -c "from app.auth import hash_password; print(hash_password('your-password'))"
+# Then use: password = "sha256:..."
+```
+
+**Disable authentication** (local development): Remove or leave empty the `password` field.
+
 ## Environment Variables
 
-| Variable            | Description                        |
-| ------------------- | ---------------------------------- |
-| `FIRECRAWL_API_KEY` | Firecrawl API key for web scraping |
-| `OPIK_API_KEY`      | Opik API key for LLM observability |
-| `OPIK_WORKSPACE`    | Opik workspace name                |
+| Variable            | Description                        | Example |
+| ------------------- | ---------------------------------- | ------- |
+| `FIRECRAWL_API_KEY` | Firecrawl API key for web scraping | |
+| `OPIK_API_KEY`      | Opik API key for LLM observability | |
+| `OPIK_WORKSPACE`    | Opik workspace name                | |
+| `NGROK_DOMAIN`      | Fixed ngrok domain (paid plan)     | `ocapistaine.ngrok-free.app` |
+| `STREAMLIT_PORT`    | Local Streamlit port               | `8502` |
+| `DISCORD_INVITE_URL`| Discord invite link for auth page  | `https://discord.gg/yourserver` |
+
+See `.env.example` for a complete template.
 
 ## Project Board
 
