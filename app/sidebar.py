@@ -12,23 +12,28 @@ import streamlit as st
 from typing import Optional
 
 from app.providers.config import GEMINI_MODELS
+from app.i18n import _, language_selector, get_language
+from app.services import PresentationLogger
 
 # TODO: Replace with actual Redis client when implemented
 # from app.data.redis_client import get_redis_connection
 
+# Sidebar logger
+_logger = PresentationLogger("sidebar")
+
 # Available LLM providers and their models
 PROVIDERS = {
     "gemini": {
-        "name": "Google Gemini",
+        "name_key": "provider_google_gemini",
         "models": {
-            "flash-lite": "gemini-2.0-flash-lite (~1000 req/day)",
-            "flash": "gemini-2.0-flash (~20 req/day)",
-            "pro": "gemini-2.0-pro-exp (~25 req/day)",
+            "flash-lite": "gemini-2.5-flash-lite (~1000 req/day)",
+            "flash": "gemini-2.5-flash (~20 req/day)",
+            # "pro": "gemini-2.5-pro-exp (~25 req/day)",
         },
         "default": "flash-lite",
     },
     "claude": {
-        "name": "Anthropic Claude",
+        "name_key": "provider_anthropic_claude",
         "models": {
             "haiku": "claude-3-haiku (fast, cheap)",
             "sonnet": "claude-3.5-sonnet (balanced)",
@@ -36,7 +41,7 @@ PROVIDERS = {
         "default": "haiku",
     },
     "mistral": {
-        "name": "Mistral AI",
+        "name_key": "provider_mistral_ai",
         "models": {
             "small": "mistral-small-latest",
             "medium": "mistral-medium-latest",
@@ -44,7 +49,7 @@ PROVIDERS = {
         "default": "small",
     },
     "ollama": {
-        "name": "Ollama (local)",
+        "name_key": "provider_ollama",
         "models": {
             "mistral": "mistral:latest",
             "llama3.2": "llama3.2:latest",
@@ -78,6 +83,7 @@ def get_user_id() -> str:
     if "uid" in query_params:
         user_id = query_params["uid"]
         st.session_state.user_id = user_id
+        _logger.info("USER_RESTORED", user_id=user_id[:8], source="query_params")
         return user_id
 
     # Generate new user_id
@@ -87,6 +93,7 @@ def get_user_id() -> str:
     # Store in query params for persistence across reruns
     st.query_params["uid"] = user_id
 
+    _logger.info("USER_CREATED", user_id=user_id[:8])
     return user_id
 
 
@@ -103,30 +110,35 @@ def sidebar_setup() -> str:
 
     with st.sidebar:
         # Project branding
-        st.markdown("## 🏛️ Ò Capistaine")
-        st.caption("Transparence civique pour Audierne")
+        st.markdown(f"## 🏛️ {_('app_title')}")
+        st.caption(_("app_subtitle"))
+
+        st.divider()
+
+        # Language selector
+        _display_language_selector(user_id)
 
         st.divider()
 
         # User session info
-        st.markdown("### 👤 Session")
-        st.caption(f"ID: `{user_id[:8]}...`")
+        st.markdown(f"### 👤 {_('sidebar_session')}")
+        st.caption(_("sidebar_session_id", user_id=user_id[:8]))
 
         # New conversation button
-        if st.button("🔄 Nouvelle conversation", use_container_width=True):
+        if st.button(f"🔄 {_('sidebar_new_conversation')}", use_container_width=True):
             _start_new_conversation(user_id)
             st.rerun()
 
         st.divider()
 
         # AI Provider/Model selection
-        st.markdown("### 🤖 Modèle IA")
-        _display_provider_selector()
+        st.markdown(f"### 🤖 {_('sidebar_ai_model')}")
+        _display_provider_selector(user_id)
 
         st.divider()
 
         # Quick links
-        st.markdown("### 🔗 Liens")
+        st.markdown(f"### 🔗 {_('sidebar_links')}")
         st.markdown(
             """
         - [audierne2026.fr](https://audierne2026.fr)
@@ -138,15 +150,31 @@ def sidebar_setup() -> str:
         st.divider()
 
         # Status indicators
-        st.markdown("### 📊 Status")
+        st.markdown(f"### 📊 {_('sidebar_status')}")
         _display_status_indicators()
 
         # Footer
         st.divider()
-        st.caption("Encode Hackathon 2026")
-        st.caption("Apache 2.0 + ELv2")
+        st.caption(_("sidebar_footer_hackathon"))
+        st.caption(_("sidebar_footer_license"))
 
     return user_id
+
+
+def _display_language_selector(user_id: str) -> None:
+    """Display language selector with logging."""
+    current_lang = get_language()
+    language_selector()
+    new_lang = get_language()
+
+    # Log language change (detected on next rerun)
+    if "prev_lang" in st.session_state and st.session_state.prev_lang != new_lang:
+        _logger.log_user_action(
+            action="change_language",
+            user_id=user_id,
+            details=f"{st.session_state.prev_lang} -> {new_lang}",
+        )
+    st.session_state.prev_lang = new_lang
 
 
 def _start_new_conversation(user_id: str) -> None:
@@ -154,16 +182,27 @@ def _start_new_conversation(user_id: str) -> None:
     Start a new conversation thread.
 
     Creates a new thread_id and clears current chat state.
+    Switches to the Questions tab automatically.
     """
+    old_thread_id = st.session_state.get("thread_id")
     new_thread_id = f"{user_id}:{uuid.uuid4().hex[:8]}"
     st.session_state.thread_id = new_thread_id
+
+    # Switch to Questions tab via URL parameter
+    st.query_params["tab"] = "questions"
+
+    _logger.log_user_action(
+        action="new_conversation",
+        user_id=user_id,
+        details=f"thread={new_thread_id[:16]}",
+    )
 
     # TODO: Clear chat history in Redis when implemented
     # r = get_redis_connection()
     # r.delete(f"chat:{user_id}:{old_thread_id}")
 
 
-def _display_provider_selector() -> None:
+def _display_provider_selector(user_id: str) -> None:
     """Display provider and model selection dropdowns."""
     # Initialize defaults if not set
     if "llm_provider" not in st.session_state:
@@ -176,25 +215,33 @@ def _display_provider_selector() -> None:
     current_provider = st.session_state.llm_provider
 
     selected_provider = st.selectbox(
-        "Fournisseur",
+        _("sidebar_provider"),
         options=provider_names,
+        disabled=True,
         index=(
             provider_names.index(current_provider)
             if current_provider in provider_names
             else 0
         ),
-        format_func=lambda x: PROVIDERS[x]["name"],
+        format_func=lambda x: _(PROVIDERS[x]["name_key"]),
         key="provider_select",
     )
 
     # Update provider if changed
     if selected_provider != st.session_state.llm_provider:
+        old_provider = st.session_state.llm_provider
         st.session_state.llm_provider = selected_provider
         # Reset model to default for new provider
         st.session_state.llm_model = PROVIDERS[selected_provider]["default"]
         # Clear cached agent
         if "forseti_agent" in st.session_state:
             del st.session_state["forseti_agent"]
+
+        _logger.log_user_action(
+            action="change_provider",
+            user_id=user_id,
+            details=f"{old_provider} -> {selected_provider}",
+        )
         st.rerun()
 
     # Model selection for current provider
@@ -208,7 +255,7 @@ def _display_provider_selector() -> None:
         st.session_state.llm_model = current_model
 
     selected_model = st.selectbox(
-        "Modèle",
+        _("sidebar_model"),
         options=model_keys,
         index=model_keys.index(current_model) if current_model in model_keys else 0,
         format_func=lambda x: provider_config["models"][x],
@@ -217,10 +264,17 @@ def _display_provider_selector() -> None:
 
     # Update model if changed
     if selected_model != st.session_state.llm_model:
+        old_model = st.session_state.llm_model
         st.session_state.llm_model = selected_model
         # Clear cached agent
         if "forseti_agent" in st.session_state:
             del st.session_state["forseti_agent"]
+
+        _logger.log_user_action(
+            action="change_model",
+            user_id=user_id,
+            details=f"{old_model} -> {selected_model}",
+        )
         st.rerun()
 
 
@@ -269,14 +323,14 @@ def _display_status_indicators() -> None:
 
     # TODO: Replace with actual health checks
     status_items = [
-        ("Redis", "🟢", "Connecté"),
-        ("Firecrawl", "🔴", "Non configuré"),
-        ("RAG", "🔴", "En développement"),
-        ("Opik", "🟡", "Planifié"),
+        ("status_redis", "🟢", "status_connected"),
+        ("status_firecrawl", "🔴", "status_not_configured"),
+        ("status_rag", "🔴", "status_in_development"),
+        ("status_opik", "🟡", "status_planned"),
     ]
 
-    for name, icon, tooltip in status_items:
-        st.caption(f"{icon} {name}")
+    for name_key, icon, tooltip_key in status_items:
+        st.caption(f"{icon} {_(name_key)}")
 
 
 def init_session_state() -> None:

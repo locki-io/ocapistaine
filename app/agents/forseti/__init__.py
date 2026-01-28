@@ -17,7 +17,7 @@ from .models import (
     CHARTER_VIOLATIONS,
     CHARTER_ENCOURAGED,
 )
-from .prompts import PERSONA_PROMPT
+from .prompts import PERSONA_PROMPT, CATEGORY_DESCRIPTIONS
 
 __all__ = [
     "ForsetiAgent",
@@ -29,6 +29,7 @@ __all__ = [
     "BatchItem",
     "BatchResult",
     "CATEGORIES",
+    "CATEGORY_DESCRIPTIONS",
     "CHARTER_VIOLATIONS",
     "CHARTER_ENCOURAGED",
     "PERSONA_PROMPT",
