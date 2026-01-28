@@ -11,7 +11,8 @@ __pycache__/
 .venv
 poetry.lock
 .env
-# 
+.streamlit/*
+# logs
 logs/*
 *.log
 

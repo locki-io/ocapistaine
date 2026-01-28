@@ -309,7 +309,7 @@ Based on [Checkpoint 1 Blog Post](../../docs/blog/2026-01-15-let-the-journey-beg
 - [x] LLM-based mutations (Ollama/Mistral)
 - [x] Redis storage for validation results
 - [x] Opik dataset export for prompt optimization
-- [ ] Forseti 461 prompt optimization loop
+- [x] Forseti 461 prompt optimization loop
 
 ### Phase 2: Document Pipeline
 
@@ -326,7 +326,7 @@ Based on [Checkpoint 1 Blog Post](../../docs/blog/2026-01-15-let-the-journey-beg
 ### Phase 4: Quality & Observability
 
 - [x] Opik tracing integration (partial)
-- [ ] Evaluation agent (LLM-as-judge)
+- [x] Evaluation agent (LLM-as-judge)
 - [ ] Hallucination detection
 
 ### Phase 5: Multi-Channel

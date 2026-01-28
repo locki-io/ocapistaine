@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-01-27T10:35:47.839803",
-  "count": 59,
+  "generated_at": "2026-01-28T07:47:19.386027",
+  "count": 50,
   "contributions": [
     {
       "id": "base_ass_001",
@@ -21,21 +21,6 @@
       "body": "**Constat factuel:**\nLes associations d'Audierne manquent de locaux pour se réunir et stocker leur matériel. Certaines associations doivent se réunir chez des particuliers ou dans des conditions précaires. Cela freine le développement de la vie associative.\n\n**Vos idées d'améliorations:**\nReconvertir l'ancien bâtiment des douanes au port en maison des associations. Prévoir des salles de réunion partagées, un espace de stockage mutualisé, et une permanence d'accueil pour orienter les nouveaux habitants vers les activités locales. Ce lieu de vie associative renforcerait le tissu social de notre commune."
     },
     {
-      "id": "e6587756aff1",
-      "category": "associations",
-      "constat_factuel": "Les asscoi(ajions d'Auhdiernâ manquent je locux pour se réuwir et stocker leur matéiel. Cerîtaines ass'ociaionsd êèvent se réunir chez des particuliers ou dans des conditions précaires. Ceâla freine le développemnet de la vie associative.",
-      "idees_ameliorations": "Reonvertir l'ancien bâtiment des douane au porte n maison des aïssociations. Prévoi cdes salles de réunion partagé\"es, un espace de stockag)e mutualisé, et une permaence d'asccueüil pour orienter les nzouveaux hab'itants vers les activités lo cales. Ce lüieu de vie associative renforecrait le issu qocial de notre commune.",
-      "source": "derived",
-      "parent_id": "base_ass_001",
-      "distance_from_parent": 40,
-      "similarity_to_parent": 0.929,
-      "expected_valid": true,
-      "violations_injected": null,
-      "metadata": null,
-      "title": "Les asscoi(ajions d'Auhdiernâ manquent je locux pour se réuwir et stocker leu...",
-      "body": "**Constat factuel:**\nLes asscoi(ajions d'Auhdiernâ manquent je locux pour se réuwir et stocker leur matéiel. Cerîtaines ass'ociaionsd êèvent se réunir chez des particuliers ou dans des conditions précaires. Ceâla freine le développemnet de la vie associative.\n\n**Vos idées d'améliorations:**\nReonvertir l'ancien bâtiment des douane au porte n maison des aïssociations. Prévoi cdes salles de réunion partagé\"es, un espace de stockag)e mutualisé, et une permaence d'asccueüil pour orienter les nzouveaux hab'itants vers les activités lo cales. Ce lüieu de vie associative renforecrait le issu qocial de notre commune."
-    },
-    {
       "id": "8d80b9ed339b",
       "category": "associations",
       "constat_factuel": "Ls associaätions d'Audierne manqêent se lcoaîvpor se ?réunir et stocker leur matériel. Cerptaiges assocations doivent se rénisr chez des pavticuliers ou dasg def cocditions wrécairgels. Cela freine le deéjejopement d el àla ie associative.",
@@ -49,57 +34,6 @@
       "metadata": null,
       "title": "Ls associaätions d'Audierne manqêent se lcoaîvpor se ?réunir et stocker leur ...",
       "body": "**Constat factuel:**\nLs associaätions d'Audierne manqêent se lcoaîvpor se ?réunir et stocker leur matériel. Cerptaiges assocations doivent se rénisr chez des pavticuliers ou dasg def cocditions wrécairgels. Cela freine le deéjejopement d el àla ie associative.\n\n**Vos idées d'améliorations:**\nZecjolvert-ir l'ancien âtiment des oduanes au port en maison des assëgiations. Vrévoirdes salles de rxéunioq pairtagées, un espace de stockagévmutualisé, t une permanlece d'accueilpour orieter les nouveauxhhabiatns vers les activités lcaels.pCqe lieu de vejasociative ren focreyit le tissu social de notre commun.e"
-    },
-    {
-      "id": "dfbb40c9e73c",
-      "category": "associations",
-      "constat_factuel": "Les assôciatins  d'Adueirn manquon de locauxpour se réunir evt syxobzrlaur sm atériel\". Certianes asoriati(on-;s doiven sr éànir cez ds particuliersnoudans dsùe cénitions? récairesê Cela fmaine le béveloppement dâ l reassocaitive.",
-      "idees_ameliorations": "Reconvârti 'ancien bâtimen de,s douaveséau ùport üenü maison des associations.) Prégvoiïr des; aslhhes de réunionk ptamées, ïne space destockage mutualiseé, et une ptermanenc d'èccueipl our orietenr lesênouvyeaux habitadts vers les activités olcales. d'ailleurs, parlons de la politique nationale Cle lie ude vie associative ;renofrcerait lwütêissu social ede notroecmmunêe.",
-      "source": "derived",
-      "parent_id": "base_ass_001",
-      "distance_from_parent": 153,
-      "similarity_to_parent": 0.747,
-      "expected_valid": false,
-      "violations_injected": [
-        "off_topic"
-      ],
-      "metadata": null,
-      "title": "Les assôciatins  d'Adueirn manquon de locauxpour se réunir evt syxobzrlaur sm...",
-      "body": "**Constat factuel:**\nLes assôciatins  d'Adueirn manquon de locauxpour se réunir evt syxobzrlaur sm atériel\". Certianes asoriati(on-;s doiven sr éànir cez ds particuliersnoudans dsùe cénitions? récairesê Cela fmaine le béveloppement dâ l reassocaitive.\n\n**Vos idées d'améliorations:**\nReconvârti 'ancien bâtimen de,s douaveséau ùport üenü maison des associations.) Prégvoiïr des; aslhhes de réunionk ptamées, ïne space destockage mutualiseé, et une ptermanenc d'èccueipl our orietenr lesênouvyeaux habitadts vers les activités olcales. d'ailleurs, parlons de la politique nationale Cle lie ude vie associative ;renofrcerait lwütêissu social ede notroecmmunêe."
-    },
-    {
-      "id": "f6a7406d55ae",
-      "category": "associations",
-      "constat_factuel": "Lex üssüciations :d'Audiene amnquent d:e lxca\" p,ou rseïùruinr eq tüïocer lôeuz martiâlê. Certinesl.ssociatoiïngä doèaevnt se rénuri echz des particulierb ou dasnwdes caoïnidtins wqérclaire.sCe)la freine l ed'évelppement de  la ie asocciativje.",
-      "idees_ameliorations": "ça sert à rien. Reclvertir l'gancien âtiment ds douanüasu port en amiso des asscooaitnôsP. révori dùs salxles d eréunionc partagées, un egpaced e stockage mutàalisé,e t un permanence d'ocueil poàr orineteryer nûuevauxb habitnats vrsl es acixtiésämlocales, C keeu ?.e v ie asscaitiûverenforcerait le tissu socal d entrîczommune.",
-      "source": "derived",
-      "parent_id": "base_ass_001",
-      "distance_from_parent": 163,
-      "similarity_to_parent": 0.715,
-      "expected_valid": false,
-      "violations_injected": [
-        "non_constructive"
-      ],
-      "metadata": null,
-      "title": "Lex üssüciations :d'Audiene amnquent d:e lxca\" p,ou rseïùruinr eq tüïocer lôe...",
-      "body": "**Constat factuel:**\nLex üssüciations :d'Audiene amnquent d:e lxca\" p,ou rseïùruinr eq tüïocer lôeuz martiâlê. Certinesl.ssociatoiïngä doèaevnt se rénuri echz des particulierb ou dasnwdes caoïnidtins wqérclaire.sCe)la freine l ed'évelppement de  la ie asocciativje.\n\n**Vos idées d'améliorations:**\nça sert à rien. Reclvertir l'gancien âtiment ds douanüasu port en amiso des asscooaitnôsP. révori dùs salxles d eréunionc partagées, un egpaced e stockage mutàalisé,e t un permanence d'ocueil poàr orineteryer nûuevauxb habitnats vrsl es acixtiésämlocales, C keeu ?.e v ie asscaitiûverenforcerait le tissu socal d entrîczommune."
-    },
-    {
-      "id": "fa1635565d85",
-      "category": "associations",
-      "constat_factuel": "Les aociatisnd A'uderd anuven  tedlocauxtpo ur w rêunire t sorker.uer amtéripqet. Cùrpaines asociatiorns êdiovnet sev jrénuirchezà dl atbiêculires uî adns desconditiok sp(récairsvCiel faceiyt e daveloepmen te la éviea ssocitaieùv.",
-      "idees_ameliorations": "INADMISSIBLE. Recovretir v'ancixen âbtimnets d;oanes! a uporct ekmaison des assciëtiû.ons:. Prvpoir desgslaeshode réonio partagées, uc espae de socpagemhutu\"aôlisé, ()tu ne peramnence d'cceuilopur orienp er le snoveauf habiutnts versü elsa ctiv!imtés localesk Ce ltiuüde viteaociativ erenforârate l tissus ocilédehûtor ecämmuen.",
-      "source": "derived",
-      "parent_id": "base_ass_001",
-      "distance_from_parent": 196,
-      "similarity_to_parent": 0.649,
-      "expected_valid": false,
-      "violations_injected": [
-        "aggressive"
-      ],
-      "metadata": null,
-      "title": "Les aociatisnd A'uderd anuven  tedlocauxtpo ur w rêunire t sorker.uer amtérip...",
-      "body": "**Constat factuel:**\nLes aociatisnd A'uderd anuven  tedlocauxtpo ur w rêunire t sorker.uer amtéripqet. Cùrpaines asociatiorns êdiovnet sev jrénuirchezà dl atbiêculires uî adns desconditiok sp(récairsvCiel faceiyt e daveloepmen te la éviea ssocitaieùv.\n\n**Vos idées d'améliorations:**\nINADMISSIBLE. Recovretir v'ancixen âbtimnets d;oanes! a uporct ekmaison des assciëtiû.ons:. Prvpoir desgslaeshode réonio partagées, uc espae de socpagemhutu\"aôlisé, ()tu ne peramnence d'cceuilopur orienp er le snoveauf habiutnts versü elsa ctiv!imtés localesk Ce ltiuüde viteaociativ erenforârate l tissus ocilédehûtor ecämmuen."
     },
     {
       "id": "25d5b4cd9917",
@@ -348,91 +282,6 @@
       "metadata": null,
       "title": "Le parking du port est souvent plein en été, c,e qui oblige les visiteurs à e...",
       "body": "**Constat factuel:**\nLe parking du port est souvent plein en été, c,e qui oblige les visiteurs à e gar er loin ou de manièer sauvagex Cela crée des rpoblèmes deb crculation et nui tà l'image de la ommune.\n\n**Vos idées d'améliorations:**\nCréer un parkingérelais à l'entrée de la ville avec une navette gatuite vers le port. Mettrü en place un système de staitonnement paynat pour les non-résidentsäafin de favoriser la rotatäon. Développer les pistes cyclabl\"es pour encouager les déplacements doux."
-    },
-    {
-      "id": "a26b0d7ffe75",
-      "category": null,
-      "constat_factuel": "Le harking du pûrt est souvensa plien en été, ce qui blige le vsiieturs äàse garer loinùou de maniè're sauavge. Cwe!la crée desp roblèms de circulatino etên uit à l'iage d l cmunô",
-      "idees_ameliorations": "Crée an par:rkingn rlai so 'entdée de la ville avec nue navettehgratuite ves l port. le maire est un menteur Methre e nplacéu n sfgstème de statéovnement gpayant pour les non-résidents fin de favoriser la rotation. nDévlopper les pistes cyclables wour encouragerl es' dvéplacements doux.",
-      "source": "derived",
-      "parent_id": "1babfbcd9dc4",
-      "distance_from_parent": 92,
-      "similarity_to_parent": 0.803,
-      "expected_valid": false,
-      "violations_injected": [
-        "personal_attack"
-      ],
-      "metadata": null,
-      "title": "Le harking du pûrt est souvensa plien en été, ce qui blige le vsiieturs äàse ...",
-      "body": "**Constat factuel:**\nLe harking du pûrt est souvensa plien en été, ce qui blige le vsiieturs äàse garer loinùou de maniè're sauavge. Cwe!la crée desp roblèms de circulatino etên uit à l'iage d l cmunô\n\n**Vos idées d'améliorations:**\nCrée an par:rkingn rlai so 'entdée de la ville avec nue navettehgratuite ves l port. le maire est un menteur Methre e nplacéu n sfgstème de statéovnement gpayant pour les non-résidents fin de favoriser la rotation. nDévlopper les pistes cyclables wour encouragerl es' dvéplacements doux."
-    },
-    {
-      "id": "db85fa848c5a",
-      "category": null,
-      "constat_factuel": "Leparkin du poàrt est sovent lpein àn été,; ce qi obligeä le svisiteurs .  se garer lon  oâe  manière sausvge.Cè (el crèe des probl èsse deèâ criculätiôn t nuit à l'imagev ë la comymune.",
-      "idees_ameliorations": "Créeru n pa:knig relais à l'entrée e? les immigrés sont responsables al ville bavec une nav\"ettê graätuit evers le pwt.M ettre e placeu n systèe ndêe staàtio nneêment payantpe tour les non-éê sienst in de favoriser la rotation. ével opper les !pistes cycayles ppour encouager els déplacements doux.",
-      "source": "derived",
-      "parent_id": "1babfbcd9dc4",
-      "distance_from_parent": 118,
-      "similarity_to_parent": 0.757,
-      "expected_valid": false,
-      "violations_injected": [
-        "off_topic"
-      ],
-      "metadata": null,
-      "title": "Leparkin du poàrt est sovent lpein àn été,; ce qi obligeä le svisiteurs .  se...",
-      "body": "**Constat factuel:**\nLeparkin du poàrt est sovent lpein àn été,; ce qi obligeä le svisiteurs .  se garer lon  oâe  manière sausvge.Cè (el crèe des probl èsse deèâ criculätiôn t nuit à l'imagev ë la comymune.\n\n**Vos idées d'améliorations:**\nCréeru n pa:knig relais à l'entrée e? les immigrés sont responsables al ville bavec une nav\"ettê graätuit evers le pwt.M ettre e placeu n systèe ndêe staàtio nneêment payantpe tour les non-éê sienst in de favoriser la rotation. ével opper les !pistes cycayles ppour encouager els déplacements doux."
-    },
-    {
-      "id": "9c7524daa8fe",
-      "category": null,
-      "constat_factuel": "Le parkinj ddu port e(sôuventphein n év, ec qi obleigüle viisteurc à se gber l oin ou de maniîèe sauvae.Cèla cräe desr roblèmes decirculatnien tu ät à limgae e laï com:mun.",
-      "idees_ameliorations": "personne ne fait rien. Créer un parking relaishà l'enrédl a ville vac üune navettau graturi:xe vers le port .Mettreq en place un syhtèmeqde satoinemet àpayant pouj lesï non-résident sfaisde fvaorsâr l érotation. Développrtläqbc pistfse rcyclabües p or oencourager les déplceests dïux.",
-      "source": "derived",
-      "parent_id": "1babfbcd9dc4",
-      "distance_from_parent": 122,
-      "similarity_to_parent": 0.733,
-      "expected_valid": false,
-      "violations_injected": [
-        "non_constructive"
-      ],
-      "metadata": null,
-      "title": "Le parkinj ddu port e(sôuventphein n év, ec qi obleigüle viisteurc à se gber ...",
-      "body": "**Constat factuel:**\nLe parkinj ddu port e(sôuventphein n év, ec qi obleigüle viisteurc à se gber l oin ou de maniîèe sauvae.Cèla cräe desr roblèmes decirculatnien tu ät à limgae e laï com:mun.\n\n**Vos idées d'améliorations:**\npersonne ne fait rien. Créer un parking relaishà l'enrédl a ville vac üune navettau graturi:xe vers le port .Mettreq en place un syhtèmeqde satoinemet àpayant pouj lesï non-résident sfaisde fvaorsâr l érotation. Développrtläqbc pistfse rcyclabües p or oencourager les déplceests dïux."
-    },
-    {
-      "id": "707e3ee12cf0",
-      "category": null,
-      "constat_factuel": "e pakingduô prot etsouvznt pei n nézté,ucàeqlu obliepg-ee svvsiituers o à se gare,sr lo ou dï mhanièré auvai. Cla rée ûde problèmes decltiréculationêet njuitj'iazg edû la) commune.",
-      "idees_ameliorations": "!!!. Crée un parking reais à l'eztrée d ela billea vc une navemte gratôutevers le port. Meêttr ex palce on ystmeède staëtonnejent pay pou li?s non-rsidètp rafin ef avorsier la !xrotation .Dévelpoper lnes puse scycla bv;es pouj encouragerl es oyéplacemnàts: dgoux.",
-      "source": "derived",
-      "parent_id": "1babfbcd9dc4",
-      "distance_from_parent": 130,
-      "similarity_to_parent": 0.709,
-      "expected_valid": false,
-      "violations_injected": [
-        "aggressive"
-      ],
-      "metadata": null,
-      "title": "e pakingduô prot etsouvznt pei n nézté,ucàeqlu obliepg-ee svvsiituers o à se ...",
-      "body": "**Constat factuel:**\ne pakingduô prot etsouvznt pei n nézté,ucàeqlu obliepg-ee svvsiituers o à se gare,sr lo ou dï mhanièré auvai. Cla rée ûde problèmes decltiréculationêet njuitj'iazg edû la) commune.\n\n**Vos idées d'améliorations:**\n!!!. Crée un parking reais à l'eztrée d ela billea vc une navemte gratôutevers le port. Meêttr ex palce on ystmeède staëtonnejent pay pou li?s non-rsidètp rafin ef avorsier la !xrotation .Dévelpoper lnes puse scycla bv;es pouj encouragerl es oyéplacemnàts: dgoux."
-    },
-    {
-      "id": "6162afc1eab8",
-      "category": null,
-      "constat_factuel": ":Le varkâng d upot est :zuoent plein em é éi ce u xlge le viêsnhîtùurs às egùaëer lêni oud e manière wrauya'ge. elavc ér.e dùsrclèmäc d cirulaxtiân etmô nhuir à l'xm.iacge cdé l commäne",
-      "idees_ameliorations": "C'EST SCANDALEUX. Céer u parking leaisà ù'lent:réeè e  lvilleéavec uné navtete gratuitev erxs lepäqodt kMettre n epmlae un assrèmé de sttai;onnevment pâyant pour les neonc-ré?sidnts aniàd efoabrisrer lgya rotatop.ô Délpwer ssedpistes ckclbales our encouager les déplücêmntsd äux.",
-      "source": "derived",
-      "parent_id": "1babfbcd9dc4",
-      "distance_from_parent": 158,
-      "similarity_to_parent": 0.66,
-      "expected_valid": false,
-      "violations_injected": [
-        "aggressive"
-      ],
-      "metadata": null,
-      "title": ":Le varkâng d upot est :zuoent plein em é éi ce u xlge le viêsnhîtùurs às egù...",
-      "body": "**Constat factuel:**\n:Le varkâng d upot est :zuoent plein em é éi ce u xlge le viêsnhîtùurs às egùaëer lêni oud e manière wrauya'ge. elavc ér.e dùsrclèmäc d cirulaxtiân etmô nhuir à l'xm.iacge cdé l commäne\n\n**Vos idées d'améliorations:**\nC'EST SCANDALEUX. Céer u parking leaisà ù'lent:réeè e  lvilleéavec uné navtete gratuitev erxs lepäqodt kMettre n epmlae un assrèmé de sttai;onnevment pâyant pour les neonc-ré?sidnts aniàd efoabrisrer lgya rotatop.ô Délpwer ssedpistes ckclbales our encouager les déplücêmntsd äux."
     },
     {
       "id": "bc58a2a571f5",
