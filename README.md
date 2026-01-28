@@ -37,34 +37,28 @@ python src/crawl_municipal_docs.py --source all --mode scrape
 
 ## Running the Application
 
-### Local Development
+### 1. Start the Streamlit UI
+
+The primary way to start the OCapistaine interface is via the unified startup script. It handles environment configuration, port management, and optional public access.
 
 ```bash
-# Install dependencies
-poetry install
-
-# Start Streamlit locally
+# Start the interactive UI
 ./scripts/run_streamlit.sh
-
-# Access at http://localhost:8502
 ```
 
-### Public Access (via ngrok + vaettir proxy)
+**Access Point:**
+- **Local**: [http://localhost:8502](http://localhost:8502)
 
-To make the app publicly accessible at `https://ocapistaine.vaettir.locki.io`:
+### 2. Start the API Backend (Optional)
+
+If you need the REST API or N8N/Vaettir webhook integrations, start the FastAPI server in a separate terminal:
 
 ```bash
-# Terminal 1: Start Streamlit
-./scripts/run_streamlit.sh
-
-# Terminal 2: Start ngrok tunnel
-poetry run python scripts/start_ngrok.py
-
-# Access points:
-# - Local:  http://localhost:8502
-# - ngrok:  https://ocapistaine.ngrok-free.app
-# - Public: https://ocapistaine.vaettir.locki.io
+# Start FastAPI backend
+poetry run uvicorn app.main:app --host 0.0.0.0 --port 8050 --reload
 ```
+
+Access API documentation at [http://localhost:8050/docs](http://localhost:8050/docs).
 
 ### VS Code Integration
 
@@ -72,11 +66,10 @@ poetry run python scripts/start_ngrok.py
 
 | Task | Description |
 |------|-------------|
-| 🚀 Start OCapistaine (Streamlit + ngrok) | One-click full startup (default build task) |
-| 🛑 Stop OCapistaine (All) | Stop both Streamlit and ngrok |
+| 🚀 Start OCapistaine (Local) | One-click local startup |
+| 🛑 Stop OCapistaine | Stop the Streamlit process |
 | 📊 Check Status | View running services status |
-| 🔗 Open in Browser (Local) | Open http://localhost:8502 |
-| 🌐 Open in Browser (Public) | Open https://ocapistaine.vaettir.locki.io |
+| 🔗 Open in Browser | Open http://localhost:8502 |
 
 **Debug Configurations** (F5 or Run & Debug panel):
 
@@ -85,7 +78,6 @@ poetry run python scripts/start_ngrok.py
 | Run Uvicorn (Poetry) | Start FastAPI server on port 8050 with debugger |
 | Run Streamlit (Debug) | Start Streamlit UI on port 8502 with debugger |
 | Full Stack (Uvicorn + Streamlit) | Both services with debugging |
-| 🚀 OCapistaine Public | Streamlit + ngrok for public access |
 
 **Quick Start:**
 - Press `Cmd+Shift+B` to run the default build task (starts everything)
@@ -217,7 +209,6 @@ poetry run python -c "from app.auth import hash_password; print(hash_password('y
 | `FIRECRAWL_API_KEY` | Firecrawl API key for web scraping | |
 | `OPIK_API_KEY`      | Opik API key for LLM observability | |
 | `OPIK_WORKSPACE`    | Opik workspace name                | |
-| `NGROK_DOMAIN`      | Fixed ngrok domain (paid plan)     | `ocapistaine.ngrok-free.app` |
 | `STREAMLIT_PORT`    | Local Streamlit port               | `8502` |
 | `DISCORD_INVITE_URL`| Discord invite link for auth page  | `https://discord.gg/yourserver` |
 

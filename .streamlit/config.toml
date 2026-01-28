@@ -27,6 +27,8 @@ gatherUsageStats = false
 
 # These will be set dynamically based on environment
 # serverAddress and serverPort will use STREAMLIT_BROWSER_SERVER_ADDRESS and STREAMLIT_BROWSER_SERVER_PORT
+# serverAddress = "ocapistaine.vaettir.locki.io"
+# serverPort = 80
 
 [client]
 # Show detailed error messages in development

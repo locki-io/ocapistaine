@@ -72,12 +72,13 @@ def main():
     print(f'export STREAMLIT_SERVER_ENABLE_CORS=true')
     print(f'export STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION=false')
 
-    # Optional: Set browser config if NGROK_DOMAIN is set
-    ngrok_domain = os.getenv("NGROK_DOMAIN", "").strip()
-    if ngrok_domain:
-        ngrok_domain = ngrok_domain.replace("https://", "").replace("http://", "")
-        print(f'export STREAMLIT_BROWSER_SERVER_ADDRESS="{ngrok_domain}"')
-        print(f'export STREAMLIT_BROWSER_SERVER_PORT=443')
+    # Optional: Set browser config if NGROK_DOMAIN is set AND USE_NGROK is true
+    # We use the production proxy address as the browser address
+    use_ngrok = os.getenv("USE_NGROK", "false").lower() == "true"
+    
+    if use_ngrok:
+        print(f'export STREAMLIT_BROWSER_SERVER_ADDRESS="ocapistaine.vaettir.locki.io"')
+        print(f'export STREAMLIT_BROWSER_SERVER_PORT=80')
 
     # Show what we configured (as a comment)
     print(f"\n# Configured allowed origins:", file=os.sys.stderr)
