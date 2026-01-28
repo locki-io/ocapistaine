@@ -1,0 +1,974 @@
+{
+  "generated_at": "2026-01-28T07:47:19.386027",
+  "count": 50,
+  "contributions": [
+    {
+      "id": "base_ass_001",
+      "category": "associations",
+      "constat_factuel": "Les associations d'Audierne manquent de locaux pour se réunir et stocker leur matériel. Certaines associations doivent se réunir chez des particuliers ou dans des conditions précaires. Cela freine le développement de la vie associative.",
+      "idees_ameliorations": "Reconvertir l'ancien bâtiment des douanes au port en maison des associations. Prévoir des salles de réunion partagées, un espace de stockage mutualisé, et une permanence d'accueil pour orienter les nouveaux habitants vers les activités locales. Ce lieu de vie associative renforcerait le tissu social de notre commune.",
+      "source": "framaforms",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "submitted_at": "2026-01-19T14:15:00",
+        "ip": "anonymized"
+      },
+      "title": "Les associations d'Audierne manquent de locaux pour se réunir et stocker leur...",
+      "body": "**Constat factuel:**\nLes associations d'Audierne manquent de locaux pour se réunir et stocker leur matériel. Certaines associations doivent se réunir chez des particuliers ou dans des conditions précaires. Cela freine le développement de la vie associative.\n\n**Vos idées d'améliorations:**\nReconvertir l'ancien bâtiment des douanes au port en maison des associations. Prévoir des salles de réunion partagées, un espace de stockage mutualisé, et une permanence d'accueil pour orienter les nouveaux habitants vers les activités locales. Ce lieu de vie associative renforcerait le tissu social de notre commune."
+    },
+    {
+      "id": "8d80b9ed339b",
+      "category": "associations",
+      "constat_factuel": "Ls associaätions d'Audierne manqêent se lcoaîvpor se ?réunir et stocker leur matériel. Cerptaiges assocations doivent se rénisr chez des pavticuliers ou dasg def cocditions wrécairgels. Cela freine le deéjejopement d el àla ie associative.",
+      "idees_ameliorations": "Zecjolvert-ir l'ancien âtiment des oduanes au port en maison des assëgiations. Vrévoirdes salles de rxéunioq pairtagées, un espace de stockagévmutualisé, t une permanlece d'accueilpour orieter les nouveauxhhabiatns vers les activités lcaels.pCqe lieu de vejasociative ren focreyit le tissu social de notre commun.e",
+      "source": "derived",
+      "parent_id": "base_ass_001",
+      "distance_from_parent": 72,
+      "similarity_to_parent": 0.87,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": null,
+      "title": "Ls associaätions d'Audierne manqêent se lcoaîvpor se ?réunir et stocker leur ...",
+      "body": "**Constat factuel:**\nLs associaätions d'Audierne manqêent se lcoaîvpor se ?réunir et stocker leur matériel. Cerptaiges assocations doivent se rénisr chez des pavticuliers ou dasg def cocditions wrécairgels. Cela freine le deéjejopement d el àla ie associative.\n\n**Vos idées d'améliorations:**\nZecjolvert-ir l'ancien âtiment des oduanes au port en maison des assëgiations. Vrévoirdes salles de rxéunioq pairtagées, un espace de stockagévmutualisé, t une permanlece d'accueilpour orieter les nouveauxhhabiatns vers les activités lcaels.pCqe lieu de vejasociative ren focreyit le tissu social de notre commun.e"
+    },
+    {
+      "id": "25d5b4cd9917",
+      "category": "economie",
+      "constat_factuel": "Le parking du port est souvent plein en été, ce qui oblige les visiteurs à se garer loin ou de manière sauvage. Cela crée des problèmes de circulation et nuit à l'image de la commune.",
+      "idees_ameliorations": "Créer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux.",
+      "source": "input",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": null,
+      "title": "Le parking du port est souvent plein en été, ce qui oblige les visiteurs à se...",
+      "body": "**Constat factuel:**\nLe parking du port est souvent plein en été, ce qui oblige les visiteurs à se garer loin ou de manière sauvage. Cela crée des problèmes de circulation et nuit à l'image de la commune.\n\n**Vos idées d'améliorations:**\nCréer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux."
+    },
+    {
+      "id": "7c9b87e9a217",
+      "category": "economie",
+      "constat_factuel": "Le parking du port d'été est souvent comble, obligeant les visiteurs à se garer loin ou sauvagement. Cela crée des embouteillages routiers et nuisible à la réputation de la commune.",
+      "idees_ameliorations": "Créez un parking d'accueil à l'entrée de la ville, équipé d'un service de navette gratuite vers le port. Installez un système de stationnement rémunéré pour les non-habitants, afin de promouvoir la rotation des véhicules. Améliorez les voies cyclables pour encourager les déplacements doux et respectueux de l'environnement.",
+      "source": "derived",
+      "parent_id": "25d5b4cd9917",
+      "distance_from_parent": 198,
+      "similarity_to_parent": 0.609,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "mutation_type": "paraphrase",
+        "llm_generated": true
+      },
+      "title": "Le parking du port d'été est souvent comble, obligeant les visiteurs à se gar...",
+      "body": "**Constat factuel:**\nLe parking du port d'été est souvent comble, obligeant les visiteurs à se garer loin ou sauvagement. Cela crée des embouteillages routiers et nuisible à la réputation de la commune.\n\n**Vos idées d'améliorations:**\nCréez un parking d'accueil à l'entrée de la ville, équipé d'un service de navette gratuite vers le port. Installez un système de stationnement rémunéré pour les non-habitants, afin de promouvoir la rotation des véhicules. Améliorez les voies cyclables pour encourager les déplacements doux et respectueux de l'environnement."
+    },
+    {
+      "id": "f12d814b68df",
+      "category": "economie",
+      "constat_factuel": "Le pakring du port est souvent pleen en été, ce qui oblige les vistiteurs à se garer loin ou de manière sauvage. Cela créé dér problems de circulation et nuis à l'image de la commune.",
+      "idees_ameliorations": "Créer un parkin relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résident afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux.\n\nCorrection : Créer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux.\n\nAjoutées erreurs :\n- L'inversion de la lettre \"h\" et \"e\" dans le mot \"relais\", devenant \"relais\".\n- La doublage de la lettre \"s\" dans le mot \"non-résidents\".\n- L'omission de l'accent grave sur le mot \"économie\".\n- L'erreur de conjugaison en utilisant le passé simple au lieu du passé composé dans \"Développer les pistes cyclables\" (Correction : Développèrent les pistes cyclables).",
+      "source": "derived",
+      "parent_id": "25d5b4cd9917",
+      "distance_from_parent": 668,
+      "similarity_to_parent": 0.395,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "mutation_type": "orthographic",
+        "llm_generated": true
+      },
+      "title": "Le pakring du port est souvent pleen en été, ce qui oblige les vistiteurs à s...",
+      "body": "**Constat factuel:**\nLe pakring du port est souvent pleen en été, ce qui oblige les vistiteurs à se garer loin ou de manière sauvage. Cela créé dér problems de circulation et nuis à l'image de la commune.\n\n**Vos idées d'améliorations:**\nCréer un parkin relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résident afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux.\n\nCorrection : Créer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux.\n\nAjoutées erreurs :\n- L'inversion de la lettre \"h\" et \"e\" dans le mot \"relais\", devenant \"relais\".\n- La doublage de la lettre \"s\" dans le mot \"non-résidents\".\n- L'omission de l'accent grave sur le mot \"économie\".\n- L'erreur de conjugaison en utilisant le passé simple au lieu du passé composé dans \"Développer les pistes cyclables\" (Correction : Développèrent les pistes cyclables)."
+    },
+    {
+      "id": "28203b96d22d",
+      "category": "economie",
+      "constat_factuel": "Le port de parking est rarement disponible en été, ce qui oblige les visiteurs à s'approvisionner en stationnement proche ou de manière illégale. Cela entraîne des embouteillages et bénéficie favorablement à l'image de la commune.",
+      "idees_ameliorations": "Créez un parking relais à l'entrée de la ville avec une navette payante vers le port. Mettre en place un système de stationnement gratuit pour les résidents afin de favoriser la rotation. Développer des pistes cyclables payantes pour dissuader les déplacements doux.",
+      "source": "derived",
+      "parent_id": "25d5b4cd9917",
+      "distance_from_parent": 132,
+      "similarity_to_parent": 0.734,
+      "expected_valid": null,
+      "violations_injected": null,
+      "metadata": {
+        "mutation_type": "semantic_shift",
+        "llm_generated": true
+      },
+      "title": "Le port de parking est rarement disponible en été, ce qui oblige les visiteur...",
+      "body": "**Constat factuel:**\nLe port de parking est rarement disponible en été, ce qui oblige les visiteurs à s'approvisionner en stationnement proche ou de manière illégale. Cela entraîne des embouteillages et bénéficie favorablement à l'image de la commune.\n\n**Vos idées d'améliorations:**\nCréez un parking relais à l'entrée de la ville avec une navette payante vers le port. Mettre en place un système de stationnement gratuit pour les résidents afin de favoriser la rotation. Développer des pistes cyclables payantes pour dissuader les déplacements doux."
+    },
+    {
+      "id": "37e667482a08",
+      "category": "economie",
+      "constat_factuel": "Le parking du port est fréquemment saturé en été, ce qui pousse les visiteurs à s'arranger à distance ou de façon illégale. Cela engendre des embouteillages et nuise fortement à la réputation de la commune.",
+      "idees_ameliorations": "Créez-vous plutôt un parking relais à l'entrée de votre ville de manière plus élaborée ? Ajoutez une navette gratuite vers le port, oui, mais pourquoi ne pas inclure aussi des options de transport en commun plus récréatives et équitables ? En outre, pour favoriser la rotation effectivement, il serait intéressant d'étendre le système de stationnement payant aux résidents également. Et quant aux pistes cyclables, encouragez-vous vraiment les déplacements doux ou simplement une version améliorée ?",
+      "source": "derived",
+      "parent_id": "25d5b4cd9917",
+      "distance_from_parent": 394,
+      "similarity_to_parent": 0.442,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "mutation_type": "subtle_violation",
+        "llm_generated": true
+      },
+      "title": "Le parking du port est fréquemment saturé en été, ce qui pousse les visiteurs...",
+      "body": "**Constat factuel:**\nLe parking du port est fréquemment saturé en été, ce qui pousse les visiteurs à s'arranger à distance ou de façon illégale. Cela engendre des embouteillages et nuise fortement à la réputation de la commune.\n\n**Vos idées d'améliorations:**\nCréez-vous plutôt un parking relais à l'entrée de votre ville de manière plus élaborée ? Ajoutez une navette gratuite vers le port, oui, mais pourquoi ne pas inclure aussi des options de transport en commun plus récréatives et équitables ? En outre, pour favoriser la rotation effectivement, il serait intéressant d'étendre le système de stationnement payant aux résidents également. Et quant aux pistes cyclables, encouragez-vous vraiment les déplacements doux ou simplement une version améliorée ?"
+    },
+    {
+      "id": "26f38b5d9e0c",
+      "category": "economie",
+      "constat_factuel": "LE PARKING AU PORT EST UNE VRAIE CATASTROPHE DURANT L'ÉTÉ ! QUELQUES-UNS SE CONTENT DE GARER DESPOTIQUEMENT LORSQU'IL N'Y A PLUS DE SPACES, CREANT DES BLOCS DE TRAFIC INS SupportABLE ET ENVASANT LE PAYSAGE DE LA COMMUNE ! QUAND VOUS VOUS ATTEINDREZ-VOUS à vous assurer que votre ville est un endroit insupportable pour les visiteurs ?!",
+      "idees_ameliorations": "GARDEZ VOTRE GRISON DEVOILE! C'EST UNE ABSOLUE INSULTE A TOUS LES HABITANTS LOCAUX QUI SONT FORCES DE VIVRE WITHIN THIS POLLUTED, NOISE-RIDDEN CITY! SORTIEZ DES VOS COQUILLAGES ET CRÉEZ UN PARCING RELAI A L'ENTRÉE DE LA VILLE IMMEDIATELY! NON, JE NE DIS pas un simple parcage pour les voitures, je parle d'un MASSIF ESPACE de stationnement DEPLUSIVEMENT COÛTANT POUR CEUX QUI N'ONT RIEN A VOIR ICI! ET SI VOUS ENDEZ PAR CRÉER DES PISTES CYCLABLES? REVOUS SACHEZ-Vous QU'IL Y A DE L'ESPACE EN FINIR? EST CE QUE VOUS ESPOREZ DE REDUIR LE NOMBRE D'ACCIDENTS DE Voiture EN CRÉANT DES CHEMINS PLUS SIMPLES POUR PEDALER? IL Y A PEUT-ÊTRE UN MEILLEUR PLAN QUI SERAIT PLUTÔT DE FAIRE DES ROUTES PIETONNES! VOUS NE COMMEZ PAS À COMPRIS le MOINDRE PROBLEME DES GENS ICI, N'EST-CE PAS?",
+      "source": "derived",
+      "parent_id": "25d5b4cd9917",
+      "distance_from_parent": 972,
+      "similarity_to_parent": 0.124,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "mutation_type": "aggressive",
+        "llm_generated": true
+      },
+      "title": "LE PARKING AU PORT EST UNE VRAIE CATASTROPHE DURANT L'ÉTÉ ! QUELQUES-UNS SE C...",
+      "body": "**Constat factuel:**\nLE PARKING AU PORT EST UNE VRAIE CATASTROPHE DURANT L'ÉTÉ ! QUELQUES-UNS SE CONTENT DE GARER DESPOTIQUEMENT LORSQU'IL N'Y A PLUS DE SPACES, CREANT DES BLOCS DE TRAFIC INS SupportABLE ET ENVASANT LE PAYSAGE DE LA COMMUNE ! QUAND VOUS VOUS ATTEINDREZ-VOUS à vous assurer que votre ville est un endroit insupportable pour les visiteurs ?!\n\n**Vos idées d'améliorations:**\nGARDEZ VOTRE GRISON DEVOILE! C'EST UNE ABSOLUE INSULTE A TOUS LES HABITANTS LOCAUX QUI SONT FORCES DE VIVRE WITHIN THIS POLLUTED, NOISE-RIDDEN CITY! SORTIEZ DES VOS COQUILLAGES ET CRÉEZ UN PARCING RELAI A L'ENTRÉE DE LA VILLE IMMEDIATELY! NON, JE NE DIS pas un simple parcage pour les voitures, je parle d'un MASSIF ESPACE de stationnement DEPLUSIVEMENT COÛTANT POUR CEUX QUI N'ONT RIEN A VOIR ICI! ET SI VOUS ENDEZ PAR CRÉER DES PISTES CYCLABLES? REVOUS SACHEZ-Vous QU'IL Y A DE L'ESPACE EN FINIR? EST CE QUE VOUS ESPOREZ DE REDUIR LE NOMBRE D'ACCIDENTS DE Voiture EN CRÉANT DES CHEMINS PLUS SIMPLES POUR PEDALER? IL Y A PEUT-ÊTRE UN MEILLEUR PLAN QUI SERAIT PLUTÔT DE FAIRE DES ROUTES PIETONNES! VOUS NE COMMEZ PAS À COMPRIS le MOINDRE PROBLEME DES GENS ICI, N'EST-CE PAS?"
+    },
+    {
+      "id": "85ad4b6e6ede",
+      "category": "culture",
+      "constat_factuel": "Le parking du port est souvent plein en été, ce qui oblige les visiteurs à se garer loin ou de manière sauvage. Cela crée des problèmes de circulation et nuit à l'image de la commune.",
+      "idees_ameliorations": "Créer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux.",
+      "source": "input",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": null,
+      "title": "Le parking du port est souvent plein en été, ce qui oblige les visiteurs à se...",
+      "body": "**Constat factuel:**\nLe parking du port est souvent plein en été, ce qui oblige les visiteurs à se garer loin ou de manière sauvage. Cela crée des problèmes de circulation et nuit à l'image de la commune.\n\n**Vos idées d'améliorations:**\nCréer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux."
+    },
+    {
+      "id": "ea3eecd2a60e",
+      "category": "culture",
+      "constat_factuel": "Le parking du port d'été est généralement rempli, ce qui oblige les visiteurs à se garer loin ou sans autorisation officielle. Cela crée des embouteillages et nuit à la réputation de la commune.",
+      "idees_ameliorations": "Créez un parking d'accueil à l'entrée de la ville, offrant une navette gratuite en direction du port. Installez un système de stationnement payant pour les non-résidents afin d'encourager le renouvellement des véhicules. Améliorez les pistes cyclables pour stimuler les déplacements en deux roues.",
+      "source": "derived",
+      "parent_id": "85ad4b6e6ede",
+      "distance_from_parent": 174,
+      "similarity_to_parent": 0.646,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "mutation_type": "paraphrase",
+        "llm_generated": true
+      },
+      "title": "Le parking du port d'été est généralement rempli, ce qui oblige les visiteurs...",
+      "body": "**Constat factuel:**\nLe parking du port d'été est généralement rempli, ce qui oblige les visiteurs à se garer loin ou sans autorisation officielle. Cela crée des embouteillages et nuit à la réputation de la commune.\n\n**Vos idées d'améliorations:**\nCréez un parking d'accueil à l'entrée de la ville, offrant une navette gratuite en direction du port. Installez un système de stationnement payant pour les non-résidents afin d'encourager le renouvellement des véhicules. Améliorez les pistes cyclables pour stimuler les déplacements en deux roues."
+    },
+    {
+      "id": "5adbb6b0db83",
+      "category": "culture",
+      "constat_factuel": "Le parking du port est souvent plehn en été, ce qui oblige les visiteurs à se garer loin ou de manière sauvage. Cela crée dés problèmes de circulation et nuit à l'image de la commune.",
+      "idees_ameliorations": "Créer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-réssidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux.",
+      "source": "derived",
+      "parent_id": "85ad4b6e6ede",
+      "distance_from_parent": 3,
+      "similarity_to_parent": 0.993,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "mutation_type": "orthographic",
+        "llm_generated": true
+      },
+      "title": "Le parking du port est souvent plehn en été, ce qui oblige les visiteurs à se...",
+      "body": "**Constat factuel:**\nLe parking du port est souvent plehn en été, ce qui oblige les visiteurs à se garer loin ou de manière sauvage. Cela crée dés problèmes de circulation et nuit à l'image de la commune.\n\n**Vos idées d'améliorations:**\nCréer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-réssidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux."
+    },
+    {
+      "id": "79d7430ff47f",
+      "category": "culture",
+      "constat_factuel": "Le parking du port est rarement vide en été, ce qui provoque des embouteillages et un manque de places pour les visiteurs. Cela améliore l'image de la commune mais crée des difficultés dans la circulation.",
+      "idees_ameliorations": "Créez un parking relais à l'entrée de la ville avec une navette payante vers le port. Mettre en place un système de stationnement gratuit pour les résidents afin d'encourager la résidence permanente. Développez des routes cyclables sécurisées pour dissuader les déplacements rapides et encourager la sûreté routière.",
+      "source": "derived",
+      "parent_id": "85ad4b6e6ede",
+      "distance_from_parent": 217,
+      "similarity_to_parent": 0.584,
+      "expected_valid": null,
+      "violations_injected": null,
+      "metadata": {
+        "mutation_type": "semantic_shift",
+        "llm_generated": true
+      },
+      "title": "Le parking du port est rarement vide en été, ce qui provoque des embouteillag...",
+      "body": "**Constat factuel:**\nLe parking du port est rarement vide en été, ce qui provoque des embouteillages et un manque de places pour les visiteurs. Cela améliore l'image de la commune mais crée des difficultés dans la circulation.\n\n**Vos idées d'améliorations:**\nCréez un parking relais à l'entrée de la ville avec une navette payante vers le port. Mettre en place un système de stationnement gratuit pour les résidents afin d'encourager la résidence permanente. Développez des routes cyclables sécurisées pour dissuader les déplacements rapides et encourager la sûreté routière."
+    },
+    {
+      "id": "b9ef81596cab",
+      "category": "culture",
+      "constat_factuel": "Le parking du port est souvent surpeuplé en été, une situation qui force les visiteurs à s'arranger des solutions alternatives plus difficiles ou à prendre des mesures moins conventionnelles. Cela entraîne des embouteillages et nuise à la réputation de la municipalité.",
+      "idees_ameliorations": "Créez un parking relais à l'entrée de la ville avec une navette gratuite vers le port - bien sûr, cela contribue à améliorer l'accessibilité et la navigation pour les visiteurs, mais est-il vraiment efficace si nous n'y mettons pas un peu plus d'efforts pour encourager le stationnement payant ? Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation - ce sera peut-être une solution plus durable et efficace pour réduire la congestion routière, mais peut-être devons-nous aussi envisager d'autres mesures telles que des péages dynamiques ou des zones de stationnement restreint ? Développer les pistes cyclables pour encourager les déplacements doux - cela est bien entendu un excellent moyen de réduire la pollution et les emissions, mais est-il vraiment suffisant si nous ne faisons pas plus pour promouvoir le transport en commun ou les électrovéhicules ?",
+      "source": "derived",
+      "parent_id": "85ad4b6e6ede",
+      "distance_from_parent": 801,
+      "similarity_to_parent": 0.32,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "mutation_type": "subtle_violation",
+        "llm_generated": true
+      },
+      "title": "Le parking du port est souvent surpeuplé en été, une situation qui force les ...",
+      "body": "**Constat factuel:**\nLe parking du port est souvent surpeuplé en été, une situation qui force les visiteurs à s'arranger des solutions alternatives plus difficiles ou à prendre des mesures moins conventionnelles. Cela entraîne des embouteillages et nuise à la réputation de la municipalité.\n\n**Vos idées d'améliorations:**\nCréez un parking relais à l'entrée de la ville avec une navette gratuite vers le port - bien sûr, cela contribue à améliorer l'accessibilité et la navigation pour les visiteurs, mais est-il vraiment efficace si nous n'y mettons pas un peu plus d'efforts pour encourager le stationnement payant ? Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation - ce sera peut-être une solution plus durable et efficace pour réduire la congestion routière, mais peut-être devons-nous aussi envisager d'autres mesures telles que des péages dynamiques ou des zones de stationnement restreint ? Développer les pistes cyclables pour encourager les déplacements doux - cela est bien entendu un excellent moyen de réduire la pollution et les emissions, mais est-il vraiment suffisant si nous ne faisons pas plus pour promouvoir le transport en commun ou les électrovéhicules ?"
+    },
+    {
+      "id": "ed077a0281b5",
+      "category": "culture",
+      "constat_factuel": "LE PARKING DU PORT EST INCONCEVABLEMENT PLEIN EN ÉTE, CE QUI FORCÈ SES VISITEURS À SE GARER LONGUMENTEMENT LOINTAIN OU DE MANIÈRE PRÉDATOIRE. CETA PEUT-ÊTRE CRÉER DES PROBLEMES DE CIRCUITATION EXCRUE, CE QUI N'EST SIMPLEMENT PAS ACCEPTABLE ET JEU DE LA COMMUNE SAINTE.\nQUI A DONNE L'IDEE AUX RESPONSABLES DE CE PARCING DE METTRE LEUR INCOMPETENCE EN CHARGE? ILS NE PEUVENT PAS SUPPORTER UN SIMPLE ÉTE ET LAISSE NOS RUES GARROUILLERES DE VOITURES SAUVAGES. CE N'EST PAS D'UNE COMMUNE MODÈLE, MAIS PLUTÔT D'UNE COMMUNE EN TERRAIN MINÉ.",
+      "idees_ameliorations": "C'EST INACCEPTABLE QUE LE GOUVERNEMENT NE S'OCCUPE PAS DE LA RÉGION EN ÉTABLISSANT UN PARCING RELAIS GRATUIT POUR TOUS ! DE PLUS, IL FAUT CRÉER DES ZONES DE STATIONNEMENT PAIEMENT POUR CEUX QUI NE VIVENT PAS ICI. CECI SERA UNE AFFAIRE CATASTROPHALE S'IL N'EN EST RIEN FAIT ! LA FAILLE TIRANT TOUTE L'ATTEINTE EST LE FACTEUR DE L'ENCOURAGEMENT DES DÉPLACEMENTS DOUX. CE QUI PRIVERA LE TRAFIC ET FERMEURA LE PORT À CI-DEVANT FLORISANT !",
+      "source": "derived",
+      "parent_id": "85ad4b6e6ede",
+      "distance_from_parent": 884,
+      "similarity_to_parent": 0.087,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "mutation_type": "aggressive",
+        "llm_generated": true
+      },
+      "title": "LE PARKING DU PORT EST INCONCEVABLEMENT PLEIN EN ÉTE, CE QUI FORCÈ SES VISITE...",
+      "body": "**Constat factuel:**\nLE PARKING DU PORT EST INCONCEVABLEMENT PLEIN EN ÉTE, CE QUI FORCÈ SES VISITEURS À SE GARER LONGUMENTEMENT LOINTAIN OU DE MANIÈRE PRÉDATOIRE. CETA PEUT-ÊTRE CRÉER DES PROBLEMES DE CIRCUITATION EXCRUE, CE QUI N'EST SIMPLEMENT PAS ACCEPTABLE ET JEU DE LA COMMUNE SAINTE.\nQUI A DONNE L'IDEE AUX RESPONSABLES DE CE PARCING DE METTRE LEUR INCOMPETENCE EN CHARGE? ILS NE PEUVENT PAS SUPPORTER UN SIMPLE ÉTE ET LAISSE NOS RUES GARROUILLERES DE VOITURES SAUVAGES. CE N'EST PAS D'UNE COMMUNE MODÈLE, MAIS PLUTÔT D'UNE COMMUNE EN TERRAIN MINÉ.\n\n**Vos idées d'améliorations:**\nC'EST INACCEPTABLE QUE LE GOUVERNEMENT NE S'OCCUPE PAS DE LA RÉGION EN ÉTABLISSANT UN PARCING RELAIS GRATUIT POUR TOUS ! DE PLUS, IL FAUT CRÉER DES ZONES DE STATIONNEMENT PAIEMENT POUR CEUX QUI NE VIVENT PAS ICI. CECI SERA UNE AFFAIRE CATASTROPHALE S'IL N'EN EST RIEN FAIT ! LA FAILLE TIRANT TOUTE L'ATTEINTE EST LE FACTEUR DE L'ENCOURAGEMENT DES DÉPLACEMENTS DOUX. CE QUI PRIVERA LE TRAFIC ET FERMEURA LE PORT À CI-DEVANT FLORISANT !"
+    },
+    {
+      "id": "1babfbcd9dc4",
+      "category": null,
+      "constat_factuel": "Le parking du port est souvent plein en été, ce qui oblige les visiteurs à se garer loin ou de manière sauvage. Cela crée des problèmes de circulation et nuit à l'image de la commune.",
+      "idees_ameliorations": "Créer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux.",
+      "source": "input",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": null,
+      "title": "Le parking du port est souvent plein en été, ce qui oblige les visiteurs à se...",
+      "body": "**Constat factuel:**\nLe parking du port est souvent plein en été, ce qui oblige les visiteurs à se garer loin ou de manière sauvage. Cela crée des problèmes de circulation et nuit à l'image de la commune.\n\n**Vos idées d'améliorations:**\nCréer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux."
+    },
+    {
+      "id": "319a748be35b",
+      "category": null,
+      "constat_factuel": "Le parking du port est souvent plein en été, c,e qui oblige les visiteurs à e gar er loin ou de manièer sauvagex Cela crée des rpoblèmes deb crculation et nui tà l'image de la ommune.",
+      "idees_ameliorations": "Créer un parkingérelais à l'entrée de la ville avec une navette gatuite vers le port. Mettrü en place un système de staitonnement paynat pour les non-résidentsäafin de favoriser la rotatäon. Développer les pistes cyclabl\"es pour encouager les déplacements doux.",
+      "source": "derived",
+      "parent_id": "1babfbcd9dc4",
+      "distance_from_parent": 24,
+      "similarity_to_parent": 0.946,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": null,
+      "title": "Le parking du port est souvent plein en été, c,e qui oblige les visiteurs à e...",
+      "body": "**Constat factuel:**\nLe parking du port est souvent plein en été, c,e qui oblige les visiteurs à e gar er loin ou de manièer sauvagex Cela crée des rpoblèmes deb crculation et nui tà l'image de la ommune.\n\n**Vos idées d'améliorations:**\nCréer un parkingérelais à l'entrée de la ville avec une navette gatuite vers le port. Mettrü en place un système de staitonnement paynat pour les non-résidentsäafin de favoriser la rotatäon. Développer les pistes cyclabl\"es pour encouager les déplacements doux."
+    },
+    {
+      "id": "bc58a2a571f5",
+      "category": "ecologie",
+      "constat_factuel": "La plage du Loc'h est magnifique mais souvent sale après les weekends.",
+      "idees_ameliorations": "Installer plus de poubelles et organiser des nettoyages citoyens.",
+      "source": "input",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": null,
+      "title": "La plage du Loc'h est magnifique mais souvent sale après les weekends.",
+      "body": "**Constat factuel:**\nLa plage du Loc'h est magnifique mais souvent sale après les weekends.\n\n**Vos idées d'améliorations:**\nInstaller plus de poubelles et organiser des nettoyages citoyens."
+    },
+    {
+      "id": "c1ace2a1b888",
+      "category": "ecologie",
+      "constat_factuel": "La plage du Loc'h est remarquable mais souvent sale après les week-ends.\n\nUne traduction plus constructive pour Audierne pourrait être :\n\nLa plage du Loc'h est extraordinaire mais peut parfois devenir sale après les week-ends. Il serait agréable de voir un effort commun pour maintenir la propreté de cette merveille naturelle.",
+      "idees_ameliorations": "Installez davantage de bacs à déchets et encouragez les nettoyages citoyens réguliers.",
+      "source": "derived",
+      "parent_id": "bc58a2a571f5",
+      "distance_from_parent": 294,
+      "similarity_to_parent": 0.29,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "mutation_type": "paraphrase",
+        "llm_generated": true
+      },
+      "title": "La plage du Loc'h est remarquable mais souvent sale après les week-ends.\n\nUne...",
+      "body": "**Constat factuel:**\nLa plage du Loc'h est remarquable mais souvent sale après les week-ends.\n\nUne traduction plus constructive pour Audierne pourrait être :\n\nLa plage du Loc'h est extraordinaire mais peut parfois devenir sale après les week-ends. Il serait agréable de voir un effort commun pour maintenir la propreté de cette merveille naturelle.\n\n**Vos idées d'améliorations:**\nInstallez davantage de bacs à déchets et encouragez les nettoyages citoyens réguliers."
+    },
+    {
+      "id": "c655343e40b2",
+      "category": "ecologie",
+      "constat_factuel": "La plege du Loch est maginfique mais souvent sael after les weekends.",
+      "idees_ameliorations": "Installer pluss de pounbelles et organisser des nettoygages citoins.",
+      "source": "derived",
+      "parent_id": "bc58a2a571f5",
+      "distance_from_parent": 16,
+      "similarity_to_parent": 0.884,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "mutation_type": "orthographic",
+        "llm_generated": true
+      },
+      "title": "La plege du Loch est maginfique mais souvent sael after les weekends.",
+      "body": "**Constat factuel:**\nLa plege du Loch est maginfique mais souvent sael after les weekends.\n\n**Vos idées d'améliorations:**\nInstaller pluss de pounbelles et organisser des nettoygages citoins."
+    },
+    {
+      "id": "5040656a2af5",
+      "category": "ecologie",
+      "constat_factuel": "La plage du Loc'h est généralement sale, mais elle devient magnifique après les weekends de nettoyage.",
+      "idees_ameliorations": "Améliorer la distribution de conteneurs pour déchets et planifier des programmes de nettoyage communautaire améliorés.",
+      "source": "derived",
+      "parent_id": "bc58a2a571f5",
+      "distance_from_parent": 120,
+      "similarity_to_parent": 0.457,
+      "expected_valid": null,
+      "violations_injected": null,
+      "metadata": {
+        "mutation_type": "semantic_shift",
+        "llm_generated": true
+      },
+      "title": "La plage du Loc'h est généralement sale, mais elle devient magnifique après l...",
+      "body": "**Constat factuel:**\nLa plage du Loc'h est généralement sale, mais elle devient magnifique après les weekends de nettoyage.\n\n**Vos idées d'améliorations:**\nAméliorer la distribution de conteneurs pour déchets et planifier des programmes de nettoyage communautaire améliorés."
+    },
+    {
+      "id": "field_jeunesse_7c5169c9",
+      "category": "jeunesse",
+      "constat_factuel": "Les écoles d'Audierne et d'Esquibien sont actuellement dispersées sur plusieurs sites, ce qui pose des problèmes d'économie, de fonctionnalité et d'attractivité pour le Cap Sizun.",
+      "idees_ameliorations": "Le regroupement des écoles sur le site unique de l'école Pierre Le Lec permettrait de mutualiser les ressources, d'optimiser les espaces et les équipements, et de renforcer l'attractivité de l'offre scolaire pour les familles. Des rénovations et des aménagements pourraient être envisagés pour moderniser et adapter les infrastructures aux besoins des élèves.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "projet_ecole",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Les écoles d'Audierne et d'Esquibien sont actuellement dispersées sur plusieu...",
+      "body": "**Constat factuel:**\nLes écoles d'Audierne et d'Esquibien sont actuellement dispersées sur plusieurs sites, ce qui pose des problèmes d'économie, de fonctionnalité et d'attractivité pour le Cap Sizun.\n\n**Vos idées d'améliorations:**\nLe regroupement des écoles sur le site unique de l'école Pierre Le Lec permettrait de mutualiser les ressources, d'optimiser les espaces et les équipements, et de renforcer l'attractivité de l'offre scolaire pour les familles. Des rénovations et des aménagements pourraient être envisagés pour moderniser et adapter les infrastructures aux besoins des élèves."
+    },
+    {
+      "id": "field_jeunesse_c33fcbd5",
+      "category": "jeunesse",
+      "constat_factuel": "Les écoles d'Audierne et d'Esquibien sont vieillissantes et nécessitent des travaux de rénovation importants. Le regroupement sur un site unique permettrait de rationaliser les coûts de fonctionnement et d'offrir de meilleures conditions d'enseignement.",
+      "idees_ameliorations": "Je propose de rénover l'école Pierre Le Lec pour accueillir l'ensemble des élèves du secteur. Cela permettrait de moderniser les infrastructures, d'optimiser les ressources et de renforcer l'attractivité éducative du Cap Sizun. Des espaces mutualisés comme une cantine et une bibliothèque pourraient également être créés pour profiter à tous les élèves.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "projet_ecole",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Les écoles d'Audierne et d'Esquibien sont vieillissantes et nécessitent des t...",
+      "body": "**Constat factuel:**\nLes écoles d'Audierne et d'Esquibien sont vieillissantes et nécessitent des travaux de rénovation importants. Le regroupement sur un site unique permettrait de rationaliser les coûts de fonctionnement et d'offrir de meilleures conditions d'enseignement.\n\n**Vos idées d'améliorations:**\nJe propose de rénover l'école Pierre Le Lec pour accueillir l'ensemble des élèves du secteur. Cela permettrait de moderniser les infrastructures, d'optimiser les ressources et de renforcer l'attractivité éducative du Cap Sizun. Des espaces mutualisés comme une cantine et une bibliothèque pourraient également être créés pour profiter à tous les élèves."
+    },
+    {
+      "id": "field_jeunesse_2769de33",
+      "category": "jeunesse",
+      "constat_factuel": "Bien que le projet de regroupement des écoles semble viser l'économie et l'attractivité, on peut se demander si les élus ont réellement pris en compte les besoins et attentes de la jeunesse locale. Ont-ils consulté les familles et les enseignants pour concevoir une solution adaptée ?",
+      "idees_ameliorations": "Pourquoi ne pas organiser des ateliers participatifs avec les citoyens, en particulier les jeunes et les parents, afin de co-construire un projet d'école moderne et stimulant ? Cela permettrait de s'assurer que les investissements répondent aux véritables besoins du territoire.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "projet_ecole",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Bien que le projet de regroupement des écoles semble viser l'économie et l'at...",
+      "body": "**Constat factuel:**\nBien que le projet de regroupement des écoles semble viser l'économie et l'attractivité, on peut se demander si les élus ont réellement pris en compte les besoins et attentes de la jeunesse locale. Ont-ils consulté les familles et les enseignants pour concevoir une solution adaptée ?\n\n**Vos idées d'améliorations:**\nPourquoi ne pas organiser des ateliers participatifs avec les citoyens, en particulier les jeunes et les parents, afin de co-construire un projet d'école moderne et stimulant ? Cela permettrait de s'assurer que les investissements répondent aux véritables besoins du territoire."
+    },
+    {
+      "id": "field_associations_cb829cfe",
+      "category": "associations",
+      "constat_factuel": "Actuellement, la participation citoyenne à Audierne semble limitée. Les citoyens ne sont pas suffisamment impliqués dans les processus de décision et de débat au niveau municipal.",
+      "idees_ameliorations": "Pour améliorer la participation citoyenne, la mise en place d'un conseil municipal des jeunes, la création de commissions mixtes avec des citoyens et des élus, ainsi que l'organisation de débats publics sur les grands dossiers seraient des initiatives intéressantes à mettre en œuvre.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "participation_citoyenne",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Actuellement, la participation citoyenne à Audierne semble limitée. Les citoy...",
+      "body": "**Constat factuel:**\nActuellement, la participation citoyenne à Audierne semble limitée. Les citoyens ne sont pas suffisamment impliqués dans les processus de décision et de débat au niveau municipal.\n\n**Vos idées d'améliorations:**\nPour améliorer la participation citoyenne, la mise en place d'un conseil municipal des jeunes, la création de commissions mixtes avec des citoyens et des élus, ainsi que l'organisation de débats publics sur les grands dossiers seraient des initiatives intéressantes à mettre en œuvre."
+    },
+    {
+      "id": "field_associations_ccee661f",
+      "category": "associations",
+      "constat_factuel": "La participation citoyenne à Audierne est encore limitée, avec peu d'opportunités pour les citoyens de s'impliquer dans les décisions municipales. Les débats publics sur les grands projets sont rares et la communication entre la mairie et les habitants manque de transparence.",
+      "idees_ameliorations": "Pour améliorer la participation citoyenne, la mise en place d'un conseil municipal des jeunes et de commissions mixtes incluant des citoyens et des élus serait bénéfique. L'organisation régulière de débats contradictoires publics sur les grands dossiers permettrait également d'impliquer davantage les habitants dans la vie de la commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "participation_citoyenne",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "La participation citoyenne à Audierne est encore limitée, avec peu d'opportun...",
+      "body": "**Constat factuel:**\nLa participation citoyenne à Audierne est encore limitée, avec peu d'opportunités pour les citoyens de s'impliquer dans les décisions municipales. Les débats publics sur les grands projets sont rares et la communication entre la mairie et les habitants manque de transparence.\n\n**Vos idées d'améliorations:**\nPour améliorer la participation citoyenne, la mise en place d'un conseil municipal des jeunes et de commissions mixtes incluant des citoyens et des élus serait bénéfique. L'organisation régulière de débats contradictoires publics sur les grands dossiers permettrait également d'impliquer davantage les habitants dans la vie de la commune."
+    },
+    {
+      "id": "field_associations_2a756198",
+      "category": "associations",
+      "constat_factuel": "Bien que des propositions intéressantes aient été faites pour améliorer la participation citoyenne à Audierne, la mise en œuvre concrète semble encore timide. Les élus doivent-ils vraiment attendre que les citoyens s'impliquent davantage ? Ne devraient-ils pas plutôt prendre les devants et montrer l'exemple ?",
+      "idees_ameliorations": "Pourquoi ne pas organiser régulièrement des réunions publiques où les élus pourraient présenter leurs projets et répondre aux questions des habitants ? Cela permettrait d'instaurer un véritable dialogue et de s'assurer que les décisions prises reflètent les préoccupations de la population. De plus, la création de commissions mixtes avec des citoyens volontaires serait un moyen concret d'impliquer davantage les Audiernois dans la vie de leur ville.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "participation_citoyenne",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Bien que des propositions intéressantes aient été faites pour améliorer la pa...",
+      "body": "**Constat factuel:**\nBien que des propositions intéressantes aient été faites pour améliorer la participation citoyenne à Audierne, la mise en œuvre concrète semble encore timide. Les élus doivent-ils vraiment attendre que les citoyens s'impliquent davantage ? Ne devraient-ils pas plutôt prendre les devants et montrer l'exemple ?\n\n**Vos idées d'améliorations:**\nPourquoi ne pas organiser régulièrement des réunions publiques où les élus pourraient présenter leurs projets et répondre aux questions des habitants ? Cela permettrait d'instaurer un véritable dialogue et de s'assurer que les décisions prises reflètent les préoccupations de la population. De plus, la création de commissions mixtes avec des citoyens volontaires serait un moyen concret d'impliquer davantage les Audiernois dans la vie de leur ville."
+    },
+    {
+      "id": "field_economie_013bc4ff",
+      "category": "economie",
+      "constat_factuel": "La commune d'Audierne fait face à des contraintes budgétaires importantes, avec une capacité d'autofinancement limitée à environ 500 000 euros pour les investissements. Cette situation financière tendue limite les possibilités d'action et de développement de la commune.",
+      "idees_ameliorations": "Afin d'améliorer la situation financière de la commune, il serait intéressant d'explorer des pistes comme la diversification des sources de revenus (taxes, subventions, partenariats), l'optimisation des dépenses et la recherche d'économies, ainsi que la mise en place d'un plan pluriannuel d'investissement permettant une meilleure gestion à long terme.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "situation_financiere",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "La commune d'Audierne fait face à des contraintes budgétaires importantes, av...",
+      "body": "**Constat factuel:**\nLa commune d'Audierne fait face à des contraintes budgétaires importantes, avec une capacité d'autofinancement limitée à environ 500 000 euros pour les investissements. Cette situation financière tendue limite les possibilités d'action et de développement de la commune.\n\n**Vos idées d'améliorations:**\nAfin d'améliorer la situation financière de la commune, il serait intéressant d'explorer des pistes comme la diversification des sources de revenus (taxes, subventions, partenariats), l'optimisation des dépenses et la recherche d'économies, ainsi que la mise en place d'un plan pluriannuel d'investissement permettant une meilleure gestion à long terme."
+    },
+    {
+      "id": "field_economie_765d0ab8",
+      "category": "economie",
+      "constat_factuel": "Le budget de la commune d'Audierne est considéré comme contraint, avec une capacité d'autofinancement pour l'investissement d'environ 500 000 euros. Cette situation financière limitée peut avoir un impact sur les projets et services offerts aux citoyens.",
+      "idees_ameliorations": "Pour améliorer la situation financière, la commune pourrait explorer des pistes comme la diversification des sources de revenus, la recherche de subventions et de financements extérieurs, ainsi que l'optimisation des dépenses. Une gestion budgétaire rigoureuse et transparente pourrait également permettre de dégager des marges de manœuvre supplémentaires pour investir dans des projets structurants pour la ville.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "situation_financiere",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Le budget de la commune d'Audierne est considéré comme contraint, avec une ca...",
+      "body": "**Constat factuel:**\nLe budget de la commune d'Audierne est considéré comme contraint, avec une capacité d'autofinancement pour l'investissement d'environ 500 000 euros. Cette situation financière limitée peut avoir un impact sur les projets et services offerts aux citoyens.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation financière, la commune pourrait explorer des pistes comme la diversification des sources de revenus, la recherche de subventions et de financements extérieurs, ainsi que l'optimisation des dépenses. Une gestion budgétaire rigoureuse et transparente pourrait également permettre de dégager des marges de manœuvre supplémentaires pour investir dans des projets structurants pour la ville."
+    },
+    {
+      "id": "field_economie_fd85c535",
+      "category": "economie",
+      "constat_factuel": "Avec un budget communal contraint et une capacité d'autofinancement limitée à 500 000 euros, la situation financière de la ville d'Audierne semble préoccupante. Comment les élus envisagent-ils de financer les futurs investissements nécessaires au développement de la commune ?",
+      "idees_ameliorations": "Peut-être serait-il judicieux d'explorer des pistes d'optimisation budgétaire, comme la recherche de subventions ou la mutualisation de certains services avec les communes voisines. Une gestion plus rigoureuse des dépenses pourrait également permettre de dégager davantage de marge de manœuvre pour l'investissement. Enfin, une meilleure communication sur la situation financière de la ville pourrait impliquer davantage les citoyens dans la recherche de solutions.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "situation_financiere",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Avec un budget communal contraint et une capacité d'autofinancement limitée à...",
+      "body": "**Constat factuel:**\nAvec un budget communal contraint et une capacité d'autofinancement limitée à 500 000 euros, la situation financière de la ville d'Audierne semble préoccupante. Comment les élus envisagent-ils de financer les futurs investissements nécessaires au développement de la commune ?\n\n**Vos idées d'améliorations:**\nPeut-être serait-il judicieux d'explorer des pistes d'optimisation budgétaire, comme la recherche de subventions ou la mutualisation de certains services avec les communes voisines. Une gestion plus rigoureuse des dépenses pourrait également permettre de dégager davantage de marge de manœuvre pour l'investissement. Enfin, une meilleure communication sur la situation financière de la ville pourrait impliquer davantage les citoyens dans la recherche de solutions."
+    },
+    {
+      "id": "field_jeunesse_f2486d2c",
+      "category": "jeunesse",
+      "constat_factuel": "Les écoles de la ville d'Audierne nécessitent des travaux importants de rénovation et de désamiantage. Le regroupement des écoles sur un seul site, le site Pierre Le Lec, est également envisagé afin d'optimiser les ressources et les équipements.",
+      "idees_ameliorations": "Il serait important d'impliquer davantage les parents d'élèves et les enseignants dans la concertation sur ce projet de rénovation et de regroupement des écoles. Une réflexion approfondie sur l'aménagement des nouveaux bâtiments et des espaces extérieurs, en prenant en compte les besoins des élèves et de la communauté éducative, serait également bénéfique. Enfin, il serait judicieux de s'assurer que le financement des travaux soit pérenne et que le projet soit mené dans les meilleures conditions.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "renovation_ecole",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Les écoles de la ville d'Audierne nécessitent des travaux importants de rénov...",
+      "body": "**Constat factuel:**\nLes écoles de la ville d'Audierne nécessitent des travaux importants de rénovation et de désamiantage. Le regroupement des écoles sur un seul site, le site Pierre Le Lec, est également envisagé afin d'optimiser les ressources et les équipements.\n\n**Vos idées d'améliorations:**\nIl serait important d'impliquer davantage les parents d'élèves et les enseignants dans la concertation sur ce projet de rénovation et de regroupement des écoles. Une réflexion approfondie sur l'aménagement des nouveaux bâtiments et des espaces extérieurs, en prenant en compte les besoins des élèves et de la communauté éducative, serait également bénéfique. Enfin, il serait judicieux de s'assurer que le financement des travaux soit pérenne et que le projet soit mené dans les meilleures conditions."
+    },
+    {
+      "id": "field_jeunesse_aa5bf24c",
+      "category": "jeunesse",
+      "constat_factuel": "Les écoles d'Audierne ont besoin de travaux de rénovation et de désamiantage urgents. Le projet de regroupement des écoles sur le site Pierre Le Lec semble être une solution intéressante pour améliorer les conditions d'enseignement et de sécurité pour les élèves.",
+      "idees_ameliorations": "Une concertation étroite avec les parents d'élèves, les enseignants et les associations locales serait bénéfique pour définir les besoins prioritaires et les meilleures options de rénovation. Il serait également important de s'assurer que le nouveau site soit facilement accessible à tous les élèves de la commune. Enfin, une attention particulière devrait être portée à l'intégration paysagère et architecturale du projet pour préserver le caractère du centre-ville d'Audierne.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "renovation_ecole",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Les écoles d'Audierne ont besoin de travaux de rénovation et de désamiantage ...",
+      "body": "**Constat factuel:**\nLes écoles d'Audierne ont besoin de travaux de rénovation et de désamiantage urgents. Le projet de regroupement des écoles sur le site Pierre Le Lec semble être une solution intéressante pour améliorer les conditions d'enseignement et de sécurité pour les élèves.\n\n**Vos idées d'améliorations:**\nUne concertation étroite avec les parents d'élèves, les enseignants et les associations locales serait bénéfique pour définir les besoins prioritaires et les meilleures options de rénovation. Il serait également important de s'assurer que le nouveau site soit facilement accessible à tous les élèves de la commune. Enfin, une attention particulière devrait être portée à l'intégration paysagère et architecturale du projet pour préserver le caractère du centre-ville d'Audierne."
+    },
+    {
+      "id": "field_jeunesse_101aeb29",
+      "category": "jeunesse",
+      "constat_factuel": "Les écoles d'Audierne ont besoin de travaux urgents, notamment de désamiantage et de rénovation. Le projet de regroupement sur le site Pierre Le Lec semble être une solution intéressante mais nécessite une concertation approfondie avec les citoyens.",
+      "idees_ameliorations": "Organiser des réunions publiques régulières pour impliquer les parents d'élèves et les habitants dans le projet. Prévoir un plan de financement transparent et une évaluation des coûts de fonctionnement futurs. Réfléchir à des solutions innovantes pour les espaces de jeux et d'activités périscolaires lors du regroupement des écoles.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "renovation_ecole",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Les écoles d'Audierne ont besoin de travaux urgents, notamment de désamiantag...",
+      "body": "**Constat factuel:**\nLes écoles d'Audierne ont besoin de travaux urgents, notamment de désamiantage et de rénovation. Le projet de regroupement sur le site Pierre Le Lec semble être une solution intéressante mais nécessite une concertation approfondie avec les citoyens.\n\n**Vos idées d'améliorations:**\nOrganiser des réunions publiques régulières pour impliquer les parents d'élèves et les habitants dans le projet. Prévoir un plan de financement transparent et une évaluation des coûts de fonctionnement futurs. Réfléchir à des solutions innovantes pour les espaces de jeux et d'activités périscolaires lors du regroupement des écoles."
+    },
+    {
+      "id": "field_jeunesse_d80ebdc7",
+      "category": "jeunesse",
+      "constat_factuel": "Bien que les réunions publiques sur le projet de rénovation des écoles semblent avoir été nombreuses, on peut se demander si la concertation avec les citoyens a vraiment été à la hauteur. Les élus ont-ils réellement pris en compte les préoccupations des parents d'élèves et des enseignants dans leurs décisions ?",
+      "idees_ameliorations": "Pour améliorer la transparence et l'implication des citoyens, pourquoi ne pas organiser des ateliers participatifs où les habitants pourraient directement faire des propositions et voter sur les options envisagées ? Cela permettrait de s'assurer que le projet final réponde vraiment aux besoins de la communauté.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "renovation_ecole",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Bien que les réunions publiques sur le projet de rénovation des écoles semble...",
+      "body": "**Constat factuel:**\nBien que les réunions publiques sur le projet de rénovation des écoles semblent avoir été nombreuses, on peut se demander si la concertation avec les citoyens a vraiment été à la hauteur. Les élus ont-ils réellement pris en compte les préoccupations des parents d'élèves et des enseignants dans leurs décisions ?\n\n**Vos idées d'améliorations:**\nPour améliorer la transparence et l'implication des citoyens, pourquoi ne pas organiser des ateliers participatifs où les habitants pourraient directement faire des propositions et voter sur les options envisagées ? Cela permettrait de s'assurer que le projet final réponde vraiment aux besoins de la communauté."
+    },
+    {
+      "id": "field_economie_8de5ec3d",
+      "category": "economie",
+      "constat_factuel": "Le budget de la commune d'Audierne est considéré comme contraint, avec une capacité d'autofinancement pour l'investissement d'environ 500 000 euros. Cela limite les possibilités d'investissement pour la commune.",
+      "idees_ameliorations": "Pour améliorer la situation financière de la commune, on pourrait envisager de diversifier les sources de revenus, par exemple en développant le tourisme local ou en cherchant des subventions supplémentaires. Il serait également possible de revoir certaines dépenses non essentielles afin de dégager de nouvelles marges de manœuvre budgétaires.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "situation_financiere",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Le budget de la commune d'Audierne est considéré comme contraint, avec une ca...",
+      "body": "**Constat factuel:**\nLe budget de la commune d'Audierne est considéré comme contraint, avec une capacité d'autofinancement pour l'investissement d'environ 500 000 euros. Cela limite les possibilités d'investissement pour la commune.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation financière de la commune, on pourrait envisager de diversifier les sources de revenus, par exemple en développant le tourisme local ou en cherchant des subventions supplémentaires. Il serait également possible de revoir certaines dépenses non essentielles afin de dégager de nouvelles marges de manœuvre budgétaires."
+    },
+    {
+      "id": "field_economie_9c2bc093",
+      "category": "economie",
+      "constat_factuel": "La situation financière de la commune d'Audierne est contrainte, avec une capacité d'autofinancement pour l'investissement limitée à environ 500 000 euros. Cela restreint les possibilités d'investissement et de développement de la commune.",
+      "idees_ameliorations": "Afin d'améliorer la situation financière, la commune pourrait explorer des pistes telles que la recherche de subventions, l'optimisation des dépenses, ou encore l'augmentation des recettes fiscales. Une meilleure gestion budgétaire et l'identification de nouvelles sources de financement permettraient d'accroître la capacité d'investissement de la commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "situation_financiere",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "La situation financière de la commune d'Audierne est contrainte, avec une cap...",
+      "body": "**Constat factuel:**\nLa situation financière de la commune d'Audierne est contrainte, avec une capacité d'autofinancement pour l'investissement limitée à environ 500 000 euros. Cela restreint les possibilités d'investissement et de développement de la commune.\n\n**Vos idées d'améliorations:**\nAfin d'améliorer la situation financière, la commune pourrait explorer des pistes telles que la recherche de subventions, l'optimisation des dépenses, ou encore l'augmentation des recettes fiscales. Une meilleure gestion budgétaire et l'identification de nouvelles sources de financement permettraient d'accroître la capacité d'investissement de la commune."
+    },
+    {
+      "id": "field_economie_1148282e",
+      "category": "economie",
+      "constat_factuel": "La situation financière de la commune d'Audierne est considérée comme contrainte, avec une capacité d'autofinancement limitée à environ 500 000 euros pour l'investissement. Cela peut limiter les possibilités d'amélioration des infrastructures et services de la ville.",
+      "idees_ameliorations": "Afin d'améliorer la situation financière de la commune, il serait pertinent d'explorer des pistes telles que la recherche de subventions et de financements externes, l'optimisation des dépenses municipales, ou encore le développement de nouvelles sources de revenus à travers l'économie locale. Une gestion budgétaire rigoureuse et transparente pourrait également permettre d'accroître la capacité d'investissement de la ville.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "situation_financiere",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "La situation financière de la commune d'Audierne est considérée comme contrai...",
+      "body": "**Constat factuel:**\nLa situation financière de la commune d'Audierne est considérée comme contrainte, avec une capacité d'autofinancement limitée à environ 500 000 euros pour l'investissement. Cela peut limiter les possibilités d'amélioration des infrastructures et services de la ville.\n\n**Vos idées d'améliorations:**\nAfin d'améliorer la situation financière de la commune, il serait pertinent d'explorer des pistes telles que la recherche de subventions et de financements externes, l'optimisation des dépenses municipales, ou encore le développement de nouvelles sources de revenus à travers l'économie locale. Une gestion budgétaire rigoureuse et transparente pourrait également permettre d'accroître la capacité d'investissement de la ville."
+    },
+    {
+      "id": "field_economie_0baf082e",
+      "category": "economie",
+      "constat_factuel": "Bien que le budget de la commune soit considéré comme contraint, on ne peut s'empêcher de se demander si les élus ont vraiment épuisé toutes les pistes pour optimiser les dépenses et dégager davantage de marges de manœuvre. Leur capacité d'autofinancement pour l'investissement de 500 000 euros semble plutôt limitée.",
+      "idees_ameliorations": "Ne serait-il pas pertinent d'envisager une analyse approfondie des postes budgétaires afin d'identifier des économies potentielles ? Peut-être que certains investissements pourraient être reportés ou repensés pour allouer davantage de fonds à des projets prioritaires. De plus, ne faudrait-il pas explorer des solutions innovantes de financement, comme le recours à des subventions ou des partenariats public-privé ?",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "situation_financiere",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Bien que le budget de la commune soit considéré comme contraint, on ne peut s...",
+      "body": "**Constat factuel:**\nBien que le budget de la commune soit considéré comme contraint, on ne peut s'empêcher de se demander si les élus ont vraiment épuisé toutes les pistes pour optimiser les dépenses et dégager davantage de marges de manœuvre. Leur capacité d'autofinancement pour l'investissement de 500 000 euros semble plutôt limitée.\n\n**Vos idées d'améliorations:**\nNe serait-il pas pertinent d'envisager une analyse approfondie des postes budgétaires afin d'identifier des économies potentielles ? Peut-être que certains investissements pourraient être reportés ou repensés pour allouer davantage de fonds à des projets prioritaires. De plus, ne faudrait-il pas explorer des solutions innovantes de financement, comme le recours à des subventions ou des partenariats public-privé ?"
+    },
+    {
+      "id": "field_alimentation-bien-etre-soins_c3ce2bd3",
+      "category": "alimentation-bien-etre-soins",
+      "constat_factuel": "Audierne fait face à des enjeux importants concernant la politique en faveur des seniors, notamment avec le projet d'EHPAD. La population vieillissante de la commune nécessite des solutions adaptées pour assurer leur bien-être et leur prise en charge.",
+      "idees_ameliorations": "Nous pourrions envisager la construction d'un EHPAD moderne et fonctionnel, en concertation avec les habitants pour répondre au mieux à leurs besoins. Parallèlement, le développement de services à domicile et de structures d'accueil de jour permettrait de favoriser le maintien à domicile des seniors. Enfin, la mise en place d'activités et d'animations spécifiques pour les personnes âgées contribuerait à améliorer leur qualité de vie.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "projet_ehpad",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Audierne fait face à des enjeux importants concernant la politique en faveur ...",
+      "body": "**Constat factuel:**\nAudierne fait face à des enjeux importants concernant la politique en faveur des seniors, notamment avec le projet d'EHPAD. La population vieillissante de la commune nécessite des solutions adaptées pour assurer leur bien-être et leur prise en charge.\n\n**Vos idées d'améliorations:**\nNous pourrions envisager la construction d'un EHPAD moderne et fonctionnel, en concertation avec les habitants pour répondre au mieux à leurs besoins. Parallèlement, le développement de services à domicile et de structures d'accueil de jour permettrait de favoriser le maintien à domicile des seniors. Enfin, la mise en place d'activités et d'animations spécifiques pour les personnes âgées contribuerait à améliorer leur qualité de vie."
+    },
+    {
+      "id": "field_alimentation-bien-etre-soins_026f576b",
+      "category": "alimentation-bien-etre-soins",
+      "constat_factuel": "À Audierne, la population de seniors est importante et le projet d'EHPAD est un enjeu majeur pour la commune. Cependant, les services et infrastructures actuels ne semblent pas totalement adaptés pour répondre aux besoins de cette population.",
+      "idees_ameliorations": "Construire un EHPAD moderne et fonctionnel, doté d'équipements et d'activités adaptés aux seniors. Développer des services de soins et d'accompagnement à domicile pour permettre aux seniors de rester plus longtemps chez eux. Améliorer les transports et la mobilité pour faciliter les déplacements des seniors dans la ville.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "projet_ehpad",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "À Audierne, la population de seniors est importante et le projet d'EHPAD est ...",
+      "body": "**Constat factuel:**\nÀ Audierne, la population de seniors est importante et le projet d'EHPAD est un enjeu majeur pour la commune. Cependant, les services et infrastructures actuels ne semblent pas totalement adaptés pour répondre aux besoins de cette population.\n\n**Vos idées d'améliorations:**\nConstruire un EHPAD moderne et fonctionnel, doté d'équipements et d'activités adaptés aux seniors. Développer des services de soins et d'accompagnement à domicile pour permettre aux seniors de rester plus longtemps chez eux. Améliorer les transports et la mobilité pour faciliter les déplacements des seniors dans la ville."
+    },
+    {
+      "id": "field_alimentation-bien-etre-soins_ce2066d4",
+      "category": "alimentation-bien-etre-soins",
+      "constat_factuel": "Audierne fait face à des enjeux importants concernant la politique en faveur des seniors, notamment avec le projet de construction d'un EHPAD. Cette structure est essentielle pour répondre aux besoins de la population vieillissante de la commune.",
+      "idees_ameliorations": "Afin d'améliorer la prise en charge des personnes âgées, il serait intéressant de consulter les citoyens sur les services et aménagements souhaités au sein de l'EHPAD. De plus, une réflexion sur les moyens de favoriser le maintien à domicile des seniors pourrait être bénéfique. Enfin, la création de logements adaptés et d'activités intergénérationnelles pourrait contribuer au bien-être des personnes âgées.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "projet_ehpad",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Audierne fait face à des enjeux importants concernant la politique en faveur ...",
+      "body": "**Constat factuel:**\nAudierne fait face à des enjeux importants concernant la politique en faveur des seniors, notamment avec le projet de construction d'un EHPAD. Cette structure est essentielle pour répondre aux besoins de la population vieillissante de la commune.\n\n**Vos idées d'améliorations:**\nAfin d'améliorer la prise en charge des personnes âgées, il serait intéressant de consulter les citoyens sur les services et aménagements souhaités au sein de l'EHPAD. De plus, une réflexion sur les moyens de favoriser le maintien à domicile des seniors pourrait être bénéfique. Enfin, la création de logements adaptés et d'activités intergénérationnelles pourrait contribuer au bien-être des personnes âgées."
+    },
+    {
+      "id": "field_alimentation-bien-etre-soins_52d409cf",
+      "category": "alimentation-bien-etre-soins",
+      "constat_factuel": "Bien que la commune d'Audierne semble se préoccuper des enjeux liés aux personnes âgées, on peut se demander si les élus possèdent vraiment l'expertise et la vision nécessaires pour mener à bien un projet d'EHPAD ambitieux. Les discussions actuelles manquent peut-être de perspectives concrètes et innovantes.",
+      "idees_ameliorations": "Pour améliorer la situation, ne serait-il pas judicieux d'impliquer davantage les seniors locaux dans la conception du projet ? Leur expertise d'usage pourrait apporter un éclairage précieux. De plus, des partenariats avec des établissements reconnus pourraient permettre de bénéficier de meilleures pratiques. Enfin, une attention particulière devrait être portée à l'accessibilité et à l'intégration du futur EHPAD dans la vie locale.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "projet_ehpad",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Bien que la commune d'Audierne semble se préoccuper des enjeux liés aux perso...",
+      "body": "**Constat factuel:**\nBien que la commune d'Audierne semble se préoccuper des enjeux liés aux personnes âgées, on peut se demander si les élus possèdent vraiment l'expertise et la vision nécessaires pour mener à bien un projet d'EHPAD ambitieux. Les discussions actuelles manquent peut-être de perspectives concrètes et innovantes.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, ne serait-il pas judicieux d'impliquer davantage les seniors locaux dans la conception du projet ? Leur expertise d'usage pourrait apporter un éclairage précieux. De plus, des partenariats avec des établissements reconnus pourraient permettre de bénéficier de meilleures pratiques. Enfin, une attention particulière devrait être portée à l'accessibilité et à l'intégration du futur EHPAD dans la vie locale."
+    },
+    {
+      "id": "field_associations_40856e1d",
+      "category": "associations",
+      "constat_factuel": "Il existe un manque de communication et de pédagogie à Audierne sur la répartition des compétences entre la commune et la communauté de communes Cap Sizun. Cela crée une confusion pour les citoyens sur les rôles et responsabilités de chaque entité.",
+      "idees_ameliorations": "Mettre en place une campagne d'information et de sensibilisation à destination des habitants d'Audierne pour expliquer clairement les compétences de la commune et de la communauté de communes. Organiser des réunions publiques et des ateliers participatifs pour favoriser les échanges et la compréhension mutuelle. Améliorer la communication en ligne et dans les médias locaux sur ces sujets.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "gouvernance_communaute_communes",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Il existe un manque de communication et de pédagogie à Audierne sur la répart...",
+      "body": "**Constat factuel:**\nIl existe un manque de communication et de pédagogie à Audierne sur la répartition des compétences entre la commune et la communauté de communes Cap Sizun. Cela crée une confusion pour les citoyens sur les rôles et responsabilités de chaque entité.\n\n**Vos idées d'améliorations:**\nMettre en place une campagne d'information et de sensibilisation à destination des habitants d'Audierne pour expliquer clairement les compétences de la commune et de la communauté de communes. Organiser des réunions publiques et des ateliers participatifs pour favoriser les échanges et la compréhension mutuelle. Améliorer la communication en ligne et dans les médias locaux sur ces sujets."
+    },
+    {
+      "id": "field_associations_83af961b",
+      "category": "associations",
+      "constat_factuel": "Il existe effectivement un manque de communication et de pédagogie à Audierne concernant la répartition des compétences entre la commune et la communauté de communes. Cela crée un flou et une méconnaissance chez les citoyens sur le rôle et les actions de chaque entité.",
+      "idees_ameliorations": "Afin d'améliorer cette situation, il serait pertinent de mettre en place des actions de communication et de sensibilisation à destination des habitants. Cela pourrait passer par la publication de documents explicatifs, l'organisation de réunions publiques ou encore la création d'une plateforme en ligne dédiée. De plus, une meilleure coordination et une transparence accrue entre la commune et la communauté de communes permettraient d'impliquer davantage les citoyens dans la gouvernance locale.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "gouvernance_communaute_communes",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Il existe effectivement un manque de communication et de pédagogie à Audierne...",
+      "body": "**Constat factuel:**\nIl existe effectivement un manque de communication et de pédagogie à Audierne concernant la répartition des compétences entre la commune et la communauté de communes. Cela crée un flou et une méconnaissance chez les citoyens sur le rôle et les actions de chaque entité.\n\n**Vos idées d'améliorations:**\nAfin d'améliorer cette situation, il serait pertinent de mettre en place des actions de communication et de sensibilisation à destination des habitants. Cela pourrait passer par la publication de documents explicatifs, l'organisation de réunions publiques ou encore la création d'une plateforme en ligne dédiée. De plus, une meilleure coordination et une transparence accrue entre la commune et la communauté de communes permettraient d'impliquer davantage les citoyens dans la gouvernance locale."
+    },
+    {
+      "id": "field_associations_252b9611",
+      "category": "associations",
+      "constat_factuel": "Il existe un manque de communication et de pédagogie sur la répartition des compétences entre la commune d'Audierne et la communauté de communes Cap Sizun. Cela crée un manque de visibilité et de compréhension pour les citoyens.",
+      "idees_ameliorations": "Mettre en place une campagne d'information et de sensibilisation pour expliquer clairement les rôles et responsabilités de chaque entité. Organiser des réunions publiques et créer des supports de communication accessibles. Impliquer davantage les citoyens dans les processus de décision et de gouvernance de la communauté de communes.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "gouvernance_communaute_communes",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Il existe un manque de communication et de pédagogie sur la répartition des c...",
+      "body": "**Constat factuel:**\nIl existe un manque de communication et de pédagogie sur la répartition des compétences entre la commune d'Audierne et la communauté de communes Cap Sizun. Cela crée un manque de visibilité et de compréhension pour les citoyens.\n\n**Vos idées d'améliorations:**\nMettre en place une campagne d'information et de sensibilisation pour expliquer clairement les rôles et responsabilités de chaque entité. Organiser des réunions publiques et créer des supports de communication accessibles. Impliquer davantage les citoyens dans les processus de décision et de gouvernance de la communauté de communes."
+    },
+    {
+      "id": "field_associations_9aa086e8",
+      "category": "associations",
+      "constat_factuel": "Bien que la communauté de communes soit censée faciliter la communication et la coordination entre les communes, il semble que ce ne soit pas le cas à Audierne. La répartition des compétences reste floue pour de nombreux citoyens, ce qui crée de la confusion et du mécontentement.",
+      "idees_ameliorations": "Ne serait-il pas judicieux d'organiser des sessions d'information et de concertation avec les élus de la communauté de communes ? Cela permettrait de clarifier les rôles et responsabilités de chacun, et d'impliquer davantage les citoyens dans les décisions qui les concernent. Après tout, les élus sont censés servir les intérêts de la population, non ?",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "gouvernance_communaute_communes",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Bien que la communauté de communes soit censée faciliter la communication et ...",
+      "body": "**Constat factuel:**\nBien que la communauté de communes soit censée faciliter la communication et la coordination entre les communes, il semble que ce ne soit pas le cas à Audierne. La répartition des compétences reste floue pour de nombreux citoyens, ce qui crée de la confusion et du mécontentement.\n\n**Vos idées d'améliorations:**\nNe serait-il pas judicieux d'organiser des sessions d'information et de concertation avec les élus de la communauté de communes ? Cela permettrait de clarifier les rôles et responsabilités de chacun, et d'impliquer davantage les citoyens dans les décisions qui les concernent. Après tout, les élus sont censés servir les intérêts de la population, non ?"
+    },
+    {
+      "id": "field_culture_4be8839a",
+      "category": "culture",
+      "constat_factuel": "Actuellement, le projet laisse des espaces inoccupés à Audierne. Ces espaces pourraient être valorisés et utilisés par la population locale.",
+      "idees_ameliorations": "Nous pourrions proposer d'utiliser ces espaces inoccupés pour des activités culturelles qui bénéficieraient à l'école et à l'ensemble de la population. Cela permettrait d'attirer des financements supplémentaires et de dynamiser la vie locale. Des expositions, des ateliers ou des événements ponctuels pourraient y être organisés.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "valorisation_patrimoine",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Actuellement, le projet laisse des espaces inoccupés à Audierne. Ces espaces ...",
+      "body": "**Constat factuel:**\nActuellement, le projet laisse des espaces inoccupés à Audierne. Ces espaces pourraient être valorisés et utilisés par la population locale.\n\n**Vos idées d'améliorations:**\nNous pourrions proposer d'utiliser ces espaces inoccupés pour des activités culturelles qui bénéficieraient à l'école et à l'ensemble de la population. Cela permettrait d'attirer des financements supplémentaires et de dynamiser la vie locale. Des expositions, des ateliers ou des événements ponctuels pourraient y être organisés."
+    },
+    {
+      "id": "field_culture_6964b747",
+      "category": "culture",
+      "constat_factuel": "À Audierne, il existe des espaces inoccupés dans le cadre du projet de valorisation du patrimoine. Ces espaces inutilisés représentent une opportunité manquée de développer des activités complémentaires pour l'école et la population locale.",
+      "idees_ameliorations": "Il serait intéressant d'explorer des utilisations potentielles de ces espaces inoccupés, comme des activités culturelles qui pourraient attirer des financements supplémentaires et profiter à l'ensemble de la communauté. Des initiatives telles que des expositions d'art, des ateliers de création ou des événements communautaires permettraient de valoriser le patrimoine local tout en dynamisant la vie culturelle d'Audierne.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "valorisation_patrimoine",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "À Audierne, il existe des espaces inoccupés dans le cadre du projet de valori...",
+      "body": "**Constat factuel:**\nÀ Audierne, il existe des espaces inoccupés dans le cadre du projet de valorisation du patrimoine. Ces espaces inutilisés représentent une opportunité manquée de développer des activités complémentaires pour l'école et la population locale.\n\n**Vos idées d'améliorations:**\nIl serait intéressant d'explorer des utilisations potentielles de ces espaces inoccupés, comme des activités culturelles qui pourraient attirer des financements supplémentaires et profiter à l'ensemble de la communauté. Des initiatives telles que des expositions d'art, des ateliers de création ou des événements communautaires permettraient de valoriser le patrimoine local tout en dynamisant la vie culturelle d'Audierne."
+    },
+    {
+      "id": "field_culture_a8446fb1",
+      "category": "culture",
+      "constat_factuel": "Actuellement, le projet de valorisation du patrimoine d'Audierne laisse des espaces inoccupés dans la ville. Ces espaces pourraient être utilisés de manière complémentaire pour des activités culturelles, qui profiteraient à l'école locale et à l'ensemble de la population.",
+      "idees_ameliorations": "Il serait intéressant d'explorer des pistes d'activités culturelles dans ces espaces inoccupés, comme l'installation d'expositions temporaires, l'organisation d'ateliers artistiques ou de conférences. Cela permettrait de dynamiser la vie culturelle de la ville et d'attirer des financements supplémentaires. De plus, ces activités pourraient être conçues en collaboration avec l'école locale afin de proposer des initiatives pédagogiques et d'impliquer les jeunes dans la valorisation du patrimoine d'Audierne.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "valorisation_patrimoine",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Actuellement, le projet de valorisation du patrimoine d'Audierne laisse des e...",
+      "body": "**Constat factuel:**\nActuellement, le projet de valorisation du patrimoine d'Audierne laisse des espaces inoccupés dans la ville. Ces espaces pourraient être utilisés de manière complémentaire pour des activités culturelles, qui profiteraient à l'école locale et à l'ensemble de la population.\n\n**Vos idées d'améliorations:**\nIl serait intéressant d'explorer des pistes d'activités culturelles dans ces espaces inoccupés, comme l'installation d'expositions temporaires, l'organisation d'ateliers artistiques ou de conférences. Cela permettrait de dynamiser la vie culturelle de la ville et d'attirer des financements supplémentaires. De plus, ces activités pourraient être conçues en collaboration avec l'école locale afin de proposer des initiatives pédagogiques et d'impliquer les jeunes dans la valorisation du patrimoine d'Audierne."
+    },
+    {
+      "id": "field_culture_52cc847d",
+      "category": "culture",
+      "constat_factuel": "Il est vrai que le projet laisse des espaces inoccupés à Audierne. Cependant, est-ce que nos élus ont vraiment la capacité de réfléchir à des activités complémentaires pour ces espaces ? Ils semblent plutôt focalisés sur des aspects superficiels que sur une vision d'ensemble cohérente.",
+      "idees_ameliorations": "Pourquoi ne pas impliquer directement les citoyens dans la réflexion ? Nous pourrions organiser des ateliers participatifs pour recueillir les idées de la population et identifier des usages pertinents pour ces espaces inoccupés, tout en s'assurant que les financements soient bien alloués. Cela permettrait de valoriser le patrimoine de manière plus efficace et adaptée aux besoins de la commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "valorisation_patrimoine",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Il est vrai que le projet laisse des espaces inoccupés à Audierne. Cependant,...",
+      "body": "**Constat factuel:**\nIl est vrai que le projet laisse des espaces inoccupés à Audierne. Cependant, est-ce que nos élus ont vraiment la capacité de réfléchir à des activités complémentaires pour ces espaces ? Ils semblent plutôt focalisés sur des aspects superficiels que sur une vision d'ensemble cohérente.\n\n**Vos idées d'améliorations:**\nPourquoi ne pas impliquer directement les citoyens dans la réflexion ? Nous pourrions organiser des ateliers participatifs pour recueillir les idées de la population et identifier des usages pertinents pour ces espaces inoccupés, tout en s'assurant que les financements soient bien alloués. Cela permettrait de valoriser le patrimoine de manière plus efficace et adaptée aux besoins de la commune."
+    },
+    {
+      "id": "field_culture_94e3a910",
+      "category": "culture",
+      "constat_factuel": "CES ÉLUS INCOMPÉTENTS LAISSENT DES ESPACES INOCCUPÉS DANS LE PROJET ! C'EST UNE HONTE POUR NOTRE VILLE D'AUDIERNE ! ILS NE SE SOUCIENT PAS DU PATRIMOINE DE NOTRE COMMUNE !",
+      "idees_ameliorations": "CES ESPACES INOCCUPÉS DEVRAIENT ÊTRE TRANSFORMÉS EN CENTRES CULTURELS POUR LA POPULATION ! LES ÉLUS DEVRAIENT ÊTRE VIRÉS ET REMPLACÉS PAR DES PERSONNES COMPÉTENTES QUI SE SOUCIENT VRAIMENT DE NOTRE PATRIMOINE !",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "valorisation_patrimoine",
+        "generated_date": "2026-01-27",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "CES ÉLUS INCOMPÉTENTS LAISSENT DES ESPACES INOCCUPÉS DANS LE PROJET ! C'EST U...",
+      "body": "**Constat factuel:**\nCES ÉLUS INCOMPÉTENTS LAISSENT DES ESPACES INOCCUPÉS DANS LE PROJET ! C'EST UNE HONTE POUR NOTRE VILLE D'AUDIERNE ! ILS NE SE SOUCIENT PAS DU PATRIMOINE DE NOTRE COMMUNE !\n\n**Vos idées d'améliorations:**\nCES ESPACES INOCCUPÉS DEVRAIENT ÊTRE TRANSFORMÉS EN CENTRES CULTURELS POUR LA POPULATION ! LES ÉLUS DEVRAIENT ÊTRE VIRÉS ET REMPLACÉS PAR DES PERSONNES COMPÉTENTES QUI SE SOUCIENT VRAIMENT DE NOTRE PATRIMOINE !"
+    }
+  ]
+}

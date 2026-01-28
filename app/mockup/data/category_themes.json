@@ -1,0 +1,111 @@
+{
+  "description": "Category themes for generating context-aware mockup contributions based on field input",
+  "note": "Categories are defined in app/agents/forseti/models.py (single source of truth)",
+  "categories": {
+    "economie": {
+      "label": "Économie locale",
+      "themes": [
+        "commerce_centre_ville",
+        "tourisme_port",
+        "emploi_local",
+        "artisanat_peche",
+        "marche_local"
+      ],
+      "keywords": ["commerces", "emploi", "tourisme", "port", "pêche", "marché", "économie", "budget", "financement"],
+      "example_constats": [
+        "Les commerces du centre-ville souffrent de la concurrence des grandes surfaces",
+        "Le port manque d'infrastructures pour accueillir les plaisanciers"
+      ]
+    },
+    "logement": {
+      "label": "Logement",
+      "themes": [
+        "logement_abordable",
+        "renovation_energetique",
+        "residences_secondaires",
+        "habitat_seniors",
+        "urbanisme"
+      ],
+      "keywords": ["logement", "loyer", "habitat", "rénovation", "construction", "PLU", "urbanisme", "résidences"],
+      "example_constats": [
+        "Les jeunes couples ne trouvent pas de logements abordables à Audierne",
+        "De nombreux logements anciens nécessitent des travaux de rénovation énergétique"
+      ]
+    },
+    "culture": {
+      "label": "Culture et patrimoine",
+      "themes": [
+        "patrimoine_maritime",
+        "evenements_culturels",
+        "musees_expositions",
+        "langue_bretonne",
+        "festivals"
+      ],
+      "keywords": ["culture", "patrimoine", "musée", "festival", "breton", "tradition", "art", "spectacle", "histoire"],
+      "example_constats": [
+        "Le patrimoine maritime d'Audierne mériterait d'être mieux valorisé",
+        "Les événements culturels sont concentrés en été, laissant l'hiver sans activités"
+      ]
+    },
+    "ecologie": {
+      "label": "Écologie et environnement",
+      "themes": [
+        "energie_renouvelable",
+        "gestion_dechets",
+        "protection_littoral",
+        "biodiversite",
+        "mobilite_douce"
+      ],
+      "keywords": ["écologie", "environnement", "énergie", "déchet", "vélo", "nature", "littoral", "biodiversité", "climat"],
+      "example_constats": [
+        "Le tri des déchets pourrait être amélioré sur la commune",
+        "L'érosion du littoral menace certaines zones habitées"
+      ]
+    },
+    "associations": {
+      "label": "Vie associative",
+      "themes": [
+        "locaux_associatifs",
+        "subventions",
+        "benevolat",
+        "sport_loisirs",
+        "solidarite"
+      ],
+      "keywords": ["association", "bénévole", "sport", "loisir", "solidarité", "club", "activité", "local"],
+      "example_constats": [
+        "Les associations manquent de locaux pour se réunir",
+        "Le bénévolat s'essouffle faute de relève"
+      ]
+    },
+    "jeunesse": {
+      "label": "Jeunesse et éducation",
+      "themes": [
+        "ecoles",
+        "periscolaire",
+        "formation",
+        "lieux_jeunes",
+        "transport_scolaire"
+      ],
+      "keywords": ["école", "jeune", "enfant", "éducation", "formation", "périscolaire", "étudiant", "apprentissage"],
+      "example_constats": [
+        "L'école Pierre-Le Lec nécessite une rénovation importante",
+        "Les jeunes manquent de lieux de rencontre adaptés"
+      ]
+    },
+    "alimentation-bien-etre-soins": {
+      "label": "Alimentation, bien-être et soins",
+      "themes": [
+        "acces_soins",
+        "alimentation_locale",
+        "sante_mentale",
+        "sport_sante",
+        "seniors"
+      ],
+      "keywords": ["santé", "médecin", "alimentation", "bien-être", "soins", "sport", "seniors", "local", "bio"],
+      "example_constats": [
+        "L'accès aux médecins spécialistes nécessite de longs déplacements",
+        "Les produits locaux sont peu accessibles pour les habitants"
+      ]
+    }
+  }
+}

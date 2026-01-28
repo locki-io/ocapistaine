@@ -1,13 +1,6 @@
-2026-01-21 09:52:20 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=QUOTA_EXHAUSTED | model=gemini-2.0-flash | No credits remaining
-2026-01-21 09:56:18 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=QUOTA_EXHAUSTED | model=gemini-2.0-flash | Daily quota exhausted - no credits remaining
-2026-01-21 09:56:18 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.0-flash | retry_after=41.73885122s | Retrying after 41.73885122s (attempt 1/3)
-2026-01-21 09:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=QUOTA_EXHAUSTED | model=gemini-2.0-flash | Daily quota exhausted - no credits remaining
-2026-01-21 09:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.0-flash | retry_after=59.831624952s | Retrying after 59.831624952s (attempt 2/3)
-2026-01-21 09:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=QUOTA_EXHAUSTED | model=gemini-2.0-flash | Daily quota exhausted - no credits remaining
-2026-01-21 09:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.0-flash | retry_after=59.850254159s | Retrying after 59.850254159s (attempt 3/3)
-2026-01-21 09:59:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=QUOTA_EXHAUSTED | model=gemini-2.0-flash | Daily quota exhausted - no credits remaining
-2026-01-21 09:59:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.0-flash | retry_after=59.845078228s | Retrying after 59.845078228s (attempt 1/3)
-2026-01-21 10:00:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=QUOTA_EXHAUSTED | model=gemini-2.0-flash | Daily quota exhausted - no credits remaining
-2026-01-21 10:00:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.0-flash | retry_after=59.848323776s | Retrying after 59.848323776s (attempt 2/3)
-2026-01-21 10:01:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=QUOTA_EXHAUSTED | model=gemini-2.0-flash | Daily quota exhausted - no credits remaining
-2026-01-21 10:01:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.0-flash | retry_after=59.844197185s | Retrying after 59.844197185s (attempt 3/3)
+2026-01-27 08:56:06 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=QUOTA_EXHAUSTED | model=gemini-2.0-flash | Daily quota exhausted - no credits remaining
+2026-01-27 08:56:06 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.0-flash | retry_after=53.355840294s | Retrying after 53.355840294s (attempt 1/3)
+2026-01-27 08:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=QUOTA_EXHAUSTED | model=gemini-2.0-flash | Daily quota exhausted - no credits remaining
+2026-01-27 08:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.0-flash | retry_after=59.839198548s | Retrying after 59.839198548s (attempt 2/3)
+2026-01-27 08:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=QUOTA_EXHAUSTED | model=gemini-2.0-flash | Daily quota exhausted - no credits remaining
+2026-01-27 08:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.0-flash | retry_after=59.854942236s | Retrying after 59.854942236s (attempt 3/3)
