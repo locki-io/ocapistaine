@@ -1,89 +1,19 @@
 """Main script for orchestrating Firecrawl operations on municipal documents."""
 
+import asyncio
 import argparse
 import sys
+import os
 from pathlib import Path
 
-from config import (
-    DATA_SOURCES,
-    FIRECRAWL_CONFIG,
-    CRAWL_CONFIG,
-    CRAWL_FULL_CONFIG,
-    SOURCE_CONFIGS,
-    DataSource,
-)
-from firecrawl_utils import FirecrawlManager
+# Add project root to path for imports
+sys.path.append(str(Path(__file__).parent.parent))
 
+from src.config import DATA_SOURCES
+from app.processors.crawl_processor import CrawlProcessor, CrawlWorkflowConfig
 
-def crawl_data_source(
-    source: DataSource,
-    manager: FirecrawlManager,
-    mode: str = "scrape",
-    formats: list[str] = ["markdown", "html"],
-    max_pages: int = 100,
-) -> bool:
-    """
-    Crawl a single data source.
-
-    Args:
-        source: DataSource configuration
-        manager: FirecrawlManager instance
-        mode: "scrape" for single page, "crawl" for full site
-        max_pages: Maximum pages to crawl (only for crawl mode)
-
-    Returns:
-        bool: True if successful, False otherwise
-    """
-    print(f"\n{'='*80}")
-    print(f"📂 Processing: {source.name}")
-    print(f"   URL: {source.url}")
-    print(f"   Method: {source.method}")
-    print(f"   Output: {source.output_dir}")
-    if source.expected_count:
-        print(f"   Expected count: {source.expected_count}")
-    print(f"{'='*80}\n")
-
-    # Get source-specific configuration (includes actions if defined)
-    source_config = SOURCE_CONFIGS.get(source.name, FIRECRAWL_CONFIG)
-
-    # Check if actions are configured for this source
-    has_actions = "actions" in source_config
-    if has_actions:
-        action_count = len(source_config["actions"])
-        print(f"🎬 Using {action_count} JavaScript actions for dynamic content")
-
-    try:
-        if mode == "scrape":
-            # Scrape single page (useful for getting structure first)
-            manager.scrape_url(
-                url=source.url,
-                output_dir=source.output_dir,
-                formats=formats,
-                **source_config,
-            )
-        else:  # crawl
-            # Crawl entire website section
-            # For crawl mode, merge source config with crawl-specific params
-            crawl_config = {**source_config, **CRAWL_CONFIG}
-
-            manager.crawl_website(
-                url=source.url,
-                output_dir=source.output_dir,
-                max_pages=max_pages,
-                **crawl_config,
-            )
-
-        print(f"✅ Completed: {source.name}\n")
-        return True
-
-    except Exception as e:
-        print(f"❌ Failed: {source.name}")
-        print(f"   Error: {e}\n")
-        return False
-
-
-def main():
-    """Main entry point for municipal document crawling."""
+async def main_async():
+    """Async main entry point."""
     parser = argparse.ArgumentParser(
         description="Crawl and process municipal documents from Audierne website"
     )
@@ -126,7 +56,7 @@ def main():
 
     args = parser.parse_args()
 
-    # Filter sources based on argument
+    # Filter sources
     if args.source == "all":
         sources_to_process = DATA_SOURCES
     else:
@@ -136,59 +66,52 @@ def main():
         print(f"❌ Error: No data source found with name '{args.source}'")
         sys.exit(1)
 
-    # Dry run mode
-    if args.dry_run:
-        print("🔍 DRY RUN MODE - No actual crawling will be performed\n")
-        for source in sources_to_process:
-            print(f"Would process: {source.name}")
-            print(f"  URL: {source.url}")
-            print(f"  Mode: {args.mode}")
-            print(f"  Output: {source.output_dir}\n")
-        sys.exit(0)
+    # Initialize Processor
+    processor = CrawlProcessor()
+    
+    # Check dependencies
+    # We suppress output here as the processor handles logging
+    await processor.check_dependencies()
 
-    # Initialize Firecrawl manager
-    try:
-        manager = FirecrawlManager(api_key=args.api_key)
-    except Exception as e:
-        print(f"❌ Failed to initialize Firecrawl: {e}")
-        print("\n💡 Tip: Set FIRECRAWL_API_KEY environment variable or use --api-key")
-        sys.exit(1)
+    # Create config
+    config = CrawlWorkflowConfig(
+        mode=args.mode,
+        max_pages=args.max_pages,
+        dry_run=args.dry_run,
+        api_key=args.api_key
+    )
 
-    # Process each source
-    print(f"\n🚀 Starting crawl operation")
+    print(f"\n🚀 Starting crawl operation via CrawlProcessor")
     print(f"   Mode: {args.mode}")
     print(f"   Sources: {len(sources_to_process)}")
-    if args.mode == "crawl":
-        print(f"   Max pages per source: {args.max_pages}")
 
-    results = []
-    for source in sources_to_process:
-        success = crawl_data_source(
-            source=source,
-            manager=manager,
-            mode=args.mode,
-            max_pages=args.max_pages,
-        )
-        results.append((source.name, success))
+    # Run Workflow
+    result = await processor.run_workflow(sources_to_process, config)
 
-    # Summary
+    # Summary Output
     print("\n" + "=" * 80)
     print("📊 SUMMARY")
     print("=" * 80)
+    
+    for source in result.successful_sources:
+        print(f"  ✅ SUCCESS: {source}")
+    for source in result.failed_sources:
+        print(f"  ❌ FAILED: {source}")
 
-    successful = sum(1 for _, success in results if success)
-    failed = len(results) - successful
-
-    for name, success in results:
-        status = "✅ SUCCESS" if success else "❌ FAILED"
-        print(f"  {status}: {name}")
-
-    print(f"\n  Total: {len(results)} | Success: {successful} | Failed: {failed}")
+    failed_count = len(result.failed_sources)
+    print(f"\n  Total: {result.sources_processed} | Success: {len(result.successful_sources)} | Failed: {failed_count}")
     print("=" * 80 + "\n")
 
-    # Exit with appropriate code
-    sys.exit(0 if failed == 0 else 1)
+    sys.exit(0 if failed_count == 0 else 1)
 
+
+def main():
+    """Sync wrapper for async main."""
+    try:
+        asyncio.run(main_async())
+    except KeyboardInterrupt:
+        print("\n🛑 Operation cancelled by user")
+        sys.exit(130)
 
 if __name__ == "__main__":
     main()

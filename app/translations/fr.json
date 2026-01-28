@@ -121,5 +121,16 @@
   "about_links_source": "Code source",
   "about_conclusion": "Si l'IA peut nous aider à tenir nos résolutions du Nouvel An, la plus impactante est peut-être : devenir un meilleur citoyen.",
 
+  "crawl_title": "Opérations de crawl",
+  "crawl_source_label": "Sélectionner la source",
+  "crawl_mode_label": "Mode",
+  "crawl_max_pages_label": "Pages Max",
+  "crawl_dry_run_label": "Dry Run (test)",
+  "crawl_start_button": "Démarrer le crawl",
+  "crawl_running": "Crawl en cours...",
+  "crawl_success": "Crawl terminé avec succès !",
+  "crawl_error": "Echec du crawl",
+  "crawl_api_key_missing": "Clé API Firecrawl manquante",
+
   "language_selector": "Langue"
 }

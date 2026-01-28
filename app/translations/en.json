@@ -121,5 +121,16 @@
   "about_links_source": "Source code",
   "about_conclusion": "If AI can help us keep our New Year's resolutions, perhaps the most impactful one is: becoming a better citizen.",
 
+  "crawl_title": "Crawl Operations",
+  "crawl_source_label": "Select Data Source",
+  "crawl_mode_label": "Mode",
+  "crawl_max_pages_label": "Max Pages",
+  "crawl_dry_run_label": "Dry Run",
+  "crawl_start_button": "Start Crawl",
+  "crawl_running": "Crawl in progress...",
+  "crawl_success": "Crawl completed successfully!",
+  "crawl_error": "Crawl failed",
+  "crawl_api_key_missing": "Firecrawl API Key missing",
+
   "language_selector": "Language"
 }

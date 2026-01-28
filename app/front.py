@@ -21,6 +21,7 @@ st.set_page_config(
 
 # Authentication check (before loading any other content)
 from app.auth import check_password
+
 if not check_password():
     st.stop()
 
@@ -35,6 +36,8 @@ from data.redis_client import get_redis_connection
 # TODO: Import services when implemented
 # from app.services.chat_service import ChatService
 # from app.services.rag_service import RAGService
+from app.processors.crawl_processor import CrawlProcessor, CrawlWorkflowConfig
+from src.config import DATA_SOURCES
 
 # Loggers for different concerns
 _ui_logger = PresentationLogger("streamlit")
@@ -584,6 +587,90 @@ def documents_view(user_id: str):
 
     # TODO: Add document search when implemented
     # st.text_input("🔍 Rechercher un document...", key="doc_search")
+
+    st.markdown("---")
+
+    # Crawl Operations Section
+    st.markdown(f"### 🕷️ {_('crawl_title')}")
+
+    with st.expander(_("crawl_title"), expanded=True):
+        col1, col2 = st.columns(2)
+
+        with col1:
+            # Source selection
+            source_options = ["all"] + [s.name for s in DATA_SOURCES]
+            selected_source = st.selectbox(
+                _("crawl_source_label"),
+                options=source_options,
+            )
+
+            # Mode selection
+            crawl_mode = st.selectbox(
+                _("crawl_mode_label"), options=["scrape", "crawl"]
+            )
+
+        with col2:
+            # Max pages
+            max_pages = st.number_input(
+                _("crawl_max_pages_label"), min_value=1, max_value=1000, value=100
+            )
+
+            # Dry run checkbox
+            dry_run = st.checkbox(_("crawl_dry_run_label"), value=False)
+
+        if st.button(_("crawl_start_button"), type="primary"):
+            _ui_logger.log_user_action(
+                action="start_crawl",
+                user_id=user_id,
+                details=f"source={selected_source}, mode={crawl_mode}",
+            )
+
+            with st.spinner(_("crawl_running")):
+                # Setup processor
+                processor = CrawlProcessor()
+
+                # Check dependencies first
+                deps = asyncio.run(processor.check_dependencies())
+                if not deps["firecrawl_key"] and not dry_run:
+                    st.error(_("crawl_api_key_missing"))
+                    return
+
+                # Prepare sources list
+                if selected_source == "all":
+                    sources = DATA_SOURCES
+                else:
+                    sources = [s for s in DATA_SOURCES if s.name == selected_source]
+
+                # Create config
+                config = CrawlWorkflowConfig(
+                    mode=crawl_mode, max_pages=max_pages, dry_run=dry_run
+                )
+
+                # Run workflow
+                try:
+                    result = asyncio.run(processor.run_workflow(sources, config))
+
+                    if result.failed_sources:
+                        st.error(
+                            f"{_('crawl_error')}: {', '.join(result.failed_sources)}"
+                        )
+                        for error in result.errors:
+                            st.error(error)
+                    else:
+                        st.success(_("crawl_success"))
+
+                    # Show detailed stats
+                    st.caption(
+                        f"Sources: {result.sources_processed} | Success: {len(result.successful_sources)} | Time: {result.total_time_ms}ms"
+                    )
+
+                    if result.successful_sources:
+                        st.markdown("**Processed:**")
+                        for s in result.successful_sources:
+                            st.markdown(f"- ✅ {s}")
+
+                except Exception as e:
+                    st.error(f"{_('crawl_error')}: {str(e)}")
 
 
 def mockup_view(user_id: str):

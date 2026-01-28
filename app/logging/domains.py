@@ -365,6 +365,7 @@ class ProcessorLogger(BaseLogger):
         processor: str,
         input_type: str,
         input_size: int | None = None,
+        **kwargs
     ) -> None:
         """Log processing start."""
         self.info(
@@ -372,6 +373,7 @@ class ProcessorLogger(BaseLogger):
             processor=processor,
             input_type=input_type,
             input_size=input_size,
+            **kwargs
         )
 
     def log_process_complete(
@@ -380,6 +382,7 @@ class ProcessorLogger(BaseLogger):
         output_type: str,
         output_size: int | None = None,
         latency_ms: float | None = None,
+        **kwargs
     ) -> None:
         """Log processing completion."""
         self.info(
@@ -388,6 +391,7 @@ class ProcessorLogger(BaseLogger):
             output_type=output_type,
             output_size=output_size,
             latency_ms=f"{latency_ms:.0f}" if latency_ms else None,
+            **kwargs
         )
 
     def log_embedding(
