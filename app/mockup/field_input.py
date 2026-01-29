@@ -241,7 +241,7 @@ Réponds UNIQUEMENT avec le JSON, sans explication."""
     async def generate_contribution(
         self,
         theme: ExtractedTheme,
-        source_title: str,
+        source_title: str = "",
         include_violation: bool = False,
         violation_type: Optional[str] = None,
     ) -> Optional[MockContribution]:
@@ -424,6 +424,7 @@ Réponds UNIQUEMENT avec le JSON."""
                 for violation_type in ["subtle_violation", "aggressive"]:
                     contrib = await self.generate_contribution(
                         theme,
+                        source_title,
                         include_violation=True,
                         violation_type=violation_type,
                     )

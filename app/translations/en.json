@@ -34,8 +34,8 @@
   "tab_mockup": "Mockup",
   "tab_about": "About",
 
-  "chat_welcome": "Welcome! Ask a question about municipal decisions, budget, or any topic concerning Audierne.",
-  "chat_input_placeholder": "Your question about the municipality...",
+  "chat_welcome": "Welcome! Get inspired here to create your contribution.",
+  "chat_input_placeholder": "Your favorite theme.",
   "chat_searching": "Searching municipal documents...",
 
   "rag_placeholder_title": "RAG System under development",
