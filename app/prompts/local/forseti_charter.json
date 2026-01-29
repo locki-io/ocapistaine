@@ -1,7 +1,7 @@
 {
   "forseti.persona": {
-    "name": "forseti461-system-charter-28012026",
-    "opik_commit": "a5195f45",
+    "name": "forseti461-system-persona",
+    "opik_commit": "f73d1f4a",
     "type": "system",
     "format": "chat",
     "variables": [],
@@ -14,8 +14,8 @@
     ]
   },
   "forseti.charter_validation": {
-    "name": "forseti461-user-charter-28012026",
-    "opik_commit": "ae49fab0",
+    "name": "forseti461-user-charter-validation",
+    "opik_commit": "4b187053",
     "type": "user",
     "format": "chat",
     "variables": ["input.title", "input.body"],
@@ -28,8 +28,8 @@
     ]
   },
   "forseti.category_classification": {
-    "name": "forseti461-user-category-29012026",
-    "opik_commit": "c985ae41",
+    "name": "forseti461-user-category-classification",
+    "opik_commit": "efd48155",
     "type": "user",
     "format": "chat",
     "variables": ["input.title", "input.body", "input.current_category"],
@@ -42,8 +42,8 @@
     ]
   },
   "forseti.wording_correction": {
-    "name": "forseti461-user-wording-29012026",
-    "opik_commit": "79ae02f7",
+    "name": "forseti461-user-wording-correction",
+    "opik_commit": "f2bbedd1",
     "type": "user",
     "format": "chat",
     "variables": ["input.title", "input.body"],
