@@ -6,17 +6,8 @@ Pydantic models for validation and classification results.
 
 from pydantic import BaseModel, Field
 
-
-# Charter categories for Audierne-Esquibien
-CATEGORIES = [
-    "economie",
-    "logement",
-    "culture",
-    "ecologie",
-    "associations",
-    "jeunesse",
-    "alimentation-bien-etre-soins",
-]
+# Import from central constants (single source of truth)
+from app.prompts.constants import CATEGORIES
 
 # What the charter prohibits
 CHARTER_VIOLATIONS = [

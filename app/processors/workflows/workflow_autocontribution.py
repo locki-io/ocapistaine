@@ -65,10 +65,14 @@ from dataclasses import dataclass
 from typing import List, Optional, Dict, Any, Literal
 
 from app.providers import get_provider, Message
-from app.agents.forseti import CATEGORIES, ForsetiAgent
+from app.agents.forseti import ForsetiAgent
 from app.mockup.field_input import list_audierne_docs, read_markdown_input
 from app.mockup.storage import get_storage, ValidationRecord
 from app.services import AgentLogger
+
+# Import from central prompts module (single source of truth)
+from app.prompts import CATEGORIES, CATEGORY_DESCRIPTIONS, get_category_description
+from app.prompts.local.autocontrib import format_draft_prompt
 
 # =============================================================================
 # DATA CLASSES
@@ -110,42 +114,6 @@ class AutoContributionResult:
 
 
 # =============================================================================
-# CATEGORY DESCRIPTIONS (for UI display)
-# =============================================================================
-
-CATEGORY_DESCRIPTIONS = {
-    "economie": {
-        "fr": "Commerce, tourisme, emploi, port, pêche",
-        "en": "Business, tourism, jobs, port, fishing",
-    },
-    "logement": {
-        "fr": "Habitat, urbanisme, immobilier",
-        "en": "Housing, urban planning, real estate",
-    },
-    "culture": {
-        "fr": "Patrimoine, événements, arts, musique",
-        "en": "Heritage, events, arts, music",
-    },
-    "ecologie": {
-        "fr": "Environnement, énergie, déchets, biodiversité",
-        "en": "Environment, energy, waste, biodiversity",
-    },
-    "associations": {
-        "fr": "Vie associative, clubs, bénévolat",
-        "en": "Community organizations, clubs, volunteering",
-    },
-    "jeunesse": {
-        "fr": "Écoles, enfance, activités jeunes",
-        "en": "Schools, childhood, youth activities",
-    },
-    "alimentation-bien-etre-soins": {
-        "fr": "Alimentation, santé, bien-être, services médicaux",
-        "en": "Food, health, wellness, medical services",
-    },
-}
-
-
-# =============================================================================
 # STEP 1: LOAD SOURCES
 # =============================================================================
 
@@ -178,9 +146,7 @@ def step_2_select_category() -> List[str]:
     return CATEGORIES
 
 
-def get_category_description(category: str, language: LanguageType = "fr") -> str:
-    """Get localized description for a category."""
-    return CATEGORY_DESCRIPTIONS.get(category, {}).get(language, category)
+# Note: get_category_description is imported from app.prompts
 
 
 # =============================================================================
@@ -230,12 +196,16 @@ class ContributionAssistant:
         if category not in CATEGORIES:
             category = CATEGORIES[0]
 
-        category_desc = CATEGORY_DESCRIPTIONS.get(category, {}).get(language, category)
+        category_desc = get_category_description(category, language)
 
-        if language == "fr":
-            prompt = self._build_french_prompt(source_text, category, category_desc, source_title)
-        else:
-            prompt = self._build_english_prompt(source_text, category, category_desc, source_title)
+        # Use central prompt formatting
+        prompt = format_draft_prompt(
+            source_text=source_text,
+            category=category,
+            category_desc=category_desc,
+            source_title=source_title,
+            language=language,
+        )
 
         try:
             messages = [Message(role="user", content=prompt)]
@@ -275,74 +245,6 @@ class ContributionAssistant:
                 category=category,
                 source_title=source_title,
             )
-
-    def _build_french_prompt(self, source_text: str, category: str, category_desc: str, source_title: str) -> str:
-        return f"""Tu es un assistant qui aide les citoyens d'Audierne à rédiger des contributions constructives pour la consultation citoyenne.
-
-DOCUMENT SOURCE{f" - {source_title}" if source_title else ""}:
-{source_text[:3000]}
-
-CATÉGORIE CHOISIE: {category.capitalize()} ({category_desc})
-
-Génère une contribution citoyenne au format Framaforms qui soit:
-- Constructive et respectueuse
-- Basée sur le document source
-- Concrète et locale (spécifique à Audierne)
-- Sans attaques personnelles ni discrimination
-
-La contribution doit avoir:
-
-1. CONSTAT FACTUEL (2-3 phrases):
-   - Une observation concrète sur la situation actuelle
-   - Basée sur des faits ou des observations locales
-   - Neutre et factuelle
-
-2. IDÉES D'AMÉLIORATIONS (3-4 phrases):
-   - Des propositions concrètes et réalisables
-   - En lien avec le constat
-   - Constructives pour la commune
-
-Réponds en JSON:
-{{
-  "constat_factuel": "...",
-  "idees_ameliorations": "..."
-}}
-
-Réponds UNIQUEMENT avec le JSON."""
-
-    def _build_english_prompt(self, source_text: str, category: str, category_desc: str, source_title: str) -> str:
-        return f"""You are an assistant helping citizens of Audierne write constructive contributions for the civic consultation.
-
-SOURCE DOCUMENT{f" - {source_title}" if source_title else ""}:
-{source_text[:3000]}
-
-CHOSEN CATEGORY: {category.capitalize()} ({category_desc})
-
-Generate a citizen contribution in Framaforms format that is:
-- Constructive and respectful
-- Based on the source document
-- Concrete and local (specific to Audierne)
-- Without personal attacks or discrimination
-
-The contribution should have:
-
-1. FACTUAL OBSERVATION (2-3 sentences):
-   - A concrete observation about the current situation
-   - Based on facts or local observations
-   - Neutral and factual
-
-2. IMPROVEMENT IDEAS (3-4 sentences):
-   - Concrete and achievable proposals
-   - Related to the observation
-   - Constructive for the municipality
-
-Reply in JSON:
-{{
-  "constat_factuel": "...",
-  "idees_ameliorations": "..."
-}}
-
-Reply ONLY with the JSON."""
 
 
 def _run_async(coro):

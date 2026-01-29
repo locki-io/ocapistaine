@@ -10,9 +10,9 @@ from app.processors.workflows.workflow_autocontribution import (
     ContributionAssistant,
     DraftContribution,
     generate_draft_sync,
-    CATEGORY_DESCRIPTIONS,
 )
-from app.agents.forseti import CATEGORIES
+# Import from central prompts module
+from app.prompts import CATEGORIES, CATEGORY_DESCRIPTIONS
 
 
 class TestDraftContribution:
