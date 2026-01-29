@@ -101,17 +101,54 @@ def batch_validation_view(user_id: str, validate_func: Callable) -> None:
         _from_contribution_view(user_id, validate_func)
 
 
+def _load_contributions_with_redis_fallback() -> tuple[list, str]:
+    """
+    Load contributions from Redis first, fall back to JSON file.
+
+    Returns:
+        Tuple of (contributions list, source description)
+    """
+    # First try Redis storage
+    try:
+        storage = get_storage()
+        redis_records = storage.get_latest_validations(limit=200)
+        if redis_records:
+            # Convert ValidationRecords to MockContribution-like format
+            contributions = []
+            for r in redis_records:
+                contrib = MockContribution(
+                    id=r.id,
+                    category=r.category,
+                    constat_factuel=r.constat_factuel,
+                    idees_ameliorations=r.idees_ameliorations,
+                    source=r.source,
+                    expected_valid=r.expected_valid,
+                    violations_injected=r.violations_injected if r.violations_injected else None,
+                    parent_id=r.parent_id,
+                    similarity_to_parent=r.similarity_to_parent,
+                    distance_from_parent=r.distance_from_parent,
+                )
+                contributions.append(contrib)
+            return contributions, "Redis"
+    except Exception:
+        pass  # Fall through to file fallback
+
+    # Fall back to JSON file
+    generator = load_contributions()
+    return generator.contributions, "JSON file"
+
+
 def _load_existing_view(user_id: str, validate_func: Callable) -> None:
     """Load and validate existing mockup contributions."""
-    generator = load_contributions()
+    contributions, source = _load_contributions_with_redis_fallback()
 
-    if not generator.contributions:
+    if not contributions:
         st.warning(
             "No mockup contributions found. Use 'Generate Variations' to create some."
         )
         return
 
-    st.success(f"Loaded **{len(generator.contributions)}** contributions")
+    st.success(f"Loaded **{len(contributions)}** contributions from {source}")
 
     # Filter options
     col1, col2, col3 = st.columns(3)
@@ -119,12 +156,12 @@ def _load_existing_view(user_id: str, validate_func: Callable) -> None:
         source_filter = st.multiselect(
             "Source",
             options=["framaforms", "mock", "derived", "input"],
-            default=["framaforms", "mock", "derived"],
+            default=["framaforms", "mock", "derived", "input"],
             key="source_filter",
         )
     with col2:
         categories = list(
-            set(c.category for c in generator.contributions if c.category)
+            set(c.category for c in contributions if c.category)
         )
         category_filter = st.multiselect(
             "Category",
@@ -140,7 +177,7 @@ def _load_existing_view(user_id: str, validate_func: Callable) -> None:
         )
 
     # Filter contributions
-    filtered = generator.contributions
+    filtered = contributions
     if source_filter:
         filtered = [c for c in filtered if c.source in source_filter]
     if category_filter:

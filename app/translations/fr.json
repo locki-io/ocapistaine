@@ -29,7 +29,7 @@
   "status_planned": "Planifié",
 
   "tab_contributions": "Contributions",
-  "tab_questions": "Questions",
+  "tab_autocontrib": "Auto-Contribution",
   "tab_documents": "Documents",
   "tab_mockup": "Mockup",
   "tab_about": "À propos",
@@ -121,5 +121,57 @@
   "about_links_source": "Code source",
   "about_conclusion": "Si l'IA peut nous aider à tenir nos résolutions du Nouvel An, la plus impactante est peut-être : devenir un meilleur citoyen.",
 
-  "language_selector": "Langue"
+  "language_selector": "Langue",
+
+  "autocontrib_title": "Auto-Contribution",
+  "autocontrib_subtitle": "Laissez-vous inspirer pour créer votre contribution citoyenne",
+
+  "autocontrib_step1_short": "Source",
+  "autocontrib_step2_short": "Catégorie",
+  "autocontrib_step3_short": "Inspiration",
+  "autocontrib_step4_short": "Édition",
+  "autocontrib_step5_short": "Enregistré",
+
+  "autocontrib_step1_title": "Étape 1: Choisissez votre source d'inspiration",
+  "autocontrib_step2_title": "Étape 2: Sélectionnez une catégorie",
+  "autocontrib_step3_title": "Étape 3: Inspirez-vous",
+  "autocontrib_step4_title": "Étape 4: Éditez votre contribution",
+  "autocontrib_step5_title": "Contribution enregistrée!",
+
+  "autocontrib_source_type": "Type de source",
+  "autocontrib_source_audierne": "Documents Audierne2026",
+  "autocontrib_source_paste": "Coller du texte",
+  "autocontrib_source_preview": "Aperçu du document",
+  "autocontrib_source_paste_placeholder": "Collez ici un extrait de discours, rapport ou article...",
+  "autocontrib_source_title_label": "Titre de référence (optionnel)",
+  "autocontrib_select_doc": "Sélectionnez un document",
+  "autocontrib_no_docs": "Aucun document disponible",
+  "autocontrib_validation_empty_source": "Veuillez sélectionner ou coller du contenu pour continuer",
+
+  "autocontrib_select_category": "Catégorie de votre contribution",
+  "autocontrib_category_help": "Choisissez la catégorie qui correspond le mieux à votre idée",
+  "autocontrib_category": "Catégorie",
+
+  "autocontrib_generate_draft": "Générer une ébauche",
+  "autocontrib_generating": "Génération de l'ébauche en cours...",
+  "autocontrib_regenerate": "Régénérer",
+  "autocontrib_draft_preview": "Aperçu de l'ébauche",
+  "autocontrib_empty_field": "(vide)",
+
+  "autocontrib_constat_factuel": "Constat factuel",
+  "autocontrib_constat_help": "Décrivez une observation concrète sur la situation actuelle à Audierne",
+  "autocontrib_idees_ameliorations": "Idées d'améliorations",
+  "autocontrib_idees_help": "Proposez des solutions concrètes et réalisables",
+
+  "autocontrib_edit_draft": "Modifier cette ébauche",
+  "autocontrib_save": "Enregistrer",
+  "autocontrib_validate_save": "Valider et enregistrer",
+  "autocontrib_validating": "Validation Forseti 461 en cours...",
+  "autocontrib_saved_success": "Votre contribution a été enregistrée avec succès!",
+  "autocontrib_new_contribution": "Nouvelle contribution",
+  "autocontrib_view_contributions_help": "Voir toutes les contributions",
+
+  "autocontrib_next": "Suivant",
+  "autocontrib_back": "Retour",
+  "autocontrib_validation_empty": "Veuillez remplir les deux champs"
 }

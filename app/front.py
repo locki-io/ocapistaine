@@ -30,6 +30,7 @@ from app.providers import get_provider
 from app.i18n import _
 from app.services import PresentationLogger, ServiceLogger, AgentLogger
 from app.mockup.batch_view import batch_validation_view
+from app.auto_contribution import autocontribution_view
 from data.redis_client import get_redis_connection
 
 # TODO: Import services when implemented
@@ -100,7 +101,7 @@ def main():
     TAB_CONFIG = {
         "contributions": ("📝", "tab_contributions"),
         "mockup": ("🧪", "tab_mockup"),
-        "questions": ("💬", "tab_questions"),
+        "autocontrib": ("✨", "tab_autocontrib"),
         "documents": ("📄", "tab_documents"),
         "about": ("ℹ️", "tab_about"),
     }
@@ -134,90 +135,14 @@ def main():
     # Render active tab content
     if current_tab == "contributions":
         contributions_view(user_id)
-    elif current_tab == "questions":
-        chat_view(user_id)
+    elif current_tab == "autocontrib":
+        autocontribution_view(user_id)
     elif current_tab == "documents":
         documents_view(user_id)
     elif current_tab == "mockup":
         mockup_view(user_id)
     elif current_tab == "about":
         about_view()
-
-
-def chat_view(user_id: str):
-    """Citizen Q&A chat interface."""
-
-    r = get_redis_connection()
-    thread_id = st.session_state.get("thread_id", f"{user_id}:default")
-
-    # Load chat history from Redis
-    history_key = f"chat:{user_id}:{thread_id}"
-    # TODO: Load history when ChatService is implemented
-    # history = ChatService.load_history(r, history_key)
-    history = []  # Placeholder
-
-    # Display chat history
-    chat_container = st.container()
-    with chat_container:
-        if not history:
-            st.info(f"👋 {_('chat_welcome')}")
-        else:
-            for msg in history:
-                with st.chat_message(msg["role"]):
-                    st.markdown(msg["content"])
-
-    # Chat input
-    if prompt := st.chat_input(_("chat_input_placeholder")):
-        # Log user message
-        _svc_logger.log_request(
-            user_id=user_id,
-            operation="chat_message",
-            query=prompt,
-            thread_id=thread_id,
-        )
-
-        # Display user message
-        with st.chat_message("user"):
-            st.markdown(prompt)
-
-        # Generate response
-        with st.chat_message("assistant"):
-            start_time = time.time()
-            with st.spinner(_("chat_searching")):
-                # TODO: Replace with actual RAG call
-                # response = RAGService.query(prompt, user_id)
-                response = _placeholder_response(prompt)
-                st.markdown(response)
-
-            latency_ms = (time.time() - start_time) * 1000
-
-        # Log response
-        _svc_logger.log_response(
-            user_id=user_id,
-            operation="chat_message",
-            success=True,
-            latency_ms=latency_ms,
-        )
-
-        # TODO: Save to history when ChatService is implemented
-        # ChatService.append_message(r, history_key, "user", prompt)
-        # ChatService.append_message(r, history_key, "assistant", response)
-
-
-def _placeholder_response(prompt: str) -> str:
-    """Placeholder response until RAG is implemented."""
-    return f"""
-**🚧 {_('rag_placeholder_title')}**
-
-{_('rag_placeholder_your_question')} : *"{prompt}"*
-
-{_('rag_placeholder_coming_soon')}
-- 🔍 {_('rag_placeholder_search')}
-- 📄 {_('rag_placeholder_cite')}
-- ✅ {_('rag_placeholder_verify')}
-
-{_('rag_placeholder_meanwhile')}
-"""
 
 
 # N8N Webhook URL for fetching issues
