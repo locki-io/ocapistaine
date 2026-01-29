@@ -20,7 +20,11 @@ from typing import List, Dict, Any, Optional, Literal
 from dataclasses import dataclass, field
 
 from app.services import AgentLogger
-from app.mockup.generator import MockContribution, save_contributions, load_contributions
+from app.mockup.generator import (
+    MockContribution,
+    save_contributions,
+    load_contributions,
+)
 from app.providers import get_provider, Message, get_config, GEMINI_MODELS
 
 # Import categories from Forseti (single source of truth)
@@ -43,7 +47,9 @@ _logger = AgentLogger("field_input")
 THEMES_PATH = Path(__file__).parent / "data" / "category_themes.json"
 
 # Path to audierne2026 docs
-AUDIERNE_DOCS_PATH = Path(__file__).parent.parent.parent / "docs" / "docs" / "audierne2026"
+AUDIERNE_DOCS_PATH = (
+    Path(__file__).parent.parent.parent / "docs" / "docs" / "audierne2026"
+)
 
 
 @dataclass
@@ -104,13 +110,19 @@ def list_audierne_docs() -> List[Dict[str, str]]:
             # Read first line as title
             with open(md_file, "r", encoding="utf-8") as f:
                 first_line = f.readline().strip()
-                title = first_line.lstrip("#").strip() if first_line.startswith("#") else md_file.stem
+                title = (
+                    first_line.lstrip("#").strip()
+                    if first_line.startswith("#")
+                    else md_file.stem
+                )
 
-            docs.append({
-                "path": str(md_file),
-                "filename": md_file.name,
-                "title": title,
-            })
+            docs.append(
+                {
+                    "path": str(md_file),
+                    "filename": md_file.name,
+                    "title": title,
+                }
+            )
     return docs
 
 
@@ -229,6 +241,7 @@ Réponds UNIQUEMENT avec le JSON, sans explication."""
     async def generate_contribution(
         self,
         theme: ExtractedTheme,
+        source_title: str = "",
         include_violation: bool = False,
         violation_type: Optional[str] = None,
     ) -> Optional[MockContribution]:
@@ -243,7 +256,9 @@ Réponds UNIQUEMENT avec le JSON, sans explication."""
         Returns:
             MockContribution or None if generation fails
         """
-        category_config = self._themes_config.get("categories", {}).get(theme.category, {})
+        category_config = self._themes_config.get("categories", {}).get(
+            theme.category, {}
+        )
 
         violation_instruction = ""
         if include_violation and violation_type:
@@ -312,6 +327,7 @@ Réponds UNIQUEMENT avec le JSON."""
 
             # Create MockContribution
             import uuid
+
             contrib_id = f"field_{theme.category}_{uuid.uuid4().hex[:8]}"
 
             contribution = MockContribution(
@@ -321,10 +337,13 @@ Réponds UNIQUEMENT avec le JSON."""
                 idees_ameliorations=data.get("idees_ameliorations", ""),
                 source="derived",
                 expected_valid=not include_violation,
-                violations_injected=[violation_type] if include_violation and violation_type else None,
+                violations_injected=(
+                    [violation_type] if include_violation and violation_type else None
+                ),
                 metadata={
                     "field_input": True,
                     "theme": theme.theme,
+                    "source_title": source_title,
                     "generated_date": date.today().isoformat(),
                     "llm_model": self._model,
                 },
@@ -333,7 +352,9 @@ Réponds UNIQUEMENT avec le JSON."""
             return contribution
 
         except Exception as e:
-            self._logger.error("CONTRIBUTION_GENERATION_ERROR", error=str(e), theme=theme.theme)
+            self._logger.error(
+                "CONTRIBUTION_GENERATION_ERROR", error=str(e), theme=theme.theme
+            )
             return None
 
     async def process_field_input(
@@ -384,13 +405,17 @@ Réponds UNIQUEMENT avec le JSON."""
 
         for theme in themes:
             # Valid contribution
-            contrib = await self.generate_contribution(theme, include_violation=False)
+            contrib = await self.generate_contribution(
+                theme, source_title, include_violation=False
+            )
             if contrib:
                 contributions.append(contrib)
 
             # Additional valid variations if requested
             for _ in range(contributions_per_theme - 1):
-                contrib = await self.generate_contribution(theme, include_violation=False)
+                contrib = await self.generate_contribution(
+                    theme, source_title, include_violation=False
+                )
                 if contrib:
                     contributions.append(contrib)
 
@@ -399,6 +424,7 @@ Réponds UNIQUEMENT avec le JSON."""
                 for violation_type in ["subtle_violation", "aggressive"]:
                     contrib = await self.generate_contribution(
                         theme,
+                        source_title,
                         include_violation=True,
                         violation_type=violation_type,
                     )
@@ -438,6 +464,7 @@ def _run_async(coro):
 
     if loop and loop.is_running():
         import concurrent.futures
+
         with concurrent.futures.ThreadPoolExecutor() as pool:
             future = pool.submit(asyncio.run, coro)
             return future.result()

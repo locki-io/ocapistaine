@@ -7,7 +7,7 @@
       "category": "associations",
       "constat_factuel": "Les associations d'Audierne manquent de locaux pour se réunir et stocker leur matériel. Certaines associations doivent se réunir chez des particuliers ou dans des conditions précaires. Cela freine le développement de la vie associative.",
       "idees_ameliorations": "Reconvertir l'ancien bâtiment des douanes au port en maison des associations. Prévoir des salles de réunion partagées, un espace de stockage mutualisé, et une permanence d'accueil pour orienter les nouveaux habitants vers les activités locales. Ce lieu de vie associative renforcerait le tissu social de notre commune.",
-      "source": "framaforms",
+      "source": "mockup",
       "parent_id": null,
       "distance_from_parent": null,
       "similarity_to_parent": null,
@@ -114,9 +114,7 @@
       "distance_from_parent": 394,
       "similarity_to_parent": 0.442,
       "expected_valid": false,
-      "violations_injected": [
-        "subtle_violation"
-      ],
+      "violations_injected": ["subtle_violation"],
       "metadata": {
         "mutation_type": "subtle_violation",
         "llm_generated": true
@@ -134,9 +132,7 @@
       "distance_from_parent": 972,
       "similarity_to_parent": 0.124,
       "expected_valid": false,
-      "violations_injected": [
-        "aggressive"
-      ],
+      "violations_injected": ["aggressive"],
       "metadata": {
         "mutation_type": "aggressive",
         "llm_generated": true
@@ -223,9 +219,7 @@
       "distance_from_parent": 801,
       "similarity_to_parent": 0.32,
       "expected_valid": false,
-      "violations_injected": [
-        "subtle_violation"
-      ],
+      "violations_injected": ["subtle_violation"],
       "metadata": {
         "mutation_type": "subtle_violation",
         "llm_generated": true
@@ -243,9 +237,7 @@
       "distance_from_parent": 884,
       "similarity_to_parent": 0.087,
       "expected_valid": false,
-      "violations_injected": [
-        "aggressive"
-      ],
+      "violations_injected": ["aggressive"],
       "metadata": {
         "mutation_type": "aggressive",
         "llm_generated": true
@@ -402,9 +394,7 @@
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": [
-        "subtle_violation"
-      ],
+      "violations_injected": ["subtle_violation"],
       "metadata": {
         "field_input": true,
         "theme": "projet_ecole",
@@ -464,9 +454,7 @@
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": [
-        "subtle_violation"
-      ],
+      "violations_injected": ["subtle_violation"],
       "metadata": {
         "field_input": true,
         "theme": "participation_citoyenne",
@@ -526,9 +514,7 @@
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": [
-        "subtle_violation"
-      ],
+      "violations_injected": ["subtle_violation"],
       "metadata": {
         "field_input": true,
         "theme": "situation_financiere",
@@ -608,9 +594,7 @@
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": [
-        "subtle_violation"
-      ],
+      "violations_injected": ["subtle_violation"],
       "metadata": {
         "field_input": true,
         "theme": "renovation_ecole",
@@ -690,9 +674,7 @@
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": [
-        "subtle_violation"
-      ],
+      "violations_injected": ["subtle_violation"],
       "metadata": {
         "field_input": true,
         "theme": "situation_financiere",
@@ -772,9 +754,7 @@
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": [
-        "subtle_violation"
-      ],
+      "violations_injected": ["subtle_violation"],
       "metadata": {
         "field_input": true,
         "theme": "projet_ehpad",
@@ -854,9 +834,7 @@
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": [
-        "subtle_violation"
-      ],
+      "violations_injected": ["subtle_violation"],
       "metadata": {
         "field_input": true,
         "theme": "gouvernance_communaute_communes",
@@ -936,9 +914,7 @@
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": [
-        "subtle_violation"
-      ],
+      "violations_injected": ["subtle_violation"],
       "metadata": {
         "field_input": true,
         "theme": "valorisation_patrimoine",
@@ -958,9 +934,7 @@
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": [
-        "aggressive"
-      ],
+      "violations_injected": ["aggressive"],
       "metadata": {
         "field_input": true,
         "theme": "valorisation_patrimoine",

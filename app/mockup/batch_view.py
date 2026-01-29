@@ -69,7 +69,13 @@ def batch_validation_view(user_id: str, validate_func: Callable) -> None:
     # Mode selection
     mode = st.radio(
         "Mode",
-        options=["load_existing", "generate_new", "from_contribution", "field_input", "storage_opik"],
+        options=[
+            "load_existing",
+            "generate_new",
+            "from_contribution",
+            "field_input",
+            "storage_opik",
+        ],
         format_func=lambda x: {
             "load_existing": "📂 Load Existing Mockups",
             "generate_new": "🔧 Generate Variations",
@@ -95,15 +101,54 @@ def batch_validation_view(user_id: str, validate_func: Callable) -> None:
         _from_contribution_view(user_id, validate_func)
 
 
+def _load_contributions_with_redis_fallback() -> tuple[list, str]:
+    """
+    Load contributions from Redis first, fall back to JSON file.
+
+    Returns:
+        Tuple of (contributions list, source description)
+    """
+    # First try Redis storage
+    try:
+        storage = get_storage()
+        redis_records = storage.get_latest_validations(limit=200)
+        if redis_records:
+            # Convert ValidationRecords to MockContribution-like format
+            contributions = []
+            for r in redis_records:
+                contrib = MockContribution(
+                    id=r.id,
+                    category=r.category,
+                    constat_factuel=r.constat_factuel,
+                    idees_ameliorations=r.idees_ameliorations,
+                    source=r.source,
+                    expected_valid=r.expected_valid,
+                    violations_injected=r.violations_injected if r.violations_injected else None,
+                    parent_id=r.parent_id,
+                    similarity_to_parent=r.similarity_to_parent,
+                    distance_from_parent=r.distance_from_parent,
+                )
+                contributions.append(contrib)
+            return contributions, "Redis"
+    except Exception:
+        pass  # Fall through to file fallback
+
+    # Fall back to JSON file
+    generator = load_contributions()
+    return generator.contributions, "JSON file"
+
+
 def _load_existing_view(user_id: str, validate_func: Callable) -> None:
     """Load and validate existing mockup contributions."""
-    generator = load_contributions()
+    contributions, source = _load_contributions_with_redis_fallback()
 
-    if not generator.contributions:
-        st.warning("No mockup contributions found. Use 'Generate Variations' to create some.")
+    if not contributions:
+        st.warning(
+            "No mockup contributions found. Use 'Generate Variations' to create some."
+        )
         return
 
-    st.success(f"Loaded **{len(generator.contributions)}** contributions")
+    st.success(f"Loaded **{len(contributions)}** contributions from {source}")
 
     # Filter options
     col1, col2, col3 = st.columns(3)
@@ -111,11 +156,13 @@ def _load_existing_view(user_id: str, validate_func: Callable) -> None:
         source_filter = st.multiselect(
             "Source",
             options=["framaforms", "mock", "derived", "input"],
-            default=["framaforms", "mock", "derived"],
+            default=["framaforms", "mock", "derived", "input"],
             key="source_filter",
         )
     with col2:
-        categories = list(set(c.category for c in generator.contributions if c.category))
+        categories = list(
+            set(c.category for c in contributions if c.category)
+        )
         category_filter = st.multiselect(
             "Category",
             options=categories,
@@ -130,7 +177,7 @@ def _load_existing_view(user_id: str, validate_func: Callable) -> None:
         )
 
     # Filter contributions
-    filtered = generator.contributions
+    filtered = contributions
     if source_filter:
         filtered = [c for c in filtered if c.source in source_filter]
     if category_filter:
@@ -152,7 +199,8 @@ def _generate_new_view(user_id: str, validate_func: Callable) -> None:
 
     # Get base contributions only (not derived)
     base_contributions = [
-        c for c in generator.contributions
+        c
+        for c in generator.contributions
         if c.source in ["framaforms", "mock", "input"] and not c.parent_id
     ]
 
@@ -188,7 +236,10 @@ def _generate_new_view(user_id: str, validate_func: Callable) -> None:
         )
 
     # Select which bases to use
-    base_options = {c.id: f"{c.category or 'N/A'}: {c.constat_factuel[:50]}..." for c in base_contributions}
+    base_options = {
+        c.id: f"{c.category or 'N/A'}: {c.constat_factuel[:50]}..."
+        for c in base_contributions
+    }
     selected_bases = st.multiselect(
         "Select base contributions to vary",
         options=list(base_options.keys()),
@@ -220,7 +271,9 @@ def _generate_new_view(user_id: str, validate_func: Callable) -> None:
             # Save generated contributions
             save_contributions(new_generator)
 
-            st.success(f"Generated **{len(new_generator.contributions)}** contributions (saved to file)")
+            st.success(
+                f"Generated **{len(new_generator.contributions)}** contributions (saved to file)"
+            )
             st.rerun()
 
 
@@ -236,8 +289,14 @@ def _from_contribution_view(user_id: str, validate_func: Callable) -> None:
         category = st.selectbox(
             "Category",
             options=[
-                None, "economie", "logement", "culture", "ecologie",
-                "associations", "jeunesse", "alimentation-bien-etre-soins"
+                None,
+                "economie",
+                "logement",
+                "culture",
+                "ecologie",
+                "associations",
+                "jeunesse",
+                "alimentation-bien-etre-soins",
             ],
             format_func=lambda x: "-- Select --" if x is None else x.capitalize(),
             key="input_category",
@@ -340,7 +399,9 @@ def _from_contribution_view(user_id: str, validate_func: Callable) -> None:
             st.error("Please enter a factual observation")
             return
 
-        spinner_text = "Generating LLM variations..." if use_llm else "Generating variations..."
+        spinner_text = (
+            "Generating LLM variations..." if use_llm else "Generating variations..."
+        )
         with st.spinner(spinner_text):
             variations = generate_variations(
                 constat_factuel=constat,
@@ -421,7 +482,9 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
 
                 # Preview
                 with st.expander("📖 Preview document", expanded=False):
-                    st.markdown(input_text[:2000] + ("..." if len(input_text) > 2000 else ""))
+                    st.markdown(
+                        input_text[:2000] + ("..." if len(input_text) > 2000 else "")
+                    )
         else:
             st.warning("No documents found in docs/docs/audierne2026/")
 
@@ -453,7 +516,9 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
 
             # Preview
             with st.expander("📖 Preview uploaded file", expanded=False):
-                st.markdown(input_text[:2000] + ("..." if len(input_text) > 2000 else ""))
+                st.markdown(
+                    input_text[:3000] + ("..." if len(input_text) > 2000 else "")
+                )
 
     # Generation settings
     st.markdown("#### 2. Generation Settings")
@@ -477,7 +542,9 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
 
     # Provider selection
     st.markdown("#### 2b. LLM Provider")
-    st.caption("Gemini 2.5 Flash recommended for best theme extraction with grounding/search.")
+    st.caption(
+        "Gemini 2.5 Flash recommended for best theme extraction with grounding/search."
+    )
 
     col1, col2 = st.columns(2)
     with col1:
@@ -536,8 +603,13 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
         if st.button("🔍 Check Provider", key="field_check_provider"):
             try:
                 from app.providers import get_provider
+
                 model_to_use = llm_model if llm_model.strip() else None
-                provider = get_provider(llm_provider, cache=False, model=model_to_use) if model_to_use else get_provider(llm_provider)
+                provider = (
+                    get_provider(llm_provider, cache=False, model=model_to_use)
+                    if model_to_use
+                    else get_provider(llm_provider)
+                )
                 st.success(f"✓ {llm_provider} ({provider.model}) ready")
             except Exception as e:
                 st.error(f"✗ {llm_provider} error: {e}")
@@ -545,7 +617,9 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
     # Generate button
     st.markdown("---")
 
-    if st.button("🚀 Generate Themed Contributions", type="primary", key="field_generate_btn"):
+    if st.button(
+        "🚀 Generate Themed Contributions", type="primary", key="field_generate_btn"
+    ):
         if not input_text.strip():
             st.error("Please provide input text")
             return
@@ -573,8 +647,10 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
                     generator = load_contributions()
                     # Get only the newly generated ones (field_input source)
                     new_contribs = [
-                        c for c in generator.contributions
-                        if c.metadata and c.metadata.get("field_input")
+                        c
+                        for c in generator.contributions
+                        if c.metadata
+                        and c.metadata.get("field_input")
                         and c.metadata.get("generated_date") == date.today().isoformat()
                     ]
                     if new_contribs:
@@ -621,8 +697,10 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
         # Load and filter to show only today's field input contributions
         generator = load_contributions()
         field_contribs = [
-            c for c in generator.contributions
-            if c.metadata and c.metadata.get("field_input")
+            c
+            for c in generator.contributions
+            if c.metadata
+            and c.metadata.get("field_input")
             and c.metadata.get("generated_date") == date.today().isoformat()
         ]
 
@@ -642,8 +720,10 @@ def _run_field_experiment(validate_func: Callable, user_id: str) -> None:
         # Get today's contributions
         generator = load_contributions()
         field_contribs = [
-            c for c in generator.contributions
-            if c.metadata and c.metadata.get("field_input")
+            c
+            for c in generator.contributions
+            if c.metadata
+            and c.metadata.get("field_input")
             and c.metadata.get("generated_date") == date.today().isoformat()
         ]
 
@@ -652,9 +732,13 @@ def _run_field_experiment(validate_func: Callable, user_id: str) -> None:
             return
 
         # Run batch validation and save to Redis
-        _run_batch_validation(field_contribs, validate_func, user_id, save_to_redis=True)
+        _run_batch_validation(
+            field_contribs, validate_func, user_id, save_to_redis=True
+        )
 
-        st.success(f"📊 Experiment complete: validated {len(field_contribs)} contributions")
+        st.success(
+            f"📊 Experiment complete: validated {len(field_contribs)} contributions"
+        )
 
     except Exception as e:
         st.error(f"Experiment error: {e}")
@@ -688,7 +772,11 @@ def _display_contributions_list(
         if "batch_results" in st.session_state:
             results = st.session_state["batch_results"]
             valid_count = sum(1 for r in results.values() if r.get("is_valid"))
-            matches = sum(1 for cid, r in results.items() if _check_expected_match(cid, r, contributions))
+            matches = sum(
+                1
+                for cid, r in results.items()
+                if _check_expected_match(cid, r, contributions)
+            )
             st.markdown(
                 f"**Results:** {valid_count}/{len(results)} valid • "
                 f"{matches}/{len(results)} match expected"
@@ -701,7 +789,9 @@ def _display_contributions_list(
         _display_contribution_card(contrib, validate_func, user_id, i)
 
 
-def _check_expected_match(contrib_id: str, result: dict, contributions: List[MockContribution]) -> bool:
+def _check_expected_match(
+    contrib_id: str, result: dict, contributions: List[MockContribution]
+) -> bool:
     """Check if result matches expected validity."""
     contrib = next((c for c in contributions if c.id == contrib_id), None)
     if not contrib or contrib.expected_valid is None:
@@ -743,7 +833,11 @@ def _display_contribution_card(
             result_indicator = "❌"
 
     # Build header
-    title_preview = contrib.constat_factuel[:50] + "..." if len(contrib.constat_factuel) > 50 else contrib.constat_factuel
+    title_preview = (
+        contrib.constat_factuel[:50] + "..."
+        if len(contrib.constat_factuel) > 50
+        else contrib.constat_factuel
+    )
     header = f"{badge} [{contrib.category or 'N/A'}] {title_preview} {validity_indicator}{result_indicator}"
 
     with st.expander(header, expanded=False):
@@ -766,7 +860,9 @@ def _display_contribution_card(
 
         # Violations injected
         if contrib.violations_injected:
-            st.warning(f"**Violations injected:** {', '.join(contrib.violations_injected)}")
+            st.warning(
+                f"**Violations injected:** {', '.join(contrib.violations_injected)}"
+            )
 
         # Contribution content
         st.markdown("**Constat factuel:**")
@@ -787,14 +883,18 @@ def _display_contribution_card(
         with btn_col1:
             if st.button(f"🔍 Validate", key=f"validate_single_{contrib.id}_{index}"):
                 with st.spinner("Validating..."):
-                    result = validate_func(contrib.title, contrib.body, contrib.category)
+                    result = validate_func(
+                        contrib.title, contrib.body, contrib.category
+                    )
                     if "batch_results" not in st.session_state:
                         st.session_state["batch_results"] = {}
                     st.session_state["batch_results"][contrib.id] = result
                     st.rerun()
 
         with btn_col2:
-            if st.button(f"🗑️ Delete", key=f"delete_single_{contrib.id}_{index}", type="secondary"):
+            if st.button(
+                f"🗑️ Delete", key=f"delete_single_{contrib.id}_{index}", type="secondary"
+            ):
                 _delete_contribution(contrib.id)
                 st.rerun()
 
@@ -814,19 +914,23 @@ def _delete_contribution(contrib_id: str) -> None:
     # Remove from session state temp_variations
     if "temp_variations" in st.session_state:
         st.session_state["temp_variations"] = [
-            v for v in st.session_state["temp_variations"]
-            if v.get("id") != contrib_id
+            v for v in st.session_state["temp_variations"] if v.get("id") != contrib_id
         ]
 
     # Remove from batch results
-    if "batch_results" in st.session_state and contrib_id in st.session_state["batch_results"]:
+    if (
+        "batch_results" in st.session_state
+        and contrib_id in st.session_state["batch_results"]
+    ):
         del st.session_state["batch_results"][contrib_id]
 
     # Remove from JSON file
     try:
         generator = load_contributions()
         original_count = len(generator.contributions)
-        generator.contributions = [c for c in generator.contributions if c.id != contrib_id]
+        generator.contributions = [
+            c for c in generator.contributions if c.id != contrib_id
+        ]
         if len(generator.contributions) < original_count:
             save_contributions(generator)
             _logger.info("JSON_DELETE", id=contrib_id[:8])
@@ -853,7 +957,11 @@ def _run_batch_validation(
 ) -> None:
     """Run validation on all contributions and optionally save to Redis."""
 
-    _logger.info("BATCH_START", count=len(contributions), user_id=user_id[:8] if user_id else None)
+    _logger.info(
+        "BATCH_START",
+        count=len(contributions),
+        user_id=user_id[:8] if user_id else None,
+    )
     start_time = time.time()
     today = date.today().isoformat()
 
@@ -865,7 +973,9 @@ def _run_batch_validation(
 
     for i, contrib in enumerate(contributions):
         progress = (i + 1) / len(contributions)
-        progress_bar.progress(progress, text=f"Validating {i+1}/{len(contributions)}: {contrib.id[:8]}...")
+        progress_bar.progress(
+            progress, text=f"Validating {i+1}/{len(contributions)}: {contrib.id[:8]}..."
+        )
         item_start = time.time()
 
         try:
@@ -919,8 +1029,7 @@ def _run_batch_validation(
     successful = [r for r in results.values() if r.get("success")]
     valid_count = sum(1 for r in successful if r.get("is_valid"))
     matches_expected = sum(
-        1 for cid, r in results.items()
-        if _check_expected_match(cid, r, contributions)
+        1 for cid, r in results.items() if _check_expected_match(cid, r, contributions)
     )
 
     _logger.info(
@@ -1046,7 +1155,11 @@ def _save_variations_to_redis(variations: List[dict]) -> int:
                 category=contrib.category,
                 constat_factuel=contrib.constat_factuel,
                 idees_ameliorations=contrib.idees_ameliorations,
-                is_valid=contrib.expected_valid if contrib.expected_valid is not None else True,
+                is_valid=(
+                    contrib.expected_valid
+                    if contrib.expected_valid is not None
+                    else True
+                ),
                 violations=[],
                 encouraged_aspects=[],
                 confidence=0.0,  # Not validated yet
@@ -1115,7 +1228,10 @@ def _render_statistics_tab(storage: MockupStorage, manager) -> None:
         today_stats = storage.get_statistics(date.today().isoformat())
         if today_stats.get("count", 0) > 0:
             st.metric("Total", today_stats["count"])
-            st.metric("Valid", f"{today_stats['valid_count']} ({today_stats['valid_ratio']:.0%})")
+            st.metric(
+                "Valid",
+                f"{today_stats['valid_count']} ({today_stats['valid_ratio']:.0%})",
+            )
             if today_stats.get("accuracy") is not None:
                 st.metric("Accuracy", f"{today_stats['accuracy']:.0%}")
             st.caption(f"Sources: {today_stats.get('sources', {})}")
@@ -1180,20 +1296,27 @@ def _render_load_data_tab(storage: MockupStorage) -> None:
             # Display as table
             table_data = []
             for r in records[:load_limit]:
-                table_data.append({
-                    "ID": r.id[:8],
-                    "Category": r.category or "N/A",
-                    "Valid": "✅" if r.is_valid else "❌",
-                    "Confidence": f"{r.confidence:.0%}",
-                    "Source": r.source,
-                    "Match": "🎯" if r.matches_expected() else ("❌" if r.matches_expected() is False else "-"),
-                })
+                table_data.append(
+                    {
+                        "ID": r.id[:8],
+                        "Category": r.category or "N/A",
+                        "Valid": "✅" if r.is_valid else "❌",
+                        "Confidence": f"{r.confidence:.0%}",
+                        "Source": r.source,
+                        "Match": (
+                            "🎯"
+                            if r.matches_expected()
+                            else ("❌" if r.matches_expected() is False else "-")
+                        ),
+                    }
+                )
 
             st.dataframe(table_data, use_container_width=True)
 
             # Export option
             if st.button("📋 Copy as JSON", key="copy_json_btn"):
                 import json
+
                 json_data = [r.to_dict() for r in records]
                 st.code(json.dumps(json_data[:5], indent=2), language="json")
                 st.caption(f"Showing first 5 of {len(records)} records")
@@ -1261,10 +1384,16 @@ def _render_export_opik_tab(storage: MockupStorage, manager) -> None:
     if st.button("📤 Create Dataset", type="primary", key="export_opik_btn"):
         with st.spinner("Creating dataset..."):
             date_str = export_date.isoformat() if export_date else None
-            valid_only = True if valid_filter == "valid_only" else (False if valid_filter == "invalid_only" else None)
+            valid_only = (
+                True
+                if valid_filter == "valid_only"
+                else (False if valid_filter == "invalid_only" else None)
+            )
 
             # Create dataset
-            manager.create_charter_dataset(dataset_name, f"Charter validation dataset from {date_str or 'latest'}")
+            manager.create_charter_dataset(
+                dataset_name, f"Charter validation dataset from {date_str or 'latest'}"
+            )
 
             # Add from Redis
             count = manager.add_from_redis(
