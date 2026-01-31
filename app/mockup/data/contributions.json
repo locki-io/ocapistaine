@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-01-28T07:47:19.386027",
-  "count": 50,
+  "generated_at": "2026-01-29T06:46:04.430383",
+  "count": 83,
   "contributions": [
     {
       "id": "base_ass_001",
@@ -19,21 +19,6 @@
       },
       "title": "Les associations d'Audierne manquent de locaux pour se réunir et stocker leur...",
       "body": "**Constat factuel:**\nLes associations d'Audierne manquent de locaux pour se réunir et stocker leur matériel. Certaines associations doivent se réunir chez des particuliers ou dans des conditions précaires. Cela freine le développement de la vie associative.\n\n**Vos idées d'améliorations:**\nReconvertir l'ancien bâtiment des douanes au port en maison des associations. Prévoir des salles de réunion partagées, un espace de stockage mutualisé, et une permanence d'accueil pour orienter les nouveaux habitants vers les activités locales. Ce lieu de vie associative renforcerait le tissu social de notre commune."
-    },
-    {
-      "id": "8d80b9ed339b",
-      "category": "associations",
-      "constat_factuel": "Ls associaätions d'Audierne manqêent se lcoaîvpor se ?réunir et stocker leur matériel. Cerptaiges assocations doivent se rénisr chez des pavticuliers ou dasg def cocditions wrécairgels. Cela freine le deéjejopement d el àla ie associative.",
-      "idees_ameliorations": "Zecjolvert-ir l'ancien âtiment des oduanes au port en maison des assëgiations. Vrévoirdes salles de rxéunioq pairtagées, un espace de stockagévmutualisé, t une permanlece d'accueilpour orieter les nouveauxhhabiatns vers les activités lcaels.pCqe lieu de vejasociative ren focreyit le tissu social de notre commun.e",
-      "source": "derived",
-      "parent_id": "base_ass_001",
-      "distance_from_parent": 72,
-      "similarity_to_parent": 0.87,
-      "expected_valid": true,
-      "violations_injected": null,
-      "metadata": null,
-      "title": "Ls associaätions d'Audierne manqêent se lcoaîvpor se ?réunir et stocker leur ...",
-      "body": "**Constat factuel:**\nLs associaätions d'Audierne manqêent se lcoaîvpor se ?réunir et stocker leur matériel. Cerptaiges assocations doivent se rénisr chez des pavticuliers ou dasg def cocditions wrécairgels. Cela freine le deéjejopement d el àla ie associative.\n\n**Vos idées d'améliorations:**\nZecjolvert-ir l'ancien âtiment des oduanes au port en maison des assëgiations. Vrévoirdes salles de rxéunioq pairtagées, un espace de stockagévmutualisé, t une permanlece d'accueilpour orieter les nouveauxhhabiatns vers les activités lcaels.pCqe lieu de vejasociative ren focreyit le tissu social de notre commun.e"
     },
     {
       "id": "25d5b4cd9917",
@@ -969,6 +954,706 @@
       },
       "title": "CES ÉLUS INCOMPÉTENTS LAISSENT DES ESPACES INOCCUPÉS DANS LE PROJET ! C'EST U...",
       "body": "**Constat factuel:**\nCES ÉLUS INCOMPÉTENTS LAISSENT DES ESPACES INOCCUPÉS DANS LE PROJET ! C'EST UNE HONTE POUR NOTRE VILLE D'AUDIERNE ! ILS NE SE SOUCIENT PAS DU PATRIMOINE DE NOTRE COMMUNE !\n\n**Vos idées d'améliorations:**\nCES ESPACES INOCCUPÉS DEVRAIENT ÊTRE TRANSFORMÉS EN CENTRES CULTURELS POUR LA POPULATION ! LES ÉLUS DEVRAIENT ÊTRE VIRÉS ET REMPLACÉS PAR DES PERSONNES COMPÉTENTES QUI SE SOUCIENT VRAIMENT DE NOTRE PATRIMOINE !"
+    },
+    {
+      "id": "field_associations_29674127",
+      "category": "associations",
+      "constat_factuel": "La participation citoyenne à la consultation de la commune d'Audierne semble être faible.",
+      "idees_ameliorations": "Pour améliorer la participation citoyenne, proposer des consultations en ligne plus accessibles et promouvoir plus activement les consultations existantes.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "communal_name_consultation",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "La participation citoyenne à la consultation de la commune d'Audierne semble ...",
+      "body": "**Constat factuel:**\nLa participation citoyenne à la consultation de la commune d'Audierne semble être faible.\n\n**Vos idées d'améliorations:**\nPour améliorer la participation citoyenne, proposer des consultations en ligne plus accessibles et promouvoir plus activement les consultations existantes."
+    },
+    {
+      "id": "field_associations_9489174c",
+      "category": "associations",
+      "constat_factuel": "Le nombre de citoyens d'Audierne participant à la vie associative semble être en baisse",
+      "idees_ameliorations": "Organiser des événements communautaires réguliers pour encourager plus de participation, fournir des informations claires sur les opportunités associatives locales et offrir un soutien financier aux projets communautaires",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "communal_name_consultation",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "Le nombre de citoyens d'Audierne participant à la vie associative semble être...",
+      "body": "**Constat factuel:**\nLe nombre de citoyens d'Audierne participant à la vie associative semble être en baisse\n\n**Vos idées d'améliorations:**\nOrganiser des événements communautaires réguliers pour encourager plus de participation, fournir des informations claires sur les opportunités associatives locales et offrir un soutien financier aux projets communautaires"
+    },
+    {
+      "id": "field_associations_c3ddc605",
+      "category": "associations",
+      "constat_factuel": "L'engagement citoyen à Audierne semble faible dans certains domaines de la vie associative.",
+      "idees_ameliorations": "Organiser des événements communautaires réguliers pour encourager l'engagement citoyen, établir un réseau d'organisations locales et promouvoir des ateliers de participation active dans la vie de la commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "communal_name_consultation",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "L'engagement citoyen à Audierne semble faible dans certains domaines de la vi...",
+      "body": "**Constat factuel:**\nL'engagement citoyen à Audierne semble faible dans certains domaines de la vie associative.\n\n**Vos idées d'améliorations:**\nOrganiser des événements communautaires réguliers pour encourager l'engagement citoyen, établir un réseau d'organisations locales et promouvoir des ateliers de participation active dans la vie de la commune."
+    },
+    {
+      "id": "field_associations_a3061e0c",
+      "category": "associations",
+      "constat_factuel": "Il semble que la consultation citoyenne à Audierne n'ait pas été tout à fait efficace en ce qui concerne la participation des citoyens.",
+      "idees_ameliorations": "Pour améliorer cette situation, nous pourrions considérer de multiplier les efforts de sensibilisation des citoyens aux consultations et d'offrir une plateforme plus accessible et utilisable.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "communal_name_consultation",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "Il semble que la consultation citoyenne à Audierne n'ait pas été tout à fait ...",
+      "body": "**Constat factuel:**\nIl semble que la consultation citoyenne à Audierne n'ait pas été tout à fait efficace en ce qui concerne la participation des citoyens.\n\n**Vos idées d'améliorations:**\nPour améliorer cette situation, nous pourrions considérer de multiplier les efforts de sensibilisation des citoyens aux consultations et d'offrir une plateforme plus accessible et utilisable."
+    },
+    {
+      "id": "field_associations_bce3e5bb",
+      "category": "associations",
+      "constat_factuel": "La consultation citoyenne est actuellement inexistante à Audierne, empêchant ainsi les citoyens de participer directement au fonctionnement de leur commune.",
+      "idees_ameliorations": "Il serait nécessaire d'instaurer une plateforme de consultation en ligne pour permettre aux citoyens d'exprimer leurs idées, souhaits et inquiétudes concernant la gestion de leur commune. De plus, des réunions publiques régulières devraient être organisées pour informer les citoyens des décisions prises par les élus.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "communal_name_consultation",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "La consultation citoyenne est actuellement inexistante à Audierne, empêchant ...",
+      "body": "**Constat factuel:**\nLa consultation citoyenne est actuellement inexistante à Audierne, empêchant ainsi les citoyens de participer directement au fonctionnement de leur commune.\n\n**Vos idées d'améliorations:**\nIl serait nécessaire d'instaurer une plateforme de consultation en ligne pour permettre aux citoyens d'exprimer leurs idées, souhaits et inquiétudes concernant la gestion de leur commune. De plus, des réunions publiques régulières devraient être organisées pour informer les citoyens des décisions prises par les élus."
+    },
+    {
+      "id": "field_ecologie_b74f6a22",
+      "category": "ecologie",
+      "constat_factuel": "La plage d'Audierne actuelle présente des signes de dégradation environnementale tels que la pollution marine et l'érosion côtière.",
+      "idees_ameliorations": "Améliorer les systèmes d'épuration des eaux usées, promouvoir le recyclage des déchets sur la plage, organiser des actions de nettoyage régulier et engager une campagne de sensibilisation à l'environnement pour les visiteurs.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "beach_certification",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "La plage d'Audierne actuelle présente des signes de dégradation environnement...",
+      "body": "**Constat factuel:**\nLa plage d'Audierne actuelle présente des signes de dégradation environnementale tels que la pollution marine et l'érosion côtière.\n\n**Vos idées d'améliorations:**\nAméliorer les systèmes d'épuration des eaux usées, promouvoir le recyclage des déchets sur la plage, organiser des actions de nettoyage régulier et engager une campagne de sensibilisation à l'environnement pour les visiteurs."
+    },
+    {
+      "id": "field_ecologie_e4bbf83b",
+      "category": "ecologie",
+      "constat_factuel": "La plage d'Audierne actuelle ne possède pas le Pavillon Bleu, en raison de la présence régulière de déchets et de la pollution de l'eau.",
+      "idees_ameliorations": "Améliorer la collecte des déchets sur la plage, ainsi que l'application stricte des règles d'écologie pour réduire les sources de pollution. De plus, organiser régulièrement des événements communautaires de nettoyage de la plage.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "beach_certification",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "La plage d'Audierne actuelle ne possède pas le Pavillon Bleu, en raison de la...",
+      "body": "**Constat factuel:**\nLa plage d'Audierne actuelle ne possède pas le Pavillon Bleu, en raison de la présence régulière de déchets et de la pollution de l'eau.\n\n**Vos idées d'améliorations:**\nAméliorer la collecte des déchets sur la plage, ainsi que l'application stricte des règles d'écologie pour réduire les sources de pollution. De plus, organiser régulièrement des événements communautaires de nettoyage de la plage."
+    },
+    {
+      "id": "field_ecologie_ecf0cf94",
+      "category": "ecologie",
+      "constat_factuel": "La plage d'Audierne actuellement n'est pas certifiée Pavillon Bleu en raison de la présence de déchets et pollution marines.",
+      "idees_ameliorations": "Organiser des nettoyages réguliers de la plage, promouvoir une éducation aux pratiques écologiques dans la commune, et implanter un système de tri sélectif pour réduire le déchet solide sur place.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "beach_certification",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "La plage d'Audierne actuellement n'est pas certifiée Pavillon Bleu en raison ...",
+      "body": "**Constat factuel:**\nLa plage d'Audierne actuellement n'est pas certifiée Pavillon Bleu en raison de la présence de déchets et pollution marines.\n\n**Vos idées d'améliorations:**\nOrganiser des nettoyages réguliers de la plage, promouvoir une éducation aux pratiques écologiques dans la commune, et implanter un système de tri sélectif pour réduire le déchet solide sur place."
+    },
+    {
+      "id": "field_ecologie_3ffac3be",
+      "category": "ecologie",
+      "constat_factuel": "Il est notable que plusieurs plages d'Audierne ne sont pas encore certifiées Pavillon Bleu malgré leur importance pour l'attraction touristique locale.",
+      "idees_ameliorations": "Pour améliorer la qualité de nos plages, les élus peuvent considérer la mise en place d'un plan détaillé visant à renforcer la gestion des déchets et le contrôle de la pollution, ainsi qu'à promouvoir l'éducation environnementale dans nos écoles locales.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "beach_certification",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "Il est notable que plusieurs plages d'Audierne ne sont pas encore certifiées ...",
+      "body": "**Constat factuel:**\nIl est notable que plusieurs plages d'Audierne ne sont pas encore certifiées Pavillon Bleu malgré leur importance pour l'attraction touristique locale.\n\n**Vos idées d'améliorations:**\nPour améliorer la qualité de nos plages, les élus peuvent considérer la mise en place d'un plan détaillé visant à renforcer la gestion des déchets et le contrôle de la pollution, ainsi qu'à promouvoir l'éducation environnementale dans nos écoles locales."
+    },
+    {
+      "id": "field_ecologie_d721df30",
+      "category": "ecologie",
+      "constat_factuel": "La plage d'Audierne a été pendant trop longtemps négociée et sous-estimée par les élus locaux qui ont laissé l'étendue se détériorer. Il est temps de prendre des mesures pour récupérer le Pavillon Bleu.",
+      "idees_ameliorations": "1. Organiser régulièrement des actions de nettoyage et de réhabilitation de la plage, en collaboration avec les riverains et des associations environnementales. 2. Établir un plan d'action pour récupérer le Pavillon Bleu et améliorer la qualité de l'eau et du sable de la plage. 3. Les élus doivent prendre leur responsabilité et mettre en place des mesures concrètes pour protéger notre plage et notre environnement.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "beach_certification",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "La plage d'Audierne a été pendant trop longtemps négociée et sous-estimée par...",
+      "body": "**Constat factuel:**\nLa plage d'Audierne a été pendant trop longtemps négociée et sous-estimée par les élus locaux qui ont laissé l'étendue se détériorer. Il est temps de prendre des mesures pour récupérer le Pavillon Bleu.\n\n**Vos idées d'améliorations:**\n1. Organiser régulièrement des actions de nettoyage et de réhabilitation de la plage, en collaboration avec les riverains et des associations environnementales. 2. Établir un plan d'action pour récupérer le Pavillon Bleu et améliorer la qualité de l'eau et du sable de la plage. 3. Les élus doivent prendre leur responsabilité et mettre en place des mesures concrètes pour protéger notre plage et notre environnement."
+    },
+    {
+      "id": "field_economie_a4a19b6e",
+      "category": "economie",
+      "constat_factuel": "L'absence d'un accord de libre-échange entre l'Union Européenne et Mercosur peut avoir un impact négatif sur l'économie locale d'Audierne en réduisant la concurrence pour nos produits locaux.",
+      "idees_ameliorations": "Pour améliorer notre situation, il est nécessaire de diversifier les marchés pour nos produits locaux et de promouvoir l'accès à des informations fiables sur les possibilités commerciales dans d'autres pays. En outre, la commune peut contribuer à financer des activités locales visant à améliorer la qualité des produits et leur attractivité sur le marché.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "mercosur_mobilization",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "L'absence d'un accord de libre-échange entre l'Union Européenne et Mercosur p...",
+      "body": "**Constat factuel:**\nL'absence d'un accord de libre-échange entre l'Union Européenne et Mercosur peut avoir un impact négatif sur l'économie locale d'Audierne en réduisant la concurrence pour nos produits locaux.\n\n**Vos idées d'améliorations:**\nPour améliorer notre situation, il est nécessaire de diversifier les marchés pour nos produits locaux et de promouvoir l'accès à des informations fiables sur les possibilités commerciales dans d'autres pays. En outre, la commune peut contribuer à financer des activités locales visant à améliorer la qualité des produits et leur attractivité sur le marché."
+    },
+    {
+      "id": "field_economie_7b1312eb",
+      "category": "economie",
+      "constat_factuel": "L'absence de traité entre la France et Mercosur pourrait entraîner une perte de concurrence pour les entreprises locales d'Audierne.",
+      "idees_ameliorations": "L'établissement d'un partenariat économique avec des entreprises brésiliennes, l'organisation de foires commerciales transatlantiques et la promotion du commerce durable pourraient contribuer à améliorer la situation.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "mercosur_mobilization",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "L'absence de traité entre la France et Mercosur pourrait entraîner une perte ...",
+      "body": "**Constat factuel:**\nL'absence de traité entre la France et Mercosur pourrait entraîner une perte de concurrence pour les entreprises locales d'Audierne.\n\n**Vos idées d'améliorations:**\nL'établissement d'un partenariat économique avec des entreprises brésiliennes, l'organisation de foires commerciales transatlantiques et la promotion du commerce durable pourraient contribuer à améliorer la situation."
+    },
+    {
+      "id": "field_economie_525d6707",
+      "category": "economie",
+      "constat_factuel": "La commune d'Audierne est actuellement confrontée à des difficultés économiques en raison de la concurrence accrue dans le secteur de la pêche",
+      "idees_ameliorations": "Pour améliorer la situation, nous pouvons promouvoir la diversification économique, encourager les petites entreprises locales et soutenir des projets de développement durable",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "mercosur_mobilization",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "La commune d'Audierne est actuellement confrontée à des difficultés économiqu...",
+      "body": "**Constat factuel:**\nLa commune d'Audierne est actuellement confrontée à des difficultés économiques en raison de la concurrence accrue dans le secteur de la pêche\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, nous pouvons promouvoir la diversification économique, encourager les petites entreprises locales et soutenir des projets de développement durable"
+    },
+    {
+      "id": "field_economie_58b920ac",
+      "category": "economie",
+      "constat_factuel": "Il est frappant de voir l'absence croissante d'initiatives locales pour promouvoir la compétitivité économique d'Audierne à travers des accords de libre-échange tels que le Mercosur. Il semble que nous manquions d'une vision plus large et d'un engagement plus déterminé.",
+      "idees_ameliorations": "Il serait utile de stimuler les discussions entre les élus locaux, les entreprises et les citoyens pour identifier des opportunités potentielles dans le marché Mercosur. De plus, une campagne d'information claire sur les avantages et les risques du traité pourra être mise en place afin de permettre aux Audiernais de prendre des décisions informées.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "mercosur_mobilization",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "Il est frappant de voir l'absence croissante d'initiatives locales pour promo...",
+      "body": "**Constat factuel:**\nIl est frappant de voir l'absence croissante d'initiatives locales pour promouvoir la compétitivité économique d'Audierne à travers des accords de libre-échange tels que le Mercosur. Il semble que nous manquions d'une vision plus large et d'un engagement plus déterminé.\n\n**Vos idées d'améliorations:**\nIl serait utile de stimuler les discussions entre les élus locaux, les entreprises et les citoyens pour identifier des opportunités potentielles dans le marché Mercosur. De plus, une campagne d'information claire sur les avantages et les risques du traité pourra être mise en place afin de permettre aux Audiernais de prendre des décisions informées."
+    },
+    {
+      "id": "field_economie_730f466b",
+      "category": "economie",
+      "constat_factuel": "La communauté d'Audierne subit des pertes économiques croissantes en raison de la signature du traité Mercosur par notre gouvernement. Les petites entreprises locales sont particulièrement touchées.",
+      "idees_ameliorations": "Il est urgent que les élus prennent en compte les préoccupations de la communauté locale et révoquent l'accord Mercosur. Il serait également bénéfique d'organiser des ateliers d'information pour sensibiliser le public au danger de ce traité et à la nécessité de soutenir les entreprises locales.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "mercosur_mobilization",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "La communauté d'Audierne subit des pertes économiques croissantes en raison d...",
+      "body": "**Constat factuel:**\nLa communauté d'Audierne subit des pertes économiques croissantes en raison de la signature du traité Mercosur par notre gouvernement. Les petites entreprises locales sont particulièrement touchées.\n\n**Vos idées d'améliorations:**\nIl est urgent que les élus prennent en compte les préoccupations de la communauté locale et révoquent l'accord Mercosur. Il serait également bénéfique d'organiser des ateliers d'information pour sensibiliser le public au danger de ce traité et à la nécessité de soutenir les entreprises locales."
+    },
+    {
+      "id": "field_ecologie_c3135f47",
+      "category": "ecologie",
+      "constat_factuel": "Les cendriers publics d'Audierne sont souvent surchargés et la gestion des déchets ménagers semble insuffisante.",
+      "idees_ameliorations": "Installer de nouveaux bacs à ordures en différents points de la ville pour améliorer le tri sélectif, éducation aux pratiques écologiques dans les écoles et installer des panneaux d'information sur les bonnes pratiques de gestion des déchets.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "waste_management",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "Les cendriers publics d'Audierne sont souvent surchargés et la gestion des dé...",
+      "body": "**Constat factuel:**\nLes cendriers publics d'Audierne sont souvent surchargés et la gestion des déchets ménagers semble insuffisante.\n\n**Vos idées d'améliorations:**\nInstaller de nouveaux bacs à ordures en différents points de la ville pour améliorer le tri sélectif, éducation aux pratiques écologiques dans les écoles et installer des panneaux d'information sur les bonnes pratiques de gestion des déchets."
+    },
+    {
+      "id": "field_ecologie_c52beb98",
+      "category": "ecologie",
+      "constat_factuel": "Les cendriers de la ville d'Audierne sont souvent surchargés et peuvent être un problème pour l'hygiène publique et l'environnement.",
+      "idees_ameliorations": "Installer plus de conteneurs de déchets séparés, promouvoir le tri sélectif des déchets par la population et organiser une éducation aux bonnes pratiques en matière de gestion des déchets.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "waste_management",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "Les cendriers de la ville d'Audierne sont souvent surchargés et peuvent être ...",
+      "body": "**Constat factuel:**\nLes cendriers de la ville d'Audierne sont souvent surchargés et peuvent être un problème pour l'hygiène publique et l'environnement.\n\n**Vos idées d'améliorations:**\nInstaller plus de conteneurs de déchets séparés, promouvoir le tri sélectif des déchets par la population et organiser une éducation aux bonnes pratiques en matière de gestion des déchets."
+    },
+    {
+      "id": "field_ecologie_42605933",
+      "category": "ecologie",
+      "constat_factuel": "La gestion des déchets à Audierne semble être un problème récurrent avec un grand nombre de cendriers non triés.",
+      "idees_ameliorations": "Améliorer les infrastructures de tri sélectif et développer une campagne d'information pour sensibiliser la population à l'importance du tri des déchets.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "waste_management",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "La gestion des déchets à Audierne semble être un problème récurrent avec un g...",
+      "body": "**Constat factuel:**\nLa gestion des déchets à Audierne semble être un problème récurrent avec un grand nombre de cendriers non triés.\n\n**Vos idées d'améliorations:**\nAméliorer les infrastructures de tri sélectif et développer une campagne d'information pour sensibiliser la population à l'importance du tri des déchets."
+    },
+    {
+      "id": "field_ecologie_10f91517",
+      "category": "ecologie",
+      "constat_factuel": "Les cendriers publics d'Audierne semblent être régulièrement surchargés et mal triés, ce qui peut entraîner des problèmes sanitaires et esthétiques.",
+      "idees_ameliorations": "Pour améliorer la gestion des déchets dans notre commune, il serait intéressant de proposer un plan d'action comprenant l'installation de plus de conteneurs pour le tri sélectif, une sensibilisation aux bonnes pratiques de tri et l'organisation régulière de nettoyages des zones de collecte.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "waste_management",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "Les cendriers publics d'Audierne semblent être régulièrement surchargés et ma...",
+      "body": "**Constat factuel:**\nLes cendriers publics d'Audierne semblent être régulièrement surchargés et mal triés, ce qui peut entraîner des problèmes sanitaires et esthétiques.\n\n**Vos idées d'améliorations:**\nPour améliorer la gestion des déchets dans notre commune, il serait intéressant de proposer un plan d'action comprenant l'installation de plus de conteneurs pour le tri sélectif, une sensibilisation aux bonnes pratiques de tri et l'organisation régulière de nettoyages des zones de collecte."
+    },
+    {
+      "id": "field_ecologie_5ca10798",
+      "category": "ecologie",
+      "constat_factuel": "La gestion des déchets à Audierne est un vrai désastre. Les cendriers sont toujours pleins et la ville est recouverte de débris.",
+      "idees_ameliorations": "Il est urgent que l'équipe municipale prenne en main la situation immédiatement. Il faudrait instaurer un système de tri sélectif et augmenter le nombre de points de collecte des déchets.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "waste_management",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "La gestion des déchets à Audierne est un vrai désastre. Les cendriers sont to...",
+      "body": "**Constat factuel:**\nLa gestion des déchets à Audierne est un vrai désastre. Les cendriers sont toujours pleins et la ville est recouverte de débris.\n\n**Vos idées d'améliorations:**\nIl est urgent que l'équipe municipale prenne en main la situation immédiatement. Il faudrait instaurer un système de tri sélectif et augmenter le nombre de points de collecte des déchets."
+    },
+    {
+      "id": "field_economie_ce64b8d5",
+      "category": "economie",
+      "constat_factuel": "L'activité de pêche industrielle semble avoir un impact significatif sur la petite pêche artisanale dans Audierne.",
+      "idees_ameliorations": "1. Amélioration de l'arrêté de pêche pour réduire les conflits entre pêcheurs industriels et artisanaux. \n2. Création d'une zone protégée pour favoriser la reproduction des poissons à proximité. \n3. Promotion de l'économie locale en soutenant plus fortement les petits pêcheurs artisanaux.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "fishing_regulation",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "L'activité de pêche industrielle semble avoir un impact significatif sur la p...",
+      "body": "**Constat factuel:**\nL'activité de pêche industrielle semble avoir un impact significatif sur la petite pêche artisanale dans Audierne.\n\n**Vos idées d'améliorations:**\n1. Amélioration de l'arrêté de pêche pour réduire les conflits entre pêcheurs industriels et artisanaux. \n2. Création d'une zone protégée pour favoriser la reproduction des poissons à proximité. \n3. Promotion de l'économie locale en soutenant plus fortement les petits pêcheurs artisanaux."
+    },
+    {
+      "id": "field_economie_4f633886",
+      "category": "economie",
+      "constat_factuel": "La pêche industrielle a une influence importante sur la commune d'Audierne. Actuellement, il y a un débat autour de l'arrêté régissant cette activité.",
+      "idees_ameliorations": "Pour améliorer la situation, on pourrait proposer des mesures strictes de règlementation de la pêche industrielle afin de protéger les ressources halieutiques et garantir une meilleure cohabitation avec la pêche artisanale locale.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "fishing_regulation",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "La pêche industrielle a une influence importante sur la commune d'Audierne. A...",
+      "body": "**Constat factuel:**\nLa pêche industrielle a une influence importante sur la commune d'Audierne. Actuellement, il y a un débat autour de l'arrêté régissant cette activité.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, on pourrait proposer des mesures strictes de règlementation de la pêche industrielle afin de protéger les ressources halieutiques et garantir une meilleure cohabitation avec la pêche artisanale locale."
+    },
+    {
+      "id": "field_economie_b8725601",
+      "category": "economie",
+      "constat_factuel": "La pêche industrielle semble avoir un impact significatif sur la capacité de la pêcherie artisanale à Audierne.",
+      "idees_ameliorations": "Proposer des horaires réduits pour les navires de pêche industriels, limiter le nombre de jours de pêche par semaine, et mettre en place une zone de protection autour du port pour protéger la pêcherie artisanale",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "fishing_regulation",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "La pêche industrielle semble avoir un impact significatif sur la capacité de ...",
+      "body": "**Constat factuel:**\nLa pêche industrielle semble avoir un impact significatif sur la capacité de la pêcherie artisanale à Audierne.\n\n**Vos idées d'améliorations:**\nProposer des horaires réduits pour les navires de pêche industriels, limiter le nombre de jours de pêche par semaine, et mettre en place une zone de protection autour du port pour protéger la pêcherie artisanale"
+    },
+    {
+      "id": "field_economie_b012dc67",
+      "category": "economie",
+      "constat_factuel": "La régulation actuelle de la pêche industrielle semble avoir une influence négative sur l'activité artisanale locale à Audierne, rendant plus difficile l'accès aux ressources pour les pêcheurs locaux.",
+      "idees_ameliorations": "Il serait intéressant de réexaminer l'arrêté actuel afin de garantir un meilleur accès à des quotas plus équitables pour les pêcheurs artisanaux locaux et d'encourager une gestion durable de nos ressources marines.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "fishing_regulation",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "La régulation actuelle de la pêche industrielle semble avoir une influence né...",
+      "body": "**Constat factuel:**\nLa régulation actuelle de la pêche industrielle semble avoir une influence négative sur l'activité artisanale locale à Audierne, rendant plus difficile l'accès aux ressources pour les pêcheurs locaux.\n\n**Vos idées d'améliorations:**\nIl serait intéressant de réexaminer l'arrêté actuel afin de garantir un meilleur accès à des quotas plus équitables pour les pêcheurs artisanaux locaux et d'encourager une gestion durable de nos ressources marines."
+    },
+    {
+      "id": "field_economie_65217f60",
+      "category": "economie",
+      "constat_factuel": "L'industrie de la pêche industrielle à Audierne est en pleine dérive, mettant en danger les petits pêcheurs artisanaux et l'équilibre écologique de notre côte",
+      "idees_ameliorations": "Il est urgence d'adopter un arrêté de régulation stricte pour la pêche industrielle afin de protéger les petits pêcheurs et réduire les dommages écologiques. De plus, les élus locaux devraient mettre en place des programmes de formation pour aider les petits pêcheurs à adapter leurs techniques aux nouvelles réglementations.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "fishing_regulation",
+        "generated_date": "2026-01-28",
+        "llm_model": "mistral:latest"
+      },
+      "title": "L'industrie de la pêche industrielle à Audierne est en pleine dérive, mettant...",
+      "body": "**Constat factuel:**\nL'industrie de la pêche industrielle à Audierne est en pleine dérive, mettant en danger les petits pêcheurs artisanaux et l'équilibre écologique de notre côte\n\n**Vos idées d'améliorations:**\nIl est urgence d'adopter un arrêté de régulation stricte pour la pêche industrielle afin de protéger les petits pêcheurs et réduire les dommages écologiques. De plus, les élus locaux devraient mettre en place des programmes de formation pour aider les petits pêcheurs à adapter leurs techniques aux nouvelles réglementations."
+    },
+    {
+      "id": "field_logement_23fe2eec",
+      "category": "logement",
+      "constat_factuel": "Il y a 14 maisons vacantes dans le centre-ville d'Audierne, dont certaines peuvent contenir jusqu'à huit appartements. Ces maisons inoccupées représentent un potentiel de logements inexploité dans la commune.",
+      "idees_ameliorations": "La mairie devrait mettre en place un programme de rénovation et de réhabilitation de ces maisons vacantes afin de les remettre sur le marché locatif. Des aides et des prêts à taux zéro pourraient être proposés aux propriétaires pour les encourager à entreprendre ces travaux. Cela permettrait de dynamiser le centre-ville et de répondre aux besoins en logements abordables pour les habitants d'Audierne.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "renovation_habitat_ancien",
+        "generated_date": "2026-01-29",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Il y a 14 maisons vacantes dans le centre-ville d'Audierne, dont certaines pe...",
+      "body": "**Constat factuel:**\nIl y a 14 maisons vacantes dans le centre-ville d'Audierne, dont certaines peuvent contenir jusqu'à huit appartements. Ces maisons inoccupées représentent un potentiel de logements inexploité dans la commune.\n\n**Vos idées d'améliorations:**\nLa mairie devrait mettre en place un programme de rénovation et de réhabilitation de ces maisons vacantes afin de les remettre sur le marché locatif. Des aides et des prêts à taux zéro pourraient être proposés aux propriétaires pour les encourager à entreprendre ces travaux. Cela permettrait de dynamiser le centre-ville et de répondre aux besoins en logements abordables pour les habitants d'Audierne."
+    },
+    {
+      "id": "field_logement_3a90f5bb",
+      "category": "logement",
+      "constat_factuel": "De nombreuses maisons sont actuellement vacantes dans le centre-ville d'Audierne, notamment celle à côté de l'Office du Tourisme qui pourrait contenir jusqu'à huit appartements. Cette situation nuit à l'attractivité et à la dynamique du centre-ville.",
+      "idees_ameliorations": "Je propose de mettre en place un programme de rénovation et de réhabilitation de ces maisons vacantes, avec des aides et des prêts à taux zéro pour les propriétaires afin de les encourager à rénover leurs biens. Cela permettrait de créer de nouveaux logements et de redynamiser le centre-ville d'Audierne. De plus, des incitations fiscales pourraient être envisagées pour les propriétaires qui remettent leurs biens sur le marché locatif.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "renovation_habitat_ancien",
+        "generated_date": "2026-01-29",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "De nombreuses maisons sont actuellement vacantes dans le centre-ville d'Audie...",
+      "body": "**Constat factuel:**\nDe nombreuses maisons sont actuellement vacantes dans le centre-ville d'Audierne, notamment celle à côté de l'Office du Tourisme qui pourrait contenir jusqu'à huit appartements. Cette situation nuit à l'attractivité et à la dynamique du centre-ville.\n\n**Vos idées d'améliorations:**\nJe propose de mettre en place un programme de rénovation et de réhabilitation de ces maisons vacantes, avec des aides et des prêts à taux zéro pour les propriétaires afin de les encourager à rénover leurs biens. Cela permettrait de créer de nouveaux logements et de redynamiser le centre-ville d'Audierne. De plus, des incitations fiscales pourraient être envisagées pour les propriétaires qui remettent leurs biens sur le marché locatif."
+    },
+    {
+      "id": "field_logement_690d23ca",
+      "category": "logement",
+      "constat_factuel": "De nombreuses maisons vacantes sont présentes dans le centre-ville d'Audierne, comme celle à côté de l'Office du Tourisme. Ces maisons pourraient être réhabilitées pour créer jusqu'à huit appartements.",
+      "idees_ameliorations": "La mairie devrait poursuivre son programme de réhabilitation de ces maisons vacantes en proposant des aides et des prêts à taux zéro pour encourager les propriétaires à rénover leurs biens. Cela permettrait de dynamiser le centre-ville et de créer de nouveaux logements.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "renovation_habitat_ancien",
+        "generated_date": "2026-01-29",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "De nombreuses maisons vacantes sont présentes dans le centre-ville d'Audierne...",
+      "body": "**Constat factuel:**\nDe nombreuses maisons vacantes sont présentes dans le centre-ville d'Audierne, comme celle à côté de l'Office du Tourisme. Ces maisons pourraient être réhabilitées pour créer jusqu'à huit appartements.\n\n**Vos idées d'améliorations:**\nLa mairie devrait poursuivre son programme de réhabilitation de ces maisons vacantes en proposant des aides et des prêts à taux zéro pour encourager les propriétaires à rénover leurs biens. Cela permettrait de dynamiser le centre-ville et de créer de nouveaux logements."
+    },
+    {
+      "id": "field_ecologie_71f39a32",
+      "category": "ecologie",
+      "constat_factuel": "Le risque d'inondation est bien présent à Audierne, notamment dans l'estuaire du Goyen. Certaines zones comme la rue Lamartine et Kerrydruf sont particulièrement vulnérables.",
+      "idees_ameliorations": "Mettre en place un PGRI efficace avec des mesures concrètes comme la déclaration de la rue Lamartine en zone inconstructible. Sensibiliser les habitants aux risques et aux gestes à adopter. Renforcer les infrastructures de protection contre les crues de l'estuaire du Goyen.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "gestion_risque_inondation",
+        "generated_date": "2026-01-29",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Le risque d'inondation est bien présent à Audierne, notamment dans l'estuaire...",
+      "body": "**Constat factuel:**\nLe risque d'inondation est bien présent à Audierne, notamment dans l'estuaire du Goyen. Certaines zones comme la rue Lamartine et Kerrydruf sont particulièrement vulnérables.\n\n**Vos idées d'améliorations:**\nMettre en place un PGRI efficace avec des mesures concrètes comme la déclaration de la rue Lamartine en zone inconstructible. Sensibiliser les habitants aux risques et aux gestes à adopter. Renforcer les infrastructures de protection contre les crues de l'estuaire du Goyen."
+    },
+    {
+      "id": "field_ecologie_4432fc13",
+      "category": "ecologie",
+      "constat_factuel": "Le risque d'inondation est bien présent à Audierne, notamment dans l'estuaire du Goyen. Des zones comme Kerrydruf et le chemin du Halage sont particulièrement vulnérables en cas de crue.",
+      "idees_ameliorations": "Nous devrions étudier la possibilité de déclarer certaines zones inconstructibles, comme la rue Lamartine, pour limiter l'exposition au risque. Des travaux de protection des berges et de gestion des eaux pluviales pourraient aussi être envisagés. Une meilleure information et sensibilisation des citoyens sur les risques et les bons gestes à adopter serait également bénéfique.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "gestion_risque_inondation",
+        "generated_date": "2026-01-29",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Le risque d'inondation est bien présent à Audierne, notamment dans l'estuaire...",
+      "body": "**Constat factuel:**\nLe risque d'inondation est bien présent à Audierne, notamment dans l'estuaire du Goyen. Des zones comme Kerrydruf et le chemin du Halage sont particulièrement vulnérables en cas de crue.\n\n**Vos idées d'améliorations:**\nNous devrions étudier la possibilité de déclarer certaines zones inconstructibles, comme la rue Lamartine, pour limiter l'exposition au risque. Des travaux de protection des berges et de gestion des eaux pluviales pourraient aussi être envisagés. Une meilleure information et sensibilisation des citoyens sur les risques et les bons gestes à adopter serait également bénéfique."
+    },
+    {
+      "id": "field_ecologie_11c6728e",
+      "category": "ecologie",
+      "constat_factuel": "Le risque d'inondation est bien présent à Audierne, notamment dans l'estuaire du Goyen. Les zones comme Kerrydruf et le chemin du Halage sont particulièrement exposées en cas de crue de la rivière.",
+      "idees_ameliorations": "Je propose de mettre en place des mesures de prévention des inondations, comme la construction de digues ou de barrages le long de l'estuaire. Il serait également judicieux d'identifier les zones les plus à risque et d'y limiter la construction. Enfin, une meilleure information et sensibilisation de la population sur les risques d'inondation permettrait de mieux les préparer à y faire face.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "gestion_risque_inondation",
+        "generated_date": "2026-01-29",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Le risque d'inondation est bien présent à Audierne, notamment dans l'estuaire...",
+      "body": "**Constat factuel:**\nLe risque d'inondation est bien présent à Audierne, notamment dans l'estuaire du Goyen. Les zones comme Kerrydruf et le chemin du Halage sont particulièrement exposées en cas de crue de la rivière.\n\n**Vos idées d'améliorations:**\nJe propose de mettre en place des mesures de prévention des inondations, comme la construction de digues ou de barrages le long de l'estuaire. Il serait également judicieux d'identifier les zones les plus à risque et d'y limiter la construction. Enfin, une meilleure information et sensibilisation de la population sur les risques d'inondation permettrait de mieux les préparer à y faire face."
+    },
+    {
+      "id": "field_economie_617a123a",
+      "category": "economie",
+      "constat_factuel": "À Audierne, les subventions de l'ANCT et autres organismes sont difficiles à obtenir en raison de la complexité administrative et de la superposition des réglementations. Les dossiers de demande sont très lourds, ce qui retarde considérablement la réalisation de projets urgents pour la commune.",
+      "idees_ameliorations": "Nous proposons de simplifier les démarches administratives pour l'obtention des subventions, notamment en harmonisant les réglementations et en mettant en place des procédures plus claires et efficaces. Cela permettrait d'accélérer la réalisation de projets essentiels pour le développement d'Audierne, comme la construction d'une nouvelle école.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "complexite_administrative_subventions",
+        "generated_date": "2026-01-29",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "À Audierne, les subventions de l'ANCT et autres organismes sont difficiles à ...",
+      "body": "**Constat factuel:**\nÀ Audierne, les subventions de l'ANCT et autres organismes sont difficiles à obtenir en raison de la complexité administrative et de la superposition des réglementations. Les dossiers de demande sont très lourds, ce qui retarde considérablement la réalisation de projets urgents pour la commune.\n\n**Vos idées d'améliorations:**\nNous proposons de simplifier les démarches administratives pour l'obtention des subventions, notamment en harmonisant les réglementations et en mettant en place des procédures plus claires et efficaces. Cela permettrait d'accélérer la réalisation de projets essentiels pour le développement d'Audierne, comme la construction d'une nouvelle école."
+    },
+    {
+      "id": "field_economie_41376a51",
+      "category": "economie",
+      "constat_factuel": "À Audierne, les démarches administratives pour obtenir des subventions, notamment via l'ANCT dans le cadre du programme 'Petites villes de demain', sont extrêmement complexes en raison de la superposition des réglementations. Ce processus peut prendre jusqu'à 4 ans, ce qui est un délai critique pour des projets urgents comme la construction d'une école.",
+      "idees_ameliorations": "Pour simplifier ces démarches, il serait souhaitable de mettre en place un guichet unique pour centraliser les différentes réglementations et faciliter le montage des dossiers de subvention. Une meilleure coordination entre les différents organismes concernés permettrait également de réduire les délais. Enfin, une adaptation des réglementations aux spécificités des petites communes comme Audierne serait bénéfique.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "complexite_administrative_subventions",
+        "generated_date": "2026-01-29",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "À Audierne, les démarches administratives pour obtenir des subventions, notam...",
+      "body": "**Constat factuel:**\nÀ Audierne, les démarches administratives pour obtenir des subventions, notamment via l'ANCT dans le cadre du programme 'Petites villes de demain', sont extrêmement complexes en raison de la superposition des réglementations. Ce processus peut prendre jusqu'à 4 ans, ce qui est un délai critique pour des projets urgents comme la construction d'une école.\n\n**Vos idées d'améliorations:**\nPour simplifier ces démarches, il serait souhaitable de mettre en place un guichet unique pour centraliser les différentes réglementations et faciliter le montage des dossiers de subvention. Une meilleure coordination entre les différents organismes concernés permettrait également de réduire les délais. Enfin, une adaptation des réglementations aux spécificités des petites communes comme Audierne serait bénéfique."
+    },
+    {
+      "id": "field_economie_c6db6bdc",
+      "category": "economie",
+      "constat_factuel": "À Audierne, les subventions de l'ANCT pour le programme 'Petites villes de demain' sont soumises à de nombreuses réglementations complexes, rendant les dossiers de demande très difficiles à monter. Cela peut prendre jusqu'à 4 ans pour obtenir une simplification administrative, ce qui est un délai critique pour des projets urgents comme la construction d'une école.",
+      "idees_ameliorations": "Proposer une simplification administrative des dossiers de demande de subvention, en réduisant le nombre de réglementations à respecter. Mettre en place un guichet unique pour accompagner les porteurs de projets dans leurs démarches. Accélérer les délais de traitement des dossiers pour permettre la réalisation de projets urgents pour la commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "complexite_administrative_subventions",
+        "generated_date": "2026-01-29",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "À Audierne, les subventions de l'ANCT pour le programme 'Petites villes de de...",
+      "body": "**Constat factuel:**\nÀ Audierne, les subventions de l'ANCT pour le programme 'Petites villes de demain' sont soumises à de nombreuses réglementations complexes, rendant les dossiers de demande très difficiles à monter. Cela peut prendre jusqu'à 4 ans pour obtenir une simplification administrative, ce qui est un délai critique pour des projets urgents comme la construction d'une école.\n\n**Vos idées d'améliorations:**\nProposer une simplification administrative des dossiers de demande de subvention, en réduisant le nombre de réglementations à respecter. Mettre en place un guichet unique pour accompagner les porteurs de projets dans leurs démarches. Accélérer les délais de traitement des dossiers pour permettre la réalisation de projets urgents pour la commune."
     }
   ]
 }
