@@ -77,6 +77,7 @@
   "forseti_reasoning": "Reasoning",
   "forseti_analyzing": "Analyzing with Forseti 461...",
   "forseti_init_error": "Initialization error {provider}",
+  "forseti_assigned_ocapistaine": "Task assigned to OCapistaine",
 
   "documents_title": "Document Corpus",
   "documents_arretes_identified": "Decrees identified",

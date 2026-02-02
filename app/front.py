@@ -145,8 +145,9 @@ def main():
         about_view()
 
 
-# N8N Webhook URL for fetching issues
+# N8N Webhook URLs
 N8N_ISSUES_WEBHOOK = "https://vaettir.locki.io/webhook/participons/issues"
+N8N_CHARTER_VALID_WEBHOOK = "https://vaettir.locki.io/webhook/forseti/charter-valid"
 
 
 # Available category labels in audierne2026/participons
@@ -238,6 +239,62 @@ def _validate_with_forseti(
             output_summary=f"valid={result.is_valid}, confidence={result.confidence:.2f}",
         )
 
+        # Notify N8N to add label if valid
+        n8n_action = None
+        if result.is_valid and issue_id:
+            try:
+                label_response = requests.post(
+                    N8N_CHARTER_VALID_WEBHOOK,
+                    json={
+                        "issueNumber": issue_id,
+                        "is_valid": result.is_valid,
+                        "category": result.category,
+                        "confidence": result.confidence,
+                    },
+                    headers={"Content-Type": "application/json"},
+                    timeout=10,
+                )
+                if label_response.ok:
+                    n8n_data = label_response.json()
+                    # Handle array response from N8N
+                    if isinstance(n8n_data, list) and len(n8n_data) > 0:
+                        n8n_data = n8n_data[0]
+                    n8n_action = {
+                        "success": n8n_data.get("success", False),
+                        "assigned_to_ocapistaine": n8n_data.get("success", False),
+                        "reason": n8n_data.get("reason", ""),
+                        "new_category": n8n_data.get("new_category"),
+                        "category_labels": n8n_data.get("category_labels", []),
+                    }
+                    _ui_logger.log_webhook(
+                        source="n8n",
+                        event_type="charter_valid",
+                        success=n8n_action["success"],
+                    )
+                    _agent_logger.info(
+                        "N8N_CHARTER_ACTION",
+                        issue_id=issue_id,
+                        assigned=n8n_action["assigned_to_ocapistaine"],
+                        reason=n8n_action["reason"],
+                    )
+                else:
+                    n8n_action = {
+                        "success": False,
+                        "assigned_to_ocapistaine": False,
+                        "reason": f"HTTP {label_response.status_code}",
+                    }
+            except requests.RequestException as e:
+                _agent_logger.warning(
+                    "N8N_CHARTER_WEBHOOK_FAILED",
+                    issue_id=issue_id,
+                    error=str(e),
+                )
+                n8n_action = {
+                    "success": False,
+                    "assigned_to_ocapistaine": False,
+                    "reason": str(e),
+                }
+
         return {
             "success": True,
             "is_valid": result.is_valid,
@@ -247,6 +304,7 @@ def _validate_with_forseti(
             "encouraged_aspects": result.encouraged_aspects,
             "reasoning": result.reasoning,
             "confidence": result.confidence,
+            "n8n_action": n8n_action,
         }
     except Exception as e:
         latency_ms = (time.time() - start_time) * 1000
@@ -308,6 +366,19 @@ def _display_forseti_result(result: dict):
     # Reasoning (collapsed)
     with st.expander(f"💭 {_('forseti_reasoning')}", expanded=False):
         st.markdown(result.get("reasoning", ""))
+
+    # N8N Action result (if available)
+    n8n_action = result.get("n8n_action")
+    if n8n_action:
+        st.markdown("---")
+        if n8n_action.get("assigned_to_ocapistaine"):
+            st.success(f"🤖 {_('forseti_assigned_ocapistaine')}")
+            if n8n_action.get("category_labels"):
+                labels = ", ".join(n8n_action["category_labels"])
+                st.caption(f"Labels: {labels}")
+        else:
+            reason = n8n_action.get("reason", "")
+            st.info(f"ℹ️ {reason}")
 
 
 def contributions_view(user_id: str):
