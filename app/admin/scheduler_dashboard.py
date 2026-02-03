@@ -13,7 +13,7 @@ from datetime import datetime
 
 import streamlit as st
 
-from app.i18n import _
+from app.services.translations import _
 
 
 def scheduler_dashboard_view(user_id: str):

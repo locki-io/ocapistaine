@@ -12,7 +12,7 @@ import streamlit as st
 from typing import Optional
 
 from app.providers.config import GEMINI_MODELS
-from app.i18n import _, language_selector, get_language
+from app.services.translations import _, language_selector, get_language
 from app.services import PresentationLogger
 
 # TODO: Replace with actual Redis client when implemented

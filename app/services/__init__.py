@@ -21,6 +21,11 @@ Usage:
         ProcessorLogger,
         DataLogger,
         TaskLogger,
+        # Translations
+        _,
+        get_language,
+        set_language,
+        language_selector,
     )
 
     # Use pre-configured loggers
@@ -34,6 +39,10 @@ Usage:
     from app.services import TaskLogger
     logger = TaskLogger("task_contributions_analysis")
     logger.log_start(task_id="abc", date_string="20260203")
+
+    # Translations
+    text = _("app_title")  # Get translated text
+    lang = get_language()  # "fr" or "en"
 """
 
 import os
@@ -47,6 +56,13 @@ from app.services.logging import (
     DataLogger,
     TaskLogger,
     ProviderLogger,
+)
+from app.services.translations import (
+    _,
+    get_language,
+    set_language,
+    language_selector,
+    LANGUAGES,
 )
 
 # =============================================================================
@@ -103,4 +119,10 @@ __all__ = [
     "ProviderLogger",
     # Utility
     "get_logger",
+    # Translations
+    "_",
+    "get_language",
+    "set_language",
+    "language_selector",
+    "LANGUAGES",
 ]

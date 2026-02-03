@@ -13,7 +13,7 @@ from typing import Dict
 import streamlit as st
 
 # Translation files directory
-TRANSLATIONS_DIR = Path(__file__).parent / "translations"
+LOCALES_DIR = Path(__file__).parent / "locales"
 
 # Supported languages
 LANGUAGES = {
@@ -35,7 +35,7 @@ def load_translations() -> Dict[str, Dict[str, str]]:
     translations = {}
 
     for lang_code in LANGUAGES.keys():
-        file_path = TRANSLATIONS_DIR / f"{lang_code}.json"
+        file_path = LOCALES_DIR / f"{lang_code}.json"
         if file_path.exists():
             with open(file_path, "r", encoding="utf-8") as f:
                 translations[lang_code] = json.load(f)

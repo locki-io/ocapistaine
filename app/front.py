@@ -27,7 +27,7 @@ if not check_password():
 from app.sidebar import sidebar_setup, get_user_id, get_selected_provider, get_model_id
 from app.agents.forseti import ForsetiAgent
 from app.providers import get_provider
-from app.i18n import _
+from app.services.translations import _
 from app.services import PresentationLogger, ServiceLogger, AgentLogger
 from app.mockup.batch_view import batch_validation_view
 from app.auto_contribution import autocontribution_view

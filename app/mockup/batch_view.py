@@ -18,7 +18,7 @@ from typing import List, Optional, Callable
 
 import streamlit as st
 
-from app.i18n import _
+from app.services.translations import _
 from app.mockup.generator import (
     ContributionGenerator,
     MockContribution,
