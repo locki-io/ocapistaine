@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-01-28T07:47:19.386027",
-  "count": 50,
+  "generated_at": "2026-01-31T18:08:53.409855",
+  "count": 54,
   "contributions": [
     {
       "id": "base_ass_001",
@@ -114,7 +114,9 @@
       "distance_from_parent": 394,
       "similarity_to_parent": 0.442,
       "expected_valid": false,
-      "violations_injected": ["subtle_violation"],
+      "violations_injected": [
+        "subtle_violation"
+      ],
       "metadata": {
         "mutation_type": "subtle_violation",
         "llm_generated": true
@@ -132,7 +134,9 @@
       "distance_from_parent": 972,
       "similarity_to_parent": 0.124,
       "expected_valid": false,
-      "violations_injected": ["aggressive"],
+      "violations_injected": [
+        "aggressive"
+      ],
       "metadata": {
         "mutation_type": "aggressive",
         "llm_generated": true
@@ -219,7 +223,9 @@
       "distance_from_parent": 801,
       "similarity_to_parent": 0.32,
       "expected_valid": false,
-      "violations_injected": ["subtle_violation"],
+      "violations_injected": [
+        "subtle_violation"
+      ],
       "metadata": {
         "mutation_type": "subtle_violation",
         "llm_generated": true
@@ -237,7 +243,9 @@
       "distance_from_parent": 884,
       "similarity_to_parent": 0.087,
       "expected_valid": false,
-      "violations_injected": ["aggressive"],
+      "violations_injected": [
+        "aggressive"
+      ],
       "metadata": {
         "mutation_type": "aggressive",
         "llm_generated": true
@@ -394,7 +402,9 @@
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": ["subtle_violation"],
+      "violations_injected": [
+        "subtle_violation"
+      ],
       "metadata": {
         "field_input": true,
         "theme": "projet_ecole",
@@ -454,7 +464,9 @@
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": ["subtle_violation"],
+      "violations_injected": [
+        "subtle_violation"
+      ],
       "metadata": {
         "field_input": true,
         "theme": "participation_citoyenne",
@@ -514,7 +526,9 @@
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": ["subtle_violation"],
+      "violations_injected": [
+        "subtle_violation"
+      ],
       "metadata": {
         "field_input": true,
         "theme": "situation_financiere",
@@ -594,7 +608,9 @@
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": ["subtle_violation"],
+      "violations_injected": [
+        "subtle_violation"
+      ],
       "metadata": {
         "field_input": true,
         "theme": "renovation_ecole",
@@ -674,7 +690,9 @@
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": ["subtle_violation"],
+      "violations_injected": [
+        "subtle_violation"
+      ],
       "metadata": {
         "field_input": true,
         "theme": "situation_financiere",
@@ -754,7 +772,9 @@
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": ["subtle_violation"],
+      "violations_injected": [
+        "subtle_violation"
+      ],
       "metadata": {
         "field_input": true,
         "theme": "projet_ehpad",
@@ -834,7 +854,9 @@
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": ["subtle_violation"],
+      "violations_injected": [
+        "subtle_violation"
+      ],
       "metadata": {
         "field_input": true,
         "theme": "gouvernance_communaute_communes",
@@ -914,7 +936,9 @@
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": ["subtle_violation"],
+      "violations_injected": [
+        "subtle_violation"
+      ],
       "metadata": {
         "field_input": true,
         "theme": "valorisation_patrimoine",
@@ -934,7 +958,9 @@
       "distance_from_parent": null,
       "similarity_to_parent": null,
       "expected_valid": false,
-      "violations_injected": ["aggressive"],
+      "violations_injected": [
+        "aggressive"
+      ],
       "metadata": {
         "field_input": true,
         "theme": "valorisation_patrimoine",
@@ -943,6 +969,90 @@
       },
       "title": "CES ÉLUS INCOMPÉTENTS LAISSENT DES ESPACES INOCCUPÉS DANS LE PROJET ! C'EST U...",
       "body": "**Constat factuel:**\nCES ÉLUS INCOMPÉTENTS LAISSENT DES ESPACES INOCCUPÉS DANS LE PROJET ! C'EST UNE HONTE POUR NOTRE VILLE D'AUDIERNE ! ILS NE SE SOUCIENT PAS DU PATRIMOINE DE NOTRE COMMUNE !\n\n**Vos idées d'améliorations:**\nCES ESPACES INOCCUPÉS DEVRAIENT ÊTRE TRANSFORMÉS EN CENTRES CULTURELS POUR LA POPULATION ! LES ÉLUS DEVRAIENT ÊTRE VIRÉS ET REMPLACÉS PAR DES PERSONNES COMPÉTENTES QUI SE SOUCIENT VRAIMENT DE NOTRE PATRIMOINE !"
+    },
+    {
+      "id": "field_ecologie_9c5078df",
+      "category": "ecologie",
+      "constat_factuel": "Les plages de Trescadec et Trez Goarem à Audierne ont obtenu le label Pavillon Bleu, ce qui témoigne de leur engagement pour la préservation de l'environnement. Cependant, il est important de continuer les actions de sensibilisation auprès des visiteurs et des habitants afin de maintenir cette dynamique.",
+      "idees_ameliorations": "Organiser davantage d'animations et d'ateliers pédagogiques sur la découverte de la faune et de la flore du littoral, en partenariat avec des associations locales. Développer des campagnes de communication pour inciter les visiteurs à adopter des gestes éco-responsables sur les plages. Impliquer les écoles et les familles dans des opérations de nettoyage et de collecte des déchets sur les plages.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "labels_environnementaux",
+        "source_title": "Compte-rendu de la réunion de vœux du maire d'Audierne - Janvier 2026 (Mayor-2026-wishes.md)",
+        "generated_date": "2026-01-31",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Les plages de Trescadec et Trez Goarem à Audierne ont obtenu le label Pavillo...",
+      "body": "**Constat factuel:**\nLes plages de Trescadec et Trez Goarem à Audierne ont obtenu le label Pavillon Bleu, ce qui témoigne de leur engagement pour la préservation de l'environnement. Cependant, il est important de continuer les actions de sensibilisation auprès des visiteurs et des habitants afin de maintenir cette dynamique.\n\n**Vos idées d'améliorations:**\nOrganiser davantage d'animations et d'ateliers pédagogiques sur la découverte de la faune et de la flore du littoral, en partenariat avec des associations locales. Développer des campagnes de communication pour inciter les visiteurs à adopter des gestes éco-responsables sur les plages. Impliquer les écoles et les familles dans des opérations de nettoyage et de collecte des déchets sur les plages."
+    },
+    {
+      "id": "field_ecologie_881ab013",
+      "category": "ecologie",
+      "constat_factuel": "Bien que des efforts aient été entrepris, je constate encore de nombreux mégots jetés dans l'espace public à Audierne. De plus, le tri à la source des biodéchets n'est pas encore totalement généralisé dans la commune.",
+      "idees_ameliorations": "Je propose d'intensifier les campagnes de sensibilisation auprès des habitants pour les encourager à jeter leurs mégots dans les cendriers mis à disposition. Je suggère également d'étendre le déploiement des composteurs collectifs dans tous les quartiers afin de faciliter le tri à la source des biodéchets.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "gestion_dechets",
+        "source_title": "Compte-rendu de la réunion de vœux du maire d'Audierne - Janvier 2026 (Mayor-2026-wishes.md)",
+        "generated_date": "2026-01-31",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "Bien que des efforts aient été entrepris, je constate encore de nombreux mégo...",
+      "body": "**Constat factuel:**\nBien que des efforts aient été entrepris, je constate encore de nombreux mégots jetés dans l'espace public à Audierne. De plus, le tri à la source des biodéchets n'est pas encore totalement généralisé dans la commune.\n\n**Vos idées d'améliorations:**\nJe propose d'intensifier les campagnes de sensibilisation auprès des habitants pour les encourager à jeter leurs mégots dans les cendriers mis à disposition. Je suggère également d'étendre le déploiement des composteurs collectifs dans tous les quartiers afin de faciliter le tri à la source des biodéchets."
+    },
+    {
+      "id": "field_associations_6eae20ca",
+      "category": "associations",
+      "constat_factuel": "La consultation citoyenne organisée en 2025 sur le nom de la commune a montré que les citoyens d'Audierne souhaitent que la commune s'appelle désormais Audierne-Esquibien. Cette décision reflète la volonté des habitants de valoriser l'identité et l'histoire de la commune.",
+      "idees_ameliorations": "Afin de concrétiser ce changement de nom, la mairie pourrait mettre en place une campagne de communication pour informer et mobiliser les citoyens. Des initiatives locales, comme l'organisation d'un événement festif pour célébrer le nouveau nom, permettraient également d'impliquer davantage la population. De plus, des efforts pourraient être entrepris pour adapter la signalétique et les documents administratifs au nouveau nom de la commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "mobilisation_citoyenne",
+        "source_title": "Compte-rendu de la réunion de vœux du maire d'Audierne - Janvier 2026 (Mayor-2026-wishes.md)",
+        "generated_date": "2026-01-31",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "La consultation citoyenne organisée en 2025 sur le nom de la commune a montré...",
+      "body": "**Constat factuel:**\nLa consultation citoyenne organisée en 2025 sur le nom de la commune a montré que les citoyens d'Audierne souhaitent que la commune s'appelle désormais Audierne-Esquibien. Cette décision reflète la volonté des habitants de valoriser l'identité et l'histoire de la commune.\n\n**Vos idées d'améliorations:**\nAfin de concrétiser ce changement de nom, la mairie pourrait mettre en place une campagne de communication pour informer et mobiliser les citoyens. Des initiatives locales, comme l'organisation d'un événement festif pour célébrer le nouveau nom, permettraient également d'impliquer davantage la population. De plus, des efforts pourraient être entrepris pour adapter la signalétique et les documents administratifs au nouveau nom de la commune."
+    },
+    {
+      "id": "field_economie_7468e5a4",
+      "category": "economie",
+      "constat_factuel": "À Audierne, le conflit entre l'association Pêche Avenir Cap Sizun et le Comité régional des pêches de Bretagne concernant l'autorisation de la pêche aux 4 panneaux en 2025 divise la communauté locale. Les élus ont soutenu le recours juridique, mais font face à un 'recadrage condescendant' de la part des techniciens départementaux.",
+      "idees_ameliorations": "Pour résoudre ce conflit, il serait bénéfique d'organiser une table ronde rassemblant tous les acteurs concernés (association de pêcheurs, comité régional, élus locaux, techniciens) afin de trouver un compromis équitable. De plus, une meilleure communication et une implication accrue des citoyens dans le processus décisionnel pourraient aider à apaiser les tensions et à trouver une solution durable.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "conflit_peche",
+        "source_title": "Compte-rendu de la réunion de vœux du maire d'Audierne - Janvier 2026 (Mayor-2026-wishes.md)",
+        "generated_date": "2026-01-31",
+        "llm_model": "claude-3-5-sonnet-20241022"
+      },
+      "title": "À Audierne, le conflit entre l'association Pêche Avenir Cap Sizun et le Comit...",
+      "body": "**Constat factuel:**\nÀ Audierne, le conflit entre l'association Pêche Avenir Cap Sizun et le Comité régional des pêches de Bretagne concernant l'autorisation de la pêche aux 4 panneaux en 2025 divise la communauté locale. Les élus ont soutenu le recours juridique, mais font face à un 'recadrage condescendant' de la part des techniciens départementaux.\n\n**Vos idées d'améliorations:**\nPour résoudre ce conflit, il serait bénéfique d'organiser une table ronde rassemblant tous les acteurs concernés (association de pêcheurs, comité régional, élus locaux, techniciens) afin de trouver un compromis équitable. De plus, une meilleure communication et une implication accrue des citoyens dans le processus décisionnel pourraient aider à apaiser les tensions et à trouver une solution durable."
     }
   ]
 }

@@ -77,6 +77,7 @@
   "forseti_reasoning": "Raisonnement",
   "forseti_analyzing": "Analyse par Forseti 461...",
   "forseti_init_error": "Erreur initialisation {provider}",
+  "forseti_assigned_ocapistaine": "Tâche assignée à OCapistaine",
 
   "documents_title": "Corpus Documentaire",
   "documents_arretes_identified": "Arrêtés identifiés",
