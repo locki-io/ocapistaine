@@ -82,12 +82,21 @@ concept/, persona/             # Project concept documentation
 
 The `docs/` directory is a git submodule pointing to `locki-io/docs.locki.io`:
 
+> ⚠️ **IMPORTANT FOR CLAUDE CODE**: Never modify files inside `docs/` or change the submodule pointer. The `docs/*` entry in `.gitignore` does NOT prevent submodule tracking changes. If `git status` shows `modified: docs (new commits)`, reset it with:
+> ```bash
+> git submodule update --init docs
+> ```
+> To work on documentation, clone `locki-io/docs.locki.io` separately.
+
 ```bash
 # Clone with submodules
 git clone --recurse-submodules <repo>
 
-# Update submodule
+# Update submodule (only when intentionally updating docs version)
 git submodule update --remote docs
+
+# Reset submodule to recorded commit (discard accidental changes)
+git submodule update --init docs
 
 # Work on docs
 cd docs && npm install && npm start
