@@ -31,7 +31,7 @@ def task_firecrawl(date_string: str = None) -> dict:
     Raises:
         TaskError: If critical failure occurs during crawling
     """
-    l, lock_key, success_key, result, task_id = _task_boilerplate(
+    redis_conn, lock_key, success_key, result, task_id, logger = _task_boilerplate(
         "task_firecrawl", date_string
     )
 
@@ -51,6 +51,7 @@ def task_firecrawl(date_string: str = None) -> dict:
         #     result["status"] = "skipped"
         #     result["reason"] = "firecrawl_not_configured"
         #     result["warnings"].append("FIRECRAWL_API_KEY not set")
+        #     logger.log_completed(status="skipped", reason="firecrawl_not_configured")
         #     return result
 
         # TODO: Load crawl configuration
@@ -62,6 +63,7 @@ def task_firecrawl(date_string: str = None) -> dict:
         # manager = FirecrawlManager()
         #
         # for source in active_sources:
+        #     logger.log_progress(f"Crawling {source.name}", source=source.name)
         #     try:
         #         docs = manager.crawl_website(
         #             url=source.url,
@@ -81,6 +83,7 @@ def task_firecrawl(date_string: str = None) -> dict:
         #             "error": str(e)
         #         }
         #         result["errors"].append(f"{source.name}: {e}")
+        #         logger.warning("CRAWL_SOURCE_FAILED", source=source.name, error=str(e))
 
         # TODO: Update crawl status in Redis
         # from app.data.redis_client import redis_connection, RedisKeys
@@ -97,17 +100,21 @@ def task_firecrawl(date_string: str = None) -> dict:
 
         # Mark task as completed
         result["status"] = "success"
-        l.set(success_key, "completed", ex=REDIS_SUCCESS_TTL)
+        redis_conn.set(success_key, "completed", ex=REDIS_SUCCESS_TTL)
 
-        print(f"task_firecrawl completed: {result['documents_crawled']} documents from {result['sources_processed']} sources")
+        logger.log_completed(
+            status="success",
+            documents_crawled=result["documents_crawled"],
+            sources_processed=result["sources_processed"],
+        )
         return result
 
     except Exception as e:
         result["status"] = "failed"
         result["errors"].append(str(e))
-        print(f"task_firecrawl failed: {e}")
+        logger.log_failed(error=str(e), recoverable=False)
         raise TaskError("failed", str(e))
 
     finally:
         # Always release lock
-        l.delete(lock_key)
+        redis_conn.delete(lock_key)

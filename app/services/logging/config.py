@@ -1,4 +1,4 @@
-# app/logging/config.py
+# app/services/logging/config.py
 """
 Logging Configuration
 
@@ -13,8 +13,12 @@ from pathlib import Path
 from typing import Dict
 
 # Log directory (project root / logs)
-LOG_DIR = Path(__file__).parent.parent.parent / "logs"
+LOG_DIR = Path(__file__).parent.parent.parent.parent / "logs"
 LOG_DIR.mkdir(exist_ok=True)
+
+# Create tasks subdirectory for task logs
+TASK_LOG_DIR = LOG_DIR / "tasks"
+TASK_LOG_DIR.mkdir(exist_ok=True)
 
 # Log format
 LOG_FORMAT = "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"
@@ -60,6 +64,12 @@ DOMAINS: Dict[str, dict] = {
         "description": "LLM providers",
         "log_file": "providers.log",
         "error_file": "providers_errors.log",
+        "level": logging.INFO,
+    },
+    "tasks": {
+        "description": "Scheduled tasks and background jobs",
+        "log_file": "tasks/tasks.log",
+        "error_file": "tasks/tasks_errors.log",
         "level": logging.INFO,
     },
 }
@@ -129,7 +139,7 @@ def setup_domain_logger(
     env_console = os.getenv(f"{domain.upper()}_LOG_CONSOLE", "").lower() in ("1", "true", "yes")
     if console_output or env_console:
         console_handler = logging.StreamHandler()
-        console_handler.setLevel(logging.WARNING)
+        console_handler.setLevel(logging.INFO)
         console_handler.setFormatter(formatter)
         logger.addHandler(console_handler)
 
@@ -141,7 +151,7 @@ def get_logger(domain: str) -> logging.Logger:
     Get or create a logger for a domain.
 
     Args:
-        domain: Domain name (presentation, services, agents, processors, data, providers)
+        domain: Domain name (presentation, services, agents, processors, data, providers, tasks)
 
     Returns:
         Logger instance for the domain

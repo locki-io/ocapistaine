@@ -46,7 +46,7 @@ def task_contributions_analysis(
     Raises:
         TaskError: If critical failure occurs during processing
     """
-    redis_conn, lock_key, success_key, result, task_id = _task_boilerplate(
+    redis_conn, lock_key, success_key, result, task_id, logger = _task_boilerplate(
         "task_contributions_analysis", date_string
     )
 
@@ -79,7 +79,7 @@ def task_contributions_analysis(
 
         # If latest is empty, check recent date indexes (last 7 days)
         if not records:
-            print("task_contributions_analysis: latest empty, checking date indexes")
+            logger.log_progress("Checking date indexes", message="latest empty")
             all_records = []
             for days_ago in range(7):
                 check_date = date.today() - timedelta(days=days_ago)
@@ -93,7 +93,7 @@ def task_contributions_analysis(
             result["status"] = "success"
             result["reason"] = "no_contributions_to_process"
             redis_conn.set(success_key, "completed", ex=REDIS_SUCCESS_TTL)
-            print("task_contributions_analysis: no contributions to process")
+            logger.log_completed(status="no_work", reason="no_contributions_to_process")
             return result
 
         # Filter for records needing validation (confidence == 0 means not yet validated)
@@ -104,8 +104,10 @@ def task_contributions_analysis(
             result["reason"] = "all_contributions_already_validated"
             result["contributions_skipped"] = len(records)
             redis_conn.set(success_key, "completed", ex=REDIS_SUCCESS_TTL)
-            print(
-                f"task_contributions_analysis: all {len(records)} contributions already validated"
+            logger.log_completed(
+                status="no_work",
+                reason="all_already_validated",
+                skipped=len(records),
             )
             return result
 
@@ -134,7 +136,7 @@ def task_contributions_analysis(
 
         # Process each pending contribution
         updated_records = []
-        for record in pending_records:
+        for idx, record in enumerate(pending_records):
             validation_result = None
             last_error = None
 
@@ -183,9 +185,17 @@ def task_contributions_analysis(
                     )
 
                     if is_rate_limit and enable_failover:
-                        print(
-                            f"task_contributions_analysis: {try_provider} rate limited, "
-                            f"trying next provider"
+                        # Find next provider index
+                        current_idx = providers_to_try.index(try_provider)
+                        next_provider = (
+                            providers_to_try[current_idx + 1]
+                            if current_idx + 1 < len(providers_to_try)
+                            else "none"
+                        )
+                        logger.log_provider_failover(
+                            from_provider=try_provider,
+                            to_provider=next_provider,
+                            reason="rate_limit",
                         )
                         continue  # Try next provider
                     else:
@@ -204,6 +214,14 @@ def task_contributions_analysis(
 
                 updated_records.append(record)
 
+                # Log individual validation result
+                logger.log_validation_result(
+                    record_id=record.id,
+                    is_valid=validation_result.is_valid,
+                    provider=record.provider,
+                    confidence=validation_result.confidence,
+                )
+
                 if validation_result.is_valid:
                     result["contributions_approved"] += 1
                 else:
@@ -214,9 +232,19 @@ def task_contributions_analysis(
                 result["warnings"].append(
                     f"Failed to validate {record.id}: {str(last_error)}"
                 )
-                print(
-                    f"task_contributions_analysis: error validating {record.id}: "
-                    f"{last_error}"
+                logger.warning(
+                    "VALIDATION_FAILED",
+                    record_id=record.id[:12] if record.id else None,
+                    error=str(last_error)[:100] if last_error else "unknown",
+                )
+
+            # Log progress periodically
+            if (idx + 1) % 10 == 0:
+                logger.log_progress(
+                    "Processing contributions",
+                    current=idx + 1,
+                    total=len(pending_records),
+                    validated=result["contributions_validated"],
                 )
 
         # Save updated records back to MockupStorage
@@ -228,18 +256,19 @@ def task_contributions_analysis(
         result["status"] = "success"
         redis_conn.set(success_key, "completed", ex=REDIS_SUCCESS_TTL)
 
-        print(
-            f"task_contributions_analysis completed: "
-            f"{result['contributions_validated']} validated, "
-            f"{result['contributions_approved']} approved, "
-            f"{result['contributions_flagged']} flagged"
+        logger.log_completed(
+            status="success",
+            validated=result["contributions_validated"],
+            approved=result["contributions_approved"],
+            flagged=result["contributions_flagged"],
+            providers=",".join(result["providers_tried"]),
         )
         return result
 
     except Exception as e:
         result["status"] = "failed"
         result["errors"].append(str(e))
-        print(f"task_contributions_analysis failed: {e}")
+        logger.log_failed(error=str(e), recoverable=False)
         raise TaskError("failed", str(e))
 
     finally:

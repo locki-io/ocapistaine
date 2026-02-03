@@ -31,7 +31,7 @@ def task_opik_experiment(date_string: str = None) -> dict:
     Raises:
         TaskError: If critical failure occurs during experiments
     """
-    l, lock_key, success_key, result, task_id = _task_boilerplate(
+    redis_conn, lock_key, success_key, result, task_id, logger = _task_boilerplate(
         "task_opik_experiment", date_string
     )
 
@@ -54,7 +54,7 @@ def task_opik_experiment(date_string: str = None) -> dict:
             result["status"] = "skipped"
             result["reason"] = "opik_not_configured"
             result["warnings"].append("Opik tracing not enabled - skipping experiments")
-            print("task_opik_experiment: Opik not configured, skipping")
+            logger.log_completed(status="skipped", reason="opik_not_configured")
             return result
 
         # TODO: Load experiment configurations
@@ -80,17 +80,21 @@ def task_opik_experiment(date_string: str = None) -> dict:
 
         # Mark task as completed
         result["status"] = "success"
-        l.set(success_key, "completed", ex=REDIS_SUCCESS_TTL)
+        redis_conn.set(success_key, "completed", ex=REDIS_SUCCESS_TTL)
 
-        print(f"task_opik_experiment completed: {result['experiments_run']} experiments run")
+        logger.log_completed(
+            status="success",
+            experiments_run=result["experiments_run"],
+            experiments_passed=result["experiments_passed"],
+        )
         return result
 
     except Exception as e:
         result["status"] = "failed"
         result["errors"].append(str(e))
-        print(f"task_opik_experiment failed: {e}")
+        logger.log_failed(error=str(e), recoverable=False)
         raise TaskError("failed", str(e))
 
     finally:
         # Always release lock
-        l.delete(lock_key)
+        redis_conn.delete(lock_key)

@@ -6,23 +6,28 @@ All tasks use consistent patterns for:
 - Redis-based distributed locking
 - Idempotency via success keys
 - Standardized result dictionaries
+- Structured logging via TaskLogger
 
 Usage:
     from app.services.tasks import _task_boilerplate, TaskError
 
     def my_task(date_string: str = None) -> dict:
-        l, lock_key, success_key, result, task_id = _task_boilerplate(
+        redis_conn, lock_key, success_key, result, task_id, logger = _task_boilerplate(
             "my_task", date_string
         )
         if result["status"] == "skipped":
             return result
         try:
             # Task logic here
-            l.set(success_key, "completed", ex=86400)
+            redis_conn.set(success_key, "completed", ex=86400)
             result["status"] = "success"
+            logger.log_completed(status="success", items_processed=10)
             return result
+        except Exception as e:
+            logger.log_failed(error=str(e))
+            raise TaskError("failed", str(e))
         finally:
-            l.delete(lock_key)
+            redis_conn.delete(lock_key)
 """
 
 import os
@@ -31,6 +36,8 @@ from datetime import datetime
 from typing import Tuple, Dict, Any
 import redis
 from dotenv import load_dotenv
+
+from app.services.logging import TaskLogger
 
 load_dotenv()
 
@@ -66,7 +73,7 @@ def _task_boilerplate(
     task_name: str,
     date_string: str = None,
     skip_success_check: bool = False,
-) -> Tuple[redis.Redis, str, str, Dict[str, Any], str]:
+) -> Tuple[redis.Redis, str, str, Dict[str, Any], str, TaskLogger]:
     """
     Standard task initialization boilerplate.
 
@@ -75,6 +82,7 @@ def _task_boilerplate(
     - Creates lock and success keys
     - Checks for already-completed or currently-running tasks
     - Acquires distributed lock
+    - Initializes TaskLogger for structured logging
 
     Args:
         task_name: Full task identifier (e.g., "task_contributions_analysis")
@@ -83,10 +91,10 @@ def _task_boilerplate(
                            Default: False.
 
     Returns:
-        tuple: (redis_conn, lock_key, success_key, result_dict, task_id)
+        tuple: (redis_conn, lock_key, success_key, result_dict, task_id, logger)
 
     Example:
-        l, lock_key, success_key, result, task_id = _task_boilerplate(
+        redis_conn, lock_key, success_key, result, task_id, logger = _task_boilerplate(
             "task_contributions_analysis", date_string
         )
 
@@ -96,14 +104,16 @@ def _task_boilerplate(
         try:
             # Your task logic here
             result["status"] = "success"
-            l.set(success_key, "completed", ex=86400)
+            redis_conn.set(success_key, "completed", ex=86400)
+            logger.log_completed(status="success", items=10)
             return result
         except Exception as e:
             result["status"] = "failed"
             result["errors"].append(str(e))
+            logger.log_failed(error=str(e))
             raise TaskError("failed", str(e))
         finally:
-            l.delete(lock_key)  # Always release lock
+            redis_conn.delete(lock_key)  # Always release lock
     """
     from app.services.scheduler.utils import get_scheduler_redis
 
@@ -119,7 +129,10 @@ def _task_boilerplate(
     success_key = f"success:{task_name}:{date_string}"
 
     # Get scheduler Redis connection
-    l = get_scheduler_redis()
+    redis_conn = get_scheduler_redis()
+
+    # Initialize TaskLogger for this task
+    logger = TaskLogger(task_name)
 
     # Initialize result dictionary
     result = {
@@ -133,22 +146,22 @@ def _task_boilerplate(
     }
 
     # Check if task already completed today (unless skipped for recurring tasks)
-    if not skip_success_check and l.exists(success_key):
+    if not skip_success_check and redis_conn.exists(success_key):
         result["status"] = "skipped"
         result["reason"] = "already_completed"
-        print(f"Skipping {task_name}: already completed for {date_string}")
-        return l, lock_key, success_key, result, task_id
+        logger.log_skipped(reason="already_completed", date_string=date_string, task_id=task_id)
+        return redis_conn, lock_key, success_key, result, task_id, logger
 
     # Try to acquire distributed lock
-    acquired = l.set(lock_key, task_id, ex=REDIS_LOCK_TIMEOUT, nx=True)
+    acquired = redis_conn.set(lock_key, task_id, ex=REDIS_LOCK_TIMEOUT, nx=True)
     if not acquired:
         result["status"] = "skipped"
         result["reason"] = "lock_held"
-        print(f"Skipping {task_name}: another instance is running for {date_string}")
-        return l, lock_key, success_key, result, task_id
+        logger.log_skipped(reason="lock_held", date_string=date_string, task_id=task_id)
+        return redis_conn, lock_key, success_key, result, task_id, logger
 
-    print(f"Starting {task_name} (task_id={task_id}, date={date_string}, pid={os.getpid()})")
-    return l, lock_key, success_key, result, task_id
+    logger.log_start(task_id=task_id, date_string=date_string, pid=os.getpid())
+    return redis_conn, lock_key, success_key, result, task_id, logger
 
 
 # Import all task functions AFTER defining utilities to avoid circular imports

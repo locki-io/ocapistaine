@@ -22,7 +22,7 @@ from datetime import date
 from typing import List, Dict, Any, Optional, Callable
 from dataclasses import dataclass, field
 
-from app.logging.domains import ProcessorLogger
+from app.services.logging import ProcessorLogger
 from app.mockup.generator import (
     ContributionGenerator,
     MockContribution,
