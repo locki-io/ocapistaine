@@ -103,6 +103,7 @@ def main():
         "mockup": ("🧪", "tab_mockup"),
         "autocontrib": ("✨", "tab_autocontrib"),
         "documents": ("📄", "tab_documents"),
+        "admin": ("⚙️", "tab_admin"),
         "about": ("ℹ️", "tab_about"),
     }
     TAB_KEYS = list(TAB_CONFIG.keys())
@@ -141,6 +142,10 @@ def main():
         documents_view(user_id)
     elif current_tab == "mockup":
         mockup_view(user_id)
+    elif current_tab == "admin":
+        from app.admin import scheduler_dashboard_view
+
+        scheduler_dashboard_view(user_id)
     elif current_tab == "about":
         about_view()
 

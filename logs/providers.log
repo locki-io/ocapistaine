@@ -27,3 +27,1050 @@
 2026-01-27 08:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.0-flash | retry_after=59.839198548s | Retrying after 59.839198548s (attempt 2/3)
 2026-01-27 08:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=QUOTA_EXHAUSTED | model=gemini-2.0-flash | Daily quota exhausted - no credits remaining
 2026-01-27 08:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.0-flash | retry_after=59.854942236s | Retrying after 59.854942236s (attempt 3/3)
+2026-02-03 14:01:06 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:01:11 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=5570
+2026-02-03 14:01:11 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:01:15 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=3753
+2026-02-03 14:01:15 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:01:20 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=4498
+2026-02-03 14:01:20 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:01:22 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=2783
+2026-02-03 14:01:22 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:01:26 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=3862
+2026-02-03 14:01:26 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:01:29 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=2892
+2026-02-03 14:02:23 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:02:28 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=5154
+2026-02-03 14:02:28 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:02:31 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=2543
+2026-02-03 14:02:31 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:02:36 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=5577
+2026-02-03 14:02:36 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:02:39 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=2538
+2026-02-03 14:02:39 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:02:46 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=6751
+2026-02-03 14:02:46 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:02:49 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=3195
+2026-02-03 14:02:49 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:02:49 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:02:49 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=10.714747934s | Retrying after 10.714747934s (attempt 1/3)
+2026-02-03 14:03:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:03:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.85909852s | Retrying after 59.85909852s (attempt 2/3)
+2026-02-03 14:04:06 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=76797
+2026-02-03 14:04:06 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:04:09 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=3851
+2026-02-03 14:04:09 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:04:16 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=6872
+2026-02-03 14:04:16 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:04:20 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=3332
+2026-02-03 14:04:20 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:04:25 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=5270
+2026-02-03 14:04:25 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:04:27 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=2575
+2026-02-03 14:04:27 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:04:28 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:04:28 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=32.004352488s | Retrying after 32.004352488s (attempt 1/3)
+2026-02-03 14:05:05 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=37341
+2026-02-03 14:05:05 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:05:08 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=2842
+2026-02-03 14:05:08 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:05:12 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=4291
+2026-02-03 14:05:12 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:05:15 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=2978
+2026-02-03 14:05:15 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:05:15 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:05:15 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=44.546952448s | Retrying after 44.546952448s (attempt 1/3)
+2026-02-03 14:06:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:06:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.858365222s | Retrying after 59.858365222s (attempt 2/3)
+2026-02-03 14:07:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:07:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.723716855s | Retrying after 59.723716855s (attempt 3/3)
+2026-02-03 14:08:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:08:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:08:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.714858123s | Retrying after 59.714858123s (attempt 1/3)
+2026-02-03 14:09:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:09:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.698649678s | Retrying after 59.698649678s (attempt 2/3)
+2026-02-03 14:10:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:10:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.744623594s | Retrying after 59.744623594s (attempt 3/3)
+2026-02-03 14:11:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:11:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:11:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.693581968s | Retrying after 59.693581968s (attempt 1/3)
+2026-02-03 14:12:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:12:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.71539023s | Retrying after 59.71539023s (attempt 2/3)
+2026-02-03 14:13:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:13:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.721730005s | Retrying after 59.721730005s (attempt 3/3)
+2026-02-03 14:14:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:14:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:14:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.726532058s | Retrying after 59.726532058s (attempt 1/3)
+2026-02-03 14:14:08 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:14:08 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:14:08 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=51.50795668s | Retrying after 51.50795668s (attempt 1/3)
+2026-02-03 14:15:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:15:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.738835303s | Retrying after 59.738835303s (attempt 2/3)
+2026-02-03 14:15:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:15:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.738428954s | Retrying after 59.738428954s (attempt 2/3)
+2026-02-03 14:16:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:16:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:16:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.751292231s | Retrying after 59.751292231s (attempt 3/3)
+2026-02-03 14:16:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.75118234s | Retrying after 59.75118234s (attempt 3/3)
+2026-02-03 14:17:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:17:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:17:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:17:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.708688362s | Retrying after 59.708688362s (attempt 1/3)
+2026-02-03 14:17:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:17:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.708794919s | Retrying after 59.708794919s (attempt 1/3)
+2026-02-03 14:18:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:18:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:18:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.706208894s | Retrying after 59.706208894s (attempt 2/3)
+2026-02-03 14:18:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.70615613s | Retrying after 59.70615613s (attempt 2/3)
+2026-02-03 14:19:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:19:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.742502411s | Retrying after 59.742502411s (attempt 3/3)
+2026-02-03 14:19:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:19:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.742497053s | Retrying after 59.742497053s (attempt 3/3)
+2026-02-03 14:20:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:20:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:20:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:20:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.734185662s | Retrying after 59.734185662s (attempt 1/3)
+2026-02-03 14:20:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:20:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.734224506s | Retrying after 59.734224506s (attempt 1/3)
+2026-02-03 14:21:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:21:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:21:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.728644275s | Retrying after 59.728644275s (attempt 2/3)
+2026-02-03 14:21:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.728648967s | Retrying after 59.728648967s (attempt 2/3)
+2026-02-03 14:22:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:22:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.73955061s | Retrying after 59.73955061s (attempt 3/3)
+2026-02-03 14:22:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:22:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.739538026s | Retrying after 59.739538026s (attempt 3/3)
+2026-02-03 14:23:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:23:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:23:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:23:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:23:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.692465356s | Retrying after 59.692465356s (attempt 1/3)
+2026-02-03 14:23:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.692838347s | Retrying after 59.692838347s (attempt 1/3)
+2026-02-03 14:24:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:24:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:24:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.732535057s | Retrying after 59.732535057s (attempt 2/3)
+2026-02-03 14:24:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.732755058s | Retrying after 59.732755058s (attempt 2/3)
+2026-02-03 14:25:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:25:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.679516608s | Retrying after 59.679516608s (attempt 3/3)
+2026-02-03 14:25:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:25:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.679352823s | Retrying after 59.679352823s (attempt 3/3)
+2026-02-03 14:26:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:26:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:26:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:26:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:26:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.733802789s | Retrying after 59.733802789s (attempt 1/3)
+2026-02-03 14:26:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.733995141s | Retrying after 59.733995141s (attempt 1/3)
+2026-02-03 14:27:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:27:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.743826238s | Retrying after 59.743826238s (attempt 2/3)
+2026-02-03 14:28:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:28:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.745661918s | Retrying after 59.745661918s (attempt 3/3)
+2026-02-03 14:28:08 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:28:08 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:28:08 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=51.491604132s | Retrying after 51.491604132s (attempt 1/3)
+2026-02-03 14:29:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:29:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:29:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.715192006s | Retrying after 59.715192006s (attempt 1/3)
+2026-02-03 14:30:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:30:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.758111102s | Retrying after 59.758111102s (attempt 2/3)
+2026-02-03 14:31:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:31:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.715252249s | Retrying after 59.715252249s (attempt 3/3)
+2026-02-03 14:32:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:32:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:32:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.700080936s | Retrying after 59.700080936s (attempt 1/3)
+2026-02-03 14:33:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:33:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.731775867s | Retrying after 59.731775867s (attempt 2/3)
+2026-02-03 14:34:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:34:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.645070997s | Retrying after 59.645070997s (attempt 3/3)
+2026-02-03 14:35:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:35:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:35:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.722866423s | Retrying after 59.722866423s (attempt 1/3)
+2026-02-03 14:36:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:36:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.733043036s | Retrying after 59.733043036s (attempt 2/3)
+2026-02-03 14:37:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:37:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.702731206s | Retrying after 59.702731206s (attempt 3/3)
+2026-02-03 14:38:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:38:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:38:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.738382661s | Retrying after 59.738382661s (attempt 1/3)
+2026-02-03 14:39:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:39:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.662577547s | Retrying after 59.662577547s (attempt 2/3)
+2026-02-03 14:40:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:40:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.746562488s | Retrying after 59.746562488s (attempt 3/3)
+2026-02-03 14:41:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:41:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:41:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.735547991s | Retrying after 59.735547991s (attempt 1/3)
+2026-02-03 14:42:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:42:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.75231361s | Retrying after 59.75231361s (attempt 2/3)
+2026-02-03 14:43:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:43:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.744484504s | Retrying after 59.744484504s (attempt 3/3)
+2026-02-03 14:44:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:44:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:44:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.729375202s | Retrying after 59.729375202s (attempt 1/3)
+2026-02-03 14:45:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:45:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.720983626s | Retrying after 59.720983626s (attempt 2/3)
+2026-02-03 14:46:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:46:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.724470505s | Retrying after 59.724470505s (attempt 3/3)
+2026-02-03 14:47:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:47:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:47:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.729169866s | Retrying after 59.729169866s (attempt 1/3)
+2026-02-03 14:48:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:48:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.734381917s | Retrying after 59.734381917s (attempt 2/3)
+2026-02-03 14:49:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:49:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.689125335s | Retrying after 59.689125335s (attempt 3/3)
+2026-02-03 14:50:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:50:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:50:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.745096151s | Retrying after 59.745096151s (attempt 1/3)
+2026-02-03 14:51:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:51:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.746811096s | Retrying after 59.746811096s (attempt 2/3)
+2026-02-03 14:52:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:52:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.677680089s | Retrying after 59.677680089s (attempt 3/3)
+2026-02-03 14:53:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:53:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:53:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.721761626s | Retrying after 59.721761626s (attempt 1/3)
+2026-02-03 14:54:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:54:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.730544769s | Retrying after 59.730544769s (attempt 2/3)
+2026-02-03 14:55:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:55:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.70680278s | Retrying after 59.70680278s (attempt 3/3)
+2026-02-03 14:56:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:56:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:56:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.695722466s | Retrying after 59.695722466s (attempt 1/3)
+2026-02-03 14:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.737487664s | Retrying after 59.737487664s (attempt 2/3)
+2026-02-03 14:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.737592864s | Retrying after 59.737592864s (attempt 3/3)
+2026-02-03 14:59:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 14:59:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 14:59:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.676301237s | Retrying after 59.676301237s (attempt 1/3)
+2026-02-03 15:00:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:00:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.74519578s | Retrying after 59.74519578s (attempt 2/3)
+2026-02-03 15:01:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:01:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.722902672s | Retrying after 59.722902672s (attempt 3/3)
+2026-02-03 15:02:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:02:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:02:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.73839065s | Retrying after 59.73839065s (attempt 1/3)
+2026-02-03 15:03:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:03:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.719050128s | Retrying after 59.719050128s (attempt 2/3)
+2026-02-03 15:04:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:04:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.690954585s | Retrying after 59.690954585s (attempt 3/3)
+2026-02-03 15:05:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:05:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:05:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.738091161s | Retrying after 59.738091161s (attempt 1/3)
+2026-02-03 15:06:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:06:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.73114855s | Retrying after 59.73114855s (attempt 2/3)
+2026-02-03 15:07:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:07:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.72254987s | Retrying after 59.72254987s (attempt 3/3)
+2026-02-03 15:08:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:08:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:08:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.752776738s | Retrying after 59.752776738s (attempt 1/3)
+2026-02-03 15:09:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:09:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.720925362s | Retrying after 59.720925362s (attempt 2/3)
+2026-02-03 15:10:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:10:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.733010169s | Retrying after 59.733010169s (attempt 3/3)
+2026-02-03 15:11:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:11:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:11:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.740459898s | Retrying after 59.740459898s (attempt 1/3)
+2026-02-03 15:12:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:12:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.7261939s | Retrying after 59.7261939s (attempt 2/3)
+2026-02-03 15:13:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:13:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.706086905s | Retrying after 59.706086905s (attempt 3/3)
+2026-02-03 15:14:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:14:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:14:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.715686083s | Retrying after 59.715686083s (attempt 1/3)
+2026-02-03 15:15:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:15:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.708088157s | Retrying after 59.708088157s (attempt 2/3)
+2026-02-03 15:16:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:16:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.723807438s | Retrying after 59.723807438s (attempt 3/3)
+2026-02-03 15:17:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:17:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:17:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.707079393s | Retrying after 59.707079393s (attempt 1/3)
+2026-02-03 15:18:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:18:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.74855613s | Retrying after 59.74855613s (attempt 2/3)
+2026-02-03 15:19:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:19:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.736581141s | Retrying after 59.736581141s (attempt 3/3)
+2026-02-03 15:20:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:20:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:20:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.710435741s | Retrying after 59.710435741s (attempt 1/3)
+2026-02-03 15:21:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:21:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.709173407s | Retrying after 59.709173407s (attempt 2/3)
+2026-02-03 15:22:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:22:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.731983972s | Retrying after 59.731983972s (attempt 3/3)
+2026-02-03 15:23:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:23:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:23:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.701175349s | Retrying after 59.701175349s (attempt 1/3)
+2026-02-03 15:24:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:24:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.700611538s | Retrying after 59.700611538s (attempt 2/3)
+2026-02-03 15:25:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:25:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.694805878s | Retrying after 59.694805878s (attempt 3/3)
+2026-02-03 15:26:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:26:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:26:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.701297724s | Retrying after 59.701297724s (attempt 1/3)
+2026-02-03 15:27:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:27:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.741048225s | Retrying after 59.741048225s (attempt 2/3)
+2026-02-03 15:28:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:28:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.712351793s | Retrying after 59.712351793s (attempt 3/3)
+2026-02-03 15:29:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:29:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:29:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.713507368s | Retrying after 59.713507368s (attempt 1/3)
+2026-02-03 15:30:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:30:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.715615152s | Retrying after 59.715615152s (attempt 2/3)
+2026-02-03 15:31:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:31:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.710859733s | Retrying after 59.710859733s (attempt 3/3)
+2026-02-03 15:32:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:32:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:32:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.744135831s | Retrying after 59.744135831s (attempt 1/3)
+2026-02-03 15:33:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:33:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.751310322s | Retrying after 59.751310322s (attempt 2/3)
+2026-02-03 15:34:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:34:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.661713202s | Retrying after 59.661713202s (attempt 3/3)
+2026-02-03 15:35:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:35:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:35:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.732914204s | Retrying after 59.732914204s (attempt 1/3)
+2026-02-03 15:36:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:36:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.703192203s | Retrying after 59.703192203s (attempt 2/3)
+2026-02-03 15:37:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:37:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.368121072s | Retrying after 59.368121072s (attempt 3/3)
+2026-02-03 15:38:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:38:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:38:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.735010946s | Retrying after 59.735010946s (attempt 1/3)
+2026-02-03 15:39:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:39:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.733677327s | Retrying after 59.733677327s (attempt 2/3)
+2026-02-03 15:40:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:40:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.688787173s | Retrying after 59.688787173s (attempt 3/3)
+2026-02-03 15:41:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:41:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:41:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.735208883s | Retrying after 59.735208883s (attempt 1/3)
+2026-02-03 15:42:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:42:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.714964528s | Retrying after 59.714964528s (attempt 2/3)
+2026-02-03 15:43:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:43:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.692731109s | Retrying after 59.692731109s (attempt 3/3)
+2026-02-03 15:44:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:44:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:44:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.696360114s | Retrying after 59.696360114s (attempt 1/3)
+2026-02-03 15:45:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:45:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.664714645s | Retrying after 59.664714645s (attempt 2/3)
+2026-02-03 15:46:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:46:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.64372298s | Retrying after 59.64372298s (attempt 3/3)
+2026-02-03 15:47:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:47:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:47:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.611785541s | Retrying after 59.611785541s (attempt 1/3)
+2026-02-03 15:48:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:48:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.727299s | Retrying after 59.727299s (attempt 2/3)
+2026-02-03 15:49:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:49:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.700057704s | Retrying after 59.700057704s (attempt 3/3)
+2026-02-03 15:50:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:50:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:50:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.715359148s | Retrying after 59.715359148s (attempt 1/3)
+2026-02-03 15:51:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:51:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.717829785s | Retrying after 59.717829785s (attempt 2/3)
+2026-02-03 15:52:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:52:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.735356544s | Retrying after 59.735356544s (attempt 3/3)
+2026-02-03 15:53:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:53:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:53:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.73733724s | Retrying after 59.73733724s (attempt 1/3)
+2026-02-03 15:54:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:54:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.733918393s | Retrying after 59.733918393s (attempt 2/3)
+2026-02-03 15:55:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:55:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.711368745s | Retrying after 59.711368745s (attempt 3/3)
+2026-02-03 15:56:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:56:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:56:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.736501801s | Retrying after 59.736501801s (attempt 1/3)
+2026-02-03 15:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.717671465s | Retrying after 59.717671465s (attempt 2/3)
+2026-02-03 15:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.721853269s | Retrying after 59.721853269s (attempt 3/3)
+2026-02-03 15:59:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 15:59:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 15:59:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.719899417s | Retrying after 59.719899417s (attempt 1/3)
+2026-02-03 16:00:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:00:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.734314441s | Retrying after 59.734314441s (attempt 2/3)
+2026-02-03 16:01:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:01:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.739189468s | Retrying after 59.739189468s (attempt 3/3)
+2026-02-03 16:02:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:02:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:02:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.699379277s | Retrying after 59.699379277s (attempt 1/3)
+2026-02-03 16:03:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:03:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.735880109s | Retrying after 59.735880109s (attempt 2/3)
+2026-02-03 16:04:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:04:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.618704493s | Retrying after 59.618704493s (attempt 3/3)
+2026-02-03 16:05:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:05:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:05:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.627618269s | Retrying after 59.627618269s (attempt 1/3)
+2026-02-03 16:06:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:06:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.722053865s | Retrying after 59.722053865s (attempt 2/3)
+2026-02-03 16:07:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:07:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.715889747s | Retrying after 59.715889747s (attempt 3/3)
+2026-02-03 16:08:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:08:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:08:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.723225364s | Retrying after 59.723225364s (attempt 1/3)
+2026-02-03 16:09:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:09:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.739799847s | Retrying after 59.739799847s (attempt 2/3)
+2026-02-03 16:10:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:10:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.662578272s | Retrying after 59.662578272s (attempt 3/3)
+2026-02-03 16:11:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:11:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:11:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.669771067s | Retrying after 59.669771067s (attempt 1/3)
+2026-02-03 16:12:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:12:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.740775632s | Retrying after 59.740775632s (attempt 2/3)
+2026-02-03 16:13:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:13:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.735627929s | Retrying after 59.735627929s (attempt 3/3)
+2026-02-03 16:14:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:14:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:14:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.712269986s | Retrying after 59.712269986s (attempt 1/3)
+2026-02-03 16:15:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:15:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.725021678s | Retrying after 59.725021678s (attempt 2/3)
+2026-02-03 16:16:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:16:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.717044848s | Retrying after 59.717044848s (attempt 3/3)
+2026-02-03 16:17:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:17:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:17:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.746992984s | Retrying after 59.746992984s (attempt 1/3)
+2026-02-03 16:18:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:18:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.738048877s | Retrying after 59.738048877s (attempt 2/3)
+2026-02-03 16:19:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:19:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.738339194s | Retrying after 59.738339194s (attempt 3/3)
+2026-02-03 16:20:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:20:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:20:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.681228194s | Retrying after 59.681228194s (attempt 1/3)
+2026-02-03 16:21:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:21:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.680491188s | Retrying after 59.680491188s (attempt 2/3)
+2026-02-03 16:22:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:22:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.747789457s | Retrying after 59.747789457s (attempt 3/3)
+2026-02-03 16:23:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:23:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:23:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.739709453s | Retrying after 59.739709453s (attempt 1/3)
+2026-02-03 16:24:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:24:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.750529067s | Retrying after 59.750529067s (attempt 2/3)
+2026-02-03 16:25:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:25:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.709722659s | Retrying after 59.709722659s (attempt 3/3)
+2026-02-03 16:26:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:26:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:26:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.715698826s | Retrying after 59.715698826s (attempt 1/3)
+2026-02-03 16:27:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:27:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.72316012s | Retrying after 59.72316012s (attempt 2/3)
+2026-02-03 16:28:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:28:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.74616941s | Retrying after 59.74616941s (attempt 3/3)
+2026-02-03 16:29:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:29:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:29:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.715728479s | Retrying after 59.715728479s (attempt 1/3)
+2026-02-03 16:30:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:30:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.721389377s | Retrying after 59.721389377s (attempt 2/3)
+2026-02-03 16:31:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:31:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.69745432s | Retrying after 59.69745432s (attempt 3/3)
+2026-02-03 16:32:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:32:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:32:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.680423469s | Retrying after 59.680423469s (attempt 1/3)
+2026-02-03 16:33:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:33:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.728544961s | Retrying after 59.728544961s (attempt 2/3)
+2026-02-03 16:34:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:34:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.743656444s | Retrying after 59.743656444s (attempt 3/3)
+2026-02-03 16:35:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:35:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:35:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.719816456s | Retrying after 59.719816456s (attempt 1/3)
+2026-02-03 16:36:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:36:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.722232058s | Retrying after 59.722232058s (attempt 2/3)
+2026-02-03 16:37:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:37:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.706771077s | Retrying after 59.706771077s (attempt 3/3)
+2026-02-03 16:38:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:38:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:38:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.678555714s | Retrying after 59.678555714s (attempt 1/3)
+2026-02-03 16:39:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:39:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.749163141s | Retrying after 59.749163141s (attempt 2/3)
+2026-02-03 16:40:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:40:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.69909118s | Retrying after 59.69909118s (attempt 3/3)
+2026-02-03 16:41:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:41:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:41:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.708376849s | Retrying after 59.708376849s (attempt 1/3)
+2026-02-03 16:42:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:42:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.733932252s | Retrying after 59.733932252s (attempt 2/3)
+2026-02-03 16:43:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:43:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.687425252s | Retrying after 59.687425252s (attempt 3/3)
+2026-02-03 16:44:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:44:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:44:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.707078866s | Retrying after 59.707078866s (attempt 1/3)
+2026-02-03 16:45:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:45:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.717041511s | Retrying after 59.717041511s (attempt 2/3)
+2026-02-03 16:46:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:46:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.721830576s | Retrying after 59.721830576s (attempt 3/3)
+2026-02-03 16:47:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:47:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:47:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.715863924s | Retrying after 59.715863924s (attempt 1/3)
+2026-02-03 16:48:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:48:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.711628614s | Retrying after 59.711628614s (attempt 2/3)
+2026-02-03 16:49:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:49:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.716229021s | Retrying after 59.716229021s (attempt 3/3)
+2026-02-03 16:50:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:50:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:50:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.718321224s | Retrying after 59.718321224s (attempt 1/3)
+2026-02-03 16:51:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:51:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.718655196s | Retrying after 59.718655196s (attempt 2/3)
+2026-02-03 16:52:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:52:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.696045819s | Retrying after 59.696045819s (attempt 3/3)
+2026-02-03 16:53:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:53:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:53:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.698015469s | Retrying after 59.698015469s (attempt 1/3)
+2026-02-03 16:54:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:54:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.667214177s | Retrying after 59.667214177s (attempt 2/3)
+2026-02-03 16:55:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:55:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.729108022s | Retrying after 59.729108022s (attempt 3/3)
+2026-02-03 16:56:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:56:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:56:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.727027259s | Retrying after 59.727027259s (attempt 1/3)
+2026-02-03 16:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.713467329s | Retrying after 59.713467329s (attempt 2/3)
+2026-02-03 16:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.744907474s | Retrying after 59.744907474s (attempt 3/3)
+2026-02-03 16:59:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 16:59:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 16:59:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.725709071s | Retrying after 59.725709071s (attempt 1/3)
+2026-02-03 17:00:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:00:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.646208211s | Retrying after 59.646208211s (attempt 2/3)
+2026-02-03 17:01:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:01:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.735328598s | Retrying after 59.735328598s (attempt 3/3)
+2026-02-03 17:02:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:02:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:02:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.67903194s | Retrying after 59.67903194s (attempt 1/3)
+2026-02-03 17:03:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:03:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.71532478s | Retrying after 59.71532478s (attempt 2/3)
+2026-02-03 17:04:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:04:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.722406579s | Retrying after 59.722406579s (attempt 3/3)
+2026-02-03 17:05:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:05:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:05:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.714384445s | Retrying after 59.714384445s (attempt 1/3)
+2026-02-03 17:06:03 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=63424
+2026-02-03 17:06:03 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:06:03 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:06:03 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=56.382139827s | Retrying after 56.382139827s (attempt 1/3)
+2026-02-03 17:07:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:07:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.841866088s | Retrying after 59.841866088s (attempt 2/3)
+2026-02-03 17:08:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:08:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.731261039s | Retrying after 59.731261039s (attempt 3/3)
+2026-02-03 17:09:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:09:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:09:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.730960049s | Retrying after 59.730960049s (attempt 1/3)
+2026-02-03 17:10:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:10:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.735415668s | Retrying after 59.735415668s (attempt 2/3)
+2026-02-03 17:11:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:11:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.74149308s | Retrying after 59.74149308s (attempt 3/3)
+2026-02-03 17:12:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:12:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:12:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.716718418s | Retrying after 59.716718418s (attempt 1/3)
+2026-02-03 17:13:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:13:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.713376587s | Retrying after 59.713376587s (attempt 2/3)
+2026-02-03 17:14:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:14:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.739733853s | Retrying after 59.739733853s (attempt 3/3)
+2026-02-03 17:15:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:15:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:15:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.72780233s | Retrying after 59.72780233s (attempt 1/3)
+2026-02-03 17:16:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:16:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.726811446s | Retrying after 59.726811446s (attempt 2/3)
+2026-02-03 17:17:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:17:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.731978807s | Retrying after 59.731978807s (attempt 3/3)
+2026-02-03 17:18:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:18:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:18:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.69675707s | Retrying after 59.69675707s (attempt 1/3)
+2026-02-03 17:19:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:19:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.720950808s | Retrying after 59.720950808s (attempt 2/3)
+2026-02-03 17:20:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:20:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.659045371s | Retrying after 59.659045371s (attempt 3/3)
+2026-02-03 17:21:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:21:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:21:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.697495691s | Retrying after 59.697495691s (attempt 1/3)
+2026-02-03 17:22:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:22:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.716416297s | Retrying after 59.716416297s (attempt 2/3)
+2026-02-03 17:23:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:23:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.716179432s | Retrying after 59.716179432s (attempt 3/3)
+2026-02-03 17:24:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:24:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:24:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.699455642s | Retrying after 59.699455642s (attempt 1/3)
+2026-02-03 17:25:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:25:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.729080843s | Retrying after 59.729080843s (attempt 2/3)
+2026-02-03 17:26:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:26:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.721803546s | Retrying after 59.721803546s (attempt 3/3)
+2026-02-03 17:27:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:27:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:27:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.720556624s | Retrying after 59.720556624s (attempt 1/3)
+2026-02-03 17:28:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:28:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.726833872s | Retrying after 59.726833872s (attempt 2/3)
+2026-02-03 17:29:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:29:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.358929051s | Retrying after 59.358929051s (attempt 3/3)
+2026-02-03 17:30:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:30:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:30:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.737179267s | Retrying after 59.737179267s (attempt 1/3)
+2026-02-03 17:31:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:31:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.675128378s | Retrying after 59.675128378s (attempt 2/3)
+2026-02-03 17:32:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:32:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.712204534s | Retrying after 59.712204534s (attempt 3/3)
+2026-02-03 17:33:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:33:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:33:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.710556777s | Retrying after 59.710556777s (attempt 1/3)
+2026-02-03 17:34:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:34:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.700028666s | Retrying after 59.700028666s (attempt 2/3)
+2026-02-03 17:35:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:35:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.721883308s | Retrying after 59.721883308s (attempt 3/3)
+2026-02-03 17:36:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:36:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:36:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.730035196s | Retrying after 59.730035196s (attempt 1/3)
+2026-02-03 17:37:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:37:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.740385129s | Retrying after 59.740385129s (attempt 2/3)
+2026-02-03 17:38:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:38:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.744819808s | Retrying after 59.744819808s (attempt 3/3)
+2026-02-03 17:39:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:39:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:39:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.73735103s | Retrying after 59.73735103s (attempt 1/3)
+2026-02-03 17:40:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:40:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.692814398s | Retrying after 59.692814398s (attempt 2/3)
+2026-02-03 17:41:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:41:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.695166816s | Retrying after 59.695166816s (attempt 3/3)
+2026-02-03 17:42:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:42:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:42:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.709413423s | Retrying after 59.709413423s (attempt 1/3)
+2026-02-03 17:43:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:43:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.722506593s | Retrying after 59.722506593s (attempt 2/3)
+2026-02-03 17:44:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:44:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.71967264s | Retrying after 59.71967264s (attempt 3/3)
+2026-02-03 17:45:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:45:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:45:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.573669096s | Retrying after 59.573669096s (attempt 1/3)
+2026-02-03 17:46:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:46:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.700473799s | Retrying after 59.700473799s (attempt 2/3)
+2026-02-03 17:47:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:47:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.715615193s | Retrying after 59.715615193s (attempt 3/3)
+2026-02-03 17:48:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:48:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:48:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.700525609s | Retrying after 59.700525609s (attempt 1/3)
+2026-02-03 17:49:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:49:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.731290644s | Retrying after 59.731290644s (attempt 2/3)
+2026-02-03 17:50:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:50:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.712655383s | Retrying after 59.712655383s (attempt 3/3)
+2026-02-03 17:51:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:51:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:51:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.646848681s | Retrying after 59.646848681s (attempt 1/3)
+2026-02-03 17:52:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:52:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.721983472s | Retrying after 59.721983472s (attempt 2/3)
+2026-02-03 17:53:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:53:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.706812067s | Retrying after 59.706812067s (attempt 3/3)
+2026-02-03 17:54:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:54:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:54:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.694408294s | Retrying after 59.694408294s (attempt 1/3)
+2026-02-03 17:55:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:55:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.717999348s | Retrying after 59.717999348s (attempt 2/3)
+2026-02-03 17:56:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:56:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.692384934s | Retrying after 59.692384934s (attempt 3/3)
+2026-02-03 17:57:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 17:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.682336313s | Retrying after 59.682336313s (attempt 1/3)
+2026-02-03 17:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.748354974s | Retrying after 59.748354974s (attempt 2/3)
+2026-02-03 17:59:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 17:59:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.453590033s | Retrying after 59.453590033s (attempt 3/3)
+2026-02-03 18:00:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:00:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:00:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.712264529s | Retrying after 59.712264529s (attempt 1/3)
+2026-02-03 18:01:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:01:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.687391038s | Retrying after 59.687391038s (attempt 2/3)
+2026-02-03 18:02:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:02:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.719577416s | Retrying after 59.719577416s (attempt 3/3)
+2026-02-03 18:03:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:03:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:03:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.731566286s | Retrying after 59.731566286s (attempt 1/3)
+2026-02-03 18:04:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:04:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.711919185s | Retrying after 59.711919185s (attempt 2/3)
+2026-02-03 18:05:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:05:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.725849558s | Retrying after 59.725849558s (attempt 3/3)
+2026-02-03 18:06:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:06:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:06:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.724755907s | Retrying after 59.724755907s (attempt 1/3)
+2026-02-03 18:07:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:07:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.746324815s | Retrying after 59.746324815s (attempt 2/3)
+2026-02-03 18:08:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:08:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.695863898s | Retrying after 59.695863898s (attempt 3/3)
+2026-02-03 18:09:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:09:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:09:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.662484806s | Retrying after 59.662484806s (attempt 1/3)
+2026-02-03 18:10:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:10:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.715350627s | Retrying after 59.715350627s (attempt 2/3)
+2026-02-03 18:11:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:11:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.702140932s | Retrying after 59.702140932s (attempt 3/3)
+2026-02-03 18:12:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:12:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:12:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.706876697s | Retrying after 59.706876697s (attempt 1/3)
+2026-02-03 18:13:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:13:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.739391262s | Retrying after 59.739391262s (attempt 2/3)
+2026-02-03 18:14:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:14:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.67534432s | Retrying after 59.67534432s (attempt 3/3)
+2026-02-03 18:15:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:15:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:15:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.717350933s | Retrying after 59.717350933s (attempt 1/3)
+2026-02-03 18:16:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:16:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.700871461s | Retrying after 59.700871461s (attempt 2/3)
+2026-02-03 18:17:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:17:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.710021003s | Retrying after 59.710021003s (attempt 3/3)
+2026-02-03 18:18:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:18:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:18:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.696358785s | Retrying after 59.696358785s (attempt 1/3)
+2026-02-03 18:19:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:19:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.763179588s | Retrying after 59.763179588s (attempt 2/3)
+2026-02-03 18:20:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:20:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.668590443s | Retrying after 59.668590443s (attempt 3/3)
+2026-02-03 18:21:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:21:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:21:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.633549519s | Retrying after 59.633549519s (attempt 1/3)
+2026-02-03 18:22:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:22:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.724299561s | Retrying after 59.724299561s (attempt 2/3)
+2026-02-03 18:23:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:23:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.726888949s | Retrying after 59.726888949s (attempt 3/3)
+2026-02-03 18:24:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:24:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:24:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.714434714s | Retrying after 59.714434714s (attempt 1/3)
+2026-02-03 18:25:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:25:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.693226932s | Retrying after 59.693226932s (attempt 2/3)
+2026-02-03 18:26:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:26:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.708562218s | Retrying after 59.708562218s (attempt 3/3)
+2026-02-03 18:27:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:27:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:27:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.685336412s | Retrying after 59.685336412s (attempt 1/3)
+2026-02-03 18:28:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:28:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.68198227s | Retrying after 59.68198227s (attempt 2/3)
+2026-02-03 18:29:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:29:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.708852074s | Retrying after 59.708852074s (attempt 3/3)
+2026-02-03 18:30:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:30:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:30:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.66541743s | Retrying after 59.66541743s (attempt 1/3)
+2026-02-03 18:31:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:31:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.691776727s | Retrying after 59.691776727s (attempt 2/3)
+2026-02-03 18:32:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:32:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.721922148s | Retrying after 59.721922148s (attempt 3/3)
+2026-02-03 18:33:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:33:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:33:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.687479824s | Retrying after 59.687479824s (attempt 1/3)
+2026-02-03 18:34:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:34:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.733371037s | Retrying after 59.733371037s (attempt 2/3)
+2026-02-03 18:35:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:35:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.728474921s | Retrying after 59.728474921s (attempt 3/3)
+2026-02-03 18:36:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:36:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:36:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.696281197s | Retrying after 59.696281197s (attempt 1/3)
+2026-02-03 18:37:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:37:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.683288806s | Retrying after 59.683288806s (attempt 2/3)
+2026-02-03 18:38:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:38:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.680049915s | Retrying after 59.680049915s (attempt 3/3)
+2026-02-03 18:39:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:39:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:39:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.707233823s | Retrying after 59.707233823s (attempt 1/3)
+2026-02-03 18:40:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:40:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.708893255s | Retrying after 59.708893255s (attempt 2/3)
+2026-02-03 18:41:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:41:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.663064462s | Retrying after 59.663064462s (attempt 3/3)
+2026-02-03 18:42:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:42:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:42:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.652429479s | Retrying after 59.652429479s (attempt 1/3)
+2026-02-03 18:43:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:43:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.735288255s | Retrying after 59.735288255s (attempt 2/3)
+2026-02-03 18:44:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:44:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.720945083s | Retrying after 59.720945083s (attempt 3/3)
+2026-02-03 18:45:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:45:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:45:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.694815976s | Retrying after 59.694815976s (attempt 1/3)
+2026-02-03 18:46:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:46:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.727860065s | Retrying after 59.727860065s (attempt 2/3)
+2026-02-03 18:47:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:47:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.717518666s | Retrying after 59.717518666s (attempt 3/3)
+2026-02-03 18:48:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:48:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:48:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.71475434s | Retrying after 59.71475434s (attempt 1/3)
+2026-02-03 18:49:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:49:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.736381431s | Retrying after 59.736381431s (attempt 2/3)
+2026-02-03 18:50:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:50:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.69151139s | Retrying after 59.69151139s (attempt 3/3)
+2026-02-03 18:51:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:51:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:51:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.633718513s | Retrying after 59.633718513s (attempt 1/3)
+2026-02-03 18:52:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:52:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.700415945s | Retrying after 59.700415945s (attempt 2/3)
+2026-02-03 18:53:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:53:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.70979163s | Retrying after 59.70979163s (attempt 3/3)
+2026-02-03 18:54:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:54:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:54:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.723683768s | Retrying after 59.723683768s (attempt 1/3)
+2026-02-03 18:55:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:55:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.749566139s | Retrying after 59.749566139s (attempt 2/3)
+2026-02-03 18:56:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:56:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.747154333s | Retrying after 59.747154333s (attempt 3/3)
+2026-02-03 18:57:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 18:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.672253869s | Retrying after 59.672253869s (attempt 1/3)
+2026-02-03 18:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.68722871s | Retrying after 59.68722871s (attempt 2/3)
+2026-02-03 18:59:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 18:59:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.734504149s | Retrying after 59.734504149s (attempt 3/3)
+2026-02-03 19:00:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:00:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:00:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.691912445s | Retrying after 59.691912445s (attempt 1/3)
+2026-02-03 19:01:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:01:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.676042449s | Retrying after 59.676042449s (attempt 2/3)
+2026-02-03 19:02:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:02:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.611953527s | Retrying after 59.611953527s (attempt 3/3)
+2026-02-03 19:03:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:03:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:03:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.726455625s | Retrying after 59.726455625s (attempt 1/3)
+2026-02-03 19:04:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:04:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.71333837s | Retrying after 59.71333837s (attempt 2/3)
+2026-02-03 19:05:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:05:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.654073918s | Retrying after 59.654073918s (attempt 3/3)
+2026-02-03 19:06:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:06:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:06:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.671391299s | Retrying after 59.671391299s (attempt 1/3)
+2026-02-03 19:07:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:07:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.723940814s | Retrying after 59.723940814s (attempt 2/3)
+2026-02-03 19:08:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:08:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.752343957s | Retrying after 59.752343957s (attempt 3/3)
+2026-02-03 19:09:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:09:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:09:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.741141362s | Retrying after 59.741141362s (attempt 1/3)
+2026-02-03 19:10:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:10:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.734878796s | Retrying after 59.734878796s (attempt 2/3)
+2026-02-03 19:11:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:11:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.713498024s | Retrying after 59.713498024s (attempt 3/3)
+2026-02-03 19:12:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:12:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:12:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.708437142s | Retrying after 59.708437142s (attempt 1/3)
+2026-02-03 19:13:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:13:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.728556719s | Retrying after 59.728556719s (attempt 2/3)
+2026-02-03 19:14:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:14:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.742356306s | Retrying after 59.742356306s (attempt 3/3)
+2026-02-03 19:15:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:15:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:15:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.682167105s | Retrying after 59.682167105s (attempt 1/3)
+2026-02-03 19:16:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:16:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.703824297s | Retrying after 59.703824297s (attempt 2/3)
+2026-02-03 19:17:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:17:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.723452241s | Retrying after 59.723452241s (attempt 3/3)
+2026-02-03 19:18:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:18:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:18:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.648691376s | Retrying after 59.648691376s (attempt 1/3)
+2026-02-03 19:19:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:19:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.713128385s | Retrying after 59.713128385s (attempt 2/3)
+2026-02-03 19:20:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:20:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.676667096s | Retrying after 59.676667096s (attempt 3/3)
+2026-02-03 19:21:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:21:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:21:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.689809846s | Retrying after 59.689809846s (attempt 1/3)
+2026-02-03 19:22:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:22:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.707543793s | Retrying after 59.707543793s (attempt 2/3)
+2026-02-03 19:23:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:23:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.704537588s | Retrying after 59.704537588s (attempt 3/3)
+2026-02-03 19:24:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:24:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:24:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.708981734s | Retrying after 59.708981734s (attempt 1/3)
+2026-02-03 19:25:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:25:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.74035781s | Retrying after 59.74035781s (attempt 2/3)
+2026-02-03 19:26:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:26:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.72034821s | Retrying after 59.72034821s (attempt 3/3)
+2026-02-03 19:27:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:27:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:27:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.707194875s | Retrying after 59.707194875s (attempt 1/3)
+2026-02-03 19:28:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:28:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.701000961s | Retrying after 59.701000961s (attempt 2/3)
+2026-02-03 19:29:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:29:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.725368561s | Retrying after 59.725368561s (attempt 3/3)
+2026-02-03 19:30:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:30:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:30:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.619080726s | Retrying after 59.619080726s (attempt 1/3)
+2026-02-03 19:31:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:31:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.701364172s | Retrying after 59.701364172s (attempt 2/3)
+2026-02-03 19:32:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:32:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.707421528s | Retrying after 59.707421528s (attempt 3/3)
+2026-02-03 19:33:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:33:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:33:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.668608351s | Retrying after 59.668608351s (attempt 1/3)
+2026-02-03 19:34:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:34:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.736456686s | Retrying after 59.736456686s (attempt 2/3)
+2026-02-03 19:35:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:35:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.732082393s | Retrying after 59.732082393s (attempt 3/3)
+2026-02-03 19:36:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:36:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:36:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.745835402s | Retrying after 59.745835402s (attempt 1/3)
+2026-02-03 19:37:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:37:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.66202408s | Retrying after 59.66202408s (attempt 2/3)
+2026-02-03 19:38:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:38:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.66081909s | Retrying after 59.66081909s (attempt 3/3)
+2026-02-03 19:39:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:39:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:39:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.732287877s | Retrying after 59.732287877s (attempt 1/3)
+2026-02-03 19:40:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:40:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.741209098s | Retrying after 59.741209098s (attempt 2/3)
+2026-02-03 19:41:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:41:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.723210039s | Retrying after 59.723210039s (attempt 3/3)
+2026-02-03 19:42:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:42:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:42:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.645319331s | Retrying after 59.645319331s (attempt 1/3)
+2026-02-03 19:43:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:43:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.708347836s | Retrying after 59.708347836s (attempt 2/3)
+2026-02-03 19:44:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:44:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.715463657s | Retrying after 59.715463657s (attempt 3/3)
+2026-02-03 19:45:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:45:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:45:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.693001153s | Retrying after 59.693001153s (attempt 1/3)
+2026-02-03 19:46:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:46:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.744887494s | Retrying after 59.744887494s (attempt 2/3)
+2026-02-03 19:47:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:47:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.708486239s | Retrying after 59.708486239s (attempt 3/3)
+2026-02-03 19:48:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:48:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:48:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.723920434s | Retrying after 59.723920434s (attempt 1/3)
+2026-02-03 19:49:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:49:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.716968727s | Retrying after 59.716968727s (attempt 2/3)
+2026-02-03 19:50:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:50:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.696605623s | Retrying after 59.696605623s (attempt 3/3)
+2026-02-03 19:51:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:51:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:51:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.712450184s | Retrying after 59.712450184s (attempt 1/3)
+2026-02-03 19:52:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:52:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.718498016s | Retrying after 59.718498016s (attempt 2/3)
+2026-02-03 19:53:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:53:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.715300014s | Retrying after 59.715300014s (attempt 3/3)
+2026-02-03 19:54:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:54:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:54:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.702298914s | Retrying after 59.702298914s (attempt 1/3)
+2026-02-03 19:55:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:55:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.735957018s | Retrying after 59.735957018s (attempt 2/3)
+2026-02-03 19:56:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:56:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.743037552s | Retrying after 59.743037552s (attempt 3/3)
+2026-02-03 19:57:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 19:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.733363281s | Retrying after 59.733363281s (attempt 1/3)
+2026-02-03 19:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.725573381s | Retrying after 59.725573381s (attempt 2/3)
+2026-02-03 19:59:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 19:59:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.731050813s | Retrying after 59.731050813s (attempt 3/3)
+2026-02-03 20:00:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:00:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:00:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.690069678s | Retrying after 59.690069678s (attempt 1/3)
+2026-02-03 20:01:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:01:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.724538998s | Retrying after 59.724538998s (attempt 2/3)
+2026-02-03 20:02:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:02:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.713865962s | Retrying after 59.713865962s (attempt 3/3)
+2026-02-03 20:03:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:03:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:03:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.672103496s | Retrying after 59.672103496s (attempt 1/3)
+2026-02-03 20:04:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:04:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.742819957s | Retrying after 59.742819957s (attempt 2/3)
+2026-02-03 20:05:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:05:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.706265498s | Retrying after 59.706265498s (attempt 3/3)
+2026-02-03 20:06:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:06:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:06:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.713770735s | Retrying after 59.713770735s (attempt 1/3)
+2026-02-03 20:07:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:07:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.727034847s | Retrying after 59.727034847s (attempt 2/3)
+2026-02-03 20:08:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:08:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.728212993s | Retrying after 59.728212993s (attempt 3/3)
+2026-02-03 20:09:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:09:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:09:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.71056838s | Retrying after 59.71056838s (attempt 1/3)
+2026-02-03 20:10:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:10:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.725924831s | Retrying after 59.725924831s (attempt 2/3)
+2026-02-03 20:11:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:11:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.691923491s | Retrying after 59.691923491s (attempt 3/3)
+2026-02-03 20:12:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:12:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:12:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.699740978s | Retrying after 59.699740978s (attempt 1/3)
+2026-02-03 20:13:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:13:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.722390075s | Retrying after 59.722390075s (attempt 2/3)
+2026-02-03 20:14:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:14:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.722910221s | Retrying after 59.722910221s (attempt 3/3)
+2026-02-03 20:15:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:15:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:15:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.654588886s | Retrying after 59.654588886s (attempt 1/3)
+2026-02-03 20:16:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:16:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.712044754s | Retrying after 59.712044754s (attempt 2/3)
+2026-02-03 20:17:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:17:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.71411266s | Retrying after 59.71411266s (attempt 3/3)
+2026-02-03 20:18:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:18:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:18:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.691479065s | Retrying after 59.691479065s (attempt 1/3)
+2026-02-03 20:19:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:19:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.744042534s | Retrying after 59.744042534s (attempt 2/3)
+2026-02-03 20:20:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:20:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.739503489s | Retrying after 59.739503489s (attempt 3/3)
+2026-02-03 20:21:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:21:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:21:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.756646302s | Retrying after 59.756646302s (attempt 1/3)
+2026-02-03 20:22:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:22:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.673676043s | Retrying after 59.673676043s (attempt 2/3)
+2026-02-03 20:23:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:23:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.72146614s | Retrying after 59.72146614s (attempt 3/3)
+2026-02-03 20:24:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:24:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:24:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.735591876s | Retrying after 59.735591876s (attempt 1/3)
+2026-02-03 20:25:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:25:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.745242724s | Retrying after 59.745242724s (attempt 2/3)
+2026-02-03 20:26:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:26:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.731589947s | Retrying after 59.731589947s (attempt 3/3)
+2026-02-03 20:27:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:27:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:27:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.709866049s | Retrying after 59.709866049s (attempt 1/3)
+2026-02-03 20:28:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:28:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.74749209s | Retrying after 59.74749209s (attempt 2/3)
+2026-02-03 20:29:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:29:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.741359774s | Retrying after 59.741359774s (attempt 3/3)
+2026-02-03 20:30:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:30:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:30:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.754730097s | Retrying after 59.754730097s (attempt 1/3)
+2026-02-03 20:31:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:31:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.705558083s | Retrying after 59.705558083s (attempt 2/3)
+2026-02-03 20:32:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:32:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.712169174s | Retrying after 59.712169174s (attempt 3/3)
+2026-02-03 20:33:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:33:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:33:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.732635298s | Retrying after 59.732635298s (attempt 1/3)
+2026-02-03 20:34:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:34:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.731063006s | Retrying after 59.731063006s (attempt 2/3)
+2026-02-03 20:35:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:35:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.724909689s | Retrying after 59.724909689s (attempt 3/3)
+2026-02-03 20:36:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:36:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:36:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.742254324s | Retrying after 59.742254324s (attempt 1/3)
+2026-02-03 20:37:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:37:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.737754493s | Retrying after 59.737754493s (attempt 2/3)
+2026-02-03 20:38:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:38:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.737398606s | Retrying after 59.737398606s (attempt 3/3)
+2026-02-03 20:39:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:39:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:39:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.720999651s | Retrying after 59.720999651s (attempt 1/3)
+2026-02-03 20:40:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:40:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.749415956s | Retrying after 59.749415956s (attempt 2/3)
+2026-02-03 20:41:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:41:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.724426667s | Retrying after 59.724426667s (attempt 3/3)
+2026-02-03 20:42:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:42:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:42:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.750938793s | Retrying after 59.750938793s (attempt 1/3)
+2026-02-03 20:43:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:43:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.759538144s | Retrying after 59.759538144s (attempt 2/3)
+2026-02-03 20:44:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:44:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.738191171s | Retrying after 59.738191171s (attempt 3/3)
+2026-02-03 20:45:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:45:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:45:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.704767395s | Retrying after 59.704767395s (attempt 1/3)
+2026-02-03 20:46:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:46:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.732038815s | Retrying after 59.732038815s (attempt 2/3)
+2026-02-03 20:47:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:47:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.743168747s | Retrying after 59.743168747s (attempt 3/3)
+2026-02-03 20:48:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:48:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:48:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.750636356s | Retrying after 59.750636356s (attempt 1/3)
+2026-02-03 20:49:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:49:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.696893065s | Retrying after 59.696893065s (attempt 2/3)
+2026-02-03 20:50:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:50:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.72790348s | Retrying after 59.72790348s (attempt 3/3)
+2026-02-03 20:51:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:51:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:51:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.714831851s | Retrying after 59.714831851s (attempt 1/3)
+2026-02-03 20:52:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:52:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.706184105s | Retrying after 59.706184105s (attempt 2/3)
+2026-02-03 20:53:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:53:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.729543856s | Retrying after 59.729543856s (attempt 3/3)
+2026-02-03 20:54:00 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-03 20:54:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:54:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.714892846s | Retrying after 59.714892846s (attempt 1/3)
+2026-02-03 20:55:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:55:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.755969296s | Retrying after 59.755969296s (attempt 2/3)
+2026-02-03 20:56:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-03 20:56:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.725310507s | Retrying after 59.725310507s (attempt 3/3)

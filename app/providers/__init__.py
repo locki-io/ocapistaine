@@ -7,7 +7,7 @@ Exports all providers and provides a factory function for instantiation.
 from typing import Literal
 
 from .base import LLMProvider, Message, CompletionResponse
-from .config import ProviderConfig, get_config, GEMINI_MODELS
+from .config import ProviderConfig, get_config, GEMINI_MODELS, OLLAMA_MODELS
 from .logging import get_provider_logger, ProviderLogger, get_logger
 from .gemini import GeminiProvider
 from .claude import ClaudeProvider
@@ -22,6 +22,7 @@ __all__ = [
     "ProviderConfig",
     "get_config",
     "GEMINI_MODELS",
+    "OLLAMA_MODELS",
     "GeminiProvider",
     "ClaudeProvider",
     "MistralProvider",

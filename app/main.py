@@ -24,17 +24,22 @@ async def lifespan(app: FastAPI):
     """
     Application lifespan handler.
 
-    Startup: Initialize connections, warm caches
-    Shutdown: Clean up resources
+    Startup: Initialize connections, warm caches, start scheduler
+    Shutdown: Stop scheduler, clean up resources
     """
     # Startup
-    print("🚀 OCapistaine API starting...")
+    print("OCapistaine API starting...")
 
     # Check Redis connection
     if redis_health_check():
-        print("✅ Redis connected")
+        print("Redis connected")
     else:
-        print("⚠️  Redis not available - some features may be limited")
+        print("Redis not available - some features may be limited")
+
+    # Start scheduler
+    from app.services.scheduler import start_scheduler
+
+    await start_scheduler()
 
     # TODO: Initialize vector store connection
     # TODO: Warm embedding model cache
@@ -42,7 +47,10 @@ async def lifespan(app: FastAPI):
     yield
 
     # Shutdown
-    print("👋 OCapistaine API shutting down...")
+    from app.services.scheduler import stop_scheduler
+
+    await stop_scheduler()
+    print("OCapistaine API shutting down...")
 
 
 # Create FastAPI application
