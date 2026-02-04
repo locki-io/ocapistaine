@@ -40,7 +40,8 @@ _loop: Optional[asyncio.AbstractEventLoop] = None
 # Cron schedules
 TASK_CHAIN_CRON = "*/30 6-23 * * *"  # Every 30 min, 6 AM - 11 PM
 CRAWL_CRON = "0 3 * * *"  # Daily at 3 AM
-OPIK_EXPERIMENT_CRON = "0 5 * * *"  # Daily at 5 AM
+OPIK_EXPERIMENT_CRON = "0 5 * * *"  # Daily at 5 AM (dataset creation)
+OPIK_EVALUATE_CRON = "*/30 7-22 * * *"  # Every 30 min, 7 AM - 10 PM (evaluation)
 
 
 async def start_scheduler():
@@ -96,6 +97,7 @@ def _register_jobs():
     """
     from app.services.tasks import (
         task_opik_experiment,
+        task_opik_evaluate,
         task_firecrawl,
     )
 
@@ -118,13 +120,22 @@ def _register_jobs():
         misfire_grace_time=600,
     )
 
-    # Opik experiment - Daily evaluation run
+    # Opik experiment - Daily dataset creation
     scheduler.add_job(
         func=task_opik_experiment,
         trigger=CronTrigger.from_crontab(OPIK_EXPERIMENT_CRON),
         id="task_opik_experiment",
         replace_existing=True,
         misfire_grace_time=600,
+    )
+
+    # Opik evaluate - Periodic evaluation (creates dataset from recent spans + runs evaluate)
+    scheduler.add_job(
+        func=task_opik_evaluate,
+        trigger=CronTrigger.from_crontab(OPIK_EVALUATE_CRON),
+        id="task_opik_evaluate",
+        replace_existing=True,
+        misfire_grace_time=300,
     )
 
     logger.info(f"Registered {len(scheduler.get_jobs())} scheduled jobs")
@@ -236,12 +247,14 @@ def run_task_now(
     from app.services.tasks import (
         task_contributions_analysis,
         task_opik_experiment,
+        task_opik_evaluate,
         task_firecrawl,
     )
 
     tasks = {
         "task_contributions_analysis": task_contributions_analysis,
         "task_opik_experiment": task_opik_experiment,
+        "task_opik_evaluate": task_opik_evaluate,
         "task_firecrawl": task_firecrawl,
     }
 
@@ -270,7 +283,7 @@ def run_task_now(
             source=source,
         )
     elif task_name == "task_opik_experiment":
-        # Pass experiment configuration
+        # Pass experiment configuration for dataset creation
         exp_config = experiment_config or {}
         return tasks[task_name](
             date_string,
@@ -279,7 +292,17 @@ def run_task_now(
             provider=provider or "ollama",
             model=ollama_model,
             ollama_sleep=ollama_sleep,
-            experiment_type=exp_config.get("experiment_type", "low_confidence_revalidation"),
+            experiment_type=exp_config.get("experiment_type", "charter_optimization"),
+        )
+    elif task_name == "task_opik_evaluate":
+        # Pass experiment configuration for evaluation
+        exp_config = experiment_config or {}
+        return tasks[task_name](
+            date_string,
+            experiment_type=exp_config.get("experiment_type", "charter_optimization"),
+            max_items=exp_config.get("max_items", 50),
+            metrics=exp_config.get("metrics", ["hallucination", "moderation"]),
+            task_provider=provider or "gemini",
         )
     else:
         return tasks[task_name](date_string)
@@ -333,6 +356,7 @@ def get_task_history(date_string: str = None) -> list:
     tasks = [
         "task_contributions_analysis",
         "task_opik_experiment",
+        "task_opik_evaluate",
         "task_firecrawl",
     ]
 

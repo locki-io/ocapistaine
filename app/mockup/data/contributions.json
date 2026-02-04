@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-01-31T18:08:53.409855",
-  "count": 54,
+  "generated_at": "2026-02-04T16:58:30.511130",
+  "count": 62,
   "contributions": [
     {
       "id": "base_ass_001",
@@ -1053,6 +1053,182 @@
       },
       "title": "À Audierne, le conflit entre l'association Pêche Avenir Cap Sizun et le Comit...",
       "body": "**Constat factuel:**\nÀ Audierne, le conflit entre l'association Pêche Avenir Cap Sizun et le Comité régional des pêches de Bretagne concernant l'autorisation de la pêche aux 4 panneaux en 2025 divise la communauté locale. Les élus ont soutenu le recours juridique, mais font face à un 'recadrage condescendant' de la part des techniciens départementaux.\n\n**Vos idées d'améliorations:**\nPour résoudre ce conflit, il serait bénéfique d'organiser une table ronde rassemblant tous les acteurs concernés (association de pêcheurs, comité régional, élus locaux, techniciens) afin de trouver un compromis équitable. De plus, une meilleure communication et une implication accrue des citoyens dans le processus décisionnel pourraient aider à apaiser les tensions et à trouver une solution durable."
+    },
+    {
+      "id": "field_logement_6b00748f",
+      "category": "logement",
+      "constat_factuel": "Les bureaux de vote dans la commune d'Audierne ont été déplacés du collège Saint-Joseph. Plusieurs familles et habitants locaux ont été affectés par cette situation de mouvement et veulent contribuer à sa résolution.",
+      "idees_ameliorations": "Aider les familles empruntées au déplacement pour s'adapter aux nouvelles conditions de vie en ville. Proposer des informations et des supports aux nouvelles arrivals pour faciliter leur insertion sociale et économique. Organiser des ateliers ou stages de formation aux nouvelles normes et pratiques du collège Saint-Joseph. Soutenir les personnes affectées par le déplacement à travers des liens sociaux, aides financières et accès aux services locaux.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "Mouvements de bureaux et rélocalisation",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-04",
+        "llm_model": "mistral:latest"
+      },
+      "title": "Les bureaux de vote dans la commune d'Audierne ont été déplacés du collège Sa...",
+      "body": "**Constat factuel:**\nLes bureaux de vote dans la commune d'Audierne ont été déplacés du collège Saint-Joseph. Plusieurs familles et habitants locaux ont été affectés par cette situation de mouvement et veulent contribuer à sa résolution.\n\n**Vos idées d'améliorations:**\nAider les familles empruntées au déplacement pour s'adapter aux nouvelles conditions de vie en ville. Proposer des informations et des supports aux nouvelles arrivals pour faciliter leur insertion sociale et économique. Organiser des ateliers ou stages de formation aux nouvelles normes et pratiques du collège Saint-Joseph. Soutenir les personnes affectées par le déplacement à travers des liens sociaux, aides financières et accès aux services locaux."
+    },
+    {
+      "id": "field_logement_9bd34222",
+      "category": "logement",
+      "constat_factuel": "Les bureaux de vote dans la commune d'Audierne ont été déplacés vers le collège Saint-Joseph, ce qui pourrait entraîner des inconvénients pour les habitants à l'adjacent car ils devraient s'adapter aux nouvelles localisations.",
+      "idees_ameliorations": "Pour faciliter le passage aux nouvelles localisations, il serait pertinent de mettre en place des stations de vote temporaires tout en attente des améliorations du collège. Par ailleurs, la collaboration avec la communauté et les réunions locales pourrait renforcer l'engagement et permettre une transition plus fluide pour le public.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "Mouvements de bureaux et rélocalisation",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-04",
+        "llm_model": "mistral:latest"
+      },
+      "title": "Les bureaux de vote dans la commune d'Audierne ont été déplacés vers le collè...",
+      "body": "**Constat factuel:**\nLes bureaux de vote dans la commune d'Audierne ont été déplacés vers le collège Saint-Joseph, ce qui pourrait entraîner des inconvénients pour les habitants à l'adjacent car ils devraient s'adapter aux nouvelles localisations.\n\n**Vos idées d'améliorations:**\nPour faciliter le passage aux nouvelles localisations, il serait pertinent de mettre en place des stations de vote temporaires tout en attente des améliorations du collège. Par ailleurs, la collaboration avec la communauté et les réunions locales pourrait renforcer l'engagement et permettre une transition plus fluide pour le public."
+    },
+    {
+      "id": "field_logement_1aecd4b2",
+      "category": "logement",
+      "constat_factuel": "Les bureaux de vote dans la commune d'Audierne devront être déplacés vers le collège Saint-Joseph en octobre prochain. Cela suit une demande du Conseil des Trésorsaires et du Collège de Veuillen sur l'implantation d'un nouveau service citoyen local aux yeux des citoyens.",
+      "idees_ameliorations": "Pour permettre un passage fluide, il faudrait considerer la mise en place d'une phase de transition avec des services locaux disponibles pendant le déplacement. De plus, les habitants pourraient être informés et involvementné par des ateliers de discussion sur l'implantation du nouveau service citoyen.\nEnfin, il faudrait renforcer les liens entre le Conseil et la communauté en organize des réunions ou ateliers ouverts aux citoyens pour discuter des impacts directs sur la vie quotidienne des habitants.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "Mouvements de bureaux et rélocalisation",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-04",
+        "llm_model": "mistral:latest"
+      },
+      "title": "Les bureaux de vote dans la commune d'Audierne devront être déplacés vers le ...",
+      "body": "**Constat factuel:**\nLes bureaux de vote dans la commune d'Audierne devront être déplacés vers le collège Saint-Joseph en octobre prochain. Cela suit une demande du Conseil des Trésorsaires et du Collège de Veuillen sur l'implantation d'un nouveau service citoyen local aux yeux des citoyens.\n\n**Vos idées d'améliorations:**\nPour permettre un passage fluide, il faudrait considerer la mise en place d'une phase de transition avec des services locaux disponibles pendant le déplacement. De plus, les habitants pourraient être informés et involvementné par des ateliers de discussion sur l'implantation du nouveau service citoyen.\nEnfin, il faudrait renforcer les liens entre le Conseil et la communauté en organize des réunions ou ateliers ouverts aux citoyens pour discuter des impacts directs sur la vie quotidienne des habitants."
+    },
+    {
+      "id": "field_logement_d4a02f6b",
+      "category": "logement",
+      "constat_factuel": "VOTING REGISTRATION OFFICES IN AUDIERNE HAVE BEEN MOVED TO THE COLLÈGE SAINT-JOSSEPH, WHICH COULD CAUSE CONFUSION FOR VOTERS TRYING TO LOCATE THEM.",
+      "idees_ameliorations": "CREATE TEMPORARY VOTING OFFICES IN OTHER AREAS OF THE COMMUNE FOR A LIMITED PERIOD TO HELP PEOPLE ADAPT TO THE NEW LOCATION AND PROVIDE ADDITIONAL INFORMATION OR GUIDANCE THROUGH Digital signage OR written materials to help voters find the new registration office.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "Mouvements de bureaux et rélocalisation",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-04",
+        "llm_model": "mistral:latest"
+      },
+      "title": "VOTING REGISTRATION OFFICES IN AUDIERNE HAVE BEEN MOVED TO THE COLLÈGE SAINT-...",
+      "body": "**Constat factuel:**\nVOTING REGISTRATION OFFICES IN AUDIERNE HAVE BEEN MOVED TO THE COLLÈGE SAINT-JOSSEPH, WHICH COULD CAUSE CONFUSION FOR VOTERS TRYING TO LOCATE THEM.\n\n**Vos idées d'améliorations:**\nCREATE TEMPORARY VOTING OFFICES IN OTHER AREAS OF THE COMMUNE FOR A LIMITED PERIOD TO HELP PEOPLE ADAPT TO THE NEW LOCATION AND PROVIDE ADDITIONAL INFORMATION OR GUIDANCE THROUGH Digital signage OR written materials to help voters find the new registration office."
+    },
+    {
+      "id": "field_associations_dee26e79",
+      "category": "associations",
+      "constat_factuel": "Il semble y avoir des problèmes de communication entre les commerçants et les institutions locales, ce qui entrave la logistique commercially à Audierne.",
+      "idees_ameliorations": "Pour améliorer le système de communication et accélerer la logistique commercially, il serait utile d'établir un système unique pour les ordres et une plateforme dédiée pour partager les informations entre les commerçants et les autorités locales. Par ailleurs, des réunions hebdomadaires entre les commerçants et les fonctionnaires pour discuter des retards pouvant améliorer la situation. Enfin, encourageer les entreprises à émettre leurs ordres plus tôt pourrait contribuer à éviter les retards.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "Gouvernance intercommunale et communication",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-04",
+        "llm_model": "mistral:latest"
+      },
+      "title": "Il semble y avoir des problèmes de communication entre les commerçants et les...",
+      "body": "**Constat factuel:**\nIl semble y avoir des problèmes de communication entre les commerçants et les institutions locales, ce qui entrave la logistique commercially à Audierne.\n\n**Vos idées d'améliorations:**\nPour améliorer le système de communication et accélerer la logistique commercially, il serait utile d'établir un système unique pour les ordres et une plateforme dédiée pour partager les informations entre les commerçants et les autorités locales. Par ailleurs, des réunions hebdomadaires entre les commerçants et les fonctionnaires pour discuter des retards pouvant améliorer la situation. Enfin, encourageer les entreprises à émettre leurs ordres plus tôt pourrait contribuer à éviter les retards."
+    },
+    {
+      "id": "field_associations_581eedf8",
+      "category": "associations",
+      "constat_factuel": "La commune de Audierne fait face à des retards dans la logistique commerciale, avec des problèmes de communication entre les entités locales et les acteurs commercially.",
+      "idees_ameliorations": "Créer un réseau de communication local pour améliorer la coordination entre les businesses et les habitants. Organiser des ateliers dédiés aux questions de logistique commerciale pour identifier des solutions concrètes.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "Gouvernance intercommunale et communication",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-04",
+        "llm_model": "mistral:latest"
+      },
+      "title": "La commune de Audierne fait face à des retards dans la logistique commerciale...",
+      "body": "**Constat factuel:**\nLa commune de Audierne fait face à des retards dans la logistique commerciale, avec des problèmes de communication entre les entités locales et les acteurs commercially.\n\n**Vos idées d'améliorations:**\nCréer un réseau de communication local pour améliorer la coordination entre les businesses et les habitants. Organiser des ateliers dédiés aux questions de logistique commerciale pour identifier des solutions concrètes."
+    },
+    {
+      "id": "field_associations_9e831000",
+      "category": "associations",
+      "constat_factuel": "Il semble que les retards dans la logistique commercially à Audierne soient liés aux problèmes de communication existants entre les différentes entités impliquées. Même après des efforts pour améliorer ce système, les retards persistent, indiquant qu'il faut une réflexion plus approfondie sur l'organisation et la gestion des ressources.",
+      "idees_ameliorations": "Pour améliorer cette situation, il serait utile de organiser un dialogue entre les stakeholders impliqués pour échanger des idées constructives. En outre, établir un système de suivi régulier des avancées des livraisons pourrait aider à identifier où le problème réside et à y concourir.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "Gouvernance intercommunale et communication",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-04",
+        "llm_model": "mistral:latest"
+      },
+      "title": "Il semble que les retards dans la logistique commercially à Audierne soient l...",
+      "body": "**Constat factuel:**\nIl semble que les retards dans la logistique commercially à Audierne soient liés aux problèmes de communication existants entre les différentes entités impliquées. Même après des efforts pour améliorer ce système, les retards persistent, indiquant qu'il faut une réflexion plus approfondie sur l'organisation et la gestion des ressources.\n\n**Vos idées d'améliorations:**\nPour améliorer cette situation, il serait utile de organiser un dialogue entre les stakeholders impliqués pour échanger des idées constructives. En outre, établir un système de suivi régulier des avancées des livraisons pourrait aider à identifier où le problème réside et à y concourir."
+    },
+    {
+      "id": "field_associations_4d160eff",
+      "category": "associations",
+      "constat_factuel": "LA COMMUTATION VÉLODÉLICHE À AUDIERNE SOIT PARfois ENHAGEÉE PAR UNE CONGESTION TERRITORIALE ET DES retardS DANS LA LOGISTIQUE COMMERCIALE, Cela Plige A L'INCONVENIENCE DES ENTREPRENDEURS ET Des CONSUMMATEURS Locaux.",
+      "idees_ameliorations": "Intégrer des solutions numériques pour améliorer la connexióN COMMERCIALE et réduire les temps de livraisons, implémenter des systèmes de MAnAGEMENT RÉGINAUX pour optimiser la distribución Des bienS, et renforcer L'Participation active Des citoyens dans La gestion COMMUNAUTIERE De LA logistique.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "Gouvernance intercommunale et communication",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-04",
+        "llm_model": "mistral:latest"
+      },
+      "title": "LA COMMUTATION VÉLODÉLICHE À AUDIERNE SOIT PARfois ENHAGEÉE PAR UNE CONGESTIO...",
+      "body": "**Constat factuel:**\nLA COMMUTATION VÉLODÉLICHE À AUDIERNE SOIT PARfois ENHAGEÉE PAR UNE CONGESTION TERRITORIALE ET DES retardS DANS LA LOGISTIQUE COMMERCIALE, Cela Plige A L'INCONVENIENCE DES ENTREPRENDEURS ET Des CONSUMMATEURS Locaux.\n\n**Vos idées d'améliorations:**\nIntégrer des solutions numériques pour améliorer la connexióN COMMERCIALE et réduire les temps de livraisons, implémenter des systèmes de MAnAGEMENT RÉGINAUX pour optimiser la distribución Des bienS, et renforcer L'Participation active Des citoyens dans La gestion COMMUNAUTIERE De LA logistique."
     }
   ]
 }

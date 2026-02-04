@@ -283,6 +283,7 @@ def _task_boilerplate(
 # Import all task functions AFTER defining utilities to avoid circular imports
 from app.services.tasks.task_contributions_analysis import task_contributions_analysis
 from app.services.tasks.task_opik_experiment import task_opik_experiment
+from app.services.tasks.task_opik_evaluate import task_opik_evaluate
 from app.services.tasks.task_firecrawl import task_firecrawl
 
 __all__ = [
@@ -301,5 +302,6 @@ __all__ = [
     # Tasks
     "task_contributions_analysis",
     "task_opik_experiment",
+    "task_opik_evaluate",  # Creates dataset + runs evaluate()
     "task_firecrawl",
 ]

@@ -543,35 +543,51 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
     # Provider selection
     st.markdown("#### 2b. LLM Provider")
     st.caption(
-        "Gemini 2.5 Flash recommended for best theme extraction with grounding/search."
+        "This task requires a 7b+ model. Select one or more providers to use."
     )
 
-    col1, col2 = st.columns(2)
-    with col1:
-        llm_provider = st.selectbox(
-            "Provider",
-            options=["ollama", "gemini", "claude"],
-            format_func=lambda x: {
-                "ollama": "💻 Ollama (local, recommended)",
-                "gemini": "🌐 Gemini",
-                "claude": "🤖 Claude",
-            }[x],
-            key="field_llm_provider",
-        )
-    with col2:
-        # Default models per provider
+    # Provider multiselect
+    provider_labels = {
+        "ollama": "💻 Ollama (local)",
+        "mistral": "🌬️ Mistral",
+        "gemini": "🌐 Gemini",
+        "claude": "🤖 Claude",
+    }
+    all_providers = list(provider_labels.keys())
+
+    llm_providers = st.multiselect(
+        "Providers (select one or more)",
+        options=all_providers,
+        default=["ollama", "mistral"],  # Default to ollama and mistral
+        format_func=lambda x: provider_labels.get(x, x),
+        key="field_llm_providers",
+        help="Select multiple providers for failover. First available will be used.",
+    )
+
+    # Model configuration per selected provider
+    if llm_providers:
+        st.markdown("**Model Configuration:**")
         default_models = {
             "gemini": "gemini-2.5-flash",
             "claude": "claude-3-5-sonnet-20241022",
-            "ollama": "mistral:latest",
+            "ollama": "deepseek-r1:7b",
+            "mistral": "mistral-small-latest",
         }
-        llm_model = st.text_input(
-            "Model (optional override)",
-            value="",
-            key="field_llm_model",
-            placeholder=default_models.get(llm_provider, ""),
-            help=f"Default: {default_models.get(llm_provider, 'N/A')}",
-        )
+
+        cols = st.columns(len(llm_providers))
+        llm_models = {}
+        for i, provider in enumerate(llm_providers):
+            with cols[i]:
+                model = st.text_input(
+                    f"{provider_labels[provider]}",
+                    value=default_models.get(provider, ""),
+                    key=f"field_model_{provider}",
+                    help=f"Model for {provider}",
+                )
+                llm_models[provider] = model
+    else:
+        llm_models = {}
+        st.warning("Please select at least one provider")
 
     # Storage options
     st.markdown("#### 3. Storage & Experiment")
@@ -600,19 +616,20 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
     # Provider status check
     col1, col2 = st.columns([1, 3])
     with col1:
-        if st.button("🔍 Check Provider", key="field_check_provider"):
-            try:
-                from app.providers import get_provider
+        if st.button("🔍 Check Providers", key="field_check_provider"):
+            from app.providers import get_provider
 
-                model_to_use = llm_model if llm_model.strip() else None
-                provider = (
-                    get_provider(llm_provider, cache=False, model=model_to_use)
-                    if model_to_use
-                    else get_provider(llm_provider)
-                )
-                st.success(f"✓ {llm_provider} ({provider.model}) ready")
-            except Exception as e:
-                st.error(f"✗ {llm_provider} error: {e}")
+            for prov_name in llm_providers:
+                try:
+                    model_to_use = llm_models.get(prov_name, "").strip() or None
+                    provider = (
+                        get_provider(prov_name, cache=False, model=model_to_use)
+                        if model_to_use
+                        else get_provider(prov_name)
+                    )
+                    st.success(f"✓ {prov_name} ({provider.model}) ready")
+                except Exception as e:
+                    st.warning(f"✗ {prov_name}: {e}")
 
     # Generate button
     st.markdown("---")
@@ -624,48 +641,64 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
             st.error("Please provide input text")
             return
 
-        model_override = llm_model.strip() if llm_model.strip() else None
-        spinner_text = f"Extracting themes using {llm_provider}..."
+        if not llm_providers:
+            st.error("Please select at least one provider")
+            return
+
+        # Try providers in order until one works
+        result = None
+        last_error = None
+        providers_str = ", ".join(llm_providers)
+        spinner_text = f"Extracting themes using {providers_str}..."
 
         with st.spinner(spinner_text):
-            try:
-                result = process_field_input_sync(
-                    input_text=input_text,
-                    source_file=source_file,
-                    source_title=source_title,
-                    provider=llm_provider,
-                    model=model_override,
-                    contributions_per_theme=contributions_per_theme,
-                    include_violations=include_violations,
-                )
+            for provider_name in llm_providers:
+                model_override = llm_models.get(provider_name, "").strip() or None
+                try:
+                    st.info(f"Trying {provider_name}...")
+                    result = process_field_input_sync(
+                        input_text=input_text,
+                        source_file=source_file,
+                        source_title=source_title,
+                        provider=provider_name,
+                        model=model_override,
+                        contributions_per_theme=contributions_per_theme,
+                        include_violations=include_violations,
+                    )
+                    st.success(f"✓ Generated using {provider_name}")
+                    break  # Success, stop trying providers
+                except Exception as e:
+                    last_error = e
+                    st.warning(f"✗ {provider_name} failed: {e}")
+                    continue  # Try next provider
 
-                st.session_state["field_input_result"] = result
+            if result is None:
+                st.error(f"All providers failed. Last error: {last_error}")
+                return
 
-                # Save to Redis if requested
-                if save_to_redis and result.contributions_generated > 0:
-                    # Reload contributions and save to Redis
-                    generator = load_contributions()
-                    # Get only the newly generated ones (field_input source)
-                    new_contribs = [
-                        c
-                        for c in generator.contributions
-                        if c.metadata
-                        and c.metadata.get("field_input")
-                        and c.metadata.get("generated_date") == date.today().isoformat()
-                    ]
-                    if new_contribs:
-                        variations_dicts = [c.to_dict() for c in new_contribs]
-                        saved = _save_variations_to_redis(variations_dicts)
-                        st.success(f"🗄️ Saved {saved} records to Redis")
+            st.session_state["field_input_result"] = result
 
-                # Run experiment if requested
-                if run_experiment and result.contributions_generated > 0:
-                    st.info("📊 Running Opik experiment...")
-                    _run_field_experiment(validate_func, user_id)
+            # Save to Redis if requested
+            if save_to_redis and result.contributions_generated > 0:
+                # Reload contributions and save to Redis
+                generator = load_contributions()
+                # Get only the newly generated ones (field_input source)
+                new_contribs = [
+                    c
+                    for c in generator.contributions
+                    if c.metadata
+                    and c.metadata.get("field_input")
+                    and c.metadata.get("generated_date") == date.today().isoformat()
+                ]
+                if new_contribs:
+                    variations_dicts = [c.to_dict() for c in new_contribs]
+                    saved = _save_variations_to_redis(variations_dicts)
+                    st.success(f"🗄️ Saved {saved} records to Redis")
 
-            except Exception as e:
-                st.error(f"Generation error: {e}")
-                _logger.error("FIELD_INPUT_ERROR", error=str(e))
+            # Run experiment if requested
+            if run_experiment and result.contributions_generated > 0:
+                st.info("📊 Running Opik experiment...")
+                _run_field_experiment(validate_func, user_id)
 
     # Display results
     if "field_input_result" in st.session_state:
@@ -711,12 +744,8 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
 
 
 def _run_field_experiment(validate_func: Callable, user_id: str) -> None:
-    """Run Opik experiment on today's field input contributions."""
+    """Run validation on today's field input contributions and inform about scheduled evaluation."""
     try:
-        from app.processors import MockupProcessor, MockupWorkflowConfig
-
-        processor = MockupProcessor()
-
         # Get today's contributions
         generator = load_contributions()
         field_contribs = [
@@ -732,13 +761,17 @@ def _run_field_experiment(validate_func: Callable, user_id: str) -> None:
             return
 
         # Run batch validation and save to Redis
-        _run_batch_validation(
+        validation_count = _run_batch_validation(
             field_contribs, validate_func, user_id, save_to_redis=True
         )
 
-        st.success(
-            f"📊 Experiment complete: validated {len(field_contribs)} contributions"
-        )
+        # Inform user about scheduled experiment
+        if validation_count > 0:
+            st.info(
+                f"✅ Validated {validation_count} contributions. "
+                f"Spans will appear in Opik in ~3 minutes. "
+                f"Use **task_opik_evaluate** (runs every 30min) to create dataset and run experiment."
+            )
 
     except Exception as e:
         st.error(f"Experiment error: {e}")
@@ -757,18 +790,21 @@ def _display_contributions_list(
         return
 
     # Batch validation controls
-    col1, col2, col3 = st.columns([1, 1, 2])
+    col1, col2, col3, col4 = st.columns([1, 1, 1, 2])
     with col1:
+        st.caption("💡 Spans take ~3min to appear in Opik. Use **task_opik_evaluate** scheduled task to run experiments on recent spans.")
+
+    with col2:
         if st.button("🚀 Validate All", type="primary", key="validate_all_btn"):
             _run_batch_validation(contributions, validate_func, user_id)
 
-    with col2:
+    with col3:
         if st.button("🗑️ Clear Results", key="clear_results_btn"):
             if "batch_results" in st.session_state:
                 del st.session_state["batch_results"]
             st.rerun()
 
-    with col3:
+    with col4:
         if "batch_results" in st.session_state:
             results = st.session_state["batch_results"]
             valid_count = sum(1 for r in results.values() if r.get("is_valid"))
@@ -1050,6 +1086,106 @@ def _run_batch_validation(
         summary += f"\n- 💾 Saved to Redis: {saved_count} records"
 
     st.success(summary)
+
+    # Return count for experiment workflow
+    return len(successful)
+
+
+def _run_experiment_after_validation(validation_count: int) -> None:
+    """
+    Create dataset from recent validation spans and run Opik experiment.
+
+    This function:
+    1. Searches for recent charter_validation/category_classification spans
+    2. Creates a dataset from those spans
+    3. Runs the Opik evaluate() experiment
+    """
+    from datetime import datetime
+    from app.agents.tracing import get_tracer
+    from app.processors.workflows import (
+        OpikExperimentConfig,
+        run_opik_experiment,
+        list_available_metrics,
+    )
+    from app.services.session import get_current_provider
+
+    st.info(f"📊 Creating dataset from {validation_count} validations...")
+
+    tracer = get_tracer()
+    if not tracer.enabled:
+        st.warning("⚠️ Opik not configured - cannot run experiment")
+        return
+
+    # Search for recent spans (from this validation batch)
+    # We search for spans created in the last few minutes
+    experiment_type = "charter_optimization"  # Default to charter
+    span_name = "charter_validation"
+
+    # Search for recent spans
+    filter_string = f'name = "{span_name}"'
+    spans = tracer.search_spans(
+        filter_string=filter_string,
+        span_type="llm",
+        max_results=validation_count + 10,  # Get a bit more than expected
+    )
+
+    if not spans:
+        st.warning("⚠️ No spans found from validation - cannot create dataset")
+        return
+
+    # Take only the most recent spans (up to validation_count)
+    recent_spans = spans[:validation_count]
+    st.info(f"Found {len(recent_spans)} recent spans")
+
+    # Generate dataset name
+    today = datetime.now().strftime("%Y%m%d")
+    timestamp = datetime.now().strftime("%H%M%S")
+    dataset_name = f"mockup-validation-{today}-{timestamp}"
+
+    # Create dataset from spans
+    success = tracer.create_dataset_from_spans(
+        dataset_name=dataset_name,
+        spans=recent_spans,
+        description=f"Mockup validation batch ({len(recent_spans)} items)",
+        mark_added=True,
+    )
+
+    if not success:
+        st.error("❌ Failed to create dataset from spans")
+        return
+
+    st.success(f"✅ Created dataset: {dataset_name} ({len(recent_spans)} items)")
+
+    # Run experiment
+    st.info("🧪 Running Opik experiment...")
+
+    try:
+        # Get current provider from session
+        task_provider = get_current_provider()
+
+        config = OpikExperimentConfig(
+            experiment_name=f"mockup-eval-{today}-{timestamp}",
+            dataset_name=dataset_name,
+            experiment_type=experiment_type,
+            metrics=["hallucination", "moderation"],
+            task_provider=task_provider,
+        )
+
+        result = run_opik_experiment(config)
+
+        if result["status"] == "success":
+            st.success(f"✅ Experiment complete: {config.experiment_name}")
+            with st.expander("Experiment Results", expanded=True):
+                st.json(result.get("eval_results", {}))
+        else:
+            st.error(f"❌ Experiment failed: {result.get('errors', [])}")
+
+        # Store result in session
+        st.session_state["last_experiment_result"] = result
+
+    except Exception as e:
+        st.error(f"❌ Experiment error: {e}")
+        _logger.error("EXPERIMENT_ERROR", error=str(e))
 
 
 def _display_validation_result(result: dict, expected_valid: Optional[bool]) -> None:

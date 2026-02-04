@@ -107,6 +107,7 @@ def _display_todays_tasks():
     tasks = [
         ("task_contributions_analysis", _("admin_task_contributions")),
         ("task_opik_experiment", _("admin_task_opik")),
+        ("task_opik_evaluate", _("admin_task_opik_evaluate")),
         ("task_firecrawl", _("admin_task_firecrawl")),
     ]
 
@@ -167,6 +168,12 @@ def _display_manual_triggers(user_id: str):
             "label": _("admin_task_opik"),
             "has_provider": True,
             "has_experiment_config": True,
+        },
+        "task_opik_evaluate": {
+            "label": _("admin_task_opik_evaluate"),
+            "has_provider": True,
+            "has_experiment_config": True,
+            "is_evaluate_task": True,  # Flag to show evaluate-specific options
         },
         "task_firecrawl": {
             "label": _("admin_task_firecrawl"),
