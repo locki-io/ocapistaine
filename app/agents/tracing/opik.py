@@ -525,17 +525,60 @@ class AgentTracer:
             return False
 
         try:
-            score_data = {"name": feedback_type, "value": score}
+            # FeedbackScoreDict format: id is INSIDE the score dict
+            score_data = {
+                "id": trace_id,  # trace_id goes in the dict
+                "name": feedback_type,
+                "value": score,
+            }
             if comment:
                 score_data["reason"] = comment
 
-            self._client.log_traces_feedback(
-                trace_ids=[trace_id],
-                scores=[score_data],
-            )
+            # Correct method name: log_traces_feedback_scores (not log_traces_feedback)
+            self._client.log_traces_feedback_scores(scores=[score_data])
             return True
         except Exception as e:
-            logger.error(f"OPIK: Failed to log feedback: {e}")
+            logger.error(f"OPIK: Failed to log trace feedback: {e}")
+            return False
+
+    def log_span_feedback(
+        self,
+        span_id: str,
+        score: float,
+        feedback_type: str = "Correctness",
+        comment: str | None = None,
+    ) -> bool:
+        """
+        Log feedback/score for a span (for Opik-native querying and optimization).
+
+        Args:
+            span_id: ID of the span to score
+            score: Score value (0.0 to 1.0)
+            feedback_type: Type of feedback (default: "Correctness")
+            comment: Optional comment
+
+        Returns:
+            True if successful, False otherwise
+        """
+        if not self.enabled or not self._client:
+            return False
+
+        try:
+            # FeedbackScoreDict format: id is INSIDE the score dict
+            score_data = {
+                "id": span_id,  # span_id goes in the dict
+                "name": feedback_type,
+                "value": score,
+            }
+            if comment:
+                score_data["reason"] = comment
+
+            # Correct method name: log_spans_feedback_scores (not log_spans_feedback)
+            self._client.log_spans_feedback_scores(scores=[score_data])
+            logger.debug(f"OPIK: Logged {feedback_type}={score} to span {span_id[:8]}...")
+            return True
+        except Exception as e:
+            logger.error(f"OPIK: Failed to log span feedback: {e}")
             return False
 
     def search_traces(
@@ -573,13 +616,24 @@ class AgentTracer:
             # Convert to list of dicts
             result = []
             for trace in traces:
+                # Convert feedback_scores objects to dicts
+                raw_scores = getattr(trace, "feedback_scores", []) or []
+                feedback_scores = []
+                for score in raw_scores:
+                    score_dict = {
+                        "name": getattr(score, "name", None),
+                        "value": getattr(score, "value", None),
+                        "reason": getattr(score, "reason", None),
+                    }
+                    feedback_scores.append(score_dict)
+
                 trace_dict = {
                     "id": trace.id,
                     "name": trace.name,
                     "input": trace.input,
                     "output": trace.output,
                     "metadata": trace.metadata,
-                    "feedback_scores": getattr(trace, "feedback_scores", []),
+                    "feedback_scores": feedback_scores,
                     "tags": getattr(trace, "tags", []),
                     "created_at": getattr(trace, "created_at", None),
                 }
@@ -600,7 +654,7 @@ class AgentTracer:
 
         Args:
             filter_string: OQL filter
-            span_type: Filter by span type ("general", "llm", "tool")
+            span_type: Filter by span type ("general", "llm", "tool") - added to filter_string
             max_results: Maximum number of results
 
         Returns:
@@ -617,15 +671,34 @@ class AgentTracer:
             return []
 
         try:
+            # Build complete filter string (type must be in filter_string, not separate param)
+            full_filter = filter_string
+            if span_type:
+                type_filter = f'type = "{span_type}"'
+                if full_filter:
+                    full_filter = f"{full_filter} AND {type_filter}"
+                else:
+                    full_filter = type_filter
+
             spans = self._client.search_spans(
                 project_name=self._project,
-                filter_string=filter_string,
-                type=span_type,
+                filter_string=full_filter,
                 max_results=max_results,
             )
             # Convert to list of dicts
             result = []
             for span in spans:
+                # Convert feedback_scores objects to dicts
+                raw_scores = getattr(span, "feedback_scores", []) or []
+                feedback_scores = []
+                for score in raw_scores:
+                    score_dict = {
+                        "name": getattr(score, "name", None),
+                        "value": getattr(score, "value", None),
+                        "reason": getattr(score, "reason", None),
+                    }
+                    feedback_scores.append(score_dict)
+
                 span_dict = {
                     "id": span.id,
                     "trace_id": span.trace_id,
@@ -634,7 +707,7 @@ class AgentTracer:
                     "input": span.input,
                     "output": span.output,
                     "metadata": span.metadata,
-                    "feedback_scores": getattr(span, "feedback_scores", []),
+                    "feedback_scores": feedback_scores,
                     "created_at": getattr(span, "created_at", None),
                 }
                 result.append(span_dict)
@@ -710,6 +783,145 @@ class AgentTracer:
 
         except Exception as e:
             logger.error(f"OPIK: Failed to create dataset from traces: {e}")
+            return False
+
+    def create_dataset_from_spans(
+        self,
+        dataset_name: str,
+        spans: list[dict],
+        description: str | None = None,
+        mark_added: bool = True,
+    ) -> bool:
+        """
+        Create a dataset from span data (from search_spans).
+
+        This is the Opik-native way to create optimization datasets:
+        1. Search for spans matching criteria (e.g., charter_validation with low Correctness)
+        2. Pass the span dicts to this method
+        3. Creates dataset items from span input/output
+        4. Optionally marks spans as added_to_dataset
+
+        Args:
+            dataset_name: Name for the new dataset
+            spans: List of span dicts (from search_spans), must have id, input, output
+            description: Optional dataset description
+            mark_added: If True, log feedback to mark spans as added to dataset
+
+        Returns:
+            True if successful
+        """
+        if not self.enabled or not self._client:
+            logger.warning("OPIK: create_dataset_from_spans - client not enabled")
+            return False
+
+        logger.info(f"OPIK: Creating dataset '{dataset_name}' from {len(spans)} spans")
+
+        try:
+            # Get or create dataset
+            logger.debug(f"OPIK: get_or_create_dataset('{dataset_name}')")
+            dataset = self._client.get_or_create_dataset(
+                name=dataset_name,
+                description=description or f"Dataset from {len(spans)} spans",
+            )
+            logger.info(f"OPIK: Dataset '{dataset_name}' created/retrieved successfully")
+
+            # Convert spans to dataset items
+            items = []
+            for span in spans:
+                span_id = span.get("id", "")
+                span_input = span.get("input") or {}
+                span_output = span.get("output") or {}
+                span_metadata = span.get("metadata") or {}
+
+                # Build dataset item with provider/model info from span metadata
+                item = {
+                    "input": span_input,
+                    "expected_output": span_output,
+                    "metadata": {
+                        "source_span_id": span_id,
+                        "source_trace_id": span.get("trace_id", ""),
+                        "span_name": span.get("name", ""),
+                        "provider": span_metadata.get("provider", ""),
+                        "model": span_metadata.get("model", ""),
+                    },
+                }
+                items.append(item)
+                logger.debug(f"OPIK: Span {span_id[:12]}... converted, provider={span_metadata.get('provider')}, model={span_metadata.get('model')}")
+
+            logger.info(f"OPIK: Prepared {len(items)} items for dataset")
+
+            if items:
+                logger.info(f"OPIK: Inserting {len(items)} items into dataset '{dataset_name}'")
+                dataset.insert(items)
+                logger.info(f"OPIK: Successfully inserted {len(items)} items into dataset '{dataset_name}'")
+
+                # Mark spans as added to dataset
+                if mark_added:
+                    span_ids = [s.get("id") for s in spans if s.get("id")]
+                    logger.debug(f"OPIK: Marking {len(span_ids)} spans as added_to_dataset")
+                    marked = 0
+                    for span_id in span_ids:
+                        if self.log_span_feedback(
+                            span_id=span_id,
+                            score=1.0,
+                            feedback_type="added_to_dataset",
+                            comment=dataset_name,
+                        ):
+                            marked += 1
+                    logger.info(f"OPIK: Marked {marked}/{len(span_ids)} spans as added_to_dataset")
+
+                return True
+            else:
+                logger.warning(f"OPIK: No items to insert - spans list was empty")
+                return False
+
+        except Exception as e:
+            import traceback
+            logger.error(f"OPIK: Failed to create dataset from spans: {e}")
+            logger.error(f"OPIK: Traceback: {traceback.format_exc()}")
+            return False
+
+    def update_span_metadata(
+        self,
+        span_id: str,
+        metadata: dict,
+    ) -> bool:
+        """
+        Update metadata for a span.
+
+        Used to mark spans as processed (e.g., added_to_dataset).
+
+        Args:
+            span_id: ID of the span to update
+            metadata: Metadata dict to merge
+
+        Returns:
+            True if successful
+        """
+        if not self.enabled or not self._client:
+            return False
+
+        try:
+            # Opik SDK may have update_span or similar method
+            # If not available, we use feedback as a workaround
+            span = self._client.get_span(span_id)
+            if span:
+                # Merge with existing metadata
+                existing = span.metadata or {}
+                existing.update(metadata)
+                # Note: Opik SDK may not support direct metadata update
+                # In that case, we log feedback as a marker
+                if "added_to_dataset" in metadata:
+                    self.log_span_feedback(
+                        span_id=span_id,
+                        score=1.0,
+                        feedback_type="added_to_dataset",
+                        comment=metadata.get("added_to_dataset", "true"),
+                    )
+                return True
+            return False
+        except Exception as e:
+            logger.error(f"OPIK: Failed to update span metadata: {e}")
             return False
 
 

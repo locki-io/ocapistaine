@@ -6,6 +6,8 @@ Orchestrate multi-step business processes with clear function ordering.
 
 Available Workflows:
 - AutoContributionWorkflow: 5-step citizen contribution creation with Forseti validation
+- workflow_dataset: Create Opik datasets from spans/records for optimization
+- workflow_experiment: Run prompt optimization experiments
 """
 
 from .workflow_autocontribution import (
@@ -24,8 +26,24 @@ from .workflow_autocontribution import (
     generate_draft_sync,
 )
 
+from .workflow_dataset import (
+    create_dataset_from_spans,
+    create_dataset_from_storage,
+    list_datasets,
+)
+
+from .workflow_experiment import (
+    OpikExperimentConfig,
+    run_opik_experiment,
+    list_experiment_types,
+    list_available_metrics,
+    get_experiment_filters,
+    create_charter_compliance_metric,
+    create_confidence_metric,
+)
+
 __all__ = [
-    # Workflow class
+    # AutoContribution Workflow
     "AutoContributionWorkflow",
     "AutoContributionConfig",
     "AutoContributionResult",
@@ -39,4 +57,16 @@ __all__ = [
     # Utilities
     "run_forseti_validation",
     "generate_draft_sync",
+    # Dataset Workflow
+    "create_dataset_from_spans",
+    "create_dataset_from_storage",
+    "list_datasets",
+    # Experiment Workflow (Opik native)
+    "OpikExperimentConfig",
+    "run_opik_experiment",
+    "list_experiment_types",
+    "list_available_metrics",
+    "get_experiment_filters",
+    "create_charter_compliance_metric",
+    "create_confidence_metric",
 ]

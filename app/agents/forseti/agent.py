@@ -112,8 +112,23 @@ class ForsetiAgent(BaseAgent):
                 )
                 charter_span.update(
                     output=validation.model_dump(),
-                    metadata={"confidence": validation.confidence},
+                    metadata={
+                        "confidence": validation.confidence,
+                        "is_valid": validation.is_valid,
+                        "added_to_dataset": False,  # Track if span was added to dataset
+                        "provider": self._provider.name,
+                        "model": self._provider.model,
+                    },
                 )
+                # Log Correctness feedback to span for Opik-native querying
+                charter_span_id = getattr(charter_span, "id", None)
+                if charter_span_id:
+                    self._tracer.log_span_feedback(
+                        span_id=charter_span_id,
+                        score=validation.confidence,
+                        feedback_type="Correctness",
+                        comment=f"is_valid={validation.is_valid}, violations={len(validation.violations)}",
+                    )
 
             # Step 2: Category classification
             with self._tracer.span(
@@ -129,8 +144,23 @@ class ForsetiAgent(BaseAgent):
                 )
                 category_span.update(
                     output=classification.model_dump(),
-                    metadata={"confidence": classification.confidence},
+                    metadata={
+                        "confidence": classification.confidence,
+                        "category": classification.category,
+                        "added_to_dataset": False,  # Track if span was added to dataset
+                        "provider": self._provider.name,
+                        "model": self._provider.model,
+                    },
                 )
+                # Log Correctness feedback to span for Opik-native querying
+                category_span_id = getattr(category_span, "id", None)
+                if category_span_id:
+                    self._tracer.log_span_feedback(
+                        span_id=category_span_id,
+                        score=classification.confidence,
+                        feedback_type="Correctness",
+                        comment=f"category={classification.category}, original={category}",
+                    )
 
             # Build result
             result = FullValidationResult(

@@ -43,11 +43,21 @@ def scheduler_dashboard_view(user_id: str):
 
         st.markdown("---")
 
-        # 4. Redis Key Monitor
+        # 4. Opik Judge Config
+        _display_opik_judge_config()
+
+        st.markdown("---")
+
+        # 5. Experiment Runner
+        _display_experiment_runner()
+
+        st.markdown("---")
+
+        # 6. Redis Key Monitor
         _display_redis_keys()
 
     with col_logs:
-        # 5. Live Log Viewer
+        # 6. Live Log Viewer
         _display_live_logs()
 
 
@@ -196,14 +206,18 @@ def _display_manual_triggers(user_id: str):
 
             # Experiment configuration (for Opik experiments)
             if config.get("has_experiment_config"):
+                from app.services.tasks import AGENT_FEATURE_REGISTRY
+
                 st.markdown(f"**{_('admin_experiment_config')}**")
 
-                # Experiment type
+                # Experiment type - dynamically loaded from registry
+                experiment_types = list(AGENT_FEATURE_REGISTRY.keys())
                 st.selectbox(
                     _("admin_experiment_type"),
-                    ["low_confidence_revalidation", "category_classification"],
+                    experiment_types,
                     key=f"exp_type_{task_name}",
                     help=_("admin_experiment_type_help"),
+                    format_func=lambda x: f"{x} ({AGENT_FEATURE_REGISTRY[x]['agent']})",
                 )
 
                 exp_col1, exp_col2 = st.columns(2)
@@ -326,7 +340,7 @@ def _display_manual_triggers(user_id: str):
             experiment_config = None
             if config.get("has_experiment_config"):
                 experiment_config = {
-                    "experiment_type": st.session_state.get(f"exp_type_{task_name}", "low_confidence_revalidation"),
+                    "experiment_type": st.session_state.get(f"exp_type_{task_name}", "charter_optimization"),
                     "max_confidence": st.session_state.get(f"max_confidence_{task_name}", 0.5),
                     "max_items": st.session_state.get(f"max_items_{task_name}", 50),
                 }
@@ -500,11 +514,86 @@ def _display_github_counts(after_date: str | None, is_selected: bool):
 
 
 def _display_experiment_candidates(task_name: str):
-    """Display the number of candidates matching current experiment criteria."""
+    """Display candidates from Opik spans matching current experiment criteria."""
+    from app.services.tasks import get_feature_config
+
+    max_correctness = st.session_state.get(f"max_confidence_{task_name}", 0.5)
+    experiment_type = st.session_state.get(f"exp_type_{task_name}", "charter_optimization")
+
+    # Get feature config to know which span to query
+    feature_config = get_feature_config(experiment_type)
+    if not feature_config:
+        st.caption("⚠️ Unknown experiment type")
+        return
+
+    span_name = feature_config["feature"]
+
+    # Two tabs: Opik Spans vs Internal Storage
+    tab_opik, tab_internal = st.tabs(["🔍 Opik Spans (Correctness)", "💾 Internal (Confidence)"])
+
+    with tab_opik:
+        _display_opik_span_stats(span_name, max_correctness)
+
+    with tab_internal:
+        _display_internal_confidence_stats(max_correctness)
+
+
+def _display_opik_span_stats(span_name: str, max_correctness: float):
+    """Display statistics from Opik spans with Correctness feedback."""
+    try:
+        from app.agents.tracing import get_tracer
+
+        tracer = get_tracer()
+        if not tracer.enabled:
+            st.caption("⚠️ Opik not configured")
+            return
+
+        # Query spans with Correctness below threshold
+        filter_low = f'name = "{span_name}" AND feedback_scores.Correctness < {max_correctness}'
+        low_spans = tracer.search_spans(filter_string=filter_low, span_type="llm", max_results=500)
+
+        # Query all spans of this type for total count
+        filter_all = f'name = "{span_name}"'
+        all_spans = tracer.search_spans(filter_string=filter_all, span_type="llm", max_results=500)
+
+        total = len(all_spans)
+        matching = len(low_spans)
+
+        # Count already added to dataset
+        already_added = 0
+        correctness_values = []
+
+        for span in low_spans:
+            feedback_scores = span.get("feedback_scores", [])
+            for score in feedback_scores:
+                if score.get("name") == "added_to_dataset":
+                    already_added += 1
+                if score.get("name") == "Correctness":
+                    correctness_values.append(score.get("value", 0))
+
+        new_candidates = matching - already_added
+
+        if correctness_values:
+            avg_correctness = sum(correctness_values) / len(correctness_values)
+            st.markdown(
+                f"**{span_name}** spans:\n"
+                f"- Total: {total}\n"
+                f"- Correctness < {max_correctness}: **{matching}**\n"
+                f"- Already in dataset: {already_added}\n"
+                f"- New candidates: **{new_candidates}**\n"
+                f"- Avg Correctness: **{avg_correctness:.2f}**"
+            )
+        else:
+            st.caption(f"📊 No {span_name} spans with Correctness < {max_correctness}")
+
+    except Exception as e:
+        st.caption(f"⚠️ Opik query error: {str(e)[:50]}")
+
+
+def _display_internal_confidence_stats(max_confidence: float):
+    """Display statistics from internal MockupStorage confidence."""
     try:
         from app.mockup.storage import get_storage
-
-        max_confidence = st.session_state.get(f"max_confidence_{task_name}", 0.5)
 
         storage = get_storage()
         all_records = storage.get_latest_validations(limit=1000)
@@ -520,15 +609,17 @@ def _display_experiment_candidates(task_name: str):
 
         if matching > 0:
             avg_conf = sum(r.confidence for r in candidates) / matching
-            st.caption(
-                f"📊 {matching}/{total} {_('admin_items_matching')} "
-                f"(avg confidence: {avg_conf:.2f})"
+            st.markdown(
+                f"**MockupStorage** records:\n"
+                f"- Total: {total}\n"
+                f"- Confidence < {max_confidence}: **{matching}**\n"
+                f"- Avg Confidence: **{avg_conf:.2f}**"
             )
         else:
-            st.caption(f"📊 {_('admin_no_items_matching')}")
+            st.caption(f"📊 No records with confidence < {max_confidence}")
 
     except Exception as e:
-        st.caption(f"⚠️ {_('admin_error_loading_candidates')}: {str(e)[:50]}")
+        st.caption(f"⚠️ Storage error: {str(e)[:50]}")
 
 
 def _run_task(
@@ -639,6 +730,214 @@ def _force_revalidate_and_run(
 
     # Step 3: Run task
     _run_task(task_name, user_id, provider, enable_failover, ollama_model, ollama_sleep)
+
+
+def _display_opik_judge_config():
+    """Display and configure Opik judge LLM settings."""
+    from app.services.opik_config import (
+        get_opik_judge_config,
+        set_opik_judge_config,
+        reset_opik_judge_config,
+        list_available_judge_models,
+    )
+
+    st.markdown("### 🔬 Opik Judge LLM")
+    st.caption("LLM used for Opik metrics (Hallucination, Moderation, etc.)")
+
+    # Get current config
+    config = get_opik_judge_config()
+    available_models = list_available_judge_models()
+
+    # Provider selection
+    col1, col2 = st.columns(2)
+
+    with col1:
+        provider_options = list(available_models.keys())
+        current_provider_idx = provider_options.index(config["provider"]) if config["provider"] in provider_options else 0
+
+        selected_provider = st.selectbox(
+            "Provider",
+            provider_options,
+            index=current_provider_idx,
+            key="opik_judge_provider",
+        )
+
+    with col2:
+        # Model selection based on provider
+        model_options = [m["id"] for m in available_models.get(selected_provider, [])]
+        model_labels = {m["id"]: f"{m['name']} ({m['cost']})" for m in available_models.get(selected_provider, [])}
+
+        current_model = config["model"]
+        if current_model in model_options:
+            current_model_idx = model_options.index(current_model)
+        else:
+            current_model_idx = 0
+
+        selected_model = st.selectbox(
+            "Model",
+            model_options,
+            index=current_model_idx,
+            format_func=lambda x: model_labels.get(x, x),
+            key="opik_judge_model",
+        )
+
+    # API Key status
+    api_key_env = "OPENAI_API_KEY" if selected_provider == "openai" else "ANTHROPIC_API_KEY"
+    api_key_configured = config.get("api_key_configured", False)
+
+    if api_key_configured:
+        st.success(f"✓ {api_key_env} configured")
+    else:
+        st.warning(f"⚠️ {api_key_env} not found in environment")
+
+    # Save / Reset buttons
+    col1, col2 = st.columns(2)
+
+    with col1:
+        if st.button("💾 Save Config", key="save_opik_config"):
+            set_opik_judge_config(
+                provider=selected_provider,
+                model=selected_model,
+                api_key_env=api_key_env,
+            )
+            st.success("Opik judge config saved")
+            st.rerun()
+
+    with col2:
+        if st.button("🔄 Reset to Default", key="reset_opik_config"):
+            reset_opik_judge_config()
+            st.info("Reset to OpenAI gpt-4o-mini")
+            st.rerun()
+
+
+def _display_experiment_runner():
+    """Display experiment runner UI for running Opik evaluate() on datasets."""
+    from app.processors.workflows import (
+        list_datasets,
+        list_experiment_types,
+        list_available_metrics,
+        OpikExperimentConfig,
+        run_opik_experiment,
+    )
+    from app.services.session import get_current_provider
+
+    st.markdown("### 🧪 Run Experiment")
+    st.caption("Run Opik evaluate() on an existing dataset")
+
+    # List available datasets
+    datasets = list_datasets()
+    if not datasets:
+        st.info("No datasets found. Create one using the task_opik_experiment task above.")
+        return
+
+    # Dataset selection
+    dataset_names = [d["name"] for d in datasets]
+    selected_dataset = st.selectbox(
+        "Dataset",
+        dataset_names,
+        key="exp_dataset",
+        help="Select a dataset to evaluate",
+    )
+
+    # Show dataset info
+    selected_info = next((d for d in datasets if d["name"] == selected_dataset), None)
+    if selected_info:
+        st.caption(f"📋 {selected_info.get('description', 'No description')}")
+
+    # Experiment configuration
+    col1, col2 = st.columns(2)
+
+    with col1:
+        # Experiment type (determines which task function to use)
+        experiment_types = list_experiment_types()
+        type_options = [t["type"] for t in experiment_types]
+        type_labels = {t["type"]: f"{t['type']} ({t['agent']})" for t in experiment_types}
+
+        selected_type = st.selectbox(
+            "Experiment Type",
+            type_options,
+            key="exp_type_runner",
+            format_func=lambda x: type_labels.get(x, x),
+            help="Determines which evaluation task to run",
+        )
+
+    with col2:
+        # Task provider (sidebar LLM for running Forseti)
+        session_provider = get_current_provider()
+        provider_options = ["gemini", "claude", "ollama", "mistral"]
+        if session_provider in provider_options:
+            provider_options.remove(session_provider)
+            provider_options.insert(0, session_provider)
+
+        task_provider = st.selectbox(
+            "Task Provider",
+            provider_options,
+            key="exp_task_provider",
+            help="LLM used to run Forseti validation (task LLM)",
+        )
+
+    # Metrics selection
+    available_metrics = list_available_metrics()
+    metric_options = [m["name"] for m in available_metrics]
+    metric_labels = {m["name"]: f"{m['name']}: {m['description']}" for m in available_metrics}
+
+    # Default metrics
+    default_metrics = ["hallucination", "moderation"]
+    default_idx = [metric_options.index(m) for m in default_metrics if m in metric_options]
+
+    selected_metrics = st.multiselect(
+        "Metrics",
+        metric_options,
+        default=[metric_options[i] for i in default_idx],
+        key="exp_metrics",
+        format_func=lambda x: metric_labels.get(x, x),
+        help="Opik judge metrics to evaluate (uses judge LLM configured above)",
+    )
+
+    # Experiment name
+    today = datetime.now().strftime("%Y%m%d")
+    default_exp_name = f"{selected_type}-eval-{today}"
+    experiment_name = st.text_input(
+        "Experiment Name",
+        value=default_exp_name,
+        key="exp_name",
+        help="Name for this experiment in Opik",
+    )
+
+    # Run button
+    if st.button("🚀 Run Experiment", key="run_experiment"):
+        if not selected_metrics:
+            st.error("Select at least one metric")
+            return
+
+        with st.spinner(f"Running experiment '{experiment_name}'..."):
+            try:
+                config = OpikExperimentConfig(
+                    experiment_name=experiment_name,
+                    dataset_name=selected_dataset,
+                    experiment_type=selected_type,
+                    metrics=selected_metrics,
+                    task_provider=task_provider,
+                )
+
+                st.info(f"📊 Config: {config.to_dict()}")
+
+                result = run_opik_experiment(config)
+
+                if result["status"] == "success":
+                    st.success(f"✅ Experiment '{experiment_name}' completed!")
+                    with st.expander("Results", expanded=True):
+                        st.json(result.get("eval_results", {}))
+                else:
+                    st.error(f"❌ Experiment failed: {result.get('errors', [])}")
+
+                with st.expander("Full Result", expanded=False):
+                    st.json(result)
+
+            except Exception as e:
+                st.error(f"Error running experiment: {e}")
+                import traceback
+                st.code(traceback.format_exc())
 
 
 def _display_redis_keys():

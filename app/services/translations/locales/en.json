@@ -233,7 +233,7 @@
 
   "admin_experiment_config": "Experiment Configuration",
   "admin_experiment_type": "Experiment Type",
-  "admin_experiment_type_help": "low_confidence_revalidation: Re-run Forseti on items with low confidence",
+  "admin_experiment_type_help": "charter_optimization: Build dataset from charter_validation spans. category_optimization: Build dataset from category_classification spans. Both use low-Correctness feedback scores.",
   "admin_max_confidence": "Max Confidence",
   "admin_max_confidence_help": "Items with confidence below this threshold will be selected for revalidation",
   "admin_max_items": "Max Items",

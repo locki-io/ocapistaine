@@ -44,6 +44,122 @@ load_dotenv()
 # Date format for task keys
 DATE_FORMAT = "%Y%m%d"
 
+# =============================================================================
+# Agent Feature Registry for Opik Optimization
+# =============================================================================
+# Maps experiment types to agent features (spans).
+# Each feature that logs Correctness feedback can be optimized.
+#
+# Structure:
+#   experiment_type -> {
+#       "agent": agent name,
+#       "feature": feature/span name,
+#       "dataset_prefix": prefix for Opik dataset names,
+#       "description": human-readable description
+#   }
+#
+# To add a new optimizable feature:
+# 1. Ensure the feature logs Correctness feedback via tracer.log_span_feedback()
+# 2. Add metadata "added_to_dataset: False" to the span
+# 3. Register the feature in AGENT_FEATURE_REGISTRY below
+
+AGENT_FEATURE_REGISTRY: dict[str, dict] = {
+    # Forseti Agent Features
+    "charter_optimization": {
+        "agent": "forseti",
+        "feature": "charter_validation",  # span name
+        "prompt_key": "forseti.charter_validation",  # key in app.prompts registry
+        "dataset_prefix": "charter-optimization",
+        "description": "Charter compliance validation - checks contributions against charter rules",
+    },
+    "category_optimization": {
+        "agent": "forseti",
+        "feature": "category_classification",  # span name
+        "prompt_key": "forseti.category_classification",  # key in app.prompts registry
+        "dataset_prefix": "category-optimization",
+        "description": "Category classification - assigns contributions to one of 7 categories",
+    },
+    # Future: Forseti wording_correction (when Correctness feedback is added)
+    # "wording_optimization": {
+    #     "agent": "forseti",
+    #     "feature": "wording_correction",
+    #     "prompt_key": "forseti.wording_correction",
+    #     "dataset_prefix": "wording-optimization",
+    #     "description": "Wording suggestions - improves contribution text",
+    # },
+    #
+    # Future: Other agents
+    # "draft_optimization": {
+    #     "agent": "contribution_assistant",
+    #     "feature": "draft_generation",
+    #     "prompt_key": "autocontrib.draft_fr",
+    #     "dataset_prefix": "draft-optimization",
+    #     "description": "Draft generation quality for auto-contribution",
+    # },
+}
+
+
+def get_optimizable_features() -> list[str]:
+    """Get list of all experiment types that can be optimized."""
+    return list(AGENT_FEATURE_REGISTRY.keys())
+
+
+def get_feature_config(experiment_type: str) -> dict | None:
+    """Get configuration for an experiment type."""
+    return AGENT_FEATURE_REGISTRY.get(experiment_type)
+
+
+def get_feature_prompt(experiment_type: str) -> tuple[str | None, dict | None]:
+    """
+    Get the prompt template and metadata for a feature.
+
+    Args:
+        experiment_type: The experiment type (e.g., "charter_optimization")
+
+    Returns:
+        tuple: (prompt_template, prompt_metadata) or (None, None) if not found
+    """
+    config = get_feature_config(experiment_type)
+    if not config:
+        return None, None
+
+    prompt_key = config.get("prompt_key")
+    if not prompt_key:
+        return None, None
+
+    try:
+        from app.prompts import get_prompt, get_registry
+
+        template = get_prompt(prompt_key)
+        registry = get_registry()
+        info = registry.get_prompt(prompt_key)
+        metadata = {
+            "key": prompt_key,
+            "source": getattr(info, "source", "local"),
+            "version": getattr(info, "version", "1.0.0"),
+            "variables": getattr(info, "variables", []),
+        }
+        return template, metadata
+    except Exception:
+        return None, None
+
+
+def get_features_by_agent(agent_name: str) -> list[dict]:
+    """
+    Get all optimizable features for a specific agent.
+
+    Args:
+        agent_name: The agent name (e.g., "forseti")
+
+    Returns:
+        list: List of feature configs for the agent
+    """
+    return [
+        {"experiment_type": exp_type, **config}
+        for exp_type, config in AGENT_FEATURE_REGISTRY.items()
+        if config.get("agent") == agent_name
+    ]
+
 # Redis configuration
 REDIS_DB_SCHEDULER = 6  # Dedicated Redis DB for scheduler
 
@@ -176,6 +292,12 @@ __all__ = [
     "DATE_FORMAT",
     "REDIS_LOCK_TIMEOUT",
     "REDIS_SUCCESS_TTL",
+    # Agent Feature Registry
+    "AGENT_FEATURE_REGISTRY",
+    "get_optimizable_features",
+    "get_feature_config",
+    "get_feature_prompt",
+    "get_features_by_agent",
     # Tasks
     "task_contributions_analysis",
     "task_opik_experiment",

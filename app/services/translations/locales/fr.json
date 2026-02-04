@@ -233,7 +233,7 @@
 
   "admin_experiment_config": "Configuration de l'expérience",
   "admin_experiment_type": "Type d'expérience",
-  "admin_experiment_type_help": "low_confidence_revalidation: Re-exécuter Forseti sur les items à faible confiance",
+  "admin_experiment_type_help": "charter_optimization: Dataset à partir des spans charter_validation. category_optimization: Dataset à partir des spans category_classification. Les deux utilisent le score Correctness.",
   "admin_max_confidence": "Confiance max",
   "admin_max_confidence_help": "Les items avec une confiance inférieure à ce seuil seront sélectionnés pour revalidation",
   "admin_max_items": "Items max",
