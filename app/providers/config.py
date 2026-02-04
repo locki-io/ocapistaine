@@ -71,8 +71,8 @@ OLLAMA_MODELS = {
 class ProviderConfig(BaseSettings):
     """Configuration for all LLM providers."""
 
-    # Default provider selection
-    default_provider: str = Field(default="gemini", alias="DEFAULT_PROVIDER")
+    # Default provider selection (ollama for local-first development)
+    default_provider: str = Field(default="ollama", alias="DEFAULT_PROVIDER")
 
     # Google Gemini
     google_api_key: str | None = Field(default=None, alias="GOOGLE_API_KEY")
@@ -88,6 +88,7 @@ class ProviderConfig(BaseSettings):
 
     # Mistral AI
     mistral_api_key: str | None = Field(default=None, alias="MISTRAL_API_KEY")
+    mistral_studio_api_key: str | None = Field(default=None, alias="MISTRAL_STUDIO_API_KEY")
     mistral_model: str = Field(default="mistral-small-latest", alias="MISTRAL_MODEL")
 
     # Local Ollama
@@ -104,6 +105,11 @@ class ProviderConfig(BaseSettings):
     def effective_google_key(self) -> str | None:
         """Return the effective Google API key (GOOGLE_API_KEY or GEMINI_API_KEY)."""
         return self.google_api_key or self.gemini_api_key
+
+    @property
+    def effective_mistral_key(self) -> str | None:
+        """Return the effective Mistral API key (MISTRAL_API_KEY or MISTRAL_STUDIO_API_KEY)."""
+        return self.mistral_api_key or self.mistral_studio_api_key
 
 
 # Singleton instance

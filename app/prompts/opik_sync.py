@@ -28,7 +28,7 @@ def get_opik_client():
         import opik
         return opik.Opik()
     except ImportError:
-        _logger.error("OPIK_NOT_INSTALLED", message="pip install opik")
+        _logger.error("OPIK_NOT_INSTALLED: pip install opik")
         return None
     except Exception as e:
         _logger.error("OPIK_INIT_FAILED", error=str(e))

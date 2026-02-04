@@ -29,12 +29,16 @@ from typing import Optional
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 
+from app.services.logging import TaskLogger
+
+logger = TaskLogger("scheduler")
+
 # Global state
 scheduler: Optional[AsyncIOScheduler] = None
 _loop: Optional[asyncio.AbstractEventLoop] = None
 
 # Cron schedules
-TASK_CHAIN_CRON = "*/7 6-23 * * *"  # Every 7 min, 6 AM - 11 PM
+TASK_CHAIN_CRON = "*/30 6-23 * * *"  # Every 30 min, 6 AM - 11 PM
 CRAWL_CRON = "0 3 * * *"  # Daily at 3 AM
 OPIK_EXPERIMENT_CRON = "0 5 * * *"  # Daily at 5 AM
 
@@ -56,7 +60,7 @@ async def start_scheduler():
     scheduler = AsyncIOScheduler(
         job_defaults={
             "coalesce": True,  # Combine multiple missed runs into one
-            "max_instances": 1,  # Only one instance of each job at a time
+            "max_instances": 2,  # Only one instance of each job at a time
             "misfire_grace_time": 300,  # 5 minutes grace for misfired jobs
         }
     )
@@ -65,7 +69,7 @@ async def start_scheduler():
     _register_jobs()
 
     scheduler.start()
-    print("Scheduler started")
+    logger.info("Scheduler started")
 
 
 async def stop_scheduler():
@@ -78,7 +82,7 @@ async def stop_scheduler():
     global scheduler
     if scheduler and scheduler.running:
         scheduler.shutdown(wait=True)
-        print("Scheduler stopped")
+        logger.info("Scheduler stopped")
 
 
 def _register_jobs():
@@ -123,7 +127,7 @@ def _register_jobs():
         misfire_grace_time=600,
     )
 
-    print(f"Registered {len(scheduler.get_jobs())} scheduled jobs")
+    logger.info(f"Registered {len(scheduler.get_jobs())} scheduled jobs")
 
 
 def orchestrate_task_chain():
@@ -185,9 +189,11 @@ def orchestrate_task_chain():
         # Execute task
         try:
             result = task["func"](today)
-            print(f"orchestrate_task_chain: {task_id} -> {result.get('status', 'unknown')}")
+            logger.info(
+                f"orchestrate_task_chain: {task_id} -> {result.get('status', 'unknown')}"
+            )
         except Exception as e:
-            print(f"orchestrate_task_chain: {task_id} failed: {e}")
+            logger.error(f"orchestrate_task_chain: {task_id} failed: {e}")
 
 
 def run_task_now(
@@ -197,6 +203,9 @@ def run_task_now(
     enable_failover: bool = True,
     limit: int = 100,
     ollama_model: str = None,
+    ollama_sleep: float = None,
+    experiment_config: dict = None,
+    source_config: dict = None,
 ) -> dict:
     """
     Manually trigger a task execution (for admin/debugging).
@@ -208,6 +217,15 @@ def run_task_now(
         enable_failover: If True, try fallback providers on rate limit errors
         limit: Maximum contributions to process (for task_contributions_analysis)
         ollama_model: Specific Ollama model to use (e.g., "deepseek-r1:7b", "qwen3:4b")
+        ollama_sleep: Seconds to sleep between Ollama validations (prevents CPU overload)
+        experiment_config: Configuration for Opik experiments:
+            - experiment_type: Type of experiment (e.g., "low_confidence_revalidation")
+            - max_confidence: Maximum confidence threshold for selecting items
+            - max_items: Maximum number of items to process
+        source_config: Configuration for source filtering:
+            - after_date: Only process contributions after this date (ISO format)
+            - source: Filter by source ("Mockup Queue", "GitHub Issues", etc.)
+            - limit: Maximum number of items to process
 
     Returns:
         dict: Task result
@@ -235,12 +253,33 @@ def run_task_now(
 
     # Pass provider options to tasks that support it
     if task_name == "task_contributions_analysis":
+        # Extract source config if provided
+        src_config = source_config or {}
+        task_limit = src_config.get("limit", limit)
+        after_date = src_config.get("after_date")
+        source = src_config.get("source")
+
         return tasks[task_name](
             date_string,
             provider=provider,
             enable_failover=enable_failover,
-            limit=limit,
+            limit=task_limit,
             ollama_model=ollama_model,
+            ollama_sleep=ollama_sleep,
+            after_date=after_date,
+            source=source,
+        )
+    elif task_name == "task_opik_experiment":
+        # Pass experiment configuration
+        exp_config = experiment_config or {}
+        return tasks[task_name](
+            date_string,
+            max_confidence=exp_config.get("max_confidence"),
+            max_items=exp_config.get("max_items"),
+            provider=provider or "ollama",
+            model=ollama_model,
+            ollama_sleep=ollama_sleep,
+            experiment_type=exp_config.get("experiment_type", "low_confidence_revalidation"),
         )
     else:
         return tasks[task_name](date_string)
@@ -261,7 +300,9 @@ def get_scheduler_status() -> dict:
         jobs.append(
             {
                 "id": job.id,
-                "next_run": job.next_run_time.isoformat() if job.next_run_time else None,
+                "next_run": (
+                    job.next_run_time.isoformat() if job.next_run_time else None
+                ),
                 "trigger": str(job.trigger),
             }
         )
@@ -303,13 +344,15 @@ def get_task_history(date_string: str = None) -> list:
         is_completed = l.exists(success_key)
         is_running = l.exists(lock_key)
 
-        history.append({
-            "task": task,
-            "date": date_string,
-            "completed": is_completed,
-            "running": is_running,
-            "success_ttl": l.ttl(success_key) if is_completed else None,
-            "lock_ttl": l.ttl(lock_key) if is_running else None,
-        })
+        history.append(
+            {
+                "task": task,
+                "date": date_string,
+                "completed": is_completed,
+                "running": is_running,
+                "success_ttl": l.ttl(success_key) if is_completed else None,
+                "lock_ttl": l.ttl(lock_key) if is_running else None,
+            }
+        )
 
     return history

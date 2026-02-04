@@ -698,7 +698,7 @@ class MockupProcessor:
             ExperimentResult with all scores and breakdowns
         """
         if not OPIK_AVAILABLE:
-            self._logger.warning("OPIK_NOT_AVAILABLE", message="Install opik to run experiments")
+            self._logger.warning("OPIK_NOT_AVAILABLE: Install opik to run experiments")
             return ExperimentResult(experiment_name=experiment_name or "unavailable")
 
         experiment_name = experiment_name or f"forseti-charter-{date.today().isoformat()}"
@@ -877,7 +877,7 @@ class MockupProcessor:
         )
 
         if count == 0:
-            self._logger.warning("NO_DATA", message="No validations for today")
+            self._logger.warning("NO_DATA: No validations for today")
             return ExperimentResult(
                 experiment_name=experiment_name,
                 dataset_name=dataset_name,

@@ -64,6 +64,20 @@ from app.services.translations import (
     language_selector,
     LANGUAGES,
 )
+from app.services.session import (
+    SessionSettings,
+    save_session_settings,
+    get_session_settings,
+    get_session_provider,
+    get_session_model,
+    get_full_model_id,
+    get_session_full_model_id,
+    get_current_provider,
+    get_current_model,
+    get_provider_for_tracing,
+    set_default_user_id,
+    get_default_user_id,
+)
 
 # =============================================================================
 # Initialize all domain loggers at module import
@@ -125,4 +139,17 @@ __all__ = [
     "set_language",
     "language_selector",
     "LANGUAGES",
+    # Session settings
+    "SessionSettings",
+    "save_session_settings",
+    "get_session_settings",
+    "get_session_provider",
+    "get_session_model",
+    "get_full_model_id",
+    "get_session_full_model_id",
+    "get_current_provider",
+    "get_current_model",
+    "get_provider_for_tracing",
+    "set_default_user_id",
+    "get_default_user_id",
 ]

@@ -33,7 +33,7 @@ A 5-step workflow that guides users through creating charter-compliant contribut
 Usage:
     from app.processors.workflows import AutoContributionWorkflow
 
-    workflow = AutoContributionWorkflow(provider="gemini")
+    workflow = AutoContributionWorkflow(provider="ollama")
 
     # Step 1: Load sources
     sources = workflow.step_1_load_sources()
@@ -94,7 +94,7 @@ class DraftContribution:
 @dataclass
 class AutoContributionConfig:
     """Configuration for the auto-contribution workflow."""
-    provider: ProviderType = "gemini"
+    provider: ProviderType = "ollama"
     model: Optional[str] = None
     language: LanguageType = "fr"
 
@@ -166,7 +166,7 @@ class ContributionAssistant:
 
     def __init__(
         self,
-        provider_name: ProviderType = "gemini",
+        provider_name: ProviderType = "ollama",
         model: Optional[str] = None,
     ):
         self._provider_name = provider_name
@@ -238,7 +238,13 @@ class ContributionAssistant:
             return draft
 
         except Exception as e:
-            self._logger.error("DRAFT_GENERATION_ERROR", error=str(e))
+            self._logger.error(
+                "DRAFT_GENERATION_ERROR",
+                error=str(e)[:200],
+                category=category,
+                language=language,
+                provider=self._provider_name,
+            )
             return DraftContribution(
                 constat_factuel="",
                 idees_ameliorations="",
@@ -268,7 +274,7 @@ def step_3_generate_draft(
     category: str,
     source_title: str = "",
     language: LanguageType = "fr",
-    provider_name: ProviderType = "gemini",
+    provider_name: ProviderType = "ollama",
     model: Optional[str] = None,
 ) -> DraftContribution:
     """
@@ -336,7 +342,7 @@ def run_forseti_validation(
     title: str,
     body: str,
     category: str,
-    provider_name: ProviderType = "gemini",
+    provider_name: ProviderType = "ollama",
     model: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
@@ -385,7 +391,7 @@ def step_5_validate_and_save(
     idees_ameliorations: str,
     category: str,
     source_title: str = "",
-    provider_name: ProviderType = "gemini",
+    provider_name: ProviderType = "ollama",
     model: Optional[str] = None,
 ) -> AutoContributionResult:
     """
@@ -463,7 +469,7 @@ class AutoContributionWorkflow:
     Orchestrates the 5-step auto-contribution workflow.
 
     Example:
-        workflow = AutoContributionWorkflow(provider="gemini")
+        workflow = AutoContributionWorkflow(provider="ollama")
 
         # Load sources
         sources = workflow.load_sources()

@@ -7,13 +7,16 @@ Features:
 - Today's task execution status
 - Manual task triggers with data source configuration
 - Redis key monitor with delete capability
+- Live log viewer for all application logs
 """
 
 from datetime import datetime
+from pathlib import Path
 
 import streamlit as st
 
 from app.services.translations import _
+from app.services.logging import LOG_DIR, DOMAINS
 
 
 def scheduler_dashboard_view(user_id: str):
@@ -21,23 +24,31 @@ def scheduler_dashboard_view(user_id: str):
 
     st.subheader(_("admin_scheduler_title"))
 
-    # 1. Scheduler Status Header
-    _display_scheduler_status()
+    # Two-column layout: controls on left, logs on right
+    col_controls, col_logs = st.columns([3, 2])
 
-    st.markdown("---")
+    with col_controls:
+        # 1. Scheduler Status Header
+        _display_scheduler_status()
 
-    # 2. Today's Tasks
-    _display_todays_tasks()
+        st.markdown("---")
 
-    st.markdown("---")
+        # 2. Today's Tasks
+        _display_todays_tasks()
 
-    # 3. Manual Triggers
-    _display_manual_triggers(user_id)
+        st.markdown("---")
 
-    st.markdown("---")
+        # 3. Manual Triggers
+        _display_manual_triggers(user_id)
 
-    # 4. Redis Key Monitor
-    _display_redis_keys()
+        st.markdown("---")
+
+        # 4. Redis Key Monitor
+        _display_redis_keys()
+
+    with col_logs:
+        # 5. Live Log Viewer
+        _display_live_logs()
 
 
 def _display_scheduler_status():
@@ -138,13 +149,14 @@ def _display_manual_triggers(user_id: str):
         "task_contributions_analysis": {
             "label": _("admin_task_contributions"),
             "source_type": "select",
-            "sources": ["GitHub Issues", "Mockup Queue", "Both"],
+            "sources": ["Mockup Queue", "GitHub Issues", "Both"],
             "has_provider": True,
+            "has_source_config": True,
         },
         "task_opik_experiment": {
             "label": _("admin_task_opik"),
-            "source_type": "select",
-            "experiments": ["forseti_validation", "category_classification"],
+            "has_provider": True,
+            "has_experiment_config": True,
         },
         "task_firecrawl": {
             "label": _("admin_task_firecrawl"),
@@ -171,6 +183,10 @@ def _display_manual_triggers(user_id: str):
                         key=f"source_{task_name}",
                     )
 
+            # Source configuration with date filter and counts
+            if config.get("has_source_config"):
+                _display_source_config(task_name)
+
             if "experiments" in config:
                 st.selectbox(
                     _("admin_experiment"),
@@ -178,15 +194,75 @@ def _display_manual_triggers(user_id: str):
                     key=f"exp_{task_name}",
                 )
 
+            # Experiment configuration (for Opik experiments)
+            if config.get("has_experiment_config"):
+                st.markdown(f"**{_('admin_experiment_config')}**")
+
+                # Experiment type
+                st.selectbox(
+                    _("admin_experiment_type"),
+                    ["low_confidence_revalidation", "category_classification"],
+                    key=f"exp_type_{task_name}",
+                    help=_("admin_experiment_type_help"),
+                )
+
+                exp_col1, exp_col2 = st.columns(2)
+                with exp_col1:
+                    # Max confidence threshold
+                    st.slider(
+                        _("admin_max_confidence"),
+                        min_value=0.1,
+                        max_value=1.0,
+                        value=0.5,
+                        step=0.05,
+                        key=f"max_confidence_{task_name}",
+                        help=_("admin_max_confidence_help"),
+                    )
+                with exp_col2:
+                    # Max items to process
+                    st.slider(
+                        _("admin_max_items"),
+                        min_value=5,
+                        max_value=200,
+                        value=50,
+                        step=5,
+                        key=f"max_items_{task_name}",
+                        help=_("admin_max_items_help"),
+                    )
+
+                # Show candidate count
+                _display_experiment_candidates(task_name)
+
             # Provider selection with failover
             if config.get("has_provider"):
                 from app.providers import OLLAMA_MODELS
+                from app.services.session import get_current_provider, get_current_model
+
+                # Get session provider as default
+                session_provider = get_current_provider()
+                session_model = get_current_model()
+
+                # Display session provider info
+                st.info(f"📌 {_('admin_session_provider')}: **{session_provider}** ({session_model})")
+
+                provider_options = ["ollama", "gemini", "claude", "mistral"]
+                # Put session provider first
+                if session_provider in provider_options:
+                    provider_options.remove(session_provider)
+                    provider_options.insert(0, session_provider)
 
                 provider_col1, provider_col2 = st.columns(2)
                 with provider_col1:
+                    # Initialize with session provider if not already set
+                    default_idx = 0
+                    current_val = st.session_state.get(f"provider_{task_name}")
+                    if current_val and current_val in provider_options:
+                        default_idx = provider_options.index(current_val)
+
                     st.selectbox(
                         _("admin_provider"),
-                        ["gemini", "claude", "mistral", "ollama"],
+                        provider_options,
+                        index=default_idx,
                         key=f"provider_{task_name}",
                     )
                 with provider_col2:
@@ -198,7 +274,7 @@ def _display_manual_triggers(user_id: str):
                     )
 
                 # Show Ollama model selection if ollama is selected
-                current_provider = st.session_state.get(f"provider_{task_name}", "gemini")
+                current_provider = st.session_state.get(f"provider_{task_name}", "ollama")
                 if current_provider == "ollama":
                     ollama_model_options = list(OLLAMA_MODELS.keys())
                     st.selectbox(
@@ -219,31 +295,240 @@ def _display_manual_triggers(user_id: str):
                             f"RAM: ~{model_info['ram_gb']}GB"
                         )
 
+                    # Ollama sleep time to prevent CPU overload
+                    st.slider(
+                        _("admin_ollama_sleep"),
+                        min_value=0.0,
+                        max_value=10.0,
+                        value=2.0,
+                        step=0.5,
+                        key=f"ollama_sleep_{task_name}",
+                        help=_("admin_ollama_sleep_help"),
+                    )
+
             # Get provider settings if available
             provider = None
             enable_failover = True
             ollama_model = None
+            ollama_sleep = None
             if config.get("has_provider"):
-                provider = st.session_state.get(f"provider_{task_name}", "gemini")
+                provider = st.session_state.get(f"provider_{task_name}", "ollama")
                 enable_failover = st.session_state.get(f"failover_{task_name}", True)
                 if provider == "ollama":
                     ollama_model = st.session_state.get(
                         f"ollama_model_{task_name}", "deepseek-r1:7b"
                     )
+                    ollama_sleep = st.session_state.get(
+                        f"ollama_sleep_{task_name}", 2.0
+                    )
+
+            # Get experiment settings if available
+            experiment_config = None
+            if config.get("has_experiment_config"):
+                experiment_config = {
+                    "experiment_type": st.session_state.get(f"exp_type_{task_name}", "low_confidence_revalidation"),
+                    "max_confidence": st.session_state.get(f"max_confidence_{task_name}", 0.5),
+                    "max_items": st.session_state.get(f"max_items_{task_name}", 50),
+                }
+
+            # Get source configuration if available
+            source_config = None
+            if config.get("has_source_config"):
+                after_date_val = st.session_state.get(f"after_date_{task_name}")
+                # Convert date to string if it's a date object
+                if after_date_val and hasattr(after_date_val, "isoformat"):
+                    after_date_str = after_date_val.isoformat()
+                else:
+                    after_date_str = str(after_date_val) if after_date_val else None
+
+                source_config = {
+                    "after_date": after_date_str,
+                    "source": st.session_state.get(f"source_{task_name}", "Mockup Queue"),
+                    "limit": st.session_state.get(f"limit_{task_name}", 100),
+                }
 
             # Action buttons
             col1, col2, col3 = st.columns(3)
             with col1:
                 if st.button(_("admin_run_now"), key=f"run_{task_name}"):
-                    _run_task(task_name, user_id, provider, enable_failover, ollama_model)
+                    _run_task(task_name, user_id, provider, enable_failover, ollama_model, ollama_sleep, experiment_config, source_config)
             with col2:
                 if st.button(_("admin_clear_and_run"), key=f"clear_run_{task_name}"):
-                    _clear_and_run_task(task_name, user_id, provider, enable_failover, ollama_model)
+                    _clear_and_run_task(task_name, user_id, provider, enable_failover, ollama_model, ollama_sleep, experiment_config, source_config)
             with col3:
                 # Force revalidate only for contributions task
                 if task_name == "task_contributions_analysis":
                     if st.button(_("admin_force_revalidate"), key=f"force_{task_name}"):
-                        _force_revalidate_and_run(task_name, user_id, provider, enable_failover, ollama_model)
+                        _force_revalidate_and_run(task_name, user_id, provider, enable_failover, ollama_model, ollama_sleep)
+
+
+def _display_source_config(task_name: str):
+    """Display source configuration with date filter and counts."""
+    from datetime import date, timedelta
+
+    st.markdown(f"**{_('admin_source_filter')}**")
+
+    # Date filter
+    col1, col2 = st.columns(2)
+    with col1:
+        # Default to 7 days ago
+        default_date = date.today() - timedelta(days=7)
+        after_date = st.date_input(
+            _("admin_after_date"),
+            value=default_date,
+            key=f"after_date_{task_name}",
+            help=_("admin_after_date_help"),
+        )
+
+    with col2:
+        # Max items to process
+        st.number_input(
+            _("admin_max_items"),
+            min_value=1,
+            max_value=500,
+            value=100,
+            step=10,
+            key=f"limit_{task_name}",
+            help=_("admin_max_items_help"),
+        )
+
+    # Display source counts
+    _display_source_counts(task_name, after_date.isoformat() if after_date else None)
+
+
+def _display_source_counts(task_name: str, after_date: str | None = None):
+    """Display counts of records by source (Mockup Queue + GitHub Issues)."""
+    # Get current selected source
+    selected_source = st.session_state.get(f"source_{task_name}", "Mockup Queue")
+
+    # Display both sources in tabs
+    mockup_tab, github_tab = st.tabs(["🧪 Mockup Queue", "🐙 GitHub Issues"])
+
+    with mockup_tab:
+        _display_mockup_counts(after_date, selected_source == "Mockup Queue")
+
+    with github_tab:
+        _display_github_counts(after_date, selected_source == "GitHub Issues")
+
+
+def _display_mockup_counts(after_date: str | None, is_selected: bool):
+    """Display Mockup Queue counts."""
+    try:
+        from app.mockup.storage import get_storage
+
+        storage = get_storage()
+        counts = storage.get_source_counts(after_date=after_date, pending_only=False)
+
+        # Display summary
+        total = counts.get("total", 0)
+        pending = counts.get("pending", 0)
+        validated = counts.get("validated", 0)
+
+        if is_selected:
+            st.success(f"✓ {_('admin_data_source')}")
+
+        # Source breakdown in columns
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.metric(_("admin_total_records"), total)
+        with col2:
+            st.metric(_("admin_pending_validation"), pending)
+        with col3:
+            st.metric(_("admin_already_validated"), validated)
+
+        # Show by source if we have data
+        by_source = counts.get("by_source", {})
+        pending_by_source = counts.get("pending_by_source", {})
+
+        if by_source:
+            st.caption(f"**{_('admin_by_source')}:**")
+            source_text = []
+            for source, count in sorted(by_source.items()):
+                pending_count = pending_by_source.get(source, 0)
+                source_text.append(f"• {source}: {count} ({pending_count} pending)")
+            st.markdown("\n".join(source_text))
+
+        # Show date range
+        date_range = counts.get("date_range", {})
+        if date_range.get("min") and date_range.get("max"):
+            st.caption(
+                f"📅 {_('admin_date_range')}: {date_range['min']} → {date_range['max']}"
+            )
+
+    except Exception as e:
+        st.caption(f"⚠️ {_('admin_error_loading_counts')}: {str(e)[:50]}")
+
+
+def _display_github_counts(after_date: str | None, is_selected: bool):
+    """Display GitHub Issues counts."""
+    try:
+        from app.services.github_issues import get_issues_counts
+
+        counts = get_issues_counts(after_date=after_date, pending_only=False)
+
+        # Display summary
+        total = counts.get("total", 0)
+        pending = counts.get("pending", 0)
+        validated = counts.get("validated", 0)
+
+        if is_selected:
+            st.success(f"✓ {_('admin_data_source')}")
+
+        # Source breakdown in columns
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.metric(_("admin_total_records"), total)
+        with col2:
+            st.metric(_("admin_pending_validation"), pending)
+        with col3:
+            st.metric(_("admin_already_validated"), validated)
+
+        # GitHub-specific info
+        st.caption(f"**{_('admin_by_source')}:** audierne2026/participons")
+
+        # Show date range
+        date_range = counts.get("date_range", {})
+        if date_range.get("min") and date_range.get("max"):
+            st.caption(
+                f"📅 {_('admin_date_range')}: {date_range['min']} → {date_range['max']}"
+            )
+        else:
+            st.caption("📅 Date parsed from issue titles (French format)")
+
+    except Exception as e:
+        st.caption(f"⚠️ {_('admin_error_loading_counts')}: {str(e)[:50]}")
+
+
+def _display_experiment_candidates(task_name: str):
+    """Display the number of candidates matching current experiment criteria."""
+    try:
+        from app.mockup.storage import get_storage
+
+        max_confidence = st.session_state.get(f"max_confidence_{task_name}", 0.5)
+
+        storage = get_storage()
+        all_records = storage.get_latest_validations(limit=1000)
+
+        # Filter by confidence threshold
+        candidates = [
+            r for r in all_records
+            if r.confidence < max_confidence and r.confidence > 0
+        ]
+
+        total = len(all_records)
+        matching = len(candidates)
+
+        if matching > 0:
+            avg_conf = sum(r.confidence for r in candidates) / matching
+            st.caption(
+                f"📊 {matching}/{total} {_('admin_items_matching')} "
+                f"(avg confidence: {avg_conf:.2f})"
+            )
+        else:
+            st.caption(f"📊 {_('admin_no_items_matching')}")
+
+    except Exception as e:
+        st.caption(f"⚠️ {_('admin_error_loading_candidates')}: {str(e)[:50]}")
 
 
 def _run_task(
@@ -252,6 +537,9 @@ def _run_task(
     provider: str | None = None,
     enable_failover: bool = True,
     ollama_model: str | None = None,
+    ollama_sleep: float | None = None,
+    experiment_config: dict | None = None,
+    source_config: dict | None = None,
 ):
     """Execute a task manually."""
     from app.services.scheduler import run_task_now
@@ -263,6 +551,9 @@ def _run_task(
                 provider=provider,
                 enable_failover=enable_failover,
                 ollama_model=ollama_model,
+                ollama_sleep=ollama_sleep,
+                experiment_config=experiment_config,
+                source_config=source_config,
             )
             if result["status"] == "success":
                 st.success(f"{task_name} {_('admin_completed_successfully')}")
@@ -286,6 +577,9 @@ def _clear_and_run_task(
     provider: str | None = None,
     enable_failover: bool = True,
     ollama_model: str | None = None,
+    ollama_sleep: float | None = None,
+    experiment_config: dict | None = None,
+    source_config: dict | None = None,
 ):
     """Clear success key and re-run task."""
     from app.services.scheduler.utils import get_scheduler_redis
@@ -300,7 +594,7 @@ def _clear_and_run_task(
         st.info(f"{_('admin_cleared_key')}: {success_key}")
 
     # Run task
-    _run_task(task_name, user_id, provider, enable_failover, ollama_model)
+    _run_task(task_name, user_id, provider, enable_failover, ollama_model, ollama_sleep, experiment_config, source_config)
 
 
 def _force_revalidate_and_run(
@@ -309,6 +603,7 @@ def _force_revalidate_and_run(
     provider: str | None = None,
     enable_failover: bool = True,
     ollama_model: str | None = None,
+    ollama_sleep: float | None = None,
 ):
     """Reset confidence on all records and force revalidation."""
     from app.services.scheduler.utils import get_scheduler_redis
@@ -343,7 +638,7 @@ def _force_revalidate_and_run(
     redis_conn.delete(success_key)
 
     # Step 3: Run task
-    _run_task(task_name, user_id, provider, enable_failover, ollama_model)
+    _run_task(task_name, user_id, provider, enable_failover, ollama_model, ollama_sleep)
 
 
 def _display_redis_keys():
@@ -390,3 +685,167 @@ def _display_redis_keys():
             if st.button(_("admin_delete"), key=f"del_{key}"):
                 redis_conn.delete(key)
                 st.rerun()
+
+
+def _display_live_logs():
+    """Display live logs from all application log files."""
+
+    st.markdown(f"### {_('admin_live_logs')}")
+
+    # Controls row
+    ctrl_col1, ctrl_col2, ctrl_col3 = st.columns([2, 2, 1])
+
+    with ctrl_col1:
+        # Domain filter
+        domain_options = ["all"] + list(DOMAINS.keys())
+        selected_domain = st.selectbox(
+            _("admin_log_domain"),
+            domain_options,
+            key="log_domain_filter",
+            label_visibility="collapsed",
+        )
+
+    with ctrl_col2:
+        # Number of lines
+        num_lines = st.selectbox(
+            _("admin_log_lines"),
+            [50, 100, 200, 500],
+            index=1,
+            key="log_num_lines",
+            label_visibility="collapsed",
+        )
+
+    with ctrl_col3:
+        if st.button(_("admin_refresh_logs"), key="refresh_logs"):
+            st.rerun()
+
+    # Auto-refresh toggle
+    auto_refresh = st.checkbox(
+        _("admin_auto_refresh"),
+        value=False,
+        key="log_auto_refresh",
+        help=_("admin_auto_refresh_help"),
+    )
+
+    if auto_refresh:
+        st.caption(_("admin_auto_refresh_active"))
+        # Trigger rerun after 5 seconds
+        import time
+        time.sleep(0.1)  # Small delay to allow UI to render
+        st.rerun()
+
+    # Read and display logs
+    logs = _read_combined_logs(selected_domain, num_lines)
+
+    if not logs:
+        st.info(_("admin_no_logs"))
+    else:
+        # Reverse order so newest logs appear first
+        logs_reversed = list(reversed(logs))
+        log_text = "\n".join(logs_reversed)
+        st.code(log_text, language="log", line_numbers=False)
+
+
+def _read_combined_logs(domain: str = "all", num_lines: int = 100) -> list[str]:
+    """
+    Read logs from specified domain(s), sorted by timestamp.
+
+    Args:
+        domain: Domain name or "all" for combined logs
+        num_lines: Number of lines to return (most recent)
+
+    Returns:
+        List of log lines sorted by timestamp (oldest first, caller reverses for display)
+    """
+    log_files = []
+
+    if domain == "all":
+        # Collect all log files
+        for domain_name, config in DOMAINS.items():
+            log_file = LOG_DIR / config["log_file"]
+            if log_file.exists():
+                log_files.append(log_file)
+    else:
+        # Single domain
+        if domain in DOMAINS:
+            log_file = LOG_DIR / DOMAINS[domain]["log_file"]
+            if log_file.exists():
+                log_files.append(log_file)
+
+    if not log_files:
+        return []
+
+    # Read all log entries with timestamps
+    all_entries = []
+
+    for log_file in log_files:
+        try:
+            # Read last N*2 lines from each file (we'll sort and trim later)
+            lines = _tail_file(log_file, num_lines * 2)
+            all_entries.extend(lines)
+        except Exception:
+            continue
+
+    if not all_entries:
+        return []
+
+    # Sort by timestamp (logs start with "YYYY-MM-DD HH:MM:SS")
+    # Entries without valid timestamp go to the end
+    def sort_key(line: str) -> str:
+        if len(line) >= 19 and line[4] == "-" and line[10] == " ":
+            return line[:19]
+        return "9999-99-99 99:99:99"
+
+    all_entries.sort(key=sort_key)
+
+    # Return only the last num_lines
+    return all_entries[-num_lines:]
+
+
+def _tail_file(filepath: Path, num_lines: int) -> list[str]:
+    """
+    Read the last N lines from a file efficiently.
+
+    Args:
+        filepath: Path to the file
+        num_lines: Number of lines to read
+
+    Returns:
+        List of lines
+    """
+    try:
+        with open(filepath, "rb") as f:
+            # Seek to end
+            f.seek(0, 2)
+            file_size = f.tell()
+
+            if file_size == 0:
+                return []
+
+            # Read in chunks from the end
+            chunk_size = 8192
+            lines = []
+            position = file_size
+
+            while position > 0 and len(lines) < num_lines + 1:
+                read_size = min(chunk_size, position)
+                position -= read_size
+                f.seek(position)
+                chunk = f.read(read_size).decode("utf-8", errors="replace")
+
+                # Split and prepend to lines
+                chunk_lines = chunk.split("\n")
+
+                if lines:
+                    # Merge with existing first line
+                    lines[0] = chunk_lines[-1] + lines[0]
+                    chunk_lines = chunk_lines[:-1]
+
+                lines = chunk_lines + lines
+
+            # Filter empty lines and return last N
+            lines = [line.strip() for line in lines if line.strip()]
+            return lines[-num_lines:]
+
+    except Exception:
+        return []

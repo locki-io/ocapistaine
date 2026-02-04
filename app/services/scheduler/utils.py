@@ -11,7 +11,11 @@ from typing import Optional
 from contextlib import contextmanager
 from dotenv import load_dotenv
 
+from app.services.logging import get_logger
+
 load_dotenv()
+
+logger = get_logger("tasks")
 
 # Dedicated Redis DB for scheduler locks and success keys
 REDIS_DB_SCHEDULER = 6
@@ -73,7 +77,7 @@ def clear_old_jobs(scheduler, prefix: str = "task_") -> int:
                 scheduler.remove_job(job.id)
                 removed += 1
     except Exception as e:
-        print(f"Error clearing old jobs: {e}")
+        logger.error(f"Error clearing old jobs: {e}")
     return removed
 
 
@@ -96,7 +100,7 @@ def clear_all_jobs(scheduler) -> int:
             scheduler.remove_job(job.id)
             removed += 1
     except Exception as e:
-        print(f"Error clearing jobs: {e}")
+        logger.error(f"Error clearing jobs: {e}")
     return removed
 
 

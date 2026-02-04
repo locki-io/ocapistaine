@@ -165,7 +165,8 @@ class GeminiProvider(LLMProvider):
                 # Check for quota exhausted
                 if "RESOURCE_EXHAUSTED" in error_msg or "quota" in error_msg.lower():
                     # Parse error details
-                    if "limit: 0" in error_msg:
+                    is_quota_exhausted = "limit: 0" in error_msg
+                    if is_quota_exhausted:
                         self._logger.log_error(
                             error_type="QUOTA_EXHAUSTED",
                             message="Daily quota exhausted - no credits remaining",
@@ -182,6 +183,12 @@ class GeminiProvider(LLMProvider):
                     # Extract retry delay if available
                     match = re.search(r"retry.+?([0-9.]+)\s*s", error_msg, re.IGNORECASE)
                     delay = float(match.group(1)) if match else 35.0
+
+                    # On last attempt, raise specific error
+                    if attempt == 2:
+                        error_type = "quota exhausted" if is_quota_exhausted else "rate limit"
+                        raise RuntimeError(f"Gemini {error_type} after 3 retries (waited {delay}s each)")
+
                     self._logger.log_error(
                         error_type="RATE_LIMIT",
                         message=f"Retrying after {delay}s (attempt {attempt + 1}/3)",
@@ -194,6 +201,11 @@ class GeminiProvider(LLMProvider):
                 elif "429" in error_msg:
                     match = re.search(r"retry.+?([0-9.]+)\s*s", error_msg, re.IGNORECASE)
                     delay = float(match.group(1)) if match else 35.0
+
+                    # On last attempt, raise specific error
+                    if attempt == 2:
+                        raise RuntimeError(f"Gemini HTTP 429 rate limit after 3 retries")
+
                     self._logger.log_error(
                         error_type="RATE_LIMIT",
                         message=f"HTTP 429 - retrying after {delay}s",
@@ -225,7 +237,8 @@ class GeminiProvider(LLMProvider):
                         message="All retries exhausted",
                         model=self._model_name,
                     )
-                    raise
+                    # Raise a more descriptive error instead of the raw exception
+                    raise RuntimeError(f"Gemini API error after 3 retries: {error_msg[:200]}")
                 await asyncio.sleep(2 ** attempt)
 
         raise RuntimeError("Gemini retries exhausted")

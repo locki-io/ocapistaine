@@ -4,6 +4,7 @@ O Capistaine - Simplified Sidebar
 
 Single user identification via UUID (cookie-based).
 Minimal session state - Redis handles persistence.
+Provider/model selection persisted to Redis db5 per session.
 """
 
 import os
@@ -14,9 +15,11 @@ from typing import Optional
 from app.providers.config import GEMINI_MODELS
 from app.services.translations import _, language_selector, get_language
 from app.services import PresentationLogger
-
-# TODO: Replace with actual Redis client when implemented
-# from app.data.redis_client import get_redis_connection
+from app.services.session import (
+    save_session_settings,
+    get_session_settings,
+    set_default_user_id,
+)
 
 # Sidebar logger
 _logger = PresentationLogger("sidebar")
@@ -141,6 +144,9 @@ def sidebar_setup() -> str:
         st.markdown(f"### 🔗 {_('sidebar_links')}")
         st.markdown(
             """
+        - Open Discord: [Join us!](https://discord.gg/5EHYnAGs)
+        - Report Issues: [GitHub Issues](https://github.com/locki-io/ocapistaine/issues)
+        - Opik [Dashboard](https://www.comet.com/opik/ocapistaine-dev/projects/)
         - [audierne2026.fr](https://audierne2026.fr)
         - [Documentation](https://docs.locki.io)
         - [Contribuer](https://github.com/locki-io/ocapistaine)
@@ -204,11 +210,26 @@ def _start_new_conversation(user_id: str) -> None:
 
 def _display_provider_selector(user_id: str) -> None:
     """Display provider and model selection dropdowns."""
-    # Initialize defaults if not set
-    if "llm_provider" not in st.session_state:
-        st.session_state.llm_provider = "ollama"
-    if "llm_model" not in st.session_state:
-        st.session_state.llm_model = "mistral"
+    # Initialize from Redis session settings if not already set
+    if "llm_provider" not in st.session_state or "llm_model" not in st.session_state:
+        # Try to load from Redis
+        settings = get_session_settings(user_id)
+        if settings:
+            st.session_state.llm_provider = settings.provider
+            st.session_state.llm_model = settings.model
+            _logger.info(
+                "SETTINGS_LOADED",
+                user_id=user_id[:8],
+                provider=settings.provider,
+                model=settings.model,
+            )
+        else:
+            # Default to Ollama
+            st.session_state.llm_provider = "ollama"
+            st.session_state.llm_model = "mistral"
+
+    # Set default user ID for background tasks
+    set_default_user_id(user_id)
 
     # Provider selection
     provider_names = list(PROVIDERS.keys())
@@ -236,6 +257,14 @@ def _display_provider_selector(user_id: str) -> None:
         # Clear cached agent
         if "forseti_agent" in st.session_state:
             del st.session_state["forseti_agent"]
+
+        # Save to Redis for persistence
+        save_session_settings(
+            user_id=user_id,
+            provider=selected_provider,
+            model=st.session_state.llm_model,
+            language=get_language(),
+        )
 
         _logger.log_user_action(
             action="change_provider",
@@ -270,6 +299,14 @@ def _display_provider_selector(user_id: str) -> None:
         if "forseti_agent" in st.session_state:
             del st.session_state["forseti_agent"]
 
+        # Save to Redis for persistence
+        save_session_settings(
+            user_id=user_id,
+            provider=selected_provider,
+            model=selected_model,
+            language=get_language(),
+        )
+
         _logger.log_user_action(
             action="change_model",
             user_id=user_id,
@@ -280,7 +317,7 @@ def _display_provider_selector(user_id: str) -> None:
 
 def get_selected_provider() -> str:
     """Get the currently selected LLM provider name."""
-    return st.session_state.get("llm_provider", "gemini")
+    return st.session_state.get("llm_provider", "ollama")
 
 
 def get_selected_model() -> str:
@@ -315,7 +352,8 @@ def get_model_id() -> str:
         }
         return model_map.get(model_key, "mistral:latest")
 
-    return "gemini-2.0-flash-lite"
+    # Default fallback to Ollama
+    return "mistral:latest"
 
 
 def _display_status_indicators() -> None:

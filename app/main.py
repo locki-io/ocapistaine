@@ -14,6 +14,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
 from app.data.redis_client import health_check as redis_health_check
+from app.services.logging import get_logger
+
+logger = get_logger("presentation")
 
 # Route imports
 from app.api.routes.validate import router as validate_router
@@ -28,13 +31,13 @@ async def lifespan(app: FastAPI):
     Shutdown: Stop scheduler, clean up resources
     """
     # Startup
-    print("OCapistaine API starting...")
+    logger.info("OCapistaine API starting...")
 
     # Check Redis connection
     if redis_health_check():
-        print("Redis connected")
+        logger.info("Redis connected")
     else:
-        print("Redis not available - some features may be limited")
+        logger.warning("Redis not available - some features may be limited")
 
     # Start scheduler
     from app.services.scheduler import start_scheduler
@@ -50,7 +53,7 @@ async def lifespan(app: FastAPI):
     from app.services.scheduler import stop_scheduler
 
     await stop_scheduler()
-    print("OCapistaine API shutting down...")
+    logger.info("OCapistaine API shutting down...")
 
 
 # Create FastAPI application

@@ -149,7 +149,7 @@ class FieldInputGenerator:
 
     def __init__(
         self,
-        provider: ProviderType = "gemini",
+        provider: ProviderType = "ollama",
         model: Optional[str] = None,
     ):
         """
@@ -160,7 +160,7 @@ class FieldInputGenerator:
             model: Optional model override. If None, uses recommended model for provider.
         """
         self._provider_name = provider
-        self._model = model or RECOMMENDED_MODELS.get(provider, "gemini-2.5-flash")
+        self._model = model or RECOMMENDED_MODELS.get(provider, "mistral:latest")
 
         # Get provider instance with model override if specified
         if model:
@@ -476,7 +476,7 @@ def process_field_input_sync(
     input_text: str,
     source_file: Optional[str] = None,
     source_title: str = "",
-    provider: ProviderType = "gemini",
+    provider: ProviderType = "ollama",
     model: Optional[str] = None,
     contributions_per_theme: int = 2,
     include_violations: bool = True,

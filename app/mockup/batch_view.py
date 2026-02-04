@@ -550,11 +550,11 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
     with col1:
         llm_provider = st.selectbox(
             "Provider",
-            options=["gemini", "claude", "ollama"],
+            options=["ollama", "gemini", "claude"],
             format_func=lambda x: {
-                "gemini": "🌐 Gemini (recommended)",
+                "ollama": "💻 Ollama (local, recommended)",
+                "gemini": "🌐 Gemini",
                 "claude": "🤖 Claude",
-                "ollama": "💻 Ollama (local)",
             }[x],
             key="field_llm_provider",
         )

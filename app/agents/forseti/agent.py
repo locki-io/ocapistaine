@@ -147,6 +147,7 @@ class ForsetiAgent(BaseAgent):
             )
 
             # Update trace with final output
+            trace_id = None
             if trace:
                 trace.update(
                     output=result.model_dump(),
@@ -155,6 +156,26 @@ class ForsetiAgent(BaseAgent):
                         "category": result.category,
                         "confidence": result.confidence,
                     },
+                )
+                trace_id = getattr(trace, "id", None)
+
+            # Log feedback scores to Opik for querying/experiments
+            if trace_id:
+                self._tracer.log_feedback(
+                    trace_id=trace_id,
+                    score=result.confidence,
+                    feedback_type="validation_confidence",
+                    comment=f"is_valid={result.is_valid}, violations={len(result.violations)}",
+                )
+                self._tracer.log_feedback(
+                    trace_id=trace_id,
+                    score=validation.confidence,
+                    feedback_type="charter_confidence",
+                )
+                self._tracer.log_feedback(
+                    trace_id=trace_id,
+                    score=classification.confidence,
+                    feedback_type="category_confidence",
                 )
 
         return result

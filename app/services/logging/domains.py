@@ -621,7 +621,7 @@ class TaskLogger(BaseLogger):
         self.info(
             "TASK_PROGRESS",
             task=self.task_name,
-            message=message,
+            step=message,
             progress=progress,
             **metrics,
         )
