@@ -1,0 +1,902 @@
+[
+  {
+    "custom_id": "mairie_arretes_8_AP-Finistere-301225-dates-lieux-depot-candidatures-elect-mun.-2026.pdf",
+    "filename": "AP-Finistere-301225-dates-lieux-depot-candidatures-elect-mun.-2026.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.0714712142944336,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_9_Formulaire_inscription_concours_floral_vegetal.pdf",
+    "filename": "Formulaire_inscription_concours_floral_vegetal.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.07182502746582031,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_10_jaune_orage_pi_19_08_2025_signe.pdf",
+    "filename": "jaune_orage_pi_19_08_2025_signe.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.07958984375,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_11_AP-du-14-avril-2025.pdf",
+    "filename": "AP-du-14-avril-2025.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.08468055725097656,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_0_29003_Tableau_voies_bruyantes_20221206.pdf",
+    "filename": "29003_Tableau_voies_bruyantes_20221206.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.029430389404296875,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "commission_controle_1_AP.pdf",
+    "filename": "AP.pdf",
+    "source": "commission_controle",
+    "size_mb": 0.054795265197753906,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_2_AP.pdf",
+    "filename": "AP.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.054795265197753906,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_3_29003_PPRMT_Arrete_prefectoral_20221206.pdf",
+    "filename": "29003_PPRMT_Arrete_prefectoral_20221206.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.055423736572265625,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "commission_controle_4_Presse.pdf",
+    "filename": "Presse.pdf",
+    "source": "commission_controle",
+    "size_mb": 0.0588226318359375,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_5_Presse.pdf",
+    "filename": "Presse.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.0588226318359375,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_6_Audierne.pdf",
+    "filename": "Audierne.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.06036376953125,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_7_avis_180724_de_revision_des_listes_electorales_chambre_d_agriculture29_electeurs_groupements.pdf",
+    "filename": "avis_180724_de_revision_des_listes_electorales_chambre_d_agriculture29_electeurs_groupements.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.06924819946289062,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_12_2025_11_15_interdiction-rassemblements-festifs.pdf",
+    "filename": "2025_11_15_interdiction-rassemblements-festifs.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.08483219146728516,
+    "pages_processed": 3,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_13_jaune_orage_27_08_2025-1.pdf",
+    "filename": "jaune_orage_27_08_2025-1.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.08847904205322266,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_14_avis_180724_de_revision_des_listes_electorales_chambre_d_agriculture29_electeurs_individuels.pdf",
+    "filename": "avis_180724_de_revision_des_listes_electorales_chambre_d_agriculture29_electeurs_individuels.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.09320449829101562,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_15_AP-181224-.pdf",
+    "filename": "AP-181224-.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.0988311767578125,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_24_29003_liste_annexes_20221206.pdf",
+    "filename": "29003_liste_annexes_20221206.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.14310169219970703,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_25_Gwaien_n%C2%B022_mars_2010.pdf",
+    "filename": "Gwaien_n%C2%B022_mars_2010.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.14383888244628906,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_26_Gwaien_n%C2%B013_mai_2009.pdf",
+    "filename": "Gwaien_n%C2%B013_mai_2009.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.14531421661376953,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_27_Gwaien_n%C2%B016_aout_2009.pdf",
+    "filename": "Gwaien_n%C2%B016_aout_2009.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.14911556243896484,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_36_01_20260121_convocation.pdf",
+    "filename": "01_20260121_convocation.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.211456298828125,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_37_29003_parcelles_exploitees_JA_20221206.pdf",
+    "filename": "29003_parcelles_exploitees_JA_20221206.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.21153545379638672,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_38_Conseil_municipal_10_decembre_2025_convocation.pdf",
+    "filename": "Conseil_municipal_10_decembre_2025_convocation.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.21185302734375,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_39_29003_TFPNB_terrains_agricoles_exploites_bio_20221206.pdf",
+    "filename": "29003_TFPNB_terrains_agricoles_exploites_bio_20221206.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.21198177337646484,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_28_Gwaien_n%C2%B020_decembre_2009_1.pdf",
+    "filename": "Gwaien_n%C2%B020_decembre_2009_1.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.15032100677490234,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_29_Gwaien_n%C2%B010_fevrier_2009.pdf",
+    "filename": "Gwaien_n%C2%B010_fevrier_2009.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.1519327163696289,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_30_Gwaien_n%C2%B019_novembre_2009.pdf",
+    "filename": "Gwaien_n%C2%B019_novembre_2009.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.15209293365478516,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_31_Gwaien_n%C2%B014_juin_2009.pdf",
+    "filename": "Gwaien_n%C2%B014_juin_2009.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.15924644470214844,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_20_29003_liste_SUP_20221206.pdf",
+    "filename": "29003_liste_SUP_20221206.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.1290454864501953,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_21_decret-27-08-25-convocation-des-electeurs.pdf",
+    "filename": "decret-27-08-25-convocation-des-electeurs.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.13780498504638672,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_22_25_08_2025_jaune_vsm_signe.pdf",
+    "filename": "25_08_2025_jaune_vsm_signe.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.14060306549072266,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_23_Gwaien_n%C2%B018_octobre_2009.pdf",
+    "filename": "Gwaien_n%C2%B018_octobre_2009.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.1418905258178711,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_44_2025_12_31_AP-Protoxyde-dazote-29.pdf",
+    "filename": "2025_12_31_AP-Protoxyde-dazote-29.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.24086666107177734,
+    "pages_processed": 4,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_45_2-Annexe-DE2021-060Approbation-du-plan-local-durbanisme-.pdf",
+    "filename": "2-Annexe-DE2021-060Approbation-du-plan-local-durbanisme-.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.24445056915283203,
+    "pages_processed": 5,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_46_29003_Note_synthese_ENS_20221206.pdf",
+    "filename": "29003_Note_synthese_ENS_20221206.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.2595205307006836,
+    "pages_processed": 6,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_47_ANNUAIRE-DES-ASSOCIATIONS-2024-2025-par-theme.pdf",
+    "filename": "ANNUAIRE-DES-ASSOCIATIONS-2024-2025-par-theme.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.2666139602661133,
+    "pages_processed": 12,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_32_1-DE2021-060Approbation-du-plan-local-durbanisme-.pdf",
+    "filename": "1-DE2021-060Approbation-du-plan-local-durbanisme-.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.17008495330810547,
+    "pages_processed": 4,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_33_Gwaien_n%C2%B015_juillet_2009.pdf",
+    "filename": "Gwaien_n%C2%B015_juillet_2009.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.1701831817626953,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_34_Conseil_municipal_10_decembre_2025_odj.pdf",
+    "filename": "Conseil_municipal_10_decembre_2025_odj.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.18042755126953125,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_35_02_20250917_cm_odj.pdf",
+    "filename": "02_20250917_cm_odj.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.18914222717285156,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_48_Planning_collecte_dechets_01_2026.pdf",
+    "filename": "Planning_collecte_dechets_01_2026.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.2668466567993164,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_49_RazMoket_Flyer_A5_web.pdf",
+    "filename": "RazMoket_Flyer_A5_web.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.27269935607910156,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_50_E230020Clet-avismPLUAUDIERNE.pdf",
+    "filename": "E230020Clet-avismPLUAUDIERNE.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.27780628204345703,
+    "pages_processed": 12,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_51_cerfa_12670-02.pdf",
+    "filename": "cerfa_12670-02.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.285430908203125,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_16_DPMI_Liste_2026-01-10-15-16-41.pdf",
+    "filename": "DPMI_Liste_2026-01-10-15-16-41.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.1000661849975586,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_17_02_20260121_cm_odj.pdf",
+    "filename": "02_20260121_cm_odj.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.11688613891601562,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_18_AP-ouverture-CP-EARL-DES-HORTENSIAS.pdf",
+    "filename": "AP-ouverture-CP-EARL-DES-HORTENSIAS.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.11962413787841797,
+    "pages_processed": 4,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_19_Gwaien_n%C2%B017_septembre_2009.pdf",
+    "filename": "Gwaien_n%C2%B017_septembre_2009.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.12630844116210938,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_40_Formulaire-Demande-darrete-de-voirie-2025.pdf",
+    "filename": "Formulaire-Demande-darrete-de-voirie-2025.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.2123270034790039,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_41_01_20250917_cm_convocation.pdf",
+    "filename": "01_20250917_cm_convocation.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.21529483795166016,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_42_cerfa_14004-04.pdf",
+    "filename": "cerfa_14004-04.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.21976184844970703,
+    "pages_processed": 4,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_43_29-2022-10-17-00-Alerte_renforcee.pdf",
+    "filename": "29-2022-10-17-00-Alerte_renforcee.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.23746204376220703,
+    "pages_processed": 4,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_68_Autorisation-de-baignade.pdf",
+    "filename": "Autorisation-de-baignade.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.4219026565551758,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_69_PM2025-257.pdf",
+    "filename": "PM2025-257.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.4261636734008789,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_70_P-PM2023-004.pdf",
+    "filename": "P-PM2023-004.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.43186092376708984,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_71_DG2025-003-1.pdf",
+    "filename": "DG2025-003-1.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.43239593505859375,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_60_reglement_ppr_audierne.pdf",
+    "filename": "reglement_ppr_audierne.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.3281288146972656,
+    "pages_processed": 28,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_61_DG2025-002.pdf",
+    "filename": "DG2025-002.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.35700225830078125,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_62_DG2025-004_tampon.pdf",
+    "filename": "DG2025-004_tampon.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.3582782745361328,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_63_GOYEN_N%C2%B09_SUPPLEMENT.pdf",
+    "filename": "GOYEN_N%C2%B09_SUPPLEMENT.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.3711709976196289,
+    "pages_processed": 8,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_56_cerfa_14798-01.pdf",
+    "filename": "cerfa_14798-01.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.3086576461791992,
+    "pages_processed": 9,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_57_Formulaire-Demande-de-subvention-2025.pdf",
+    "filename": "Formulaire-Demande-de-subvention-2025.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.3117246627807617,
+    "pages_processed": 8,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_58_29003_PPRMT_Reglement_20221206.pdf",
+    "filename": "29003_PPRMT_Reglement_20221206.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.31775760650634766,
+    "pages_processed": 28,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_59_Reglement-des-aides-vote.pdf",
+    "filename": "Reglement-des-aides-vote.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.3274879455566406,
+    "pages_processed": 9,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_52_cerfa_12669-02.pdf",
+    "filename": "cerfa_12669-02.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.2870664596557617,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "commission_controle_53_annexe-AP-du-201223.pdf",
+    "filename": "annexe-AP-du-201223.pdf",
+    "source": "commission_controle",
+    "size_mb": 0.2876615524291992,
+    "pages_processed": 3,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_54_annexe-AP-du-201223.pdf",
+    "filename": "annexe-AP-du-201223.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.2876615524291992,
+    "pages_processed": 3,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_55_29003_PPRMT_Note_20221206.pdf",
+    "filename": "29003_PPRMT_Note_20221206.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.30805110931396484,
+    "pages_processed": 14,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_64_20250217_consultation_population_support_presentation.pdf",
+    "filename": "20250217_consultation_population_support_presentation.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.3964395523071289,
+    "pages_processed": 15,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_65_Arrete-du-maire-n%C2%B0-PM2025-292-portant-autorisation-de-capture-identification-et-sterilisation-de-chats-errants.pdf",
+    "filename": "Arrete-du-maire-n%C2%B0-PM2025-292-portant-autorisation-de-capture-identification-et-sterilisation-de-chats-errants.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.4097766876220703,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_66_GOYEN_N%C2%B013_SUPPLEMENT.pdf",
+    "filename": "GOYEN_N%C2%B013_SUPPLEMENT.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.41232872009277344,
+    "pages_processed": 8,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_67_P-PM2026-002.pdf",
+    "filename": "P-PM2026-002.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.41670703887939453,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_80_PM2025-179-2.pdf",
+    "filename": "PM2025-179-2.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.5224180221557617,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_81_P-PM2023-005.pdf",
+    "filename": "P-PM2023-005.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.5227832794189453,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_82_PM2022-058.pdf",
+    "filename": "PM2022-058.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.5467252731323242,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_83_PM2025-124.pdf",
+    "filename": "PM2025-124.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.5498867034912109,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_76_DE2022-141_plu_prescription_modification_1-tampon.pdf",
+    "filename": "DE2022-141_plu_prescription_modification_1-tampon.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.47105884552001953,
+    "pages_processed": 6,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_77_DE2022-141_plu_prescription_modification_1-tampon-1.pdf",
+    "filename": "DE2022-141_plu_prescription_modification_1-tampon-1.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.47105884552001953,
+    "pages_processed": 6,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_78_EFS_Depliant_web.pdf",
+    "filename": "EFS_Depliant_web.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.48180580139160156,
+    "pages_processed": 4,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_79_PM2024-030.pdf",
+    "filename": "PM2024-030.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.4877023696899414,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_72_PM2022-185.pdf",
+    "filename": "PM2022-185.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.4411439895629883,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_73_PM2025-285.pdf",
+    "filename": "PM2025-285.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.45929718017578125,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_74_Reglement-Voirie-Communale-AUDIERNE-avril2021.pdf",
+    "filename": "Reglement-Voirie-Communale-AUDIERNE-avril2021.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.4672994613647461,
+    "pages_processed": 21,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_75_PM2025-098.pdf",
+    "filename": "PM2025-098.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.4686450958251953,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_88_PM2025-092.pdf",
+    "filename": "PM2025-092.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.5861749649047852,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_89_P-PM2025-002.pdf",
+    "filename": "P-PM2025-002.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.5898027420043945,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_90_Formulaire-subvention-associations-2026.pdf",
+    "filename": "Formulaire-subvention-associations-2026.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.5900745391845703,
+    "pages_processed": 8,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_91_PM2025-093.pdf",
+    "filename": "PM2025-093.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.5984592437744141,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_84_PM2025-261.pdf",
+    "filename": "PM2025-261.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.5527286529541016,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_85_P-PM2023-009.pdf",
+    "filename": "P-PM2023-009.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.5590438842773438,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_86_AP-29-2025-06-date-numerote-signe.pdf",
+    "filename": "AP-29-2025-06-date-numerote-signe.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.5760669708251953,
+    "pages_processed": 34,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_87_P-PM2023-008.pdf",
+    "filename": "P-PM2023-008.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.5821189880371094,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_96_PM2025-112.pdf",
+    "filename": "PM2025-112.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.638880729675293,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_97_PM2025-307.pdf",
+    "filename": "PM2025-307.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.6413421630859375,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_98_PM2025-030.pdf",
+    "filename": "PM2025-030.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.6415023803710938,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_99_PM2025-409.pdf",
+    "filename": "PM2025-409.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.6432704925537109,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_92_R1EP230002035-.pdf",
+    "filename": "R1EP230002035-.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.6114397048950195,
+    "pages_processed": 27,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_93_20250428_pv_depouillement.pdf",
+    "filename": "20250428_pv_depouillement.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.6119699478149414,
+    "pages_processed": 2,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_94_PM2023-115.pdf",
+    "filename": "PM2023-115.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.6274175643920898,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  },
+  {
+    "custom_id": "mairie_arretes_95_PM2022-257.pdf",
+    "filename": "PM2022-257.pdf",
+    "source": "mairie_arretes",
+    "size_mb": 0.6336488723754883,
+    "pages_processed": 1,
+    "model": "mistral-ocr-latest",
+    "timestamp": "20260205_001621"
+  }
+]
