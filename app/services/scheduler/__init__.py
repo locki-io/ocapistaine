@@ -37,13 +37,14 @@ logger = TaskLogger("scheduler")
 scheduler: Optional[AsyncIOScheduler] = None
 _loop: Optional[asyncio.AbstractEventLoop] = None
 
-# Cron schedules
-TASK_CHAIN_CRON = "*/30 6-23 * * *"  # Every 30 min, 6 AM - 11 PM
+# Cron schedules (staggered to avoid Ollama conflicts)
+# Tasks are spaced 20+ minutes apart to allow completion before next starts
+TASK_CHAIN_CRON = "0 6-23 * * *"  # Hourly at :00, 6 AM - 11 PM
+AUDIERNE_DOCS_CRON = "20 */2 * * *"  # Every 2 hours at :20 (e.g., 6:20, 8:20)
+OPIK_EVALUATE_CRON = "40 7-22 * * *"  # Hourly at :40, 7 AM - 10 PM
 CRAWL_CRON = "0 3 * * *"  # Daily at 3 AM
 OPIK_EXPERIMENT_CRON = "0 5 * * *"  # Daily at 5 AM (dataset creation)
-OPIK_EVALUATE_CRON = "*/30 7-22 * * *"  # Every 30 min, 7 AM - 10 PM (evaluation)
 PROMPT_SYNC_CRON = "0 0 * * *"  # Daily at midnight
-AUDIERNE_DOCS_CRON = "0 */2 * * *"  # Every 2 hours (dev: process one doc at a time)
 
 
 async def start_scheduler():
