@@ -19,7 +19,7 @@ from datetime import date
 from typing import List, Dict, Any, Optional
 from dataclasses import dataclass, field
 
-from app.services import AgentLogger
+from app.services.logging import MockupLogger
 from app.mockup.generator import (
     MockContribution,
     save_contributions,
@@ -37,7 +37,7 @@ ProviderType = ProviderName
 # Use case name for this module (used with get_recommended_model)
 USE_CASE = "field_input"
 
-_logger = AgentLogger("field_input")
+_logger = MockupLogger("field_input")
 
 # Path to category themes
 THEMES_PATH = Path(__file__).parent / "data" / "category_themes.json"
@@ -165,11 +165,13 @@ class FieldInputGenerator:
         else:
             self._provider = get_provider(provider)
         self._themes_config = load_category_themes()
-        self._logger = AgentLogger("field_input_generator")
+        self._logger = MockupLogger("field_input_generator")
 
     async def extract_themes(self, input_text: str) -> List[ExtractedTheme]:
         """
         Extract relevant themes from input text for each category.
+
+        For long documents, processes in chunks and deduplicates themes.
 
         Args:
             input_text: Markdown content from field input
@@ -177,38 +179,121 @@ class FieldInputGenerator:
         Returns:
             List of extracted themes with category assignments
         """
-        themes = []
+        # Chunk size for processing (characters)
+        # Most LLMs can handle 15-30k chars comfortably
+        CHUNK_SIZE = 15000
+        CHUNK_OVERLAP = 500  # Overlap to avoid cutting mid-sentence
+
         categories_config = self._themes_config.get("categories", {})
 
-        prompt = f"""Tu es un assistant qui analyse des documents municipaux pour la commune d'Audierne.
+        # If categories config is empty, use CATEGORIES as fallback
+        if not categories_config:
+            self._logger.warning("EMPTY_CATEGORIES_CONFIG", using_fallback=True)
+            categories_config = {cat: {"label": cat.replace("-", " ").title()} for cat in CATEGORIES}
 
-Analyse le texte suivant et identifie les thèmes pertinents pour chaque catégorie de contribution citoyenne.
+        # Split text into chunks if needed
+        chunks = self._split_into_chunks(input_text, CHUNK_SIZE, CHUNK_OVERLAP)
+        self._logger.info("CHUNKING", total_length=len(input_text), chunks=len(chunks))
+
+        all_themes = []
+
+        for i, chunk in enumerate(chunks):
+            chunk_themes = await self._extract_themes_from_chunk(
+                chunk, categories_config, chunk_index=i, total_chunks=len(chunks)
+            )
+            all_themes.extend(chunk_themes)
+
+        # Deduplicate themes by category + theme name
+        seen = set()
+        unique_themes = []
+        for theme in all_themes:
+            key = (theme.category, theme.theme.lower())
+            if key not in seen:
+                seen.add(key)
+                unique_themes.append(theme)
+
+        self._logger.info("THEMES_EXTRACTED", total=len(all_themes), unique=len(unique_themes))
+        return unique_themes
+
+    def _split_into_chunks(self, text: str, chunk_size: int, overlap: int) -> List[str]:
+        """Split text into overlapping chunks, trying to break at paragraph boundaries."""
+        if len(text) <= chunk_size:
+            return [text]
+
+        chunks = []
+        start = 0
+
+        while start < len(text):
+            end = start + chunk_size
+
+            # Try to find a paragraph break near the end
+            if end < len(text):
+                # Look for double newline (paragraph break) within last 500 chars
+                search_start = max(end - 500, start)
+                para_break = text.rfind("\n\n", search_start, end)
+                if para_break > start:
+                    end = para_break + 2  # Include the newlines
+
+            chunk = text[start:end].strip()
+            if chunk:
+                chunks.append(chunk)
+
+            # Move start, accounting for overlap
+            start = end - overlap if end < len(text) else len(text)
+
+        return chunks
+
+    async def _extract_themes_from_chunk(
+        self,
+        chunk: str,
+        categories_config: Dict[str, Any],
+        chunk_index: int = 0,
+        total_chunks: int = 1,
+    ) -> List[ExtractedTheme]:
+        """Extract themes from a single chunk of text."""
+        themes = []
+
+        # Build category labels for prompt
+        category_labels = {k: v.get("label", k) for k, v in categories_config.items()}
+
+        prompt = f"""Tu es un assistant qui analyse des documents municipaux pour la commune d'Audierne-Esquibien.
+
+Analyse le texte suivant et identifie les thèmes pertinents pour les catégories de contribution citoyenne.
+
+{"[PARTIE " + str(chunk_index + 1) + "/" + str(total_chunks) + "]" if total_chunks > 1 else ""}
 
 TEXTE À ANALYSER:
-{input_text[:4000]}  # Limit to avoid token overflow
+{chunk}
 
 CATÉGORIES DISPONIBLES:
-{json.dumps({k: v.get("label", k) for k, v in categories_config.items()}, ensure_ascii=False, indent=2)}
+{json.dumps(category_labels, ensure_ascii=False, indent=2)}
 
 Pour chaque thème identifié, réponds en JSON avec ce format:
 {{
   "themes": [
     {{
       "category": "economie",
-      "theme": "renovation_ecole",
-      "keywords": ["école", "budget", "travaux"],
-      "context": "extrait pertinent du texte"
+      "theme": "renovation_port",
+      "keywords": ["port", "rénovation", "tourisme"],
+      "context": "extrait pertinent du texte (max 200 caractères)"
     }}
   ]
 }}
 
-Identifie 3-5 thèmes principaux couvrant différentes catégories.
-Réponds UNIQUEMENT avec le JSON, sans explication."""
+Instructions:
+- Identifie 3-7 thèmes principaux couvrant différentes catégories
+- Utilise uniquement les catégories listées ci-dessus
+- Le "theme" doit être un identifiant court (snake_case)
+- Le "context" doit être un extrait direct du texte analysé
+- Réponds UNIQUEMENT avec le JSON valide, sans explication ni markdown"""
 
         try:
             messages = [Message(role="user", content=prompt)]
             response = await self._provider.complete(messages, json_mode=True)
             content = response.content.strip()
+
+            # Log raw response for debugging
+            self._logger.debug("LLM_RESPONSE", chunk=chunk_index, length=len(content))
 
             # Parse JSON response (provider may have already cleaned it)
             if "```json" in content:
@@ -216,22 +301,31 @@ Réponds UNIQUEMENT avec le JSON, sans explication."""
             elif "```" in content:
                 content = content.split("```")[1].split("```")[0]
 
+            # Clean potential issues
+            content = content.strip()
+
             data = json.loads(content)
 
             for theme_data in data.get("themes", []):
-                theme = ExtractedTheme(
-                    category=theme_data.get("category", ""),
-                    theme=theme_data.get("theme", ""),
-                    keywords=theme_data.get("keywords", []),
-                    context=theme_data.get("context", ""),
-                )
-                if theme.category in CATEGORIES:
+                category = theme_data.get("category", "")
+                # Validate category is in allowed list
+                if category in CATEGORIES:
+                    theme = ExtractedTheme(
+                        category=category,
+                        theme=theme_data.get("theme", "unknown"),
+                        keywords=theme_data.get("keywords", []),
+                        context=theme_data.get("context", "")[:300],  # Limit context length
+                    )
                     themes.append(theme)
+                else:
+                    self._logger.warning("INVALID_CATEGORY", category=category, chunk=chunk_index)
 
-            self._logger.info("THEMES_EXTRACTED", count=len(themes))
+            self._logger.info("CHUNK_THEMES", chunk=chunk_index, themes=len(themes))
 
+        except json.JSONDecodeError as e:
+            self._logger.error("JSON_PARSE_ERROR", chunk=chunk_index, error=str(e), response=content[:500])
         except Exception as e:
-            self._logger.error("THEME_EXTRACTION_ERROR", error=str(e))
+            self._logger.error("THEME_EXTRACTION_ERROR", chunk=chunk_index, error=str(e))
 
         return themes
 

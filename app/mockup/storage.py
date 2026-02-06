@@ -16,9 +16,9 @@ from typing import Optional, List, Dict, Any
 from dataclasses import dataclass, field, asdict
 
 from app.data.redis_client import redis_connection, get_redis_connection
-from app.services import AgentLogger
+from app.services.logging import MockupLogger
 
-_logger = AgentLogger("mockup_storage")
+_logger = MockupLogger("storage")
 
 
 # Redis key patterns for mockup storage
@@ -191,7 +191,7 @@ class MockupStorage:
 
     def __init__(self):
         """Initialize storage manager."""
-        self._logger = AgentLogger("mockup_storage")
+        self._logger = MockupLogger("storage")
 
     def save_validation(self, record: ValidationRecord) -> bool:
         """

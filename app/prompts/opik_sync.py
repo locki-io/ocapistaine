@@ -13,13 +13,38 @@ Usage:
     results = sync_all_prompts()
 """
 
+import json
 from typing import Dict, Any, Optional, List
 from datetime import datetime
 
-from app.prompts.local import LOCAL_PROMPTS
+from app.prompts.local import LOCAL_PROMPTS, JSON_PROMPTS
 from app.services import AgentLogger
 
 _logger = AgentLogger("opik_sync")
+
+
+# =============================================================================
+# COMPOSITE PROMPT DEFINITIONS
+# =============================================================================
+# These combine persona (system) + task (user) prompts for playground use
+
+COMPOSITE_PROMPTS = {
+    "forseti-persona-charter": {
+        "system_prompt": "forseti.persona",
+        "user_prompt": "forseti.charter_validation",
+        "description": "Forseti persona + charter validation (for playground)",
+    },
+    "forseti-persona-category": {
+        "system_prompt": "forseti.persona",
+        "user_prompt": "forseti.category_classification",
+        "description": "Forseti persona + category classification (for playground)",
+    },
+    "forseti-persona-wording": {
+        "system_prompt": "forseti.persona",
+        "user_prompt": "forseti.wording_correction",
+        "description": "Forseti persona + wording correction (for playground)",
+    },
+}
 
 
 def get_opik_client():
@@ -158,6 +183,214 @@ def sync_all_prompts(
     }
 
 
+def _get_prompt_content(prompt_name: str) -> Optional[str]:
+    """Get the content of a prompt from LOCAL_PROMPTS or JSON_PROMPTS."""
+    # Check JSON prompts first (they have messages format)
+    if prompt_name in JSON_PROMPTS:
+        json_data = JSON_PROMPTS[prompt_name]
+        messages = json_data.get("messages", [])
+        if messages:
+            # Return content from the first message matching the type
+            prompt_type = json_data.get("type", "user")
+            for msg in messages:
+                if msg.get("role") == prompt_type or msg.get("role") == "system":
+                    return msg.get("content", "")
+            # Fallback: return first message content
+            return messages[0].get("content", "")
+
+    # Check LOCAL_PROMPTS
+    if prompt_name in LOCAL_PROMPTS:
+        prompt_data = LOCAL_PROMPTS[prompt_name]
+        # Check for messages format
+        if "messages" in prompt_data and prompt_data["messages"]:
+            return prompt_data["messages"][0].get("content", "")
+        # Fallback to template
+        return prompt_data.get("template", "")
+
+    return None
+
+
+def _get_prompt_variables(prompt_name: str) -> List[str]:
+    """Get the variables from a prompt."""
+    if prompt_name in JSON_PROMPTS:
+        return JSON_PROMPTS[prompt_name].get("variables", [])
+    if prompt_name in LOCAL_PROMPTS:
+        return LOCAL_PROMPTS[prompt_name].get("variables", [])
+    return []
+
+
+def build_composite_prompt(composite_name: str) -> Optional[Dict[str, Any]]:
+    """
+    Build a composite chat prompt from system + user prompts.
+
+    Args:
+        composite_name: Name of the composite prompt from COMPOSITE_PROMPTS
+
+    Returns:
+        Dict with messages array and metadata, or None if not found
+    """
+    if composite_name not in COMPOSITE_PROMPTS:
+        _logger.error("COMPOSITE_NOT_FOUND", name=composite_name)
+        return None
+
+    config = COMPOSITE_PROMPTS[composite_name]
+    system_name = config["system_prompt"]
+    user_name = config["user_prompt"]
+
+    # Get content from individual prompts
+    system_content = _get_prompt_content(system_name)
+    user_content = _get_prompt_content(user_name)
+
+    if not system_content:
+        _logger.error("SYSTEM_PROMPT_NOT_FOUND", name=system_name)
+        return None
+
+    if not user_content:
+        _logger.error("USER_PROMPT_NOT_FOUND", name=user_name)
+        return None
+
+    # Combine variables (user prompt variables are the input)
+    user_variables = _get_prompt_variables(user_name)
+
+    # Build chat messages
+    messages = [
+        {"role": "system", "content": system_content},
+        {"role": "user", "content": user_content},
+    ]
+
+    return {
+        "messages": messages,
+        "variables": user_variables,
+        "description": config.get("description", ""),
+        "components": {
+            "system": system_name,
+            "user": user_name,
+        },
+    }
+
+
+def sync_composite_prompt_to_opik(
+    name: str,
+    client=None,
+) -> Dict[str, Any]:
+    """
+    Sync a composite prompt (chat format) to Opik.
+
+    Uses create_chat_prompt() for proper chat type prompts.
+
+    Args:
+        name: Composite prompt name
+        client: Optional Opik client
+
+    Returns:
+        Dict with sync result
+    """
+    if client is None:
+        client = get_opik_client()
+
+    if client is None:
+        return {"success": False, "name": name, "error": "Opik not available"}
+
+    composite = build_composite_prompt(name)
+    if not composite:
+        return {"success": False, "name": name, "error": "Failed to build composite"}
+
+    try:
+        # Use create_chat_prompt for chat type prompts
+        # Messages must be a list of dicts with role/content
+        messages = composite["messages"]
+
+        metadata = {
+            "variables": composite["variables"],
+            "description": composite["description"],
+            "components": composite["components"],
+            "synced_at": datetime.now().isoformat(),
+            "source": "ocapistaine",
+            "auto_generated": True,
+        }
+
+        # Use create_chat_prompt for proper chat format
+        prompt = client.create_chat_prompt(
+            name=name,
+            messages=messages,
+            metadata=metadata,
+        )
+
+        commit_id = getattr(prompt, "commit", None)
+
+        _logger.info(
+            "COMPOSITE_SYNCED",
+            name=name,
+            commit=commit_id,
+            components=composite["components"],
+        )
+
+        return {
+            "success": True,
+            "name": name,
+            "commit": commit_id,
+            "components": composite["components"],
+        }
+
+    except Exception as e:
+        _logger.error("COMPOSITE_SYNC_FAILED", name=name, error=str(e))
+        return {
+            "success": False,
+            "name": name,
+            "error": str(e),
+        }
+
+
+def sync_all_composites(
+    filter_names: Optional[List[str]] = None,
+) -> Dict[str, Any]:
+    """
+    Sync all composite prompts to Opik.
+
+    Args:
+        filter_names: Optional list of composite names to sync
+
+    Returns:
+        Dict with results
+    """
+    client = get_opik_client()
+    if client is None:
+        return {
+            "synced": [],
+            "failed": list(COMPOSITE_PROMPTS.keys()),
+            "total": len(COMPOSITE_PROMPTS),
+            "error": "Opik not available",
+        }
+
+    synced = []
+    failed = []
+
+    for name in COMPOSITE_PROMPTS.keys():
+        if filter_names and name not in filter_names:
+            continue
+
+        result = sync_composite_prompt_to_opik(name, client=client)
+
+        if result["success"]:
+            synced.append(result)
+        else:
+            failed.append(result)
+
+    total = len(synced) + len(failed)
+    _logger.info(
+        "COMPOSITES_SYNC_COMPLETE",
+        synced=len(synced),
+        failed=len(failed),
+        total=total,
+    )
+
+    return {
+        "synced": synced,
+        "failed": failed,
+        "total": total,
+    }
+
+
 def get_prompt_versions(name: str) -> List[Dict[str, Any]]:
     """
     Get version history for a prompt from Opik.
@@ -253,6 +486,16 @@ def main():
         action="store_true",
         help="List local prompts",
     )
+    parser.add_argument(
+        "--composites",
+        action="store_true",
+        help="Sync composite chat prompts (persona + task)",
+    )
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Sync both individual and composite prompts",
+    )
 
     args = parser.parse_args()
 
@@ -264,6 +507,15 @@ def main():
             print(f"    Type: {data.get('type', 'user')}")
             print(f"    Variables: {data.get('variables', [])}")
             print(f"    Description: {data.get('description', '')[:60]}...")
+            print()
+
+        print("\nComposite Prompts (auto-generated):")
+        print("-" * 50)
+        for name, config in COMPOSITE_PROMPTS.items():
+            print(f"  {name}")
+            print(f"    System: {config['system_prompt']}")
+            print(f"    User: {config['user_prompt']}")
+            print(f"    Description: {config.get('description', '')[:60]}...")
             print()
         return
 
@@ -281,22 +533,43 @@ def main():
             print(f"  ☁️  {name}")
         return
 
-    print("\nSyncing prompts to Opik...")
-    if args.prefix:
-        print(f"Filtering by prefix: {args.prefix}")
+    # Sync individual prompts (unless --composites only)
+    if not args.composites or args.all:
+        print("\nSyncing individual prompts to Opik...")
+        if args.prefix:
+            print(f"Filtering by prefix: {args.prefix}")
 
-    result = sync_all_prompts(filter_prefix=args.prefix)
+        result = sync_all_prompts(filter_prefix=args.prefix)
 
-    print(f"\nResults:")
-    print(f"  Synced: {len(result['synced'])}")
-    for item in result["synced"]:
-        print(f"    ✅ {item['name']} (commit: {item.get('commit', 'N/A')})")
+        print(f"\nIndividual Prompts:")
+        print(f"  Synced: {len(result['synced'])}")
+        for item in result["synced"]:
+            print(f"    ✅ {item['name']} (commit: {item.get('commit', 'N/A')})")
 
-    print(f"  Failed: {len(result['failed'])}")
-    for item in result["failed"]:
-        print(f"    ❌ {item['name']}: {item.get('error', 'Unknown error')}")
+        print(f"  Failed: {len(result['failed'])}")
+        for item in result["failed"]:
+            print(f"    ❌ {item['name']}: {item.get('error', 'Unknown error')}")
 
-    print(f"\nTotal: {result['total']}")
+        print(f"  Total: {result['total']}")
+
+    # Sync composite prompts
+    if args.composites or args.all:
+        print("\nSyncing composite prompts to Opik...")
+
+        composite_result = sync_all_composites()
+
+        print(f"\nComposite Prompts:")
+        print(f"  Synced: {len(composite_result['synced'])}")
+        for item in composite_result["synced"]:
+            components = item.get("components", {})
+            print(f"    ✅ {item['name']} (commit: {item.get('commit', 'N/A')})")
+            print(f"       = {components.get('system', '?')} + {components.get('user', '?')}")
+
+        print(f"  Failed: {len(composite_result['failed'])}")
+        for item in composite_result["failed"]:
+            print(f"    ❌ {item['name']}: {item.get('error', 'Unknown error')}")
+
+        print(f"  Total: {composite_result['total']}")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-02-05T08:00:52.537062",
-  "count": 66,
+  "generated_at": "2026-02-06T10:32:03.149295",
+  "count": 74,
   "contributions": [
     {
       "id": "base_ass_001",
@@ -1328,6 +1328,174 @@
         "Ces conflits n'ont pas de solutions claires et engendrent une insuffisance de transparence et de collaboration entre les différents acteurs entourants le secteur de l'eau."
       ],
       "body": "**Constat factuel:**\n[\"Le conflit de pêche dans la commune d'Audierne reveal les rivalités entre les institutions locales et collectives, posant des problèmes pour la qualité de vie commune.\", \"Ces conflits n'ont pas de solutions claires et engendrent une insuffisance de transparence et de collaboration entre les différents acteurs entourants le secteur de l'eau.\"]\n\n**Vos idées d'améliorations:**\n['Créer un comité local chargé de coordonnation et de résolution des conflits de pêche en ren forçant des décisions concrètes.', 'Promouvoir la transparence dans les interactions entre les autorités locales et les collectivités pour mieux informer et engager la population à des décisions communautaires.', \"Aumenter l'appui fiscal et financier pour soutenir les recherches scientifiques sur la gestion durable de l'océan, ce qui permettrait de proposer des normes éthiques et des contrôles rigoureux.\", \"Établir des conventions intercommunautaires strictes sur la pêche en limitant les accès aux rues à mer et en instaurant des réglementations équitable et respectueuses de l'environnement.\"]"
+    },
+    {
+      "id": "field_economie_e46944ee",
+      "category": "economie",
+      "constat_factuel": "En tant que citoyen d'Audierne, je constate que nos commerces de centre-ville souffrent d'une nette baisse de fréquentation une fois la saison estivale terminée. Cette situation entraîne un ralentissement de l'activité économique locale, menaçant la vitalité de notre commune hors période estivale.",
+      "idees_ameliorations": "Pour y remédier, il serait pertinent de développer une offre touristique ciblée sur l'arrière-saison et l'hiver, en valorisant nos atouts naturels et culturels uniques. Nous pourrions organiser des événements thématiques (randonnées guidées, festivals culturels locaux, ateliers artisanaux) et promouvoir activement des séjours axés sur le bien-être ou la découverte de la gastronomie locale. Une meilleure coordination entre l'Office de Tourisme, les hébergeurs et les commerçants permettrait de créer des forfaits attractifs et de communiquer efficacement sur ces nouvelles propositions.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "developpement_tourisme_hors_saison",
+        "source_title": "Test Reunion Publique",
+        "generated_date": "2026-02-06",
+        "llm_model": "gemini-2.5-flash"
+      },
+      "title": "En tant que citoyen d'Audierne, je constate que nos commerces de centre-ville...",
+      "body": "**Constat factuel:**\nEn tant que citoyen d'Audierne, je constate que nos commerces de centre-ville souffrent d'une nette baisse de fréquentation une fois la saison estivale terminée. Cette situation entraîne un ralentissement de l'activité économique locale, menaçant la vitalité de notre commune hors période estivale.\n\n**Vos idées d'améliorations:**\nPour y remédier, il serait pertinent de développer une offre touristique ciblée sur l'arrière-saison et l'hiver, en valorisant nos atouts naturels et culturels uniques. Nous pourrions organiser des événements thématiques (randonnées guidées, festivals culturels locaux, ateliers artisanaux) et promouvoir activement des séjours axés sur le bien-être ou la découverte de la gastronomie locale. Une meilleure coordination entre l'Office de Tourisme, les hébergeurs et les commerçants permettrait de créer des forfaits attractifs et de communiquer efficacement sur ces nouvelles propositions."
+    },
+    {
+      "id": "field_economie_3a181f27",
+      "category": "economie",
+      "constat_factuel": "La criée d'Audierne a malheureusement vu son volume de poisson traité chuter de 10% cette année, n'atteignant que 800 tonnes. Cette tendance est alarmante pour notre économie locale et souligne le besoin pressant de moderniser les équipements, une demande récurrente de nos pêcheurs.",
+      "idees_ameliorations": "Pour revitaliser ce secteur clé, il est essentiel d'investir rapidement dans la modernisation des infrastructures et des équipements de la criée, afin d'améliorer l'efficacité et l'attractivité. La commune pourrait activement rechercher des financements européens et régionaux dédiés à la filière pêche pour soutenir ces investissements. Parallèlement, développer des initiatives de promotion des produits de la pêche audiernaise et faciliter les circuits courts permettrait de soutenir directement nos pêcheurs et l'ensemble de la chaîne de valeur locale.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "modernisation_peche",
+        "source_title": "Test Reunion Publique",
+        "generated_date": "2026-02-06",
+        "llm_model": "gemini-2.5-flash"
+      },
+      "title": "La criée d'Audierne a malheureusement vu son volume de poisson traité chuter ...",
+      "body": "**Constat factuel:**\nLa criée d'Audierne a malheureusement vu son volume de poisson traité chuter de 10% cette année, n'atteignant que 800 tonnes. Cette tendance est alarmante pour notre économie locale et souligne le besoin pressant de moderniser les équipements, une demande récurrente de nos pêcheurs.\n\n**Vos idées d'améliorations:**\nPour revitaliser ce secteur clé, il est essentiel d'investir rapidement dans la modernisation des infrastructures et des équipements de la criée, afin d'améliorer l'efficacité et l'attractivité. La commune pourrait activement rechercher des financements européens et régionaux dédiés à la filière pêche pour soutenir ces investissements. Parallèlement, développer des initiatives de promotion des produits de la pêche audiernaise et faciliter les circuits courts permettrait de soutenir directement nos pêcheurs et l'ensemble de la chaîne de valeur locale."
+    },
+    {
+      "id": "field_logement_08943405",
+      "category": "logement",
+      "constat_factuel": "À Audierne, le manque criant de logements abordables pousse de nombreuses jeunes familles à quitter notre commune. Cette situation est d'autant plus préoccupante que les résidences secondaires représentent 45% de notre parc immobilier, réduisant significativement l'offre disponible pour les résidents permanents.",
+      "idees_ameliorations": "Il est primordial d'accélérer le projet municipal de construction de 20 logements sociaux, une initiative essentielle pour répondre aux besoins urgents. En complément, la commune pourrait mettre en place des dispositifs incitatifs pour encourager la transformation de résidences secondaires inoccupées en logements à l'année. Une autre piste serait d'étudier la création d'un foncier solidaire, permettant ainsi aux jeunes actifs et aux familles locales d'accéder à la propriété à des prix maîtrisés.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "manque_logements_abordables",
+        "source_title": "Test Reunion Publique",
+        "generated_date": "2026-02-06",
+        "llm_model": "gemini-2.5-flash"
+      },
+      "title": "À Audierne, le manque criant de logements abordables pousse de nombreuses jeu...",
+      "body": "**Constat factuel:**\nÀ Audierne, le manque criant de logements abordables pousse de nombreuses jeunes familles à quitter notre commune. Cette situation est d'autant plus préoccupante que les résidences secondaires représentent 45% de notre parc immobilier, réduisant significativement l'offre disponible pour les résidents permanents.\n\n**Vos idées d'améliorations:**\nIl est primordial d'accélérer le projet municipal de construction de 20 logements sociaux, une initiative essentielle pour répondre aux besoins urgents. En complément, la commune pourrait mettre en place des dispositifs incitatifs pour encourager la transformation de résidences secondaires inoccupées en logements à l'année. Une autre piste serait d'étudier la création d'un foncier solidaire, permettant ainsi aux jeunes actifs et aux familles locales d'accéder à la propriété à des prix maîtrisés."
+    },
+    {
+      "id": "field_ecologie_8e78fc06",
+      "category": "ecologie",
+      "constat_factuel": "À Audierne, l'érosion du littoral est une réalité préoccupante, particulièrement visible sur la plage du Trescadec qui recule d'environ un mètre chaque année. Cette perte progressive de notre côte met en péril non seulement l'environnement naturel, mais aussi les infrastructures avoisinantes et l'attractivité de nos plages. Il est clair que la situation actuelle nécessite une attention et des actions urgentes.",
+      "idees_ameliorations": "Pour y remédier, il serait essentiel d'étudier et de mettre en œuvre des solutions de protection douce, telles que la restauration des dunes et la végétalisation des zones sensibles, plutôt que des enrochements massifs. Une surveillance accrue de l'évolution du trait de côte, avec des relevés réguliers, permettrait d'adapter les stratégies au fil du temps. Nous pourrions également sensibiliser davantage les habitants et les visiteurs aux bonnes pratiques pour préserver le littoral. Enfin, l'exploration de financements régionaux ou européens pour ces projets d'envergure serait un atout majeur pour la commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "protection_littoral_erosion",
+        "source_title": "Test Reunion Publique",
+        "generated_date": "2026-02-06",
+        "llm_model": "gemini-2.5-flash"
+      },
+      "title": "À Audierne, l'érosion du littoral est une réalité préoccupante, particulièrem...",
+      "body": "**Constat factuel:**\nÀ Audierne, l'érosion du littoral est une réalité préoccupante, particulièrement visible sur la plage du Trescadec qui recule d'environ un mètre chaque année. Cette perte progressive de notre côte met en péril non seulement l'environnement naturel, mais aussi les infrastructures avoisinantes et l'attractivité de nos plages. Il est clair que la situation actuelle nécessite une attention et des actions urgentes.\n\n**Vos idées d'améliorations:**\nPour y remédier, il serait essentiel d'étudier et de mettre en œuvre des solutions de protection douce, telles que la restauration des dunes et la végétalisation des zones sensibles, plutôt que des enrochements massifs. Une surveillance accrue de l'évolution du trait de côte, avec des relevés réguliers, permettrait d'adapter les stratégies au fil du temps. Nous pourrions également sensibiliser davantage les habitants et les visiteurs aux bonnes pratiques pour préserver le littoral. Enfin, l'exploration de financements régionaux ou européens pour ces projets d'envergure serait un atout majeur pour la commune."
+    },
+    {
+      "id": "field_culture_3ac535aa",
+      "category": "culture",
+      "constat_factuel": "En tant que citoyen d'Audierne, je constate avec inquiétude l'état actuel de la chapelle Notre-Dame de Penhors. Ce joyau de notre patrimoine culturel nécessite des travaux de restauration urgents, dont l'absence pourrait compromettre sa pérennité et son intégrité structurelle. Il est impératif d'agir rapidement pour préserver ce lieu emblématique.",
+      "idees_ameliorations": "Pour y remédier, je suggère à la commune de lancer une campagne de financement participatif, complémentaire aux subventions publiques, afin de mobiliser les habitants et les amoureux du patrimoine. Il serait également judicieux de créer un comité de pilotage dédié, incluant des experts en restauration et des représentants associatifs locaux, pour superviser les travaux. Enfin, la mise en place d'événements culturels autour de la chapelle, avant et pendant les travaux, pourrait sensibiliser le public et générer des fonds supplémentaires.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "restauration_patrimoine_culturel",
+        "source_title": "Test Reunion Publique",
+        "generated_date": "2026-02-06",
+        "llm_model": "gemini-2.5-flash"
+      },
+      "title": "En tant que citoyen d'Audierne, je constate avec inquiétude l'état actuel de ...",
+      "body": "**Constat factuel:**\nEn tant que citoyen d'Audierne, je constate avec inquiétude l'état actuel de la chapelle Notre-Dame de Penhors. Ce joyau de notre patrimoine culturel nécessite des travaux de restauration urgents, dont l'absence pourrait compromettre sa pérennité et son intégrité structurelle. Il est impératif d'agir rapidement pour préserver ce lieu emblématique.\n\n**Vos idées d'améliorations:**\nPour y remédier, je suggère à la commune de lancer une campagne de financement participatif, complémentaire aux subventions publiques, afin de mobiliser les habitants et les amoureux du patrimoine. Il serait également judicieux de créer un comité de pilotage dédié, incluant des experts en restauration et des représentants associatifs locaux, pour superviser les travaux. Enfin, la mise en place d'événements culturels autour de la chapelle, avant et pendant les travaux, pourrait sensibiliser le public et générer des fonds supplémentaires."
+    },
+    {
+      "id": "field_culture_43f6639f",
+      "category": "culture",
+      "constat_factuel": "L'association locale Ar Vro Bihan joue un rôle essentiel en proposant des cours de langue bretonne pour les enfants, contribuant ainsi activement à la transmission de notre culture. Cependant, malgré cette initiative louable, il semble que la visibilité et l'accessibilité de ces cours pourraient être améliorées pour toucher un public encore plus large d'enfants et de familles à Audierne.",
+      "idees_ameliorations": "La commune pourrait renforcer son soutien à Ar Vro Bihan, par exemple en mettant à disposition des locaux municipaux adaptés et gratuits pour les cours, ce qui allégerait la charge de l'association. Une communication plus proactive de la part de la mairie, via ses canaux officiels (site web, bulletin municipal, réseaux sociaux), permettrait de mieux faire connaître l'offre de cours de breton aux familles audiernaises. Enfin, un soutien financier direct ou l'organisation d'événements culturels bretons en partenariat avec l'association pourrait dynamiser l'apprentissage et la promotion de notre langue auprès des jeunes générations.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "soutien_culture_bretonne",
+        "source_title": "Test Reunion Publique",
+        "generated_date": "2026-02-06",
+        "llm_model": "gemini-2.5-flash"
+      },
+      "title": "L'association locale Ar Vro Bihan joue un rôle essentiel en proposant des cou...",
+      "body": "**Constat factuel:**\nL'association locale Ar Vro Bihan joue un rôle essentiel en proposant des cours de langue bretonne pour les enfants, contribuant ainsi activement à la transmission de notre culture. Cependant, malgré cette initiative louable, il semble que la visibilité et l'accessibilité de ces cours pourraient être améliorées pour toucher un public encore plus large d'enfants et de familles à Audierne.\n\n**Vos idées d'améliorations:**\nLa commune pourrait renforcer son soutien à Ar Vro Bihan, par exemple en mettant à disposition des locaux municipaux adaptés et gratuits pour les cours, ce qui allégerait la charge de l'association. Une communication plus proactive de la part de la mairie, via ses canaux officiels (site web, bulletin municipal, réseaux sociaux), permettrait de mieux faire connaître l'offre de cours de breton aux familles audiernaises. Enfin, un soutien financier direct ou l'organisation d'événements culturels bretons en partenariat avec l'association pourrait dynamiser l'apprentissage et la promotion de notre langue auprès des jeunes générations."
+    },
+    {
+      "id": "field_economie_1acf5561",
+      "category": "economie",
+      "constat_factuel": "Il est indéniable que le port d'Audierne, pilier de notre économie locale et de notre identité, présente aujourd'hui de nombreux signes de vétusté. Les infrastructures actuelles, notamment les quais et les pontons, sont clairement en besoin urgent de rénovation pour assurer la sécurité et maintenir l'attractivité de ce lieu central.",
+      "idees_ameliorations": "Afin de revitaliser ce site essentiel, je suggère de commencer par des travaux de réparation des quais et de remplacement des pontons, en privilégiant des solutions durables et respectueuses de l'environnement marin. Il serait également judicieux d'améliorer l'accessibilité pour tous et de moderniser les équipements de service pour les usagers du port. Enfin, intégrer une dimension esthétique avec un aménagement paysager et un mobilier urbain adapté pourrait transformer le port en un espace encore plus accueillant et dynamique pour les Audiernais et les visiteurs.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "renovation_port",
+        "source_title": "Test",
+        "generated_date": "2026-02-06",
+        "llm_model": "gemini-2.5-flash"
+      },
+      "title": "Il est indéniable que le port d'Audierne, pilier de notre économie locale et ...",
+      "body": "**Constat factuel:**\nIl est indéniable que le port d'Audierne, pilier de notre économie locale et de notre identité, présente aujourd'hui de nombreux signes de vétusté. Les infrastructures actuelles, notamment les quais et les pontons, sont clairement en besoin urgent de rénovation pour assurer la sécurité et maintenir l'attractivité de ce lieu central.\n\n**Vos idées d'améliorations:**\nAfin de revitaliser ce site essentiel, je suggère de commencer par des travaux de réparation des quais et de remplacement des pontons, en privilégiant des solutions durables et respectueuses de l'environnement marin. Il serait également judicieux d'améliorer l'accessibilité pour tous et de moderniser les équipements de service pour les usagers du port. Enfin, intégrer une dimension esthétique avec un aménagement paysager et un mobilier urbain adapté pourrait transformer le port en un espace encore plus accueillant et dynamique pour les Audiernais et les visiteurs."
+    },
+    {
+      "id": "field_economie_d8540d7b",
+      "category": "economie",
+      "constat_factuel": "Il est évident que le manque de places de stationnement est une préoccupation majeure à Audierne, particulièrement pour les commerçants du centre-ville et leurs clients. Trouver une place près des boutiques est souvent un défi, ce qui peut décourager les visiteurs et même les résidents de fréquenter les commerces locaux. Cette situation crée une pression non négligeable sur l'activité économique de notre commune.",
+      "idees_ameliorations": "Pour améliorer cette situation, il serait pertinent d'optimiser l'utilisation des parkings existants en améliorant la signalisation, notamment pour les parkings parfois méconnus en périphérie du centre. Nous pourrions également envisager la création de zones de stationnement de courte durée clairement identifiées devant les commerces, ou explorer la possibilité de parkings temporaires lors des périodes de forte affluence touristique. Enfin, une navette reliant les parkings éloignés au centre-ville pourrait être une solution innovante et écologique pour fluidifier le trafic et l'accès aux commerces.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "stationnement_commerces",
+        "source_title": "Test",
+        "generated_date": "2026-02-06",
+        "llm_model": "gemini-2.5-flash"
+      },
+      "title": "Il est évident que le manque de places de stationnement est une préoccupation...",
+      "body": "**Constat factuel:**\nIl est évident que le manque de places de stationnement est une préoccupation majeure à Audierne, particulièrement pour les commerçants du centre-ville et leurs clients. Trouver une place près des boutiques est souvent un défi, ce qui peut décourager les visiteurs et même les résidents de fréquenter les commerces locaux. Cette situation crée une pression non négligeable sur l'activité économique de notre commune.\n\n**Vos idées d'améliorations:**\nPour améliorer cette situation, il serait pertinent d'optimiser l'utilisation des parkings existants en améliorant la signalisation, notamment pour les parkings parfois méconnus en périphérie du centre. Nous pourrions également envisager la création de zones de stationnement de courte durée clairement identifiées devant les commerces, ou explorer la possibilité de parkings temporaires lors des périodes de forte affluence touristique. Enfin, une navette reliant les parkings éloignés au centre-ville pourrait être une solution innovante et écologique pour fluidifier le trafic et l'accès aux commerces."
     }
   ]
 }

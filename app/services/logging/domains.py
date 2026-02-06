@@ -723,3 +723,112 @@ class TaskLogger(BaseLogger):
             provider=provider,
             confidence=f"{confidence:.2f}" if confidence else None,
         )
+
+
+# =============================================================================
+# Mockup Layer Logger
+# =============================================================================
+
+
+class MockupLogger(BaseLogger):
+    """
+    Logger for Mockup Generation and Testing.
+
+    Components: field_input, batch_validation, storage, dataset, llm_mutations
+    """
+
+    domain = "mockup"
+
+    def log_field_input_start(
+        self,
+        source: str | None = None,
+        length: int | None = None,
+        provider: str | None = None,
+    ) -> None:
+        """Log start of field input processing."""
+        self.info(
+            "FIELD_INPUT_START",
+            source=source,
+            length=length,
+            provider=provider,
+        )
+
+    def log_chunking(
+        self,
+        total_length: int,
+        chunks: int,
+    ) -> None:
+        """Log text chunking for long documents."""
+        self.info(
+            "CHUNKING",
+            total_length=total_length,
+            chunks=chunks,
+        )
+
+    def log_themes_extracted(
+        self,
+        total: int,
+        unique: int,
+        categories: list[str] | None = None,
+    ) -> None:
+        """Log theme extraction results."""
+        self.info(
+            "THEMES_EXTRACTED",
+            total=total,
+            unique=unique,
+            categories=",".join(categories) if categories else None,
+        )
+
+    def log_contribution_generated(
+        self,
+        theme: str,
+        category: str,
+        violation_type: str | None = None,
+    ) -> None:
+        """Log contribution generation."""
+        self.debug(
+            "CONTRIBUTION_GENERATED",
+            theme=theme,
+            category=category,
+            violation=violation_type,
+        )
+
+    def log_batch_validation(
+        self,
+        count: int,
+        valid: int,
+        matches_expected: int,
+        total_time_ms: float | None = None,
+    ) -> None:
+        """Log batch validation completion."""
+        self.info(
+            "BATCH_COMPLETE",
+            count=count,
+            valid=valid,
+            matches_expected=matches_expected,
+            time_ms=f"{total_time_ms:.0f}" if total_time_ms else None,
+        )
+
+    def log_redis_save(
+        self,
+        count: int,
+        operation: str = "save",
+    ) -> None:
+        """Log Redis save operation."""
+        self.info(
+            "REDIS_SAVE",
+            operation=operation,
+            count=count,
+        )
+
+    def log_llm_response(
+        self,
+        chunk: int | None = None,
+        length: int | None = None,
+    ) -> None:
+        """Log LLM response received."""
+        self.debug(
+            "LLM_RESPONSE",
+            chunk=chunk,
+            length=length,
+        )

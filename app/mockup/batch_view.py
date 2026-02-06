@@ -39,7 +39,7 @@ from app.mockup.dataset import (
     DATASET_VALIDATION,
     DATASET_TEST,
 )
-from app.services import AgentLogger
+from app.services.logging import MockupLogger
 from app.data.redis_client import health_check as redis_health_check
 from app.mockup.field_input import (
     list_audierne_docs,
@@ -49,7 +49,7 @@ from app.mockup.field_input import (
 )
 from app.agents.forseti import CATEGORIES
 
-_logger = AgentLogger("batch_validation")
+_logger = MockupLogger("batch_validation")
 
 
 def batch_validation_view(user_id: str, validate_func: Callable) -> None:

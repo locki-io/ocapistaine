@@ -13,6 +13,7 @@ Domains:
 - data: Data access layer (Redis, vector store, file storage)
 - providers: LLM providers (Gemini, Claude, Mistral, Ollama)
 - tasks: Scheduled tasks and background jobs
+- mockup: Mockup generation, field input, batch validation (DEBUG level)
 
 Usage:
     from app.services.logging import get_logger, TaskLogger, ServiceLogger
@@ -49,6 +50,7 @@ from app.services.logging.domains import (
     ProcessorLogger,
     DataLogger,
     TaskLogger,
+    MockupLogger,
 )
 
 # Re-export provider logger for backwards compatibility
@@ -74,6 +76,7 @@ __all__ = [
     "ProcessorLogger",
     "DataLogger",
     "TaskLogger",
+    "MockupLogger",
     # Provider logger (backwards compatible)
     "ProviderLogger",
     "get_provider_logger",

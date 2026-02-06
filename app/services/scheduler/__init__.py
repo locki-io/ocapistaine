@@ -42,6 +42,7 @@ TASK_CHAIN_CRON = "*/30 6-23 * * *"  # Every 30 min, 6 AM - 11 PM
 CRAWL_CRON = "0 3 * * *"  # Daily at 3 AM
 OPIK_EXPERIMENT_CRON = "0 5 * * *"  # Daily at 5 AM (dataset creation)
 OPIK_EVALUATE_CRON = "*/30 7-22 * * *"  # Every 30 min, 7 AM - 10 PM (evaluation)
+PROMPT_SYNC_CRON = "0 0 * * *"  # Daily at midnight
 
 
 async def start_scheduler():
@@ -91,14 +92,16 @@ def _register_jobs():
     Register all scheduled jobs with the scheduler.
 
     Job types:
-    1. Task chain orchestrator - Runs every 7 min, manages daily task dependencies
+    1. Task chain orchestrator - Runs every 30 min, manages daily task dependencies
     2. Firecrawl - Nightly document crawling at 3 AM
     3. Opik experiment - Daily evaluation experiments at 5 AM
+    4. Prompt sync - Daily prompt sync to Opik at midnight
     """
     from app.services.tasks import (
         task_opik_experiment,
         task_opik_evaluate,
         task_firecrawl,
+        task_prompt_sync,
     )
 
     # Daily task chain orchestrator
@@ -136,6 +139,15 @@ def _register_jobs():
         id="task_opik_evaluate",
         replace_existing=True,
         misfire_grace_time=300,
+    )
+
+    # Prompt sync - Daily sync of prompts to Opik at midnight
+    scheduler.add_job(
+        func=task_prompt_sync,
+        trigger=CronTrigger.from_crontab(PROMPT_SYNC_CRON),
+        id="task_prompt_sync",
+        replace_existing=True,
+        misfire_grace_time=600,
     )
 
     logger.info(f"Registered {len(scheduler.get_jobs())} scheduled jobs")
@@ -249,6 +261,7 @@ def run_task_now(
         task_opik_experiment,
         task_opik_evaluate,
         task_firecrawl,
+        task_prompt_sync,
     )
 
     tasks = {
@@ -256,6 +269,7 @@ def run_task_now(
         "task_opik_experiment": task_opik_experiment,
         "task_opik_evaluate": task_opik_evaluate,
         "task_firecrawl": task_firecrawl,
+        "task_prompt_sync": task_prompt_sync,
     }
 
     if task_name not in tasks:
@@ -304,6 +318,9 @@ def run_task_now(
             metrics=exp_config.get("metrics", ["hallucination", "moderation"]),
             task_provider=provider or "gemini",
         )
+    elif task_name == "task_prompt_sync":
+        # Prompt sync has no special parameters
+        return tasks[task_name](date_string)
     else:
         return tasks[task_name](date_string)
 
@@ -358,6 +375,7 @@ def get_task_history(date_string: str = None) -> list:
         "task_opik_experiment",
         "task_opik_evaluate",
         "task_firecrawl",
+        "task_prompt_sync",
     ]
 
     history = []

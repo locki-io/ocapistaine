@@ -72,6 +72,12 @@ DOMAINS: Dict[str, dict] = {
         "error_file": "tasks/tasks_errors.log",
         "level": logging.INFO,
     },
+    "mockup": {
+        "description": "Mockup generation, field input, batch validation",
+        "log_file": "mockup.log",
+        "error_file": "mockup_errors.log",
+        "level": logging.DEBUG,  # Debug level to capture all activity
+    },
 }
 
 # Global logger cache
