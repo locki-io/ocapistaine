@@ -149,6 +149,8 @@ def get_full_model_id(provider: str, model_key: str) -> str:
     """
     Convert provider + model key to full model ID.
 
+    Uses centralized model configuration from app/providers/config.py.
+
     Args:
         provider: Provider name (ollama, gemini, claude, mistral)
         model_key: Short model key
@@ -156,29 +158,8 @@ def get_full_model_id(provider: str, model_key: str) -> str:
     Returns:
         Full model identifier for the provider
     """
-    model_maps = {
-        "ollama": {
-            "mistral": "mistral:latest",
-            "llama3.2": "llama3.2:latest",
-            "orca-mini": "orca-mini:latest",
-        },
-        "gemini": {
-            "flash-lite": "gemini-2.0-flash-lite",
-            "flash": "gemini-2.5-flash",
-            "pro": "gemini-2.5-pro-exp",
-        },
-        "claude": {
-            "haiku": "claude-3-haiku-20240307",
-            "sonnet": "claude-3-5-sonnet-20241022",
-        },
-        "mistral": {
-            "small": "mistral-small-latest",
-            "medium": "mistral-medium-latest",
-        },
-    }
-
-    provider_models = model_maps.get(provider, {})
-    return provider_models.get(model_key, model_key)
+    from app.providers.config import get_model_id
+    return get_model_id(provider, model_key)
 
 
 def get_session_full_model_id(user_id: str) -> str:

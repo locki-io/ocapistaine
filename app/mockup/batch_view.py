@@ -436,8 +436,6 @@ def _from_contribution_view(user_id: str, validate_func: Callable) -> None:
 
 def _field_input_view(user_id: str, validate_func: Callable) -> None:
     """Generate themed contributions from field input (reports, docs, speeches)."""
-    from app.mockup.llm_mutations import check_ollama_available, _run_async
-
     st.markdown("### 📋 Field Input - Generate Themed Contributions")
     st.caption(
         "Generate mockup contributions from real field data (public hearing reports, "
@@ -540,54 +538,26 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
             help="Generate subtle and aggressive violation examples",
         )
 
-    # Provider selection
+    # LLM Provider - use sidebar session settings
     st.markdown("#### 2b. LLM Provider")
-    st.caption(
-        "This task requires a 7b+ model. Select one or more providers to use."
-    )
+    st.caption("Uses the provider/model selected in the sidebar.")
 
-    # Provider multiselect
+    from app.services.session import get_session_provider, get_session_model, get_full_model_id
+
+    # Get provider/model from sidebar session
+    session_provider = get_session_provider(user_id)
+    session_model = get_session_model(user_id)
+    full_model_id = get_full_model_id(session_provider, session_model)
+
+    # Display current provider/model
     provider_labels = {
-        "ollama": "💻 Ollama (local)",
+        "ollama": "💻 Ollama",
         "mistral": "🌬️ Mistral",
         "gemini": "🌐 Gemini",
         "claude": "🤖 Claude",
     }
-    all_providers = list(provider_labels.keys())
-
-    llm_providers = st.multiselect(
-        "Providers (select one or more)",
-        options=all_providers,
-        default=["ollama", "mistral"],  # Default to ollama and mistral
-        format_func=lambda x: provider_labels.get(x, x),
-        key="field_llm_providers",
-        help="Select multiple providers for failover. First available will be used.",
-    )
-
-    # Model configuration per selected provider
-    if llm_providers:
-        st.markdown("**Model Configuration:**")
-        default_models = {
-            "gemini": "gemini-2.5-flash",
-            "claude": "claude-3-5-sonnet-20241022",
-            "ollama": "deepseek-r1:7b",
-            "mistral": "mistral-small-latest",
-        }
-
-        cols = st.columns(len(llm_providers))
-        llm_models = {}
-        for i, provider in enumerate(llm_providers):
-            with cols[i]:
-                model = st.text_input(
-                    f"{provider_labels[provider]}",
-                    value=default_models.get(provider, ""),
-                    key=f"field_model_{provider}",
-                    help=f"Model for {provider}",
-                )
-                llm_models[provider] = model
-    else:
-        llm_models = {}
-        st.warning("Please select at least one provider")
+    provider_label = provider_labels.get(session_provider, session_provider)
+    st.info(f"📌 **{provider_label}** / `{full_model_id}`")
 
     # Storage options
     st.markdown("#### 3. Storage & Experiment")
@@ -616,20 +586,14 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
     # Provider status check
     col1, col2 = st.columns([1, 3])
     with col1:
-        if st.button("🔍 Check Providers", key="field_check_provider"):
+        if st.button("🔍 Check Provider", key="field_check_provider"):
             from app.providers import get_provider
 
-            for prov_name in llm_providers:
-                try:
-                    model_to_use = llm_models.get(prov_name, "").strip() or None
-                    provider = (
-                        get_provider(prov_name, cache=False, model=model_to_use)
-                        if model_to_use
-                        else get_provider(prov_name)
-                    )
-                    st.success(f"✓ {prov_name} ({provider.model}) ready")
-                except Exception as e:
-                    st.warning(f"✗ {prov_name}: {e}")
+            try:
+                provider = get_provider(session_provider, cache=False, model=full_model_id)
+                st.success(f"✓ {session_provider} ({provider.model}) ready")
+            except Exception as e:
+                st.warning(f"✗ {session_provider}: {e}")
 
     # Generate button
     st.markdown("---")
@@ -641,39 +605,23 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
             st.error("Please provide input text")
             return
 
-        if not llm_providers:
-            st.error("Please select at least one provider")
-            return
-
-        # Try providers in order until one works
-        result = None
-        last_error = None
-        providers_str = ", ".join(llm_providers)
-        spinner_text = f"Extracting themes using {providers_str}..."
+        # Use sidebar session provider
+        spinner_text = f"Extracting themes using {session_provider}..."
 
         with st.spinner(spinner_text):
-            for provider_name in llm_providers:
-                model_override = llm_models.get(provider_name, "").strip() or None
-                try:
-                    st.info(f"Trying {provider_name}...")
-                    result = process_field_input_sync(
-                        input_text=input_text,
-                        source_file=source_file,
-                        source_title=source_title,
-                        provider=provider_name,
-                        model=model_override,
-                        contributions_per_theme=contributions_per_theme,
-                        include_violations=include_violations,
-                    )
-                    st.success(f"✓ Generated using {provider_name}")
-                    break  # Success, stop trying providers
-                except Exception as e:
-                    last_error = e
-                    st.warning(f"✗ {provider_name} failed: {e}")
-                    continue  # Try next provider
-
-            if result is None:
-                st.error(f"All providers failed. Last error: {last_error}")
+            try:
+                result = process_field_input_sync(
+                    input_text=input_text,
+                    source_file=source_file,
+                    source_title=source_title,
+                    provider=session_provider,
+                    model=full_model_id,
+                    contributions_per_theme=contributions_per_theme,
+                    include_violations=include_violations,
+                )
+                st.success(f"✓ Generated using {session_provider}")
+            except Exception as e:
+                st.error(f"Generation failed: {e}")
                 return
 
             st.session_state["field_input_result"] = result

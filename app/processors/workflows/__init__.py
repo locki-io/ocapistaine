@@ -30,6 +30,8 @@ from .workflow_dataset import (
     create_dataset_from_spans,
     create_dataset_from_storage,
     list_datasets,
+    migrate_dataset_category_field,
+    migrate_all_datasets_category_field,
 )
 
 from .workflow_experiment import (
@@ -61,6 +63,8 @@ __all__ = [
     "create_dataset_from_spans",
     "create_dataset_from_storage",
     "list_datasets",
+    "migrate_dataset_category_field",
+    "migrate_all_datasets_category_field",
     # Experiment Workflow (Opik native)
     "OpikExperimentConfig",
     "run_opik_experiment",

@@ -33,31 +33,36 @@ def scheduler_dashboard_view(user_id: str):
 
         st.markdown("---")
 
-        # 2. Today's Tasks
+        # 2. Task Provider Configuration (single selection for all tasks)
+        _display_task_provider_config()
+
+        st.markdown("---")
+
+        # 3. Today's Tasks
         _display_todays_tasks()
 
         st.markdown("---")
 
-        # 3. Manual Triggers
+        # 4. Manual Triggers (simplified - uses global provider config)
         _display_manual_triggers(user_id)
 
         st.markdown("---")
 
-        # 4. Opik Judge Config
+        # 5. Opik Judge Config (separate LLM for metrics)
         _display_opik_judge_config()
 
         st.markdown("---")
 
-        # 5. Experiment Runner
+        # 6. Experiment Runner
         _display_experiment_runner()
 
         st.markdown("---")
 
-        # 6. Redis Key Monitor
+        # 7. Redis Key Monitor
         _display_redis_keys()
 
     with col_logs:
-        # 6. Live Log Viewer
+        # Live Log Viewer
         _display_live_logs()
 
 
@@ -93,6 +98,124 @@ def _display_scheduler_status():
                     except ValueError:
                         pass
                 st.markdown(f"- **{job['id']}**: {_('admin_next_run')} {next_run}")
+
+
+def _display_task_provider_config():
+    """
+    Display single provider/model configuration for all daily tasks.
+
+    Uses centralized config from app/providers/config.py.
+    This provider is used for: Forseti validation, Field Input, etc.
+    """
+    from app.providers.config import (
+        PROVIDER_UI_CONFIG,
+        OLLAMA_MODELS,
+        get_model_id,
+    )
+    from app.services.session import get_current_provider, get_current_model
+
+    st.markdown("### 🤖 Task Provider")
+    st.caption("LLM for daily operations (Forseti, Field Input, etc.)")
+
+    # Get session defaults
+    session_provider = get_current_provider()
+    session_model = get_current_model()
+
+    # Initialize session state if needed
+    if "task_provider" not in st.session_state:
+        st.session_state.task_provider = session_provider
+    if "task_model" not in st.session_state:
+        st.session_state.task_model = session_model
+
+    # Provider selection
+    provider_options = list(PROVIDER_UI_CONFIG.keys())
+    current_provider = st.session_state.task_provider
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        selected_provider = st.selectbox(
+            _("admin_provider"),
+            provider_options,
+            index=provider_options.index(current_provider) if current_provider in provider_options else 0,
+            key="task_provider_select",
+            format_func=lambda x: f"{x.capitalize()} ({PROVIDER_UI_CONFIG[x]['default']})",
+        )
+
+        if selected_provider != st.session_state.task_provider:
+            st.session_state.task_provider = selected_provider
+            # Reset model to default for new provider
+            st.session_state.task_model = PROVIDER_UI_CONFIG[selected_provider]["default"]
+            st.rerun()
+
+    with col2:
+        # Model selection based on provider
+        provider_config = PROVIDER_UI_CONFIG[selected_provider]
+        model_options = list(provider_config["models"].keys())
+        current_model = st.session_state.task_model
+
+        if current_model not in model_options:
+            current_model = provider_config["default"]
+            st.session_state.task_model = current_model
+
+        selected_model = st.selectbox(
+            _("admin_ollama_model") if selected_provider == "ollama" else "Model",
+            model_options,
+            index=model_options.index(current_model) if current_model in model_options else 0,
+            key="task_model_select",
+            format_func=lambda x: provider_config["models"][x],
+        )
+
+        if selected_model != st.session_state.task_model:
+            st.session_state.task_model = selected_model
+
+    # Show full model ID being used
+    full_model_id = get_model_id(selected_provider, selected_model)
+    st.info(f"📌 **{selected_provider}** / `{full_model_id}`")
+
+    # Ollama-specific options
+    if selected_provider == "ollama":
+        # Show model info
+        if selected_model in OLLAMA_MODELS:
+            model_info = OLLAMA_MODELS[selected_model]
+            st.caption(
+                f"{model_info['description']} | RAM: ~{model_info['ram_gb']}GB"
+            )
+
+        # Sleep time to prevent CPU overload
+        if "ollama_sleep" not in st.session_state:
+            st.session_state.ollama_sleep = 2.0
+
+        st.session_state.ollama_sleep = st.slider(
+            _("admin_ollama_sleep"),
+            min_value=0.0,
+            max_value=10.0,
+            value=st.session_state.ollama_sleep,
+            step=0.5,
+            key="task_ollama_sleep",
+            help=_("admin_ollama_sleep_help"),
+        )
+
+    # Failover toggle
+    if "enable_failover" not in st.session_state:
+        st.session_state.enable_failover = True
+
+    st.session_state.enable_failover = st.checkbox(
+        _("admin_enable_failover"),
+        value=st.session_state.enable_failover,
+        key="task_enable_failover",
+        help=_("admin_failover_help"),
+    )
+
+
+def _get_task_provider_config() -> dict:
+    """Get current task provider configuration from session state."""
+    return {
+        "provider": st.session_state.get("task_provider", "ollama"),
+        "model": st.session_state.get("task_model", "deepseek-r1:7b"),
+        "enable_failover": st.session_state.get("enable_failover", True),
+        "ollama_sleep": st.session_state.get("ollama_sleep", 2.0),
+    }
 
 
 def _display_todays_tasks():
@@ -151,32 +274,40 @@ def _display_todays_tasks():
 
 
 def _display_manual_triggers(user_id: str):
-    """Render manual task trigger buttons with data source config."""
+    """Render manual task trigger buttons (uses global provider config)."""
 
     st.markdown(f"### {_('admin_manual_triggers')}")
 
-    # Task configurations
+    # Get global provider config
+    provider_cfg = _get_task_provider_config()
+
+    # Task configurations (simplified)
+    # - task_contributions_analysis: Uses Task Provider (runs Forseti)
+    # - task_opik_experiment: NO LLM needed (just creates dataset from spans)
+    # - task_opik_evaluate: NO Task LLM needed (uses Judge LLM for metrics only)
+    # - task_firecrawl: NO LLM needed (web scraping)
     task_configs = {
         "task_contributions_analysis": {
             "label": _("admin_task_contributions"),
+            "description": "Validates contributions with Forseti (uses Task Provider)",
             "source_type": "select",
             "sources": ["Mockup Queue", "GitHub Issues", "Both"],
-            "has_provider": True,
             "has_source_config": True,
+            "needs_task_provider": True,  # Only this task needs Task Provider
         },
         "task_opik_experiment": {
             "label": _("admin_task_opik"),
-            "has_provider": True,
-            "has_experiment_config": True,
+            "description": "Creates dataset from low-Correctness spans (no LLM needed)",
+            "has_dataset_config": True,  # Shows max_confidence, max_items for filtering
         },
         "task_opik_evaluate": {
             "label": _("admin_task_opik_evaluate"),
-            "has_provider": True,
-            "has_experiment_config": True,
-            "is_evaluate_task": True,  # Flag to show evaluate-specific options
+            "description": "Runs Opik metrics on dataset (uses Judge LLM only)",
+            "has_metrics_config": True,  # Shows metrics selection
         },
         "task_firecrawl": {
             "label": _("admin_task_firecrawl"),
+            "description": "Crawls municipal documents (no LLM needed)",
             "source_type": "multiselect",
             "sources": ["mairie_arretes", "mairie_deliberations", "commission_controle"],
         },
@@ -184,7 +315,11 @@ def _display_manual_triggers(user_id: str):
 
     for task_name, config in task_configs.items():
         with st.expander(f"**{config['label']}** ({task_name})", expanded=False):
-            # Data source selection
+            # Show description
+            if "description" in config:
+                st.caption(config["description"])
+
+            # Data source selection (firecrawl, contributions)
             if "sources" in config:
                 if config.get("source_type") == "multiselect":
                     st.multiselect(
@@ -200,36 +335,27 @@ def _display_manual_triggers(user_id: str):
                         key=f"source_{task_name}",
                     )
 
-            # Source configuration with date filter and counts
+            # Source configuration with date filter (contributions)
             if config.get("has_source_config"):
                 _display_source_config(task_name)
 
-            if "experiments" in config:
-                st.selectbox(
-                    _("admin_experiment"),
-                    config["experiments"],
-                    key=f"exp_{task_name}",
-                )
-
-            # Experiment configuration (for Opik experiments)
-            if config.get("has_experiment_config"):
+            # Dataset creation config (task_opik_experiment)
+            if config.get("has_dataset_config"):
                 from app.services.tasks import AGENT_FEATURE_REGISTRY
 
-                st.markdown(f"**{_('admin_experiment_config')}**")
+                st.markdown("**Dataset Creation Config**")
 
-                # Experiment type - dynamically loaded from registry
                 experiment_types = list(AGENT_FEATURE_REGISTRY.keys())
                 st.selectbox(
                     _("admin_experiment_type"),
                     experiment_types,
                     key=f"exp_type_{task_name}",
-                    help=_("admin_experiment_type_help"),
+                    help="Which span type to search for",
                     format_func=lambda x: f"{x} ({AGENT_FEATURE_REGISTRY[x]['agent']})",
                 )
 
-                exp_col1, exp_col2 = st.columns(2)
-                with exp_col1:
-                    # Max confidence threshold
+                col1, col2 = st.columns(2)
+                with col1:
                     st.slider(
                         _("admin_max_confidence"),
                         min_value=0.1,
@@ -237,10 +363,9 @@ def _display_manual_triggers(user_id: str):
                         value=0.5,
                         step=0.05,
                         key=f"max_confidence_{task_name}",
-                        help=_("admin_max_confidence_help"),
+                        help="Include spans with Correctness below this threshold",
                     )
-                with exp_col2:
-                    # Max items to process
+                with col2:
                     st.slider(
                         _("admin_max_items"),
                         min_value=5,
@@ -248,115 +373,47 @@ def _display_manual_triggers(user_id: str):
                         value=50,
                         step=5,
                         key=f"max_items_{task_name}",
-                        help=_("admin_max_items_help"),
+                        help="Maximum spans to include in dataset",
                     )
 
-                # Show candidate count
                 _display_experiment_candidates(task_name)
 
-            # Provider selection with failover
-            if config.get("has_provider"):
-                from app.providers import OLLAMA_MODELS
-                from app.services.session import get_current_provider, get_current_model
+            # Metrics config (task_opik_evaluate)
+            if config.get("has_metrics_config"):
+                from app.processors.workflows import list_available_metrics
 
-                # Get session provider as default
-                session_provider = get_current_provider()
-                session_model = get_current_model()
+                st.markdown("**Evaluation Metrics** (uses Judge LLM)")
 
-                # Display session provider info
-                st.info(f"📌 {_('admin_session_provider')}: **{session_provider}** ({session_model})")
+                available_metrics = list_available_metrics()
+                metric_options = [m["name"] for m in available_metrics]
+                metric_labels = {m["name"]: f"{m['name']}: {m['description']}" for m in available_metrics}
 
-                provider_options = ["ollama", "gemini", "claude", "mistral"]
-                # Put session provider first
-                if session_provider in provider_options:
-                    provider_options.remove(session_provider)
-                    provider_options.insert(0, session_provider)
+                default_metrics = ["hallucination", "output_format"]
+                st.multiselect(
+                    "Metrics",
+                    metric_options,
+                    default=[m for m in default_metrics if m in metric_options],
+                    key=f"metrics_{task_name}",
+                    format_func=lambda x: metric_labels.get(x, x),
+                )
 
-                provider_col1, provider_col2 = st.columns(2)
-                with provider_col1:
-                    # Initialize with session provider if not already set
-                    default_idx = 0
-                    current_val = st.session_state.get(f"provider_{task_name}")
-                    if current_val and current_val in provider_options:
-                        default_idx = provider_options.index(current_val)
-
-                    st.selectbox(
-                        _("admin_provider"),
-                        provider_options,
-                        index=default_idx,
-                        key=f"provider_{task_name}",
-                    )
-                with provider_col2:
-                    st.checkbox(
-                        _("admin_enable_failover"),
-                        value=True,
-                        key=f"failover_{task_name}",
-                        help=_("admin_failover_help"),
-                    )
-
-                # Show Ollama model selection if ollama is selected
-                current_provider = st.session_state.get(f"provider_{task_name}", "ollama")
-                if current_provider == "ollama":
-                    ollama_model_options = list(OLLAMA_MODELS.keys())
-                    st.selectbox(
-                        _("admin_ollama_model"),
-                        ollama_model_options,
-                        index=ollama_model_options.index("deepseek-r1:7b"),
-                        key=f"ollama_model_{task_name}",
-                        help=_("admin_ollama_model_help"),
-                    )
-                    # Show model info
-                    selected_model = st.session_state.get(
-                        f"ollama_model_{task_name}", "deepseek-r1:7b"
-                    )
-                    if selected_model in OLLAMA_MODELS:
-                        model_info = OLLAMA_MODELS[selected_model]
-                        st.caption(
-                            f"{model_info['description']} | "
-                            f"RAM: ~{model_info['ram_gb']}GB"
-                        )
-
-                    # Ollama sleep time to prevent CPU overload
-                    st.slider(
-                        _("admin_ollama_sleep"),
-                        min_value=0.0,
-                        max_value=10.0,
-                        value=2.0,
-                        step=0.5,
-                        key=f"ollama_sleep_{task_name}",
-                        help=_("admin_ollama_sleep_help"),
-                    )
-
-            # Get provider settings if available
-            provider = None
-            enable_failover = True
-            ollama_model = None
-            ollama_sleep = None
-            if config.get("has_provider"):
-                provider = st.session_state.get(f"provider_{task_name}", "ollama")
-                enable_failover = st.session_state.get(f"failover_{task_name}", True)
-                if provider == "ollama":
-                    ollama_model = st.session_state.get(
-                        f"ollama_model_{task_name}", "deepseek-r1:7b"
-                    )
-                    ollama_sleep = st.session_state.get(
-                        f"ollama_sleep_{task_name}", 2.0
-                    )
-
-            # Get experiment settings if available
+            # Build config dicts based on task type
             experiment_config = None
-            if config.get("has_experiment_config"):
+            if config.get("has_dataset_config"):
                 experiment_config = {
                     "experiment_type": st.session_state.get(f"exp_type_{task_name}", "charter_optimization"),
                     "max_confidence": st.session_state.get(f"max_confidence_{task_name}", 0.5),
                     "max_items": st.session_state.get(f"max_items_{task_name}", 50),
                 }
 
-            # Get source configuration if available
+            if config.get("has_metrics_config"):
+                experiment_config = {
+                    "metrics": st.session_state.get(f"metrics_{task_name}", ["hallucination", "output_format"]),
+                }
+
             source_config = None
             if config.get("has_source_config"):
                 after_date_val = st.session_state.get(f"after_date_{task_name}")
-                # Convert date to string if it's a date object
                 if after_date_val and hasattr(after_date_val, "isoformat"):
                     after_date_str = after_date_val.isoformat()
                 else:
@@ -372,15 +429,20 @@ def _display_manual_triggers(user_id: str):
             col1, col2, col3 = st.columns(3)
             with col1:
                 if st.button(_("admin_run_now"), key=f"run_{task_name}"):
-                    _run_task(task_name, user_id, provider, enable_failover, ollama_model, ollama_sleep, experiment_config, source_config)
+                    if config.get("needs_task_provider"):
+                        _run_task_with_global_config(task_name, user_id, experiment_config, source_config)
+                    else:
+                        _run_task_simple(task_name, user_id, experiment_config, source_config)
             with col2:
                 if st.button(_("admin_clear_and_run"), key=f"clear_run_{task_name}"):
-                    _clear_and_run_task(task_name, user_id, provider, enable_failover, ollama_model, ollama_sleep, experiment_config, source_config)
+                    if config.get("needs_task_provider"):
+                        _clear_and_run_task_with_global_config(task_name, user_id, experiment_config, source_config)
+                    else:
+                        _clear_and_run_task_simple(task_name, user_id, experiment_config, source_config)
             with col3:
-                # Force revalidate only for contributions task
                 if task_name == "task_contributions_analysis":
                     if st.button(_("admin_force_revalidate"), key=f"force_{task_name}"):
-                        _force_revalidate_and_run(task_name, user_id, provider, enable_failover, ollama_model, ollama_sleep)
+                        _force_revalidate_and_run_with_global_config(task_name, user_id)
 
 
 def _display_source_config(task_name: str):
@@ -629,20 +691,26 @@ def _display_internal_confidence_stats(max_confidence: float):
         st.caption(f"⚠️ Storage error: {str(e)[:50]}")
 
 
-def _run_task(
+def _run_task_with_global_config(
     task_name: str,
     user_id: str,
-    provider: str | None = None,
-    enable_failover: bool = True,
-    ollama_model: str | None = None,
-    ollama_sleep: float | None = None,
     experiment_config: dict | None = None,
     source_config: dict | None = None,
 ):
-    """Execute a task manually."""
+    """Execute a task using global provider config."""
     from app.services.scheduler import run_task_now
 
-    with st.spinner(f"{_('admin_running_task')} {task_name}..."):
+    # Get global provider config
+    cfg = _get_task_provider_config()
+    provider = cfg["provider"]
+    model_key = cfg["model"]
+    enable_failover = cfg["enable_failover"]
+    ollama_sleep = cfg.get("ollama_sleep", 2.0) if provider == "ollama" else None
+
+    # Resolve model key to full ID for ollama
+    ollama_model = model_key if provider == "ollama" else None
+
+    with st.spinner(f"{_('admin_running_task')} {task_name} ({provider}/{model_key})..."):
         try:
             result = run_task_now(
                 task_name,
@@ -669,74 +737,113 @@ def _run_task(
             st.error(f"{_('admin_error')}: {e}")
 
 
-def _clear_and_run_task(
+def _clear_and_run_task_with_global_config(
     task_name: str,
     user_id: str,
-    provider: str | None = None,
-    enable_failover: bool = True,
-    ollama_model: str | None = None,
-    ollama_sleep: float | None = None,
     experiment_config: dict | None = None,
     source_config: dict | None = None,
 ):
-    """Clear success key and re-run task."""
+    """Clear success key and re-run task using global config."""
     from app.services.scheduler.utils import get_scheduler_redis
 
     redis_conn = get_scheduler_redis()
     today = datetime.now().strftime("%Y%m%d")
     success_key = f"success:{task_name}:{today}"
 
-    # Delete success key
     deleted = redis_conn.delete(success_key)
     if deleted:
         st.info(f"{_('admin_cleared_key')}: {success_key}")
 
-    # Run task
-    _run_task(task_name, user_id, provider, enable_failover, ollama_model, ollama_sleep, experiment_config, source_config)
+    _run_task_with_global_config(task_name, user_id, experiment_config, source_config)
 
 
-def _force_revalidate_and_run(
-    task_name: str,
-    user_id: str,
-    provider: str | None = None,
-    enable_failover: bool = True,
-    ollama_model: str | None = None,
-    ollama_sleep: float | None = None,
-):
-    """Reset confidence on all records and force revalidation."""
+def _force_revalidate_and_run_with_global_config(task_name: str, user_id: str):
+    """Reset confidence on all records and force revalidation using global config."""
     from app.services.scheduler.utils import get_scheduler_redis
     from app.mockup.storage import get_storage
     from datetime import date, timedelta
 
-    # Step 1: Reset confidence on MockupStorage records
     storage = get_storage()
     reset_count = 0
 
-    # Get records from last 7 days
     all_records = []
     for days_ago in range(7):
         check_date = date.today() - timedelta(days=days_ago)
         records = storage.get_validations_by_date(check_date.isoformat())
         all_records.extend(records)
 
-    # Reset confidence to 0 (mark for revalidation)
     for record in all_records:
         record.confidence = 0.0
         reset_count += 1
 
-    # Save updated records
     if all_records:
         storage.save_batch(all_records)
         st.info(f"{_('admin_reset_confidence')}: {reset_count} records")
 
-    # Step 2: Clear success key
     redis_conn = get_scheduler_redis()
     today = datetime.now().strftime("%Y%m%d")
     success_key = f"success:{task_name}:{today}"
     redis_conn.delete(success_key)
 
-    # Step 3: Run task
-    _run_task(task_name, user_id, provider, enable_failover, ollama_model, ollama_sleep)
+    _run_task_with_global_config(task_name, user_id)
+
+
+def _run_task_simple(
+    task_name: str,
+    user_id: str,  # kept for API consistency
+    experiment_config: dict | None = None,
+    source_config: dict | None = None,
+):
+    """Execute a task that doesn't need LLM provider (dataset creation, crawling)."""
+    _ = user_id  # unused but kept for consistent API
+    from app.services.scheduler import run_task_now
+
+    with st.spinner(f"{_('admin_running_task')} {task_name}..."):
+        try:
+            result = run_task_now(
+                task_name,
+                experiment_config=experiment_config,
+                source_config=source_config,
+            )
+            if result["status"] == "success":
+                st.success(f"{task_name} {_('admin_completed_successfully')}")
+            elif result["status"] == "skipped":
+                reason = result.get("reason", "unknown")
+                st.warning(f"{task_name} {_('admin_skipped')}: {reason}")
+            else:
+                errors = result.get("errors", [])
+                st.error(f"{task_name} {_('admin_failed')}: {errors}")
+
+            with st.expander(_("admin_task_result"), expanded=False):
+                st.json(result)
+
+        except Exception as e:
+            st.error(f"{_('admin_error')}: {e}")
+
+
+def _clear_and_run_task_simple(
+    task_name: str,
+    user_id: str,  # kept for API consistency
+    experiment_config: dict | None = None,
+    source_config: dict | None = None,
+):
+    """Clear success key and re-run task (no LLM needed)."""
+    from app.services.scheduler.utils import get_scheduler_redis
+    _ = user_id  # unused but kept for consistent API
+
+    redis_conn = get_scheduler_redis()
+    today = datetime.now().strftime("%Y%m%d")
+    success_key = f"success:{task_name}:{today}"
+
+    deleted = redis_conn.delete(success_key)
+    if deleted:
+        st.info(f"{_('admin_cleared_key')}: {success_key}")
+
+    _run_task_simple(task_name, user_id, experiment_config, source_config)
+
+
+
+
 
 
 def _display_opik_judge_config():
@@ -826,10 +933,9 @@ def _display_experiment_runner():
         OpikExperimentConfig,
         run_opik_experiment,
     )
-    from app.services.session import get_current_provider
 
     st.markdown("### 🧪 Run Experiment")
-    st.caption("Run Opik evaluate() on an existing dataset")
+    st.caption("Run Opik evaluate() on an existing dataset (uses Task Provider above)")
 
     # List available datasets
     datasets = list_datasets()
@@ -851,44 +957,24 @@ def _display_experiment_runner():
     if selected_info:
         st.caption(f"📋 {selected_info.get('description', 'No description')}")
 
-    # Experiment configuration
-    col1, col2 = st.columns(2)
+    # Experiment type
+    experiment_types = list_experiment_types()
+    type_options = [t["type"] for t in experiment_types]
+    type_labels = {t["type"]: f"{t['type']} ({t['agent']})" for t in experiment_types}
 
-    with col1:
-        # Experiment type (determines which task function to use)
-        experiment_types = list_experiment_types()
-        type_options = [t["type"] for t in experiment_types]
-        type_labels = {t["type"]: f"{t['type']} ({t['agent']})" for t in experiment_types}
-
-        selected_type = st.selectbox(
-            "Experiment Type",
-            type_options,
-            key="exp_type_runner",
-            format_func=lambda x: type_labels.get(x, x),
-            help="Determines which evaluation task to run",
-        )
-
-    with col2:
-        # Task provider (sidebar LLM for running Forseti)
-        session_provider = get_current_provider()
-        provider_options = ["gemini", "claude", "ollama", "mistral"]
-        if session_provider in provider_options:
-            provider_options.remove(session_provider)
-            provider_options.insert(0, session_provider)
-
-        task_provider = st.selectbox(
-            "Task Provider",
-            provider_options,
-            key="exp_task_provider",
-            help="LLM used to run Forseti validation (task LLM)",
-        )
+    selected_type = st.selectbox(
+        "Experiment Type",
+        type_options,
+        key="exp_type_runner",
+        format_func=lambda x: type_labels.get(x, x),
+        help="Determines which evaluation task to run",
+    )
 
     # Metrics selection
     available_metrics = list_available_metrics()
     metric_options = [m["name"] for m in available_metrics]
     metric_labels = {m["name"]: f"{m['name']}: {m['description']}" for m in available_metrics}
 
-    # Default metrics
     default_metrics = ["hallucination", "moderation"]
     default_idx = [metric_options.index(m) for m in default_metrics if m in metric_options]
 
@@ -898,7 +984,7 @@ def _display_experiment_runner():
         default=[metric_options[i] for i in default_idx],
         key="exp_metrics",
         format_func=lambda x: metric_labels.get(x, x),
-        help="Opik judge metrics to evaluate (uses judge LLM configured above)",
+        help="Opik judge metrics (uses Judge LLM configured below)",
     )
 
     # Experiment name
@@ -917,7 +1003,11 @@ def _display_experiment_runner():
             st.error("Select at least one metric")
             return
 
-        with st.spinner(f"Running experiment '{experiment_name}'..."):
+        # Get task provider from global config
+        cfg = _get_task_provider_config()
+        task_provider = cfg["provider"]
+
+        with st.spinner(f"Running experiment '{experiment_name}' with {task_provider}..."):
             try:
                 config = OpikExperimentConfig(
                     experiment_name=experiment_name,
@@ -927,7 +1017,7 @@ def _display_experiment_runner():
                     task_provider=task_provider,
                 )
 
-                st.info(f"📊 Config: {config.to_dict()}")
+                st.info(f"📊 Task: **{task_provider}** | Judge: **Opik config**")
 
                 result = run_opik_experiment(config)
 

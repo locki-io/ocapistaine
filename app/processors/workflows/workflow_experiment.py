@@ -479,14 +479,14 @@ def _create_category_task(provider: str) -> Callable:
         input_data = dataset_item.get("input", {})
         title = input_data.get("title", "")
         body = input_data.get("body", "")
-        current_category = input_data.get("category")
+        category = input_data.get("category")
 
         # Run classification
         agent = ForsetiAgent(provider_name=provider)
         result = asyncio.run(agent.classify_category(
             title=title,
             body=body,
-            current_category=current_category,
+            category=category,
         ))
 
         return {

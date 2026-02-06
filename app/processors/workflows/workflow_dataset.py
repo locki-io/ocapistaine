@@ -415,3 +415,137 @@ def list_datasets() -> list[dict]:
     except Exception as e:
         logger.error(f"Failed to list datasets: {e}")
         return []
+
+
+def migrate_dataset_category_field(dataset_name: str) -> dict:
+    """
+    Migrate dataset items from input.current_category to input.category.
+
+    This is a one-time migration for datasets created before the field rename.
+
+    Args:
+        dataset_name: Name of the Opik dataset to migrate
+
+    Returns:
+        dict with migration results
+    """
+    logger.info(f"Migrating dataset '{dataset_name}' - renaming input.current_category to input.category")
+
+    result = {
+        "dataset_name": dataset_name,
+        "items_migrated": 0,
+        "items_skipped": 0,
+        "errors": [],
+    }
+
+    try:
+        from app.agents.tracing import get_tracer
+
+        tracer = get_tracer()
+        if not tracer.enabled:
+            result["errors"].append("Opik not configured")
+            return result
+
+        client = tracer.get_client()
+        if not client:
+            result["errors"].append("Could not get Opik client")
+            return result
+
+        # Get dataset
+        dataset = client.get_dataset(name=dataset_name)
+        if not dataset:
+            result["errors"].append(f"Dataset not found: {dataset_name}")
+            return result
+
+        # Get all items
+        items = list(dataset.get_items())
+        logger.info(f"  Found {len(items)} items in dataset")
+
+        migrated_items = []
+        for item in items:
+            input_data = item.get("input", {})
+
+            # Check if migration is needed
+            if "current_category" in input_data and "category" not in input_data:
+                # Migrate: copy current_category to category
+                input_data["category"] = input_data.pop("current_category")
+                item["input"] = input_data
+                migrated_items.append(item)
+                result["items_migrated"] += 1
+            elif "category" in input_data:
+                # Already has category field
+                result["items_skipped"] += 1
+            else:
+                # No category field at all
+                result["items_skipped"] += 1
+
+        if migrated_items:
+            # Update the dataset with migrated items
+            # Note: Opik doesn't support update-in-place, so we need to delete and re-insert
+            logger.info(f"  Migrating {len(migrated_items)} items...")
+
+            # Delete old items and insert new ones
+            # This is done via the REST API
+            rest_client = client._rest_client
+            for item in migrated_items:
+                item_id = item.get("id")
+                if item_id:
+                    try:
+                        # Delete old item
+                        rest_client.datasets.delete_dataset_item(
+                            dataset_id=dataset.id,
+                            item_id=item_id,
+                        )
+                    except Exception as e:
+                        logger.warning(f"  Could not delete item {item_id}: {e}")
+
+            # Insert updated items
+            dataset.insert(migrated_items)
+            logger.info(f"  Successfully migrated {len(migrated_items)} items")
+
+        logger.info(f"  Migration complete: {result['items_migrated']} migrated, {result['items_skipped']} skipped")
+
+    except Exception as e:
+        result["errors"].append(f"Migration failed: {e}")
+        logger.error(f"Migration failed: {e}")
+
+    return result
+
+
+def migrate_all_datasets_category_field() -> dict:
+    """
+    Migrate all datasets - renaming input.current_category to input.category.
+
+    Returns:
+        dict with overall migration results
+    """
+    logger.info("Starting migration of all datasets...")
+
+    datasets = list_datasets()
+    results = {
+        "total_datasets": len(datasets),
+        "datasets_migrated": [],
+        "datasets_skipped": [],
+        "errors": [],
+    }
+
+    for ds in datasets:
+        ds_name = ds.get("name")
+        if not ds_name:
+            continue
+
+        migration_result = migrate_dataset_category_field(ds_name)
+
+        if migration_result.get("items_migrated", 0) > 0:
+            results["datasets_migrated"].append({
+                "name": ds_name,
+                "items_migrated": migration_result["items_migrated"],
+            })
+        else:
+            results["datasets_skipped"].append(ds_name)
+
+        if migration_result.get("errors"):
+            results["errors"].extend(migration_result["errors"])
+
+    logger.info(f"Migration complete: {len(results['datasets_migrated'])} datasets migrated")
+    return results

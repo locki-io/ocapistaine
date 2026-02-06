@@ -7,7 +7,26 @@ Exports all providers and provides a factory function for instantiation.
 from typing import Literal
 
 from .base import LLMProvider, Message, CompletionResponse
-from .config import ProviderConfig, get_config, GEMINI_MODELS, OLLAMA_MODELS
+from .config import (
+    ProviderConfig,
+    get_config,
+    ProviderName,
+    # Model ID mappings
+    GEMINI_MODELS,
+    CLAUDE_MODELS,
+    MISTRAL_MODELS,
+    OLLAMA_MODELS,
+    OLLAMA_MODEL_IDS,
+    # UI config
+    PROVIDER_UI_CONFIG,
+    # Recommended models per use case
+    RECOMMENDED_MODELS,
+    # Functions
+    get_model_id,
+    get_default_model,
+    list_model_keys,
+    get_recommended_model,
+)
 from .logging import get_provider_logger, ProviderLogger, get_logger
 from .gemini import GeminiProvider
 from .claude import ClaudeProvider
@@ -21,8 +40,23 @@ __all__ = [
     "CompletionResponse",
     "ProviderConfig",
     "get_config",
+    "ProviderName",
+    # Model ID mappings
     "GEMINI_MODELS",
+    "CLAUDE_MODELS",
+    "MISTRAL_MODELS",
     "OLLAMA_MODELS",
+    "OLLAMA_MODEL_IDS",
+    # UI config
+    "PROVIDER_UI_CONFIG",
+    # Recommended models
+    "RECOMMENDED_MODELS",
+    # Model resolution functions
+    "get_model_id",
+    "get_default_model",
+    "list_model_keys",
+    "get_recommended_model",
+    # Provider classes
     "GeminiProvider",
     "ClaudeProvider",
     "MistralProvider",

@@ -133,14 +133,14 @@ class ForsetiAgent(BaseAgent):
             # Step 2: Category classification
             with self._tracer.span(
                 name="category_classification",
-                input={"title": title, "body": body, "current_category": category},
+                input={"title": title, "body": body, "category": category},
                 span_type="llm",
             ) as category_span:
                 classification: ClassificationResult = await self.execute_feature(
                     "category_classification",
                     title=title,
                     body=body,
-                    current_category=category,
+                    category=category,
                 )
                 category_span.update(
                     output=classification.model_dump(),
@@ -235,7 +235,7 @@ class ForsetiAgent(BaseAgent):
         self,
         title: str,
         body: str,
-        current_category: str | None = None,
+        category: str | None = None,
     ) -> ClassificationResult:
         """
         Classify category only.
@@ -243,7 +243,7 @@ class ForsetiAgent(BaseAgent):
         Args:
             title: Contribution title.
             body: Contribution body.
-            current_category: Optional existing category.
+            category: Optional existing category.
 
         Returns:
             ClassificationResult with assigned category.
@@ -252,7 +252,7 @@ class ForsetiAgent(BaseAgent):
             "category_classification",
             title=title,
             body=body,
-            current_category=current_category,
+            category=category,
         )
 
     async def correct_wording(

@@ -77,7 +77,7 @@ Analyze the following contribution:
 
 TITLE: {{title}}
 BODY: {{body}}
-{{current_category_line}}
+{{category_line}}
 
 Return a JSON object with:
 - "category": exactly one of the 7 categories listed above
@@ -145,7 +145,7 @@ PROMPTS = {
     "forseti.category_classification": {
         "template": CATEGORY_CLASSIFICATION_PROMPT,
         "type": "user",
-        "variables": ["title", "body", "current_category_line"],
+        "variables": ["title", "body", "category_line"],
         "description": "Classify contribution into one of 7 categories",
     },
     "forseti.wording_correction": {

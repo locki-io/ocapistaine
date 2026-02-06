@@ -2,20 +2,46 @@
 Provider Configuration
 
 Pydantic settings for all LLM providers with environment variable support.
+Single source of truth for model configurations across the application.
 """
 
+from typing import Literal
 from pydantic_settings import BaseSettings
 from pydantic import Field
 
 
+# =============================================================================
+# PROVIDER TYPE
+# =============================================================================
+ProviderName = Literal["gemini", "claude", "mistral", "ollama"]
+
+
+# =============================================================================
+# MODEL ID MAPPINGS (key -> full model ID)
+# =============================================================================
+
 # Gemini free tier models (2026-01)
 GEMINI_MODELS = {
-    "flash-lite": "gemini-2.5-flash-lite",  # Cheapest/fastest, great for high-volume or lightweight tasks
-    "flash": "gemini-2.5-flash",  # Best balance: fast + capable (most popular free default in 2026)
-    "pro": "gemini-2.5-pro",  # Strongest reasoning/coding among free models
-    # Optional extras if you want previews or aliases
-    "flash-preview": "gemini-2.5-flash-preview",  # Sometimes used for latest experimental tweaks
-    "pro-preview": "gemini-2.5-pro-preview",  # If you need bleeding-edge Pro features
+    "flash-lite": "gemini-2.5-flash-lite",  # Cheapest/fastest (~1000 req/day)
+    "flash": "gemini-2.5-flash",  # Best balance (~20 req/day)
+    "pro": "gemini-2.5-pro",  # Strongest reasoning (~25 req/day)
+    "flash-preview": "gemini-2.5-flash-preview",  # Experimental
+    "pro-preview": "gemini-2.5-pro-preview",  # Bleeding-edge
+}
+
+# Claude models (Anthropic)
+CLAUDE_MODELS = {
+    "haiku": "claude-3-haiku-20240307",  # Fast, cheap
+    "sonnet": "claude-3-5-sonnet-20241022",  # Balanced
+    "opus": "claude-3-opus-20240229",  # Most capable
+}
+
+# Mistral API models
+MISTRAL_MODELS = {
+    "tiny": "mistral-tiny-latest",  # Ultra-light
+    "small": "mistral-small-latest",  # Good French, fast
+    "medium": "mistral-medium-latest",  # Balanced
+    "large": "mistral-large-latest",  # Most capable
 }
 
 # Ollama local models - sorted by resource usage (lightest first)
@@ -59,13 +85,183 @@ OLLAMA_MODELS = {
         "ram_gb": 8,
         "use_case": "High quality outputs, more resources available",
     },
+    "llama3.2:latest": {
+        "name": "llama3.2:latest",
+        "description": "Llama 3.2 - Latest Llama",
+        "ram_gb": 8,
+        "use_case": "General purpose, good quality",
+    },
     "deepseek-r1:14b": {
         "name": "deepseek-r1:14b",
         "description": "DeepSeek R1 14B - Better reasoning",
         "ram_gb": 10,
         "use_case": "Complex reasoning, higher quality",
     },
+    "orca-mini:latest": {
+        "name": "orca-mini:latest",
+        "description": "Orca Mini - Lightweight, fast",
+        "ram_gb": 4,
+        "use_case": "Quick tasks, low-resource",
+    },
 }
+
+# Simple key -> model ID for Ollama (for UI dropdowns)
+OLLAMA_MODEL_IDS = {k: v["name"] for k, v in OLLAMA_MODELS.items()}
+
+
+# =============================================================================
+# PROVIDER UI CONFIGURATION
+# =============================================================================
+PROVIDER_UI_CONFIG = {
+    "gemini": {
+        "name_key": "provider_google_gemini",
+        "models": {
+            "flash-lite": "gemini-2.5-flash-lite (~1000 req/day)",
+            "flash": "gemini-2.5-flash (~20 req/day)",
+        },
+        "default": "flash-lite",
+    },
+    "claude": {
+        "name_key": "provider_anthropic_claude",
+        "models": {
+            "haiku": "claude-3-haiku (fast, cheap)",
+            "sonnet": "claude-3.5-sonnet (balanced)",
+        },
+        "default": "haiku",
+    },
+    "mistral": {
+        "name_key": "provider_mistral_ai",
+        "models": {
+            "small": "mistral-small-latest",
+            "medium": "mistral-medium-latest",
+        },
+        "default": "small",
+    },
+    "ollama": {
+        "name_key": "provider_ollama",
+        "models": {
+            "deepseek-r1:7b": "DeepSeek R1 7B (reasoning)",
+            "mistral:7b": "Mistral 7B (balanced)",
+            "mistral:latest": "Mistral latest",
+            "llama3.2:latest": "Llama 3.2 latest",
+            "orca-mini:latest": "Orca Mini (light)",
+        },
+        "default": "deepseek-r1:7b",
+    },
+}
+
+
+# =============================================================================
+# MODEL ID RESOLUTION
+# =============================================================================
+def get_model_id(provider: str, model_key: str) -> str:
+    """
+    Get the full model ID for a provider and model key.
+
+    This is the SINGLE function to use for resolving model keys to IDs.
+    Used by sidebar.py, session.py, and other modules.
+
+    Args:
+        provider: Provider name (gemini, claude, mistral, ollama)
+        model_key: Short model key (e.g., "flash", "haiku", "small")
+
+    Returns:
+        Full model identifier for the provider API
+    """
+    if provider == "gemini":
+        return GEMINI_MODELS.get(model_key, "gemini-2.5-flash-lite")
+    elif provider == "claude":
+        return CLAUDE_MODELS.get(model_key, "claude-3-haiku-20240307")
+    elif provider == "mistral":
+        return MISTRAL_MODELS.get(model_key, "mistral-small-latest")
+    elif provider == "ollama":
+        # Ollama keys can be the model ID directly or a key
+        if model_key in OLLAMA_MODELS:
+            return OLLAMA_MODELS[model_key]["name"]
+        return model_key  # Assume it's already a model ID
+    return model_key  # Fallback: return as-is
+
+
+def get_default_model(provider: str) -> str:
+    """Get the default model key for a provider."""
+    if provider in PROVIDER_UI_CONFIG:
+        return PROVIDER_UI_CONFIG[provider]["default"]
+    return "mistral:latest"
+
+
+def list_model_keys(provider: str) -> list[str]:
+    """List available model keys for a provider."""
+    if provider in PROVIDER_UI_CONFIG:
+        return list(PROVIDER_UI_CONFIG[provider]["models"].keys())
+    return []
+
+
+# =============================================================================
+# RECOMMENDED MODELS PER USE CASE
+# =============================================================================
+# Use case -> provider -> model key (for tasks requiring specific capabilities)
+RECOMMENDED_MODELS = {
+    # Field Input: theme extraction, contribution generation (needs reasoning)
+    "field_input": {
+        "gemini": "flash",
+        "claude": "sonnet",
+        "mistral": "small",
+        "ollama": "deepseek-r1:7b",
+    },
+    # Charter validation (Forseti)
+    "charter_validation": {
+        "gemini": "flash",
+        "claude": "sonnet",
+        "mistral": "small",
+        "ollama": "deepseek-r1:7b",
+    },
+    # Mockup mutations (fast generation)
+    "mockup_mutations": {
+        "gemini": "flash-lite",
+        "claude": "haiku",
+        "mistral": "small",
+        "ollama": "mistral:7b",
+    },
+    # Default fallback
+    "default": {
+        "gemini": "flash-lite",
+        "claude": "haiku",
+        "mistral": "small",
+        "ollama": "deepseek-r1:7b",
+    },
+}
+
+
+def get_recommended_model(
+    provider: str,
+    use_case: str = "default",
+    model_override: str | None = None,
+) -> str:
+    """
+    Get the recommended model ID for a provider and use case.
+
+    This handles the model override pattern used throughout the app:
+    - If model_override is provided, use it (resolve key to ID if needed)
+    - Otherwise, use the recommended model for the use case
+
+    Args:
+        provider: Provider name (gemini, claude, mistral, ollama)
+        use_case: Use case name (field_input, charter_validation, etc.)
+        model_override: Optional explicit model override (key or full ID)
+
+    Returns:
+        Full model ID ready for the provider API
+    """
+    if model_override:
+        # User provided explicit model - resolve it
+        return get_model_id(provider, model_override)
+
+    # Get recommended key for use case
+    use_case_models = RECOMMENDED_MODELS.get(use_case, RECOMMENDED_MODELS["default"])
+    model_key = use_case_models.get(provider, get_default_model(provider))
+
+    # Resolve key to full ID
+    return get_model_id(provider, model_key)
 
 
 class ProviderConfig(BaseSettings):

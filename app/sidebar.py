@@ -12,7 +12,11 @@ import uuid
 import streamlit as st
 from typing import Optional
 
-from app.providers.config import GEMINI_MODELS
+from app.providers.config import (
+    PROVIDER_UI_CONFIG,
+    get_model_id as providers_get_model_id,
+    get_default_model,
+)
 from app.services.translations import _, language_selector, get_language
 from app.services import PresentationLogger
 from app.services.session import (
@@ -24,43 +28,8 @@ from app.services.session import (
 # Sidebar logger
 _logger = PresentationLogger("sidebar")
 
-# Available LLM providers and their models
-PROVIDERS = {
-    "gemini": {
-        "name_key": "provider_google_gemini",
-        "models": {
-            "flash-lite": "gemini-2.5-flash-lite (~1000 req/day)",
-            "flash": "gemini-2.5-flash (~20 req/day)",
-            # "pro": "gemini-2.5-pro-exp (~25 req/day)",
-        },
-        "default": "flash-lite",
-    },
-    "claude": {
-        "name_key": "provider_anthropic_claude",
-        "models": {
-            "haiku": "claude-3-haiku (fast, cheap)",
-            "sonnet": "claude-3.5-sonnet (balanced)",
-        },
-        "default": "haiku",
-    },
-    "mistral": {
-        "name_key": "provider_mistral_ai",
-        "models": {
-            "small": "mistral-small-latest",
-            "medium": "mistral-medium-latest",
-        },
-        "default": "small",
-    },
-    "ollama": {
-        "name_key": "provider_ollama",
-        "models": {
-            "mistral": "mistral:latest",
-            "llama3.2": "llama3.2:latest",
-            "orca-mini": "orca-mini:latest",
-        },
-        "default": "mistral",
-    },
-}
+# Use centralized provider config from app/providers/config.py
+PROVIDERS = PROVIDER_UI_CONFIG
 
 
 def get_user_id() -> str:
@@ -238,7 +207,7 @@ def _display_provider_selector(user_id: str) -> None:
     selected_provider = st.selectbox(
         _("sidebar_provider"),
         options=provider_names,
-        disabled=True,
+        disabled=False,
         index=(
             provider_names.index(current_provider)
             if current_provider in provider_names
@@ -329,31 +298,7 @@ def get_model_id() -> str:
     """Get the full model ID for the current selection."""
     provider = get_selected_provider()
     model_key = get_selected_model()
-
-    if provider == "gemini":
-        return GEMINI_MODELS.get(model_key, "gemini-2.0-flash-lite")
-    elif provider == "claude":
-        model_map = {
-            "haiku": "claude-3-haiku-20240307",
-            "sonnet": "claude-3-5-sonnet-20241022",
-        }
-        return model_map.get(model_key, "claude-3-haiku-20240307")
-    elif provider == "mistral":
-        model_map = {
-            "small": "mistral-small-latest",
-            "medium": "mistral-medium-latest",
-        }
-        return model_map.get(model_key, "mistral-small-latest")
-    elif provider == "ollama":
-        model_map = {
-            "mistral": "mistral:latest",
-            "llama3.2": "llama3.2:latest",
-            "orca-mini": "orca-mini:latest",
-        }
-        return model_map.get(model_key, "mistral:latest")
-
-    # Default fallback to Ollama
-    return "mistral:latest"
+    return providers_get_model_id(provider, model_key)
 
 
 def _display_status_indicators() -> None:

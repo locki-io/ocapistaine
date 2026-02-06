@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-02-04T16:58:30.511130",
-  "count": 62,
+  "generated_at": "2026-02-05T08:00:52.537062",
+  "count": 66,
   "contributions": [
     {
       "id": "base_ass_001",
@@ -1229,6 +1229,105 @@
       },
       "title": "LA COMMUTATION VÉLODÉLICHE À AUDIERNE SOIT PARfois ENHAGEÉE PAR UNE CONGESTIO...",
       "body": "**Constat factuel:**\nLA COMMUTATION VÉLODÉLICHE À AUDIERNE SOIT PARfois ENHAGEÉE PAR UNE CONGESTION TERRITORIALE ET DES retardS DANS LA LOGISTIQUE COMMERCIALE, Cela Plige A L'INCONVENIENCE DES ENTREPRENDEURS ET Des CONSUMMATEURS Locaux.\n\n**Vos idées d'améliorations:**\nIntégrer des solutions numériques pour améliorer la connexióN COMMERCIALE et réduire les temps de livraisons, implémenter des systèmes de MAnAGEMENT RÉGINAUX pour optimiser la distribución Des bienS, et renforcer L'Participation active Des citoyens dans La gestion COMMUNAUTIERE De LA logistique."
+    },
+    {
+      "id": "field_associations_5fdfc4c4",
+      "category": "associations",
+      "constat_factuel": "Au sein de la commune d'Audierne, les conflits sur la pêche met en lumière des rivalités entre les institutions locales et les collectives, affectant directement les responsabilités des entités gouvernementales et les interests des рыбiculteurs.",
+      "idees_ameliorations": "Pour raffiner ce processus, il serait pertinent de organiser des consultationsjointes entre les diffèrents acteurs du scene pour échanger des idées et des solutions concrètes. De plus, la création d'un comité local chargé de gérer ces conflits par le biais de débats ouphelins pourrait renforcer la transparence et permettre une meilleure gestion de la rsolution.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "conflictus communautaire",
+        "source_title": "Compte-rendu de la réunion de vœux du maire d'Audierne - Janvier 2026 (Mayor-2026-wishes.md)",
+        "generated_date": "2026-02-05",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Au sein de la commune d'Audierne, les conflits sur la pêche met en lumière de...",
+      "body": "**Constat factuel:**\nAu sein de la commune d'Audierne, les conflits sur la pêche met en lumière des rivalités entre les institutions locales et les collectives, affectant directement les responsabilités des entités gouvernementales et les interests des рыбiculteurs.\n\n**Vos idées d'améliorations:**\nPour raffiner ce processus, il serait pertinent de organiser des consultationsjointes entre les diffèrents acteurs du scene pour échanger des idées et des solutions concrètes. De plus, la création d'un comité local chargé de gérer ces conflits par le biais de débats ouphelins pourrait renforcer la transparence et permettre une meilleure gestion de la rsolution."
+    },
+    {
+      "id": "field_associations_afe08646",
+      "category": "associations",
+      "constat_factuel": "Au sein de la commune d'Audierne, les conflits sur la pêche reflètent des rivalités entre les institutions locales et collectives, affectant particulièrement les professionnels de la pêchée et les small-scale fishers locaux.",
+      "idees_ameliorations": "Créer un comité local chargé de medier entre les differents acteurs concernés, permettant une discussion équilibrée et constructivede la gestion des ressources marines. Organiser des ateliers de discussion entre les differents groupes affectedes pour mieux comprendre les besoins communs et trouver des solutions mutuelles. Mettre en place un système de suivi regularisé des normes de gestion des esquimes pour garantir un equilibre entre l'exploitation responsable et la durabilité des ressources.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "conflictus communautaire",
+        "source_title": "Compte-rendu de la réunion de vœux du maire d'Audierne - Janvier 2026 (Mayor-2026-wishes.md)",
+        "generated_date": "2026-02-05",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Au sein de la commune d'Audierne, les conflits sur la pêche reflètent des riv...",
+      "body": "**Constat factuel:**\nAu sein de la commune d'Audierne, les conflits sur la pêche reflètent des rivalités entre les institutions locales et collectives, affectant particulièrement les professionnels de la pêchée et les small-scale fishers locaux.\n\n**Vos idées d'améliorations:**\nCréer un comité local chargé de medier entre les differents acteurs concernés, permettant une discussion équilibrée et constructivede la gestion des ressources marines. Organiser des ateliers de discussion entre les differents groupes affectedes pour mieux comprendre les besoins communs et trouver des solutions mutuelles. Mettre en place un système de suivi regularisé des normes de gestion des esquimes pour garantir un equilibre entre l'exploitation responsable et la durabilité des ressources."
+    },
+    {
+      "id": "field_associations_0695daf5",
+      "category": "associations",
+      "constat_factuel": "Le conflit sur la pêche met en lumière les rivalités entre institutions locales et collectives, caustiques pour le développement communautaire.",
+      "idees_ameliorations": "Pour améliorer la situation, il serait utile de créer des comités locales engagées dans la gestion de la pêchée conjointement avec les organisations locales. Cela permettrait aux collectivités de collaborer pour trouver des solutions plus respectueuses des besoins communs et les priorités éthiques.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "conflictus communautaire",
+        "source_title": "Compte-rendu de la réunion de vœux du maire d'Audierne - Janvier 2026 (Mayor-2026-wishes.md)",
+        "generated_date": "2026-02-05",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Le conflit sur la pêche met en lumière les rivalités entre institutions local...",
+      "body": "**Constat factuel:**\nLe conflit sur la pêche met en lumière les rivalités entre institutions locales et collectives, caustiques pour le développement communautaire.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il serait utile de créer des comités locales engagées dans la gestion de la pêchée conjointement avec les organisations locales. Cela permettrait aux collectivités de collaborer pour trouver des solutions plus respectueuses des besoins communs et les priorités éthiques."
+    },
+    {
+      "id": "field_associations_1a72fef0",
+      "category": "associations",
+      "constat_factuel": [
+        "Le conflit de pêche dans la commune d'Audierne reveal les rivalités entre les institutions locales et collectives, posant des problèmes pour la qualité de vie commune.",
+        "Ces conflits n'ont pas de solutions claires et engendrent une insuffisance de transparence et de collaboration entre les différents acteurs entourants le secteur de l'eau."
+      ],
+      "idees_ameliorations": [
+        "Créer un comité local chargé de coordonnation et de résolution des conflits de pêche en ren forçant des décisions concrètes.",
+        "Promouvoir la transparence dans les interactions entre les autorités locales et les collectivités pour mieux informer et engager la population à des décisions communautaires.",
+        "Aumenter l'appui fiscal et financier pour soutenir les recherches scientifiques sur la gestion durable de l'océan, ce qui permettrait de proposer des normes éthiques et des contrôles rigoureux.",
+        "Établir des conventions intercommunautaires strictes sur la pêche en limitant les accès aux rues à mer et en instaurant des réglementations équitable et respectueuses de l'environnement."
+      ],
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "conflictus communautaire",
+        "source_title": "Compte-rendu de la réunion de vœux du maire d'Audierne - Janvier 2026 (Mayor-2026-wishes.md)",
+        "generated_date": "2026-02-05",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": [
+        "Le conflit de pêche dans la commune d'Audierne reveal les rivalités entre les institutions locales et collectives, posant des problèmes pour la qualité de vie commune.",
+        "Ces conflits n'ont pas de solutions claires et engendrent une insuffisance de transparence et de collaboration entre les différents acteurs entourants le secteur de l'eau."
+      ],
+      "body": "**Constat factuel:**\n[\"Le conflit de pêche dans la commune d'Audierne reveal les rivalités entre les institutions locales et collectives, posant des problèmes pour la qualité de vie commune.\", \"Ces conflits n'ont pas de solutions claires et engendrent une insuffisance de transparence et de collaboration entre les différents acteurs entourants le secteur de l'eau.\"]\n\n**Vos idées d'améliorations:**\n['Créer un comité local chargé de coordonnation et de résolution des conflits de pêche en ren forçant des décisions concrètes.', 'Promouvoir la transparence dans les interactions entre les autorités locales et les collectivités pour mieux informer et engager la population à des décisions communautaires.', \"Aumenter l'appui fiscal et financier pour soutenir les recherches scientifiques sur la gestion durable de l'océan, ce qui permettrait de proposer des normes éthiques et des contrôles rigoureux.\", \"Établir des conventions intercommunautaires strictes sur la pêche en limitant les accès aux rues à mer et en instaurant des réglementations équitable et respectueuses de l'environnement.\"]"
     }
   ]
 }

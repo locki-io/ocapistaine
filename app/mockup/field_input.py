@@ -16,7 +16,7 @@ import json
 import asyncio
 from pathlib import Path
 from datetime import date
-from typing import List, Dict, Any, Optional, Literal
+from typing import List, Dict, Any, Optional
 from dataclasses import dataclass, field
 
 from app.services import AgentLogger
@@ -25,21 +25,17 @@ from app.mockup.generator import (
     save_contributions,
     load_contributions,
 )
-from app.providers import get_provider, Message, get_config, GEMINI_MODELS
+from app.providers import get_provider, Message
+from app.providers.config import ProviderName, get_recommended_model
 
 # Import categories from Forseti (single source of truth)
-from app.agents.forseti import CATEGORIES, CATEGORY_DESCRIPTIONS
+from app.agents.forseti import CATEGORIES
 
-# Provider type for field input
-ProviderType = Literal["gemini", "claude", "ollama"]
+# Provider type for field input - use centralized type
+ProviderType = ProviderName
 
-# Recommended models for field input (need reasoning capabilities)
-RECOMMENDED_MODELS = {
-    "gemini": "gemini-2.5-flash",  # Best balance: fast + capable with grounding
-    "claude": "claude-3-5-sonnet-20241022",  # Strong reasoning
-    "ollama": "mistral:latest",  # Local fallback
-}
-
+# Use case name for this module (used with get_recommended_model)
+USE_CASE = "field_input"
 
 _logger = AgentLogger("field_input")
 
@@ -160,7 +156,8 @@ class FieldInputGenerator:
             model: Optional model override. If None, uses recommended model for provider.
         """
         self._provider_name = provider
-        self._model = model or RECOMMENDED_MODELS.get(provider, "mistral:latest")
+        # Get recommended model for field_input use case, with optional override
+        self._model = get_recommended_model(provider, USE_CASE, model)
 
         # Get provider instance with model override if specified
         if model:
