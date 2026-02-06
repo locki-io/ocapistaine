@@ -912,3 +912,472 @@ def get_experiment_filters(experiment_type: str) -> dict:
         },
         "example_filter": f'name = "{span_name}" AND feedback_scores.Correctness < 0.7 AND type = "llm"',
     }
+
+
+# =============================================================================
+# Dataset Assembly for Prompt Optimization
+# =============================================================================
+
+
+def assemble_optimization_dataset(
+    experiment_type: str = "charter_optimization",
+    good_pct: int = 60,
+    low_correctness_pct: int = 25,
+    violations_pct: int = 15,
+    target_size: int = 100,
+    source_datasets: list[str] = None,
+    include_redis: bool = True,
+    include_github: bool = True,
+    dataset_name: str = None,
+) -> dict:
+    """
+    Assemble a balanced dataset for prompt optimization.
+
+    Creates a dataset with controlled proportions of:
+    - Good contributions: High confidence, valid (tests prompt stability)
+    - Low correctness: Low confidence or edge cases (tests prompt improvement areas)
+    - Violations: Invalid contributions (tests violation detection)
+
+    This balance prevents the optimizer from making drastic changes by
+    ensuring the prompt still handles good cases well while improving
+    on edge cases.
+
+    Args:
+        experiment_type: Type of experiment ("charter_optimization" or "category_optimization")
+        good_pct: Percentage of good contributions (default: 60%)
+        low_correctness_pct: Percentage of low correctness items (default: 25%)
+        violations_pct: Percentage of violations (default: 15%)
+        target_size: Target number of items in final dataset (default: 100)
+        source_datasets: List of Opik dataset names to pull from
+        include_redis: If True, also pull from Redis storage (default: True)
+        include_github: If True, include GitHub issues as good contributions (default: True)
+        dataset_name: Custom name for the assembled dataset
+
+    Returns:
+        dict with assembly results:
+        - dataset_name: Name of created dataset
+        - total_items: Number of items in dataset
+        - composition: Breakdown by category
+        - sources: Where items came from
+
+    Note:
+        GitHub contributions are always categorized as "good" since they are
+        real citizen contributions from the participatory platform.
+
+    Experiment Types:
+        - charter_optimization: expected_output has is_valid, violations, encouraged_aspects
+        - category_optimization: expected_output has category, confidence, reasoning
+    """
+    from opik import Opik
+    import random
+
+    client = Opik()
+
+    # Get experiment config
+    from app.services.tasks import get_feature_config
+    feature_config = get_feature_config(experiment_type)
+    if not feature_config:
+        return {
+            "status": "error",
+            "error": f"Unknown experiment type: {experiment_type}. Use 'charter_optimization' or 'category_optimization'",
+        }
+
+    dataset_prefix = feature_config.get("dataset_prefix", "optimization")
+
+    # Calculate target counts
+    good_target = int(target_size * good_pct / 100)
+    low_target = int(target_size * low_correctness_pct / 100)
+    violations_target = target_size - good_target - low_target  # Remainder
+
+    logger.info(f"Assembling optimization dataset for {experiment_type}:")
+    logger.info(f"  Target: {target_size} items ({good_pct}/{low_correctness_pct}/{violations_pct})")
+    logger.info(f"  Good: {good_target}, Low correctness: {low_target}, Violations: {violations_target}")
+
+    # Collect items from all sources
+    all_items = {
+        "good": [],
+        "low_correctness": [],
+        "violations": [],
+    }
+    sources_used = []
+
+    # 1. Pull from existing Opik datasets
+    if source_datasets:
+        for ds_name in source_datasets:
+            try:
+                dataset = client.get_dataset(name=ds_name)
+                items = list(dataset.get_items())
+                logger.info(f"  Source dataset '{ds_name}': {len(items)} items")
+                sources_used.append({"name": ds_name, "type": "opik_dataset", "count": len(items)})
+
+                for item in items:
+                    categorized = _categorize_dataset_item(item)
+                    if categorized:
+                        all_items[categorized["category"]].append(categorized["item"])
+
+            except Exception as e:
+                logger.warning(f"  Could not load dataset '{ds_name}': {e}")
+
+    # 2. Pull from Redis storage
+    if include_redis:
+        try:
+            from app.mockup.storage import get_storage
+
+            storage = get_storage()
+            records = storage.get_latest_validations(limit=500)
+            logger.info(f"  Redis storage: {len(records)} records")
+            sources_used.append({"name": "redis_mockup", "type": "redis", "count": len(records)})
+
+            for rec in records:
+                categorized = _categorize_validation_record(rec)
+                if categorized:
+                    all_items[categorized["category"]].append(categorized["item"])
+
+        except Exception as e:
+            logger.warning(f"  Could not load Redis storage: {e}")
+
+    # 3. Pull from GitHub issues (always "good" - real citizen contributions)
+    if include_github:
+        try:
+            from app.services.github_issues import get_issues_with_dates
+
+            issues = get_issues_with_dates(state="all", per_page=100)
+            logger.info(f"  GitHub issues: {len(issues)} contributions")
+            sources_used.append({"name": "github_issues", "type": "github", "count": len(issues)})
+
+            for issue in issues:
+                formatted = _format_github_issue(issue)
+                if formatted:
+                    # GitHub issues are always "good" - real citizen contributions
+                    all_items["good"].append(formatted)
+
+        except Exception as e:
+            logger.warning(f"  Could not load GitHub issues: {e}")
+
+    # Log available items
+    logger.info(f"  Available - Good: {len(all_items['good'])}, Low: {len(all_items['low_correctness'])}, Violations: {len(all_items['violations'])}")
+
+    # 3. Sample to target proportions
+    final_items = []
+
+    # Sample good items
+    good_items = random.sample(all_items["good"], min(good_target, len(all_items["good"])))
+    final_items.extend(good_items)
+
+    # Sample low correctness items
+    low_items = random.sample(all_items["low_correctness"], min(low_target, len(all_items["low_correctness"])))
+    final_items.extend(low_items)
+
+    # Sample violations
+    violation_items = random.sample(all_items["violations"], min(violations_target, len(all_items["violations"])))
+    final_items.extend(violation_items)
+
+    # If we don't have enough items in a category, fill from others
+    shortfall = target_size - len(final_items)
+    if shortfall > 0:
+        logger.warning(f"  Shortfall of {shortfall} items - filling from available pool")
+        # Combine all remaining items
+        remaining = []
+        for cat in all_items.values():
+            remaining.extend([i for i in cat if i not in final_items])
+        if remaining:
+            extra = random.sample(remaining, min(shortfall, len(remaining)))
+            final_items.extend(extra)
+
+    # Shuffle to mix categories
+    random.shuffle(final_items)
+
+    # 4. Create Opik dataset
+    if dataset_name is None:
+        timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+        dataset_name = f"{dataset_prefix}-balanced-{timestamp}"
+
+    try:
+        dataset = client.get_or_create_dataset(
+            name=dataset_name,
+            description=f"Balanced dataset for prompt optimization ({good_pct}/{low_correctness_pct}/{violations_pct})"
+        )
+
+        # Format items for the specific experiment type
+        formatted_items = [
+            _format_item_for_experiment(item, experiment_type)
+            for item in final_items
+        ]
+        # Filter out any None results
+        formatted_items = [item for item in formatted_items if item is not None]
+
+        # Insert items
+        dataset.insert(formatted_items)
+
+        logger.info(f"Created dataset '{dataset_name}' with {len(formatted_items)} items for {experiment_type}")
+
+    except Exception as e:
+        logger.error(f"Failed to create dataset: {e}")
+        return {
+            "status": "error",
+            "error": str(e),
+        }
+
+    # Calculate actual composition
+    actual_good = len(good_items)
+    actual_low = len(low_items)
+    actual_violations = len(violation_items)
+
+    return {
+        "status": "success",
+        "dataset_name": dataset_name,
+        "total_items": len(final_items),
+        "composition": {
+            "good": {"count": actual_good, "pct": round(actual_good / len(final_items) * 100, 1) if final_items else 0},
+            "low_correctness": {"count": actual_low, "pct": round(actual_low / len(final_items) * 100, 1) if final_items else 0},
+            "violations": {"count": actual_violations, "pct": round(actual_violations / len(final_items) * 100, 1) if final_items else 0},
+        },
+        "target_composition": {
+            "good_pct": good_pct,
+            "low_correctness_pct": low_correctness_pct,
+            "violations_pct": violations_pct,
+        },
+        "sources": sources_used,
+        "available_pool": {
+            "good": len(all_items["good"]),
+            "low_correctness": len(all_items["low_correctness"]),
+            "violations": len(all_items["violations"]),
+        },
+    }
+
+
+def _categorize_dataset_item(item: dict) -> Optional[dict]:
+    """
+    Categorize an Opik dataset item into good/low_correctness/violations.
+
+    Returns dict with 'category' and 'item' (formatted for Opik dataset).
+    """
+    try:
+        input_data = item.get("input", {})
+        expected = item.get("expected_output", {})
+
+        # Check if it's a validation result
+        is_valid = expected.get("is_valid", True)
+        confidence = expected.get("confidence", 0.8)
+        violations = expected.get("violations", [])
+
+        # Categorize
+        if not is_valid or violations:
+            category = "violations"
+        elif confidence < 0.7:
+            category = "low_correctness"
+        else:
+            category = "good"
+
+        # Format for Opik dataset
+        formatted_item = {
+            "input": input_data,
+            "expected_output": expected,
+        }
+
+        return {"category": category, "item": formatted_item}
+
+    except Exception:
+        return None
+
+
+def _categorize_validation_record(rec) -> Optional[dict]:
+    """
+    Categorize a Redis ValidationRecord into good/low_correctness/violations.
+
+    Returns dict with 'category' and 'item' (formatted for Opik dataset).
+    """
+    try:
+        # Categorize based on validation result
+        if not rec.is_valid or rec.violations:
+            category = "violations"
+        elif rec.confidence < 0.7:
+            category = "low_correctness"
+        else:
+            category = "good"
+
+        # Format for Opik dataset (matches expected schema)
+        formatted_item = {
+            "input": {
+                "title": rec.title,
+                "body": rec.body,
+                "category": rec.category,
+            },
+            "expected_output": {
+                "is_valid": rec.is_valid,
+                "violations": rec.violations or [],
+                "encouraged_aspects": rec.encouraged_aspects or [],
+                "confidence": rec.confidence,
+                "reasoning": rec.reasoning,
+            },
+        }
+
+        return {"category": category, "item": formatted_item}
+
+    except Exception:
+        return None
+
+
+def _format_item_for_experiment(item: dict, experiment_type: str) -> Optional[dict]:
+    """
+    Format a dataset item for a specific experiment type.
+
+    Different experiment types expect different expected_output schemas:
+    - charter_optimization: is_valid, violations, encouraged_aspects, confidence, reasoning
+    - category_optimization: category, confidence, reasoning
+
+    Args:
+        item: Raw dataset item with input and expected_output
+        experiment_type: The experiment type to format for
+
+    Returns:
+        Formatted item or None if invalid
+    """
+    try:
+        input_data = item.get("input", {})
+        expected = item.get("expected_output", {})
+
+        if experiment_type == "charter_optimization":
+            # Charter validation format
+            formatted = {
+                "input": {
+                    "title": input_data.get("title", ""),
+                    "body": input_data.get("body", ""),
+                    "category": input_data.get("category", "general"),
+                },
+                "expected_output": {
+                    "is_valid": expected.get("is_valid", True),
+                    "violations": expected.get("violations", []),
+                    "encouraged_aspects": expected.get("encouraged_aspects", []),
+                    "confidence": expected.get("confidence", 0.8),
+                    "reasoning": expected.get("reasoning", ""),
+                },
+            }
+
+        elif experiment_type == "category_optimization":
+            # Category classification format
+            # The expected category comes from input.category (the assigned category)
+            formatted = {
+                "input": {
+                    "title": input_data.get("title", ""),
+                    "body": input_data.get("body", ""),
+                    # For category classification, we might want to test without the category hint
+                    # or include it for suggested_category validation
+                },
+                "expected_output": {
+                    "category": input_data.get("category", "general"),
+                    "confidence": expected.get("confidence", 0.8),
+                    "reasoning": expected.get("reasoning", ""),
+                },
+            }
+
+        else:
+            # Unknown type - return as-is
+            formatted = item
+
+        # Preserve metadata if present
+        if "metadata" in item:
+            formatted["metadata"] = item["metadata"]
+
+        return formatted
+
+    except Exception:
+        return None
+
+
+def _format_github_issue(issue: dict) -> Optional[dict]:
+    """
+    Format a GitHub issue for Opik dataset.
+
+    GitHub issues are real citizen contributions, so they are considered
+    "good" by definition with high expected confidence.
+
+    Args:
+        issue: GitHub issue dict with title, body, labels, etc.
+
+    Returns:
+        Formatted item for Opik dataset, or None if invalid.
+    """
+    try:
+        title = issue.get("title", "")
+        body = issue.get("body", "")
+
+        # Skip empty issues
+        if not title or not body:
+            return None
+
+        # Try to extract category from labels
+        labels = issue.get("labels", [])
+        category = "general"  # Default category
+        for label in labels:
+            label_name = label.get("name", "").lower() if isinstance(label, dict) else str(label).lower()
+            # Map common labels to categories
+            if any(kw in label_name for kw in ["urbanisme", "urban"]):
+                category = "urbanisme"
+            elif any(kw in label_name for kw in ["environnement", "ecologie", "vert"]):
+                category = "environnement"
+            elif any(kw in label_name for kw in ["social", "solidarite"]):
+                category = "social"
+            elif any(kw in label_name for kw in ["culture", "patrimoine"]):
+                category = "culture"
+            elif any(kw in label_name for kw in ["economie", "commerce"]):
+                category = "economie"
+            elif any(kw in label_name for kw in ["mobilite", "transport"]):
+                category = "mobilite"
+
+        # Format for Opik dataset
+        # GitHub issues are good by definition - they're real citizen contributions
+        formatted_item = {
+            "input": {
+                "title": title,
+                "body": body,
+                "category": category,
+            },
+            "expected_output": {
+                "is_valid": True,  # Real contributions are valid
+                "violations": [],
+                "encouraged_aspects": ["Constructive citizen contribution"],
+                "confidence": 0.95,  # High confidence expected
+                "reasoning": "Real citizen contribution from participatory platform",
+            },
+            "metadata": {
+                "source": "github",
+                "issue_number": issue.get("number"),
+                "has_conforme_charte": issue.get("has_conforme_charte", False),
+            },
+        }
+
+        return formatted_item
+
+    except Exception:
+        return None
+
+
+def list_available_datasets() -> list[dict]:
+    """
+    List all available Opik datasets with item counts.
+
+    Returns list of dataset info dicts.
+    """
+    from opik import Opik
+
+    client = Opik()
+    datasets = client.get_datasets()
+
+    result = []
+    for ds in datasets:
+        try:
+            items = list(ds.get_items())
+            result.append({
+                "name": ds.name,
+                "description": ds.description or "",
+                "item_count": len(items),
+            })
+        except Exception:
+            result.append({
+                "name": ds.name,
+                "description": ds.description or "",
+                "item_count": "error",
+            })
+
+    return result

@@ -53,7 +53,10 @@ def scheduler_dashboard_view(user_id: str):
 
         st.markdown("---")
 
-        # 6. Experiment Runner
+        # 6. Dataset Assembly
+        _display_dataset_assembly()
+
+        # 7. Experiment Runner
         _display_experiment_runner()
 
         st.markdown("---")
@@ -922,6 +925,168 @@ def _display_opik_judge_config():
             reset_opik_judge_config()
             st.info("Reset to OpenAI gpt-4o-mini")
             st.rerun()
+
+
+def _display_dataset_assembly():
+    """Display dataset assembly UI for creating balanced optimization datasets."""
+    from app.processors.workflows import (
+        list_datasets,
+        assemble_optimization_dataset,
+        list_available_datasets,
+        list_experiment_types,
+    )
+
+    st.markdown("### 📦 Assemble Optimization Dataset")
+    st.caption("Create a balanced dataset for prompt optimization (mix good/edge/violations)")
+
+    # Experiment type selection
+    experiment_types = list_experiment_types()
+    type_options = [t["type"] for t in experiment_types]
+    type_labels = {t["type"]: f"{t['type']} - {t['description'][:50]}..." for t in experiment_types}
+
+    experiment_type = st.selectbox(
+        "Experiment Type",
+        type_options,
+        key="assembly_experiment_type",
+        format_func=lambda x: type_labels.get(x, x),
+        help="Determines the expected_output format for the dataset",
+    )
+
+    st.markdown("---")
+
+    # Ratio controls with sliders
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        good_pct = st.slider(
+            "Good (%)",
+            min_value=0,
+            max_value=100,
+            value=60,
+            step=5,
+            key="assembly_good_pct",
+            help="High confidence, valid contributions",
+        )
+
+    with col2:
+        low_pct = st.slider(
+            "Low Correctness (%)",
+            min_value=0,
+            max_value=100,
+            value=25,
+            step=5,
+            key="assembly_low_pct",
+            help="Low confidence or edge cases",
+        )
+
+    with col3:
+        violations_pct = st.slider(
+            "Violations (%)",
+            min_value=0,
+            max_value=100,
+            value=15,
+            step=5,
+            key="assembly_violations_pct",
+            help="Invalid contributions for testing",
+        )
+
+    # Show total percentage
+    total_pct = good_pct + low_pct + violations_pct
+    if total_pct != 100:
+        st.warning(f"Total: {total_pct}% (should be 100%)")
+    else:
+        st.success(f"Total: {total_pct}%")
+
+    # Target size
+    target_size = st.number_input(
+        "Target Size",
+        min_value=10,
+        max_value=500,
+        value=50,
+        step=10,
+        key="assembly_target_size",
+        help="Number of items in the assembled dataset",
+    )
+
+    # Source datasets
+    available_datasets = list_available_datasets()
+    if available_datasets:
+        dataset_names = [d["name"] for d in available_datasets]
+
+        # Default: select datasets with most items
+        sorted_datasets = sorted(available_datasets, key=lambda x: x.get("item_count", 0) if isinstance(x.get("item_count"), int) else 0, reverse=True)
+        default_sources = [d["name"] for d in sorted_datasets[:3]]
+
+        source_datasets = st.multiselect(
+            "Source Datasets",
+            dataset_names,
+            default=default_sources,
+            key="assembly_sources",
+            help="Select Opik datasets to pull from",
+        )
+    else:
+        source_datasets = []
+        st.info("No Opik datasets found")
+
+    # Include Redis
+    include_redis = st.checkbox(
+        "Include Redis Storage",
+        value=True,
+        key="assembly_include_redis",
+        help="Also pull from mockup validation storage",
+    )
+
+    # Include GitHub (default: True - real citizen contributions)
+    include_github = st.checkbox(
+        "Include GitHub Issues (Good)",
+        value=True,
+        key="assembly_include_github",
+        help="Include real citizen contributions from GitHub as 'good' examples",
+    )
+
+    # Assemble button
+    if st.button("🔧 Assemble Dataset", key="assemble_dataset"):
+        if total_pct != 100:
+            st.error("Percentages must total 100%")
+            return
+
+        with st.spinner("Assembling balanced dataset..."):
+            try:
+                result = assemble_optimization_dataset(
+                    experiment_type=experiment_type,
+                    good_pct=good_pct,
+                    low_correctness_pct=low_pct,
+                    violations_pct=violations_pct,
+                    target_size=target_size,
+                    source_datasets=source_datasets if source_datasets else None,
+                    include_redis=include_redis,
+                    include_github=include_github,
+                )
+
+                if result["status"] == "success":
+                    st.success(f"Created: **{result['dataset_name']}** ({result['total_items']} items)")
+
+                    # Show composition
+                    comp = result["composition"]
+                    st.markdown("**Composition:**")
+                    cols = st.columns(3)
+                    with cols[0]:
+                        st.metric("Good", f"{comp['good']['count']} ({comp['good']['pct']}%)")
+                    with cols[1]:
+                        st.metric("Low Correctness", f"{comp['low_correctness']['count']} ({comp['low_correctness']['pct']}%)")
+                    with cols[2]:
+                        st.metric("Violations", f"{comp['violations']['count']} ({comp['violations']['pct']}%)")
+
+                    # Show available pool
+                    pool = result["available_pool"]
+                    st.caption(f"Available pool: Good={pool['good']}, Low={pool['low_correctness']}, Violations={pool['violations']}")
+                else:
+                    st.error(f"Assembly failed: {result.get('error', 'Unknown error')}")
+
+            except Exception as e:
+                st.error(f"Error: {e}")
+
+    st.markdown("---")
 
 
 def _display_experiment_runner():

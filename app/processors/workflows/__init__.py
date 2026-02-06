@@ -42,6 +42,9 @@ from .workflow_experiment import (
     get_experiment_filters,
     create_charter_compliance_metric,
     create_confidence_metric,
+    # Dataset Assembly
+    assemble_optimization_dataset,
+    list_available_datasets,
 )
 
 __all__ = [
@@ -73,4 +76,7 @@ __all__ = [
     "get_experiment_filters",
     "create_charter_compliance_metric",
     "create_confidence_metric",
+    # Dataset Assembly
+    "assemble_optimization_dataset",
+    "list_available_datasets",
 ]

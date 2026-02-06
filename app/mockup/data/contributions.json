@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-02-06T12:03:03.369375",
-  "count": 100,
+  "generated_at": "2026-02-06T16:23:14.737163",
+  "count": 147,
   "contributions": [
     {
       "id": "base_ass_001",
@@ -2066,6 +2066,1044 @@
       },
       "title": "MoCAUDIERNE a plus de la moitié de sa population âgée de plus de 60 ans. La c...",
       "body": "**Constat factuel:**\nMoCAUDIERNE a plus de la moitié de sa population âgée de plus de 60 ans. La communauté et l'Hôpital de Douarnenez soutiennent des politiques pour les seniors, visant à renforcer les infrastructures de santé et de mobilité.\n\n**Vos idées d'améliorations:**\nAUGMENTER L'INFRACTION DES CENTRES EHPAD, AMéliorer les services de santé et de mobilité, créeZdes MOBILITÉS COMMUNAUTAIRES, dégagerZ des VIVIENNES Z seniors-friendlyES et organiserZ des ÉVÉNEMENTS COMMUNAUX pour renforcer les liens entre les seniors et les Jeunes."
+    },
+    {
+      "id": "field_jeunesse_d852d430",
+      "category": "jeunesse",
+      "constat_factuel": "Au sein de la cité d'Audierne, il y a un intérêt croissant des jeunes pour l'engagement et la prospective de la commune., Les spaces publics actuels ne satisfont pas aux besoins spécifiques de cette population active., La promotion de projets éducatifs liés à la cité permettrait d'engager plus de jeunes dans la construction commune.",
+      "idees_ameliorations": "Créer des espace dédiés aux jeunes dans les squares et les parc publics pour leurs activités., Collaborer avec les écoles locales pour organiser des ateliers sur l'urbanisme et la durabilité., Partager ces informations via les réseaux sociaux pour une meilleure visibilité et participation., Assurer l'accès de tous aux espaces publics pour une participation plus inclusive.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "youthengagement",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Au sein de la cité d'Audierne, il y a un intérêt croissant des jeunes pour l'...",
+      "body": "**Constat factuel:**\nAu sein de la cité d'Audierne, il y a un intérêt croissant des jeunes pour l'engagement et la prospective de la commune., Les spaces publics actuels ne satisfont pas aux besoins spécifiques de cette population active., La promotion de projets éducatifs liés à la cité permettrait d'engager plus de jeunes dans la construction commune.\n\n**Vos idées d'améliorations:**\nCréer des espace dédiés aux jeunes dans les squares et les parc publics pour leurs activités., Collaborer avec les écoles locales pour organiser des ateliers sur l'urbanisme et la durabilité., Partager ces informations via les réseaux sociaux pour une meilleure visibilité et participation., Assurer l'accès de tous aux espaces publics pour une participation plus inclusive."
+    },
+    {
+      "id": "field_jeunesse_606ce7ac",
+      "category": "jeunesse",
+      "constat_factuel": "Les jeunes de la commune Audierne sont fortement engagés sur la perspective de leur étabissement et veulent un futuresenate réactive à leurs attentes.",
+      "idees_ameliorations": "Renforcer l'engagement des jeunes parmi les décisions collectives de la commune est primordial pour refléter leurs attentes et stimuler le développement durable de la territory. Créer un channel de dialogue régulier entre les jeunes et les décideurs pour échanger des idées concrètes et implémentables.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "youthengagement",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les jeunes de la commune Audierne sont fortement engagés sur la perspective d...",
+      "body": "**Constat factuel:**\nLes jeunes de la commune Audierne sont fortement engagés sur la perspective de leur étabissement et veulent un futuresenate réactive à leurs attentes.\n\n**Vos idées d'améliorations:**\nRenforcer l'engagement des jeunes parmi les décisions collectives de la commune est primordial pour refléter leurs attentes et stimuler le développement durable de la territory. Créer un channel de dialogue régulier entre les jeunes et les décideurs pour échanger des idées concrètes et implémentables."
+    },
+    {
+      "id": "field_jeunesse_b738cdca",
+      "category": "jeunesse",
+      "constat_factuel": "À l'issue des débats du maire, il est parfois percuté que les jeunes de la commune ne prennent pas leur place dans la prospective de la ville. Cette observation soulève question sur l'engagement Permanent et constructif des jeunes dans les décisions locales.",
+      "idees_ameliorations": "Pour répondre à ce constat, il serait pertinent d'organiser des ateliers dédiés aux Jeunes pour échanger avec les adults et mieux comprendre leurs préoccupations. De plus, création de groupes de youth advisors pour évoquer leur contribution active dans la gestion de la ville.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "youthengagement",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "À l'issue des débats du maire, il est parfois percuté que les jeunes de la co...",
+      "body": "**Constat factuel:**\nÀ l'issue des débats du maire, il est parfois percuté que les jeunes de la commune ne prennent pas leur place dans la prospective de la ville. Cette observation soulève question sur l'engagement Permanent et constructif des jeunes dans les décisions locales.\n\n**Vos idées d'améliorations:**\nPour répondre à ce constat, il serait pertinent d'organiser des ateliers dédiés aux Jeunes pour échanger avec les adults et mieux comprendre leurs préoccupations. De plus, création de groupes de youth advisors pour évoquer leur contribution active dans la gestion de la ville."
+    },
+    {
+      "id": "field_jeunesse_04a9a9b2",
+      "category": "jeunesse",
+      "constat_factuel": "Les jeunes de l'audierne montrent un intérêt croissant pour la prospective de la commune, mais manquent de initiatives spécifiques pour renforcer leur implémentation active.",
+      "idees_ameliorations": "Créer des programmes dédiés aux jeunes porteurs de talent et d'idées, améliorer la communication avec eux via des réseaux sociaux ou des ateliers locaux, et organizede l'engagement youth oriented par des ateliers collaboratifs entre les jeunes et les décideurs.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "youthengagement",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les jeunes de l'audierne montrent un intérêt croissant pour la prospective de...",
+      "body": "**Constat factuel:**\nLes jeunes de l'audierne montrent un intérêt croissant pour la prospective de la commune, mais manquent de initiatives spécifiques pour renforcer leur implémentation active.\n\n**Vos idées d'améliorations:**\nCréer des programmes dédiés aux jeunes porteurs de talent et d'idées, améliorer la communication avec eux via des réseaux sociaux ou des ateliers locaux, et organizede l'engagement youth oriented par des ateliers collaboratifs entre les jeunes et les décideurs."
+    },
+    {
+      "id": "field_ecologie_2d86a457",
+      "category": "ecologie",
+      "constat_factuel": "Au sein de la commune d'Audierne, il semble que le niveau de participation à des projets de green et à des actions d'éducation en matière d'environnement soit limité par certaines sections de la population., idees_ameliorations: Des initiatives comme l'extension desitinée eternity ou la création de circuits collecteurs plus éducatifs pour les déchets organiques pourraient sensiblement renforcer la durabilité et la qualité de vie des habitants.",
+      "idees_ameliorations": "",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "sustainable_living",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Au sein de la commune d'Audierne, il semble que le niveau de participation à ...",
+      "body": "**Constat factuel:**\nAu sein de la commune d'Audierne, il semble que le niveau de participation à des projets de green et à des actions d'éducation en matière d'environnement soit limité par certaines sections de la population., idees_ameliorations: Des initiatives comme l'extension desitinée eternity ou la création de circuits collecteurs plus éducatifs pour les déchets organiques pourraient sensiblement renforcer la durabilité et la qualité de vie des habitants."
+    },
+    {
+      "id": "field_ecologie_6e6d2df3",
+      "category": "ecologie",
+      "constat_factuel": "L'auteurrenche constate que le management de l'usure et du déchets urbanisés est encore insuffisant, soulignant un besoin d'action plus globale pour améliorer l'environnement.",
+      "idees_ameliorations": "Organiser des ateliers éducatifs sur la réduction du usure et les matériaux biodegradables ; instaurer des boites de recyclage dans les rues ; mettre en place des incitations financières pour les produits durables.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "sustainable_living",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'auteurrenche constate que le management de l'usure et du déchets urbanisés ...",
+      "body": "**Constat factuel:**\nL'auteurrenche constate que le management de l'usure et du déchets urbanisés est encore insuffisant, soulignant un besoin d'action plus globale pour améliorer l'environnement.\n\n**Vos idées d'améliorations:**\nOrganiser des ateliers éducatifs sur la réduction du usure et les matériaux biodegradables ; instaurer des boites de recyclage dans les rues ; mettre en place des incitations financières pour les produits durables."
+    },
+    {
+      "id": "field_ecologie_ac3bb3f9",
+      "category": "ecologie",
+      "constat_factuel": "Le maire de la ville d'Audierne est actuellement impliqué dans des projets de green et des initiatives pédagogiques pour sensibiliser le public à l'environnement. Cependant, il semble que certaines pratiques sont encore insuffisantes ou qu'il_manque de coordination entre diffèrents groupes d'action.",
+      "idees_ameliorations": "Pour améliorer la situation environnementale, il serait pertinent d'agir sur des sources énergétiques renouvelables comme l'éolien ou le sable. De plus, renforcer les mouvements de transport en bus ou à vélo pourrait sensibiliser davantage la population. Enfin, améliorer la gestion des espaces verts pourrait renforcer la qualité de vie tout en réduisant l'impact environnemental.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "sustainable_living",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Le maire de la ville d'Audierne est actuellement impliqué dans des projets de...",
+      "body": "**Constat factuel:**\nLe maire de la ville d'Audierne est actuellement impliqué dans des projets de green et des initiatives pédagogiques pour sensibiliser le public à l'environnement. Cependant, il semble que certaines pratiques sont encore insuffisantes ou qu'il_manque de coordination entre diffèrents groupes d'action.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation environnementale, il serait pertinent d'agir sur des sources énergétiques renouvelables comme l'éolien ou le sable. De plus, renforcer les mouvements de transport en bus ou à vélo pourrait sensibiliser davantage la population. Enfin, améliorer la gestion des espaces verts pourrait renforcer la qualité de vie tout en réduisant l'impact environnemental."
+    },
+    {
+      "id": "field_ecologie_015ae88e",
+      "category": "ecologie",
+      "constat_factuel": "LE Changement RAPIDE EN ÉCOLOGIE À AUDIERNE SOIT EN DANGER DE CAUSER DES DÉLAYS ET DES PROBLÈMES ENVIRONNÉS. L'AGIR EN TIEMPOU POUR Réduire Les ImpactS SUR L'ECOLOGIE EST VITAL POUR LA Sostenabilité De La Communauté.",
+      "idees_ameliorations": "Intégrer Des INITIATIVES D'éducation ÉCOLOGIQUES À L'APPUI DES citoyens Pour Renforcer Le Comportement Sostenable. Créer Une Structure DE consultedÉS LOcales Envers Les ProJETS De Green Et Les INITIATIVES D'éducation Citoyennes.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "sustainable_living",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "LE Changement RAPIDE EN ÉCOLOGIE À AUDIERNE SOIT EN DANGER DE CAUSER DES DÉLA...",
+      "body": "**Constat factuel:**\nLE Changement RAPIDE EN ÉCOLOGIE À AUDIERNE SOIT EN DANGER DE CAUSER DES DÉLAYS ET DES PROBLÈMES ENVIRONNÉS. L'AGIR EN TIEMPOU POUR Réduire Les ImpactS SUR L'ECOLOGIE EST VITAL POUR LA Sostenabilité De La Communauté.\n\n**Vos idées d'améliorations:**\nIntégrer Des INITIATIVES D'éducation ÉCOLOGIQUES À L'APPUI DES citoyens Pour Renforcer Le Comportement Sostenable. Créer Une Structure DE consultedÉS LOcales Envers Les ProJETS De Green Et Les INITIATIVES D'éducation Citoyennes."
+    },
+    {
+      "id": "field_logement_94bb7cbd",
+      "category": "logement",
+      "constat_factuel": "Au sein de la commune d'Audierne, des travaux de rénovation en house building ont été mis en place pour améliorer les infrastructures et répondre aux besoins locaux.",
+      "idees_ameliorations": "Proposer un accès plus facile aux biens logements durables et renforcer l'infrastructure urbaine pour soutenir le développement de la population tout en respectant l'environnement.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "urban renovation",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Au sein de la commune d'Audierne, des travaux de rénovation en house building...",
+      "body": "**Constat factuel:**\nAu sein de la commune d'Audierne, des travaux de rénovation en house building ont été mis en place pour améliorer les infrastructures et répondre aux besoins locaux.\n\n**Vos idées d'améliorations:**\nProposer un accès plus facile aux biens logements durables et renforcer l'infrastructure urbaine pour soutenir le développement de la population tout en respectant l'environnement."
+    },
+    {
+      "id": "field_logement_51e5f71e",
+      "category": "logement",
+      "constat_factuel": "Les travaux de construction en house building et l'amélioration des infrastructures ont été mis en place dans la commune pour répondre aux besoins locaux, notamment en ce qui concerne l'accès aux logements et la qualité de vie.",
+      "idees_ameliorations": "Pour améliorer la situation, il serait utile d'agir sur trois fronts : d'une part, de développer des voies de résidence plus acessibles et moins chères pour les familles en faible revenu ; d'autre part, de renforcer les systèmes de gestion des déchets pour une meilleure éducation et un meilleur environnement ; enfin, d'agir sur les infrastructures urbaines pour améliorer les accès aux transports publics.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "urban renovation",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les travaux de construction en house building et l'amélioration des infrastru...",
+      "body": "**Constat factuel:**\nLes travaux de construction en house building et l'amélioration des infrastructures ont été mis en place dans la commune pour répondre aux besoins locaux, notamment en ce qui concerne l'accès aux logements et la qualité de vie.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il serait utile d'agir sur trois fronts : d'une part, de développer des voies de résidence plus acessibles et moins chères pour les familles en faible revenu ; d'autre part, de renforcer les systèmes de gestion des déchets pour une meilleure éducation et un meilleur environnement ; enfin, d'agir sur les infrastructures urbaines pour améliorer les accès aux transports publics."
+    },
+    {
+      "id": "field_logement_4a756a14",
+      "category": "logement",
+      "constat_factuel": "Les travaux de rénovation en house building et d'amélioration des infrastructures ont été mis en place dans la commune d'Audierne pour répondre aux besoins locaux. Cependant, certains buildings existants ne sont pas accessibles pour les personnes avec des handicaps, ce qui limite leur integration sociale.",
+      "idees_ameliorations": "Pour améliorer l'accèsibilité, il serait pertinent de considérer des matériaux et constructions plus adaptés aux besoins des communes. Par exemple, l'utilisation de matériaux renforcés ou des plans inclinés pourrait faciliter la navigation pour ces populations. De plus, l'ajout d'accessoires comme des échelles ou des pansons sur les voies publices serait essentiel. Ces améliorations pourraient être implementées en collaboration avec le Conseil municipal en offrant un financement preféré pour un projet collectif.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "urban renovation",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les travaux de rénovation en house building et d'amélioration des infrastruct...",
+      "body": "**Constat factuel:**\nLes travaux de rénovation en house building et d'amélioration des infrastructures ont été mis en place dans la commune d'Audierne pour répondre aux besoins locaux. Cependant, certains buildings existants ne sont pas accessibles pour les personnes avec des handicaps, ce qui limite leur integration sociale.\n\n**Vos idées d'améliorations:**\nPour améliorer l'accèsibilité, il serait pertinent de considérer des matériaux et constructions plus adaptés aux besoins des communes. Par exemple, l'utilisation de matériaux renforcés ou des plans inclinés pourrait faciliter la navigation pour ces populations. De plus, l'ajout d'accessoires comme des échelles ou des pansons sur les voies publices serait essentiel. Ces améliorations pourraient être implementées en collaboration avec le Conseil municipal en offrant un financement preféré pour un projet collectif."
+    },
+    {
+      "id": "field_logement_a62b559c",
+      "category": "logement",
+      "constat_factuel": "AU DIEU JE NE VOUS PRETENDS PAS BEAU, LES VOTRE HABITATIONS SONT UN MIEUX État QUE Votre Service Public qui se charge de Votre Rénovation. Votre Travaux De Réovation Ne Font Pas Preuve De Vos Capacités Face Aux Problèmes DANS Leur VILLE.",
+      "idees_ameliorations": "ENRICHISsez Votre Services Scolaires, médicaux ET Culturels EN YVOUS APP belonged. Améliorez La Connectivité Votre et Mettez Des Réglementations EN vigueur Pour Assurer La Qualité De Votre Rénovation.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "urban renovation",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "AU DIEU JE NE VOUS PRETENDS PAS BEAU, LES VOTRE HABITATIONS SONT UN MIEUX Éta...",
+      "body": "**Constat factuel:**\nAU DIEU JE NE VOUS PRETENDS PAS BEAU, LES VOTRE HABITATIONS SONT UN MIEUX État QUE Votre Service Public qui se charge de Votre Rénovation. Votre Travaux De Réovation Ne Font Pas Preuve De Vos Capacités Face Aux Problèmes DANS Leur VILLE.\n\n**Vos idées d'améliorations:**\nENRICHISsez Votre Services Scolaires, médicaux ET Culturels EN YVOUS APP belonged. Améliorez La Connectivité Votre et Mettez Des Réglementations EN vigueur Pour Assurer La Qualité De Votre Rénovation."
+    },
+    {
+      "id": "field_associations_5502319a",
+      "category": "associations",
+      "constat_factuel": "La communauté d'Audierne est en pleine phase de reconstruction après un événement suddenly, et les populations émergentes ont besoin d'aide pour se ralentir. Des actions de rescousse et de soutien ont été mises en place, y compris la distribution de cadeaux et des repas sociaux, mais il semble que ces ressources ne soient pas accessibles à toutes les personnesBesoin de plus d'information sur le nombre de demandeurs et les besoins spécifiques pour améliorer l'efficacité de la soutien social.",
+      "idees_ameliorations": [
+        "Créer un système de distribution plus extensif des ressources de rescousse en collaborant avec des entités locales et institutionnelles pour abousser les zones émergentes",
+        "Faire construire des hubs de soutien communautaire dans différentes Communautés Autonomes pour faciliter l'accès aux allocations de base",
+        "Créer un service de soutien social plus complet en y ajoutant des unités de rééducation psychologique et des formations sur la gestion de crise",
+        "Augmenter les ressources financières et logistiques pour garantir la durabilité long terme des actions de rescousse et de soutien"
+      ],
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "social_support",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "La communauté d'Audierne est en pleine phase de reconstruction après un événe...",
+      "body": "**Constat factuel:**\nLa communauté d'Audierne est en pleine phase de reconstruction après un événement suddenly, et les populations émergentes ont besoin d'aide pour se ralentir. Des actions de rescousse et de soutien ont été mises en place, y compris la distribution de cadeaux et des repas sociaux, mais il semble que ces ressources ne soient pas accessibles à toutes les personnesBesoin de plus d'information sur le nombre de demandeurs et les besoins spécifiques pour améliorer l'efficacité de la soutien social.\n\n**Vos idées d'améliorations:**\n['Créer un système de distribution plus extensif des ressources de rescousse en collaborant avec des entités locales et institutionnelles pour abousser les zones émergentes', \"Faire construire des hubs de soutien communautaire dans différentes Communautés Autonomes pour faciliter l'accès aux allocations de base\", 'Créer un service de soutien social plus complet en y ajoutant des unités de rééducation psychologique et des formations sur la gestion de crise', 'Augmenter les ressources financières et logistiques pour garantir la durabilité long terme des actions de rescousse et de soutien']"
+    },
+    {
+      "id": "field_associations_40e37fd2",
+      "category": "associations",
+      "constat_factuel": "Les populations émergentes de la commune d'Audierne renforcent leurs besoins en ce moment, n'ayant accès à des ressources suffisantes pour se débrouiller.",
+      "idees_ameliorations": "Pour améliorer la situation, il serait utile de créer des points de distribution supplémentaires et d'organiser des ateliers éducatifs pour les aidants, permettant de partager des connaissances essentielles et d'assurer une répartition équitable des ressources.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "social_support",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les populations émergentes de la commune d'Audierne renforcent leurs besoins ...",
+      "body": "**Constat factuel:**\nLes populations émergentes de la commune d'Audierne renforcent leurs besoins en ce moment, n'ayant accès à des ressources suffisantes pour se débrouiller.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il serait utile de créer des points de distribution supplémentaires et d'organiser des ateliers éducatifs pour les aidants, permettant de partager des connaissances essentielles et d'assurer une répartition équitable des ressources."
+    },
+    {
+      "id": "field_associations_0f9279c7",
+      "category": "associations",
+      "constat_factuel": "Il semble que la communauté de Audierneait identify une absence de mécanismes d'aide efficace pour soutenir les populations émergentes, avec des actions de rescousse limitées et des cadoux insuffisants pour renforcer la solidarité.",
+      "idees_ameliorations": "Pour améliorer la coordination des actions de soutien, il serait pertinent de créer un système centralisé d'organisation et de distribution d'aide. Par ailleurs, l'extension de types de supports sociaux adaptés à la situation des différentes communautés émergentes pourrait renforcer le soutien local. Enfin, l'engagement actif des citoyens dans des ateliers ou des assemblys locales pourrait stimuler une meilleure collaboration et plus de résonance avec les besoins spécifiques de la population.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "social_support",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Il semble que la communauté de Audierneait identify une absence de mécanismes...",
+      "body": "**Constat factuel:**\nIl semble que la communauté de Audierneait identify une absence de mécanismes d'aide efficace pour soutenir les populations émergentes, avec des actions de rescousse limitées et des cadoux insuffisants pour renforcer la solidarité.\n\n**Vos idées d'améliorations:**\nPour améliorer la coordination des actions de soutien, il serait pertinent de créer un système centralisé d'organisation et de distribution d'aide. Par ailleurs, l'extension de types de supports sociaux adaptés à la situation des différentes communautés émergentes pourrait renforcer le soutien local. Enfin, l'engagement actif des citoyens dans des ateliers ou des assemblys locales pourrait stimuler une meilleure collaboration et plus de résonance avec les besoins spécifiques de la population."
+    },
+    {
+      "id": "field_associations_addcadc3",
+      "category": "associations",
+      "constat_factuel": "La commune de Audierne a mis en place des actions de rescousse et de soutien aux populations émergentes, incluant la distribution de cadeaux et des repas sociaux pour renforcer la solidarité et assurer un accès facile aux ressources nécessaires.",
+      "idees_ameliorations": "Pour améliorer cette situation, il serait utile d'agir de manière plus fréquentielle en augmentant la fréquence des actions de rescousse. On pourrait également éduquer le public sur les besoins et les ressources nécessaires, ce qui permettrait d'adapter plus efficacement les actions à l'actualité. De plus, améliorer l'accès aux lieux de réception par des points de contact tels que des sites web ou des phones est primordial. Enfin, établir un système de feedback pour collecter les commentaires et suggestions des citoyens pourrait guider les améliorations futures.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "social_support",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "La commune de Audierne a mis en place des actions de rescousse et de soutien ...",
+      "body": "**Constat factuel:**\nLa commune de Audierne a mis en place des actions de rescousse et de soutien aux populations émergentes, incluant la distribution de cadeaux et des repas sociaux pour renforcer la solidarité et assurer un accès facile aux ressources nécessaires.\n\n**Vos idées d'améliorations:**\nPour améliorer cette situation, il serait utile d'agir de manière plus fréquentielle en augmentant la fréquence des actions de rescousse. On pourrait également éduquer le public sur les besoins et les ressources nécessaires, ce qui permettrait d'adapter plus efficacement les actions à l'actualité. De plus, améliorer l'accès aux lieux de réception par des points de contact tels que des sites web ou des phones est primordial. Enfin, établir un système de feedback pour collecter les commentaires et suggestions des citoyens pourrait guider les améliorations futures."
+    },
+    {
+      "id": "field_logement_5cef3916",
+      "category": "logement",
+      "constat_factuel": "Depuis l说实isation de travaux recents sur le church Saint-Raymond, la situation du logement a évolué de manière positive pour les utilisateurs incluant ceux avec des besoins particuliers. Les améliorations apportées au niveau des voies d'accès et de l'infrastructure ont favorisé un accès plus facile et sécurisé.",
+      "idees_ameliorations": "Pour renforcer la situation actuelle, il serait utile de realiser des travaux complémentaires visant une meilleure accessibility pour le church Saint-Raymond en y ajoutant des transeaux d'accès àSection 5 ou Section 6. De plus, améliorer la localisation des points d'eau potables dans les rues lesser-voies pour faciliter l'accès aux ressources en eau pour tous les habitants.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "infrastructure_improvement",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Depuis l说实isation de travaux recents sur le church Saint-Raymond, la situatio...",
+      "body": "**Constat factuel:**\nDepuis l说实isation de travaux recents sur le church Saint-Raymond, la situation du logement a évolué de manière positive pour les utilisateurs incluant ceux avec des besoins particuliers. Les améliorations apportées au niveau des voies d'accès et de l'infrastructure ont favorisé un accès plus facile et sécurisé.\n\n**Vos idées d'améliorations:**\nPour renforcer la situation actuelle, il serait utile de realiser des travaux complémentaires visant une meilleure accessibility pour le church Saint-Raymond en y ajoutant des transeaux d'accès àSection 5 ou Section 6. De plus, améliorer la localisation des points d'eau potables dans les rues lesser-voies pour faciliter l'accès aux ressources en eau pour tous les habitants."
+    },
+    {
+      "id": "field_logement_fb983ca5",
+      "category": "logement",
+      "constat_factuel": "Au sein de la commune d'Audierne, les récentes améliorations infrastructurales, notamment les travaux de rafraîchissement de l'église Saint-Raymond et la gestion des eaux potables, ont permis une meilleure qualité de vie pour la population.",
+      "idees_ameliorations": "Pour renforcer la situation actuelle, il serait utile d'agir sur les services publics en water, en assurant un meilleur accès et une meilleure distribution. De plus, améliorer les infrastructures liées aux déchets autour de l'église pourrait contribuer à une gestion plus efficace des eaux potables. Enfin, ajouter des espaces verts proches des installations d'eau pourrait renforcer la beauté commune tout en soutenant ces infrastructures.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "infrastructure_improvement",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Au sein de la commune d'Audierne, les récentes améliorations infrastructurale...",
+      "body": "**Constat factuel:**\nAu sein de la commune d'Audierne, les récentes améliorations infrastructurales, notamment les travaux de rafraîchissement de l'église Saint-Raymond et la gestion des eaux potables, ont permis une meilleure qualité de vie pour la population.\n\n**Vos idées d'améliorations:**\nPour renforcer la situation actuelle, il serait utile d'agir sur les services publics en water, en assurant un meilleur accès et une meilleure distribution. De plus, améliorer les infrastructures liées aux déchets autour de l'église pourrait contribuer à une gestion plus efficace des eaux potables. Enfin, ajouter des espaces verts proches des installations d'eau pourrait renforcer la beauté commune tout en soutenant ces infrastructures."
+    },
+    {
+      "id": "field_logement_04d0e703",
+      "category": "logement",
+      "constat_factuel": "Les améliorations dans les infrastructures locales ont été realisées avec succès, notamment au niveau de l'église Saint-Raymond qui paraît être en bon état. Cependant, il semble que le remplacement des eaux potables ne soit pas encadré par un plan détaillé et qu'il soit en attente de validation depuis plusieurs années.",
+      "idees_ameliorations": "Pour améliorer la situation, il serait pertinent de realigner les priorités avec les besoins de la communauté. Une inspection approfondie de l'église Saint-Raymond pourrait révéler des renforcements nécessaires et permettre un usage plus sécurisé. En parallèle, une étude approfondie des circuits d'approvisionnement des eaux potables pourrait identifier des solutions alternatives et plus efficaces pour les usagers.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "infrastructure_improvement",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les améliorations dans les infrastructures locales ont été realisées avec suc...",
+      "body": "**Constat factuel:**\nLes améliorations dans les infrastructures locales ont été realisées avec succès, notamment au niveau de l'église Saint-Raymond qui paraît être en bon état. Cependant, il semble que le remplacement des eaux potables ne soit pas encadré par un plan détaillé et qu'il soit en attente de validation depuis plusieurs années.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il serait pertinent de realigner les priorités avec les besoins de la communauté. Une inspection approfondie de l'église Saint-Raymond pourrait révéler des renforcements nécessaires et permettre un usage plus sécurisé. En parallèle, une étude approfondie des circuits d'approvisionnement des eaux potables pourrait identifier des solutions alternatives et plus efficaces pour les usagers."
+    },
+    {
+      "id": "field_logement_e4a95c92",
+      "category": "logement",
+      "constat_factuel": "L'infrastructure dans la commune de Audierne a été améliorée avec l'élaboration d'un nouveau bâtiment pour l'église Saint-Raymond et la position sécurisée des eaux potables.",
+      "idees_ameliorations": "Pour renforcer les services de maintenance, il serait utile d'ajouter une unité de service commune éducative et de santé. Par ailleurs, améliorer le système de gestion des déchets et des installations de recyclage pourrait contribuer à un meilleur environnement citoyen.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "infrastructure_improvement",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'infrastructure dans la commune de Audierne a été améliorée avec l'élaborati...",
+      "body": "**Constat factuel:**\nL'infrastructure dans la commune de Audierne a été améliorée avec l'élaboration d'un nouveau bâtiment pour l'église Saint-Raymond et la position sécurisée des eaux potables.\n\n**Vos idées d'améliorations:**\nPour renforcer les services de maintenance, il serait utile d'ajouter une unité de service commune éducative et de santé. Par ailleurs, améliorer le système de gestion des déchets et des installations de recyclage pourrait contribuer à un meilleur environnement citoyen."
+    },
+    {
+      "id": "field_ecologie_1c1910e5",
+      "category": "ecologie",
+      "constat_factuel": "La commune de Audierne fait face à des défis hydrologiques et écolaires liés à l'utilisation intensive d'eau pour les bains et aux transformations de l'agriculture. Les eaux pluviales sont parfois polluées, ce qui compromise la qualité du environnement.",
+      "idees_ameliorations": "Pour améliorer la gestion des eaux pluviales, il serait utile d'implémenter des sysèmes de compostage sur site et de limiter l'utilisation des sols agricoles. De plus, des baches de filtration pour éclairer les usages d'eau devraient être explorées pour réduire le debit de eaux pluviales dans les rues.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "transition_éculique",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "La commune de Audierne fait face à des défis hydrologiques et écolaires liés ...",
+      "body": "**Constat factuel:**\nLa commune de Audierne fait face à des défis hydrologiques et écolaires liés à l'utilisation intensive d'eau pour les bains et aux transformations de l'agriculture. Les eaux pluviales sont parfois polluées, ce qui compromise la qualité du environnement.\n\n**Vos idées d'améliorations:**\nPour améliorer la gestion des eaux pluviales, il serait utile d'implémenter des sysèmes de compostage sur site et de limiter l'utilisation des sols agricoles. De plus, des baches de filtration pour éclairer les usages d'eau devraient être explorées pour réduire le debit de eaux pluviales dans les rues."
+    },
+    {
+      "id": "field_ecologie_767938e6",
+      "category": "ecologie",
+      "constat_factuel": "À l'audierne, les usages de biens pluripposites et la gestion des eaux pluviales semblent mal coordonnés, ce qui peut conduire à des impacts environnementaux négatifs.",
+      "idees_ameliorations": "Intégrer des infrastructure de compostage sur place pour traiter de la déchette organique, améliorer les espaces verts pour renforcer la résistanceécologique, instaurer des réseaux d'收集 des eaux pluviales pour reconstituer l'eau potable et eduquer le population sur la gestion responsable de l'eau.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "transition_éculique",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "À l'audierne, les usages de biens pluripposites et la gestion des eaux pluvia...",
+      "body": "**Constat factuel:**\nÀ l'audierne, les usages de biens pluripposites et la gestion des eaux pluviales semblent mal coordonnés, ce qui peut conduire à des impacts environnementaux négatifs.\n\n**Vos idées d'améliorations:**\nIntégrer des infrastructure de compostage sur place pour traiter de la déchette organique, améliorer les espaces verts pour renforcer la résistanceécologique, instaurer des réseaux d'收集 des eaux pluviales pour reconstituer l'eau potable et eduquer le population sur la gestion responsable de l'eau."
+    },
+    {
+      "id": "field_ecologie_56756cc2",
+      "category": "ecologie",
+      "constat_factuel": "Les usages des bassins de compostage dans la commune d'Audierne paraissent existent, mais leur efficacité pourrait être davantage optimisée pour améliorer l'écoulement des eaux pluviales et préserver les ressources en eau.",
+      "idees_ameliorations": "Pour améliorer ce dispositif, il serait pertinent d'agrandir le domaine des bassins de compostage en y ajoutant plus de zone de trémentation avec des matières biologiques. De plus, il est recommandé de coordonnner ces bassins avec des réseaux de collecte d'eau pluviale pour minimiser les débordsements et garantir un meilleur fonctionnement ecosystemique.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "transition_éculique",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les usages des bassins de compostage dans la commune d'Audierne paraissent ex...",
+      "body": "**Constat factuel:**\nLes usages des bassins de compostage dans la commune d'Audierne paraissent existent, mais leur efficacité pourrait être davantage optimisée pour améliorer l'écoulement des eaux pluviales et préserver les ressources en eau.\n\n**Vos idées d'améliorations:**\nPour améliorer ce dispositif, il serait pertinent d'agrandir le domaine des bassins de compostage en y ajoutant plus de zone de trémentation avec des matières biologiques. De plus, il est recommandé de coordonnner ces bassins avec des réseaux de collecte d'eau pluviale pour minimiser les débordsements et garantir un meilleur fonctionnement ecosystemique."
+    },
+    {
+      "id": "field_ecologie_e29f5ac9",
+      "category": "ecologie",
+      "constat_factuel": "Bien que la community ait engagé des initiatives pour la préservation patrimoniale, comme l'engagement sur l'église Saint-Raymond, la transition éculique manque d'avancement dans la gestion environnementale.",
+      "idees_ameliorations": "Suggérer d'installer des améliorations supplémentaires aux toilettes en compostage pour renforcer leur efficacité et de créer un réseautage de bassins d'approvisionnement en eaux pluviales pour optimiser l'utilisation de l'eau naturelle.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "transition_éculique",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Bien que la community ait engagé des initiatives pour la préservation patrimo...",
+      "body": "**Constat factuel:**\nBien que la community ait engagé des initiatives pour la préservation patrimoniale, comme l'engagement sur l'église Saint-Raymond, la transition éculique manque d'avancement dans la gestion environnementale.\n\n**Vos idées d'améliorations:**\nSuggérer d'installer des améliorations supplémentaires aux toilettes en compostage pour renforcer leur efficacité et de créer un réseautage de bassins d'approvisionnement en eaux pluviales pour optimiser l'utilisation de l'eau naturelle."
+    },
+    {
+      "id": "field_logement_76b9c9b7",
+      "category": "logement",
+      "constat_factuel": "La décroissance de la natalité engendre un défi pour la population de l'audierne, limitant la croissance démographique et posant des défis pour les services locaux tels que l'éducation, le santé et l'économie.",
+      "idees_ameliorations": "Introduire des politiques family-friendly dans les entreprises pour soutenir la parenthood, mettre en place des subventions gratuites ou réduites au-childcare, et organiser des ateliers communautaires dédiés aux familles en←幼儿. Ces actions pourraient stimuler à nouveau la natalité et renforcer la solidarité sociale.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "justification_valeur_2026",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "La décroissance de la natalité engendre un défi pour la population de l'audie...",
+      "body": "**Constat factuel:**\nLa décroissance de la natalité engendre un défi pour la population de l'audierne, limitant la croissance démographique et posant des défis pour les services locaux tels que l'éducation, le santé et l'économie.\n\n**Vos idées d'améliorations:**\nIntroduire des politiques family-friendly dans les entreprises pour soutenir la parenthood, mettre en place des subventions gratuites ou réduites au-childcare, et organiser des ateliers communautaires dédiés aux familles en←幼儿. Ces actions pourraient stimuler à nouveau la natalité et renforcer la solidarité sociale."
+    },
+    {
+      "id": "field_logement_be62daee",
+      "category": "logement",
+      "constat_factuel": "La décroissance de la natalité et la baisse de la clivage en France ont entraîné une réduction des naissances dans la commune d'Audierne. Cela traduit actuellement un affaiblissement des familles et une faible contribution à la population future.",
+      "idees_ameliorations": "Pour améliorer la situation, il serait pertinent d'implémenter des mesures favorables aux parents, comme l'aider en ce qui concerne les écoles et les animations pour les enfants. On pourrait également promouvoir d'autres structures familiales, comme les ménages conjoints, à travers des programmes de soutien social.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "justification_valeur_2026",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "La décroissance de la natalité et la baisse de la clivage en France ont entra...",
+      "body": "**Constat factuel:**\nLa décroissance de la natalité et la baisse de la clivage en France ont entraîné une réduction des naissances dans la commune d'Audierne. Cela traduit actuellement un affaiblissement des familles et une faible contribution à la population future.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il serait pertinent d'implémenter des mesures favorables aux parents, comme l'aider en ce qui concerne les écoles et les animations pour les enfants. On pourrait également promouvoir d'autres structures familiales, comme les ménages conjoints, à travers des programmes de soutien social."
+    },
+    {
+      "id": "field_logement_3f2e37a0",
+      "category": "logement",
+      "constat_factuel": "Au sein de la commune d'Audierne, l'augmentation des investissements en logement semble manquer de durabilité face à une population décroissante et un marché localement overspillé.",
+      "idees_ameliorations": "Par ailleurs, une réflexion sur la gestion du financement est essentielle. Une gestion transparente et équitable pourrait stimuler l'investissement dans des logements modulaires ou partagés, offrant ainsi desopportunités de purchase accessible à tous les habitants intéressés.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "justification_valeur_2026",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Au sein de la commune d'Audierne, l'augmentation des investissements en logem...",
+      "body": "**Constat factuel:**\nAu sein de la commune d'Audierne, l'augmentation des investissements en logement semble manquer de durabilité face à une population décroissante et un marché localement overspillé.\n\n**Vos idées d'améliorations:**\nPar ailleurs, une réflexion sur la gestion du financement est essentielle. Une gestion transparente et équitable pourrait stimuler l'investissement dans des logements modulaires ou partagés, offrant ainsi desopportunités de purchase accessible à tous les habitants intéressés."
+    },
+    {
+      "id": "field_logement_26bcb34b",
+      "category": "logement",
+      "constat_factuel": "L'observations concrètes indique que la décroissance de la natalité dans l'urbane de Audierne engendre des pressions sur les ressources logementaires. La demande croît pour répondre à une population réduite et agingisée, nécessitant des solutions innovantes pour maintenir un équilibre social.",
+      "idees_ameliorations": "Pour améliorer la situation, il est recommandé d'agrandir les offres de logement en renforçant l'accès aux immeubles sociaux et en soutenant les projets de développementurbanisés. De plus, une promotion des modes de vie collectif comme le célibat pourra stimuler la population active tout en favourisant les relations familiales. Enfin, des campagnes éducatives visant à sensibiliser le public aux benefices de la parenté pour le bien-être communautaire devront être mises en œuvre.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "justification_valeur_2026",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'observations concrètes indique que la décroissance de la natalité dans l'ur...",
+      "body": "**Constat factuel:**\nL'observations concrètes indique que la décroissance de la natalité dans l'urbane de Audierne engendre des pressions sur les ressources logementaires. La demande croît pour répondre à une population réduite et agingisée, nécessitant des solutions innovantes pour maintenir un équilibre social.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il est recommandé d'agrandir les offres de logement en renforçant l'accès aux immeubles sociaux et en soutenant les projets de développementurbanisés. De plus, une promotion des modes de vie collectif comme le célibat pourra stimuler la population active tout en favourisant les relations familiales. Enfin, des campagnes éducatives visant à sensibiliser le public aux benefices de la parenté pour le bien-être communautaire devront être mises en œuvre."
+    },
+    {
+      "id": "field_jeunesse_1efb635b",
+      "category": "jeunesse",
+      "constat_factuel": "Les services sociaux tels que les repas anciens et le vestiaire solidaire sont essentiels pour soutenir la population en difficultés à Audierne.",
+      "idees_ameliorations": "Pour améliorer ces services, il serait utile d'agrandir leur mise en place en ajoutant de nouvelles équipes de coordination. De plus, explorer les partenariats avec des entreprises locales pourrait apporter de nouvelles sources de financement et d'aide materielle. Enfin, échanger régulièrement avec la population pour évaluer l'efficacité et adapter les initiatives au fil du temps serait un pas constructif.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "solidarité",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les services sociaux tels que les repas anciens et le vestiaire solidaire son...",
+      "body": "**Constat factuel:**\nLes services sociaux tels que les repas anciens et le vestiaire solidaire sont essentiels pour soutenir la population en difficultés à Audierne.\n\n**Vos idées d'améliorations:**\nPour améliorer ces services, il serait utile d'agrandir leur mise en place en ajoutant de nouvelles équipes de coordination. De plus, explorer les partenariats avec des entreprises locales pourrait apporter de nouvelles sources de financement et d'aide materielle. Enfin, échanger régulièrement avec la population pour évaluer l'efficacité et adapter les initiatives au fil du temps serait un pas constructif."
+    },
+    {
+      "id": "field_jeunesse_3c9deb65",
+      "category": "jeunesse",
+      "constat_factuel": "Dans la commune d'Audierne, il semble manquer de services sociaux tels que les repas anciens et le vestiaire solidaire dans certaines communautés locales.",
+      "idees_ameliorations": "Pour améliorer la solidarité, il serait pertinent de créer un réseaux local de provisions pour les repas anciens. De plus, soutenir des initiatives qui offrent un vestiaire solidaire en situation pourrait renforcer le sentiment communautaire et sensibiliser plus d'individus à ces services sociaux.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "solidarité",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Dans la commune d'Audierne, il semble manquer de services sociaux tels que le...",
+      "body": "**Constat factuel:**\nDans la commune d'Audierne, il semble manquer de services sociaux tels que les repas anciens et le vestiaire solidaire dans certaines communautés locales.\n\n**Vos idées d'améliorations:**\nPour améliorer la solidarité, il serait pertinent de créer un réseaux local de provisions pour les repas anciens. De plus, soutenir des initiatives qui offrent un vestiaire solidaire en situation pourrait renforcer le sentiment communautaire et sensibiliser plus d'individus à ces services sociaux."
+    },
+    {
+      "id": "field_jeunesse_0026b11e",
+      "category": "jeunesse",
+      "constat_factuel": "Les initiatives de solidarité dans la commune d'Audierne, comme les repas anciens et le vestiaire solidaire, reflètent un engagement des citoyens à soutenir l' community.",
+      "idees_ameliorations": "Prolonger ces services pour répondre à la demande croissante. Explorer des options de financement durables et promouvoir des aliments autonomes pour une solidarité équitable.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "solidarité",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les initiatives de solidarité dans la commune d'Audierne, comme les repas anc...",
+      "body": "**Constat factuel:**\nLes initiatives de solidarité dans la commune d'Audierne, comme les repas anciens et le vestiaire solidaire, reflètent un engagement des citoyens à soutenir l' community.\n\n**Vos idées d'améliorations:**\nProlonger ces services pour répondre à la demande croissante. Explorer des options de financement durables et promouvoir des aliments autonomes pour une solidarité équitable."
+    },
+    {
+      "id": "field_jeunesse_67059ce9",
+      "category": "jeunesse",
+      "constat_factuel": "Les efforts de solidarité dans la commune d'Audierne sont essentiels pour maintenir les services sociaux comme les repas anciens et le vestiaire solidaire. Cependant, ces initiatives sont souvent menées en derrière la scene et dominent par d'autres préoccupations locales telles que les constructions ou les impôts.",
+      "idees_ameliorations": "1. Augmenter les fonds pour les services sociaux via des contributions locales pour soutenir les repas anciens et le vestiaire solidaire.\n2. Organiser des ateliers dans des régions ciblées pour garantir l'accès accessible aux initiatives de solidarité.\n3. Créer une campagne de sensibilisation publique pour diffuser l'importance des services sociaux dans la communauté.\n4. Collaborer avec les associations existantes comme CCAS pour renforcer l'impact des actions solidaires.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "solidarité",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les efforts de solidarité dans la commune d'Audierne sont essentiels pour mai...",
+      "body": "**Constat factuel:**\nLes efforts de solidarité dans la commune d'Audierne sont essentiels pour maintenir les services sociaux comme les repas anciens et le vestiaire solidaire. Cependant, ces initiatives sont souvent menées en derrière la scene et dominent par d'autres préoccupations locales telles que les constructions ou les impôts.\n\n**Vos idées d'améliorations:**\n1. Augmenter les fonds pour les services sociaux via des contributions locales pour soutenir les repas anciens et le vestiaire solidaire.\n2. Organiser des ateliers dans des régions ciblées pour garantir l'accès accessible aux initiatives de solidarité.\n3. Créer une campagne de sensibilisation publique pour diffuser l'importance des services sociaux dans la communauté.\n4. Collaborer avec les associations existantes comme CCAS pour renforcer l'impact des actions solidaires."
+    },
+    {
+      "id": "field_associations_9269f73b",
+      "category": "associations",
+      "constat_factuel": "La situation actuelle dans la commune d'Audierne met en lumière les difficultés persistentes pour les producteurs pêchés à l'égard de l'environnement et des normes légales.",
+      "idees_ameliorations": "Améliorer la communication entre les autorités locales et les producteurs pêchés via des ateliers de discussion. Créer un site web dédié aux normes légales pour les producteurs. Organiser des ateliers éducatifs sur les lois locales.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "défense_intérêts_locaux",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "La situation actuelle dans la commune d'Audierne met en lumière les difficult...",
+      "body": "**Constat factuel:**\nLa situation actuelle dans la commune d'Audierne met en lumière les difficultés persistentes pour les producteurs pêchés à l'égard de l'environnement et des normes légales.\n\n**Vos idées d'améliorations:**\nAméliorer la communication entre les autorités locales et les producteurs pêchés via des ateliers de discussion. Créer un site web dédié aux normes légales pour les producteurs. Organiser des ateliers éducatifs sur les lois locales."
+    },
+    {
+      "id": "field_associations_a128a8bc",
+      "category": "associations",
+      "constat_factuel": "Les pêcheurs à Audierne bénéficient d'une protection juridique reconnue par le tribunal, mais il reste important de renforcer l'engagement des communautés locales pour assurer leurs intérêts et améliorer leur qualité de vie en matters de pêcheries persistantes. La mobilisation est essentielle pour sensibiliser ces groups à l'importance de la durabilité environnementale et de la gestion responsable des ressources Marines.",
+      "idees_ameliorations": "Organiser des ateliers sur les droits des pêcheurs et la gestion responsable, Developper des formations sur les méthodes de pêchage éco-sociables, Renforcer les collaborations entre la communauté et les autorités locales pour une meilleure gestion des ressources Marines, Encourageer les initiatives locales de recherche et développement pour renforcer l'auto-suffrage des pêcheurs.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "défense_intérêts_locaux",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les pêcheurs à Audierne bénéficient d'une protection juridique reconnue par l...",
+      "body": "**Constat factuel:**\nLes pêcheurs à Audierne bénéficient d'une protection juridique reconnue par le tribunal, mais il reste important de renforcer l'engagement des communautés locales pour assurer leurs intérêts et améliorer leur qualité de vie en matters de pêcheries persistantes. La mobilisation est essentielle pour sensibiliser ces groups à l'importance de la durabilité environnementale et de la gestion responsable des ressources Marines.\n\n**Vos idées d'améliorations:**\nOrganiser des ateliers sur les droits des pêcheurs et la gestion responsable, Developper des formations sur les méthodes de pêchage éco-sociables, Renforcer les collaborations entre la communauté et les autorités locales pour une meilleure gestion des ressources Marines, Encourageer les initiatives locales de recherche et développement pour renforcer l'auto-suffrage des pêcheurs."
+    },
+    {
+      "id": "field_associations_56bda2aa",
+      "category": "associations",
+      "constat_factuel": "Il semble que la situation actuelle dans la commune de Audierne soulève des préoccupations liées à la gestion des ressources et à l'impact environnemental, ce qui affecte directement les intérêts locaux de plusieurs groupes, y compris les pêcheurs et les producteurs agricoles.",
+      "idees_ameliorations": "Pour améliorer la situation, il seraitutile de créer un dialogue plus ouvert entre les autorités locales et les citoyens impliqués dans ces préoccupations. Par exemple, des ateliers de discussion pour mutualiser les idées et des projets communs. De plus, une meilleure communication avec les réseaux sociaux pourrait renforcer la transparence et l'engagement collectif. Une structure plus transparente pour organiser des missions visant à évaluer et à améliorer la gestion de la mer et du territoire pourrait également être recommandée. Enfin, une méthode plus effective de redevabilité aux citoyens par le biais d'un système de reporting et de suivi des actions menées pourrait renforcer la responsabilité des citoyens et augmenter leur engagement.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "défense_intérêts_locaux",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Il semble que la situation actuelle dans la commune de Audierne soulève des p...",
+      "body": "**Constat factuel:**\nIl semble que la situation actuelle dans la commune de Audierne soulève des préoccupations liées à la gestion des ressources et à l'impact environnemental, ce qui affecte directement les intérêts locaux de plusieurs groupes, y compris les pêcheurs et les producteurs agricoles.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il seraitutile de créer un dialogue plus ouvert entre les autorités locales et les citoyens impliqués dans ces préoccupations. Par exemple, des ateliers de discussion pour mutualiser les idées et des projets communs. De plus, une meilleure communication avec les réseaux sociaux pourrait renforcer la transparence et l'engagement collectif. Une structure plus transparente pour organiser des missions visant à évaluer et à améliorer la gestion de la mer et du territoire pourrait également être recommandée. Enfin, une méthode plus effective de redevabilité aux citoyens par le biais d'un système de reporting et de suivi des actions menées pourrait renforcer la responsabilité des citoyens et augmenter leur engagement."
+    },
+    {
+      "id": "field_associations_5e4ed2b1",
+      "category": "associations",
+      "constat_factuel": "Les pêcheurs ont gagné un tribunal en faveur de leurs intérêts, mais des initiatives pour les agriculteurs sont mises en place par les autorités locales.",
+      "idees_ameliorations": "Pour maintenir le équilibre entre les interests des pêcheurs et ceux des producteurs agricoles, il serait pertinent de integrer des solutions qui protégeent les droits des农户 tout en soutenant l'activisme pêchier. Une collaboration entre les differents groupes pour renforcer la durabilité de la zone audierne.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "défense_intérêts_locaux",
+        "source_title": "Mayor 2026 Wishes",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les pêcheurs ont gagné un tribunal en faveur de leurs intérêts, mais des init...",
+      "body": "**Constat factuel:**\nLes pêcheurs ont gagné un tribunal en faveur de leurs intérêts, mais des initiatives pour les agriculteurs sont mises en place par les autorités locales.\n\n**Vos idées d'améliorations:**\nPour maintenir le équilibre entre les interests des pêcheurs et ceux des producteurs agricoles, il serait pertinent de integrer des solutions qui protégeent les droits des农户 tout en soutenant l'activisme pêchier. Une collaboration entre les differents groupes pour renforcer la durabilité de la zone audierne."
+    },
+    {
+      "id": "field_economie_9a7689e0",
+      "category": "economie",
+      "constat_factuel": "Sans les documents complets (CFU/BP/ROB) et sans des plans de financement détaillés, il est difficile de qualifier la trajectoire financière de la commune d'Audierne avec une perspective structurelle solide.",
+      "idees_ameliorations": "Pour améliorer la transparence financière, il est essentiel de créer un document détaillé comprenant les projets et les financements prévus. De plus, stimuler la collaboration entre les différents acteurs (établissements, associations, etc.) pour échanger des informations et élaborer des rapports conjoints pourrait sensiblement renforcer l'透明度 de la situation financière à long terme.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "transparence_financiere",
+        "source_title": "Municipal Council January2026",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Sans les documents complets (CFU/BP/ROB) et sans des plans de financement dét...",
+      "body": "**Constat factuel:**\nSans les documents complets (CFU/BP/ROB) et sans des plans de financement détaillés, il est difficile de qualifier la trajectoire financière de la commune d'Audierne avec une perspective structurelle solide.\n\n**Vos idées d'améliorations:**\nPour améliorer la transparence financière, il est essentiel de créer un document détaillé comprenant les projets et les financements prévus. De plus, stimuler la collaboration entre les différents acteurs (établissements, associations, etc.) pour échanger des informations et élaborer des rapports conjoints pourrait sensiblement renforcer l'透明度 de la situation financière à long terme."
+    },
+    {
+      "id": "field_economie_e996802c",
+      "category": "economie",
+      "constat_factuel": "Sans les documents complets (CFU/BP/ROB) et les plans de financement, la situation actuelle à Audierne ne peut être évaluée correctement. Les tracées financières manquent de clarté et de transparence, ce qui soulève des questions sur la fiabilité de la situation financière de la commune.",
+      "idees_ameliorations": "Pour améliorer la transparence, il est essentiel d'obtenir tous les documents nécessaires pour établir une trajectoire financière globale. Par ailleurs, une meilleure accessibility des informations par le citoyen permettrait de contrôler plus efficacement les actions financières de la commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "transparence_financiere",
+        "source_title": "Municipal Council January2026",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Sans les documents complets (CFU/BP/ROB) et les plans de financement, la situ...",
+      "body": "**Constat factuel:**\nSans les documents complets (CFU/BP/ROB) et les plans de financement, la situation actuelle à Audierne ne peut être évaluée correctement. Les tracées financières manquent de clarté et de transparence, ce qui soulève des questions sur la fiabilité de la situation financière de la commune.\n\n**Vos idées d'améliorations:**\nPour améliorer la transparence, il est essentiel d'obtenir tous les documents nécessaires pour établir une trajectoire financière globale. Par ailleurs, une meilleure accessibility des informations par le citoyen permettrait de contrôler plus efficacement les actions financières de la commune."
+    },
+    {
+      "id": "field_economie_d85f522c",
+      "category": "economie",
+      "constat_factuel": "Sans les documents complets et les plans de financement détaillés, il est difficile de juger clairement de la situation financière de la commune de Audierne. Les décisions électroniques et les rapports ne reflètent pas toujours une vision transparente des ressources locales.",
+      "idees_ameliorations": "Pour améliorer la transparence, il serait utile d'implémenter un système centralisé pour publier les informations financières et les documents nécessaires. De plus, des ateliers éducatifs pour les citoyens pour discuter des plans de financement ensemble, en veillant à ce qu'ils soient bien compris.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "transparence_financiere",
+        "source_title": "Municipal Council January2026",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Sans les documents complets et les plans de financement détaillés, il est dif...",
+      "body": "**Constat factuel:**\nSans les documents complets et les plans de financement détaillés, il est difficile de juger clairement de la situation financière de la commune de Audierne. Les décisions électroniques et les rapports ne reflètent pas toujours une vision transparente des ressources locales.\n\n**Vos idées d'améliorations:**\nPour améliorer la transparence, il serait utile d'implémenter un système centralisé pour publier les informations financières et les documents nécessaires. De plus, des ateliers éducatifs pour les citoyens pour discuter des plans de financement ensemble, en veillant à ce qu'ils soient bien compris."
+    },
+    {
+      "id": "field_economie_b1fcea66",
+      "category": "economie",
+      "constat_factuel": "Sans les documents complets sur les CFU/BP/ROB et sans des plans de financement clairs, on ne peut pas évaluer correctement la trajectoire financière de la commune. Cela entrave la confiance des citoyens dans les décisions de gouvernement.",
+      "idees_ameliorations": "Améliorer la transparence en rendant publics les documents liés aux CFU/BP/ROB.\nConduire à la responsabilité des officials elected à l'obligation de proposer des plans de financement transparents.\nForcer le secret public sur les demandes de financements structurals.\nVérifier scrupuleusement les documents avant d'approver les financements.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "transparence_financiere",
+        "source_title": "Municipal Council January2026",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Sans les documents complets sur les CFU/BP/ROB et sans des plans de financeme...",
+      "body": "**Constat factuel:**\nSans les documents complets sur les CFU/BP/ROB et sans des plans de financement clairs, on ne peut pas évaluer correctement la trajectoire financière de la commune. Cela entrave la confiance des citoyens dans les décisions de gouvernement.\n\n**Vos idées d'améliorations:**\nAméliorer la transparence en rendant publics les documents liés aux CFU/BP/ROB.\nConduire à la responsabilité des officials elected à l'obligation de proposer des plans de financement transparents.\nForcer le secret public sur les demandes de financements structurals.\nVérifier scrupuleusement les documents avant d'approver les financements."
+    },
+    {
+      "id": "field_logement_08594184",
+      "category": "logement",
+      "constat_factuel": "Les retards de construction dans le projet de logement à Audierne ont engendré des soucis de qualité des services techniques et un risque de délai d'exécution accéléré.",
+      "idees_ameliorations": "Créer un système transparent pour la reporting des progrès du projet, renforcer la transparence dans les décisions collectives par le biais d'organigrammes ouverts, mettre en place des régularités de mise à jour sur les situations de construction et établir une mechanism locale pour litige des retards.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "gouvernance_intercommunale",
+        "source_title": "Municipal Council January2026",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les retards de construction dans le projet de logement à Audierne ont engendr...",
+      "body": "**Constat factuel:**\nLes retards de construction dans le projet de logement à Audierne ont engendré des soucis de qualité des services techniques et un risque de délai d'exécution accéléré.\n\n**Vos idées d'améliorations:**\nCréer un système transparent pour la reporting des progrès du projet, renforcer la transparence dans les décisions collectives par le biais d'organigrammes ouverts, mettre en place des régularités de mise à jour sur les situations de construction et établir une mechanism locale pour litige des retards."
+    },
+    {
+      "id": "field_logement_5a4302d5",
+      "category": "logement",
+      "constat_factuel": "Les travaux de construction dans la commune deAudierne sont retards, ce qui entraîne des inconvénients pour les habitants et les services technologiques sont mal coordonnés.",
+      "idees_ameliorations": "Améliorer la transparence dans l'implantation des projets en mettant en avant les dates clés., Renforcer la coordination entre les entités impliquées comme la Ville, SNCF et BCE pour éviter les conflits., Créer un forum de discussion citoyen pour échanger des idées et assurer que les projets respectent les besoins locaux.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "gouvernance_intercommunale",
+        "source_title": "Municipal Council January2026",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les travaux de construction dans la commune deAudierne sont retards, ce qui e...",
+      "body": "**Constat factuel:**\nLes travaux de construction dans la commune deAudierne sont retards, ce qui entraîne des inconvénients pour les habitants et les services technologiques sont mal coordonnés.\n\n**Vos idées d'améliorations:**\nAméliorer la transparence dans l'implantation des projets en mettant en avant les dates clés., Renforcer la coordination entre les entités impliquées comme la Ville, SNCF et BCE pour éviter les conflits., Créer un forum de discussion citoyen pour échanger des idées et assurer que les projets respectent les besoins locaux."
+    },
+    {
+      "id": "field_logement_e89a8e94",
+      "category": "logement",
+      "constat_factuel": "Les retards de construction dans le quartier d'Audierne paraissent gravement perturber la vie commune et souligner les difficultés à concilier les besoins des habitants avec les ressources limitées.",
+      "idees_ameliorations": "Il est crucial de renforcer la coordination entre les différentes entités impliquées pour éviter ces retards. Une meilleure transparence dans les décisions collectives et les projets pourrait apaiser les préoccupations des citoyens. De plus, la création d'un groupe de travail conjointe et la publication régulière des informations sur les stades de projet seraient des solutions constructives pour améliorer l'engagement communautaire.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "gouvernance_intercommunale",
+        "source_title": "Municipal Council January2026",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les retards de construction dans le quartier d'Audierne paraissent gravement ...",
+      "body": "**Constat factuel:**\nLes retards de construction dans le quartier d'Audierne paraissent gravement perturber la vie commune et souligner les difficultés à concilier les besoins des habitants avec les ressources limitées.\n\n**Vos idées d'améliorations:**\nIl est crucial de renforcer la coordination entre les différentes entités impliquées pour éviter ces retards. Une meilleure transparence dans les décisions collectives et les projets pourrait apaiser les préoccupations des citoyens. De plus, la création d'un groupe de travail conjointe et la publication régulière des informations sur les stades de projet seraient des solutions constructives pour améliorer l'engagement communautaire."
+    },
+    {
+      "id": "field_culture_e12ebdb2",
+      "category": "culture",
+      "constat_factuel": "L'audierne fait face à des défis liés aux services techniques, groupes ouverts et logement. Des projets de rénovation manquent d'approvisionnements techniques nécessaires pour fonctionner correctement. De plus, les résidences en grappes soulent des préoccupations concernant la maintien de liens sociaux et la gestion des usages locaux.",
+      "idees_ameliorations": "Pour améliorer ces situations, il est recommandé d'organiser des ateliers communautaires pour collaborer sur les projets de renforcement technique. Par ailleurs, le développement d'un groupe ouvert dédié aux réflexions et à la résolution des problèmes liés aux logements pourrait renforcer la coopération entre les habitants et les institutions.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "influence_décision",
+        "source_title": "Municipal Council January2026",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'audierne fait face à des défis liés aux services techniques, groupes ouvert...",
+      "body": "**Constat factuel:**\nL'audierne fait face à des défis liés aux services techniques, groupes ouverts et logement. Des projets de rénovation manquent d'approvisionnements techniques nécessaires pour fonctionner correctement. De plus, les résidences en grappes soulent des préoccupations concernant la maintien de liens sociaux et la gestion des usages locaux.\n\n**Vos idées d'améliorations:**\nPour améliorer ces situations, il est recommandé d'organiser des ateliers communautaires pour collaborer sur les projets de renforcement technique. Par ailleurs, le développement d'un groupe ouvert dédié aux réflexions et à la résolution des problèmes liés aux logements pourrait renforcer la coopération entre les habitants et les institutions."
+    },
+    {
+      "id": "field_culture_221c9974",
+      "category": "culture",
+      "constat_factuel": "L'absence d'un Impact de l'Assiette Héritage (IAH) dans les developments récents à Audierne soulève des préoccupations relatives à la préservation du patrimoine local. Les constructions nouvelles n'intègrent pas assez les éléments de patrimoine etrisqués, ce qui peut conduire à des dommages irreversibles pour l'audience.",
+      "idees_ameliorations": "Intégrer un processus d'IAH dans le cadre du plan de développement urbain pour évaluer les impacts sur le patrimoine local. Organiser des ateliers et des meetings de town hall pour impliquer activement la communauté dans les décisions relatives au patrimoine. soutenir les artisans locaux pour présenter leurs usages traditionnels et renforcer ainsi l'identité culturelle commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "influence_décision",
+        "source_title": "Municipal Council January2026",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'absence d'un Impact de l'Assiette Héritage (IAH) dans les developments réce...",
+      "body": "**Constat factuel:**\nL'absence d'un Impact de l'Assiette Héritage (IAH) dans les developments récents à Audierne soulève des préoccupations relatives à la préservation du patrimoine local. Les constructions nouvelles n'intègrent pas assez les éléments de patrimoine etrisqués, ce qui peut conduire à des dommages irreversibles pour l'audience.\n\n**Vos idées d'améliorations:**\nIntégrer un processus d'IAH dans le cadre du plan de développement urbain pour évaluer les impacts sur le patrimoine local. Organiser des ateliers et des meetings de town hall pour impliquer activement la communauté dans les décisions relatives au patrimoine. soutenir les artisans locaux pour présenter leurs usages traditionnels et renforcer ainsi l'identité culturelle commune."
+    },
+    {
+      "id": "field_culture_9fb8889d",
+      "category": "culture",
+      "constat_factuel": "Les services techniques et logements enaudierne évoquent des défis liés à la maintenance et au développement durable de nos infrastructures tout en respectant les contraintes du patrimoine culturel. Les ressources humaines et financières sont souvent limitées, ce qui soulève des questions concernant l'engagement citoyen et la gestion effective des projets publics.",
+      "idees_ameliorations": "Pour améliorer la situation, il serait pertinent de : 1) stimuler l'utilisation d'outils techniques ouverts pour coordonnation et collaboration locale, 2) renforcer les fonds dispoñibles pour maintien et amélioration des infrastructures, 3) Renforcer les partenariats avec des non-profits et des initiatives locales pour optimiser les ressources.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "influence_décision",
+        "source_title": "Municipal Council January2026",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les services techniques et logements enaudierne évoquent des défis liés à la ...",
+      "body": "**Constat factuel:**\nLes services techniques et logements enaudierne évoquent des défis liés à la maintenance et au développement durable de nos infrastructures tout en respectant les contraintes du patrimoine culturel. Les ressources humaines et financières sont souvent limitées, ce qui soulève des questions concernant l'engagement citoyen et la gestion effective des projets publics.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il serait pertinent de : 1) stimuler l'utilisation d'outils techniques ouverts pour coordonnation et collaboration locale, 2) renforcer les fonds dispoñibles pour maintien et amélioration des infrastructures, 3) Renforcer les partenariats avec des non-profits et des initiatives locales pour optimiser les ressources."
+    },
+    {
+      "id": "field_culture_dce8aaf2",
+      "category": "culture",
+      "constat_factuel": "LA CONstruction D'UN NOUveau Centre DE Services À AUDIERNE Pourrait Causer Des Problèmes ÉCOLOGIQUES ET COMMUNITAIRES ÉVITABLES EN L'AGRANDISANT UNE PéRO cite DE LIEU SANS PARTE TERRITORIALE SIGNIFICATIVE.",
+      "idees_ameliorations": "Prolonger La Recherche De Sites ÉCOLOGIQUEMENT RESOUSTRES POUR LA CONSTRUCTION DES Services, En Collaboration avec les Inhabitants. Créer Un Processus DE Décision Plus transparent Où Les citoyens PEUvent Participer Directement. instaurer Une Commission Auditrice Localisée Pour Conduire Les Projets En tenant Compte Des Intérêts LOcales. renforcer L'éducation aux ImpactS ÉCOLOGIQUES et aux OP porteurs D'Actions Citoyennes.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "influence_décision",
+        "source_title": "Municipal Council January2026",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "LA CONstruction D'UN NOUveau Centre DE Services À AUDIERNE Pourrait Causer De...",
+      "body": "**Constat factuel:**\nLA CONstruction D'UN NOUveau Centre DE Services À AUDIERNE Pourrait Causer Des Problèmes ÉCOLOGIQUES ET COMMUNITAIRES ÉVITABLES EN L'AGRANDISANT UNE PéRO cite DE LIEU SANS PARTE TERRITORIALE SIGNIFICATIVE.\n\n**Vos idées d'améliorations:**\nProlonger La Recherche De Sites ÉCOLOGIQUEMENT RESOUSTRES POUR LA CONSTRUCTION DES Services, En Collaboration avec les Inhabitants. Créer Un Processus DE Décision Plus transparent Où Les citoyens PEUvent Participer Directement. instaurer Une Commission Auditrice Localisée Pour Conduire Les Projets En tenant Compte Des Intérêts LOcales. renforcer L'éducation aux ImpactS ÉCOLOGIQUES et aux OP porteurs D'Actions Citoyennes."
     }
   ]
 }

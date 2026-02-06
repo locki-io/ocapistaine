@@ -23,20 +23,27 @@ st.set_page_config(
 @st.cache_resource
 def _init_scheduler():
     """Initialize the APScheduler once per Streamlit server session."""
-    from app.services.scheduler import start_scheduler, scheduler
+    try:
+        from app.services.scheduler import start_scheduler, scheduler
 
-    # Only start if not already running
-    if scheduler is None or not scheduler.running:
-        # Run the async start_scheduler in an event loop
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        loop.run_until_complete(start_scheduler())
+        # Only start if not already running
+        if scheduler is None or not scheduler.running:
+            # Run the async start_scheduler in an event loop
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            loop.run_until_complete(start_scheduler())
 
-    return True
+        # Return scheduler reference to keep it alive
+        return scheduler
+    except Exception as e:
+        print(f"Scheduler initialization error: {e}")
+        return None
 
 
 # Start scheduler on app load
-_init_scheduler()
+_scheduler = _init_scheduler()
+if _scheduler is None:
+    print("Warning: Scheduler failed to initialize")
 
 # Authentication check (before loading any other content)
 from app.auth import check_password
