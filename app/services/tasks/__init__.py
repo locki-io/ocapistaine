@@ -286,6 +286,7 @@ from app.services.tasks.task_opik_experiment import task_opik_experiment
 from app.services.tasks.task_opik_evaluate import task_opik_evaluate
 from app.services.tasks.task_firecrawl import task_firecrawl
 from app.services.tasks.task_prompt_sync import task_prompt_sync
+from app.services.tasks.task_audierne_docs import task_audierne_docs
 
 __all__ = [
     # Utilities
@@ -306,4 +307,5 @@ __all__ = [
     "task_opik_evaluate",  # Creates dataset + runs evaluate()
     "task_firecrawl",
     "task_prompt_sync",  # Daily prompt sync to Opik
+    "task_audierne_docs",  # Audierne docs processing (dev)
 ]

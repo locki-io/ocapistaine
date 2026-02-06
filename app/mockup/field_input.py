@@ -34,6 +34,28 @@ from app.agents.forseti import CATEGORIES
 # Provider type for field input - use centralized type
 ProviderType = ProviderName
 
+
+def _normalize_category(category: str) -> str:
+    """
+    Normalize LLM-returned category to match valid CATEGORIES.
+
+    Handles:
+    - Accents: économie → economie, écologie → ecologie
+    - Underscores: alimentation_bien_etre → alimentation-bien-etre
+    - Mixed: alimentation_bien-être_soins → alimentation-bien-etre-soins
+    """
+    import unicodedata
+
+    # Remove accents via unicode normalization
+    normalized = unicodedata.normalize('NFKD', category)
+    normalized = ''.join(c for c in normalized if not unicodedata.combining(c))
+
+    # Replace underscores with hyphens
+    normalized = normalized.replace('_', '-')
+
+    # Lowercase
+    return normalized.lower()
+
 # Use case name for this module (used with get_recommended_model)
 USE_CASE = "field_input"
 
@@ -178,7 +200,26 @@ class FieldInputGenerator:
 
         Returns:
             List of extracted themes with category assignments
+
+        Raises:
+            RuntimeError: If Ollama provider is not available
         """
+        # Check Ollama availability before processing (fail fast)
+        if self._provider_name == "ollama":
+            if hasattr(self._provider, 'health_check'):
+                is_healthy = await self._provider.health_check()
+                if not is_healthy:
+                    self._logger.error(
+                        "PROVIDER_UNAVAILABLE",
+                        provider="ollama",
+                        host=getattr(self._provider, '_host', 'unknown'),
+                        hint="Is Ollama running? Try: ollama serve"
+                    )
+                    raise RuntimeError(
+                        "Ollama is not available. Please ensure Ollama is running (ollama serve) "
+                        "and the model is pulled (ollama pull mistral:latest)"
+                    )
+
         # Chunk size for processing (characters)
         # Most LLMs can handle 15-30k chars comfortably
         CHUNK_SIZE = 15000
@@ -307,7 +348,9 @@ Instructions:
             data = json.loads(content)
 
             for theme_data in data.get("themes", []):
-                category = theme_data.get("category", "")
+                raw_category = theme_data.get("category", "")
+                # Normalize category (remove accents, replace underscores)
+                category = _normalize_category(raw_category)
                 # Validate category is in allowed list
                 if category in CATEGORIES:
                     theme = ExtractedTheme(
@@ -318,7 +361,12 @@ Instructions:
                     )
                     themes.append(theme)
                 else:
-                    self._logger.warning("INVALID_CATEGORY", category=category, chunk=chunk_index)
+                    self._logger.warning(
+                        "INVALID_CATEGORY",
+                        raw=raw_category,
+                        normalized=category,
+                        chunk=chunk_index
+                    )
 
             self._logger.info("CHUNK_THEMES", chunk=chunk_index, themes=len(themes))
 

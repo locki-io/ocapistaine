@@ -494,12 +494,14 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
         )
         input_text = st.text_area(
             "Paste your text here",
-            value="",
+            value=st.session_state.get("paste_input_text", ""),
             height=300,
             key="paste_input_text",
             placeholder="Collez ici le contenu d'un rapport d'audience publique, "
             "d'un discours du maire, ou tout autre document municipal...",
         )
+        if input_text:
+            st.caption(f"Length: {len(input_text):,} characters")
 
     else:  # upload_file
         uploaded_file = st.file_uploader(
@@ -508,7 +510,13 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
             key="upload_field_input",
         )
         if uploaded_file:
-            input_text = uploaded_file.read().decode("utf-8")
+            # Cache file content in session_state (file can only be read once per upload)
+            cache_key = f"uploaded_content_{uploaded_file.name}_{uploaded_file.size}"
+            if cache_key not in st.session_state:
+                st.session_state[cache_key] = uploaded_file.read().decode("utf-8")
+                st.session_state["uploaded_file_name"] = uploaded_file.name
+
+            input_text = st.session_state[cache_key]
             source_file = uploaded_file.name
             source_title = uploaded_file.name
 
@@ -517,6 +525,7 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
                 st.markdown(
                     input_text[:3000] + ("..." if len(input_text) > 2000 else "")
                 )
+                st.caption(f"Length: {len(input_text):,} characters")
 
     # Generation settings
     st.markdown("#### 2. Generation Settings")
@@ -598,15 +607,33 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
     # Generate button
     st.markdown("---")
 
+    # Check if already processing (prevent concurrent Ollama requests)
+    is_processing = st.session_state.get("ollama_processing", False)
+
+    if is_processing:
+        st.warning("⏳ Already processing a request. Please wait for it to complete.")
+        if st.button("🔄 Clear processing lock", key="clear_ollama_lock"):
+            st.session_state["ollama_processing"] = False
+            st.rerun()
+
     if st.button(
-        "🚀 Generate Themed Contributions", type="primary", key="field_generate_btn"
+        "🚀 Generate Themed Contributions",
+        type="primary",
+        key="field_generate_btn",
+        disabled=is_processing,
     ):
         if not input_text.strip():
-            st.error("Please provide input text")
+            st.error("Please provide input text (upload a file or paste text first)")
             return
 
+        # Set processing lock
+        st.session_state["ollama_processing"] = True
+
+        # Show input info for debugging
+        st.info(f"Processing {len(input_text):,} characters from: {source_title or 'direct input'}")
+
         # Use sidebar session provider
-        spinner_text = f"Extracting themes using {session_provider}..."
+        spinner_text = f"Extracting themes from {len(input_text):,} chars using {session_provider}..."
 
         with st.spinner(spinner_text):
             try:
@@ -622,7 +649,11 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
                 st.success(f"✓ Generated using {session_provider}")
             except Exception as e:
                 st.error(f"Generation failed: {e}")
+                st.session_state["ollama_processing"] = False
                 return
+            finally:
+                # Clear processing lock
+                st.session_state["ollama_processing"] = False
 
             st.session_state["field_input_result"] = result
 

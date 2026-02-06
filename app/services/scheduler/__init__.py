@@ -43,6 +43,7 @@ CRAWL_CRON = "0 3 * * *"  # Daily at 3 AM
 OPIK_EXPERIMENT_CRON = "0 5 * * *"  # Daily at 5 AM (dataset creation)
 OPIK_EVALUATE_CRON = "*/30 7-22 * * *"  # Every 30 min, 7 AM - 10 PM (evaluation)
 PROMPT_SYNC_CRON = "0 0 * * *"  # Daily at midnight
+AUDIERNE_DOCS_CRON = "0 */2 * * *"  # Every 2 hours (dev: process one doc at a time)
 
 
 async def start_scheduler():
@@ -102,6 +103,7 @@ def _register_jobs():
         task_opik_evaluate,
         task_firecrawl,
         task_prompt_sync,
+        task_audierne_docs,
     )
 
     # Daily task chain orchestrator
@@ -148,6 +150,15 @@ def _register_jobs():
         id="task_prompt_sync",
         replace_existing=True,
         misfire_grace_time=600,
+    )
+
+    # Audierne docs processing - Every 2 hours (dev: one doc at a time)
+    scheduler.add_job(
+        func=task_audierne_docs,
+        trigger=CronTrigger.from_crontab(AUDIERNE_DOCS_CRON),
+        id="task_audierne_docs",
+        replace_existing=True,
+        misfire_grace_time=1800,  # 30 min grace (long-running task)
     )
 
     logger.info(f"Registered {len(scheduler.get_jobs())} scheduled jobs")
@@ -262,6 +273,7 @@ def run_task_now(
         task_opik_evaluate,
         task_firecrawl,
         task_prompt_sync,
+        task_audierne_docs,
     )
 
     tasks = {
@@ -270,6 +282,7 @@ def run_task_now(
         "task_opik_evaluate": task_opik_evaluate,
         "task_firecrawl": task_firecrawl,
         "task_prompt_sync": task_prompt_sync,
+        "task_audierne_docs": task_audierne_docs,
     }
 
     if task_name not in tasks:
@@ -321,6 +334,13 @@ def run_task_now(
     elif task_name == "task_prompt_sync":
         # Prompt sync has no special parameters
         return tasks[task_name](date_string)
+    elif task_name == "task_audierne_docs":
+        # Audierne docs processing
+        return tasks[task_name](
+            date_string,
+            provider=provider or "ollama",
+            model=ollama_model,
+        )
     else:
         return tasks[task_name](date_string)
 
@@ -376,6 +396,7 @@ def get_task_history(date_string: str = None) -> list:
         "task_opik_evaluate",
         "task_firecrawl",
         "task_prompt_sync",
+        "task_audierne_docs",
     ]
 
     history = []

@@ -13,7 +13,7 @@ from pydantic import Field
 # =============================================================================
 # PROVIDER TYPE
 # =============================================================================
-ProviderName = Literal["gemini", "claude", "mistral", "ollama"]
+ProviderName = Literal["gemini", "claude", "mistral", "ollama", "openai"]
 
 
 # =============================================================================
@@ -34,6 +34,14 @@ CLAUDE_MODELS = {
     "haiku": "claude-3-haiku-20240307",  # Fast, cheap
     "sonnet": "claude-3-5-sonnet-20241022",  # Balanced
     "opus": "claude-3-opus-20240229",  # Most capable
+}
+
+# OpenAI models
+OPENAI_MODELS = {
+    "gpt-4o-mini": "gpt-4o-mini",  # Fast, cheap, good quality
+    "gpt-4o": "gpt-4o",  # Best balance
+    "gpt-4-turbo": "gpt-4-turbo",  # Previous generation
+    "gpt-3.5-turbo": "gpt-3.5-turbo",  # Legacy, cheapest
 }
 
 # Mistral API models
@@ -148,6 +156,15 @@ PROVIDER_UI_CONFIG = {
         },
         "default": "deepseek-r1:7b",
     },
+    "openai": {
+        "name_key": "provider_openai",
+        "models": {
+            "gpt-4o-mini": "GPT-4o Mini (fast, cheap)",
+            "gpt-4o": "GPT-4o (best balance)",
+            "gpt-3.5-turbo": "GPT-3.5 Turbo (legacy)",
+        },
+        "default": "gpt-4o-mini",
+    },
 }
 
 
@@ -162,7 +179,7 @@ def get_model_id(provider: str, model_key: str) -> str:
     Used by sidebar.py, session.py, and other modules.
 
     Args:
-        provider: Provider name (gemini, claude, mistral, ollama)
+        provider: Provider name (gemini, claude, mistral, ollama, openai)
         model_key: Short model key (e.g., "flash", "haiku", "small")
 
     Returns:
@@ -174,6 +191,8 @@ def get_model_id(provider: str, model_key: str) -> str:
         return CLAUDE_MODELS.get(model_key, "claude-3-haiku-20240307")
     elif provider == "mistral":
         return MISTRAL_MODELS.get(model_key, "mistral-small-latest")
+    elif provider == "openai":
+        return OPENAI_MODELS.get(model_key, "gpt-4o-mini")
     elif provider == "ollama":
         # Ollama keys can be the model ID directly or a key
         if model_key in OLLAMA_MODELS:
@@ -207,6 +226,7 @@ RECOMMENDED_MODELS = {
         "claude": "sonnet",
         "mistral": "small",
         "ollama": "deepseek-r1:7b",
+        "openai": "gpt-4o-mini",
     },
     # Charter validation (Forseti)
     "charter_validation": {
@@ -214,6 +234,7 @@ RECOMMENDED_MODELS = {
         "claude": "sonnet",
         "mistral": "small",
         "ollama": "deepseek-r1:7b",
+        "openai": "gpt-4o-mini",
     },
     # Mockup mutations (fast generation)
     "mockup_mutations": {
@@ -221,6 +242,7 @@ RECOMMENDED_MODELS = {
         "claude": "haiku",
         "mistral": "small",
         "ollama": "mistral:7b",
+        "openai": "gpt-4o-mini",
     },
     # Default fallback
     "default": {
@@ -228,6 +250,7 @@ RECOMMENDED_MODELS = {
         "claude": "haiku",
         "mistral": "small",
         "ollama": "deepseek-r1:7b",
+        "openai": "gpt-4o-mini",
     },
 }
 
@@ -290,6 +313,11 @@ class ProviderConfig(BaseSettings):
     # Local Ollama
     ollama_host: str = Field(default="http://localhost:11434", alias="OLLAMA_HOST")
     ollama_model: str = Field(default="deepseek-r1:7b", alias="OLLAMA_MODEL")
+
+    # OpenAI
+    openai_api_key: str | None = Field(default=None, alias="OPENAI_API_KEY")
+    openai_model: str = Field(default="gpt-4o-mini", alias="OPENAI_MODEL")
+    openai_rate_limit: float = Field(default=0.5, alias="OPENAI_RATE_LIMIT")
 
     model_config = {
         "env_file": ".env",

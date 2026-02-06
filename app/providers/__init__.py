@@ -17,6 +17,7 @@ from .config import (
     MISTRAL_MODELS,
     OLLAMA_MODELS,
     OLLAMA_MODEL_IDS,
+    OPENAI_MODELS,
     # UI config
     PROVIDER_UI_CONFIG,
     # Recommended models per use case
@@ -32,6 +33,13 @@ from .gemini import GeminiProvider
 from .claude import ClaudeProvider
 from .mistral import MistralProvider
 from .ollama import OllamaProvider
+from .openai import OpenAIProvider
+from .failover import (
+    ProviderWithFailover,
+    with_failover,
+    get_available_provider,
+    DEFAULT_FAILOVER_CHAIN,
+)
 
 
 __all__ = [
@@ -47,6 +55,7 @@ __all__ = [
     "MISTRAL_MODELS",
     "OLLAMA_MODELS",
     "OLLAMA_MODEL_IDS",
+    "OPENAI_MODELS",
     # UI config
     "PROVIDER_UI_CONFIG",
     # Recommended models
@@ -61,14 +70,20 @@ __all__ = [
     "ClaudeProvider",
     "MistralProvider",
     "OllamaProvider",
+    "OpenAIProvider",
     "get_provider",
     "get_provider_logger",
     "ProviderLogger",
     "get_logger",
+    # Failover support
+    "ProviderWithFailover",
+    "with_failover",
+    "get_available_provider",
+    "DEFAULT_FAILOVER_CHAIN",
 ]
 
 
-ProviderName = Literal["gemini", "claude", "mistral", "ollama"]
+ProviderName = Literal["gemini", "claude", "mistral", "ollama", "openai"]
 
 # Provider registry
 _PROVIDERS: dict[str, type[LLMProvider]] = {
@@ -76,6 +91,7 @@ _PROVIDERS: dict[str, type[LLMProvider]] = {
     "claude": ClaudeProvider,
     "mistral": MistralProvider,
     "ollama": OllamaProvider,
+    "openai": OpenAIProvider,
 }
 
 # Cached provider instances
@@ -91,7 +107,7 @@ def get_provider(
     Factory function to get an LLM provider instance.
 
     Args:
-        name: Provider name ("gemini", "claude", "mistral", "ollama").
+        name: Provider name ("gemini", "claude", "mistral", "ollama", "openai").
               If None, uses DEFAULT_PROVIDER from environment.
         cache: If True, return cached instance if available.
         **kwargs: Additional arguments passed to provider constructor.

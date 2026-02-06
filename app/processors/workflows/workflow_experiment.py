@@ -95,8 +95,12 @@ def cleanup_error_traces(project_name: str = None, dry_run: bool = False) -> dic
             "retries exhausted",
             "rate limit",
             "validation error",
+            "classification error",
             "timeout",
             "failed",
+            "404 not found",
+            "503 service",
+            "connection refused",
         ]
 
         # Find error traces
@@ -128,7 +132,9 @@ def cleanup_error_traces(project_name: str = None, dry_run: bool = False) -> dic
             return result
 
         if dry_run:
-            logger.info(f"Cleanup: Would delete {len(error_trace_ids)} error traces (dry_run=True)")
+            logger.info(
+                f"Cleanup: Would delete {len(error_trace_ids)} error traces (dry_run=True)"
+            )
             return result
 
         # Delete error traces via REST API
@@ -140,7 +146,9 @@ def cleanup_error_traces(project_name: str = None, dry_run: bool = False) -> dic
             batch = error_trace_ids[i : i + batch_size]
             rest_client.traces.delete_traces(ids=batch)
             deleted += len(batch)
-            logger.info(f"Cleanup: Deleted {deleted}/{len(error_trace_ids)} error traces")
+            logger.info(
+                f"Cleanup: Deleted {deleted}/{len(error_trace_ids)} error traces"
+            )
 
         result["deleted"] = deleted
         logger.info(f"Cleanup: Successfully deleted {deleted} error traces")
@@ -280,7 +288,9 @@ def run_opik_experiment(config: OpikExperimentConfig) -> dict:
     logger.info(f"  metrics: {config.metrics}")
     logger.info(f"  experiment_type: {config.experiment_type}")
     logger.info(f"  task_provider (Forseti): {config.task_provider}")
-    logger.info(f"  judge_provider (Opik): {config.judge_config.get('provider')} / {config.judge_config.get('model')}")
+    logger.info(
+        f"  judge_provider (Opik): {config.judge_config.get('provider')} / {config.judge_config.get('model')}"
+    )
     logger.info(f"  cleanup_errors: {config.cleanup_errors}")
 
     result = {
@@ -354,7 +364,9 @@ def run_opik_experiment(config: OpikExperimentConfig) -> dict:
         logger.info(f"  experiment_config: {experiment_config}")
 
         # Step 3: Run evaluation
-        logger.info(f"Step 3: Running evaluation with {len(scoring_metrics)} metrics...")
+        logger.info(
+            f"Step 3: Running evaluation with {len(scoring_metrics)} metrics..."
+        )
         eval_results = evaluate(
             experiment_name=config.experiment_name,
             dataset=dataset,
@@ -483,11 +495,13 @@ def _create_category_task(provider: str) -> Callable:
 
         # Run classification
         agent = ForsetiAgent(provider_name=provider)
-        result = asyncio.run(agent.classify_category(
-            title=title,
-            body=body,
-            category=category,
-        ))
+        result = asyncio.run(
+            agent.classify_category(
+                title=title,
+                body=body,
+                category=category,
+            )
+        )
 
         return {
             "input": f"Classify category for:\nTitle: {title}\nBody: {body}",
@@ -550,7 +564,9 @@ def create_charter_compliance_metric():
 
         name = "charter_compliance"
 
-        def score(self, output: str, expected_output: str = None, **kwargs) -> ScoreResult:
+        def score(
+            self, output: str, expected_output: str = None, **kwargs
+        ) -> ScoreResult:
             """Score charter compliance."""
             # Extract is_valid from output
             is_valid_actual = "is_valid: True" in output or "is_valid: true" in output
@@ -690,7 +706,9 @@ def create_output_format_metric():
                         field_score += 0.2
                         reasons.append(f"✓ {field}: correct type")
                     else:
-                        reasons.append(f"✗ {field}: wrong type (got {type(value).__name__})")
+                        reasons.append(
+                            f"✗ {field}: wrong type (got {type(value).__name__})"
+                        )
                 else:
                     reasons.append(f"✗ {field}: missing")
 
@@ -755,6 +773,7 @@ def create_output_format_metric():
 
                 # Extract confidence
                 import re
+
                 conf_match = re.search(r"confidence[:\s]+([0-9.]+)", output)
                 if conf_match:
                     result["confidence"] = float(conf_match.group(1))
@@ -784,6 +803,7 @@ def _get_provider_model(provider_name: str) -> str:
     """Get the model name for a provider."""
     try:
         from app.providers import get_provider
+
         provider = get_provider(provider_name)
         return provider.model
     except Exception:
@@ -815,15 +835,47 @@ def list_available_metrics() -> list[dict]:
     """List all available Opik metrics."""
     return [
         # Built-in Opik metrics (LLM judges)
-        {"name": "hallucination", "description": "Detects generated false information", "type": "builtin"},
-        {"name": "moderation", "description": "Checks adherence to content standards", "type": "builtin"},
-        {"name": "answer_relevance", "description": "Evaluates how well the answer fits the question", "type": "builtin"},
-        {"name": "context_recall", "description": "Measures retrieval of relevant context", "type": "builtin"},
-        {"name": "context_precision", "description": "Measures precision of retrieved context", "type": "builtin"},
+        {
+            "name": "hallucination",
+            "description": "Detects generated false information",
+            "type": "builtin",
+        },
+        {
+            "name": "moderation",
+            "description": "Checks adherence to content standards",
+            "type": "builtin",
+        },
+        {
+            "name": "answer_relevance",
+            "description": "Evaluates how well the answer fits the question",
+            "type": "builtin",
+        },
+        {
+            "name": "context_recall",
+            "description": "Measures retrieval of relevant context",
+            "type": "builtin",
+        },
+        {
+            "name": "context_precision",
+            "description": "Measures precision of retrieved context",
+            "type": "builtin",
+        },
         # Custom OCapistaine metrics
-        {"name": "charter_compliance", "description": "Custom: Charter validation accuracy (is_valid match)", "type": "custom"},
-        {"name": "confidence", "description": "Custom: Confidence threshold check", "type": "custom"},
-        {"name": "output_format", "description": "Custom: Measures output format compliance (0-1 scale)", "type": "custom"},
+        {
+            "name": "charter_compliance",
+            "description": "Custom: Charter validation accuracy (is_valid match)",
+            "type": "custom",
+        },
+        {
+            "name": "confidence",
+            "description": "Custom: Confidence threshold check",
+            "type": "custom",
+        },
+        {
+            "name": "output_format",
+            "description": "Custom: Measures output format compliance (0-1 scale)",
+            "type": "custom",
+        },
     ]
 
 

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-02-06T10:32:03.149295",
-  "count": 74,
+  "generated_at": "2026-02-06T12:03:03.369375",
+  "count": 100,
   "contributions": [
     {
       "id": "base_ass_001",
@@ -1496,6 +1496,576 @@
       },
       "title": "Il est évident que le manque de places de stationnement est une préoccupation...",
       "body": "**Constat factuel:**\nIl est évident que le manque de places de stationnement est une préoccupation majeure à Audierne, particulièrement pour les commerçants du centre-ville et leurs clients. Trouver une place près des boutiques est souvent un défi, ce qui peut décourager les visiteurs et même les résidents de fréquenter les commerces locaux. Cette situation crée une pression non négligeable sur l'activité économique de notre commune.\n\n**Vos idées d'améliorations:**\nPour améliorer cette situation, il serait pertinent d'optimiser l'utilisation des parkings existants en améliorant la signalisation, notamment pour les parkings parfois méconnus en périphérie du centre. Nous pourrions également envisager la création de zones de stationnement de courte durée clairement identifiées devant les commerces, ou explorer la possibilité de parkings temporaires lors des périodes de forte affluence touristique. Enfin, une navette reliant les parkings éloignés au centre-ville pourrait être une solution innovante et écologique pour fluidifier le trafic et l'accès aux commerces."
+    },
+    {
+      "id": "field_economie_5d70dd28",
+      "category": "economie",
+      "constat_factuel": "Le port de Audierne est en besoin d'plus de Lieux_de_parkings pour accueillir le tourisme estival.",
+      "idees_ameliorations": "Convertir des espaces publics en Lieux_de_parkings. Collaboration avec les entreprises locales pour organiser des ateliers de parking suggestive.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "tourisme_et_parking",
+        "source_title": "Test",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Le port de Audierne est en besoin d'plus de Lieux_de_parkings pour accueillir...",
+      "body": "**Constat factuel:**\nLe port de Audierne est en besoin d'plus de Lieux_de_parkings pour accueillir le tourisme estival.\n\n**Vos idées d'améliorations:**\nConvertir des espaces publics en Lieux_de_parkings. Collaboration avec les entreprises locales pour organiser des ateliers de parking suggestive."
+    },
+    {
+      "id": "field_ecologie_d434f291",
+      "category": "ecologie",
+      "constat_factuel": "Le port de Audierne est actuellement confronté à un manque de Lieux_de_parkings, ce quileads à des émissions de辆 TRANSPORT et entrave l'optimisation de l'environnement.",
+      "idees_ameliorations": "Pour réduire ces émissions, il est essentiel d'agrandir la capacité du port en installant de plus de Lieux_de_parkings. De plus, encourageer les modes de TRANSPORT SUSTENABLE, comme les véhicules électriques ou le-sharing, pourrait sensiblement réduire les émissions tout en soutenant un environnement plus propre.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "transports_et_environnement",
+        "source_title": "Test",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Le port de Audierne est actuellement confronté à un manque de Lieux_de_parkin...",
+      "body": "**Constat factuel:**\nLe port de Audierne est actuellement confronté à un manque de Lieux_de_parkings, ce quileads à des émissions de辆 TRANSPORT et entrave l'optimisation de l'environnement.\n\n**Vos idées d'améliorations:**\nPour réduire ces émissions, il est essentiel d'agrandir la capacité du port en installant de plus de Lieux_de_parkings. De plus, encourageer les modes de TRANSPORT SUSTENABLE, comme les véhicules électriques ou le-sharing, pourrait sensiblement réduire les émissions tout en soutenant un environnement plus propre."
+    },
+    {
+      "id": "field_economie_a64dcdd6",
+      "category": "economie",
+      "constat_factuel": "L'urbrisingue à Audierne soulève des préoccupations principales concernant les risques d'inondation, qui menacent activement plusieurs projets de construction clés dans la Communauté Urbaine Rurale de l'Audierne. Les infrastructures mentionnées sont vulnérables aux événements hydrologiques extrêmes, ce qui soulève des préoccupations pour la sécurité et la durabilité des constructions récentes.",
+      "idees_ameliorations": "Pour améliorer la gestion des risques d'inondation, il serait pertinent de renforcer les outils de planification urbaine en intégrant des prévisions contrôlées du risque hydrologique. En parution, une campagne de sensibilisation active aux dangers des inondations pourrait renforcer la contribution citoyenne et stimuler la collaboration entre les résidents et les acteurs publics. De plus, un suivi rigoureux des infrastructures mentionnées et des projets de construction devrait permettre d'éviter ou minimiser l'impact des inondations dans les zones sensibles.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": " gestion_risques_inondation",
+        "source_title": "Mvp Meeting Satellite",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'urbrisingue à Audierne soulève des préoccupations principales concernant le...",
+      "body": "**Constat factuel:**\nL'urbrisingue à Audierne soulève des préoccupations principales concernant les risques d'inondation, qui menacent activement plusieurs projets de construction clés dans la Communauté Urbaine Rurale de l'Audierne. Les infrastructures mentionnées sont vulnérables aux événements hydrologiques extrêmes, ce qui soulève des préoccupations pour la sécurité et la durabilité des constructions récentes.\n\n**Vos idées d'améliorations:**\nPour améliorer la gestion des risques d'inondation, il serait pertinent de renforcer les outils de planification urbaine en intégrant des prévisions contrôlées du risque hydrologique. En parution, une campagne de sensibilisation active aux dangers des inondations pourrait renforcer la contribution citoyenne et stimuler la collaboration entre les résidents et les acteurs publics. De plus, un suivi rigoureux des infrastructures mentionnées et des projets de construction devrait permettre d'éviter ou minimiser l'impact des inondations dans les zones sensibles."
+    },
+    {
+      "id": "field_economie_9c5ef8c1",
+      "category": "economie",
+      "constat_factuel": "Les projets de construction à Audierne sont endommagés par le risque d'inondation, avec plusieurs projets situés au voisinage des rivières subissant des crues sans prévision.",
+      "idees_ameliorations": "Améliorer les systèmes d'irrigation et de drainage pour réduire l'exposition aux inondations. Organiser des ateliers communautaires pour collaborer sur la gestion des risques et la conception de infrastructures plus durables.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": " gestion_risques_inondation",
+        "source_title": "Mvp Meeting Satellite",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les projets de construction à Audierne sont endommagés par le risque d'inonda...",
+      "body": "**Constat factuel:**\nLes projets de construction à Audierne sont endommagés par le risque d'inondation, avec plusieurs projets situés au voisinage des rivières subissant des crues sans prévision.\n\n**Vos idées d'améliorations:**\nAméliorer les systèmes d'irrigation et de drainage pour réduire l'exposition aux inondations. Organiser des ateliers communautaires pour collaborer sur la gestion des risques et la conception de infrastructures plus durables."
+    },
+    {
+      "id": "field_economie_816b9cd0",
+      "category": "economie",
+      "constat_factuel": "Les projets de construction à Audierne sont confrontés à des risques hydrologiques importants, liés aux inondations. La gestion du risque n'est pas encore bien intégrée dans les stratégies urbaines et infrastructurales.",
+      "idees_ameliorations": "Pour améliorer la situation, il serait pertinent d'implémenter des strates de gestion du risque spécifiques pour les projets logement. En outre, l'utilisation de matériaux locaux et autonomes pourrait renforcer la résistance aux inondations. Il est également essentiel de renforcer les contrôles sur les constructions en integrant les normes techniques et le respect des codes urbanisants. Enfin, une collaboration active entre les citoyens et les experts du risque hydrologique pourrait améliorer l'efficacité des mesures防护aires.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": " gestion_risques_inondation",
+        "source_title": "Mvp Meeting Satellite",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les projets de construction à Audierne sont confrontés à des risques hydrolog...",
+      "body": "**Constat factuel:**\nLes projets de construction à Audierne sont confrontés à des risques hydrologiques importants, liés aux inondations. La gestion du risque n'est pas encore bien intégrée dans les stratégies urbaines et infrastructurales.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il serait pertinent d'implémenter des strates de gestion du risque spécifiques pour les projets logement. En outre, l'utilisation de matériaux locaux et autonomes pourrait renforcer la résistance aux inondations. Il est également essentiel de renforcer les contrôles sur les constructions en integrant les normes techniques et le respect des codes urbanisants. Enfin, une collaboration active entre les citoyens et les experts du risque hydrologique pourrait améliorer l'efficacité des mesures防护aires."
+    },
+    {
+      "id": "field_economie_a2016ffa",
+      "category": "economie",
+      "constat_factuel": "L'augmentation des inondations dans la région de l'Audierne a engendré un risque accru pour les projets de construction existants et future.",
+      "idees_ameliorations": "Pour réduire ce risque, il est recommandé d'implémenter des mesures de protection contre le fredonnage comme les diques et les barrières. Il est également suggéré de créer un réseaux local de experts locaux pour échanger des informations et améliorer la résistance des infrastructures. Enfin, il est crucial de suivi rigoureux des projets en respectant scrupuleusement les normes de sécurité liées aux inondations.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": " gestion_risques_inondation",
+        "source_title": "Mvp Meeting Satellite",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'augmentation des inondations dans la région de l'Audierne a engendré un ris...",
+      "body": "**Constat factuel:**\nL'augmentation des inondations dans la région de l'Audierne a engendré un risque accru pour les projets de construction existants et future.\n\n**Vos idées d'améliorations:**\nPour réduire ce risque, il est recommandé d'implémenter des mesures de protection contre le fredonnage comme les diques et les barrières. Il est également suggéré de créer un réseaux local de experts locaux pour échanger des informations et améliorer la résistance des infrastructures. Enfin, il est crucial de suivi rigoureux des projets en respectant scrupuleusement les normes de sécurité liées aux inondations."
+    },
+    {
+      "id": "field_economie_3df5b450",
+      "category": "economie",
+      "constat_factuel": "Observation concrète sur la situation actuelle à Audierne : Les subventions attribuées par l'ANCT pour le programme 'Petites villes de demain' sont souvent conditionnées à des procédés administratifs stricts et compliqués. Il semble que la complexité des demandes et du suivi des projets ne soient pas uniformément adaptées aux besoins locaux.",
+      "idees_ameliorations": "Idées concretes d'améliorations pour la commune : Simplifier les procédés administratifs pour l'attribution de subventions devrait permettre une meilleure gestion des ressources. En renforçant l'accès aux informations et aux documents nécessaires, le processus serait plus accessible et transparent. L'éducation des fonctionnaires locaux à la conformité aux réglementations pourrait renforcer l'efficacité des sous-traitances. Enfin, établir un système de feedback direct avec les citoyens permettrait d'agir en temps réel sur les demandes de subvention.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": " subvention_administrative",
+        "source_title": "Mvp Meeting Satellite",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Observation concrète sur la situation actuelle à Audierne : Les subventions a...",
+      "body": "**Constat factuel:**\nObservation concrète sur la situation actuelle à Audierne : Les subventions attribuées par l'ANCT pour le programme 'Petites villes de demain' sont souvent conditionnées à des procédés administratifs stricts et compliqués. Il semble que la complexité des demandes et du suivi des projets ne soient pas uniformément adaptées aux besoins locaux.\n\n**Vos idées d'améliorations:**\nIdées concretes d'améliorations pour la commune : Simplifier les procédés administratifs pour l'attribution de subventions devrait permettre une meilleure gestion des ressources. En renforçant l'accès aux informations et aux documents nécessaires, le processus serait plus accessible et transparent. L'éducation des fonctionnaires locaux à la conformité aux réglementations pourrait renforcer l'efficacité des sous-traitances. Enfin, établir un système de feedback direct avec les citoyens permettrait d'agir en temps réel sur les demandes de subvention."
+    },
+    {
+      "id": "field_economie_eb48676a",
+      "category": "economie",
+      "constat_factuel": "Les demandes de subvention pour les petites villes, comme Audierne, sont souvent rejetées par l'ANCT car le processus administratif est complexe et long. Cela limite l'engagement des communes dans les programmes regionaux.",
+      "idees_ameliorations": "Proposer un systeme plus simple d'envoi de demandes, eventuellement en ligne ou avec des templates prises en charge par la commune, pour reduire le temps nécessaire et faciliter l'insertion dans les projets.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": " subvention_administrative",
+        "source_title": "Mvp Meeting Satellite",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les demandes de subvention pour les petites villes, comme Audierne, sont souv...",
+      "body": "**Constat factuel:**\nLes demandes de subvention pour les petites villes, comme Audierne, sont souvent rejetées par l'ANCT car le processus administratif est complexe et long. Cela limite l'engagement des communes dans les programmes regionaux.\n\n**Vos idées d'améliorations:**\nProposer un systeme plus simple d'envoi de demandes, eventuellement en ligne ou avec des templates prises en charge par la commune, pour reduire le temps nécessaire et faciliter l'insertion dans les projets."
+    },
+    {
+      "id": "field_economie_9d9c3f68",
+      "category": "economie",
+      "constat_factuel": "L'Agence Nationale de la Cohésion des Territoires (ANCT) a mis en place des subventions pour soutenir les petites villes, notamment dans le cadre du programme 'Petites villes de demain'. Cependant, l'application pratique de ces sous-traitances par la commune de Audierne soulève des questions relatives à la simplicité administrative et l'efficacité des procedures pour les small-scale projets.",
+      "idees_ameliorations": "Pour améliorer ce processus, il serait utile d'intégrer des outils de simplification administrative, comme la création d'une liste centralisée de priorités pour les projets de rénovation et de développement urbain. De plus, une formation minutieuse sur les normes légales et les procédés administratifs pourrait guider les citoyens vers des solutions plus efficaces et respectueuses de l'environnement. Enfin, une collaboration entre la commune et les institutions locales pourrait faciliter l'accès à ces subventions pour renforcer l'auto-détermination territoriale.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": " subvention_administrative",
+        "source_title": "Mvp Meeting Satellite",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'Agence Nationale de la Cohésion des Territoires (ANCT) a mis en place des s...",
+      "body": "**Constat factuel:**\nL'Agence Nationale de la Cohésion des Territoires (ANCT) a mis en place des subventions pour soutenir les petites villes, notamment dans le cadre du programme 'Petites villes de demain'. Cependant, l'application pratique de ces sous-traitances par la commune de Audierne soulève des questions relatives à la simplicité administrative et l'efficacité des procedures pour les small-scale projets.\n\n**Vos idées d'améliorations:**\nPour améliorer ce processus, il serait utile d'intégrer des outils de simplification administrative, comme la création d'une liste centralisée de priorités pour les projets de rénovation et de développement urbain. De plus, une formation minutieuse sur les normes légales et les procédés administratifs pourrait guider les citoyens vers des solutions plus efficaces et respectueuses de l'environnement. Enfin, une collaboration entre la commune et les institutions locales pourrait faciliter l'accès à ces subventions pour renforcer l'auto-détermination territoriale."
+    },
+    {
+      "id": "field_economie_3350b9a9",
+      "category": "economie",
+      "constat_factuel": "Les subventions administatives accordées par l'ANCT pour les petites villes sont tres compliques a obtenir, surtout dans des contextes ou les conditions sont mal definies.",
+      "idees_ameliorations": "On pourrait simplifier les procedures administratives pour ces petites villes pour faciliter leur accès aux subvents et stimuler leur developpement economique local.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": " subvention_administrative",
+        "source_title": "Mvp Meeting Satellite",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les subventions administatives accordées par l'ANCT pour les petites villes s...",
+      "body": "**Constat factuel:**\nLes subventions administatives accordées par l'ANCT pour les petites villes sont tres compliques a obtenir, surtout dans des contextes ou les conditions sont mal definies.\n\n**Vos idées d'améliorations:**\nOn pourrait simplifier les procedures administratives pour ces petites villes pour faciliter leur accès aux subvents et stimuler leur developpement economique local."
+    },
+    {
+      "id": "field_logement_9b4f2980",
+      "category": "logement",
+      "constat_factuel": "Les résidences secondaires dans la commune de Audierne sembleient proliferer, ce qui engendre des conflits sociaux et des coûts accris pour les habitants locaux.",
+      "idees_ameliorations": "Pour améliorer la situation, il serait utile de limiter le nombre de résidences secondaires pour éviter les conflits et les charges financières. Par ailleurs, promoteur d'Airbnb comme alternative pour soutenir ce type d'location pourrait être une solution envisageable.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": " résidences_secondaires",
+        "source_title": "Mvp Meeting Satellite",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les résidences secondaires dans la commune de Audierne sembleient proliferer,...",
+      "body": "**Constat factuel:**\nLes résidences secondaires dans la commune de Audierne sembleient proliferer, ce qui engendre des conflits sociaux et des coûts accris pour les habitants locaux.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il serait utile de limiter le nombre de résidences secondaires pour éviter les conflits et les charges financières. Par ailleurs, promoteur d'Airbnb comme alternative pour soutenir ce type d'location pourrait être une solution envisageable."
+    },
+    {
+      "id": "field_logement_cd470839",
+      "category": "logement",
+      "constat_factuel": "Les résidences secondaires dans la commune de Audierne ont augmenté dans nombre, ce qui a entraîné des conflits locaux liés aux impacts environnementaux et aux coûts de maintenance.",
+      "idees_ameliorations": "Introduire des contrôles plus rigoureux sur les constructions secondaires pour limiter leur impact environnemental et réduire les dommages à la santé publique. Entraîner les propriétaire de résidences secondaires à adopter des pratiques de maintenance plus efficaces et à respecter les normes de l'ambition commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": " résidences_secondaires",
+        "source_title": "Mvp Meeting Satellite",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les résidences secondaires dans la commune de Audierne ont augmenté dans nomb...",
+      "body": "**Constat factuel:**\nLes résidences secondaires dans la commune de Audierne ont augmenté dans nombre, ce qui a entraîné des conflits locaux liés aux impacts environnementaux et aux coûts de maintenance.\n\n**Vos idées d'améliorations:**\nIntroduire des contrôles plus rigoureux sur les constructions secondaires pour limiter leur impact environnemental et réduire les dommages à la santé publique. Entraîner les propriétaire de résidences secondaires à adopter des pratiques de maintenance plus efficaces et à respecter les normes de l'ambition commune."
+    },
+    {
+      "id": "field_logement_b190fa6b",
+      "category": "logement",
+      "constat_factuel": "Les résidences secondaires de type Airbnb dans la commune d'Audierne ont augmenté significativement au fil des années, malgré les efforts locaux pour les limiter.",
+      "idees_ameliorations": "Pour améliorer la situation, il serait pertinent d'agir contre l'abondance de ces résidences secondaires, en renforçant l'exécution des contrôles existants et en offrant un soutien plus soutenu aux ménages impactés par ces modifications.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": " résidences_secondaires",
+        "source_title": "Mvp Meeting Satellite",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les résidences secondaires de type Airbnb dans la commune d'Audierne ont augm...",
+      "body": "**Constat factuel:**\nLes résidences secondaires de type Airbnb dans la commune d'Audierne ont augmenté significativement au fil des années, malgré les efforts locaux pour les limiter.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il serait pertinent d'agir contre l'abondance de ces résidences secondaires, en renforçant l'exécution des contrôles existants et en offrant un soutien plus soutenu aux ménages impactés par ces modifications."
+    },
+    {
+      "id": "field_logement_0398c735",
+      "category": "logement",
+      "constat_factuel": "Il y a un intérêt à réduire l'augmentation des résidences secondaires de type Airbnb dans la commune de Audierne car cela engendre des conflits et des coûts pour les habitants.",
+      "idees_ameliorations": "Le Conseil municipal doit concerter strictement les contrôles sur les résidences secondaires pour limiter les impacts négatifs sur l'environnement et le traffic. Une réduction drastique est nécessaire avant que la situation ne s'améliore.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": " résidences_secondaires",
+        "source_title": "Mvp Meeting Satellite",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Il y a un intérêt à réduire l'augmentation des résidences secondaires de type...",
+      "body": "**Constat factuel:**\nIl y a un intérêt à réduire l'augmentation des résidences secondaires de type Airbnb dans la commune de Audierne car cela engendre des conflits et des coûts pour les habitants.\n\n**Vos idées d'améliorations:**\nLe Conseil municipal doit concerter strictement les contrôles sur les résidences secondaires pour limiter les impacts négatifs sur l'environnement et le traffic. Une réduction drastique est nécessaire avant que la situation ne s'améliore."
+    },
+    {
+      "id": "field_logement_fe90635c",
+      "category": "logement",
+      "constat_factuel": "Les écoles actuelles dans la commune de Audierne sont spéculant sur des infrastructures scolaires séparées, ce qui menace l'efficacité économique et l'éducation.",
+      "idees_ameliorations": "Agir pour un razing conjoint des bâtiments éducatifs, créant une place commune plus conviveale et accessible. Renforcer la sécurité en intégrant des renforcements solides. Créer des espaces verts pour stimuler la vie sociale et l'économie locale.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "revitalisation_logement",
+        "source_title": "Mvp Meeting",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les écoles actuelles dans la commune de Audierne sont spéculant sur des infra...",
+      "body": "**Constat factuel:**\nLes écoles actuelles dans la commune de Audierne sont spéculant sur des infrastructures scolaires séparées, ce qui menace l'efficacité économique et l'éducation.\n\n**Vos idées d'améliorations:**\nAgir pour un razing conjoint des bâtiments éducatifs, créant une place commune plus conviveale et accessible. Renforcer la sécurité en intégrant des renforcements solides. Créer des espaces verts pour stimuler la vie sociale et l'économie locale."
+    },
+    {
+      "id": "field_logement_e40c28d1",
+      "category": "logement",
+      "constat_factuel": "Les ménages habitants de la commune d'Audierne voient leur situation de logement évoluer avec des enjeux économiques et sociaux importants. La concentration de l'éducation dans l'école Pierre Le Lec soulève des questions relatives à l'accès aux infrastructures et à la qualité de vie pour les families localisées dans ce projet de rénovation, riche en perspectives pour le développement durable de la commune.",
+      "idees_ameliorations": "En parle de la nécessité d'agrandir les logements existants pour répondre à une demande croissante de population et d'habitation. Une collaboration entre les habitants, les communes et les institutions éducatives pour développer des actions collectives permettant d'offrir des locaux accessibles et d'économie friendly. Une attention particulière aux besoins des étudiants et des families pour renforcer l'accessibilité et la quality de vie dans cette Communauté rurale connectée à une mer, renforçant son attractivité touristique et économique.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "revitalisation_logement",
+        "source_title": "Mvp Meeting",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les ménages habitants de la commune d'Audierne voient leur situation de logem...",
+      "body": "**Constat factuel:**\nLes ménages habitants de la commune d'Audierne voient leur situation de logement évoluer avec des enjeux économiques et sociaux importants. La concentration de l'éducation dans l'école Pierre Le Lec soulève des questions relatives à l'accès aux infrastructures et à la qualité de vie pour les families localisées dans ce projet de rénovation, riche en perspectives pour le développement durable de la commune.\n\n**Vos idées d'améliorations:**\nEn parle de la nécessité d'agrandir les logements existants pour répondre à une demande croissante de population et d'habitation. Une collaboration entre les habitants, les communes et les institutions éducatives pour développer des actions collectives permettant d'offrir des locaux accessibles et d'économie friendly. Une attention particulière aux besoins des étudiants et des families pour renforcer l'accessibilité et la quality de vie dans cette Communauté rurale connectée à une mer, renforçant son attractivité touristique et économique."
+    },
+    {
+      "id": "field_logement_e489f8a3",
+      "category": "logement",
+      "constat_factuel": "La situation actuelle dansAudierne semble indiquer un manque d'investissement dans les logements locaux, avec des quartiers congestionnés et sans infrastructures modernes, ce qui peut nuire à la cohésion sociale et au développement économique local.",
+      "idees_ameliorations": "Afin de raffiner cette situation, il serait pertinent de : - Coordiner les projets de rénovation avec les voies pubiques pour créer des quartiers autonomes; - Renforcer l'infrastructure publique comme les réseaux d'autobus et les services sociaux; - Intégrer des espaces éducatifs dans les quartets locaux pour stimuler le développement économique de la communauté.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "revitalisation_logement",
+        "source_title": "Mvp Meeting",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "La situation actuelle dansAudierne semble indiquer un manque d'investissement...",
+      "body": "**Constat factuel:**\nLa situation actuelle dansAudierne semble indiquer un manque d'investissement dans les logements locaux, avec des quartiers congestionnés et sans infrastructures modernes, ce qui peut nuire à la cohésion sociale et au développement économique local.\n\n**Vos idées d'améliorations:**\nAfin de raffiner cette situation, il serait pertinent de : - Coordiner les projets de rénovation avec les voies pubiques pour créer des quartiers autonomes; - Renforcer l'infrastructure publique comme les réseaux d'autobus et les services sociaux; - Intégrer des espaces éducatifs dans les quartets locaux pour stimuler le développement économique de la communauté."
+    },
+    {
+      "id": "field_logement_8046e982",
+      "category": "logement",
+      "constat_factuel": "L'AGGREGATION DES ÉCOLES À AUDIERNE ET ESQUIBIEN SOITraité avec une Manque DE Solidarité pour L'Avenir du Cap Sizun. Les Écoles Ne Bringing EN sage CONNAISSANCE, Et les Logements MANquent De VALEUR Face à LA Croissance ÉCONOMIQUE. C'est UN Projet qui A TOUTE CETTE Information sous le Neurage D'UN Objectif MIEUX QUE L'autre.",
+      "idees_ameliorations": "Créer Un Développement Mixte avec Des ÉCOLES, Des VILLES COMMUNAUTIQUES, Des BOUT DE BOUCHES ET Des Logements. Ajouter Des ESPACES Végétaux Pour Renforcer La SÉCURITÉ. Renforcer L'INFRAstructure du Domaine En Créant Des Chemins D'accès MEUX Et Des Services Publics. Élaborer Uneripe Réalisable Par Une Commission De Conduite Les AMENATIONS POUR L'Avenir.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "revitalisation_logement",
+        "source_title": "Mvp Meeting",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'AGGREGATION DES ÉCOLES À AUDIERNE ET ESQUIBIEN SOITraité avec une Manque DE...",
+      "body": "**Constat factuel:**\nL'AGGREGATION DES ÉCOLES À AUDIERNE ET ESQUIBIEN SOITraité avec une Manque DE Solidarité pour L'Avenir du Cap Sizun. Les Écoles Ne Bringing EN sage CONNAISSANCE, Et les Logements MANquent De VALEUR Face à LA Croissance ÉCONOMIQUE. C'est UN Projet qui A TOUTE CETTE Information sous le Neurage D'UN Objectif MIEUX QUE L'autre.\n\n**Vos idées d'améliorations:**\nCréer Un Développement Mixte avec Des ÉCOLES, Des VILLES COMMUNAUTIQUES, Des BOUT DE BOUCHES ET Des Logements. Ajouter Des ESPACES Végétaux Pour Renforcer La SÉCURITÉ. Renforcer L'INFRAstructure du Domaine En Créant Des Chemins D'accès MEUX Et Des Services Publics. Élaborer Uneripe Réalisable Par Une Commission De Conduite Les AMENATIONS POUR L'Avenir."
+    },
+    {
+      "id": "field_economie_0bc5ffe0",
+      "category": "economie",
+      "constat_factuel": "Le budgets de la commune d'Audierne est contraint avec une capacité d'autofinancement limitée pour l'investissement de environ 500 000 euros par an. Aucun consensus n'a été atteint sur les propositions pour améliorer cette situation financière.",
+      "idees_ameliorations": "Pour améliorer la situation financière, il serait utile d'exploiter les subventions disponibles pour soutenir des investissements durables. De plus, organiser un assemblye citoyenne pourrait permettre de recueillir des avis collectifs et d'aboutir à des décisions plus pertinentes. Enfin, le stockage de fonds sur plusieurs années pourrait offrir une certaine marge de manoeuvre tout en respectant les contraintes financières actuelles.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "planification_financière",
+        "source_title": "Mvp Meeting",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Le budgets de la commune d'Audierne est contraint avec une capacité d'autofin...",
+      "body": "**Constat factuel:**\nLe budgets de la commune d'Audierne est contraint avec une capacité d'autofinancement limitée pour l'investissement de environ 500 000 euros par an. Aucun consensus n'a été atteint sur les propositions pour améliorer cette situation financière.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation financière, il serait utile d'exploiter les subventions disponibles pour soutenir des investissements durables. De plus, organiser un assemblye citoyenne pourrait permettre de recueillir des avis collectifs et d'aboutir à des décisions plus pertinentes. Enfin, le stockage de fonds sur plusieurs années pourrait offrir une certaine marge de manoeuvre tout en respectant les contraintes financières actuelles."
+    },
+    {
+      "id": "field_economie_68855220",
+      "category": "economie",
+      "constat_factuel": "Le budget de la commune de Audierne est contraint avec une capacité d'autofinancement limitée pour l'investissement annuel de seulement 500 000 euros. Bien que des propositions pour améliorer la situation financière aient été émises, aucun consensus n'a été atteint.",
+      "idees_ameliorations": "Pour améliorer la situation financière, il serait pertinent d'explorer les possibilités de financement extérieures, comme les subventions ou les allocations d'aide de l'État. De plus, il serait constructif de Renforcer les partenariats entre des associations locales et des entreprises pour recueillir des fonds supplémentaires.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "planification_financière",
+        "source_title": "Mvp Meeting",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Le budget de la commune de Audierne est contraint avec une capacité d'autofin...",
+      "body": "**Constat factuel:**\nLe budget de la commune de Audierne est contraint avec une capacité d'autofinancement limitée pour l'investissement annuel de seulement 500 000 euros. Bien que des propositions pour améliorer la situation financière aient été émises, aucun consensus n'a été atteint.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation financière, il serait pertinent d'explorer les possibilités de financement extérieures, comme les subventions ou les allocations d'aide de l'État. De plus, il serait constructif de Renforcer les partenariats entre des associations locales et des entreprises pour recueillir des fonds supplémentaires."
+    },
+    {
+      "id": "field_economie_c992b275",
+      "category": "economie",
+      "constat_factuel": "Le budget de la commune est contraint, avec une capacité d'autofinancement limitée pour l'investissement de 500 000 euros par an. Des propositions pour améliorer la situation financière ont étéfaites, mais aucun consensus n'a étéatteint.",
+      "idees_ameliorations": "Il est essentiel de reconsidérer les sources de financement pour permettre une meilleure allocation des ressources. Une collaboration avec des partenaires locaux ou nationaux pourrait apporter de nouvelles perspectives. De plus, l'exploitation de liens avec des entreprises locales ou le renforcement des contributions des citoyens pourraient renforcer la solidarité et stimuler les investissements nécessaires.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "planification_financière",
+        "source_title": "Mvp Meeting",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Le budget de la commune est contraint, avec une capacité d'autofinancement li...",
+      "body": "**Constat factuel:**\nLe budget de la commune est contraint, avec une capacité d'autofinancement limitée pour l'investissement de 500 000 euros par an. Des propositions pour améliorer la situation financière ont étéfaites, mais aucun consensus n'a étéatteint.\n\n**Vos idées d'améliorations:**\nIl est essentiel de reconsidérer les sources de financement pour permettre une meilleure allocation des ressources. Une collaboration avec des partenaires locaux ou nationaux pourrait apporter de nouvelles perspectives. De plus, l'exploitation de liens avec des entreprises locales ou le renforcement des contributions des citoyens pourraient renforcer la solidarité et stimuler les investissements nécessaires."
+    },
+    {
+      "id": "field_economie_86ab4436",
+      "category": "economie",
+      "constat_factuel": "LA COMMUNE A UNE CAPACITÉ D'AUTOFINANSCHE MINIÈRE, ENviron 500 000 EUROS PAR AN, POUR L'INVESTissement. LES PROPOSITIONS DE BUDGET ONT ÉTÉ FONTEES, MAIS AUCUN consensus a été atteint par les citoyens et les institutions locales.",
+      "idees_ameliorations": "",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "planification_financière",
+        "source_title": "Mvp Meeting",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "LA COMMUNE A UNE CAPACITÉ D'AUTOFINANSCHE MINIÈRE, ENviron 500 000 EUROS PAR ...",
+      "body": "**Constat factuel:**\nLA COMMUNE A UNE CAPACITÉ D'AUTOFINANSCHE MINIÈRE, ENviron 500 000 EUROS PAR AN, POUR L'INVESTissement. LES PROPOSITIONS DE BUDGET ONT ÉTÉ FONTEES, MAIS AUCUN consensus a été atteint par les citoyens et les institutions locales."
+    },
+    {
+      "id": "field_jeunesse_6707cb1f",
+      "category": "jeunesse",
+      "constat_factuel": "En France, plus de la moitié des habitants de l'authentique commune d'Audierne ont plus de 60 ans. La communauté et l'hôpital de Douarnenez soutiennent une politique étagrée visant à améliorer les infrastructures de circulation et les ressources pour les seniors.",
+      "idees_ameliorations": "Intégrer des formations citoyennes axées sur la vie active dans les programmes scolaires et créer des lieux dédiés aux rééducation physico-sociale pour les seniors, en collaboration avec des associations locales.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation_seniors",
+        "source_title": "Mvp Meeting",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "En France, plus de la moitié des habitants de l'authentique commune d'Audiern...",
+      "body": "**Constat factuel:**\nEn France, plus de la moitié des habitants de l'authentique commune d'Audierne ont plus de 60 ans. La communauté et l'hôpital de Douarnenez soutiennent une politique étagrée visant à améliorer les infrastructures de circulation et les ressources pour les seniors.\n\n**Vos idées d'améliorations:**\nIntégrer des formations citoyennes axées sur la vie active dans les programmes scolaires et créer des lieux dédiés aux rééducation physico-sociale pour les seniors, en collaboration avec des associations locales."
+    },
+    {
+      "id": "field_jeunesse_1a215f65",
+      "category": "jeunesse",
+      "constat_factuel": "La majorité des habitants d'Audierne, plus de la moitié, est âgée à plus de 60 ans. Une forteunsupported population senestre est presentee par le community et soutenu par l'hospital de Douarnenez, avec un objectif de regrouper les EHPAD et améliorer les infrastructures de circulation.",
+      "idees_ameliorations": "Améliorer les services de transport pour les seniors, en créant un shuttle pour les elderly. Upgrades des infrastructures existantes dans les EHPAD. Renforcer la convivialité et l'accessibilité des rues pour faciliter le passage des personnes âgées.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation_seniors",
+        "source_title": "Mvp Meeting",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "La majorité des habitants d'Audierne, plus de la moitié, est âgée à plus de 6...",
+      "body": "**Constat factuel:**\nLa majorité des habitants d'Audierne, plus de la moitié, est âgée à plus de 60 ans. Une forteunsupported population senestre est presentee par le community et soutenu par l'hospital de Douarnenez, avec un objectif de regrouper les EHPAD et améliorer les infrastructures de circulation.\n\n**Vos idées d'améliorations:**\nAméliorer les services de transport pour les seniors, en créant un shuttle pour les elderly. Upgrades des infrastructures existantes dans les EHPAD. Renforcer la convivialité et l'accessibilité des rues pour faciliter le passage des personnes âgées."
+    },
+    {
+      "id": "field_jeunesse_4c3b32c6",
+      "category": "jeunesse",
+      "constat_factuel": "Plus de la moitié de la population d'Audierne est âgée de plus de 60 ans, ce qui soulève des questions sur l'accès aux éducation et aux ressources pour apprendre ou se former dans ce contexte.",
+      "idees_ameliorations": "Pour améliorer les conditions d'éducation seniors, il serait pertinent d'explore les possibilités de créer des écoles d'éducation populaire dédiées aux seniors. De plus, renforcer le financement pour les programmes de formation et l'accès à la documentation est essentiel. Une collaboration avec des entreprises locales pourrait favoriser la création de stagesFormation et d'activités éducatives. Enfin, améliorer l'infrastructure existante, comme l'accès aux salles de cours et aux Bibliothèques senioriennes, pourrait renforcer le soutien à ce groupe social.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation_seniors",
+        "source_title": "Mvp Meeting",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Plus de la moitié de la population d'Audierne est âgée de plus de 60 ans, ce ...",
+      "body": "**Constat factuel:**\nPlus de la moitié de la population d'Audierne est âgée de plus de 60 ans, ce qui soulève des questions sur l'accès aux éducation et aux ressources pour apprendre ou se former dans ce contexte.\n\n**Vos idées d'améliorations:**\nPour améliorer les conditions d'éducation seniors, il serait pertinent d'explore les possibilités de créer des écoles d'éducation populaire dédiées aux seniors. De plus, renforcer le financement pour les programmes de formation et l'accès à la documentation est essentiel. Une collaboration avec des entreprises locales pourrait favoriser la création de stagesFormation et d'activités éducatives. Enfin, améliorer l'infrastructure existante, comme l'accès aux salles de cours et aux Bibliothèques senioriennes, pourrait renforcer le soutien à ce groupe social."
+    },
+    {
+      "id": "field_jeunesse_d1249c96",
+      "category": "jeunesse",
+      "constat_factuel": "MoCAUDIERNE a plus de la moitié de sa population âgée de plus de 60 ans. La communauté et l'Hôpital de Douarnenez soutiennent des politiques pour les seniors, visant à renforcer les infrastructures de santé et de mobilité.",
+      "idees_ameliorations": "AUGMENTER L'INFRACTION DES CENTRES EHPAD, AMéliorer les services de santé et de mobilité, créeZdes MOBILITÉS COMMUNAUTAIRES, dégagerZ des VIVIENNES Z seniors-friendlyES et organiserZ des ÉVÉNEMENTS COMMUNAUX pour renforcer les liens entre les seniors et les Jeunes.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation_seniors",
+        "source_title": "Mvp Meeting",
+        "generated_date": "2026-02-06",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "MoCAUDIERNE a plus de la moitié de sa population âgée de plus de 60 ans. La c...",
+      "body": "**Constat factuel:**\nMoCAUDIERNE a plus de la moitié de sa population âgée de plus de 60 ans. La communauté et l'Hôpital de Douarnenez soutiennent des politiques pour les seniors, visant à renforcer les infrastructures de santé et de mobilité.\n\n**Vos idées d'améliorations:**\nAUGMENTER L'INFRACTION DES CENTRES EHPAD, AMéliorer les services de santé et de mobilité, créeZdes MOBILITÉS COMMUNAUTAIRES, dégagerZ des VIVIENNES Z seniors-friendlyES et organiserZ des ÉVÉNEMENTS COMMUNAUX pour renforcer les liens entre les seniors et les Jeunes."
     }
   ]
 }

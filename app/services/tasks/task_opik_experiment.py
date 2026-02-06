@@ -2,19 +2,21 @@
 Opik Experiment Dataset Builder Task
 
 Creates optimization datasets from charter_validation spans using Opik-native workflow:
-1. Search Opik for charter_validation spans
-2. Filter by Correctness feedback score (low scores = optimization candidates)
-3. Exclude spans already added_to_dataset
-4. Create dataset for prompt optimization (separate optimization task)
+1. Cleanup error traces (removes traces with validation errors like Ollama 404s)
+2. Search Opik for charter_validation spans
+3. Filter by Correctness feedback score (low scores = optimization candidates)
+4. Exclude spans already added_to_dataset
+5. Create dataset for prompt optimization (separate optimization task)
 
 This is the correct Opik workflow - we query existing spans and create datasets.
 The actual optimization runs as a separate task against the dataset.
 
 Flow:
-1. Search Opik for charter_validation spans with Correctness < threshold
-2. Filter out spans already marked as added_to_dataset
-3. Create dataset with incremental name from those span IDs
-4. Mark spans as added_to_dataset to avoid duplicates
+1. Cleanup error traces to avoid polluting optimization datasets
+2. Search Opik for charter_validation spans with Correctness < threshold
+3. Filter out spans already marked as added_to_dataset
+4. Create dataset with incremental name from those span IDs
+5. Mark spans as added_to_dataset to avoid duplicates
 """
 
 from datetime import datetime
@@ -83,15 +85,17 @@ def task_opik_experiment(
     model: str = None,
     ollama_sleep: float = None,
     experiment_type: str = "charter_optimization",
+    cleanup_errors: bool = True,
 ) -> dict:
     """
     Build optimization dataset from charter_validation spans using Opik-native workflow.
 
     Workflow:
-    1. Query Opik for charter_validation spans with Correctness < threshold
-    2. Exclude spans already added_to_dataset
-    3. Create optimization dataset from matching span IDs
-    4. Mark spans as added_to_dataset
+    1. Cleanup error traces (removes validation errors like Ollama 404s)
+    2. Query Opik for charter_validation spans with Correctness < threshold
+    3. Exclude spans already added_to_dataset
+    4. Create optimization dataset from matching span IDs
+    5. Mark spans as added_to_dataset
 
     Note: This task only BUILDS the dataset. The actual optimization
     runs as a separate task (task_prompt_optimization).
@@ -104,6 +108,7 @@ def task_opik_experiment(
         model: Not used (kept for API compatibility)
         ollama_sleep: Not used (kept for API compatibility)
         experiment_type: Type of dataset to build (default: charter_optimization)
+        cleanup_errors: If True, delete error traces before building dataset (default: True)
 
     Returns:
         dict: Result with dataset info and counts
@@ -125,10 +130,28 @@ def task_opik_experiment(
         result["experiment_type"] = experiment_type
         result["max_correctness"] = max_correctness
         result["max_items"] = max_items
+        result["cleanup_errors"] = cleanup_errors
+        result["cleanup_result"] = None
         result["dataset_name"] = None
         result["spans_found"] = 0
         result["spans_already_in_dataset"] = 0
         result["spans_added_to_dataset"] = 0
+
+        # Step 0: Cleanup error traces before building dataset
+        # This removes traces with validation errors (e.g., Ollama 404s, rate limits)
+        # to avoid polluting optimization datasets
+        if cleanup_errors:
+            logger.log_progress("Cleaning up error traces before building dataset...")
+            from app.processors.workflows.workflow_experiment import cleanup_error_traces
+            cleanup_result = cleanup_error_traces()
+            result["cleanup_result"] = cleanup_result
+            if cleanup_result.get("deleted", 0) > 0:
+                logger.log_progress(
+                    f"Deleted {cleanup_result['deleted']} error traces "
+                    f"(patterns: {cleanup_result.get('error_patterns', {})})"
+                )
+            else:
+                logger.log_progress("No error traces to cleanup")
 
         # Check if Opik is configured
         from app.agents.tracing import get_tracer

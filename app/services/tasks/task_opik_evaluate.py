@@ -16,6 +16,11 @@ task handles the async nature of span ingestion.
 
 Pre-experiment cleanup removes traces with validation errors to avoid
 polluting the optimization process.
+
+IMPORTANT: This task defaults to gemini for evaluation to avoid
+conflicts with Ollama (which may be used by other tasks).
+If task_provider="ollama" is specified, it will check the global
+Ollama lock before proceeding.
 """
 
 from datetime import datetime, timedelta
@@ -83,6 +88,15 @@ def task_opik_evaluate(
     lookback_hours = lookback_hours if lookback_hours is not None else DEFAULT_LOOKBACK_HOURS
     metrics = metrics or ["hallucination", "output_format"]  # Include output_format by default
     task_provider = task_provider or "gemini"
+
+    # Check Ollama lock if using Ollama (avoid conflicts with other tasks)
+    if task_provider == "ollama":
+        from app.services.scheduler.utils import get_scheduler_redis
+        l = get_scheduler_redis()
+        if l.exists("lock:ollama:global"):
+            result["warnings"].append("Ollama is locked by another task, using gemini instead")
+            task_provider = "gemini"  # Failover to gemini
+            logger.log_progress("Ollama locked, failing over to gemini")
 
     try:
         # Initialize result
