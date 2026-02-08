@@ -28,6 +28,9 @@
   "status_not_configured": "Not configured",
   "status_in_development": "In development",
   "status_planned": "Planned",
+  "status_scheduler_paused": "Scheduler paused",
+  "status_scheduler_paused_reason": "Continuous improvement loop disabled on demo",
+  "status_scheduler_paused_help": "Background tasks (Opik evaluation, document processing) are disabled on this demo instance to save memory. Full scheduler runs on the dev branch.",
 
   "tab_contributions": "Contributions",
   "tab_autocontrib": "Auto-Contribution",

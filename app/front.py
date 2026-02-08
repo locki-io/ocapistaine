@@ -8,6 +8,7 @@ User identification via single UUID (cookie-based).
 
 import asyncio
 import json
+import os
 import time
 
 import requests
@@ -23,7 +24,15 @@ st.set_page_config(
 
 @st.cache_resource
 def _init_scheduler():
-    """Initialize the APScheduler once per Streamlit server session."""
+    """Initialize the APScheduler once per Streamlit server session.
+
+    Disabled by default on cloud deployments (DISABLE_SCHEDULER=true)
+    to reduce memory footprint on free tier instances.
+    """
+    # Skip scheduler on demo/cloud instances to save memory
+    if os.getenv("DISABLE_SCHEDULER", "false").lower() == "true":
+        return "disabled"
+
     try:
         from app.services.scheduler import start_scheduler, scheduler
 
@@ -37,14 +46,13 @@ def _init_scheduler():
         # Return scheduler reference to keep it alive
         return scheduler
     except Exception as e:
-        print(f"Scheduler initialization error: {e}")
+        # Only log once (cache_resource ensures single call)
+        print(f"Scheduler init skipped: {e}")
         return None
 
 
-# Start scheduler on app load
+# Start scheduler on app load (cached - runs once per server session)
 _scheduler = _init_scheduler()
-if _scheduler is None:
-    print("Warning: Scheduler failed to initialize")
 
 # Authentication check (before loading any other content)
 from app.auth import check_password

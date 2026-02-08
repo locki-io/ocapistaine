@@ -304,7 +304,7 @@ def get_model_id() -> str:
 def _display_status_indicators() -> None:
     """Display system status indicators."""
 
-    # Status: 🟢 = operational, 🟡 = partial/dev, 🔴 = not available
+    # Status: 🟢 = operational, 🟡 = partial/dev, 🔴 = not available, ⏸️ = paused
     status_items = [
         ("status_redis", "🟢", "status_connected"),
         ("status_firecrawl", "🟢", "status_connected"),
@@ -314,6 +314,15 @@ def _display_status_indicators() -> None:
 
     for name_key, icon, tooltip_key in status_items:
         st.caption(f"{icon} {_(name_key)}")
+
+    # Show scheduler status (disabled on demo instances to save memory)
+    scheduler_disabled = os.getenv("DISABLE_SCHEDULER", "false").lower() == "true"
+    if scheduler_disabled:
+        st.caption(f"⏸️ {_('status_scheduler_paused')}")
+        st.caption(
+            f"_{_('status_scheduler_paused_reason')}_",
+            help=_("status_scheduler_paused_help"),
+        )
 
 
 def init_session_state() -> None:

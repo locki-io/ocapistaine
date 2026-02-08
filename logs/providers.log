@@ -2326,3 +2326,5 @@
 2026-02-08 08:40:45 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
 2026-02-08 08:40:45 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
 2026-02-08 08:40:47 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-08 12:40:04 | INFO     | ocapistaine.providers | REQUEST | provider=gemini | model=gemini-2.5-flash | temp=0.3 | json_mode=true
+2026-02-08 12:40:09 | INFO     | ocapistaine.providers | RESPONSE | provider=gemini | model=gemini-2.5-flash | latency_ms=5091

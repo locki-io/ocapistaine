@@ -9,6 +9,9 @@ services:
     dockerContext: .
     # Render sets PORT env var - our entrypoint uses it for Streamlit
     envVars:
+      # Memory optimization for free tier
+      - key: DISABLE_SCHEDULER
+        value: "true"
       # Authentication (set in Render dashboard for security)
       - key: STREAMLIT_AUTH_PASSWORD
         sync: false

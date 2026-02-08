@@ -28,6 +28,9 @@
   "status_not_configured": "Non configuré",
   "status_in_development": "En développement",
   "status_planned": "Planifié",
+  "status_scheduler_paused": "Scheduler en pause",
+  "status_scheduler_paused_reason": "Boucle d'amélioration continue désactivée sur la démo",
+  "status_scheduler_paused_help": "Les tâches de fond (évaluation Opik, traitement de documents) sont désactivées sur cette instance de démo pour économiser la mémoire. Le scheduler complet tourne sur la branche dev.",
 
   "tab_contributions": "Contributions",
   "tab_autocontrib": "Auto-Contribution",
