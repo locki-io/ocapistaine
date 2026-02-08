@@ -4,8 +4,6 @@ LLM Provider Factory
 Exports all providers and provides a factory function for instantiation.
 """
 
-from typing import Literal
-
 from .base import LLMProvider, Message, CompletionResponse
 from .config import (
     ProviderConfig,
@@ -82,8 +80,6 @@ __all__ = [
     "DEFAULT_FAILOVER_CHAIN",
 ]
 
-
-ProviderName = Literal["gemini", "claude", "mistral", "ollama", "openai"]
 
 # Provider registry
 _PROVIDERS: dict[str, type[LLMProvider]] = {

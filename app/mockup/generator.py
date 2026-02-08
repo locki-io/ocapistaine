@@ -282,16 +282,18 @@ class ContributionGenerator:
         parent: MockContribution,
         num_variations: int = 5,
         include_violations: bool = True,
-        model: str = "mistral:latest",
+        provider_name: str = "openai",
+        model: str | None = None,
     ) -> List[MockContribution]:
         """
-        Generate variations using LLM (Ollama/Mistral) for semantic mutations.
+        Generate variations using LLM for semantic mutations.
 
         Args:
             parent: Parent contribution
             num_variations: Number of variations to generate
             include_violations: Include violation mutations
-            model: Ollama model to use
+            provider_name: LLM provider (openai, claude, gemini, ollama, mistral)
+            model: Optional model name (default: provider's default)
 
         Returns:
             List of derived contributions with LLM-generated mutations
@@ -302,7 +304,7 @@ class ContributionGenerator:
             _run_async,
         )
 
-        mutator = LLMMutator(model=model)
+        mutator = LLMMutator(provider_name=provider_name, model=model or None)
         derived = []
 
         # Define mutation sequence
@@ -501,7 +503,8 @@ def generate_variations(
     num_variations: int = 5,
     include_violations: bool = True,
     use_llm: bool = False,
-    llm_model: str = "mistral:latest",
+    llm_provider: str = "openai",
+    llm_model: str | None = None,
 ) -> List[dict]:
     """
     Quick function to generate variations of a single contribution.
@@ -512,8 +515,9 @@ def generate_variations(
         category: Optional category
         num_variations: Number of variations
         include_violations: Whether to inject violations
-        use_llm: Use LLM (Ollama/Mistral) for semantic mutations
-        llm_model: Ollama model to use (default: mistral:latest)
+        use_llm: Use LLM for semantic mutations
+        llm_provider: LLM provider (openai, claude, gemini, ollama, mistral)
+        llm_model: Optional model name (default: provider's default)
 
     Returns:
         List of variation dictionaries
@@ -533,6 +537,7 @@ def generate_variations(
             parent=base,
             num_variations=num_variations,
             include_violations=include_violations,
+            provider_name=llm_provider,
             model=llm_model,
         )
     else:
@@ -552,7 +557,8 @@ def generate_variations_async(
     category: Optional[str] = None,
     num_variations: int = 5,
     include_violations: bool = True,
-    llm_model: str = "mistral:latest",
+    llm_provider: str = "openai",
+    llm_model: str | None = None,
 ) -> List[dict]:
     """
     Async function to generate LLM-based variations.
@@ -563,7 +569,8 @@ def generate_variations_async(
         category: Optional category
         num_variations: Number of variations
         include_violations: Whether to inject violations
-        llm_model: Ollama model to use
+        llm_provider: LLM provider (openai, claude, gemini, ollama, mistral)
+        llm_model: Optional model name (default: provider's default)
 
     Returns:
         List of variation dictionaries
@@ -575,5 +582,6 @@ def generate_variations_async(
         num_variations=num_variations,
         include_violations=include_violations,
         use_llm=True,
+        llm_provider=llm_provider,
         llm_model=llm_model,
     )

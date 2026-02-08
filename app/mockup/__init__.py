@@ -50,7 +50,7 @@ from app.mockup.llm_mutations import (
     MutationResult,
     mutate_with_llm,
     generate_llm_variations,
-    check_ollama_available,
+    check_provider_available,
 )
 
 from app.mockup.field_input import (
@@ -88,7 +88,7 @@ __all__ = [
     "MutationResult",
     "mutate_with_llm",
     "generate_llm_variations",
-    "check_ollama_available",
+    "check_provider_available",
     # Storage
     "ValidationRecord",
     "MockupStorage",

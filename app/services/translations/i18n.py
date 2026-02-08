@@ -22,7 +22,7 @@ LANGUAGES = {
     "en": "English",
 }
 
-DEFAULT_LANGUAGE = "fr"
+DEFAULT_LANGUAGE = "en"
 
 
 def _is_streamlit_running() -> bool:

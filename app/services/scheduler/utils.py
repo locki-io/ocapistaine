@@ -6,13 +6,10 @@ Extracted to avoid circular imports between app.services.scheduler and app.servi
 """
 
 import os
-import redis
 from contextlib import contextmanager
-from dotenv import load_dotenv
 
 from app.services.logging import get_logger
-
-load_dotenv()
+from app.data.redis_client import get_redis_config, get_redis_connection
 
 logger = get_logger("tasks")
 
@@ -20,56 +17,17 @@ logger = get_logger("tasks")
 SCHED_KEY_PREFIX = "sched:"
 
 
-def _get_redis_config() -> tuple[str, int, str | None, bool]:
-    """
-    Get Redis connection config from environment.
-
-    Supports multiple env var formats:
-    - REDIS_HOST + REDIS_PORT + REDIS_PASSWORD (standard)
-    - UPSTASH_REDIS_REST_URL (auto-parse Upstash URL)
-
-    Returns:
-        Tuple of (host, port, password, use_ssl)
-    """
-    # Check for Upstash URL first
-    upstash_url = os.getenv("UPSTASH_REDIS_REST_URL", "")
-    if upstash_url:
-        # Parse: https://xxx.upstash.io -> xxx.upstash.io
-        host = upstash_url.replace("https://", "").replace("http://", "").rstrip("/")
-        password = os.getenv("REDIS_PASSWORD") or os.getenv("UPSTASH_REDIS_REST_TOKEN")
-        return host, 6379, password, True  # Upstash always uses SSL
-
-    # Standard config
-    redis_host = os.getenv("REDIS_HOST", "localhost")
-    redis_port = int(os.getenv("REDIS_PORT", "6379"))
-    redis_password = os.getenv("REDIS_PASSWORD", "") or None
-    use_ssl = "upstash" in redis_host.lower()
-
-    return redis_host, redis_port, redis_password, use_ssl
-
-
-def get_scheduler_redis() -> redis.Redis:
+def get_scheduler_redis():
     """
     Get Redis connection for scheduler locks and success keys.
 
-    Uses REDIS_DB env var (default=0 for cloud compatibility).
+    Uses the shared connection pool from redis_client.
     Keys are prefixed with 'sched:' to separate from app data.
 
     Returns:
-        redis.Redis: Redis client connected to scheduler database
+        redis.Redis: Redis client from shared pool
     """
-    host, port, password, use_ssl = _get_redis_config()
-    redis_db = int(os.getenv("REDIS_DB", "0"))
-
-    return redis.Redis(
-        host=host,
-        port=port,
-        password=password,
-        db=redis_db,
-        decode_responses=True,
-        ssl=use_ssl,
-        ssl_cert_reqs=None if use_ssl else None,
-    )
+    return get_redis_connection()
 
 
 def sched_key(key: str) -> str:
@@ -155,4 +113,4 @@ def scheduler_redis_connection():
     try:
         yield r
     finally:
-        pass  # Connection is not pooled, will close automatically
+        pass  # Connection returns to pool automatically

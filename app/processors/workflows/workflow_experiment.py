@@ -210,7 +210,7 @@ class OpikExperimentConfig:
         dataset_name: str,
         experiment_type: str,
         metrics: Optional[list[str]] = None,
-        task_provider: str = "gemini",
+        task_provider: str = "openai",
         custom_task: Optional[Callable] = None,
         cleanup_errors: bool = True,
     ):

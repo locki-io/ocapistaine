@@ -68,7 +68,7 @@ from app.services.translations import _
 from app.services import PresentationLogger, ServiceLogger, AgentLogger
 from app.mockup.batch_view import batch_validation_view
 from app.auto_contribution import autocontribution_view
-from data.redis_client import get_redis_connection
+from app.ui.floating_overlay import init_floating_overlay, render_floating_overlay, add_to_overlay, clear_overlay
 
 # TODO: Import services when implemented
 # from app.services.chat_service import ChatService
@@ -607,6 +607,8 @@ def _display_anonymization_result(result: dict):
 
 def contributions_view(user_id: str):
     """Display contributions from audierne2026/participons repository."""
+    # Initialize floating overlay for action results
+    init_floating_overlay()
 
     st.subheader(f"📝 {_('contributions_title')}")
     st.markdown(_("contributions_subtitle"))
@@ -732,6 +734,9 @@ def contributions_view(user_id: str):
                             title, body, category, user_id, issue_id
                         )
                         st.session_state[f"forseti_result_{issue_id}"] = result
+                        # Reset overlay and add new result
+                        clear_overlay()
+                        add_to_overlay(f"issue_{issue_id}", "validation", result)
 
             with action_col2:
                 # Forseti classification button
@@ -747,6 +752,9 @@ def contributions_view(user_id: str):
                     with st.spinner(_("forseti_classifying")):
                         result = _classify_with_forseti(title, body, category, user_id)
                         st.session_state[f"classify_result_{issue_id}"] = result
+                        # Reset overlay and add new result
+                        clear_overlay()
+                        add_to_overlay(f"issue_{issue_id}", "classification", result)
 
             with action_col3:
                 # Forseti anonymization button
@@ -762,6 +770,9 @@ def contributions_view(user_id: str):
                     with st.spinner(_("forseti_anonymizing")):
                         result = _anonymize_with_forseti(title, body, user_id)
                         st.session_state[f"anonymize_result_{issue_id}"] = result
+                        # Reset overlay and add new result
+                        clear_overlay()
+                        add_to_overlay(f"issue_{issue_id}", "anonymization", result)
 
             with action_col4:
                 # Link to GitHub
@@ -769,23 +780,10 @@ def contributions_view(user_id: str):
                 if html_url:
                     st.markdown(f"[{_('contributions_view_github')}]({html_url})")
 
-            # Display Forseti validation result if available
-            result_key = f"forseti_result_{issue_id}"
-            if result_key in st.session_state:
-                result = st.session_state[result_key]
-                _display_forseti_result(result)
+            # Results are shown in floating overlay only (no duplicate inline display)
 
-            # Display classification result if available
-            classify_key = f"classify_result_{issue_id}"
-            if classify_key in st.session_state:
-                result = st.session_state[classify_key]
-                _display_classification_result(result)
-
-            # Display anonymization result if available
-            anonymize_key = f"anonymize_result_{issue_id}"
-            if anonymize_key in st.session_state:
-                result = st.session_state[anonymize_key]
-                _display_anonymization_result(result)
+    # Render floating overlay for action results
+    render_floating_overlay()
 
 
 def documents_view(user_id: str):

@@ -2,7 +2,7 @@
 """
 LLM-Based Mutation Generation
 
-Uses Ollama (Mistral) to generate semantic mutations of contributions
+Uses LLM providers to generate semantic mutations of contributions
 for more realistic charter validation testing.
 
 Mutation types:
@@ -18,8 +18,8 @@ from typing import List, Dict, Any, Optional
 from dataclasses import dataclass
 from enum import Enum
 
-from app.providers.ollama import OllamaProvider
-from app.providers.base import Message
+from app.providers import get_provider
+from app.providers.base import Message, LLMProvider
 from app.services.logging import MockupLogger
 
 _logger = MockupLogger("llm_mutations")
@@ -135,35 +135,38 @@ class MutationResult:
 
 class LLMMutator:
     """
-    LLM-based text mutator using Ollama (Mistral).
+    LLM-based text mutator using any provider.
 
     Generates semantic mutations for contribution testing.
     """
 
     def __init__(
         self,
-        model: str = "mistral:latest",
-        host: str | None = None,
-        timeout: float = 60.0,
+        provider_name: str = "ollama",
+        model: str | None = None,
     ):
         """
         Initialize the LLM mutator.
 
         Args:
-            model: Ollama model name (default: mistral:latest)
-            host: Ollama host URL (default: from config)
-            timeout: Request timeout in seconds
+            provider_name: Provider name (ollama, openai, claude, gemini, mistral)
+            model: Model name (default: provider's default)
         """
-        self._provider = OllamaProvider(
+        self._provider = get_provider(
+            provider_name,
             model=model,
-            host=host,
-            timeout=timeout,
+            cache=False,
         )
+        self._provider_name = provider_name
+        self._model = model
         self._logger = MockupLogger("llm_mutator")
 
     async def health_check(self) -> bool:
-        """Check if Ollama is available."""
-        return await self._provider.health_check()
+        """Check if the provider is available."""
+        if hasattr(self._provider, "health_check"):
+            return await self._provider.health_check()
+        # For providers without health_check, assume available
+        return True
 
     async def mutate(
         self,
@@ -369,7 +372,8 @@ def _run_async(coro):
 def mutate_with_llm(
     text: str,
     mutation_type: str | MutationType = MutationType.PARAPHRASE,
-    model: str = "mistral:latest",
+    provider_name: str = "openai",
+    model: str | None = None,
 ) -> MutationResult:
     """
     Synchronous wrapper for LLM mutation.
@@ -377,7 +381,8 @@ def mutate_with_llm(
     Args:
         text: Text to mutate
         mutation_type: Type of mutation (string or MutationType)
-        model: Ollama model to use
+        provider_name: Provider to use (ollama, openai, claude, gemini, mistral)
+        model: Model name (default: provider's default)
 
     Returns:
         MutationResult
@@ -385,7 +390,7 @@ def mutate_with_llm(
     if isinstance(mutation_type, str):
         mutation_type = MutationType(mutation_type)
 
-    mutator = LLMMutator(model=model)
+    mutator = LLMMutator(provider_name=provider_name, model=model)
     return _run_async(mutator.mutate(text, mutation_type))
 
 
@@ -393,7 +398,8 @@ def generate_llm_variations(
     text: str,
     num_variations: int = 5,
     include_violations: bool = True,
-    model: str = "mistral:latest",
+    provider_name: str = "openai",
+    model: str | None = None,
 ) -> List[Dict[str, Any]]:
     """
     Synchronous wrapper for generating variation series.
@@ -402,18 +408,19 @@ def generate_llm_variations(
         text: Original text
         num_variations: Number of variations
         include_violations: Include violation mutations
-        model: Ollama model to use
+        provider_name: Provider to use (ollama, openai, claude, gemini, mistral)
+        model: Model name (default: provider's default)
 
     Returns:
         List of variation dictionaries
     """
-    mutator = LLMMutator(model=model)
+    mutator = LLMMutator(provider_name=provider_name, model=model)
     return _run_async(
         mutator.generate_variation_series(text, num_variations, include_violations)
     )
 
 
-async def check_ollama_available(model: str = "mistral:latest") -> bool:
-    """Check if Ollama is available with the specified model."""
-    mutator = LLMMutator(model=model)
+async def check_provider_available(provider_name: str = "openai", model: str | None = None) -> bool:
+    """Check if the provider is available."""
+    mutator = LLMMutator(provider_name=provider_name, model=model)
     return await mutator.health_check()

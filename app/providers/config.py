@@ -13,7 +13,7 @@ from pydantic import Field
 # =============================================================================
 # PROVIDER TYPE
 # =============================================================================
-ProviderName = Literal["gemini", "claude", "mistral", "ollama", "openai"]
+ProviderName = Literal["openai", "claude", "mistral", "ollama", "gemini"]
 
 
 # =============================================================================

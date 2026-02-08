@@ -42,7 +42,7 @@ class OptimizationResult:
 
 def get_optimizer(
     optimizer_type: str = "few_shot_bayesian",
-    model: str = "gemini/gemini-2.0-flash",
+    model: str = "openai/gpt-4o-mini",
     project_name: str = "forseti-optimization",
 ):
     """
@@ -205,7 +205,7 @@ def optimize_forseti_charter(
     prompt_name: str = "forseti.charter_validation",
     optimizer_type: str = "few_shot_bayesian",
     num_iterations: int = 50,
-    model: str = "gemini/gemini-2.0-flash",
+    model: str = "openai/gpt-4o-mini",
     save_to_opik: bool = True,
 ) -> OptimizationResult:
     """

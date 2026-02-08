@@ -10,6 +10,7 @@ Features:
 - Batch validation with Forseti
 - Store results in Redis (contribution_mockup:forseti461:charter)
 - Export to Opik datasets for prompt optimization
+- Floating overlay for action results (validate/classify/anonymize)
 """
 
 import asyncio
@@ -20,9 +21,15 @@ from typing import List, Optional, Callable
 import streamlit as st
 
 from app.services.translations import _
+from app.ui.floating_overlay import (
+    init_floating_overlay,
+    render_floating_overlay,
+    add_to_overlay,
+    clear_overlay,
+)
 from app.providers import get_provider
 from app.agents.forseti import ForsetiAgent
-from app.agents.forseti.features import AnonymizationFeature
+from app.agents.forseti.features import AnonymizationFeature, TranslationFeature
 from app.mockup.generator import (
     ContributionGenerator,
     MockContribution,
@@ -179,6 +186,9 @@ def batch_validation_view(user_id: str, validate_func: Callable) -> None:
         user_id: Current user ID
         validate_func: Function to validate a contribution (title, body, category) -> dict
     """
+    # Initialize floating overlay for action results
+    init_floating_overlay()
+
     st.subheader("🧪 Batch Validation (Mockup)")
     st.markdown(
         "Test Forseti validation with mock contributions using Levenshtein-based variations. "
@@ -218,6 +228,9 @@ def batch_validation_view(user_id: str, validate_func: Callable) -> None:
         _storage_opik_view(user_id)
     else:
         _from_contribution_view(user_id, validate_func)
+
+    # Render floating overlay for action results
+    render_floating_overlay()
 
 
 def _load_contributions_with_redis_fallback() -> tuple[list, str]:
@@ -259,6 +272,7 @@ def _load_contributions_with_redis_fallback() -> tuple[list, str]:
 
 def _load_existing_view(user_id: str, validate_func: Callable) -> None:
     """Load and validate existing mockup contributions."""
+    st.session_state["current_batch_view"] = "load_existing"
     contributions, source = _load_contributions_with_redis_fallback()
 
     if not contributions:
@@ -313,7 +327,8 @@ def _load_existing_view(user_id: str, validate_func: Callable) -> None:
 
 
 def _generate_new_view(user_id: str, validate_func: Callable) -> None:
-    """Generate new variations from base contributions."""
+    """Generate new variations from base contributions using LLM."""
+    st.session_state["current_batch_view"] = "generate_new"
     generator = load_contributions()
 
     # Get base contributions only (not derived)
@@ -328,6 +343,12 @@ def _generate_new_view(user_id: str, validate_func: Callable) -> None:
         return
 
     st.info(f"Found **{len(base_contributions)}** base contributions")
+
+    # LLM provider from sidebar
+    from app.services.session import get_session_provider, get_session_model
+
+    session_provider = get_session_provider(user_id)
+    session_model = get_session_model(user_id)
 
     # Generation settings
     col1, col2, col3 = st.columns(3)
@@ -346,13 +367,8 @@ def _generate_new_view(user_id: str, validate_func: Callable) -> None:
             key="include_violations",
         )
     with col3:
-        max_distance = st.slider(
-            "Max distance ratio",
-            min_value=0.1,
-            max_value=0.5,
-            value=0.3,
-            key="max_distance",
-        )
+        st.caption(f"🤖 **{session_provider}**")
+        st.caption(f"`{session_model or 'default'}`")
 
     # Select which bases to use
     base_options = {
@@ -372,19 +388,20 @@ def _generate_new_view(user_id: str, validate_func: Callable) -> None:
             st.error("Select at least one base contribution")
             return
 
-        with st.spinner("Generating variations..."):
+        with st.spinner("Generating LLM variations..."):
             new_generator = ContributionGenerator()
 
             for base_id in selected_bases:
                 base = next(c for c in base_contributions if c.id == base_id)
                 new_generator.contributions.append(base)
 
-                # Generate variation series
-                new_generator.generate_variation_series(
+                # Generate LLM variation series
+                new_generator.generate_llm_variation_series(
                     parent=base,
                     num_variations=variations_per_base,
-                    max_distance_ratio=max_distance,
-                    progressive_violations=include_violations,
+                    include_violations=include_violations,
+                    provider_name=session_provider,
+                    model=session_model,
                 )
 
             # Save generated contributions
@@ -396,14 +413,172 @@ def _generate_new_view(user_id: str, validate_func: Callable) -> None:
             st.rerun()
 
 
+def _load_random_contribution(category: str | None, language: str) -> bool:
+    """
+    Load a random real contribution from GitHub issues.
+
+    If language is 'en', translates the contribution to English using LLM.
+    Directly updates session state keys used by text_area widgets.
+
+    Returns:
+        True if contribution was loaded successfully
+    """
+    import random
+    from app.services.github_issues import fetch_issues
+
+    try:
+        # Fetch issues from GitHub
+        result = fetch_issues(state="all", per_page=100)
+        if not result.get("success") or not result.get("issues"):
+            st.warning("Could not fetch contributions from GitHub")
+            return False
+
+        issues = result["issues"]
+
+        # Filter by category if specified
+        if category:
+            issues = [i for i in issues if i.get("category") == category]
+            if not issues:
+                st.warning(f"No contributions found for category: {category}")
+                return False
+
+        # Pick a random issue
+        issue = random.choice(issues)
+        body = issue.get("body", "")
+
+        # Parse body to extract constat and idees
+        constat, idees = _parse_contribution_body(body)
+
+        # Store French version
+        st.session_state["loaded_contrib_constat_fr"] = constat
+        st.session_state["loaded_contrib_idees_fr"] = idees
+
+        # Translate if English
+        if language == "en" and (constat or idees):
+            translated_constat, translated_idees = _translate_contribution(constat, idees)
+            if translated_constat != constat or translated_idees != idees:
+                st.session_state["loaded_contrib_constat_en"] = translated_constat
+                st.session_state["loaded_contrib_idees_en"] = translated_idees
+                _logger.info("TRANSLATION_SUCCESS", language=language)
+            else:
+                st.session_state["loaded_contrib_constat_en"] = ""
+                st.session_state["loaded_contrib_idees_en"] = ""
+                _logger.warning("TRANSLATION_UNCHANGED", language=language)
+        else:
+            st.session_state["loaded_contrib_constat_en"] = ""
+            st.session_state["loaded_contrib_idees_en"] = ""
+
+        # Store loaded contribution info
+        # GitHub API uses "number" for issue number, but some APIs use "id"
+        issue_number = issue.get("number") or issue.get("id") or "?"
+        st.session_state["loaded_contrib_issue"] = issue_number
+        st.session_state["loaded_contrib_category"] = category
+        # Use French for the main fields (used for generation)
+        st.session_state["loaded_contrib_constat"] = constat
+        st.session_state["loaded_contrib_idees"] = idees
+
+        _logger.info("RANDOM_CONTRIB_LOADED", issue=issue_number, category=category, translated=(language == "en"))
+        return True
+
+    except Exception as e:
+        _logger.error("RANDOM_CONTRIB_ERROR", error=str(e))
+        st.error(f"Error loading contribution: {e}")
+        return False
+
+
+def _parse_contribution_body(body: str) -> tuple[str, str]:
+    """
+    Parse contribution body to extract constat factuel and idees.
+
+    Framaforms format uses exact markers (always in this order):
+    - "Constat factuel:"
+    - "Vos idées d'améliorations:"
+    """
+    if not body:
+        return "", ""
+
+    constat = ""
+    idees = ""
+
+    # Exact markers from Framaforms
+    constat_marker = "Constat factuel:"
+    idees_marker = "Vos idées d'améliorations:"
+
+    constat_start = body.find(constat_marker)
+    idees_start = body.find(idees_marker)
+
+    if constat_start != -1 and idees_start != -1:
+        # Extract constat (between constat marker and idees marker)
+        constat = body[constat_start + len(constat_marker):idees_start].strip()
+        # Extract idees (after idees marker)
+        idees = body[idees_start + len(idees_marker):].strip()
+    elif constat_start != -1:
+        # Only constat found
+        constat = body[constat_start + len(constat_marker):].strip()
+    elif idees_start != -1:
+        # Only idees found
+        idees = body[idees_start + len(idees_marker):].strip()
+    else:
+        # No markers - use entire body as constat
+        constat = body.strip()
+
+    return constat[:2000], idees[:2000]  # Limit length
+
+
+def _translate_contribution(constat: str, idees: str) -> tuple[str, str]:
+    """Translate contribution from French to English using Forseti TranslationFeature."""
+    import asyncio
+    from app.providers import get_provider
+
+    try:
+        # Use OpenAI for translation (more reliable, avoids Gemini rate limits)
+        provider = get_provider("openai", cache=False)
+        _logger.info("TRANSLATION_START", provider="openai")
+
+        feature = TranslationFeature()
+        result = asyncio.run(
+            feature.execute(
+                provider=provider,
+                system_prompt="",
+                constat=constat,
+                idees=idees,
+            )
+        )
+
+        if result.success:
+            _logger.info("TRANSLATION_SUCCESS")
+            return result.translated_constat, result.translated_idees
+        else:
+            _logger.warning("TRANSLATION_FAILED")
+            return constat, idees
+
+    except Exception as e:
+        _logger.error("TRANSLATION_ERROR", error=str(e))
+        st.warning(f"Translation failed: {e}")
+        return constat, idees
+
+
 def _from_contribution_view(user_id: str, validate_func: Callable) -> None:
     """Generate variations from a single contribution input."""
-    from app.mockup.llm_mutations import check_ollama_available, _run_async
+    from app.services.translations import get_language
+
+    # Track current view for session persistence
+    st.session_state["current_batch_view"] = "from_contribution"
 
     st.markdown("### Create variations from a contribution")
     st.caption("Enter a contribution in Framaforms format to generate variations.")
 
-    col1, col2 = st.columns([1, 3])
+    # Default values
+    default_constat = "Le parking du port est souvent plein en été, ce qui oblige les visiteurs à se garer loin ou de manière sauvage. Cela crée des problèmes de circulation et nuit à l'image de la commune."
+    default_idees = "Créer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux."
+
+    # Initialize session state for this view if needed
+    if "contrib_constat" not in st.session_state:
+        st.session_state["contrib_constat"] = default_constat
+    if "contrib_idees" not in st.session_state:
+        st.session_state["contrib_idees"] = default_idees
+
+    col1, col2, col3 = st.columns([1, 1, 2])
     with col1:
         category = st.selectbox(
             "Category",
@@ -418,22 +593,74 @@ def _from_contribution_view(user_id: str, validate_func: Callable) -> None:
                 "alimentation-bien-etre-soins",
             ],
             format_func=lambda x: "-- Select --" if x is None else x.capitalize(),
-            key="input_category",
+            key="contrib_category",
         )
 
-    constat = st.text_area(
-        "Constat factuel",
-        value="Le parking du port est souvent plein en été, ce qui oblige les visiteurs à se garer loin ou de manière sauvage. Cela crée des problèmes de circulation et nuit à l'image de la commune.",
-        height=100,
-        key="input_constat",
-    )
+    with col2:
+        if st.button("🎲 Random", key="random_contrib_btn", help="Load a random real contribution"):
+            lang = get_language()
+            spinner_msg = "Loading & translating..." if lang == "en" else "Loading..."
+            with st.spinner(spinner_msg):
+                if _load_random_contribution(category, lang):
+                    # Update the text area values from loaded contribution
+                    st.session_state["contrib_constat"] = st.session_state.get("loaded_contrib_constat", default_constat)
+                    st.session_state["contrib_idees"] = st.session_state.get("loaded_contrib_idees", default_idees)
+                    issue_num = st.session_state.get("loaded_contrib_issue", "?")
+                    st.toast(f"Loaded #{issue_num}" + (" (EN)" if lang == "en" else ""))
+                    st.rerun()
 
-    idees = st.text_area(
-        "Vos idées d'améliorations",
-        value="Créer un parking relais à l'entrée de la ville avec une navette gratuite vers le port. Mettre en place un système de stationnement payant pour les non-résidents afin de favoriser la rotation. Développer les pistes cyclables pour encourager les déplacements doux.",
-        height=100,
-        key="input_idees",
-    )
+    # Show source info if loaded from random
+    if st.session_state.get("loaded_contrib_issue"):
+        st.caption(f"📋 Source: GitHub issue #{st.session_state['loaded_contrib_issue']}")
+
+    # Check if we have English translations to show side by side
+    has_translation = bool(st.session_state.get("loaded_contrib_constat_en") or st.session_state.get("loaded_contrib_idees_en"))
+
+    if has_translation:
+        # Two-column layout: French | English
+        col_fr, col_en = st.columns(2)
+
+        with col_fr:
+            st.markdown("**🇫🇷 Français (original)**")
+            constat = st.text_area(
+                "Constat factuel",
+                height=100,
+                key="contrib_constat",
+            )
+            idees = st.text_area(
+                "Vos idées d'améliorations",
+                height=100,
+                key="contrib_idees",
+            )
+
+        with col_en:
+            st.markdown("**🇬🇧 English (translated)**")
+            st.text_area(
+                "Factual observation",
+                value=st.session_state.get("loaded_contrib_constat_en", ""),
+                height=100,
+                key="contrib_constat_en_display",
+                disabled=True,
+            )
+            st.text_area(
+                "Improvement ideas",
+                value=st.session_state.get("loaded_contrib_idees_en", ""),
+                height=100,
+                key="contrib_idees_en_display",
+                disabled=True,
+            )
+    else:
+        # Single column: just French
+        constat = st.text_area(
+            "Constat factuel",
+            height=100,
+            key="contrib_constat",
+        )
+        idees = st.text_area(
+            "Vos idées d'améliorations",
+            height=100,
+            key="contrib_idees",
+        )
 
     # Mutation settings
     st.markdown("#### Mutation Settings")
@@ -452,96 +679,38 @@ def _from_contribution_view(user_id: str, validate_func: Callable) -> None:
             value=True,
             key="input_inject_violations",
         )
+    # LLM provider from sidebar
+    from app.services.session import get_session_provider, get_session_model, get_full_model_id
+
+    session_provider = get_session_provider(user_id)
+    session_model = get_session_model(user_id)
+    full_model_id = get_full_model_id(session_provider, session_model)
+
     with col3:
-        mutation_method = st.radio(
-            "Mutation method",
-            options=["text", "llm"],
-            format_func=lambda x: {
-                "text": "📝 Text (Levenshtein)",
-                "llm": "🤖 LLM (Ollama/Mistral)",
-            }[x],
-            key="mutation_method",
-            horizontal=True,
-        )
-
-    # LLM settings (if selected)
-    use_llm = mutation_method == "llm"
-    llm_model = "mistral:latest"
-
-    if use_llm:
-        col1, col2 = st.columns([2, 1])
-        with col1:
-            llm_model = st.text_input(
-                "Ollama model",
-                value="mistral:latest",
-                key="llm_model",
-            )
-        with col2:
-            if st.button("🔍 Check Ollama", key="check_ollama_btn"):
-                try:
-                    available = _run_async(check_ollama_available(llm_model))
-                    if available:
-                        st.success(f"✓ {llm_model} available")
-                    else:
-                        st.error(f"✗ {llm_model} not found")
-                except Exception as e:
-                    st.error(f"✗ Ollama not running: {e}")
-
-        st.info(
-            "**LLM mutations** generate semantic variations:\n"
-            "- Paraphrase: Same meaning, different words\n"
-            "- Orthographic: Realistic typos\n"
-            "- Subtle violations: Borderline charter violations\n"
-            "- Aggressive: Obvious violations"
-        )
-
-    # Storage options
-    st.markdown("#### Storage Options")
-    col1, col2 = st.columns(2)
-    with col1:
-        save_to_json = st.checkbox(
-            "💾 Save to JSON file",
-            value=True,
-            key="save_to_json",
-            help="Append generated variations to contributions.json",
-        )
-    with col2:
-        save_to_redis = st.checkbox(
-            "🗄️ Save to Redis",
-            value=True,
-            key="save_to_redis_gen",
-            help="Store in Redis for Opik dataset export",
-        )
+        st.caption(f"🤖 **{session_provider}** / `{full_model_id}`")
+        st.caption("Paraphrase, typos, violations...")
 
     if st.button("🧬 Generate Variations", type="primary", key="generate_single_btn"):
         if not constat.strip():
             st.error("Please enter a factual observation")
             return
 
-        spinner_text = (
-            "Generating LLM variations..." if use_llm else "Generating variations..."
-        )
-        with st.spinner(spinner_text):
+        with st.spinner("Generating LLM variations..."):
             variations = generate_variations(
                 constat_factuel=constat,
                 idees_ameliorations=idees,
                 category=category,
-                use_llm=use_llm,
-                llm_model=llm_model,
+                use_llm=True,
+                llm_provider=session_provider,
+                llm_model=session_model,
                 num_variations=num_variations,
                 include_violations=inject_violations,
             )
             st.session_state["temp_variations"] = variations
 
-            # Save to JSON file
-            if save_to_json:
-                _save_variations_to_json(variations)
-                st.success(f"💾 Saved {len(variations)} contributions to JSON")
-
             # Save to Redis
-            if save_to_redis:
-                saved_count = _save_variations_to_redis(variations)
-                st.success(f"🗄️ Saved {saved_count} records to Redis")
+            saved_count = _save_variations_to_redis(variations)
+            st.success(f"💾 Saved {saved_count} records")
 
     # Display generated variations
     if "temp_variations" in st.session_state:
@@ -555,6 +724,7 @@ def _from_contribution_view(user_id: str, validate_func: Callable) -> None:
 
 def _field_input_view(user_id: str, validate_func: Callable) -> None:
     """Generate themed contributions from field input (reports, docs, speeches)."""
+    st.session_state["current_batch_view"] = "field_input"
     st.markdown("### 📋 Field Input - Generate Themed Contributions")
     st.caption(
         "Generate mockup contributions from real field data (public hearing reports, "
@@ -688,29 +858,15 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
     provider_label = provider_labels.get(session_provider, session_provider)
     st.info(f"📌 **{provider_label}** / `{full_model_id}`")
 
-    # Storage options
-    st.markdown("#### 3. Storage & Experiment")
+    # Experiment option
+    st.markdown("#### 3. Options")
 
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        save_to_json = st.checkbox(
-            "💾 Save to JSON",
-            value=True,
-            key="field_save_json",
-        )
-    with col2:
-        save_to_redis = st.checkbox(
-            "🗄️ Save to Redis",
-            value=True,
-            key="field_save_redis",
-        )
-    with col3:
-        run_experiment = st.checkbox(
-            "📊 Run Opik Experiment",
-            value=False,
-            key="field_run_experiment",
-            help="Run validation and report to Opik after generation",
-        )
+    run_experiment = st.checkbox(
+        "📊 Run Opik Experiment",
+        value=False,
+        key="field_run_experiment",
+        help="Run validation and report to Opik after generation",
+    )
 
     # Provider status check
     col1, col2 = st.columns([1, 3])
@@ -781,8 +937,8 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
 
             st.session_state["field_input_result"] = result
 
-            # Save to Redis if requested
-            if save_to_redis and result.contributions_generated > 0:
+            # Save to Redis
+            if result.contributions_generated > 0:
                 # Reload contributions and save to Redis
                 generator = load_contributions()
                 # Get only the newly generated ones (field_input source)
@@ -796,7 +952,7 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
                 if new_contribs:
                     variations_dicts = [c.to_dict() for c in new_contribs]
                     saved = _save_variations_to_redis(variations_dicts)
-                    st.success(f"🗄️ Saved {saved} records to Redis")
+                    st.success(f"💾 Saved {saved} records")
 
             # Run experiment if requested
             if run_experiment and result.contributions_generated > 0:
@@ -983,7 +1139,14 @@ def _display_contribution_card(
         # Metadata row
         meta_cols = st.columns(4)
         with meta_cols[0]:
-            st.caption(f"**ID:** `{contrib.id[:8]}`")
+            # Smart ID display: field_category_uuid → category_uuid, else first 8 chars
+            display_id = contrib.id
+            if display_id.startswith("field_"):
+                # field_logement_abc123 → logement_abc123
+                display_id = display_id[6:]  # Remove "field_" prefix
+            else:
+                display_id = display_id[:8]
+            st.caption(f"**ID:** `{display_id}`")
         with meta_cols[1]:
             st.caption(f"**Source:** {contrib.source}")
         with meta_cols[2]:
@@ -995,7 +1158,8 @@ def _display_contribution_card(
 
         # Parent info for derived contributions
         if contrib.parent_id:
-            st.caption(f"↳ Derived from `{contrib.parent_id[:8]}`")
+            parent_display = contrib.parent_id[6:] if contrib.parent_id.startswith("field_") else contrib.parent_id[:8]
+            st.caption(f"↳ Derived from `{parent_display}`")
 
         # Violations injected
         if contrib.violations_injected:
@@ -1025,10 +1189,13 @@ def _display_contribution_card(
                     result = validate_func(
                         contrib.title, contrib.body, contrib.category
                     )
+                    # Store in batch_results for summary display
                     if "batch_results" not in st.session_state:
                         st.session_state["batch_results"] = {}
                     st.session_state["batch_results"][contrib.id] = result
-                    # Don't rerun - keep the contribution open
+                    # Reset overlay and add new result
+                    clear_overlay()
+                    add_to_overlay(contrib.id, "validation", result)
 
         with btn_col2:
             if st.button(f"📂 Classify", key=f"classify_single_{contrib.id}_{index}"):
@@ -1036,9 +1203,9 @@ def _display_contribution_card(
                     classify_result = _classify_mockup_contribution(
                         contrib.title, contrib.body, contrib.category
                     )
-                    if "mockup_classify_results" not in st.session_state:
-                        st.session_state["mockup_classify_results"] = {}
-                    st.session_state["mockup_classify_results"][contrib.id] = classify_result
+                    # Reset overlay and add new result
+                    clear_overlay()
+                    add_to_overlay(contrib.id, "classification", classify_result)
 
         with btn_col3:
             if st.button(f"🔒 Anonymize", key=f"anonymize_single_{contrib.id}_{index}"):
@@ -1046,9 +1213,9 @@ def _display_contribution_card(
                     anon_result = _anonymize_mockup_contribution(
                         contrib.title, contrib.body
                     )
-                    if "mockup_anon_results" not in st.session_state:
-                        st.session_state["mockup_anon_results"] = {}
-                    st.session_state["mockup_anon_results"][contrib.id] = anon_result
+                    # Reset overlay and add new result
+                    clear_overlay()
+                    add_to_overlay(contrib.id, "anonymization", anon_result)
 
         with btn_col4:
             if st.button(
@@ -1056,18 +1223,6 @@ def _display_contribution_card(
             ):
                 _delete_contribution(contrib.id)
                 st.rerun()
-
-        # Show classification result if available
-        classify_result = st.session_state.get("mockup_classify_results", {}).get(contrib.id)
-        if classify_result:
-            st.markdown("---")
-            _display_classification_result(classify_result)
-
-        # Show anonymization result if available
-        anon_result = st.session_state.get("mockup_anon_results", {}).get(contrib.id)
-        if anon_result:
-            st.markdown("---")
-            _display_anonymization_result(anon_result)
 
 
 def _delete_contribution(contrib_id: str) -> None:
@@ -1367,39 +1522,6 @@ def _display_validation_result(result: dict, expected_valid: Optional[bool]) -> 
             st.markdown(f"- ✨ {e}")
 
 
-def _save_variations_to_json(variations: List[dict]) -> int:
-    """
-    Save generated variations to the JSON file.
-
-    Args:
-        variations: List of variation dictionaries
-
-    Returns:
-        Number of variations saved
-    """
-    try:
-        # Load existing contributions
-        generator = load_contributions()
-
-        # Add new variations (skip first one which is the original)
-        for var_dict in variations:
-            contrib = MockContribution.from_dict(var_dict)
-            # Check if already exists
-            existing_ids = {c.id for c in generator.contributions}
-            if contrib.id not in existing_ids:
-                generator.contributions.append(contrib)
-
-        # Save back to file
-        save_contributions(generator)
-
-        _logger.info("JSON_SAVE", count=len(variations))
-        return len(variations)
-
-    except Exception as e:
-        _logger.error("JSON_SAVE_ERROR", error=str(e))
-        return 0
-
-
 def _save_variations_to_redis(variations: List[dict]) -> int:
     """
     Save generated variations to Redis.
@@ -1455,6 +1577,7 @@ def _save_variations_to_redis(variations: List[dict]) -> int:
 
 def _storage_opik_view(user_id: str) -> None:
     """Storage and Opik dataset management view."""
+    st.session_state["current_batch_view"] = "storage_opik"
 
     st.markdown("### 💾 Redis Storage & Opik Datasets")
     st.caption(

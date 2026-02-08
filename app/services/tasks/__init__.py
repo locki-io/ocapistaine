@@ -33,9 +33,11 @@ Usage:
 import os
 import uuid
 from datetime import datetime
-from typing import Tuple, Dict, Any
-import redis
+from typing import Tuple, Dict, Any, TYPE_CHECKING
 from dotenv import load_dotenv
+
+if TYPE_CHECKING:
+    import redis
 
 from app.services.logging import TaskLogger
 
@@ -189,7 +191,7 @@ def _task_boilerplate(
     task_name: str,
     date_string: str = None,
     skip_success_check: bool = False,
-) -> Tuple[redis.Redis, str, str, Dict[str, Any], str, TaskLogger]:
+) -> Tuple["redis.Redis", str, str, Dict[str, Any], str, TaskLogger]:
     """
     Standard task initialization boilerplate.
 

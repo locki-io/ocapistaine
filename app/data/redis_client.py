@@ -19,7 +19,7 @@ load_dotenv()
 _redis_pool: Optional[redis.ConnectionPool] = None
 
 
-def _get_redis_config() -> tuple[str, int, str | None, bool]:
+def get_redis_config() -> tuple[str, int, str | None, bool]:
     """
     Get Redis connection config from environment.
 
@@ -61,7 +61,7 @@ def get_redis_pool() -> redis.ConnectionPool:
     global _redis_pool
 
     if _redis_pool is None:
-        host, port, password, use_ssl = _get_redis_config()
+        host, port, password, use_ssl = get_redis_config()
         # Default to db=0 for cloud compatibility (Upstash only supports db=0)
         redis_db = os.getenv("REDIS_DB", "0")
 

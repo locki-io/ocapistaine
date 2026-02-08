@@ -45,7 +45,7 @@ from app.mockup.dataset import (
 from app.mockup.llm_mutations import (
     LLMMutator,
     MutationType,
-    check_ollama_available,
+    check_provider_available,
 )
 
 # Opik experiment integration (optional)
@@ -135,7 +135,8 @@ class MockupWorkflowConfig:
     num_variations: int = 5
     include_violations: bool = True
     use_llm: bool = True
-    llm_model: str = "mistral:latest"
+    llm_provider: str = "openai"
+    llm_model: str | None = None
 
     # Storage settings
     save_to_json: bool = True
@@ -305,9 +306,9 @@ class MockupProcessor:
         except Exception:
             pass
 
-        # Check Ollama
+        # Check LLM provider (default: openai)
         try:
-            status["ollama"] = await check_ollama_available()
+            status["llm_provider"] = await check_provider_available()
         except Exception:
             pass
 
@@ -359,6 +360,7 @@ class MockupProcessor:
                 num_variations=config.num_variations,
                 include_violations=config.include_violations,
                 use_llm=config.use_llm,
+                llm_provider=config.llm_provider,
                 llm_model=config.llm_model,
             )
             result.contributions_generated = len(variations)
@@ -902,7 +904,8 @@ async def run_mockup_workflow(
     category: Optional[str] = None,
     validate_func: Optional[Callable] = None,
     use_llm: bool = True,
-    llm_model: str = "mistral:latest",
+    llm_provider: str = "openai",
+    llm_model: str | None = None,
     num_variations: int = 5,
     include_violations: bool = True,
 ) -> MockupWorkflowResult:
@@ -915,7 +918,8 @@ async def run_mockup_workflow(
         category: Contribution category
         validate_func: Forseti validation function
         use_llm: Use LLM for mutations
-        llm_model: Ollama model name
+        llm_provider: LLM provider (openai, claude, gemini, ollama, mistral)
+        llm_model: Optional model name (default: provider's default)
         num_variations: Number of variations to generate
         include_violations: Include violation mutations
 
@@ -927,6 +931,7 @@ async def run_mockup_workflow(
         num_variations=num_variations,
         include_violations=include_violations,
         use_llm=use_llm,
+        llm_provider=llm_provider,
         llm_model=llm_model,
     )
 

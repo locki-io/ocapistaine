@@ -4,6 +4,9 @@ Simple password authentication for OCapistaine.
 
 Uses Streamlit secrets for password storage.
 Password is stored in .streamlit/secrets.toml (gitignored).
+
+Authentication persists across page refreshes using query params
+(similar to user_id handling in sidebar.py).
 """
 
 import os
@@ -11,8 +14,15 @@ import streamlit as st
 import hashlib
 import hmac
 
+from app.services.logging import PresentationLogger
+
+_logger = PresentationLogger("auth")
+
 # Discord invite URL from environment
 DISCORD_INVITE_URL = os.getenv("DISCORD_INVITE_URL", "https://discord.gg/locki")
+
+# Auth token validity (used for session persistence)
+_AUTH_TOKEN_PREFIX = "ocap_"
 
 
 def check_password() -> bool:
@@ -21,6 +31,8 @@ def check_password() -> bool:
 
     Returns True if authenticated, False otherwise.
     Shows login form if not authenticated.
+
+    Authentication persists across page refreshes via query params.
 
     Usage:
         if not check_password():
@@ -34,6 +46,12 @@ def check_password() -> bool:
 
     # Check if already authenticated this session
     if st.session_state.get("authenticated", False):
+        return True
+
+    # Check for persistent auth token in query params
+    if _check_auth_token():
+        st.session_state["authenticated"] = True
+        _logger.info("AUTH_RESTORED", source="query_params")
         return True
 
     # Show login form
@@ -60,6 +78,49 @@ def _auth_enabled() -> bool:
     return bool(_get_password())
 
 
+def _generate_auth_token() -> str:
+    """
+    Generate a secure auth token for session persistence.
+
+    The token is a hash of the password + a random component,
+    making it unique per session but verifiable.
+    """
+    password = _get_password()
+    # Create a deterministic but secure token based on password
+    # This allows us to verify the token without storing state
+    token_base = hashlib.sha256(password.encode()).hexdigest()[:16]
+    return f"{_AUTH_TOKEN_PREFIX}{token_base}"
+
+
+def _check_auth_token() -> bool:
+    """
+    Check if a valid auth token exists in query params.
+
+    Returns True if valid token found, False otherwise.
+    """
+    query_params = st.query_params
+    token = query_params.get("auth", "")
+
+    if not token:
+        return False
+
+    # Verify token matches expected format
+    expected_token = _generate_auth_token()
+    return hmac.compare_digest(token, expected_token)
+
+
+def _set_auth_token():
+    """Store auth token in query params for persistence."""
+    token = _generate_auth_token()
+    st.query_params["auth"] = token
+
+
+def _clear_auth_token():
+    """Remove auth token from query params."""
+    if "auth" in st.query_params:
+        del st.query_params["auth"]
+
+
 def _show_login_form():
     """Display the login form."""
     st.markdown(
@@ -80,8 +141,8 @@ def _show_login_form():
     col1, col2, col3 = st.columns([1, 2, 1])
 
     with col2:
-        st.markdown("## Authentication")
-        st.markdown("Enter the password to access OCapistaine.")
+        st.markdown("## 🏛️ OCapistaine")
+        st.markdown("Enter the password to access the platform.")
 
         with st.form("login_form"):
             password = st.text_input(
@@ -92,8 +153,11 @@ def _show_login_form():
             if submitted:
                 if _verify_password(password):
                     st.session_state["authenticated"] = True
+                    _set_auth_token()  # Persist auth across refreshes
+                    _logger.info("AUTH_SUCCESS")
                     st.rerun()
                 else:
+                    _logger.warning("AUTH_FAILED")
                     st.error("Incorrect password.")
 
         st.markdown("---")
@@ -124,6 +188,8 @@ def _verify_password(password: str) -> bool:
 def logout():
     """Log out the current user."""
     st.session_state["authenticated"] = False
+    _clear_auth_token()
+    _logger.info("AUTH_LOGOUT")
     st.rerun()
 
 

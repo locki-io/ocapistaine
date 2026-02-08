@@ -79,12 +79,13 @@ from app.prompts.local.autocontrib import format_draft_prompt
 # =============================================================================
 
 LanguageType = Literal["fr", "en"]
-ProviderType = Literal["gemini", "claude", "ollama"]
+ProviderType = Literal["openai", "claude", "ollama"]
 
 
 @dataclass
 class DraftContribution:
     """AI-generated draft contribution."""
+
     constat_factuel: str
     idees_ameliorations: str
     category: str
@@ -94,6 +95,7 @@ class DraftContribution:
 @dataclass
 class AutoContributionConfig:
     """Configuration for the auto-contribution workflow."""
+
     provider: ProviderType = "ollama"
     model: Optional[str] = None
     language: LanguageType = "fr"
@@ -102,6 +104,7 @@ class AutoContributionConfig:
 @dataclass
 class AutoContributionResult:
     """Result of the complete workflow."""
+
     contribution_id: str
     is_valid: bool
     confidence: float
@@ -116,6 +119,7 @@ class AutoContributionResult:
 # =============================================================================
 # STEP 1: LOAD SOURCES
 # =============================================================================
+
 
 def step_1_load_sources() -> List[Dict[str, str]]:
     """
@@ -136,6 +140,7 @@ def load_source_content(path: str) -> str:
 # STEP 2: SELECT CATEGORY
 # =============================================================================
 
+
 def step_2_select_category() -> List[str]:
     """
     Step 2: Get available categories for selection.
@@ -152,6 +157,7 @@ def step_2_select_category() -> List[str]:
 # =============================================================================
 # STEP 3: GENERATE DRAFT
 # =============================================================================
+
 
 class ContributionAssistant:
     """
@@ -262,6 +268,7 @@ def _run_async(coro):
 
     if loop and loop.is_running():
         import concurrent.futures
+
         with concurrent.futures.ThreadPoolExecutor() as pool:
             future = pool.submit(asyncio.run, coro)
             return future.result()
@@ -310,6 +317,7 @@ generate_draft_sync = step_3_generate_draft
 # STEP 4: EDIT CONTRIBUTION
 # =============================================================================
 
+
 def step_4_edit_contribution(
     draft: DraftContribution,
     edited_constat: Optional[str] = None,
@@ -327,8 +335,12 @@ def step_4_edit_contribution(
         Updated DraftContribution
     """
     return DraftContribution(
-        constat_factuel=edited_constat if edited_constat is not None else draft.constat_factuel,
-        idees_ameliorations=edited_idees if edited_idees is not None else draft.idees_ameliorations,
+        constat_factuel=(
+            edited_constat if edited_constat is not None else draft.constat_factuel
+        ),
+        idees_ameliorations=(
+            edited_idees if edited_idees is not None else draft.idees_ameliorations
+        ),
         category=draft.category,
         source_title=draft.source_title,
     )
@@ -337,6 +349,7 @@ def step_4_edit_contribution(
 # =============================================================================
 # STEP 5: VALIDATE AND SAVE
 # =============================================================================
+
 
 def run_forseti_validation(
     title: str,
@@ -463,6 +476,7 @@ def step_5_validate_and_save(
 # =============================================================================
 # WORKFLOW CLASS (for programmatic use)
 # =============================================================================
+
 
 class AutoContributionWorkflow:
     """

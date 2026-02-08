@@ -7,6 +7,7 @@ services:
     runtime: docker
     dockerfilePath: ./Dockerfile
     dockerContext: .
+    plan: standard  # 2GB RAM - needed for AI packages (anthropic, opik, litellm)
     # Render sets PORT env var - our entrypoint uses it for Streamlit
     envVars:
       # Memory optimization for free tier
@@ -43,21 +44,12 @@ services:
         sync: false
       - key: OPIK_WORKSPACE
         value: ocapistaine-dev
-      # Internal Redis (Render provides this)
+      # External Redis (Upstash) - configure in Render dashboard
       - key: REDIS_HOST
-        fromService:
-          type: redis
-          name: ocapistaine-redis
-          property: host
+        sync: false
       - key: REDIS_PORT
-        fromService:
-          type: redis
-          name: ocapistaine-redis
-          property: port
+        sync: false
+      - key: REDIS_PASSWORD
+        sync: false
     healthCheckPath: /
     autoDeploy: true
-
-  - type: redis
-    name: ocapistaine-redis
-    plan: free
-    maxmemoryPolicy: allkeys-lru

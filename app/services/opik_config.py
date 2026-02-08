@@ -13,14 +13,10 @@ Settings:
 """
 
 import os
-import redis
 from typing import Optional
-from dotenv import load_dotenv
 
 from app.services.logging import get_logger
-from app.data.redis_client import _get_redis_config, APP_KEY_PREFIX
-
-load_dotenv()
+from app.data.redis_client import redis_connection, app_key
 
 logger = get_logger("services")
 
@@ -31,26 +27,10 @@ DEFAULT_OPIK_JUDGE = {
     "api_key_env": "OPENAI_API_KEY",
 }
 
-# Redis keys (with app: prefix)
-KEY_JUDGE_PROVIDER = f"{APP_KEY_PREFIX}opik:judge:provider"
-KEY_JUDGE_MODEL = f"{APP_KEY_PREFIX}opik:judge:model"
-KEY_JUDGE_API_KEY_ENV = f"{APP_KEY_PREFIX}opik:judge:api_key_env"
-
-
-def _get_redis() -> redis.Redis:
-    """Get Redis connection for Opik config."""
-    host, port, password, use_ssl = _get_redis_config()
-    redis_db = int(os.getenv("REDIS_DB", "0"))
-
-    return redis.Redis(
-        host=host,
-        port=port,
-        password=password,
-        db=redis_db,
-        decode_responses=True,
-        ssl=use_ssl,
-        ssl_cert_reqs=None if use_ssl else None,
-    )
+# Redis keys (using app_key for proper prefixing)
+KEY_JUDGE_PROVIDER = app_key("opik:judge:provider")
+KEY_JUDGE_MODEL = app_key("opik:judge:model")
+KEY_JUDGE_API_KEY_ENV = app_key("opik:judge:api_key_env")
 
 
 def get_opik_judge_config() -> dict:
@@ -61,19 +41,18 @@ def get_opik_judge_config() -> dict:
         dict with provider, model, api_key_env
     """
     try:
-        r = _get_redis()
+        with redis_connection() as r:
+            config = {
+                "provider": r.get(KEY_JUDGE_PROVIDER) or DEFAULT_OPIK_JUDGE["provider"],
+                "model": r.get(KEY_JUDGE_MODEL) or DEFAULT_OPIK_JUDGE["model"],
+                "api_key_env": r.get(KEY_JUDGE_API_KEY_ENV) or DEFAULT_OPIK_JUDGE["api_key_env"],
+            }
 
-        config = {
-            "provider": r.get(KEY_JUDGE_PROVIDER) or DEFAULT_OPIK_JUDGE["provider"],
-            "model": r.get(KEY_JUDGE_MODEL) or DEFAULT_OPIK_JUDGE["model"],
-            "api_key_env": r.get(KEY_JUDGE_API_KEY_ENV) or DEFAULT_OPIK_JUDGE["api_key_env"],
-        }
+            # Check if API key is available
+            api_key = os.getenv(config["api_key_env"])
+            config["api_key_configured"] = bool(api_key)
 
-        # Check if API key is available
-        api_key = os.getenv(config["api_key_env"])
-        config["api_key_configured"] = bool(api_key)
-
-        return config
+            return config
 
     except Exception as e:
         logger.warning(f"Failed to get Opik config from Redis: {e}")
@@ -100,19 +79,18 @@ def set_opik_judge_config(
         Updated config dict
     """
     try:
-        r = _get_redis()
+        with redis_connection() as r:
+            if provider:
+                r.set(KEY_JUDGE_PROVIDER, provider)
+                logger.info(f"Set Opik judge provider: {provider}")
 
-        if provider:
-            r.set(KEY_JUDGE_PROVIDER, provider)
-            logger.info(f"Set Opik judge provider: {provider}")
+            if model:
+                r.set(KEY_JUDGE_MODEL, model)
+                logger.info(f"Set Opik judge model: {model}")
 
-        if model:
-            r.set(KEY_JUDGE_MODEL, model)
-            logger.info(f"Set Opik judge model: {model}")
-
-        if api_key_env:
-            r.set(KEY_JUDGE_API_KEY_ENV, api_key_env)
-            logger.info(f"Set Opik judge API key env: {api_key_env}")
+            if api_key_env:
+                r.set(KEY_JUDGE_API_KEY_ENV, api_key_env)
+                logger.info(f"Set Opik judge API key env: {api_key_env}")
 
         return get_opik_judge_config()
 
@@ -129,8 +107,8 @@ def reset_opik_judge_config() -> dict:
         Default config dict
     """
     try:
-        r = _get_redis()
-        r.delete(KEY_JUDGE_PROVIDER, KEY_JUDGE_MODEL, KEY_JUDGE_API_KEY_ENV)
+        with redis_connection() as r:
+            r.delete(KEY_JUDGE_PROVIDER, KEY_JUDGE_MODEL, KEY_JUDGE_API_KEY_ENV)
         logger.info("Reset Opik judge config to defaults")
         return get_opik_judge_config()
 
