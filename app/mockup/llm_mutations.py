@@ -20,9 +20,9 @@ from enum import Enum
 
 from app.providers.ollama import OllamaProvider
 from app.providers.base import Message
-from app.services import AgentLogger
+from app.services.logging import MockupLogger
 
-_logger = AgentLogger("llm_mutations")
+_logger = MockupLogger("llm_mutations")
 
 
 class MutationType(Enum):
@@ -159,7 +159,7 @@ class LLMMutator:
             host=host,
             timeout=timeout,
         )
-        self._logger = AgentLogger("llm_mutator")
+        self._logger = MockupLogger("llm_mutator")
 
     async def health_check(self) -> bool:
         """Check if Ollama is available."""

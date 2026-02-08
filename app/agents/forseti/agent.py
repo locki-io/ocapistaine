@@ -112,25 +112,55 @@ class ForsetiAgent(BaseAgent):
                 )
                 charter_span.update(
                     output=validation.model_dump(),
-                    metadata={"confidence": validation.confidence},
+                    metadata={
+                        "confidence": validation.confidence,
+                        "is_valid": validation.is_valid,
+                        "added_to_dataset": False,  # Track if span was added to dataset
+                        "provider": self._provider.name,
+                        "model": self._provider.model,
+                    },
                 )
+                # Log Correctness feedback to span for Opik-native querying
+                charter_span_id = getattr(charter_span, "id", None)
+                if charter_span_id:
+                    self._tracer.log_span_feedback(
+                        span_id=charter_span_id,
+                        score=validation.confidence,
+                        feedback_type="Correctness",
+                        comment=f"is_valid={validation.is_valid}, violations={len(validation.violations)}",
+                    )
 
             # Step 2: Category classification
             with self._tracer.span(
                 name="category_classification",
-                input={"title": title, "body": body, "current_category": category},
+                input={"title": title, "body": body, "category": category},
                 span_type="llm",
             ) as category_span:
                 classification: ClassificationResult = await self.execute_feature(
                     "category_classification",
                     title=title,
                     body=body,
-                    current_category=category,
+                    category=category,
                 )
                 category_span.update(
                     output=classification.model_dump(),
-                    metadata={"confidence": classification.confidence},
+                    metadata={
+                        "confidence": classification.confidence,
+                        "category": classification.category,
+                        "added_to_dataset": False,  # Track if span was added to dataset
+                        "provider": self._provider.name,
+                        "model": self._provider.model,
+                    },
                 )
+                # Log Correctness feedback to span for Opik-native querying
+                category_span_id = getattr(category_span, "id", None)
+                if category_span_id:
+                    self._tracer.log_span_feedback(
+                        span_id=category_span_id,
+                        score=classification.confidence,
+                        feedback_type="Correctness",
+                        comment=f"category={classification.category}, original={category}",
+                    )
 
             # Build result
             result = FullValidationResult(
@@ -147,6 +177,7 @@ class ForsetiAgent(BaseAgent):
             )
 
             # Update trace with final output
+            trace_id = None
             if trace:
                 trace.update(
                     output=result.model_dump(),
@@ -155,6 +186,26 @@ class ForsetiAgent(BaseAgent):
                         "category": result.category,
                         "confidence": result.confidence,
                     },
+                )
+                trace_id = getattr(trace, "id", None)
+
+            # Log feedback scores to Opik for querying/experiments
+            if trace_id:
+                self._tracer.log_feedback(
+                    trace_id=trace_id,
+                    score=result.confidence,
+                    feedback_type="validation_confidence",
+                    comment=f"is_valid={result.is_valid}, violations={len(result.violations)}",
+                )
+                self._tracer.log_feedback(
+                    trace_id=trace_id,
+                    score=validation.confidence,
+                    feedback_type="charter_confidence",
+                )
+                self._tracer.log_feedback(
+                    trace_id=trace_id,
+                    score=classification.confidence,
+                    feedback_type="category_confidence",
                 )
 
         return result
@@ -184,7 +235,7 @@ class ForsetiAgent(BaseAgent):
         self,
         title: str,
         body: str,
-        current_category: str | None = None,
+        category: str | None = None,
     ) -> ClassificationResult:
         """
         Classify category only.
@@ -192,7 +243,7 @@ class ForsetiAgent(BaseAgent):
         Args:
             title: Contribution title.
             body: Contribution body.
-            current_category: Optional existing category.
+            category: Optional existing category.
 
         Returns:
             ClassificationResult with assigned category.
@@ -201,7 +252,7 @@ class ForsetiAgent(BaseAgent):
             "category_classification",
             title=title,
             body=body,
-            current_category=current_category,
+            category=category,
         )
 
     async def correct_wording(

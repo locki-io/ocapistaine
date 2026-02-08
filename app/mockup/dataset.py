@@ -21,9 +21,9 @@ from typing import Optional, List, Dict, Any
 
 from app.agents.tracing.opik import get_tracer
 from app.mockup.storage import get_storage, ValidationRecord
-from app.services import AgentLogger
+from app.services.logging import MockupLogger
 
-_logger = AgentLogger("mockup_dataset")
+_logger = MockupLogger("dataset")
 
 
 # Dataset naming conventions
@@ -49,7 +49,7 @@ class DatasetManager:
         self._tracer = get_tracer()
         self._storage = get_storage()
         self._datasets: Dict[str, List[Dict[str, Any]]] = {}
-        self._logger = AgentLogger("dataset_manager")
+        self._logger = MockupLogger("dataset_manager")
 
     @property
     def opik_enabled(self) -> bool:

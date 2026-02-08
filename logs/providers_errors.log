@@ -1,6 +1,224 @@
-2026-01-27 08:56:06 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=QUOTA_EXHAUSTED | model=gemini-2.0-flash | Daily quota exhausted - no credits remaining
-2026-01-27 08:56:06 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.0-flash | retry_after=53.355840294s | Retrying after 53.355840294s (attempt 1/3)
-2026-01-27 08:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=QUOTA_EXHAUSTED | model=gemini-2.0-flash | Daily quota exhausted - no credits remaining
-2026-01-27 08:57:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.0-flash | retry_after=59.839198548s | Retrying after 59.839198548s (attempt 2/3)
-2026-01-27 08:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=QUOTA_EXHAUSTED | model=gemini-2.0-flash | Daily quota exhausted - no credits remaining
-2026-01-27 08:58:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.0-flash | retry_after=59.854942236s | Retrying after 59.854942236s (attempt 3/3)
+2026-02-06 10:15:04 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 10:15:04 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=55.702905143s | Retrying after 55.702905143s (attempt 1/3)
+2026-02-06 12:34:51 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 12:34:51 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=8.964057365s | Retrying after 8.964057365s (attempt 1/3)
+2026-02-06 12:35:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 12:35:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.848425851s | Retrying after 59.848425851s (attempt 2/3)
+2026-02-06 12:36:13 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 12:36:13 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=46.403284215s | Retrying after 46.403284215s (attempt 1/3)
+2026-02-06 12:37:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 12:37:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.838430998s | Retrying after 59.838430998s (attempt 2/3)
+2026-02-06 12:38:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 12:38:01 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 12:38:01 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=58.910678027s | Retrying after 58.910678027s (attempt 1/3)
+2026-02-06 12:39:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 12:39:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.72567441s | Retrying after 59.72567441s (attempt 2/3)
+2026-02-06 12:40:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 12:40:01 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 12:40:01 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=58.886414324s | Retrying after 58.886414324s (attempt 1/3)
+2026-02-06 12:45:52 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:45:56 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:00 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:00 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:46:01 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:04 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:08 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:08 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:46:10 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:13 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:17 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:17 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:46:19 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:22 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:27 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:27 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:46:28 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:31 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:35 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:35 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:46:36 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:38 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:42 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:42 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:46:43 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:46 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:49 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:49 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:46:51 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:54 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:57 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:46:57 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:46:59 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:02 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:06 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:06 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:47:10 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:13 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:16 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:16 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:47:18 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:20 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:25 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:25 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:47:26 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:29 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:32 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:32 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:47:34 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:37 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:43 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:43 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:47:45 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:47 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:50 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:50 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:47:53 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:47:56 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:00 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:00 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:48:02 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:05 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:09 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:09 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:48:11 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:15 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:19 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:19 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:48:21 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:24 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:27 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:27 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:48:29 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:32 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:36 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:36 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:48:37 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:40 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:44 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:44 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:48:47 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:50 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:54 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:54 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:48:56 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:48:58 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:03 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:03 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:49:05 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:09 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:13 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:13 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:49:14 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:17 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:20 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:20 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:49:22 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:25 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:30 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:30 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:49:31 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:34 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:37 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:37 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:49:40 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:43 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:47 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:47 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:49:48 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:50 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:54 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:54 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:49:56 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:49:59 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:04 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:04 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:50:06 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:08 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:12 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:12 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:50:14 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:18 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:22 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:22 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:50:23 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:26 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:29 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:29 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:50:31 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:36 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:40 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:40 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:50:41 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:44 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:48 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:48 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:50:50 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:53 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:58 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:50:58 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:50:59 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:02 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:05 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:05 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:51:08 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:11 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:15 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:15 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:51:17 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:19 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:23 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:23 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:51:25 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:30 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:34 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:34 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:51:36 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:39 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:43 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:43 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:51:45 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:48 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:53 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:53 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:51:55 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:51:57 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:52:01 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:52:01 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:52:04 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:52:07 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:52:12 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:52:12 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:52:14 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:52:18 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:52:22 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:52:22 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:52:24 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:52:27 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:52:31 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:52:31 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 12:52:34 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:52:37 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:52:42 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | API error: ProviderLogger.log_response() got an unexpected keyword argument 'tokens_in'
+2026-02-06 12:52:42 | ERROR    | ocapistaine.providers | ERROR | provider=openai | type=API_ERROR | model=gpt-4o-mini | All retries exhausted
+2026-02-06 13:00:15 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 13:00:15 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=44.550875617s | Retrying after 44.550875617s (attempt 1/3)
+2026-02-06 13:00:16 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 13:00:16 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=43.781397507s | Retrying after 43.781397507s (attempt 1/3)
+2026-02-06 23:02:03 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 23:02:03 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=56.452891824s | Retrying after 56.452891824s (attempt 1/3)
+2026-02-06 23:03:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 23:03:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.75974815s | Retrying after 59.75974815s (attempt 2/3)
+2026-02-06 23:04:09 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 23:04:09 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=50.336639949s | Retrying after 50.336639949s (attempt 1/3)
+2026-02-06 23:05:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 23:05:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.834948069s | Retrying after 59.834948069s (attempt 2/3)
+2026-02-06 23:06:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 23:06:01 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 23:06:01 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=58.804796704s | Retrying after 58.804796704s (attempt 1/3)
+2026-02-06 23:07:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 23:07:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.729433467s | Retrying after 59.729433467s (attempt 2/3)
+2026-02-06 23:08:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 23:08:01 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 23:08:01 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=58.911653223s | Retrying after 58.911653223s (attempt 1/3)
+2026-02-06 23:09:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | Rate limit exceeded
+2026-02-06 23:09:00 | ERROR    | ocapistaine.providers | ERROR | provider=gemini | type=RATE_LIMIT | model=gemini-2.5-flash | retry_after=59.692962417s | Retrying after 59.692962417s (attempt 2/3)

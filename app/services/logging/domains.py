@@ -1,4 +1,4 @@
-# app/logging/domains.py
+# app/services/logging/domains.py
 """
 Domain-Specific Structured Loggers
 
@@ -6,11 +6,13 @@ Each logger provides structured logging methods for its architectural layer.
 Follows Separation of Concerns principles from the architecture.
 """
 
+import os
+import time
 from datetime import datetime
 from typing import Any
 import logging
 
-from app.logging.config import get_logger, get_child_logger
+from app.services.logging.config import get_logger, get_child_logger
 
 
 class BaseLogger:
@@ -520,4 +522,313 @@ class DataLogger(BaseLogger):
             path=path[-50:],
             size=size_bytes,
             success=success,
+        )
+
+
+# =============================================================================
+# Task Execution Logger
+# =============================================================================
+
+
+class TaskLogger(BaseLogger):
+    """
+    Logger for Scheduled Tasks and Background Jobs.
+
+    Components: scheduler, task_contributions_analysis, task_opik_experiment, task_firecrawl
+
+    Provides structured logging for task execution with timing, status tracking,
+    and result metrics.
+    """
+
+    domain = "tasks"
+
+    def __init__(self, task_name: str):
+        """
+        Initialize a task logger.
+
+        Args:
+            task_name: Name of the task (e.g., "task_contributions_analysis")
+        """
+        super().__init__(task_name)
+        self.task_name = task_name
+        self._start_time: float | None = None
+
+    def log_start(
+        self,
+        task_id: str,
+        date_string: str,
+        pid: int | None = None,
+        **extra_params,
+    ) -> None:
+        """
+        Log task execution start.
+
+        Args:
+            task_id: Unique task execution ID
+            date_string: Date string for the task (YYYYMMDD)
+            pid: Process ID
+            **extra_params: Additional parameters (provider, limit, etc.)
+        """
+        self._start_time = time.time()
+        self.info(
+            "TASK_START",
+            task=self.task_name,
+            task_id=task_id[:8] if task_id else None,
+            date=date_string,
+            pid=pid or os.getpid(),
+            **extra_params,
+        )
+
+    def log_skipped(
+        self,
+        reason: str,
+        date_string: str,
+        task_id: str | None = None,
+    ) -> None:
+        """
+        Log task skipped (already completed or lock held).
+
+        Args:
+            reason: Why the task was skipped (already_completed, lock_held)
+            date_string: Date string for the task
+            task_id: Task execution ID if available
+        """
+        self.info(
+            "TASK_SKIPPED",
+            task=self.task_name,
+            reason=reason,
+            date=date_string,
+            task_id=task_id[:8] if task_id else None,
+        )
+
+    def log_progress(
+        self,
+        message: str,
+        current: int | None = None,
+        total: int | None = None,
+        **metrics,
+    ) -> None:
+        """
+        Log task progress update.
+
+        Args:
+            message: Progress message
+            current: Current item number
+            total: Total items to process
+            **metrics: Additional metrics
+        """
+        progress = f"{current}/{total}" if current is not None and total is not None else None
+        self.info(
+            "TASK_PROGRESS",
+            task=self.task_name,
+            step=message,
+            progress=progress,
+            **metrics,
+        )
+
+    def log_completed(
+        self,
+        status: str = "success",
+        **result_metrics,
+    ) -> None:
+        """
+        Log task completion.
+
+        Args:
+            status: Final status (success, partial, no_work)
+            **result_metrics: Result metrics (validated, approved, flagged, etc.)
+        """
+        duration_ms = None
+        if self._start_time:
+            duration_ms = (time.time() - self._start_time) * 1000
+
+        self.info(
+            "TASK_COMPLETED",
+            task=self.task_name,
+            status=status,
+            duration_ms=f"{duration_ms:.0f}" if duration_ms else None,
+            **result_metrics,
+        )
+
+    def log_failed(
+        self,
+        error: str,
+        recoverable: bool = False,
+        **context,
+    ) -> None:
+        """
+        Log task failure.
+
+        Args:
+            error: Error message
+            recoverable: Whether the error is recoverable
+            **context: Additional context
+        """
+        duration_ms = None
+        if self._start_time:
+            duration_ms = (time.time() - self._start_time) * 1000
+
+        self.error(
+            "TASK_FAILED",
+            task=self.task_name,
+            error=error[:200],
+            recoverable=recoverable,
+            duration_ms=f"{duration_ms:.0f}" if duration_ms else None,
+            **context,
+        )
+
+    def log_provider_failover(
+        self,
+        from_provider: str,
+        to_provider: str,
+        reason: str,
+    ) -> None:
+        """
+        Log provider failover event.
+
+        Args:
+            from_provider: Provider that failed
+            to_provider: Provider being tried next
+            reason: Reason for failover (rate_limit, error)
+        """
+        self.warning(
+            "PROVIDER_FAILOVER",
+            task=self.task_name,
+            from_provider=from_provider,
+            to_provider=to_provider,
+            reason=reason,
+        )
+
+    def log_validation_result(
+        self,
+        record_id: str,
+        is_valid: bool,
+        provider: str | None = None,
+        confidence: float | None = None,
+    ) -> None:
+        """
+        Log individual validation result.
+
+        Args:
+            record_id: ID of the validated record
+            is_valid: Whether validation passed
+            provider: Provider used for validation
+            confidence: Confidence score
+        """
+        self.debug(
+            "VALIDATION_RESULT",
+            task=self.task_name,
+            record_id=record_id[:12] if record_id else None,
+            valid=is_valid,
+            provider=provider,
+            confidence=f"{confidence:.2f}" if confidence else None,
+        )
+
+
+# =============================================================================
+# Mockup Layer Logger
+# =============================================================================
+
+
+class MockupLogger(BaseLogger):
+    """
+    Logger for Mockup Generation and Testing.
+
+    Components: field_input, batch_validation, storage, dataset, llm_mutations
+    """
+
+    domain = "mockup"
+
+    def log_field_input_start(
+        self,
+        source: str | None = None,
+        length: int | None = None,
+        provider: str | None = None,
+    ) -> None:
+        """Log start of field input processing."""
+        self.info(
+            "FIELD_INPUT_START",
+            source=source,
+            length=length,
+            provider=provider,
+        )
+
+    def log_chunking(
+        self,
+        total_length: int,
+        chunks: int,
+    ) -> None:
+        """Log text chunking for long documents."""
+        self.info(
+            "CHUNKING",
+            total_length=total_length,
+            chunks=chunks,
+        )
+
+    def log_themes_extracted(
+        self,
+        total: int,
+        unique: int,
+        categories: list[str] | None = None,
+    ) -> None:
+        """Log theme extraction results."""
+        self.info(
+            "THEMES_EXTRACTED",
+            total=total,
+            unique=unique,
+            categories=",".join(categories) if categories else None,
+        )
+
+    def log_contribution_generated(
+        self,
+        theme: str,
+        category: str,
+        violation_type: str | None = None,
+    ) -> None:
+        """Log contribution generation."""
+        self.debug(
+            "CONTRIBUTION_GENERATED",
+            theme=theme,
+            category=category,
+            violation=violation_type,
+        )
+
+    def log_batch_validation(
+        self,
+        count: int,
+        valid: int,
+        matches_expected: int,
+        total_time_ms: float | None = None,
+    ) -> None:
+        """Log batch validation completion."""
+        self.info(
+            "BATCH_COMPLETE",
+            count=count,
+            valid=valid,
+            matches_expected=matches_expected,
+            time_ms=f"{total_time_ms:.0f}" if total_time_ms else None,
+        )
+
+    def log_redis_save(
+        self,
+        count: int,
+        operation: str = "save",
+    ) -> None:
+        """Log Redis save operation."""
+        self.info(
+            "REDIS_SAVE",
+            operation=operation,
+            count=count,
+        )
+
+    def log_llm_response(
+        self,
+        chunk: int | None = None,
+        length: int | None = None,
+    ) -> None:
+        """Log LLM response received."""
+        self.debug(
+            "LLM_RESPONSE",
+            chunk=chunk,
+            length=length,
         )

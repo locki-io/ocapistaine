@@ -143,6 +143,49 @@
       "presentation": {
         "reveal": "silent"
       }
+    },
+    {
+      "label": "🧪 Run Tests (pytest)",
+      "detail": "Run all pytest tests with verbose output",
+      "type": "shell",
+      "command": "poetry",
+      "args": ["run", "pytest", "-v", "--tb=short"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "🧪 Run Tests (unit only)",
+      "detail": "Run only unit tests",
+      "type": "shell",
+      "command": "poetry",
+      "args": ["run", "pytest", "tests/unit/", "-v", "--tb=short"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "🧪 Run Tests (current file)",
+      "detail": "Run tests for the currently open file",
+      "type": "shell",
+      "command": "poetry",
+      "args": ["run", "pytest", "${file}", "-v", "--tb=short"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
     }
   ]
 }

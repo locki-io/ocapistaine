@@ -7,6 +7,7 @@ They are stateless and reusable across different agents and services.
 
 Available Processors:
 - MockupProcessor: Charter validation testing workflow
+- AutoContributionWorkflow: 5-step citizen contribution creation
 - (Planned) EmbeddingsProcessor: Vector embedding generation
 - (Planned) DocumentParser: PDF/HTML text extraction
 - (Planned) ResponseFormatter: Format answers with sources
@@ -23,6 +24,19 @@ from app.processors.mockup_processor import (
     run_mockup_workflow,
 )
 
+from app.processors.workflows import (
+    AutoContributionWorkflow,
+    AutoContributionConfig,
+    AutoContributionResult,
+    DraftContribution,
+    step_1_load_sources,
+    step_2_select_category,
+    step_3_generate_draft,
+    step_5_validate_and_save,
+    run_forseti_validation,
+    generate_draft_sync,
+)
+
 __all__ = [
     # Mockup Processor
     "MockupProcessor",
@@ -34,4 +48,15 @@ __all__ = [
     "CharterAccuracyMetric",
     "ViolationDetectionMetric",
     "ConfidenceCalibrationMetric",
+    # Auto-Contribution Workflow
+    "AutoContributionWorkflow",
+    "AutoContributionConfig",
+    "AutoContributionResult",
+    "DraftContribution",
+    "step_1_load_sources",
+    "step_2_select_category",
+    "step_3_generate_draft",
+    "step_5_validate_and_save",
+    "run_forseti_validation",
+    "generate_draft_sync",
 ]

@@ -102,6 +102,43 @@ The project uses structured problem-solving approaches documented in `docs/docs/
 - **Theory of Constraints** - For budget and localization constraints
 - **Contribution Charter** - Governance rules for citizen participation
 
+## Docusaurus / MDX Documentation
+
+The `docs/` directory is a Docusaurus site using MDX (Markdown with JSX). When writing or editing documentation:
+
+### MDX Special Characters
+
+MDX interprets `<` and `>` as JSX tag delimiters. **Always escape these in prose:**
+
+| Pattern | Problem | Fix |
+|---------|---------|-----|
+| `<5%` | MDX sees `<5` as invalid JSX tag | Use `&lt;5%` or wrap in backticks: `` `<5%` `` |
+| `x > y` | May be interpreted as JSX | Use `&gt;` or backticks: `` `x > y` `` |
+| `array<T>` | Looks like JSX generic | Use backticks: `` `array<T>` `` |
+| `-->` or `<--` | Arrow in prose | Use `→` or `←` unicode, or backticks |
+
+### Common MDX Compilation Errors
+
+```
+Unexpected character `5` (U+0035) before name, expected a character that can start a name
+```
+**Cause:** Text like `<5%` where MDX tries to parse `<5` as a JSX tag.
+**Fix:** Use `&lt;5%` or wrap in backticks.
+
+### Link Validation
+
+Docusaurus validates all markdown links. Ensure:
+- Relative links point to existing files: `[text](./FILE.md)`
+- Don't link to files outside the docs plugin scope
+- Internal anchors exist: `[text](#section-name)`
+
+### Tags
+
+Tags in blog posts must be defined in `tags.yml`. Undefined tags cause warnings:
+```
+Warning: Tags [mytag] used in post.md are not defined in tags.yml
+```
+
 ## Environment
 
 Requires `FIRECRAWL_API_KEY` in `.env` (see `.env.example`).
