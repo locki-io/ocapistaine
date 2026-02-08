@@ -63,7 +63,7 @@ class MockupTTL:
 
     VALIDATION = 604800 * 4  # 28 days
     LATEST = 86400  # 24 hours
-    DATASET_META = 604800  # 7 days
+    DATASET_META = 604800 * 4  # 7 days
 
 
 @dataclass
@@ -211,7 +211,10 @@ class MockupStorage:
 
                 # Add to date index (sorted set by timestamp)
                 index_key = MockupKeys.date_index(record.date)
-                r.zadd(index_key, {record.id: datetime.fromisoformat(record.timestamp).timestamp()})
+                r.zadd(
+                    index_key,
+                    {record.id: datetime.fromisoformat(record.timestamp).timestamp()},
+                )
                 r.expire(index_key, MockupTTL.VALIDATION)
 
                 # Update latest
@@ -254,7 +257,9 @@ class MockupStorage:
             self._logger.error("GET_VALIDATION_ERROR", error=str(e))
             return None
 
-    def get_validations_by_date(self, date_str: Optional[str] = None) -> List[ValidationRecord]:
+    def get_validations_by_date(
+        self, date_str: Optional[str] = None
+    ) -> List[ValidationRecord]:
         """
         Get all validations for a specific date.
 
@@ -333,10 +338,19 @@ class MockupStorage:
 
                     # Date index
                     index_key = MockupKeys.date_index(record.date)
-                    pipe.zadd(index_key, {record.id: datetime.fromisoformat(record.timestamp).timestamp()})
+                    pipe.zadd(
+                        index_key,
+                        {
+                            record.id: datetime.fromisoformat(
+                                record.timestamp
+                            ).timestamp()
+                        },
+                    )
 
                     # Latest
-                    pipe.hset(MockupKeys.latest(), record.id, json.dumps(record.to_dict()))
+                    pipe.hset(
+                        MockupKeys.latest(), record.id, json.dumps(record.to_dict())
+                    )
 
                 pipe.execute()
                 saved = len(records)
@@ -564,7 +578,9 @@ class MockupStorage:
                         index_key = MockupKeys.date_index(today)
                         r.zrem(index_key, contribution_id)
                         deleted = True
-                        self._logger.info("DELETE_RECORD", id=contribution_id[:8], date=today)
+                        self._logger.info(
+                            "DELETE_RECORD", id=contribution_id[:8], date=today
+                        )
 
         except Exception as e:
             self._logger.error("DELETE_RECORD_ERROR", error=str(e))

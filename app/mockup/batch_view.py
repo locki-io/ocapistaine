@@ -12,6 +12,7 @@ Features:
 - Export to Opik datasets for prompt optimization
 """
 
+import asyncio
 import time
 from datetime import date
 from typing import List, Optional, Callable
@@ -19,6 +20,9 @@ from typing import List, Optional, Callable
 import streamlit as st
 
 from app.services.translations import _
+from app.providers import get_provider
+from app.agents.forseti import ForsetiAgent
+from app.agents.forseti.features import AnonymizationFeature
 from app.mockup.generator import (
     ContributionGenerator,
     MockContribution,
@@ -50,6 +54,121 @@ from app.mockup.field_input import (
 from app.agents.forseti import CATEGORIES
 
 _logger = MockupLogger("batch_validation")
+
+# Cached Forseti agent for classification
+_forseti_agent = None
+
+
+def _get_forseti_agent() -> ForsetiAgent:
+    """Get or create cached Forseti agent."""
+    global _forseti_agent
+    if _forseti_agent is None:
+        from app.providers.config import get_config
+        config = get_config()
+        provider = get_provider(config.default_provider)
+        _forseti_agent = ForsetiAgent(provider)
+    return _forseti_agent
+
+
+def _classify_mockup_contribution(title: str, body: str, category: str | None) -> dict:
+    """Classify a mockup contribution with Forseti agent."""
+    try:
+        agent = _get_forseti_agent()
+        result = asyncio.run(
+            agent.classify_category(title=title, body=body, category=category)
+        )
+        return {
+            "success": True,
+            "result_type": "classification",
+            "category": result.category,
+            "reasoning": result.reasoning,
+            "confidence": result.confidence,
+        }
+    except Exception as e:
+        _logger.error("CLASSIFY_ERROR", error=str(e))
+        return {"success": False, "result_type": "classification", "error": str(e)}
+
+
+def _anonymize_mockup_contribution(title: str, body: str) -> dict:
+    """Anonymize a mockup contribution with Forseti anonymization feature."""
+    try:
+        text = f"{title}\n\n{body}"
+        from app.providers.config import get_config
+        config = get_config()
+        provider = get_provider(config.default_provider, cache=False)
+
+        feature = AnonymizationFeature()
+        result = asyncio.run(
+            feature.execute(provider=provider, system_prompt="", text=text)
+        )
+        return {
+            "success": True,
+            "result_type": "anonymization",
+            "anonymized_text": result.anonymized_text,
+            "entities": [
+                {
+                    "original": e.original,
+                    "anonymized": e.anonymized,
+                    "type": e.entity_type.value,
+                }
+                for e in result.entities
+            ],
+            "entity_mapping": result.entity_mapping,
+            "keywords_extracted": result.keywords_extracted,
+            "reasoning": result.reasoning,
+        }
+    except Exception as e:
+        _logger.error("ANONYMIZE_ERROR", error=str(e))
+        return {"success": False, "result_type": "anonymization", "error": str(e)}
+
+
+def _display_classification_result(result: dict):
+    """Display Forseti classification result."""
+    st.markdown(f"**📊 {_('forseti_classification_title')}**")
+
+    if not result.get("success"):
+        st.error(f"{_('forseti_error')}: {result.get('error', _('forseti_unknown_error'))}")
+        return
+
+    category = result.get("category")
+    if category:
+        st.success(f"📁 {_('forseti_category')}: **{category.capitalize()}**")
+
+    confidence = result.get("confidence", 0)
+    st.progress(confidence, text=f"{_('forseti_confidence')}: {confidence:.0%}")
+
+    with st.expander(f"💭 {_('forseti_reasoning')}", expanded=False):
+        st.markdown(result.get("reasoning", ""))
+
+
+def _display_anonymization_result(result: dict):
+    """Display Forseti anonymization result."""
+    st.markdown(f"**🔒 {_('forseti_anonymization_title')}**")
+
+    if not result.get("success"):
+        st.error(f"{_('forseti_error')}: {result.get('error', _('forseti_unknown_error'))}")
+        return
+
+    entities = result.get("entities", [])
+    if entities:
+        st.metric(_("forseti_entities_found"), len(entities))
+        with st.expander("🔍 Entity mapping", expanded=False):
+            for e in entities:
+                st.markdown(f"- `{e['original']}` → `{e['anonymized']}` ({e['type']})")
+
+    keywords = result.get("keywords_extracted", [])
+    if keywords:
+        st.markdown(f"**{_('forseti_keywords_extracted')}:** {', '.join(keywords)}")
+
+    anonymized_text = result.get("anonymized_text", "")
+    if anonymized_text:
+        with st.expander(f"📄 {_('forseti_anonymized_preview')}", expanded=True):
+            st.markdown(anonymized_text[:500] + ("..." if len(anonymized_text) > 500 else ""))
+
+    reasoning = result.get("reasoning")
+    if reasoning:
+        with st.expander(f"💭 {_('forseti_reasoning')}", expanded=False):
+            st.markdown(reasoning)
 
 
 def batch_validation_view(user_id: str, validate_func: Callable) -> None:
@@ -898,7 +1017,7 @@ def _display_contribution_card(
             _display_validation_result(result, contrib.expected_valid)
 
         # Action buttons row
-        btn_col1, btn_col2, btn_col3 = st.columns([1, 1, 2])
+        btn_col1, btn_col2, btn_col3, btn_col4 = st.columns([1, 1, 1, 1])
 
         with btn_col1:
             if st.button(f"🔍 Validate", key=f"validate_single_{contrib.id}_{index}"):
@@ -909,14 +1028,46 @@ def _display_contribution_card(
                     if "batch_results" not in st.session_state:
                         st.session_state["batch_results"] = {}
                     st.session_state["batch_results"][contrib.id] = result
-                    st.rerun()
+                    # Don't rerun - keep the contribution open
 
         with btn_col2:
+            if st.button(f"📂 Classify", key=f"classify_single_{contrib.id}_{index}"):
+                with st.spinner("Classifying..."):
+                    classify_result = _classify_mockup_contribution(
+                        contrib.title, contrib.body, contrib.category
+                    )
+                    if "mockup_classify_results" not in st.session_state:
+                        st.session_state["mockup_classify_results"] = {}
+                    st.session_state["mockup_classify_results"][contrib.id] = classify_result
+
+        with btn_col3:
+            if st.button(f"🔒 Anonymize", key=f"anonymize_single_{contrib.id}_{index}"):
+                with st.spinner("Anonymizing..."):
+                    anon_result = _anonymize_mockup_contribution(
+                        contrib.title, contrib.body
+                    )
+                    if "mockup_anon_results" not in st.session_state:
+                        st.session_state["mockup_anon_results"] = {}
+                    st.session_state["mockup_anon_results"][contrib.id] = anon_result
+
+        with btn_col4:
             if st.button(
                 f"🗑️ Delete", key=f"delete_single_{contrib.id}_{index}", type="secondary"
             ):
                 _delete_contribution(contrib.id)
                 st.rerun()
+
+        # Show classification result if available
+        classify_result = st.session_state.get("mockup_classify_results", {}).get(contrib.id)
+        if classify_result:
+            st.markdown("---")
+            _display_classification_result(classify_result)
+
+        # Show anonymization result if available
+        anon_result = st.session_state.get("mockup_anon_results", {}).get(contrib.id)
+        if anon_result:
+            st.markdown("---")
+            _display_anonymization_result(anon_result)
 
 
 def _delete_contribution(contrib_id: str) -> None:
