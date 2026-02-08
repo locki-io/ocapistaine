@@ -21,6 +21,34 @@ logger = get_logger("tasks")
 REDIS_DB_SCHEDULER = 6
 
 
+def _get_redis_config() -> tuple[str, int, str | None, bool]:
+    """
+    Get Redis connection config from environment.
+
+    Supports multiple env var formats:
+    - REDIS_HOST + REDIS_PORT + REDIS_PASSWORD (standard)
+    - UPSTASH_REDIS_REST_URL (auto-parse Upstash URL)
+
+    Returns:
+        Tuple of (host, port, password, use_ssl)
+    """
+    # Check for Upstash URL first
+    upstash_url = os.getenv("UPSTASH_REDIS_REST_URL", "")
+    if upstash_url:
+        # Parse: https://xxx.upstash.io -> xxx.upstash.io
+        host = upstash_url.replace("https://", "").replace("http://", "").rstrip("/")
+        password = os.getenv("REDIS_PASSWORD") or os.getenv("UPSTASH_REDIS_REST_TOKEN")
+        return host, 6379, password, True  # Upstash always uses SSL
+
+    # Standard config
+    redis_host = os.getenv("REDIS_HOST", "localhost")
+    redis_port = int(os.getenv("REDIS_PORT", "6379"))
+    redis_password = os.getenv("REDIS_PASSWORD", "") or None
+    use_ssl = "upstash" in redis_host.lower()
+
+    return redis_host, redis_port, redis_password, use_ssl
+
+
 def get_scheduler_redis() -> redis.Redis:
     """
     Get Redis connection for scheduler locks and success keys.
@@ -31,17 +59,12 @@ def get_scheduler_redis() -> redis.Redis:
     Returns:
         redis.Redis: Redis client connected to scheduler database
     """
-    redis_host = os.getenv("REDIS_HOST", "localhost")
-    redis_port = os.getenv("REDIS_PORT", "6379")
-    redis_password = os.getenv("REDIS_PASSWORD", "") or None
-
-    # Upstash requires SSL
-    use_ssl = "upstash" in redis_host.lower()
+    host, port, password, use_ssl = _get_redis_config()
 
     return redis.Redis(
-        host=redis_host,
-        port=int(redis_port),
-        password=redis_password,
+        host=host,
+        port=port,
+        password=password,
         db=REDIS_DB_SCHEDULER,
         decode_responses=True,
         ssl=use_ssl,

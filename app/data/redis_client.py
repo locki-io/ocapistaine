@@ -19,36 +19,56 @@ load_dotenv()
 _redis_pool: Optional[redis.ConnectionPool] = None
 
 
+def _get_redis_config() -> tuple[str, int, str | None, bool]:
+    """
+    Get Redis connection config from environment.
+
+    Supports multiple env var formats:
+    - REDIS_HOST + REDIS_PORT + REDIS_PASSWORD (standard)
+    - UPSTASH_REDIS_REST_URL (auto-parse Upstash URL)
+
+    Returns:
+        Tuple of (host, port, password, use_ssl)
+    """
+    # Check for Upstash URL first
+    upstash_url = os.getenv("UPSTASH_REDIS_REST_URL", "")
+    if upstash_url:
+        # Parse: https://xxx.upstash.io -> xxx.upstash.io
+        host = upstash_url.replace("https://", "").replace("http://", "").rstrip("/")
+        password = os.getenv("REDIS_PASSWORD") or os.getenv("UPSTASH_REDIS_REST_TOKEN")
+        return host, 6379, password, True  # Upstash always uses SSL
+
+    # Standard config
+    redis_host = os.getenv("REDIS_HOST", "localhost")
+    redis_port = int(os.getenv("REDIS_PORT", "6379"))
+    redis_password = os.getenv("REDIS_PASSWORD", "") or None
+    use_ssl = "upstash" in redis_host.lower()
+
+    return redis_host, redis_port, redis_password, use_ssl
+
+
 def get_redis_pool() -> redis.ConnectionPool:
     """
     Get or create Redis connection pool.
 
-    Uses REDIS_HOST/REDIS_PORT/REDIS_PASSWORD/REDIS_DB from environment.
-    Supports Upstash and other cloud Redis providers.
+    Supports UPSTASH_REDIS_REST_URL or REDIS_HOST/PORT/PASSWORD.
     """
     global _redis_pool
 
     if _redis_pool is None:
-        redis_host = os.getenv("REDIS_HOST", "localhost")
-        redis_port = os.getenv("REDIS_PORT", "6379")
-        redis_password = os.getenv("REDIS_PASSWORD", "")
+        host, port, password, use_ssl = _get_redis_config()
         redis_db = os.getenv("REDIS_DB", "5")
 
         # Build URL with optional password
-        if redis_password:
-            redis_url = f"redis://default:{redis_password}@{redis_host}:{redis_port}/{redis_db}"
+        if password:
+            redis_url = f"rediss://default:{password}@{host}:{port}/{redis_db}" if use_ssl else f"redis://default:{password}@{host}:{port}/{redis_db}"
         else:
-            redis_url = f"redis://{redis_host}:{redis_port}/{redis_db}"
-
-        # Upstash requires SSL
-        use_ssl = "upstash" in redis_host.lower()
+            redis_url = f"redis://{host}:{port}/{redis_db}"
 
         _redis_pool = redis.ConnectionPool.from_url(
             redis_url,
             decode_responses=True,
             max_connections=10,
-            ssl=use_ssl,
-            ssl_cert_reqs=None if use_ssl else None,
         )
 
     return _redis_pool
