@@ -1,15 +1,15 @@
 """
 Opik Evaluation Configuration
 
-Stores Opik evaluation settings in Redis db=5.
+Stores Opik evaluation settings in Redis.
 These settings control the LLM used for Opik's built-in metrics (LLM judges).
 
 Default: OpenAI gpt-4o-mini
 
 Settings:
-- opik:judge:provider - LLM provider for Opik judges (openai, anthropic)
-- opik:judge:model - Model name (gpt-4o-mini, gpt-4o, etc.)
-- opik:judge:api_key_env - Environment variable name for API key
+- app:opik:judge:provider - LLM provider for Opik judges (openai, anthropic)
+- app:opik:judge:model - Model name (gpt-4o-mini, gpt-4o, etc.)
+- app:opik:judge:api_key_env - Environment variable name for API key
 """
 
 import os
@@ -18,13 +18,11 @@ from typing import Optional
 from dotenv import load_dotenv
 
 from app.services.logging import get_logger
+from app.data.redis_client import _get_redis_config, APP_KEY_PREFIX
 
 load_dotenv()
 
 logger = get_logger("services")
-
-# Redis db=5 for Opik configuration
-REDIS_DB_OPIK_CONFIG = 5
 
 # Default Opik judge configuration
 DEFAULT_OPIK_JUDGE = {
@@ -33,19 +31,25 @@ DEFAULT_OPIK_JUDGE = {
     "api_key_env": "OPENAI_API_KEY",
 }
 
-# Redis keys
-KEY_JUDGE_PROVIDER = "opik:judge:provider"
-KEY_JUDGE_MODEL = "opik:judge:model"
-KEY_JUDGE_API_KEY_ENV = "opik:judge:api_key_env"
+# Redis keys (with app: prefix)
+KEY_JUDGE_PROVIDER = f"{APP_KEY_PREFIX}opik:judge:provider"
+KEY_JUDGE_MODEL = f"{APP_KEY_PREFIX}opik:judge:model"
+KEY_JUDGE_API_KEY_ENV = f"{APP_KEY_PREFIX}opik:judge:api_key_env"
 
 
 def _get_redis() -> redis.Redis:
-    """Get Redis connection for Opik config (db=5)."""
+    """Get Redis connection for Opik config."""
+    host, port, password, use_ssl = _get_redis_config()
+    redis_db = int(os.getenv("REDIS_DB", "0"))
+
     return redis.Redis(
-        host=os.getenv("REDIS_HOST", "localhost"),
-        port=int(os.getenv("REDIS_PORT", 6379)),
-        db=REDIS_DB_OPIK_CONFIG,
+        host=host,
+        port=port,
+        password=password,
+        db=redis_db,
         decode_responses=True,
+        ssl=use_ssl,
+        ssl_cert_reqs=None if use_ssl else None,
     )
 
 
