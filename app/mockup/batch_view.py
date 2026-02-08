@@ -273,7 +273,16 @@ def _load_contributions_with_redis_fallback() -> tuple[list, str]:
 def _load_existing_view(user_id: str, validate_func: Callable) -> None:
     """Load and validate existing mockup contributions."""
     st.session_state["current_batch_view"] = "load_existing"
-    contributions, source = _load_contributions_with_redis_fallback()
+
+    # Cache contributions in session state to avoid reloading on every rerun
+    if "cached_contributions" not in st.session_state or st.session_state.get("reload_contributions"):
+        contributions, source = _load_contributions_with_redis_fallback()
+        st.session_state["cached_contributions"] = contributions
+        st.session_state["cached_contributions_source"] = source
+        st.session_state["reload_contributions"] = False
+    else:
+        contributions = st.session_state["cached_contributions"]
+        source = st.session_state.get("cached_contributions_source", "cache")
 
     if not contributions:
         st.warning(
@@ -281,7 +290,13 @@ def _load_existing_view(user_id: str, validate_func: Callable) -> None:
         )
         return
 
-    st.success(f"Loaded **{len(contributions)}** contributions from {source}")
+    col_info, col_reload = st.columns([4, 1])
+    with col_info:
+        st.success(f"Loaded **{len(contributions)}** contributions from {source}")
+    with col_reload:
+        if st.button("🔄", key="reload_contributions_btn", help="Reload from storage"):
+            st.session_state["reload_contributions"] = True
+            st.rerun()
 
     # Filter options
     col1, col2, col3 = st.columns(3)
@@ -1180,11 +1195,11 @@ def _display_contribution_card(
             st.markdown("---")
             _display_validation_result(result, contrib.expected_valid)
 
-        # Action buttons row
+        # Action buttons row - use contrib.id for stable keys
         btn_col1, btn_col2, btn_col3, btn_col4 = st.columns([1, 1, 1, 1])
 
         with btn_col1:
-            if st.button(f"🔍 Validate", key=f"validate_single_{contrib.id}_{index}"):
+            if st.button("🔍 Validate", key=f"validate_{contrib.id}"):
                 with st.spinner("Validating..."):
                     result = validate_func(
                         contrib.title, contrib.body, contrib.category
@@ -1193,35 +1208,41 @@ def _display_contribution_card(
                     if "batch_results" not in st.session_state:
                         st.session_state["batch_results"] = {}
                     st.session_state["batch_results"][contrib.id] = result
-                    # Reset overlay and add new result
+                    # Track last action and add to overlay
+                    st.session_state["last_action_id"] = contrib.id
                     clear_overlay()
                     add_to_overlay(contrib.id, "validation", result)
+                    st.toast(f"Validated {contrib.id[:8]}...")
 
         with btn_col2:
-            if st.button(f"📂 Classify", key=f"classify_single_{contrib.id}_{index}"):
+            if st.button("📂 Classify", key=f"classify_{contrib.id}"):
                 with st.spinner("Classifying..."):
                     classify_result = _classify_mockup_contribution(
                         contrib.title, contrib.body, contrib.category
                     )
-                    # Reset overlay and add new result
+                    # Track last action and add to overlay
+                    st.session_state["last_action_id"] = contrib.id
                     clear_overlay()
                     add_to_overlay(contrib.id, "classification", classify_result)
+                    st.toast(f"Classified {contrib.id[:8]}...")
 
         with btn_col3:
-            if st.button(f"🔒 Anonymize", key=f"anonymize_single_{contrib.id}_{index}"):
+            if st.button("🔒 Anonymize", key=f"anonymize_{contrib.id}"):
                 with st.spinner("Anonymizing..."):
                     anon_result = _anonymize_mockup_contribution(
                         contrib.title, contrib.body
                     )
-                    # Reset overlay and add new result
+                    # Track last action and add to overlay
+                    st.session_state["last_action_id"] = contrib.id
                     clear_overlay()
                     add_to_overlay(contrib.id, "anonymization", anon_result)
+                    st.toast(f"Anonymized {contrib.id[:8]}...")
 
         with btn_col4:
-            if st.button(
-                f"🗑️ Delete", key=f"delete_single_{contrib.id}_{index}", type="secondary"
-            ):
+            if st.button("🗑️ Delete", key=f"delete_{contrib.id}", type="secondary"):
                 _delete_contribution(contrib.id)
+                # Force reload contributions after delete
+                st.session_state["reload_contributions"] = True
                 st.rerun()
 
 
