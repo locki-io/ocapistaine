@@ -92,16 +92,22 @@ def sidebar_setup() -> str:
 
         st.divider()
 
-        # User session info
-        st.markdown(f"### 👤 {_('sidebar_session')}")
-        st.caption(_("sidebar_session_id", user_id=user_id[:8]))
-
-        # New conversation button
-        if st.button(f"🔄 {_('sidebar_new_conversation')}", use_container_width=True):
-            _start_new_conversation(user_id)
-            st.rerun()
-
         st.divider()
+
+        # Status indicators
+        st.markdown(f"### 📊 {_('sidebar_status')}")
+        _display_status_indicators()
+
+        # # User session info
+        # st.markdown(f"### 👤 {_('sidebar_session')}")
+        # st.caption(_("sidebar_session_id", user_id=user_id[:8]))
+
+        # # Current contribution button
+        # if st.button(f"🔄 {_('sidebar_new_conversation')}", use_container_width=True):
+        #     _start_new_conversation(user_id)
+        #     st.rerun()
+
+        # st.divider()
 
         # AI Provider/Model selection
         st.markdown(f"### 🤖 {_('sidebar_ai_model')}")
@@ -121,12 +127,6 @@ def sidebar_setup() -> str:
         - [Contribuer](https://github.com/locki-io/ocapistaine)
         """
         )
-
-        st.divider()
-
-        # Status indicators
-        st.markdown(f"### 📊 {_('sidebar_status')}")
-        _display_status_indicators()
 
         # Footer
         st.divider()

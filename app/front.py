@@ -56,6 +56,7 @@ _scheduler = _init_scheduler()
 
 # Authentication check (before loading any other content)
 from app.auth import check_password
+
 if not check_password():
     st.stop()
 
@@ -446,7 +447,9 @@ def _classify_with_forseti(
 
     try:
         agent = get_forseti_agent()
-        result = asyncio.run(agent.classify_category(title=title, body=body, category=category))
+        result = asyncio.run(
+            agent.classify_category(title=title, body=body, category=category)
+        )
 
         latency_ms = (time.time() - start_time) * 1000
 
@@ -477,9 +480,7 @@ def _classify_with_forseti(
         return {"success": False, "result_type": "classification", "error": str(e)}
 
 
-def _anonymize_with_forseti(
-    title: str, body: str, user_id: str
-) -> dict:
+def _anonymize_with_forseti(title: str, body: str, user_id: str) -> dict:
     """Anonymize a contribution with Forseti anonymization feature."""
     start_time = time.time()
 
@@ -498,7 +499,9 @@ def _anonymize_with_forseti(
         provider = get_provider(provider_name, model=model_id, cache=False)
 
         feature = AnonymizationFeature()
-        result = asyncio.run(feature.execute(provider=provider, system_prompt="", text=text))
+        result = asyncio.run(
+            feature.execute(provider=provider, system_prompt="", text=text)
+        )
 
         latency_ms = (time.time() - start_time) * 1000
 
@@ -514,7 +517,11 @@ def _anonymize_with_forseti(
             "result_type": "anonymization",
             "anonymized_text": result.anonymized_text,
             "entities": [
-                {"original": e.original, "anonymized": e.anonymized, "type": e.entity_type.value}
+                {
+                    "original": e.original,
+                    "anonymized": e.anonymized,
+                    "type": e.entity_type.value,
+                }
                 for e in result.entities
             ],
             "entity_mapping": result.entity_mapping,
@@ -587,7 +594,9 @@ def _display_anonymization_result(result: dict):
     anonymized_text = result.get("anonymized_text", "")
     if anonymized_text:
         with st.expander(f"📄 {_('forseti_anonymized_preview')}", expanded=True):
-            st.markdown(anonymized_text[:500] + ("..." if len(anonymized_text) > 500 else ""))
+            st.markdown(
+                anonymized_text[:500] + ("..." if len(anonymized_text) > 500 else "")
+            )
 
     # Reasoning (collapsed)
     reasoning = result.get("reasoning")
@@ -703,7 +712,9 @@ def contributions_view(user_id: str):
                 st.markdown(body[:500] + ("..." if len(body) > 500 else ""))
 
             # Actions row - Forseti features
-            action_col1, action_col2, action_col3, action_col4 = st.columns([1, 1, 1, 2])
+            action_col1, action_col2, action_col3, action_col4 = st.columns(
+                [1, 1, 1, 2]
+            )
 
             with action_col1:
                 # Forseti validation button
@@ -734,9 +745,7 @@ def contributions_view(user_id: str):
                         details=f"issue_id={issue_id}",
                     )
                     with st.spinner(_("forseti_classifying")):
-                        result = _classify_with_forseti(
-                            title, body, category, user_id
-                        )
+                        result = _classify_with_forseti(title, body, category, user_id)
                         st.session_state[f"classify_result_{issue_id}"] = result
 
             with action_col3:
@@ -751,9 +760,7 @@ def contributions_view(user_id: str):
                         details=f"issue_id={issue_id}",
                     )
                     with st.spinner(_("forseti_anonymizing")):
-                        result = _anonymize_with_forseti(
-                            title, body, user_id
-                        )
+                        result = _anonymize_with_forseti(title, body, user_id)
                         st.session_state[f"anonymize_result_{issue_id}"] = result
 
             with action_col4:
@@ -872,7 +879,6 @@ def about_view():
 |----------------|-------------|--------|
 | {_('about_feature_search')} | {_('about_feature_search_desc')} | 🔴 {_('about_status_in_dev')} |
 | {_('about_feature_qa')} | {_('about_feature_qa_desc')} | 🔴 {_('about_status_in_dev')} |
-| {_('about_feature_hallucination')} | {_('about_feature_hallucination_desc')} | 🟡 {_('about_status_planned')} |
 | {_('about_feature_multichannel')} | {_('about_feature_multichannel_desc')} | 🟡 {_('about_status_planned')} |
 
 ### {_('about_links_title')}
