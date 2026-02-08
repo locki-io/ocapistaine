@@ -30,9 +30,10 @@ def get_scheduler_redis() -> redis.Redis:
     Returns:
         redis.Redis: Redis client connected to scheduler database
     """
+    redis_host = os.getenv("REDIS_HOST", "localhost")
     redis_port = os.getenv("REDIS_PORT", "6379")
     return redis.Redis(
-        host="localhost",
+        host=redis_host,
         port=int(redis_port),
         db=REDIS_DB_SCHEDULER,
         decode_responses=True,

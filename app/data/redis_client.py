@@ -23,14 +23,15 @@ def get_redis_pool() -> redis.ConnectionPool:
     """
     Get or create Redis connection pool.
 
-    Uses REDIS_PORT/ REDIS_DB from environment or defaults to localhost.
+    Uses REDIS_HOST/REDIS_PORT/REDIS_DB from environment or defaults to localhost.
     """
     global _redis_pool
 
     if _redis_pool is None:
-        redis_db = os.getenv("REDIS_DB", "5")
+        redis_host = os.getenv("REDIS_HOST", "localhost")
         redis_port = os.getenv("REDIS_PORT", "6379")
-        redis_url = f"redis://localhost:{redis_port}/{redis_db}"
+        redis_db = os.getenv("REDIS_DB", "5")
+        redis_url = f"redis://{redis_host}:{redis_port}/{redis_db}"
         _redis_pool = redis.ConnectionPool.from_url(
             redis_url,
             decode_responses=True,
