@@ -8,6 +8,12 @@
 [![Documentation](https://img.shields.io/badge/Docs-docs.locki.io-blue)](https://docs.locki.io)
 [![Encode Hackathon](https://img.shields.io/badge/Encode-Hackathon%202026-purple)](https://www.encode.club/)
 
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Opik](https://img.shields.io/badge/Opik-LLM%20Observability-blueviolet)](https://www.comet.com/site/products/opik/)
+[![APScheduler](https://img.shields.io/badge/APScheduler-Scheduling-green)](https://apscheduler.readthedocs.io/)
+[![Pydantic](https://img.shields.io/badge/Pydantic-E92063?logo=pydantic&logoColor=white)](https://docs.pydantic.dev/)
+
 ## 🎬 Demo
 
 **[Watch the 3-minute demo →](https://youtu.be/EAZiVUMtfp8)**
@@ -17,11 +23,14 @@
 Ò Capistaine is an AI-powered civic transparency platform that crawls, processes, and makes accessible 6 years of municipal documents (arrêtés, délibérations, commission reports) for Audierne, France. It serves as a training ground for civic AI agents that help citizens engage with local democracy.
 
 **Key Features:**
-- 🔍 **Document Intelligence**: 4,000+ municipal documents indexed and searchable
-- 🤖 **Forseti 461**: AI agent for charter validation, category classification, and PII anonymization
-- 📊 **LLM Observability**: Full tracing via Opik with cost tracking and evaluation
+- 🤖 **Forseti 461 Agent**: Charter validation, category classification, wording correction
+- 🔒 **PII Anonymization**: Regex for transcripts (Speaker_1, Speaker_2...), LLM for general docs
+- 🔄 **Provider Failover**: Multi-LLM support (OpenAI, Gemini, Claude, Mistral, Ollama) with automatic failover
+- ✨ **Contribution Wizard**: 5-step guided workflow for citizen contributions
+- 🔍 **Document Intelligence**: 4,000+ municipal documents indexed (Firecrawl + OCR)
+- 📊 **LLM Observability**: Full tracing via Opik with cost tracking and scheduled evaluation
 - 🔗 **Multi-channel Integration**: Facebook, email, chatbot via [Vaettir N8N workflows](https://github.com/locki-io/vaettir)
-- 🌐 **Bilingual**: French/English interface
+- 🌐 **Bilingual Interface**: French/English with real-time switching
 
 The platform supports [audierne2026.fr](https://audierne2026.fr), a real participatory democracy initiative.
 
@@ -265,6 +274,40 @@ See [LICENSE](LICENSE) and [LICENSE-ELv2](LICENSE-ELv2) for full terms.
 ### Hackathon Note
 
 This structure complies with hackathon open-source requirements while protecting locki.io engineering IP for future commercialization.
+
+---
+
+## Roadmap
+
+### Current Status
+
+| Feature | Status | Notes |
+|---------|--------|-------|
+| Document Crawling | ✅ Operational | 4,000+ docs indexed |
+| Forseti 461 Agent | ✅ Operational | Charter validation, classification |
+| PII Anonymization | ✅ Operational | Transcript + LLM modes |
+| Contribution Wizard | ✅ Operational | 5-step workflow |
+| Provider Failover | ✅ Operational | Multi-LLM support |
+| RAG (Retrieval) | 🚧 In Development | Document search pending |
+
+### Upcoming
+
+**March 2026 - Audierne Elections Sprint**
+
+The municipal elections in Audierne start **March 18th, 2026**. During this period, the `dev` branch will be pushed to its maximum capacity to support real citizen engagement.
+
+- **Firecrawl Integration**: Move document crawling into the processors workflow for scheduled updates
+- **RAG Pipeline**: Full retrieval-augmented generation for document Q&A
+- **Real-time Contribution Tracking**: Live dashboard for election period
+
+### Deployment Strategy
+
+| Branch | Environment | Purpose |
+|--------|-------------|---------|
+| `main` | [Render (cloud)](https://ocapistaine.onrender.com) | Stable demo for hackathon judges |
+| `dev` | Local + ngrok | Active development, election support |
+
+This ensures judges always have access to a stable, running application while development continues at full speed for the elections.
 
 ---
 
