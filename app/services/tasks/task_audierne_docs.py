@@ -26,7 +26,7 @@ from typing import Optional
 
 from app.services.tasks import _task_boilerplate, TaskError, REDIS_SUCCESS_TTL
 from app.services.logging import TaskLogger
-from app.services.scheduler.utils import get_scheduler_redis
+from app.services.scheduler.utils import get_scheduler_redis, sched_key
 
 # Paths
 AUDIERNE_DOCS_DIR = Path(__file__).parent.parent.parent.parent / "docs" / "docs" / "audierne2026"
@@ -46,7 +46,7 @@ def _acquire_ollama_lock(task_id: str) -> bool:
     """Acquire global Ollama lock to prevent concurrent usage."""
     try:
         redis = get_scheduler_redis()
-        lock_key = "lock:ollama:global"
+        lock_key = sched_key("lock:ollama:global")
         acquired = redis.set(lock_key, task_id, ex=OLLAMA_LOCK_TTL, nx=True)
         if acquired:
             _logger.debug("OLLAMA_LOCK_ACQUIRED", task_id=task_id)
@@ -60,7 +60,7 @@ def _release_ollama_lock(task_id: str) -> None:
     """Release Ollama lock if we hold it."""
     try:
         redis = get_scheduler_redis()
-        lock_key = "lock:ollama:global"
+        lock_key = sched_key("lock:ollama:global")
         current = redis.get(lock_key)
         if current:
             # Handle both bytes and str returns from Redis

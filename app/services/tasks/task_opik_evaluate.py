@@ -91,9 +91,9 @@ def task_opik_evaluate(
 
     # Check Ollama lock if using Ollama (avoid conflicts with other tasks)
     if task_provider == "ollama":
-        from app.services.scheduler.utils import get_scheduler_redis
+        from app.services.scheduler.utils import get_scheduler_redis, sched_key
         l = get_scheduler_redis()
-        if l.exists("lock:ollama:global"):
+        if l.exists(sched_key("lock:ollama:global")):
             result["warnings"].append("Ollama is locked by another task, using gemini instead")
             task_provider = "gemini"  # Failover to gemini
             logger.log_progress("Ollama locked, failing over to gemini")

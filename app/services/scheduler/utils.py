@@ -7,7 +7,6 @@ Extracted to avoid circular imports between app.services.scheduler and app.servi
 
 import os
 import redis
-from typing import Optional
 from contextlib import contextmanager
 from dotenv import load_dotenv
 
@@ -17,8 +16,8 @@ load_dotenv()
 
 logger = get_logger("tasks")
 
-# Dedicated Redis DB for scheduler locks and success keys
-REDIS_DB_SCHEDULER = 6
+# Scheduler key prefix (separates from app data in shared db)
+SCHED_KEY_PREFIX = "sched:"
 
 
 def _get_redis_config() -> tuple[str, int, str | None, bool]:
@@ -53,23 +52,29 @@ def get_scheduler_redis() -> redis.Redis:
     """
     Get Redis connection for scheduler locks and success keys.
 
-    Uses dedicated database (db=6) to isolate scheduler state from app data.
-    Supports Upstash and other cloud Redis providers with password auth.
+    Uses REDIS_DB env var (default=0 for cloud compatibility).
+    Keys are prefixed with 'sched:' to separate from app data.
 
     Returns:
         redis.Redis: Redis client connected to scheduler database
     """
     host, port, password, use_ssl = _get_redis_config()
+    redis_db = int(os.getenv("REDIS_DB", "0"))
 
     return redis.Redis(
         host=host,
         port=port,
         password=password,
-        db=REDIS_DB_SCHEDULER,
+        db=redis_db,
         decode_responses=True,
         ssl=use_ssl,
         ssl_cert_reqs=None if use_ssl else None,
     )
+
+
+def sched_key(key: str) -> str:
+    """Prefix a key for scheduler namespace. Use for all scheduler keys."""
+    return f"{SCHED_KEY_PREFIX}{key}"
 
 
 def normalize_timestamp(ts: int | float) -> int:

@@ -223,7 +223,7 @@ def _get_task_provider_config() -> dict:
 
 def _display_todays_tasks():
     """Show task completion status for today."""
-    from app.services.scheduler.utils import get_scheduler_redis
+    from app.services.scheduler.utils import get_scheduler_redis, sched_key
     import redis as redis_lib
 
     st.markdown(f"### {_('admin_todays_tasks')}")
@@ -246,8 +246,8 @@ def _display_todays_tasks():
     ]
 
     for task_id, task_label in tasks:
-        success_key = f"success:{task_id}:{today}"
-        lock_key = f"lock:{task_id}:{today}"
+        success_key = sched_key(f"success:{task_id}:{today}")
+        lock_key = sched_key(f"lock:{task_id}:{today}")
 
         is_completed = redis_conn.exists(success_key)
         is_running = redis_conn.exists(lock_key)
@@ -755,11 +755,11 @@ def _clear_and_run_task_with_global_config(
     source_config: dict | None = None,
 ):
     """Clear success key and re-run task using global config."""
-    from app.services.scheduler.utils import get_scheduler_redis
+    from app.services.scheduler.utils import get_scheduler_redis, sched_key
 
     redis_conn = get_scheduler_redis()
     today = datetime.now().strftime("%Y%m%d")
-    success_key = f"success:{task_name}:{today}"
+    success_key = sched_key(f"success:{task_name}:{today}")
 
     deleted = redis_conn.delete(success_key)
     if deleted:
@@ -770,7 +770,7 @@ def _clear_and_run_task_with_global_config(
 
 def _force_revalidate_and_run_with_global_config(task_name: str, user_id: str):
     """Reset confidence on all records and force revalidation using global config."""
-    from app.services.scheduler.utils import get_scheduler_redis
+    from app.services.scheduler.utils import get_scheduler_redis, sched_key
     from app.mockup.storage import get_storage
     from datetime import date, timedelta
 
@@ -793,7 +793,7 @@ def _force_revalidate_and_run_with_global_config(task_name: str, user_id: str):
 
     redis_conn = get_scheduler_redis()
     today = datetime.now().strftime("%Y%m%d")
-    success_key = f"success:{task_name}:{today}"
+    success_key = sched_key(f"success:{task_name}:{today}")
     redis_conn.delete(success_key)
 
     _run_task_with_global_config(task_name, user_id)
@@ -839,12 +839,12 @@ def _clear_and_run_task_simple(
     source_config: dict | None = None,
 ):
     """Clear success key and re-run task (no LLM needed)."""
-    from app.services.scheduler.utils import get_scheduler_redis
+    from app.services.scheduler.utils import get_scheduler_redis, sched_key
     _ = user_id  # unused but kept for consistent API
 
     redis_conn = get_scheduler_redis()
     today = datetime.now().strftime("%Y%m%d")
-    success_key = f"success:{task_name}:{today}"
+    success_key = sched_key(f"success:{task_name}:{today}")
 
     deleted = redis_conn.delete(success_key)
     if deleted:
@@ -1212,7 +1212,7 @@ def _display_experiment_runner():
 
 def _display_redis_keys():
     """Show scheduler Redis keys with delete option."""
-    from app.services.scheduler.utils import get_scheduler_redis
+    from app.services.scheduler.utils import get_scheduler_redis, SCHED_KEY_PREFIX
 
     st.markdown(f"### {_('admin_redis_keys')}")
 
@@ -1224,9 +1224,9 @@ def _display_redis_keys():
     redis_conn = get_scheduler_redis()
     today = datetime.now().strftime("%Y%m%d")
 
-    # Get all keys for today
-    success_keys = list(redis_conn.keys(f"success:*:{today}"))
-    lock_keys = list(redis_conn.keys(f"lock:*:{today}"))
+    # Get all keys for today (with sched: prefix)
+    success_keys = list(redis_conn.keys(f"{SCHED_KEY_PREFIX}success:*:{today}"))
+    lock_keys = list(redis_conn.keys(f"{SCHED_KEY_PREFIX}lock:*:{today}"))
 
     all_keys = success_keys + lock_keys
 
@@ -1243,7 +1243,7 @@ def _display_redis_keys():
         else:
             ttl_str = _("admin_no_ttl")
 
-        key_type = "success" if key.startswith("success:") else "lock"
+        key_type = "success" if "success:" in key else "lock"
 
         col1, col2, col3 = st.columns([4, 2, 1])
         with col1:

@@ -231,7 +231,7 @@ def _task_boilerplate(
         finally:
             redis_conn.delete(lock_key)  # Always release lock
     """
-    from app.services.scheduler.utils import get_scheduler_redis
+    from app.services.scheduler.utils import get_scheduler_redis, sched_key
 
     # Default to today if no date provided
     if date_string is None:
@@ -240,9 +240,9 @@ def _task_boilerplate(
     # Generate unique task execution ID
     task_id = str(uuid.uuid4())[:8]
 
-    # Key patterns for distributed coordination
-    lock_key = f"lock:{task_name}:{date_string}"
-    success_key = f"success:{task_name}:{date_string}"
+    # Key patterns for distributed coordination (with sched: prefix for db=0)
+    lock_key = sched_key(f"lock:{task_name}:{date_string}")
+    success_key = sched_key(f"success:{task_name}:{date_string}")
 
     # Get scheduler Redis connection
     redis_conn = get_scheduler_redis()

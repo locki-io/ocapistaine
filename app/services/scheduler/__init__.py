@@ -183,7 +183,7 @@ def orchestrate_task_chain():
     - task_report_generation (depends on task_rag_indexing)
     """
     from app.services.tasks import task_contributions_analysis
-    from app.services.scheduler.utils import get_scheduler_redis
+    from app.services.scheduler.utils import get_scheduler_redis, sched_key
 
     today = datetime.now().strftime("%Y%m%d")
     l = get_scheduler_redis()
@@ -206,7 +206,7 @@ def orchestrate_task_chain():
 
     for task in task_chain:
         task_id = task["id"]
-        success_key = f"success:{task_id}:{today}"
+        success_key = sched_key(f"success:{task_id}:{today}")
 
         # Skip if already completed today
         if l.exists(success_key):
@@ -214,7 +214,7 @@ def orchestrate_task_chain():
 
         # Check if all dependencies are met
         deps_met = all(
-            l.exists(f"success:{dep}:{today}") for dep in task.get("depends_on", [])
+            l.exists(sched_key(f"success:{dep}:{today}")) for dep in task.get("depends_on", [])
         )
 
         if not deps_met:
@@ -385,7 +385,7 @@ def get_task_history(date_string: str = None) -> list:
     Returns:
         list: Task status information including completion state and TTL
     """
-    from app.services.scheduler.utils import get_scheduler_redis
+    from app.services.scheduler.utils import get_scheduler_redis, sched_key
 
     if date_string is None:
         date_string = datetime.now().strftime("%Y%m%d")
@@ -402,8 +402,8 @@ def get_task_history(date_string: str = None) -> list:
 
     history = []
     for task in tasks:
-        success_key = f"success:{task}:{date_string}"
-        lock_key = f"lock:{task}:{date_string}"
+        success_key = sched_key(f"success:{task}:{date_string}")
+        lock_key = sched_key(f"lock:{task}:{date_string}")
 
         is_completed = l.exists(success_key)
         is_running = l.exists(lock_key)

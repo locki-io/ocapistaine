@@ -47,17 +47,23 @@ def _get_redis_config() -> tuple[str, int, str | None, bool]:
     return redis_host, redis_port, redis_password, use_ssl
 
 
+# Key prefix for app data (separates from scheduler keys in shared db=0)
+APP_KEY_PREFIX = "app:"
+
+
 def get_redis_pool() -> redis.ConnectionPool:
     """
     Get or create Redis connection pool.
 
     Supports UPSTASH_REDIS_REST_URL or REDIS_HOST/PORT/PASSWORD.
+    Uses db=0 for cloud compatibility (Upstash free tier).
     """
     global _redis_pool
 
     if _redis_pool is None:
         host, port, password, use_ssl = _get_redis_config()
-        redis_db = os.getenv("REDIS_DB", "5")
+        # Default to db=0 for cloud compatibility (Upstash only supports db=0)
+        redis_db = os.getenv("REDIS_DB", "0")
 
         # Build URL with optional password
         if password:
@@ -72,6 +78,11 @@ def get_redis_pool() -> redis.ConnectionPool:
         )
 
     return _redis_pool
+
+
+def app_key(key: str) -> str:
+    """Prefix a key for app namespace. Use for all app data keys."""
+    return f"{APP_KEY_PREFIX}{key}"
 
 
 def get_redis_connection() -> redis.Redis:
