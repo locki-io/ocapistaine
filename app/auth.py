@@ -41,14 +41,23 @@ def check_password() -> bool:
     return False
 
 
-def _auth_enabled() -> bool:
-    """Check if authentication is enabled via secrets."""
+def _get_password() -> str:
+    """Get password from environment variable or secrets.toml."""
+    # Priority 1: Environment variable (for Docker/cloud deployments)
+    env_password = os.getenv("STREAMLIT_AUTH_PASSWORD", "")
+    if env_password:
+        return env_password
+
+    # Priority 2: Streamlit secrets.toml (for local development)
     try:
-        # Auth is enabled if password is set in secrets
-        return bool(st.secrets.get("auth", {}).get("password"))
+        return st.secrets.get("auth", {}).get("password", "")
     except Exception:
-        # No secrets file or auth section
-        return False
+        return ""
+
+
+def _auth_enabled() -> bool:
+    """Check if authentication is enabled via env var or secrets."""
+    return bool(_get_password())
 
 
 def _show_login_form():
@@ -97,7 +106,7 @@ def _show_login_form():
 def _verify_password(password: str) -> bool:
     """Verify the entered password against the stored hash."""
     try:
-        stored_password = st.secrets.get("auth", {}).get("password", "")
+        stored_password = _get_password()
 
         # Support both plain text and hashed passwords
         if stored_password.startswith("sha256:"):

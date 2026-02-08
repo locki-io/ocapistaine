@@ -1,0 +1,55 @@
+# Render.com deployment configuration
+# https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: ocapistaine
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    # Render sets PORT env var - our entrypoint uses it for Streamlit
+    envVars:
+      # Authentication (set in Render dashboard for security)
+      - key: STREAMLIT_AUTH_PASSWORD
+        sync: false
+      # Streamlit CORS settings
+      - key: STREAMLIT_SERVER_ENABLE_CORS
+        value: "true"
+      - key: STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION
+        value: "false"
+      - key: STREAMLIT_SERVER_ALLOWED_ORIGINS
+        value: "https://ocapistaine.onrender.com,https://ocapistaine.vaettir.locki.io,https://vaettir.locki.io"
+      # LLM Providers
+      - key: DEFAULT_PROVIDER
+        value: openai
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: MISTRAL_STUDIO_API_KEY
+        sync: false
+      # Observability
+      - key: OPIK_API_KEY
+        sync: false
+      - key: OPIK_WORKSPACE
+        value: ocapistaine-dev
+      # Internal Redis (Render provides this)
+      - key: REDIS_HOST
+        fromService:
+          type: redis
+          name: ocapistaine-redis
+          property: host
+      - key: REDIS_PORT
+        fromService:
+          type: redis
+          name: ocapistaine-redis
+          property: port
+    healthCheckPath: /
+    autoDeploy: true
+
+  - type: redis
+    name: ocapistaine-redis
+    plan: free
+    maxmemoryPolicy: allkeys-lru

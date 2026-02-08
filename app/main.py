@@ -87,6 +87,19 @@ app.include_router(validate_router, prefix="/api/v1")
 # Health & Status Routes
 # =============================================================================
 
+@app.get("/")
+async def root():
+    """Root endpoint - API info."""
+    return {
+        "service": "OCapistaine API",
+        "version": "0.1.0",
+        "description": "AI-powered civic transparency for local democracy",
+        "docs": "/docs",
+        "health": "/health",
+        "ui": "https://ocapistaine.onrender.com:8502",
+    }
+
+
 @app.get("/health")
 async def health():
     """Health check endpoint."""

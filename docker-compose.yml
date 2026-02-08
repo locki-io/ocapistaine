@@ -13,6 +13,12 @@ services:
       # Redis connection
       - REDIS_HOST=redis
       - REDIS_PORT=6379
+      # Authentication (optional - leave empty to disable)
+      - STREAMLIT_AUTH_PASSWORD=${STREAMLIT_AUTH_PASSWORD:-}
+      # Streamlit CORS settings
+      - STREAMLIT_SERVER_ENABLE_CORS=${STREAMLIT_SERVER_ENABLE_CORS:-true}
+      - STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION=${STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION:-false}
+      - STREAMLIT_SERVER_ALLOWED_ORIGINS=${STREAMLIT_SERVER_ALLOWED_ORIGINS:-}
       # LLM Providers (set via .env or override)
       - DEFAULT_PROVIDER=${DEFAULT_PROVIDER:-openai}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
