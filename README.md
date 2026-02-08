@@ -131,15 +131,16 @@ This way:
 
 ```
 ocapistaine/
-├── src/                       # Python source code
-│   ├── config.py              # Data source configuration
-│   ├── firecrawl_utils.py     # Web scraping utilities
-│   └── crawl_municipal_docs.py # CLI entry point
-├── docs/                      # Git submodule → locki-io/docs.locki.io
-├── docs.legacy/               # Original documentation
-├── ext_data/                  # Scraped municipal documents
-└── pyproject.toml             # Poetry dependencies
+├── app/                       # Streamlit UI + Forseti agent + services
+├── src/                       # Document crawlers (Firecrawl, OCR)
+├── docs/                      # Git submodule → docs.locki.io
+└── ext_data/                  # 4,000+ scraped municipal documents
 ```
+
+For detailed architecture, see **[docs.locki.io](https://docs.locki.io)**:
+- [Application Overview](https://docs.locki.io/docs/app/README) — Streamlit UI, Forseti agent, scheduler
+- [Architecture](https://docs.locki.io/docs/ARCHITECTURE) — System design and data flow
+- [Orchestration](https://docs.locki.io/docs/orchestration/INDEX) — Docker, N8N, observability
 
 ## Working with Submodules
 
