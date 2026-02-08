@@ -25,6 +25,11 @@ services:
       # LLM Providers
       - key: DEFAULT_PROVIDER
         value: openai
+      # Document processing uses Claude (better for long context/chunking)
+      - key: DOCUMENT_PROVIDER
+        value: claude
+      - key: DOCUMENT_MODEL
+        value: sonnet
       - key: OPENAI_API_KEY
         sync: false
       - key: GOOGLE_API_KEY

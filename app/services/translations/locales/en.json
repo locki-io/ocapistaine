@@ -29,8 +29,8 @@
   "status_in_development": "In development",
   "status_planned": "Planned",
   "status_scheduler_paused": "Scheduler paused",
-  "status_scheduler_paused_reason": "Continuous improvement loop disabled on demo",
-  "status_scheduler_paused_help": "Background tasks (Opik evaluation, document processing) are disabled on this demo instance to save memory. Full scheduler runs on the dev branch.",
+  "status_scheduler_paused_reason": "CI loop runs on dev instance",
+  "status_scheduler_paused_help": "Continuous improvement loop disabled on this demo to save memory. Full scheduler with Opik evaluation runs on ocapistaine-dev.vaettir.locki.io (same password).",
 
   "tab_contributions": "Contributions",
   "tab_autocontrib": "Auto-Contribution",

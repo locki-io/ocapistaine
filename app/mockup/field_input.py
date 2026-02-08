@@ -31,7 +31,7 @@ from app.mockup.anonymizer import (
     TranscriptAnonymizationResult,
 )
 from app.providers import get_provider, Message
-from app.providers.config import ProviderName, get_recommended_model
+from app.providers.config import ProviderName, get_recommended_model, get_document_provider
 
 # Import categories from Forseti (single source of truth)
 from app.agents.forseti import CATEGORIES
@@ -196,16 +196,23 @@ class FieldInputGenerator:
 
     def __init__(
         self,
-        provider: ProviderType = "ollama",
+        provider: Optional[ProviderType] = None,
         model: Optional[str] = None,
     ):
         """
         Initialize generator with LLM provider.
 
         Args:
-            provider: Provider to use ("gemini", "claude", "ollama")
-            model: Optional model override. If None, uses recommended model for provider.
+            provider: Provider to use (defaults to DOCUMENT_PROVIDER or DEFAULT_PROVIDER)
+            model: Optional model override. If None, uses DOCUMENT_MODEL or recommended model.
         """
+        # Use document provider from config if not specified
+        if provider is None:
+            config_provider, config_model = get_document_provider()
+            provider = config_provider
+            if model is None:
+                model = config_model
+
         self._provider_name = provider
         # Get recommended model for field_input use case, with optional override
         self._model = get_recommended_model(provider, USE_CASE, model)
@@ -756,7 +763,7 @@ def process_field_input_sync(
     input_text: str,
     source_file: Optional[str] = None,
     source_title: str = "",
-    provider: ProviderType = "ollama",
+    provider: Optional[ProviderType] = None,
     model: Optional[str] = None,
     contributions_per_theme: int = 2,
     include_violations: bool = True,
@@ -769,8 +776,8 @@ def process_field_input_sync(
         input_text: Markdown content
         source_file: Path to source file
         source_title: Title of source document
-        provider: LLM provider ("gemini", "claude", "ollama")
-        model: Optional model override
+        provider: LLM provider (defaults to DOCUMENT_PROVIDER or DEFAULT_PROVIDER)
+        model: Optional model override (defaults to DOCUMENT_MODEL if set)
         contributions_per_theme: Contributions per theme
         include_violations: Include violation examples
         anonymization_config: Configuration for PII anonymization
@@ -778,6 +785,13 @@ def process_field_input_sync(
     Returns:
         FieldInputResult
     """
+    # Use document provider from config if not explicitly specified
+    if provider is None:
+        config_provider, config_model = get_document_provider()
+        provider = config_provider
+        if model is None:
+            model = config_model
+
     generator = FieldInputGenerator(provider=provider, model=model)
     return _run_async(
         generator.process_field_input(

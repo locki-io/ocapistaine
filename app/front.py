@@ -141,7 +141,7 @@ def main():
         "autocontrib": ("✨", "tab_autocontrib"),
         "documents": ("📄", "tab_documents"),
         "admin": ("⚙️", "tab_admin"),
-        "about": ("ℹ️", "tab_about"),
+        # "about": ("ℹ️", "tab_about"),
     }
     TAB_KEYS = list(TAB_CONFIG.keys())
 
@@ -183,8 +183,8 @@ def main():
         from app.admin import scheduler_dashboard_view
 
         scheduler_dashboard_view(user_id)
-    elif current_tab == "about":
-        about_view()
+    # elif current_tab == "about":
+    #     about_view()
 
 
 # N8N Webhook URLs
@@ -804,7 +804,7 @@ def documents_view(user_id: str):
     with col2:
         st.metric(
             _("documents_indexed"),
-            "42",
+            "4621",
             delta=f"🟡 {_('documents_indexed_status')}",
             help=_("documents_indexed_help"),
         )
@@ -817,6 +817,10 @@ def documents_view(user_id: str):
     # Document sources table
     st.markdown(f"### {_('documents_sources_title')}")
 
+    st.text_input(
+        "🔍 Crawling currently running on ocapistaine-dev.vaettir.locki.io",
+        key="doc_search",
+    )
     sources_data = {
         _("documents_source"): [
             _("documents_source_arretes"),
@@ -831,9 +835,9 @@ def documents_view(user_id: str):
             "OCR des bulletins PDF",
         ],
         _("sidebar_status"): [
-            f"🔴 {_('documents_status_to_crawl')}",
-            f"🔴 {_('documents_status_to_crawl')}",
-            f"🔴 {_('documents_status_to_crawl')}",
+            f"🟢 4108 {_('documents_status_collected')}",
+            f"🟢 321 {_('documents_status_collected')}",
+            f"🟢 150 {_('documents_status_collected')}",
             f"🟡 42 {_('documents_status_collected')}",
         ],
         _("documents_method"): [
@@ -845,9 +849,6 @@ def documents_view(user_id: str):
     }
 
     st.table(sources_data)
-
-    # TODO: Add document search when implemented
-    # st.text_input("🔍 Rechercher un document...", key="doc_search")
 
 
 def mockup_view(user_id: str):

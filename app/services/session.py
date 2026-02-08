@@ -14,6 +14,7 @@ from dataclasses import dataclass, asdict
 
 from app.data.redis_client import redis_connection
 from app.services import AgentLogger
+from app.providers.config import get_config, get_default_model
 
 _logger = AgentLogger("session_settings")
 
@@ -22,13 +23,24 @@ _logger = AgentLogger("session_settings")
 SESSION_SETTINGS_TTL = 86400
 
 
+def _get_default_provider() -> str:
+    """Get default provider from config."""
+    return get_config().default_provider
+
+
+def _get_default_model() -> str:
+    """Get default model for default provider."""
+    provider = _get_default_provider()
+    return get_default_model(provider)
+
+
 @dataclass
 class SessionSettings:
     """User session settings."""
 
     user_id: str
-    provider: str = "ollama"
-    model: str = "mistral"
+    provider: str = "openai"  # Default, overridden by get_session_provider
+    model: str = "gpt-4o-mini"  # Default, overridden by get_session_model
     language: str = "fr"
 
     def to_dict(self) -> Dict[str, Any]:
@@ -125,10 +137,12 @@ def get_session_provider(user_id: str) -> str:
         user_id: User identifier
 
     Returns:
-        Provider name (defaults to "ollama")
+        Provider name (defaults to DEFAULT_PROVIDER from config)
     """
     settings = get_session_settings(user_id)
-    return settings.provider if settings else "ollama"
+    if settings:
+        return settings.provider
+    return _get_default_provider()
 
 
 def get_session_model(user_id: str) -> str:
@@ -139,10 +153,12 @@ def get_session_model(user_id: str) -> str:
         user_id: User identifier
 
     Returns:
-        Model key/name (defaults to "mistral")
+        Model key/name (defaults to default model for DEFAULT_PROVIDER)
     """
     settings = get_session_settings(user_id)
-    return settings.model if settings else "mistral"
+    if settings:
+        return settings.model
+    return _get_default_model()
 
 
 def get_full_model_id(provider: str, model_key: str) -> str:

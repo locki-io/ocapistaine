@@ -29,8 +29,8 @@
   "status_in_development": "En développement",
   "status_planned": "Planifié",
   "status_scheduler_paused": "Scheduler en pause",
-  "status_scheduler_paused_reason": "Boucle d'amélioration continue désactivée sur la démo",
-  "status_scheduler_paused_help": "Les tâches de fond (évaluation Opik, traitement de documents) sont désactivées sur cette instance de démo pour économiser la mémoire. Le scheduler complet tourne sur la branche dev.",
+  "status_scheduler_paused_reason": "Boucle CI sur instance dev",
+  "status_scheduler_paused_help": "Boucle d'amélioration continue désactivée sur cette démo pour économiser la mémoire. Le scheduler complet avec évaluation Opik tourne sur ocapistaine-dev.vaettir.locki.io (même mot de passe).",
 
   "tab_contributions": "Contributions",
   "tab_autocontrib": "Auto-Contribution",

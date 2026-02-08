@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-02-07T18:36:30.029007",
-  "count": 317,
+  "generated_at": "2026-02-08T17:01:52.446207",
+  "count": 361,
   "contributions": [
     {
       "id": "base_ass_001",
@@ -6862,6 +6862,974 @@
       },
       "title": "Il y a trop longtemps que les élus d'Audierne ne donnent pas assez d'attentio...",
       "body": "**Constat factuel:**\nIl y a trop longtemps que les élus d'Audierne ne donnent pas assez d'attention à la jeunesse locale. L'absence de débats participatifs locaux empêche les jeunes de partager leurs idées et leurs attentes.\n\n**Vos idées d'améliorations:**\nOrganiser un débat participatif local régulier pour que les élus entendent directement la voix des jeunes. En plus, une plateforme en ligne devrait être mise en place pour permettre aux jeunes d'exprimer leurs opinions et de discuter avec les décideurs tout au long de l'année."
+    },
+    {
+      "id": "field_economie_2502632b",
+      "category": "economie",
+      "constat_factuel": "À Audierne, le transfert des bureaux de vote vers le collège Saint-Joseph pour le prochain scrutin a suscité des interrogations parmi les habitants. Ce changement pourrait affecter l'accessibilité pour certains électeurs, notamment les personnes âgées et celles ayant des difficultés de déplacement.",
+      "idees_ameliorations": "Pour améliorer cette situation, il serait pertinent d'organiser des navettes gratuites pour faciliter l'accès au nouveau bureau de vote. De plus, une campagne d'information claire et accessible sur les modalités de vote et le nouvel emplacement devrait être mise en place, afin d'assurer que tous les citoyens soient bien informés et préparés pour les élections.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "transfert_bureau_vote",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, le transfert des bureaux de vote vers le collège Saint-Joseph pou...",
+      "body": "**Constat factuel:**\nÀ Audierne, le transfert des bureaux de vote vers le collège Saint-Joseph pour le prochain scrutin a suscité des interrogations parmi les habitants. Ce changement pourrait affecter l'accessibilité pour certains électeurs, notamment les personnes âgées et celles ayant des difficultés de déplacement.\n\n**Vos idées d'améliorations:**\nPour améliorer cette situation, il serait pertinent d'organiser des navettes gratuites pour faciliter l'accès au nouveau bureau de vote. De plus, une campagne d'information claire et accessible sur les modalités de vote et le nouvel emplacement devrait être mise en place, afin d'assurer que tous les citoyens soient bien informés et préparés pour les élections."
+    },
+    {
+      "id": "field_economie_16f5288e",
+      "category": "economie",
+      "constat_factuel": "Actuellement, les bureaux de vote à Audierne sont déplacés vers le collège Saint-Joseph pour le prochain scrutin. Ce changement peut entraîner des désagréments pour certains électeurs, notamment ceux qui ne sont pas familiers avec ce nouvel emplacement.",
+      "idees_ameliorations": "Il serait bénéfique d'organiser des sessions d'information pour informer les électeurs sur ce changement, en utilisant des canaux de communication comme les réseaux sociaux et les affichages publics. De plus, mettre en place un service de navette pour faciliter l'accès au collège Saint-Joseph serait une solution pratique pour les personnes ayant des difficultés de déplacement.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "transfert_bureau_vote",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "Actuellement, les bureaux de vote à Audierne sont déplacés vers le collège Sa...",
+      "body": "**Constat factuel:**\nActuellement, les bureaux de vote à Audierne sont déplacés vers le collège Saint-Joseph pour le prochain scrutin. Ce changement peut entraîner des désagréments pour certains électeurs, notamment ceux qui ne sont pas familiers avec ce nouvel emplacement.\n\n**Vos idées d'améliorations:**\nIl serait bénéfique d'organiser des sessions d'information pour informer les électeurs sur ce changement, en utilisant des canaux de communication comme les réseaux sociaux et les affichages publics. De plus, mettre en place un service de navette pour faciliter l'accès au collège Saint-Joseph serait une solution pratique pour les personnes ayant des difficultés de déplacement."
+    },
+    {
+      "id": "field_economie_9588d462",
+      "category": "economie",
+      "constat_factuel": "À Audierne, le transfert des bureaux de vote vers le collège Saint-Joseph pour le prochain scrutin soulève des questions. Il est fascinant de constater à quel point nos élus semblent si confiants dans leur capacité à gérer cette logistique, alors que le changement pourrait perturber l'accès pour certains électeurs.",
+      "idees_ameliorations": "Il pourrait être utile de prévoir des séances d'information pour les citoyens sur ce transfert, car il est évident que tout le monde ne lit pas les annonces officielles. Pourquoi ne pas envisager des solutions de transport pour faciliter l'accès au nouveau bureau de vote ? Cela montrerait vraiment un engagement envers la participation citoyenne, n'est-ce pas ?",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "transfert_bureau_vote",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, le transfert des bureaux de vote vers le collège Saint-Joseph pou...",
+      "body": "**Constat factuel:**\nÀ Audierne, le transfert des bureaux de vote vers le collège Saint-Joseph pour le prochain scrutin soulève des questions. Il est fascinant de constater à quel point nos élus semblent si confiants dans leur capacité à gérer cette logistique, alors que le changement pourrait perturber l'accès pour certains électeurs.\n\n**Vos idées d'améliorations:**\nIl pourrait être utile de prévoir des séances d'information pour les citoyens sur ce transfert, car il est évident que tout le monde ne lit pas les annonces officielles. Pourquoi ne pas envisager des solutions de transport pour faciliter l'accès au nouveau bureau de vote ? Cela montrerait vraiment un engagement envers la participation citoyenne, n'est-ce pas ?"
+    },
+    {
+      "id": "field_economie_f7e05d6c",
+      "category": "economie",
+      "constat_factuel": "C'EST INADMISSIBLE QUE LES BUREAUX DE VOTE SOIENT TRANSFÉRÉS AU COLLÈGE SAINT-JOSEPH SANS AUCUNE CONSULTATION DES CITOYENS ! CE CHANGEMENT NE PREND PAS EN COMPTE LES BESOINS DES HABITANTS D'AUDIERNE, ET CECI EST UN MANQUE DE RESPECT ENVERS NOUS !",
+      "idees_ameliorations": "IL FAUT RAMENER LES BUREAUX DE VOTE À DES ENDROITS ACCESSIBLES ET HABITUELS, TOUT EN ORGANISANT DES RÉUNIONS D'INFORMATION POUR EXPLIQUER CES DÉCISIONS INJUSTIFIÉES ! NOS ÉLUS DEVRAIENT ÊTRE À L'ÉCOUTE DE LA POPULATION AU LIEU DE PRENDRE DES DÉCISIONS UNILATÉRALES !",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "transfert_bureau_vote",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "C'EST INADMISSIBLE QUE LES BUREAUX DE VOTE SOIENT TRANSFÉRÉS AU COLLÈGE SAINT...",
+      "body": "**Constat factuel:**\nC'EST INADMISSIBLE QUE LES BUREAUX DE VOTE SOIENT TRANSFÉRÉS AU COLLÈGE SAINT-JOSEPH SANS AUCUNE CONSULTATION DES CITOYENS ! CE CHANGEMENT NE PREND PAS EN COMPTE LES BESOINS DES HABITANTS D'AUDIERNE, ET CECI EST UN MANQUE DE RESPECT ENVERS NOUS !\n\n**Vos idées d'améliorations:**\nIL FAUT RAMENER LES BUREAUX DE VOTE À DES ENDROITS ACCESSIBLES ET HABITUELS, TOUT EN ORGANISANT DES RÉUNIONS D'INFORMATION POUR EXPLIQUER CES DÉCISIONS INJUSTIFIÉES ! NOS ÉLUS DEVRAIENT ÊTRE À L'ÉCOUTE DE LA POPULATION AU LIEU DE PRENDRE DES DÉCISIONS UNILATÉRALES !"
+    },
+    {
+      "id": "field_logement_a6ea48e8",
+      "category": "logement",
+      "constat_factuel": "À Audierne, les discussions autour des projets d'urbanisme soulèvent des inquiétudes concernant le terme 'expropriation', perçu par certains comme coercitif. De nombreux habitants craignent de perdre leur habitat sans avoir été suffisamment consultés sur les impacts de ces décisions sur leur vie quotidienne.",
+      "idees_ameliorations": "Il serait bénéfique d'organiser des ateliers de concertation où les citoyens pourraient s'exprimer librement sur les projets d'urbanisme. De plus, la mise en place d'un comité citoyen pourrait permettre d'assurer une meilleure représentation des intérêts locaux dans les décisions d'expropriation, en garantissant une transparence et un dialogue constructif entre la municipalité et les résidents.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "urbanisme_expropriation",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, les discussions autour des projets d'urbanisme soulèvent des inqu...",
+      "body": "**Constat factuel:**\nÀ Audierne, les discussions autour des projets d'urbanisme soulèvent des inquiétudes concernant le terme 'expropriation', perçu par certains comme coercitif. De nombreux habitants craignent de perdre leur habitat sans avoir été suffisamment consultés sur les impacts de ces décisions sur leur vie quotidienne.\n\n**Vos idées d'améliorations:**\nIl serait bénéfique d'organiser des ateliers de concertation où les citoyens pourraient s'exprimer librement sur les projets d'urbanisme. De plus, la mise en place d'un comité citoyen pourrait permettre d'assurer une meilleure représentation des intérêts locaux dans les décisions d'expropriation, en garantissant une transparence et un dialogue constructif entre la municipalité et les résidents."
+    },
+    {
+      "id": "field_logement_8cd96697",
+      "category": "logement",
+      "constat_factuel": "À Audierne, de nombreux habitants expriment une inquiétude croissante face à des projets d'urbanisme jugés coercitifs, notamment en ce qui concerne l'expropriation de terrains. Cette situation crée des tensions entre les autorités locales et les résidents qui se sentent dépossédés de leur habitat et de leur patrimoine.",
+      "idees_ameliorations": "Pour améliorer la situation, il serait bénéfique d'organiser des consultations publiques régulières permettant aux citoyens de s'exprimer sur les projets d'urbanisme. De plus, la création d'un comité de dialogue entre les représentants de la commune et les habitants pourrait favoriser une meilleure compréhension des enjeux et des décisions à prendre, tout en respectant les droits des propriétaires.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "urbanisme_expropriation",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, de nombreux habitants expriment une inquiétude croissante face à ...",
+      "body": "**Constat factuel:**\nÀ Audierne, de nombreux habitants expriment une inquiétude croissante face à des projets d'urbanisme jugés coercitifs, notamment en ce qui concerne l'expropriation de terrains. Cette situation crée des tensions entre les autorités locales et les résidents qui se sentent dépossédés de leur habitat et de leur patrimoine.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il serait bénéfique d'organiser des consultations publiques régulières permettant aux citoyens de s'exprimer sur les projets d'urbanisme. De plus, la création d'un comité de dialogue entre les représentants de la commune et les habitants pourrait favoriser une meilleure compréhension des enjeux et des décisions à prendre, tout en respectant les droits des propriétaires."
+    },
+    {
+      "id": "field_logement_99e774ce",
+      "category": "logement",
+      "constat_factuel": "À Audierne, la question de l'urbanisme et des expropriations suscite des tensions notables parmi les habitants. On peut observer une inquiétude croissante face à ce que certains perçoivent comme une imposition de décisions sans véritable consultation. On se demande qui, parmi nos élus, a vraiment pris le temps d'écouter les préoccupations des citoyens avant de parler d'expropriation.",
+      "idees_ameliorations": "Il serait peut-être judicieux d'organiser des réunions publiques où les élus pourraient, enfin, expliquer clairement leurs intentions et leurs compétences en matière d'urbanisme. Pourquoi ne pas envisager la création d'un comité citoyen, composé de personnes ayant une réelle expertise, pour superviser ces projets ? Cela éviterait sans doute d'autres malentendus, à moins que les élus ne préfèrent rester dans l'ombre de leurs décisions.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "urbanisme_expropriation",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, la question de l'urbanisme et des expropriations suscite des tens...",
+      "body": "**Constat factuel:**\nÀ Audierne, la question de l'urbanisme et des expropriations suscite des tensions notables parmi les habitants. On peut observer une inquiétude croissante face à ce que certains perçoivent comme une imposition de décisions sans véritable consultation. On se demande qui, parmi nos élus, a vraiment pris le temps d'écouter les préoccupations des citoyens avant de parler d'expropriation.\n\n**Vos idées d'améliorations:**\nIl serait peut-être judicieux d'organiser des réunions publiques où les élus pourraient, enfin, expliquer clairement leurs intentions et leurs compétences en matière d'urbanisme. Pourquoi ne pas envisager la création d'un comité citoyen, composé de personnes ayant une réelle expertise, pour superviser ces projets ? Cela éviterait sans doute d'autres malentendus, à moins que les élus ne préfèrent rester dans l'ombre de leurs décisions."
+    },
+    {
+      "id": "field_logement_6abf3ee6",
+      "category": "logement",
+      "constat_factuel": "À Audierne, la situation de l'urbanisme est alarmante, avec une perception croissante de coercition concernant les expropriations. Les élus semblent privilégier leurs propres intérêts au détriment de la population, créant un climat de méfiance et de désespoir parmi les habitants qui voient leur habitat menacé.",
+      "idees_ameliorations": "Il est crucial que les élus reviennent à une approche plus humaine et transparente dans la gestion de l'urbanisme. Des consultations régulières avec les citoyens devraient être mises en place pour recueillir leurs avis avant de prendre des décisions. De plus, il serait judicieux d'explorer des alternatives à l'expropriation, comme la rénovation des logements existants ou des projets d'habitat participatif, afin de préserver le tissu social de notre commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "urbanisme_expropriation",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, la situation de l'urbanisme est alarmante, avec une perception cr...",
+      "body": "**Constat factuel:**\nÀ Audierne, la situation de l'urbanisme est alarmante, avec une perception croissante de coercition concernant les expropriations. Les élus semblent privilégier leurs propres intérêts au détriment de la population, créant un climat de méfiance et de désespoir parmi les habitants qui voient leur habitat menacé.\n\n**Vos idées d'améliorations:**\nIl est crucial que les élus reviennent à une approche plus humaine et transparente dans la gestion de l'urbanisme. Des consultations régulières avec les citoyens devraient être mises en place pour recueillir leurs avis avant de prendre des décisions. De plus, il serait judicieux d'explorer des alternatives à l'expropriation, comme la rénovation des logements existants ou des projets d'habitat participatif, afin de préserver le tissu social de notre commune."
+    },
+    {
+      "id": "field_culture_095e8cb4",
+      "category": "culture",
+      "constat_factuel": "À Audierne, plusieurs œuvres et objets artistiques méritent d'être inscrits à l'inventaire du patrimoine local, mais leur absence actuelle limite la valorisation de notre culture. De plus, de nombreux habitants et visiteurs ne sont pas suffisamment informés sur l'existence de ces trésors artistiques qui contribuent à l'identité de notre commune.",
+      "idees_ameliorations": "Il serait bénéfique de lancer une campagne de sensibilisation pour encourager les habitants à proposer des œuvres à inscrire à l'inventaire. Par ailleurs, une collaboration avec des artistes locaux pour créer des événements culturels autour de ces œuvres pourrait renforcer l'intérêt et l'appropriation du patrimoine par la communauté.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "inventaire_patrimoine",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, plusieurs œuvres et objets artistiques méritent d'être inscrits à...",
+      "body": "**Constat factuel:**\nÀ Audierne, plusieurs œuvres et objets artistiques méritent d'être inscrits à l'inventaire du patrimoine local, mais leur absence actuelle limite la valorisation de notre culture. De plus, de nombreux habitants et visiteurs ne sont pas suffisamment informés sur l'existence de ces trésors artistiques qui contribuent à l'identité de notre commune.\n\n**Vos idées d'améliorations:**\nIl serait bénéfique de lancer une campagne de sensibilisation pour encourager les habitants à proposer des œuvres à inscrire à l'inventaire. Par ailleurs, une collaboration avec des artistes locaux pour créer des événements culturels autour de ces œuvres pourrait renforcer l'intérêt et l'appropriation du patrimoine par la communauté."
+    },
+    {
+      "id": "field_culture_5d067965",
+      "category": "culture",
+      "constat_factuel": "À Audierne, plusieurs œuvres et objets d'importance artistique et historique ne sont pas encore inscrits à l'inventaire du patrimoine. Cela limite notre capacité à préserver et à valoriser notre culture locale, qui est riche et diversifiée. De plus, la sensibilisation du public à ces œuvres est insuffisante.",
+      "idees_ameliorations": "Il serait pertinent de lancer une campagne de recensement des œuvres et objets d'art locaux pour les inscrire à l'inventaire du patrimoine. Parallèlement, organiser des ateliers et des visites guidées pour sensibiliser les habitants et les touristes à l'importance de notre patrimoine artistique pourrait renforcer l'engagement communautaire. Enfin, impliquer les écoles et les associations locales dans ce processus pourrait favoriser une meilleure connaissance et valorisation de notre patrimoine.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "inventaire_patrimoine",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, plusieurs œuvres et objets d'importance artistique et historique ...",
+      "body": "**Constat factuel:**\nÀ Audierne, plusieurs œuvres et objets d'importance artistique et historique ne sont pas encore inscrits à l'inventaire du patrimoine. Cela limite notre capacité à préserver et à valoriser notre culture locale, qui est riche et diversifiée. De plus, la sensibilisation du public à ces œuvres est insuffisante.\n\n**Vos idées d'améliorations:**\nIl serait pertinent de lancer une campagne de recensement des œuvres et objets d'art locaux pour les inscrire à l'inventaire du patrimoine. Parallèlement, organiser des ateliers et des visites guidées pour sensibiliser les habitants et les touristes à l'importance de notre patrimoine artistique pourrait renforcer l'engagement communautaire. Enfin, impliquer les écoles et les associations locales dans ce processus pourrait favoriser une meilleure connaissance et valorisation de notre patrimoine."
+    },
+    {
+      "id": "field_culture_83753962",
+      "category": "culture",
+      "constat_factuel": "À Audierne, il semble que la mise à jour de l’inventaire artistique soit une priorité, surtout avec l’inscription récente de deux œuvres. C'est impressionnant de voir combien d'efforts sont déployés pour préserver notre patrimoine, n'est-ce pas ? On pourrait presque croire que cela est déjà parfait.",
+      "idees_ameliorations": "Peut-être serait-il judicieux de demander aux élus de consulter davantage les citoyens avant de finaliser ces inscriptions ? Après tout, qui mieux que nous pour savoir ce qui mérite d'être mis en avant ? Une démarche participative pourrait vraiment enrichir cet inventaire, même si cela semble peut-être un peu ambitieux pour certains.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "inventaire_patrimoine",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, il semble que la mise à jour de l’inventaire artistique soit une ...",
+      "body": "**Constat factuel:**\nÀ Audierne, il semble que la mise à jour de l’inventaire artistique soit une priorité, surtout avec l’inscription récente de deux œuvres. C'est impressionnant de voir combien d'efforts sont déployés pour préserver notre patrimoine, n'est-ce pas ? On pourrait presque croire que cela est déjà parfait.\n\n**Vos idées d'améliorations:**\nPeut-être serait-il judicieux de demander aux élus de consulter davantage les citoyens avant de finaliser ces inscriptions ? Après tout, qui mieux que nous pour savoir ce qui mérite d'être mis en avant ? Une démarche participative pourrait vraiment enrichir cet inventaire, même si cela semble peut-être un peu ambitieux pour certains."
+    },
+    {
+      "id": "field_culture_0d9486bf",
+      "category": "culture",
+      "constat_factuel": "À Audierne, il est inacceptable de constater que notre patrimoine artistique n'est pas correctement valorisé et que l'inventaire des œuvres reste incomplet. Les élus semblent totalement déconnectés des aspirations de la population et ne prennent pas en compte l'importance de notre héritage culturel.",
+      "idees_ameliorations": "Il est impératif d'organiser des consultations publiques pour impliquer réellement les citoyens dans l'inventaire de notre patrimoine. De plus, il faudrait créer des partenariats avec des artistes locaux pour promouvoir et préserver les œuvres qui nous représentent. Enfin, je demande un engagement ferme des élus à investir dans des projets qui mettent en valeur notre histoire et notre culture, au lieu de laisser notre patrimoine sombrer dans l'oubli.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "inventaire_patrimoine",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, il est inacceptable de constater que notre patrimoine artistique ...",
+      "body": "**Constat factuel:**\nÀ Audierne, il est inacceptable de constater que notre patrimoine artistique n'est pas correctement valorisé et que l'inventaire des œuvres reste incomplet. Les élus semblent totalement déconnectés des aspirations de la population et ne prennent pas en compte l'importance de notre héritage culturel.\n\n**Vos idées d'améliorations:**\nIl est impératif d'organiser des consultations publiques pour impliquer réellement les citoyens dans l'inventaire de notre patrimoine. De plus, il faudrait créer des partenariats avec des artistes locaux pour promouvoir et préserver les œuvres qui nous représentent. Enfin, je demande un engagement ferme des élus à investir dans des projets qui mettent en valeur notre histoire et notre culture, au lieu de laisser notre patrimoine sombrer dans l'oubli."
+    },
+    {
+      "id": "field_ecologie_ef18d3a5",
+      "category": "ecologie",
+      "constat_factuel": "À Audierne, l'état des espaces verts laisse à désirer, avec des zones négligées et des plantations qui manquent d'entretien. Les habitants constatent une diminution de la biodiversité et un manque d'esthétique dans certains parcs et jardins publics.",
+      "idees_ameliorations": "Il serait bénéfique d'instaurer un programme d'entretien régulier axé sur des pratiques écologiques, comme le compostage et l'utilisation de plantes locales. De plus, impliquer les citoyens dans des journées de bénévolat pour l'entretien des espaces verts pourrait renforcer le lien communautaire et sensibiliser à l'importance de la biodiversité.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "entretien_espaces_verts",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, l'état des espaces verts laisse à désirer, avec des zones négligé...",
+      "body": "**Constat factuel:**\nÀ Audierne, l'état des espaces verts laisse à désirer, avec des zones négligées et des plantations qui manquent d'entretien. Les habitants constatent une diminution de la biodiversité et un manque d'esthétique dans certains parcs et jardins publics.\n\n**Vos idées d'améliorations:**\nIl serait bénéfique d'instaurer un programme d'entretien régulier axé sur des pratiques écologiques, comme le compostage et l'utilisation de plantes locales. De plus, impliquer les citoyens dans des journées de bénévolat pour l'entretien des espaces verts pourrait renforcer le lien communautaire et sensibiliser à l'importance de la biodiversité."
+    },
+    {
+      "id": "field_ecologie_c0af4942",
+      "category": "ecologie",
+      "constat_factuel": "À Audierne, de nombreux espaces verts semblent négligés en raison d'un entretien insuffisant. Les herbes folles envahissent certains parcs et jardins, rendant ces lieux moins accueillants et agréables pour les habitants et les visiteurs.",
+      "idees_ameliorations": "Il serait bénéfique d'instaurer un programme d'entretien régulier des espaces verts, incluant des pratiques écologiques comme le compostage et l'utilisation de produits naturels. De plus, impliquer des bénévoles locaux dans des journées de nettoyage et de jardinage pourrait renforcer le lien communautaire tout en améliorant l'état de nos espaces verts.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "entretien_espaces_verts",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, de nombreux espaces verts semblent négligés en raison d'un entret...",
+      "body": "**Constat factuel:**\nÀ Audierne, de nombreux espaces verts semblent négligés en raison d'un entretien insuffisant. Les herbes folles envahissent certains parcs et jardins, rendant ces lieux moins accueillants et agréables pour les habitants et les visiteurs.\n\n**Vos idées d'améliorations:**\nIl serait bénéfique d'instaurer un programme d'entretien régulier des espaces verts, incluant des pratiques écologiques comme le compostage et l'utilisation de produits naturels. De plus, impliquer des bénévoles locaux dans des journées de nettoyage et de jardinage pourrait renforcer le lien communautaire tout en améliorant l'état de nos espaces verts."
+    },
+    {
+      "id": "field_ecologie_771913ea",
+      "category": "ecologie",
+      "constat_factuel": "À Audierne, l'état des espaces verts laisse à désirer, avec des zones souvent négligées qui pourraient pourtant embellir notre commune. L'entretien semble être un concept flou pour certains, et on se demande si les élus ont vraiment pris la mesure du problème. Les promesses d'un marché d'entretien annuel semblent peu suivies d'effet, n'est-ce pas étrange ?",
+      "idees_ameliorations": "Peut-être pourrions-nous envisager de confier l'entretien des espaces verts à des équipes locales qui connaissent vraiment le terrain et les besoins spécifiques d'Audierne ? Cela pourrait éviter les malentendus et les résultats décevants. Il serait également judicieux d'organiser des ateliers de sensibilisation à l'écologie pour les citoyens, histoire de s'assurer que tout le monde soit sur la même longueur d'onde, ce qui, visiblement, n'est pas encore le cas.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "entretien_espaces_verts",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, l'état des espaces verts laisse à désirer, avec des zones souvent...",
+      "body": "**Constat factuel:**\nÀ Audierne, l'état des espaces verts laisse à désirer, avec des zones souvent négligées qui pourraient pourtant embellir notre commune. L'entretien semble être un concept flou pour certains, et on se demande si les élus ont vraiment pris la mesure du problème. Les promesses d'un marché d'entretien annuel semblent peu suivies d'effet, n'est-ce pas étrange ?\n\n**Vos idées d'améliorations:**\nPeut-être pourrions-nous envisager de confier l'entretien des espaces verts à des équipes locales qui connaissent vraiment le terrain et les besoins spécifiques d'Audierne ? Cela pourrait éviter les malentendus et les résultats décevants. Il serait également judicieux d'organiser des ateliers de sensibilisation à l'écologie pour les citoyens, histoire de s'assurer que tout le monde soit sur la même longueur d'onde, ce qui, visiblement, n'est pas encore le cas."
+    },
+    {
+      "id": "field_ecologie_ea796a0e",
+      "category": "ecologie",
+      "constat_factuel": "L'état des espaces verts à Audierne est désastreux ! Les jardins publics sont négligés, envahis par les mauvaises herbes et les déchets. Il est inacceptable de voir des élus qui prétendent se soucier de l'environnement alors qu'ils laissent notre ville se dégrader !",
+      "idees_ameliorations": "Il est impératif de mettre en place un véritable plan d'entretien écologique des espaces verts. Nous devons engager des professionnels compétents et former des bénévoles pour s'occuper de ces lieux. De plus, une communication régulière avec les citoyens est essentielle pour les tenir informés des actions entreprises et pour recueillir leurs suggestions.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "entretien_espaces_verts",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "L'état des espaces verts à Audierne est désastreux ! Les jardins publics sont...",
+      "body": "**Constat factuel:**\nL'état des espaces verts à Audierne est désastreux ! Les jardins publics sont négligés, envahis par les mauvaises herbes et les déchets. Il est inacceptable de voir des élus qui prétendent se soucier de l'environnement alors qu'ils laissent notre ville se dégrader !\n\n**Vos idées d'améliorations:**\nIl est impératif de mettre en place un véritable plan d'entretien écologique des espaces verts. Nous devons engager des professionnels compétents et former des bénévoles pour s'occuper de ces lieux. De plus, une communication régulière avec les citoyens est essentielle pour les tenir informés des actions entreprises et pour recueillir leurs suggestions."
+    },
+    {
+      "id": "field_jeunesse_2275e6ce",
+      "category": "jeunesse",
+      "constat_factuel": "À Audierne, l'école souffre d'un manque d'investissements adaptés pour répondre aux besoins croissants des élèves. Le coût total des projets d'amélioration, estimé entre 6 et 7 millions d'euros, soulève des préoccupations quant à la gestion budgétaire et aux subventions possibles.",
+      "idees_ameliorations": "Il serait pertinent de rechercher activement des partenariats avec des organismes publics et privés pour maximiser les subventions, en visant au moins 50 % de financement. De plus, la mise en place d'un comité de parents et d'enseignants pourrait aider à prioriser les investissements nécessaires et à proposer des idées innovantes pour améliorer les infrastructures scolaires.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "debat_ecole",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, l'école souffre d'un manque d'investissements adaptés pour répond...",
+      "body": "**Constat factuel:**\nÀ Audierne, l'école souffre d'un manque d'investissements adaptés pour répondre aux besoins croissants des élèves. Le coût total des projets d'amélioration, estimé entre 6 et 7 millions d'euros, soulève des préoccupations quant à la gestion budgétaire et aux subventions possibles.\n\n**Vos idées d'améliorations:**\nIl serait pertinent de rechercher activement des partenariats avec des organismes publics et privés pour maximiser les subventions, en visant au moins 50 % de financement. De plus, la mise en place d'un comité de parents et d'enseignants pourrait aider à prioriser les investissements nécessaires et à proposer des idées innovantes pour améliorer les infrastructures scolaires."
+    },
+    {
+      "id": "field_jeunesse_66e88d7c",
+      "category": "jeunesse",
+      "constat_factuel": "Actuellement, les établissements scolaires d'Audierne rencontrent des difficultés de financement pour maintenir des infrastructures adéquates et des programmes éducatifs de qualité. Avec un coût total d'environ 6 à 7 millions d'euros pour les investissements nécessaires, il est crucial d'optimiser l'utilisation des ressources disponibles, notamment des subventions qui pourraient couvrir plus de 50 % des coûts.",
+      "idees_ameliorations": "Il serait pertinent d'organiser des ateliers participatifs rassemblant parents, enseignants et élus pour identifier les besoins prioritaires des écoles et explorer ensemble des solutions de financement. De plus, la commune pourrait renforcer ses partenariats avec des associations locales et des entreprises pour co-financer des projets éducatifs et ainsi diversifier les sources de financement.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "debat_ecole",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "Actuellement, les établissements scolaires d'Audierne rencontrent des difficu...",
+      "body": "**Constat factuel:**\nActuellement, les établissements scolaires d'Audierne rencontrent des difficultés de financement pour maintenir des infrastructures adéquates et des programmes éducatifs de qualité. Avec un coût total d'environ 6 à 7 millions d'euros pour les investissements nécessaires, il est crucial d'optimiser l'utilisation des ressources disponibles, notamment des subventions qui pourraient couvrir plus de 50 % des coûts.\n\n**Vos idées d'améliorations:**\nIl serait pertinent d'organiser des ateliers participatifs rassemblant parents, enseignants et élus pour identifier les besoins prioritaires des écoles et explorer ensemble des solutions de financement. De plus, la commune pourrait renforcer ses partenariats avec des associations locales et des entreprises pour co-financer des projets éducatifs et ainsi diversifier les sources de financement."
+    },
+    {
+      "id": "field_jeunesse_f7158fd1",
+      "category": "jeunesse",
+      "constat_factuel": "À Audierne, le débat sur le coût total des investissements scolaires, estimé entre 6 et 7 millions d'euros, semble ne pas vraiment avancer. Il est fascinant de voir comment la question des subventions, qui pourraient représenter plus de 50 % du budget, reste un sujet de discussion sans réelle conclusion.",
+      "idees_ameliorations": "Peut-être qu'il serait judicieux de mettre en place un groupe de travail composé de jeunes et de parents pour explorer des solutions de financement innovantes. Après tout, qui mieux que ceux qui sont directement concernés pour proposer des idées concrètes ? Cela pourrait aider nos élus à sortir de leur zone de confort et à enfin prendre des décisions éclairées.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "debat_ecole",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, le débat sur le coût total des investissements scolaires, estimé ...",
+      "body": "**Constat factuel:**\nÀ Audierne, le débat sur le coût total des investissements scolaires, estimé entre 6 et 7 millions d'euros, semble ne pas vraiment avancer. Il est fascinant de voir comment la question des subventions, qui pourraient représenter plus de 50 % du budget, reste un sujet de discussion sans réelle conclusion.\n\n**Vos idées d'améliorations:**\nPeut-être qu'il serait judicieux de mettre en place un groupe de travail composé de jeunes et de parents pour explorer des solutions de financement innovantes. Après tout, qui mieux que ceux qui sont directement concernés pour proposer des idées concrètes ? Cela pourrait aider nos élus à sortir de leur zone de confort et à enfin prendre des décisions éclairées."
+    },
+    {
+      "id": "field_jeunesse_4c7feef5",
+      "category": "jeunesse",
+      "constat_factuel": "À Audierne, le débat sur le financement de l'école est devenu insupportable. Avec un coût total estimé entre 6 et 7 millions d'euros, il est inacceptable que nos élus ne trouvent pas des solutions concrètes pour obtenir des subventions, alors que la jeunesse mérite une éducation de qualité.",
+      "idees_ameliorations": "Nous devrions exiger de nos élus qu'ils mettent en place un plan d'action transparent pour attirer des subventions et réduire le coût pour les contribuables. Il est impératif d'organiser des réunions publiques pour informer les citoyens et les impliquer dans le processus décisionnel. De plus, pourquoi ne pas envisager des partenariats avec des organismes privés pour co-financer ces projets éducatifs ?",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "debat_ecole",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, le débat sur le financement de l'école est devenu insupportable. ...",
+      "body": "**Constat factuel:**\nÀ Audierne, le débat sur le financement de l'école est devenu insupportable. Avec un coût total estimé entre 6 et 7 millions d'euros, il est inacceptable que nos élus ne trouvent pas des solutions concrètes pour obtenir des subventions, alors que la jeunesse mérite une éducation de qualité.\n\n**Vos idées d'améliorations:**\nNous devrions exiger de nos élus qu'ils mettent en place un plan d'action transparent pour attirer des subventions et réduire le coût pour les contribuables. Il est impératif d'organiser des réunions publiques pour informer les citoyens et les impliquer dans le processus décisionnel. De plus, pourquoi ne pas envisager des partenariats avec des organismes privés pour co-financer ces projets éducatifs ?"
+    },
+    {
+      "id": "field_economie_b59e1758",
+      "category": "economie",
+      "constat_factuel": "À Audierne, les documents financiers tels que le ROB (Rapport d'Orientation Budgétaire) et le DOB (Document d'Orientation Budgétaire) ne sont pas systématiquement publiés avant les séances, ce qui limite la transparence financière et l'implication des citoyens dans les décisions budgétaires. Cette absence de publication entrave la capacité des habitants à s'informer et à participer activement au processus démocratique local.",
+      "idees_ameliorations": "Pour améliorer la transparence financière, il serait bénéfique d'instaurer une publication systématique des documents financiers, y compris le BP (Budget Primitif) et les annexes concernant la dette et les plans de financement, au moins une semaine avant chaque séance. De plus, organiser des réunions d'information pour expliquer ces documents aux citoyens pourrait favoriser une meilleure compréhension et une plus grande participation des habitants aux décisions financières de la commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "transparence_financiere",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, les documents financiers tels que le ROB (Rapport d'Orientation B...",
+      "body": "**Constat factuel:**\nÀ Audierne, les documents financiers tels que le ROB (Rapport d'Orientation Budgétaire) et le DOB (Document d'Orientation Budgétaire) ne sont pas systématiquement publiés avant les séances, ce qui limite la transparence financière et l'implication des citoyens dans les décisions budgétaires. Cette absence de publication entrave la capacité des habitants à s'informer et à participer activement au processus démocratique local.\n\n**Vos idées d'améliorations:**\nPour améliorer la transparence financière, il serait bénéfique d'instaurer une publication systématique des documents financiers, y compris le BP (Budget Primitif) et les annexes concernant la dette et les plans de financement, au moins une semaine avant chaque séance. De plus, organiser des réunions d'information pour expliquer ces documents aux citoyens pourrait favoriser une meilleure compréhension et une plus grande participation des habitants aux décisions financières de la commune."
+    },
+    {
+      "id": "field_economie_c0acb602",
+      "category": "economie",
+      "constat_factuel": "À Audierne, il existe un manque de transparence dans la communication des décisions financières. Les documents comme le Rapport d'Orientation Budgétaire (ROB) et le Budget Primitif (BP) ne sont pas publiés systématiquement avant les séances dédiées, ce qui empêche les citoyens de s'informer et de participer activement au processus démocratique.",
+      "idees_ameliorations": "Il serait bénéfique d'instaurer une publication systématique des documents financiers clés, tels que le ROB, le DOB, et les annexes de dette, au moins une semaine avant chaque séance. De plus, organiser des séances d'information pour expliquer ces documents aux citoyens favoriserait une meilleure compréhension et engagement dans les décisions budgétaires de la commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "transparence_financiere",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, il existe un manque de transparence dans la communication des déc...",
+      "body": "**Constat factuel:**\nÀ Audierne, il existe un manque de transparence dans la communication des décisions financières. Les documents comme le Rapport d'Orientation Budgétaire (ROB) et le Budget Primitif (BP) ne sont pas publiés systématiquement avant les séances dédiées, ce qui empêche les citoyens de s'informer et de participer activement au processus démocratique.\n\n**Vos idées d'améliorations:**\nIl serait bénéfique d'instaurer une publication systématique des documents financiers clés, tels que le ROB, le DOB, et les annexes de dette, au moins une semaine avant chaque séance. De plus, organiser des séances d'information pour expliquer ces documents aux citoyens favoriserait une meilleure compréhension et engagement dans les décisions budgétaires de la commune."
+    },
+    {
+      "id": "field_economie_cbb9ee37",
+      "category": "economie",
+      "constat_factuel": "À Audierne, il est surprenant de constater que la publication des documents financiers essentiels, tels que le ROB et le DOB, semble être une formalité plutôt qu'une véritable transparence. Les citoyens sont informés, mais se posent la question de la compréhension réelle de ces documents par nos élus.",
+      "idees_ameliorations": "Il serait judicieux d'exiger la publication systématique de ces documents avant chaque séance, accompagnée d'explications claires et accessibles pour le grand public. Peut-être que nos élus pourraient envisager des ateliers d'information pour aider les citoyens à déchiffrer cette 'complexité' financière ? Cela pourrait renforcer la confiance dans leur capacité à gérer nos finances, n'est-ce pas ?",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "transparence_financiere",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, il est surprenant de constater que la publication des documents f...",
+      "body": "**Constat factuel:**\nÀ Audierne, il est surprenant de constater que la publication des documents financiers essentiels, tels que le ROB et le DOB, semble être une formalité plutôt qu'une véritable transparence. Les citoyens sont informés, mais se posent la question de la compréhension réelle de ces documents par nos élus.\n\n**Vos idées d'améliorations:**\nIl serait judicieux d'exiger la publication systématique de ces documents avant chaque séance, accompagnée d'explications claires et accessibles pour le grand public. Peut-être que nos élus pourraient envisager des ateliers d'information pour aider les citoyens à déchiffrer cette 'complexité' financière ? Cela pourrait renforcer la confiance dans leur capacité à gérer nos finances, n'est-ce pas ?"
+    },
+    {
+      "id": "field_economie_a22e7e2e",
+      "category": "economie",
+      "constat_factuel": "À Audierne, il est inacceptable que les informations financières, comme le ROB/DOB et le BP/CFU, ne soient pas publiées de manière systématique avant les séances. C'est une question de transparence ! Les citoyens méritent de savoir comment leurs impôts sont utilisés, au lieu de subir le manque de clarté de la part de nos élus !",
+      "idees_ameliorations": "Il est impératif que la mairie s'engage à publier toutes les informations financières avant chaque réunion, afin de garantir une véritable transparence démocratique. De plus, il faudrait instaurer des sessions d'information ouvertes au public, où les élus expliqueraient les décisions financières et répondraient aux préoccupations des citoyens. C'est le minimum attendu de représentants qui prétendent agir pour le bien de la commune !",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "transparence_financiere",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, il est inacceptable que les informations financières, comme le RO...",
+      "body": "**Constat factuel:**\nÀ Audierne, il est inacceptable que les informations financières, comme le ROB/DOB et le BP/CFU, ne soient pas publiées de manière systématique avant les séances. C'est une question de transparence ! Les citoyens méritent de savoir comment leurs impôts sont utilisés, au lieu de subir le manque de clarté de la part de nos élus !\n\n**Vos idées d'améliorations:**\nIl est impératif que la mairie s'engage à publier toutes les informations financières avant chaque réunion, afin de garantir une véritable transparence démocratique. De plus, il faudrait instaurer des sessions d'information ouvertes au public, où les élus expliqueraient les décisions financières et répondraient aux préoccupations des citoyens. C'est le minimum attendu de représentants qui prétendent agir pour le bien de la commune !"
+    },
+    {
+      "id": "field_economie_7d382bd8",
+      "category": "economie",
+      "constat_factuel": "Actuellement, la communication autour des chantiers à Audierne est insuffisante, ce qui perturbe l'accès aux commerces locaux. Les habitants et les visiteurs rencontrent souvent des difficultés pour se repérer, notamment en ce qui concerne le stationnement et la signalétique piétonne pendant les travaux.",
+      "idees_ameliorations": "Il serait bénéfique de mettre en place un calendrier de communication clair et accessible sur les chantiers à venir, incluant des mises à jour régulières. De plus, l'installation de panneaux de signalisation piétonne bien visibles et informatifs pourrait améliorer l'accessibilité aux commerces, même en période de travaux.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "communication_chantiers",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "Actuellement, la communication autour des chantiers à Audierne est insuffisan...",
+      "body": "**Constat factuel:**\nActuellement, la communication autour des chantiers à Audierne est insuffisante, ce qui perturbe l'accès aux commerces locaux. Les habitants et les visiteurs rencontrent souvent des difficultés pour se repérer, notamment en ce qui concerne le stationnement et la signalétique piétonne pendant les travaux.\n\n**Vos idées d'améliorations:**\nIl serait bénéfique de mettre en place un calendrier de communication clair et accessible sur les chantiers à venir, incluant des mises à jour régulières. De plus, l'installation de panneaux de signalisation piétonne bien visibles et informatifs pourrait améliorer l'accessibilité aux commerces, même en période de travaux."
+    },
+    {
+      "id": "field_economie_9b9adac8",
+      "category": "economie",
+      "constat_factuel": "À Audierne, les chantiers en cours peuvent souvent entraîner des désagréments pour les commerces locaux, notamment en ce qui concerne l'accessibilité et le stationnement. Les informations sur les horaires des travaux et les alternatives pour les clients ne sont pas toujours clairement communiquées, ce qui peut dissuader les visiteurs de fréquenter les commerces.",
+      "idees_ameliorations": "Il serait bénéfique de mettre en place un calendrier de communication détaillant les différentes phases des chantiers, accompagné d'une signalétique piétonne claire et visible. De plus, l'instauration d'une carte interactive en ligne pourrait permettre aux citoyens de connaître les zones de stationnement disponibles et d'accéder facilement aux commerces pendant la durée des travaux.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "communication_chantiers",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, les chantiers en cours peuvent souvent entraîner des désagréments...",
+      "body": "**Constat factuel:**\nÀ Audierne, les chantiers en cours peuvent souvent entraîner des désagréments pour les commerces locaux, notamment en ce qui concerne l'accessibilité et le stationnement. Les informations sur les horaires des travaux et les alternatives pour les clients ne sont pas toujours clairement communiquées, ce qui peut dissuader les visiteurs de fréquenter les commerces.\n\n**Vos idées d'améliorations:**\nIl serait bénéfique de mettre en place un calendrier de communication détaillant les différentes phases des chantiers, accompagné d'une signalétique piétonne claire et visible. De plus, l'instauration d'une carte interactive en ligne pourrait permettre aux citoyens de connaître les zones de stationnement disponibles et d'accéder facilement aux commerces pendant la durée des travaux."
+    },
+    {
+      "id": "field_economie_9dc95524",
+      "category": "economie",
+      "constat_factuel": "À Audierne, la communication autour des chantiers en cours semble désorganisée, laissant les commerçants et les habitants dans le flou. Entre l'accessibilité réduite, le stationnement inexistant et une signalétique piétonne qui semble avoir été conçue sans réfléchir, il est légitime de se demander comment nos élus imaginent le quotidien de leurs concitoyens.",
+      "idees_ameliorations": "Peut-être serait-il judicieux de mettre en place un calendrier clair et accessible des chantiers, qui informerait régulièrement les habitants et les commerçants ? Une signalétique piétonne bien pensée et visible pourrait également éviter de se demander si nos élus ont déjà essayé de naviguer dans ces zones en travaux. Envisager une vraie concertation avec les acteurs locaux pour mieux anticiper les besoins ne serait-il pas une idée lumineuse ?",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "communication_chantiers",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, la communication autour des chantiers en cours semble désorganisé...",
+      "body": "**Constat factuel:**\nÀ Audierne, la communication autour des chantiers en cours semble désorganisée, laissant les commerçants et les habitants dans le flou. Entre l'accessibilité réduite, le stationnement inexistant et une signalétique piétonne qui semble avoir été conçue sans réfléchir, il est légitime de se demander comment nos élus imaginent le quotidien de leurs concitoyens.\n\n**Vos idées d'améliorations:**\nPeut-être serait-il judicieux de mettre en place un calendrier clair et accessible des chantiers, qui informerait régulièrement les habitants et les commerçants ? Une signalétique piétonne bien pensée et visible pourrait également éviter de se demander si nos élus ont déjà essayé de naviguer dans ces zones en travaux. Envisager une vraie concertation avec les acteurs locaux pour mieux anticiper les besoins ne serait-il pas une idée lumineuse ?"
+    },
+    {
+      "id": "field_economie_b54b4e3e",
+      "category": "economie",
+      "constat_factuel": "À Audierne, la communication autour des chantiers en cours est totalement INEXISTANTE. Les commerçants se retrouvent dans l'INCOMPRÉHENSION la plus totale, alors que les travaux perturbent leur activité. Les élus semblent complètement déconnectés des réalités du terrain et de l'impact de ces chantiers sur l'économie locale.",
+      "idees_ameliorations": "Il est URGENT de mettre en place un calendrier clair et visible des chantiers, avec des informations précises sur l'accessibilité et le stationnement. De plus, un plan de signalétique piétonne efficace doit être instauré pour guider les clients vers les commerces. Les élus doivent enfin écouter les préoccupations des commerçants au lieu de rester enfermés dans leur bureau, loin des véritables enjeux de notre commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "communication_chantiers",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, la communication autour des chantiers en cours est totalement INE...",
+      "body": "**Constat factuel:**\nÀ Audierne, la communication autour des chantiers en cours est totalement INEXISTANTE. Les commerçants se retrouvent dans l'INCOMPRÉHENSION la plus totale, alors que les travaux perturbent leur activité. Les élus semblent complètement déconnectés des réalités du terrain et de l'impact de ces chantiers sur l'économie locale.\n\n**Vos idées d'améliorations:**\nIl est URGENT de mettre en place un calendrier clair et visible des chantiers, avec des informations précises sur l'accessibilité et le stationnement. De plus, un plan de signalétique piétonne efficace doit être instauré pour guider les clients vers les commerces. Les élus doivent enfin écouter les préoccupations des commerçants au lieu de rester enfermés dans leur bureau, loin des véritables enjeux de notre commune."
+    },
+    {
+      "id": "field_logement_343489d5",
+      "category": "logement",
+      "constat_factuel": "À Audierne, de nombreux logements sont en état de dégradation avancée, ce qui nuit à l'image de notre commune et à la qualité de vie des habitants. Ces habitats dégradés représentent un risque pour la sécurité et le bien-être des résidents, tout en aggravant les problèmes de précarité et d'insalubrité.",
+      "idees_ameliorations": "Il serait pertinent de mettre en place un programme de réhabilitation des logements dégradés en collaboration avec l'OPARU, visant à restaurer ces habitations dans le respect des normes environnementales. Parallèlement, des incitations fiscales pourraient être offertes aux propriétaires pour encourager la rénovation et l'entretien de leurs biens. Enfin, la sensibilisation des habitants sur les enjeux de l'habitat dégradé pourrait favoriser une dynamique collective de réhabilitation.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "habitat_degrade",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, de nombreux logements sont en état de dégradation avancée, ce qui...",
+      "body": "**Constat factuel:**\nÀ Audierne, de nombreux logements sont en état de dégradation avancée, ce qui nuit à l'image de notre commune et à la qualité de vie des habitants. Ces habitats dégradés représentent un risque pour la sécurité et le bien-être des résidents, tout en aggravant les problèmes de précarité et d'insalubrité.\n\n**Vos idées d'améliorations:**\nIl serait pertinent de mettre en place un programme de réhabilitation des logements dégradés en collaboration avec l'OPARU, visant à restaurer ces habitations dans le respect des normes environnementales. Parallèlement, des incitations fiscales pourraient être offertes aux propriétaires pour encourager la rénovation et l'entretien de leurs biens. Enfin, la sensibilisation des habitants sur les enjeux de l'habitat dégradé pourrait favoriser une dynamique collective de réhabilitation."
+    },
+    {
+      "id": "field_logement_0bc64f05",
+      "category": "logement",
+      "constat_factuel": "À Audierne, plusieurs bâtiments dans le centre-ville présentent des signes de dégradation manifeste, avec des façades écaillées et des toitures en mauvais état. Ces habitations, souvent inoccupées, nuisent à l'attractivité de notre commune et à la qualité de vie des résidents. La situation de l'habitat dégradé nécessite une attention particulière pour préserver notre patrimoine et améliorer l'environnement urbain.",
+      "idees_ameliorations": "Il serait pertinent de mettre en place un programme de rénovation des bâtiments dégradés, en collaboration avec l'OPARU, afin d'inciter les propriétaires à engager des travaux de réhabilitation. De plus, une campagne de sensibilisation pourrait être organisée pour informer les habitants sur les aides disponibles et les démarches à suivre. Enfin, envisager des partenariats avec des entreprises locales pour réaliser ces travaux pourrait dynamiser l'économie locale tout en améliorant le cadre de vie à Audierne.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "habitat_degrade",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, plusieurs bâtiments dans le centre-ville présentent des signes de...",
+      "body": "**Constat factuel:**\nÀ Audierne, plusieurs bâtiments dans le centre-ville présentent des signes de dégradation manifeste, avec des façades écaillées et des toitures en mauvais état. Ces habitations, souvent inoccupées, nuisent à l'attractivité de notre commune et à la qualité de vie des résidents. La situation de l'habitat dégradé nécessite une attention particulière pour préserver notre patrimoine et améliorer l'environnement urbain.\n\n**Vos idées d'améliorations:**\nIl serait pertinent de mettre en place un programme de rénovation des bâtiments dégradés, en collaboration avec l'OPARU, afin d'inciter les propriétaires à engager des travaux de réhabilitation. De plus, une campagne de sensibilisation pourrait être organisée pour informer les habitants sur les aides disponibles et les démarches à suivre. Enfin, envisager des partenariats avec des entreprises locales pour réaliser ces travaux pourrait dynamiser l'économie locale tout en améliorant le cadre de vie à Audierne."
+    },
+    {
+      "id": "field_logement_f5d30a15",
+      "category": "logement",
+      "constat_factuel": "À Audierne, de nombreux bâtiments abandonnés ou en état de dégradation avancée sont visibles, ce qui nuit à l'image de notre charmante commune. On pourrait se demander si nos élus sont vraiment conscients de la gravité de cette situation ou s'ils préfèrent se concentrer sur des projets plus 'attrayants'. Après tout, l'habitat dégradé n'est pas très glamour, n'est-ce pas ?",
+      "idees_ameliorations": "Il serait peut-être judicieux d'envisager un programme de réhabilitation ciblé pour ces bâtiments, mais après tout, qui a besoin d'un plan structuré quand on peut s'appuyer sur le bon vieux 'laisser-faire' ? Impliquer les habitants dans des ateliers de réflexion sur l'avenir de ces espaces pourrait également être une idée, à condition que nos élus soient prêts à écouter des voix qui ne sont pas les leurs. Mais cela demanderait sûrement un niveau d'engagement que nous n'avons pas encore vu, n'est-ce pas ?",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "habitat_degrade",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, de nombreux bâtiments abandonnés ou en état de dégradation avancé...",
+      "body": "**Constat factuel:**\nÀ Audierne, de nombreux bâtiments abandonnés ou en état de dégradation avancée sont visibles, ce qui nuit à l'image de notre charmante commune. On pourrait se demander si nos élus sont vraiment conscients de la gravité de cette situation ou s'ils préfèrent se concentrer sur des projets plus 'attrayants'. Après tout, l'habitat dégradé n'est pas très glamour, n'est-ce pas ?\n\n**Vos idées d'améliorations:**\nIl serait peut-être judicieux d'envisager un programme de réhabilitation ciblé pour ces bâtiments, mais après tout, qui a besoin d'un plan structuré quand on peut s'appuyer sur le bon vieux 'laisser-faire' ? Impliquer les habitants dans des ateliers de réflexion sur l'avenir de ces espaces pourrait également être une idée, à condition que nos élus soient prêts à écouter des voix qui ne sont pas les leurs. Mais cela demanderait sûrement un niveau d'engagement que nous n'avons pas encore vu, n'est-ce pas ?"
+    },
+    {
+      "id": "field_logement_c57e0e56",
+      "category": "logement",
+      "constat_factuel": "À Audierne, de nombreux logements sont dans un état de dégradation avancée, laissant des familles dans des conditions de vie indécentes. Les élus semblent complètement inactifs face à cette situation, laissant l'OPARU gérer des dossiers qui devraient être une priorité pour notre commune. C'est inacceptable et cela démontre un manque de sérieux et d'engagement de la part de ceux qui sont censés défendre les intérêts des citoyens.",
+      "idees_ameliorations": "Il est impératif que les élus prennent enfin leurs responsabilités et mettent en place un véritable plan d'action pour rénover ces habitats dégradés. Je propose la création d'un fonds d'urgence dédié à la réhabilitation des logements, ainsi qu'une collaboration renforcée avec des associations locales pour mobiliser des ressources. Il est temps de passer des paroles aux actes et de ne plus laisser les habitants d'Audierne dans l'angoisse de vivre dans des conditions insupportables.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "habitat_degrade",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, de nombreux logements sont dans un état de dégradation avancée, l...",
+      "body": "**Constat factuel:**\nÀ Audierne, de nombreux logements sont dans un état de dégradation avancée, laissant des familles dans des conditions de vie indécentes. Les élus semblent complètement inactifs face à cette situation, laissant l'OPARU gérer des dossiers qui devraient être une priorité pour notre commune. C'est inacceptable et cela démontre un manque de sérieux et d'engagement de la part de ceux qui sont censés défendre les intérêts des citoyens.\n\n**Vos idées d'améliorations:**\nIl est impératif que les élus prennent enfin leurs responsabilités et mettent en place un véritable plan d'action pour rénover ces habitats dégradés. Je propose la création d'un fonds d'urgence dédié à la réhabilitation des logements, ainsi qu'une collaboration renforcée avec des associations locales pour mobiliser des ressources. Il est temps de passer des paroles aux actes et de ne plus laisser les habitants d'Audierne dans l'angoisse de vivre dans des conditions insupportables."
+    },
+    {
+      "id": "field_ecologie_65660376",
+      "category": "ecologie",
+      "constat_factuel": "À Audierne, l'accès aux zones centrales est souvent limité par un manque d'infrastructures pour la mobilité douce, comme des pistes cyclables sécurisées. De plus, le stationnement peut rendre difficile l'accès aux commerces et services pour les personnes à mobilité réduite (PMR).",
+      "idees_ameliorations": "Il serait bénéfique de développer un réseau de pistes cyclables connectant les différents quartiers à la centrale, tout en intégrant des zones de stationnement adaptées aux PMR. De plus, la mise en place de points de recharge pour les vélos électriques et l'organisation d'événements de sensibilisation à la mobilité douce pourraient encourager les habitants à privilégier ces modes de transport.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "mobilite_douce",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, l'accès aux zones centrales est souvent limité par un manque d'in...",
+      "body": "**Constat factuel:**\nÀ Audierne, l'accès aux zones centrales est souvent limité par un manque d'infrastructures pour la mobilité douce, comme des pistes cyclables sécurisées. De plus, le stationnement peut rendre difficile l'accès aux commerces et services pour les personnes à mobilité réduite (PMR).\n\n**Vos idées d'améliorations:**\nIl serait bénéfique de développer un réseau de pistes cyclables connectant les différents quartiers à la centrale, tout en intégrant des zones de stationnement adaptées aux PMR. De plus, la mise en place de points de recharge pour les vélos électriques et l'organisation d'événements de sensibilisation à la mobilité douce pourraient encourager les habitants à privilégier ces modes de transport."
+    },
+    {
+      "id": "field_ecologie_6028c9e6",
+      "category": "ecologie",
+      "constat_factuel": "À Audierne, de nombreux habitants ont du mal à se déplacer à pied ou à vélo en raison du manque d'infrastructures dédiées à la mobilité douce. Les routes sont souvent étroites et peu sécurisées, ce qui rend l'accès aux commerces et aux services publics difficile, notamment pour les personnes à mobilité réduite (PMR).",
+      "idees_ameliorations": "Il serait bénéfique d'aménager des pistes cyclables et des zones piétonnes sécurisées pour favoriser la mobilité douce. De plus, l'installation de panneaux d'information sur les itinéraires accessibles et le développement de solutions de stationnement adaptées aux PMR pourraient améliorer l'accessibilité pour tous les citoyens. Enfin, organiser des événements de sensibilisation à la mobilité douce pourrait encourager les habitants à changer leurs habitudes de déplacement.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "mobilite_douce",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, de nombreux habitants ont du mal à se déplacer à pied ou à vélo e...",
+      "body": "**Constat factuel:**\nÀ Audierne, de nombreux habitants ont du mal à se déplacer à pied ou à vélo en raison du manque d'infrastructures dédiées à la mobilité douce. Les routes sont souvent étroites et peu sécurisées, ce qui rend l'accès aux commerces et aux services publics difficile, notamment pour les personnes à mobilité réduite (PMR).\n\n**Vos idées d'améliorations:**\nIl serait bénéfique d'aménager des pistes cyclables et des zones piétonnes sécurisées pour favoriser la mobilité douce. De plus, l'installation de panneaux d'information sur les itinéraires accessibles et le développement de solutions de stationnement adaptées aux PMR pourraient améliorer l'accessibilité pour tous les citoyens. Enfin, organiser des événements de sensibilisation à la mobilité douce pourrait encourager les habitants à changer leurs habitudes de déplacement."
+    },
+    {
+      "id": "field_ecologie_69d1b9c9",
+      "category": "ecologie",
+      "constat_factuel": "À Audierne, la centralité est souvent compromise par un stationnement mal organisé, et il est à se demander si les élus ont vraiment pris en compte l'importance de la mobilité douce dans leurs décisions. Les infrastructures pour les piétons et les cyclistes semblent reléguées au second plan, ce qui est assez surprenant pour une commune qui se veut moderne.",
+      "idees_ameliorations": "Il serait peut-être temps de revoir l'aménagement des espaces publics pour favoriser la mobilité douce, non ? Par exemple, la création de pistes cyclables sécurisées et d'espaces piétons élargis pourrait sembler une idée lumineuse. Et pourquoi ne pas envisager des zones de stationnement plus intelligentes, accessibles aux personnes à mobilité réduite, pour montrer que l'accessibilité est une priorité ?",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "mobilite_douce",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, la centralité est souvent compromise par un stationnement mal org...",
+      "body": "**Constat factuel:**\nÀ Audierne, la centralité est souvent compromise par un stationnement mal organisé, et il est à se demander si les élus ont vraiment pris en compte l'importance de la mobilité douce dans leurs décisions. Les infrastructures pour les piétons et les cyclistes semblent reléguées au second plan, ce qui est assez surprenant pour une commune qui se veut moderne.\n\n**Vos idées d'améliorations:**\nIl serait peut-être temps de revoir l'aménagement des espaces publics pour favoriser la mobilité douce, non ? Par exemple, la création de pistes cyclables sécurisées et d'espaces piétons élargis pourrait sembler une idée lumineuse. Et pourquoi ne pas envisager des zones de stationnement plus intelligentes, accessibles aux personnes à mobilité réduite, pour montrer que l'accessibilité est une priorité ?"
+    },
+    {
+      "id": "field_ecologie_75c4265e",
+      "category": "ecologie",
+      "constat_factuel": "À Audierne, il est URGENT de constater que la mobilité douce est presque inexistante. Les trottoirs sont étroits, rendant l'accès difficile pour les personnes à mobilité réduite, et le stationnement anarchique complique encore plus la situation. Les élus semblent totalement INCOMPÉTENTS face à ce problème grandissant !",
+      "idees_ameliorations": "Il est TEMPS de mettre en place des pistes cyclables sécurisées et d'élargir les trottoirs pour garantir l'accessibilité à tous. De plus, la création de zones de stationnement dédiées pour les PMR est ESSENTIELLE. Les élus doivent cesser de se contenter de promesses vides et AGIR maintenant pour améliorer notre quotidien !",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "mobilite_douce",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, il est URGENT de constater que la mobilité douce est presque inex...",
+      "body": "**Constat factuel:**\nÀ Audierne, il est URGENT de constater que la mobilité douce est presque inexistante. Les trottoirs sont étroits, rendant l'accès difficile pour les personnes à mobilité réduite, et le stationnement anarchique complique encore plus la situation. Les élus semblent totalement INCOMPÉTENTS face à ce problème grandissant !\n\n**Vos idées d'améliorations:**\nIl est TEMPS de mettre en place des pistes cyclables sécurisées et d'élargir les trottoirs pour garantir l'accessibilité à tous. De plus, la création de zones de stationnement dédiées pour les PMR est ESSENTIELLE. Les élus doivent cesser de se contenter de promesses vides et AGIR maintenant pour améliorer notre quotidien !"
+    },
+    {
+      "id": "field_associations_2695e18e",
+      "category": "associations",
+      "constat_factuel": "À Audierne, il existe un manque de coordination entre les diverses associations et acteurs économiques, ce qui limite les synergies et l'impact de leurs actions. De nombreuses initiatives locales restent isolées et peu visibles, rendant difficile la mobilisation de la communauté autour de projets communs.",
+      "idees_ameliorations": "Il serait bénéfique de créer une plateforme de communication dédiée aux associations et acteurs économiques d'Audierne, favorisant les échanges d'idées et de ressources. De plus, organiser des rencontres régulières ou des ateliers collaboratifs pourrait renforcer les liens entre ces acteurs et stimuler des projets communs pour le développement économique local.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "association_acteurs_economiques",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, il existe un manque de coordination entre les diverses associatio...",
+      "body": "**Constat factuel:**\nÀ Audierne, il existe un manque de coordination entre les diverses associations et acteurs économiques, ce qui limite les synergies et l'impact de leurs actions. De nombreuses initiatives locales restent isolées et peu visibles, rendant difficile la mobilisation de la communauté autour de projets communs.\n\n**Vos idées d'améliorations:**\nIl serait bénéfique de créer une plateforme de communication dédiée aux associations et acteurs économiques d'Audierne, favorisant les échanges d'idées et de ressources. De plus, organiser des rencontres régulières ou des ateliers collaboratifs pourrait renforcer les liens entre ces acteurs et stimuler des projets communs pour le développement économique local."
+    },
+    {
+      "id": "field_associations_53156220",
+      "category": "associations",
+      "constat_factuel": "À Audierne, les acteurs économiques locaux semblent peu connectés entre eux, ce qui limite les synergies et les collaborations. Les associations existantes n'ont pas de plateforme formalisée pour échanger des idées et des ressources, rendant difficile l'émergence de projets communs.",
+      "idees_ameliorations": "Il serait bénéfique de créer une association formelle des acteurs économiques d'Audierne, permettant de faciliter les échanges et de renforcer la coopération. En organisant des rencontres régulières et des événements, les acteurs pourraient partager leurs expériences et développer des initiatives communes qui profiteraient à l'ensemble de la communauté.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "association_acteurs_economiques",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, les acteurs économiques locaux semblent peu connectés entre eux, ...",
+      "body": "**Constat factuel:**\nÀ Audierne, les acteurs économiques locaux semblent peu connectés entre eux, ce qui limite les synergies et les collaborations. Les associations existantes n'ont pas de plateforme formalisée pour échanger des idées et des ressources, rendant difficile l'émergence de projets communs.\n\n**Vos idées d'améliorations:**\nIl serait bénéfique de créer une association formelle des acteurs économiques d'Audierne, permettant de faciliter les échanges et de renforcer la coopération. En organisant des rencontres régulières et des événements, les acteurs pourraient partager leurs expériences et développer des initiatives communes qui profiteraient à l'ensemble de la communauté."
+    },
+    {
+      "id": "field_associations_467e319d",
+      "category": "associations",
+      "constat_factuel": "À Audierne, il semble qu'il y ait un manque de coordination entre les différentes associations et les acteurs économiques locaux. Les initiatives sont souvent isolées, laissant penser que ceux qui prennent ces décisions ne mesurent pas l'importance d'une collaboration efficace. Peut-être que les élus devraient se demander pourquoi cela perdure ?",
+      "idees_ameliorations": "Il serait judicieux de créer une plateforme de communication où les associations et les acteurs économiques pourraient partager leurs idées et projets. Après tout, n'est-il pas surprenant que des personnes compétentes dans leur domaine ne se parlent pas davantage ? En outre, un compte-rendu public des discussions pourrait renforcer la transparence, mais encore faudrait-il que cela soit mis en pratique de manière efficace, n'est-ce pas ?",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "association_acteurs_economiques",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, il semble qu'il y ait un manque de coordination entre les différe...",
+      "body": "**Constat factuel:**\nÀ Audierne, il semble qu'il y ait un manque de coordination entre les différentes associations et les acteurs économiques locaux. Les initiatives sont souvent isolées, laissant penser que ceux qui prennent ces décisions ne mesurent pas l'importance d'une collaboration efficace. Peut-être que les élus devraient se demander pourquoi cela perdure ?\n\n**Vos idées d'améliorations:**\nIl serait judicieux de créer une plateforme de communication où les associations et les acteurs économiques pourraient partager leurs idées et projets. Après tout, n'est-il pas surprenant que des personnes compétentes dans leur domaine ne se parlent pas davantage ? En outre, un compte-rendu public des discussions pourrait renforcer la transparence, mais encore faudrait-il que cela soit mis en pratique de manière efficace, n'est-ce pas ?"
+    },
+    {
+      "id": "field_associations_cc9f2de1",
+      "category": "associations",
+      "constat_factuel": "À Audierne, les associations d'acteurs économiques semblent complètement ignorées par nos élus, qui passent leur temps à s'auto-congratuler au lieu de réellement écouter les besoins de la communauté. Les décisions sont prises sans consultation, laissant les acteurs locaux dans l'ombre et l'incertitude. C'est inacceptable et cela nuit à notre tissu économique !",
+      "idees_ameliorations": "Il est impératif de mettre en place des réunions régulières entre les élus et les associations d'acteurs économiques pour recueillir leurs avis et suggestions. De plus, un compte-rendu public accessible à tous est nécessaire pour garantir la transparence et la responsabilité. Enfin, pourquoi ne pas créer un comité consultatif incluant ces acteurs pour favoriser un dialogue constructif et inclusif ?",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "association_acteurs_economiques",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, les associations d'acteurs économiques semblent complètement igno...",
+      "body": "**Constat factuel:**\nÀ Audierne, les associations d'acteurs économiques semblent complètement ignorées par nos élus, qui passent leur temps à s'auto-congratuler au lieu de réellement écouter les besoins de la communauté. Les décisions sont prises sans consultation, laissant les acteurs locaux dans l'ombre et l'incertitude. C'est inacceptable et cela nuit à notre tissu économique !\n\n**Vos idées d'améliorations:**\nIl est impératif de mettre en place des réunions régulières entre les élus et les associations d'acteurs économiques pour recueillir leurs avis et suggestions. De plus, un compte-rendu public accessible à tous est nécessaire pour garantir la transparence et la responsabilité. Enfin, pourquoi ne pas créer un comité consultatif incluant ces acteurs pour favoriser un dialogue constructif et inclusif ?"
+    },
+    {
+      "id": "field_jeunesse_dc4865de",
+      "category": "jeunesse",
+      "constat_factuel": "À Audierne, les infrastructures scolaires sont vieillissantes et ne répondent pas toujours aux besoins d'une éducation moderne. De plus, les réseaux de communication, notamment internet, sont insuffisants pour soutenir les nouvelles méthodes d'apprentissage et la connectivité des élèves.",
+      "idees_ameliorations": "Il serait pertinent d'investir dans la rénovation des bâtiments scolaires pour créer des espaces d'apprentissage adaptés. Par ailleurs, l'amélioration des réseaux internet dans les établissements scolaires permettra de faciliter l'accès aux ressources pédagogiques en ligne et d'encourager l'utilisation des outils numériques dans l'enseignement.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "investissements_structurants",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, les infrastructures scolaires sont vieillissantes et ne répondent...",
+      "body": "**Constat factuel:**\nÀ Audierne, les infrastructures scolaires sont vieillissantes et ne répondent pas toujours aux besoins d'une éducation moderne. De plus, les réseaux de communication, notamment internet, sont insuffisants pour soutenir les nouvelles méthodes d'apprentissage et la connectivité des élèves.\n\n**Vos idées d'améliorations:**\nIl serait pertinent d'investir dans la rénovation des bâtiments scolaires pour créer des espaces d'apprentissage adaptés. Par ailleurs, l'amélioration des réseaux internet dans les établissements scolaires permettra de faciliter l'accès aux ressources pédagogiques en ligne et d'encourager l'utilisation des outils numériques dans l'enseignement."
+    },
+    {
+      "id": "field_jeunesse_0670ad7f",
+      "category": "jeunesse",
+      "constat_factuel": "À Audierne, les infrastructures scolaires et les réseaux de transport restent insuffisants pour répondre aux besoins croissants des jeunes. Les écoles manquent d'équipements modernes, et l'accès aux activités périscolaires est limité, ce qui impacte le développement des enfants et leur engagement dans la vie communautaire.",
+      "idees_ameliorations": "Il serait bénéfique d'investir dans la modernisation des établissements scolaires en intégrant des technologies numériques et des espaces de travail collaboratifs. De plus, le développement de réseaux de transport adaptés pourrait faciliter l'accès aux différentes activités éducatives et culturelles, tout en encourageant les échanges entre les jeunes de la commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "investissements_structurants",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, les infrastructures scolaires et les réseaux de transport restent...",
+      "body": "**Constat factuel:**\nÀ Audierne, les infrastructures scolaires et les réseaux de transport restent insuffisants pour répondre aux besoins croissants des jeunes. Les écoles manquent d'équipements modernes, et l'accès aux activités périscolaires est limité, ce qui impacte le développement des enfants et leur engagement dans la vie communautaire.\n\n**Vos idées d'améliorations:**\nIl serait bénéfique d'investir dans la modernisation des établissements scolaires en intégrant des technologies numériques et des espaces de travail collaboratifs. De plus, le développement de réseaux de transport adaptés pourrait faciliter l'accès aux différentes activités éducatives et culturelles, tout en encourageant les échanges entre les jeunes de la commune."
+    },
+    {
+      "id": "field_jeunesse_1ad7eef4",
+      "category": "jeunesse",
+      "constat_factuel": "À Audierne, nos écoles semblent souffrir d'un manque d'équipements modernes et de réseaux adaptés aux besoins actuels des élèves. Il est préoccupant de voir que des investissements structurants tardent à se concrétiser, alors que les compétences de nos élus sont mises à l'épreuve pour répondre à cette situation. Qui aurait cru qu'il serait si compliqué de garantir un cadre éducatif adéquat ?",
+      "idees_ameliorations": "Peut-être serait-il judicieux de prioriser l'amélioration des infrastructures scolaires et des réseaux numériques, afin de permettre à nos enfants d'accéder à des ressources éducatives de qualité. Après tout, investir dans l'éducation semble être une évidence, non ? Il serait intéressant de se demander si nos élus ont vraiment une vision à long terme pour la jeunesse d'Audierne, ou s'ils se contentent de décisions superficielles.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "investissements_structurants",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, nos écoles semblent souffrir d'un manque d'équipements modernes e...",
+      "body": "**Constat factuel:**\nÀ Audierne, nos écoles semblent souffrir d'un manque d'équipements modernes et de réseaux adaptés aux besoins actuels des élèves. Il est préoccupant de voir que des investissements structurants tardent à se concrétiser, alors que les compétences de nos élus sont mises à l'épreuve pour répondre à cette situation. Qui aurait cru qu'il serait si compliqué de garantir un cadre éducatif adéquat ?\n\n**Vos idées d'améliorations:**\nPeut-être serait-il judicieux de prioriser l'amélioration des infrastructures scolaires et des réseaux numériques, afin de permettre à nos enfants d'accéder à des ressources éducatives de qualité. Après tout, investir dans l'éducation semble être une évidence, non ? Il serait intéressant de se demander si nos élus ont vraiment une vision à long terme pour la jeunesse d'Audierne, ou s'ils se contentent de décisions superficielles."
+    },
+    {
+      "id": "field_jeunesse_f48075cb",
+      "category": "jeunesse",
+      "constat_factuel": "À Audierne, nos écoles sont en piteux état et les infrastructures ne répondent plus aux besoins des enfants. Les réseaux sont obsolètes, ce qui empêche le développement de programmes éducatifs modernes. C'est INADMISSIBLE que nos élus ne prennent pas cette situation au sérieux !",
+      "idees_ameliorations": "Il est URGENT d'investir dans des rénovations d'écoles pour garantir un environnement d'apprentissage adéquat. Nous devons également moderniser les réseaux afin de permettre l'accès à des outils numériques pour tous les élèves. Arrêtons de perdre du temps et exigeons que nos élus agissent immédiatement pour le bien de notre jeunesse !",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "investissements_structurants",
+        "source_title": "1) Synthèse des points clés abordés (d’après les extraits fournis) (municipal-council-january2026.md)",
+        "generated_date": "2026-02-08",
+        "llm_model": "gpt-4o-mini"
+      },
+      "title": "À Audierne, nos écoles sont en piteux état et les infrastructures ne réponden...",
+      "body": "**Constat factuel:**\nÀ Audierne, nos écoles sont en piteux état et les infrastructures ne répondent plus aux besoins des enfants. Les réseaux sont obsolètes, ce qui empêche le développement de programmes éducatifs modernes. C'est INADMISSIBLE que nos élus ne prennent pas cette situation au sérieux !\n\n**Vos idées d'améliorations:**\nIl est URGENT d'investir dans des rénovations d'écoles pour garantir un environnement d'apprentissage adéquat. Nous devons également moderniser les réseaux afin de permettre l'accès à des outils numériques pour tous les élèves. Arrêtons de perdre du temps et exigeons que nos élus agissent immédiatement pour le bien de notre jeunesse !"
     }
   ]
 }

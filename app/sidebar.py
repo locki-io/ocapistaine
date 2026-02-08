@@ -92,8 +92,6 @@ def sidebar_setup() -> str:
 
         st.divider()
 
-        st.divider()
-
         # Status indicators
         st.markdown(f"### 📊 {_('sidebar_status')}")
         _display_status_indicators()

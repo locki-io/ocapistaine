@@ -217,35 +217,35 @@ def list_model_keys(provider: str) -> list[str]:
 RECOMMENDED_MODELS = {
     # Field Input: theme extraction, contribution generation (needs reasoning)
     "field_input": {
-        "gemini": "flash",
         "claude": "sonnet",
+        "openai": "gpt-4o-mini",
+        "gemini": "flash",
         "mistral": "small",
         "ollama": "deepseek-r1:7b",
-        "openai": "gpt-4o-mini",
     },
     # Charter validation (Forseti)
     "charter_validation": {
+        "openai": "gpt-4o-mini",
         "gemini": "flash",
         "claude": "sonnet",
         "mistral": "small",
         "ollama": "deepseek-r1:7b",
-        "openai": "gpt-4o-mini",
     },
     # Mockup mutations (fast generation)
     "mockup_mutations": {
-        "gemini": "flash-lite",
+        "openai": "gpt-4o-mini",
         "claude": "haiku",
         "mistral": "small",
         "ollama": "mistral:7b",
-        "openai": "gpt-4o-mini",
+        "gemini": "flash-lite",
     },
     # Default fallback
     "default": {
-        "gemini": "flash-lite",
+        "openai": "gpt-4o-mini",
         "claude": "haiku",
         "mistral": "small",
         "ollama": "deepseek-r1:7b",
-        "openai": "gpt-4o-mini",
+        "gemini": "flash-lite",
     },
 }
 
@@ -302,7 +302,9 @@ class ProviderConfig(BaseSettings):
 
     # Mistral AI
     mistral_api_key: str | None = Field(default=None, alias="MISTRAL_API_KEY")
-    mistral_studio_api_key: str | None = Field(default=None, alias="MISTRAL_STUDIO_API_KEY")
+    mistral_studio_api_key: str | None = Field(
+        default=None, alias="MISTRAL_STUDIO_API_KEY"
+    )
     mistral_model: str = Field(default="mistral-small-latest", alias="MISTRAL_MODEL")
 
     # Local Ollama
@@ -313,6 +315,11 @@ class ProviderConfig(BaseSettings):
     openai_api_key: str | None = Field(default=None, alias="OPENAI_API_KEY")
     openai_model: str = Field(default="gpt-4o-mini", alias="OPENAI_MODEL")
     openai_rate_limit: float = Field(default=0.5, alias="OPENAI_RATE_LIMIT")
+
+    # Document Processing (Field Input) - can use different provider for long docs
+    # If not set, falls back to default_provider
+    document_provider: str | None = Field(default=None, alias="DOCUMENT_PROVIDER")
+    document_model: str | None = Field(default=None, alias="DOCUMENT_MODEL")
 
     model_config = {
         "env_file": ".env",
@@ -341,3 +348,25 @@ def get_config() -> ProviderConfig:
     if _config is None:
         _config = ProviderConfig()
     return _config
+
+
+def get_document_provider() -> tuple[str, str | None]:
+    """
+    Get provider and model for document processing (Field Input).
+
+    Uses DOCUMENT_PROVIDER/DOCUMENT_MODEL if set, otherwise falls back
+    to DEFAULT_PROVIDER with recommended model for field_input use case.
+
+    Returns:
+        Tuple of (provider_name, model_id_or_none)
+    """
+    config = get_config()
+
+    # Use dedicated document provider if set
+    if config.document_provider:
+        provider = config.document_provider
+        model = config.document_model
+        return provider, model
+
+    # Fall back to default provider
+    return config.default_provider, None

@@ -88,7 +88,7 @@ def setup_domain_logger(
     domain: str,
     level: int | None = None,
     max_bytes: int = 10 * 1024 * 1024,  # 10 MB
-    backup_count: int = 5,
+    backup_count: int = 2,
     console_output: bool = False,
 ) -> logging.Logger:
     """
@@ -105,7 +105,9 @@ def setup_domain_logger(
         Configured logger for the domain
     """
     if domain not in DOMAINS:
-        raise ValueError(f"Unknown domain: {domain}. Valid domains: {list(DOMAINS.keys())}")
+        raise ValueError(
+            f"Unknown domain: {domain}. Valid domains: {list(DOMAINS.keys())}"
+        )
 
     config = DOMAINS[domain]
     logger_name = f"ocapistaine.{domain}"
@@ -142,7 +144,11 @@ def setup_domain_logger(
     logger.addHandler(error_handler)
 
     # Console handler (controlled by env var or parameter)
-    env_console = os.getenv(f"{domain.upper()}_LOG_CONSOLE", "").lower() in ("1", "true", "yes")
+    env_console = os.getenv(f"{domain.upper()}_LOG_CONSOLE", "").lower() in (
+        "1",
+        "true",
+        "yes",
+    )
     if console_output or env_console:
         console_handler = logging.StreamHandler()
         console_handler.setLevel(logging.INFO)

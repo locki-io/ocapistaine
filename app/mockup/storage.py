@@ -15,46 +15,46 @@ from datetime import datetime, date
 from typing import Optional, List, Dict, Any
 from dataclasses import dataclass, field, asdict
 
-from app.data.redis_client import redis_connection, get_redis_connection
+from app.data.redis_client import redis_connection, get_redis_connection, app_key
 from app.services.logging import MockupLogger
 
 _logger = MockupLogger("storage")
 
 
+# Base key prefix for mockup data (without app: prefix, added by app_key())
+_MOCKUP_PREFIX = "contribution_mockup:forseti461:charter"
+
+
 # Redis key patterns for mockup storage
 class MockupKeys:
-    """Redis key patterns for mockup validation storage."""
+    """Redis key patterns for mockup validation storage.
 
-    # Main storage: contribution_mockup:forseti461:charter:{date}:{id}
-    VALIDATION = "contribution_mockup:forseti461:charter:{date}:{id}"
-
-    # Index of all validations for a date
-    DATE_INDEX = "contribution_mockup:forseti461:charter:index:{date}"
-
-    # Latest validation results (for quick access)
-    LATEST = "contribution_mockup:forseti461:charter:latest"
-
-    # Dataset export metadata
-    DATASET_META = "contribution_mockup:forseti461:dataset:{dataset_name}"
+    All keys are prefixed with 'app:' via app_key() for namespace separation.
+    """
 
     @staticmethod
     def validation(contribution_id: str, date_str: Optional[str] = None) -> str:
         """Get key for a validation result."""
         if date_str is None:
             date_str = date.today().isoformat()
-        return f"contribution_mockup:forseti461:charter:{date_str}:{contribution_id}"
+        return app_key(f"{_MOCKUP_PREFIX}:{date_str}:{contribution_id}")
 
     @staticmethod
     def date_index(date_str: Optional[str] = None) -> str:
         """Get key for date index."""
         if date_str is None:
             date_str = date.today().isoformat()
-        return f"contribution_mockup:forseti461:charter:index:{date_str}"
+        return app_key(f"{_MOCKUP_PREFIX}:index:{date_str}")
+
+    @staticmethod
+    def latest() -> str:
+        """Get key for latest validation results."""
+        return app_key(f"{_MOCKUP_PREFIX}:latest")
 
     @staticmethod
     def dataset_meta(dataset_name: str) -> str:
         """Get key for dataset metadata."""
-        return f"contribution_mockup:forseti461:dataset:{dataset_name}"
+        return app_key(f"contribution_mockup:forseti461:dataset:{dataset_name}")
 
 
 # TTL constants
@@ -215,8 +215,8 @@ class MockupStorage:
                 r.expire(index_key, MockupTTL.VALIDATION)
 
                 # Update latest
-                r.hset(MockupKeys.LATEST, record.id, json.dumps(record.to_dict()))
-                r.expire(MockupKeys.LATEST, MockupTTL.LATEST)
+                r.hset(MockupKeys.latest(), record.id, json.dumps(record.to_dict()))
+                r.expire(MockupKeys.latest(), MockupTTL.LATEST)
 
             self._logger.info(
                 "SAVE_VALIDATION",
@@ -301,7 +301,7 @@ class MockupStorage:
         records = []
         try:
             with redis_connection() as r:
-                all_data = r.hgetall(MockupKeys.LATEST)
+                all_data = r.hgetall(MockupKeys.latest())
                 for data in list(all_data.values())[:limit]:
                     records.append(ValidationRecord.from_dict(json.loads(data)))
 
@@ -336,7 +336,7 @@ class MockupStorage:
                     pipe.zadd(index_key, {record.id: datetime.fromisoformat(record.timestamp).timestamp()})
 
                     # Latest
-                    pipe.hset(MockupKeys.LATEST, record.id, json.dumps(record.to_dict()))
+                    pipe.hset(MockupKeys.latest(), record.id, json.dumps(record.to_dict()))
 
                 pipe.execute()
                 saved = len(records)
@@ -499,7 +499,7 @@ class MockupStorage:
                 for contrib_id in ids:
                     key = MockupKeys.validation(contrib_id, date_str)
                     pipe.delete(key)
-                    pipe.hdel(MockupKeys.LATEST, contrib_id)
+                    pipe.hdel(MockupKeys.latest(), contrib_id)
 
                 # Delete index
                 pipe.delete(index_key)
@@ -532,7 +532,7 @@ class MockupStorage:
         try:
             with redis_connection() as r:
                 # First check latest to get the date
-                latest_data = r.hget(MockupKeys.LATEST, contribution_id)
+                latest_data = r.hget(MockupKeys.latest(), contribution_id)
                 if latest_data:
                     record_data = json.loads(latest_data)
                     date_str = record_data.get("date")
@@ -547,7 +547,7 @@ class MockupStorage:
                         r.zrem(index_key, contribution_id)
 
                     # Remove from latest
-                    r.hdel(MockupKeys.LATEST, contribution_id)
+                    r.hdel(MockupKeys.latest(), contribution_id)
                     deleted = True
 
                     self._logger.info(

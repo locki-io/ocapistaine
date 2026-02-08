@@ -560,10 +560,11 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
 
     # Display current provider/model
     provider_labels = {
-        "ollama": "💻 Ollama",
-        "mistral": "🌬️ Mistral",
-        "gemini": "🌐 Gemini",
+        "openai": "🧠 OpenAI",
         "claude": "🤖 Claude",
+        "gemini": "🌐 Gemini",
+        "mistral": "🌬️ Mistral",
+        "ollama": "💻 Ollama",
     }
     provider_label = provider_labels.get(session_provider, session_provider)
     st.info(f"📌 **{provider_label}** / `{full_model_id}`")
@@ -607,11 +608,12 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
     # Generate button
     st.markdown("---")
 
-    # Check if already processing (prevent concurrent Ollama requests)
-    is_processing = st.session_state.get("ollama_processing", False)
+    # Check if already processing (only lock for Ollama - local resource constraint)
+    is_ollama = session_provider == "ollama"
+    is_processing = is_ollama and st.session_state.get("ollama_processing", False)
 
     if is_processing:
-        st.warning("⏳ Already processing a request. Please wait for it to complete.")
+        st.warning("⏳ Ollama is processing a request. Please wait for it to complete.")
         if st.button("🔄 Clear processing lock", key="clear_ollama_lock"):
             st.session_state["ollama_processing"] = False
             st.rerun()
@@ -626,8 +628,9 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
             st.error("Please provide input text (upload a file or paste text first)")
             return
 
-        # Set processing lock
-        st.session_state["ollama_processing"] = True
+        # Set processing lock (only for Ollama - local resource constraint)
+        if is_ollama:
+            st.session_state["ollama_processing"] = True
 
         # Show input info for debugging
         st.info(f"Processing {len(input_text):,} characters from: {source_title or 'direct input'}")
@@ -649,11 +652,13 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
                 st.success(f"✓ Generated using {session_provider}")
             except Exception as e:
                 st.error(f"Generation failed: {e}")
-                st.session_state["ollama_processing"] = False
+                if is_ollama:
+                    st.session_state["ollama_processing"] = False
                 return
             finally:
-                # Clear processing lock
-                st.session_state["ollama_processing"] = False
+                # Clear processing lock (only for Ollama)
+                if is_ollama:
+                    st.session_state["ollama_processing"] = False
 
             st.session_state["field_input_result"] = result
 
