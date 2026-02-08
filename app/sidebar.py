@@ -4,6 +4,7 @@ O Capistaine - Simplified Sidebar
 
 Single user identification via UUID (cookie-based).
 Minimal session state - Redis handles persistence.
+Provider/model selection persisted to Redis db5 per session.
 """
 
 import os
@@ -11,53 +12,24 @@ import uuid
 import streamlit as st
 from typing import Optional
 
-from app.providers.config import GEMINI_MODELS
-from app.i18n import _, language_selector, get_language
+from app.providers.config import (
+    PROVIDER_UI_CONFIG,
+    get_model_id as providers_get_model_id,
+    get_default_model,
+)
+from app.services.translations import _, language_selector, get_language
 from app.services import PresentationLogger
-
-# TODO: Replace with actual Redis client when implemented
-# from app.data.redis_client import get_redis_connection
+from app.services.session import (
+    save_session_settings,
+    get_session_settings,
+    set_default_user_id,
+)
 
 # Sidebar logger
 _logger = PresentationLogger("sidebar")
 
-# Available LLM providers and their models
-PROVIDERS = {
-    "gemini": {
-        "name_key": "provider_google_gemini",
-        "models": {
-            "flash-lite": "gemini-2.5-flash-lite (~1000 req/day)",
-            "flash": "gemini-2.5-flash (~20 req/day)",
-            # "pro": "gemini-2.5-pro-exp (~25 req/day)",
-        },
-        "default": "flash-lite",
-    },
-    "claude": {
-        "name_key": "provider_anthropic_claude",
-        "models": {
-            "haiku": "claude-3-haiku (fast, cheap)",
-            "sonnet": "claude-3.5-sonnet (balanced)",
-        },
-        "default": "haiku",
-    },
-    "mistral": {
-        "name_key": "provider_mistral_ai",
-        "models": {
-            "small": "mistral-small-latest",
-            "medium": "mistral-medium-latest",
-        },
-        "default": "small",
-    },
-    "ollama": {
-        "name_key": "provider_ollama",
-        "models": {
-            "mistral": "mistral:latest",
-            "llama3.2": "llama3.2:latest",
-            "orca-mini": "orca-mini:latest",
-        },
-        "default": "mistral",
-    },
-}
+# Use centralized provider config from app/providers/config.py
+PROVIDERS = PROVIDER_UI_CONFIG
 
 
 def get_user_id() -> str:
@@ -141,6 +113,9 @@ def sidebar_setup() -> str:
         st.markdown(f"### 🔗 {_('sidebar_links')}")
         st.markdown(
             """
+        - Open Discord: [Join us!](https://discord.gg/5EHYnAGs)
+        - Report Issues: [GitHub Issues](https://github.com/locki-io/ocapistaine/issues)
+        - Opik [Dashboard](https://www.comet.com/opik/ocapistaine-dev/projects/)
         - [audierne2026.fr](https://audierne2026.fr)
         - [Documentation](https://docs.locki.io)
         - [Contribuer](https://github.com/locki-io/ocapistaine)
@@ -204,11 +179,26 @@ def _start_new_conversation(user_id: str) -> None:
 
 def _display_provider_selector(user_id: str) -> None:
     """Display provider and model selection dropdowns."""
-    # Initialize defaults if not set
-    if "llm_provider" not in st.session_state:
-        st.session_state.llm_provider = "ollama"
-    if "llm_model" not in st.session_state:
-        st.session_state.llm_model = "mistral"
+    # Initialize from Redis session settings if not already set
+    if "llm_provider" not in st.session_state or "llm_model" not in st.session_state:
+        # Try to load from Redis
+        settings = get_session_settings(user_id)
+        if settings:
+            st.session_state.llm_provider = settings.provider
+            st.session_state.llm_model = settings.model
+            _logger.info(
+                "SETTINGS_LOADED",
+                user_id=user_id[:8],
+                provider=settings.provider,
+                model=settings.model,
+            )
+        else:
+            # Default to Ollama
+            st.session_state.llm_provider = "ollama"
+            st.session_state.llm_model = "mistral"
+
+    # Set default user ID for background tasks
+    set_default_user_id(user_id)
 
     # Provider selection
     provider_names = list(PROVIDERS.keys())
@@ -217,7 +207,7 @@ def _display_provider_selector(user_id: str) -> None:
     selected_provider = st.selectbox(
         _("sidebar_provider"),
         options=provider_names,
-        disabled=True,
+        disabled=False,
         index=(
             provider_names.index(current_provider)
             if current_provider in provider_names
@@ -236,6 +226,14 @@ def _display_provider_selector(user_id: str) -> None:
         # Clear cached agent
         if "forseti_agent" in st.session_state:
             del st.session_state["forseti_agent"]
+
+        # Save to Redis for persistence
+        save_session_settings(
+            user_id=user_id,
+            provider=selected_provider,
+            model=st.session_state.llm_model,
+            language=get_language(),
+        )
 
         _logger.log_user_action(
             action="change_provider",
@@ -270,6 +268,14 @@ def _display_provider_selector(user_id: str) -> None:
         if "forseti_agent" in st.session_state:
             del st.session_state["forseti_agent"]
 
+        # Save to Redis for persistence
+        save_session_settings(
+            user_id=user_id,
+            provider=selected_provider,
+            model=selected_model,
+            language=get_language(),
+        )
+
         _logger.log_user_action(
             action="change_model",
             user_id=user_id,
@@ -280,7 +286,7 @@ def _display_provider_selector(user_id: str) -> None:
 
 def get_selected_provider() -> str:
     """Get the currently selected LLM provider name."""
-    return st.session_state.get("llm_provider", "gemini")
+    return st.session_state.get("llm_provider", "ollama")
 
 
 def get_selected_model() -> str:
@@ -292,30 +298,7 @@ def get_model_id() -> str:
     """Get the full model ID for the current selection."""
     provider = get_selected_provider()
     model_key = get_selected_model()
-
-    if provider == "gemini":
-        return GEMINI_MODELS.get(model_key, "gemini-2.0-flash-lite")
-    elif provider == "claude":
-        model_map = {
-            "haiku": "claude-3-haiku-20240307",
-            "sonnet": "claude-3-5-sonnet-20241022",
-        }
-        return model_map.get(model_key, "claude-3-haiku-20240307")
-    elif provider == "mistral":
-        model_map = {
-            "small": "mistral-small-latest",
-            "medium": "mistral-medium-latest",
-        }
-        return model_map.get(model_key, "mistral-small-latest")
-    elif provider == "ollama":
-        model_map = {
-            "mistral": "mistral:latest",
-            "llama3.2": "llama3.2:latest",
-            "orca-mini": "orca-mini:latest",
-        }
-        return model_map.get(model_key, "mistral:latest")
-
-    return "gemini-2.0-flash-lite"
+    return providers_get_model_id(provider, model_key)
 
 
 def _display_status_indicators() -> None:

@@ -1,0 +1,87 @@
+[
+  {
+    "id": "019c27ca-57d3-724a-8cc1-54b5ceabdd4e",
+    "expected_output": {
+      "is_valid": true,
+      "confidence_threshold": 1
+    },
+    "input": {
+      "title": "Le projet de rénovation et regroupement des écoles sur le site Pierre Le Lec est...",
+      "body": "**Constat factuel:**\nLe projet de rénovation et regroupement des écoles sur le site Pierre Le Lec est actuellement un point de tension récurrent à Audierne.\n\n**Idées d'améliorations:**\nPour améliorer la situation, il est proposé d'organiser des séances de dialogue constructif entre les élus et la population locale pour discuter du financement et des avantages potentiels du projet. Il serait également intéressant de présenter des études détaillées sur le coût, l'impact financier et économique pour la commune, ainsi que sur les possibilités alternatives de gestion du patrimoine scolaire.",
+      "category": "economie",
+      "original_confidence": 0.9,
+      "original_is_valid": true,
+      "record_id": "input_56493631ce95"
+    },
+    "tags": [],
+    "created_at": "2026-02-04T08:34:58.244065295Z"
+  },
+  {
+    "id": "019c27ca-57d2-7408-a491-fb42a37a8327",
+    "expected_output": {
+      "is_valid": true,
+      "confidence_threshold": 1
+    },
+    "input": {
+      "title": "Il y a un manque d'anticipation et de communication efficace envers les commerça...",
+      "body": "**Constat factuel:**\nIl y a un manque d'anticipation et de communication efficace envers les commerçants concernant des travaux importants\n\n**Idées d'améliorations:**\nPour améliorer la situation, il serait utile d'établir une ligne de communication régulière avec les commerçants pour informer de tous les travaux en cours et prévisibles. De plus, il faudrait travailler à améliorer la capacité opérationnelle des services techniques pour pouvoir mener plusieurs chantiers lourds simultanément.",
+      "category": "economie",
+      "original_confidence": 0.9,
+      "original_is_valid": true,
+      "record_id": "input_5601d13ebe87"
+    },
+    "tags": [],
+    "created_at": "2026-02-04T08:34:58.244046738Z"
+  },
+  {
+    "id": "019c27ca-57d1-7ee9-8760-99b505aac5dc",
+    "expected_output": {
+      "is_valid": true,
+      "confidence_threshold": 1
+    },
+    "input": {
+      "title": "Le manque d'anticipation et de communication envers les commerçants au sujet des...",
+      "body": "**Constat factuel:**\nLe manque d'anticipation et de communication envers les commerçants au sujet des travaux a créé une situation tendue.\n\n**Idées d'améliorations:**\nAméliorer la communication avec les commerçants pour prévenir à temps les effets des travaux, ainsi qu'établir un plan de réparation et d'aide aux commerces affectés.",
+      "category": "economie",
+      "original_confidence": 0.9,
+      "original_is_valid": true,
+      "record_id": "input_0464fe69ecdd"
+    },
+    "tags": [],
+    "created_at": "2026-02-04T08:34:58.244027477Z"
+  },
+  {
+    "id": "019c27ca-57d0-7554-b9f0-c83c9d4618d2",
+    "expected_output": {
+      "is_valid": true,
+      "confidence_threshold": 1
+    },
+    "input": {
+      "title": "Il y a un manque d'anticipation et de communication efficace envers les commerça...",
+      "body": "**Constat factuel:**\nIl y a un manque d'anticipation et de communication efficace envers les commerçants concernant les travaux effectués ou à venir.\n\n**Idées d'améliorations:**\nPour améliorer la situation, il est nécessaire d'adapter une stratégie de communication plus transparente et anticipée vers les commerçants. Il serait également utile de déterminer des plans d'action pour anticiper les retards potentiels et garantir une capacité opérationnelle suffisante pour mener plusieurs chantiers lourds simultanément.",
+      "category": "economie",
+      "original_confidence": 0.9,
+      "original_is_valid": true,
+      "record_id": "input_13730991ea45"
+    },
+    "tags": [],
+    "created_at": "2026-02-04T08:34:58.244008644Z"
+  },
+  {
+    "id": "019c27ca-57cf-7010-be00-384ece1a08a1",
+    "expected_output": {
+      "is_valid": true,
+      "confidence_threshold": 1
+    },
+    "input": {
+      "title": "Les tensions entre les différents niveaux de gouvernance et les réalités locales...",
+      "body": "**Constat factuel:**\nLes tensions entre les différents niveaux de gouvernance et les réalités locales ont été illustrées par des conflits majeurs sur la pêche en Bretagne et le nom de la commune d'Audierne.\n\n**Idées d'améliorations:**\nPour améliorer la situation, il est nécessaire de favoriser une gouvernance plus participative qui tienne compte des réalités locales. Il serait également bénéfique de renforcer les liens entre les instances régionales et les communes pour garantir une meilleure représentation des intérêts locaux.",
+      "category": "economie",
+      "original_confidence": 0.8,
+      "original_is_valid": true,
+      "record_id": "input_e5463ddae17e"
+    },
+    "tags": [],
+    "created_at": "2026-02-04T08:34:58.243981879Z"
+  }
+]

@@ -11,6 +11,10 @@ import re
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 
+from app.services.logging import get_logger
+
+logger = get_logger("services")
+
 # Directory containing JSON prompt files
 PROMPTS_DIR = Path(__file__).parent
 
@@ -195,7 +199,7 @@ def load_all_json_prompts() -> Dict[str, Dict[str, Any]]:
             prompts = load_json_prompts(json_file.name)
             all_prompts.update(prompts)
         except Exception as e:
-            print(f"Warning: Failed to load {json_file}: {e}")
+            logger.warning(f"Failed to load {json_file}: {e}")
 
     return all_prompts
 

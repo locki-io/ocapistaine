@@ -27,11 +27,14 @@ streamlit = "^1.53.0"
 fastapi = "^0.128.0"
 redis = "^7.1.0"
 uvicorn = "^0.40.0"
+apscheduler = "^3.10.4"
 watchdog = "^6.0.0"
 pydantic-settings = "^2.12.0"
 google-genai = "^1.59.0"
 anthropic = "^0.76.0"
 opik-optimizer = {version = "^3.0.1", python = ">=3.13,<3.14"}
+openai = "^2.17.0"
+mistralai = "^1.12.0"
 
 
 [build-system]
@@ -43,4 +46,5 @@ dev = [
     "pytest (>=9.0.2,<10.0.0)",
     "black (>=25.12.0,<26.0.0)",
     "ruff (>=0.14.10,<0.15.0)",
+    "pytest-cov (>=7.0.0,<8.0.0)",
 ]

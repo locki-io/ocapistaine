@@ -7,13 +7,14 @@ Supports French and English with easy extensibility.
 """
 
 import json
+from functools import lru_cache
 from pathlib import Path
 from typing import Dict
 
 import streamlit as st
 
 # Translation files directory
-TRANSLATIONS_DIR = Path(__file__).parent / "translations"
+LOCALES_DIR = Path(__file__).parent / "locales"
 
 # Supported languages
 LANGUAGES = {
@@ -24,18 +25,22 @@ LANGUAGES = {
 DEFAULT_LANGUAGE = "fr"
 
 
-@st.cache_data
-def load_translations() -> Dict[str, Dict[str, str]]:
-    """
-    Load all translation files.
+def _is_streamlit_running() -> bool:
+    """Check if we're running inside Streamlit runtime."""
+    try:
+        from streamlit.runtime.scriptrunner import get_script_run_ctx
+        return get_script_run_ctx() is not None
+    except Exception:
+        return False
 
-    Returns:
-        Dict mapping language codes to translation dictionaries.
-    """
+
+@lru_cache(maxsize=1)
+def _load_translations_cached() -> Dict[str, Dict[str, str]]:
+    """Load translations from JSON files (cached with lru_cache)."""
     translations = {}
 
     for lang_code in LANGUAGES.keys():
-        file_path = TRANSLATIONS_DIR / f"{lang_code}.json"
+        file_path = LOCALES_DIR / f"{lang_code}.json"
         if file_path.exists():
             with open(file_path, "r", encoding="utf-8") as f:
                 translations[lang_code] = json.load(f)
@@ -43,6 +48,18 @@ def load_translations() -> Dict[str, Dict[str, str]]:
             translations[lang_code] = {}
 
     return translations
+
+
+def load_translations() -> Dict[str, Dict[str, str]]:
+    """
+    Load all translation files.
+
+    Uses Streamlit cache when running in Streamlit, otherwise uses lru_cache.
+
+    Returns:
+        Dict mapping language codes to translation dictionaries.
+    """
+    return _load_translations_cached()
 
 
 def get_language() -> str:

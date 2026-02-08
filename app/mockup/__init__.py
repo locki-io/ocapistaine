@@ -61,9 +61,11 @@ from app.mockup.field_input import (
     read_markdown_input,
     process_field_input_sync,
     load_category_themes,
-    RECOMMENDED_MODELS,
     ProviderType,
 )
+
+# RECOMMENDED_MODELS now centralized in providers
+from app.providers.config import RECOMMENDED_MODELS
 
 # Import categories from Forseti (single source of truth)
 from app.agents.forseti import CATEGORIES, CATEGORY_DESCRIPTIONS

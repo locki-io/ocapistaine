@@ -19,29 +19,54 @@ from datetime import date
 from typing import List, Dict, Any, Optional, Literal
 from dataclasses import dataclass, field
 
-from app.services import AgentLogger
+from app.services.logging import MockupLogger
 from app.mockup.generator import (
     MockContribution,
     save_contributions,
     load_contributions,
 )
-from app.providers import get_provider, Message, get_config, GEMINI_MODELS
+from app.mockup.anonymizer import (
+    TranscriptAnonymizer,
+    DocumentType,
+    TranscriptAnonymizationResult,
+)
+from app.providers import get_provider, Message
+from app.providers.config import ProviderName, get_recommended_model
 
 # Import categories from Forseti (single source of truth)
-from app.agents.forseti import CATEGORIES, CATEGORY_DESCRIPTIONS
+from app.agents.forseti import CATEGORIES
+from app.agents.forseti.features import AnonymizationFeature
+from app.agents.forseti.models import AnonymizationResult
 
-# Provider type for field input
-ProviderType = Literal["gemini", "claude", "ollama"]
-
-# Recommended models for field input (need reasoning capabilities)
-RECOMMENDED_MODELS = {
-    "gemini": "gemini-2.5-flash",  # Best balance: fast + capable with grounding
-    "claude": "claude-3-5-sonnet-20241022",  # Strong reasoning
-    "ollama": "mistral:latest",  # Local fallback
-}
+# Provider type for field input - use centralized type
+ProviderType = ProviderName
 
 
-_logger = AgentLogger("field_input")
+def _normalize_category(category: str) -> str:
+    """
+    Normalize LLM-returned category to match valid CATEGORIES.
+
+    Handles:
+    - Accents: économie → economie, écologie → ecologie
+    - Underscores: alimentation_bien_etre → alimentation-bien-etre
+    - Mixed: alimentation_bien-être_soins → alimentation-bien-etre-soins
+    """
+    import unicodedata
+
+    # Remove accents via unicode normalization
+    normalized = unicodedata.normalize('NFKD', category)
+    normalized = ''.join(c for c in normalized if not unicodedata.combining(c))
+
+    # Replace underscores with hyphens
+    normalized = normalized.replace('_', '-')
+
+    # Lowercase
+    return normalized.lower()
+
+# Use case name for this module (used with get_recommended_model)
+USE_CASE = "field_input"
+
+_logger = MockupLogger("field_input")
 
 # Path to category themes
 THEMES_PATH = Path(__file__).parent / "data" / "category_themes.json"
@@ -50,6 +75,16 @@ THEMES_PATH = Path(__file__).parent / "data" / "category_themes.json"
 AUDIERNE_DOCS_PATH = (
     Path(__file__).parent.parent.parent / "docs" / "docs" / "audierne2026"
 )
+
+
+@dataclass
+class AnonymizationConfig:
+    """Configuration for document anonymization."""
+
+    enabled: bool = True
+    mode: Literal["auto", "transcript", "llm", "none"] = "auto"
+    similarity_threshold: float = 0.85  # For fuzzy speaker name matching
+    store_mapping: bool = True  # Whether to store entity mappings in result
 
 
 @dataclass
@@ -81,9 +116,14 @@ class FieldInputResult:
     contributions_generated: int = 0
     categories_covered: List[str] = field(default_factory=list)
     themes: List[ExtractedTheme] = field(default_factory=list)
+    # Anonymization fields
+    anonymization_applied: bool = False
+    anonymization_type: Optional[str] = None  # "transcript" | "llm" | None
+    anonymization_mapping: Optional[Dict[str, str]] = None
+    keywords_from_anonymization: Optional[List[str]] = None
 
     def to_dict(self) -> Dict[str, Any]:
-        return {
+        result = {
             "source_file": self.source_file,
             "source_title": self.source_title,
             "input_length": self.input_length,
@@ -91,7 +131,14 @@ class FieldInputResult:
             "contributions_generated": self.contributions_generated,
             "categories_covered": self.categories_covered,
             "themes": [t.to_dict() for t in self.themes],
+            "anonymization_applied": self.anonymization_applied,
+            "anonymization_type": self.anonymization_type,
         }
+        if self.anonymization_mapping:
+            result["anonymization_mapping"] = self.anonymization_mapping
+        if self.keywords_from_anonymization:
+            result["keywords_from_anonymization"] = self.keywords_from_anonymization
+        return result
 
 
 def load_category_themes() -> Dict[str, Any]:
@@ -149,7 +196,7 @@ class FieldInputGenerator:
 
     def __init__(
         self,
-        provider: ProviderType = "gemini",
+        provider: ProviderType = "ollama",
         model: Optional[str] = None,
     ):
         """
@@ -160,7 +207,8 @@ class FieldInputGenerator:
             model: Optional model override. If None, uses recommended model for provider.
         """
         self._provider_name = provider
-        self._model = model or RECOMMENDED_MODELS.get(provider, "gemini-2.5-flash")
+        # Get recommended model for field_input use case, with optional override
+        self._model = get_recommended_model(provider, USE_CASE, model)
 
         # Get provider instance with model override if specified
         if model:
@@ -168,50 +216,260 @@ class FieldInputGenerator:
         else:
             self._provider = get_provider(provider)
         self._themes_config = load_category_themes()
-        self._logger = AgentLogger("field_input_generator")
+        self._logger = MockupLogger("field_input_generator")
+
+    async def _apply_anonymization(
+        self,
+        text: str,
+        result: FieldInputResult,
+        config: AnonymizationConfig,
+    ) -> str:
+        """
+        Apply anonymization to input text based on configuration.
+
+        Args:
+            text: Input text to anonymize.
+            result: FieldInputResult to update with anonymization metadata.
+            config: Anonymization configuration.
+
+        Returns:
+            Anonymized text (or original if no anonymization needed).
+        """
+        if not config.enabled or config.mode == "none":
+            return text
+
+        # First, try transcript detection
+        transcript_anonymizer = TranscriptAnonymizer(
+            similarity_threshold=config.similarity_threshold
+        )
+        doc_type = transcript_anonymizer.detect_document_type(text)
+
+        self._logger.info(
+            "ANONYMIZATION_DETECT",
+            document_type=doc_type.value,
+            configured_mode=config.mode,
+        )
+
+        # Determine which method to use
+        use_transcript = False
+        use_llm = False
+
+        if config.mode == "auto":
+            if doc_type == DocumentType.TRANSCRIPT_NAMED:
+                use_transcript = True
+            elif doc_type == DocumentType.GENERAL:
+                use_llm = True
+            # TRANSCRIPT_ANONYMOUS needs no processing
+        elif config.mode == "transcript":
+            use_transcript = True
+        elif config.mode == "llm":
+            use_llm = True
+
+        # Apply transcript anonymization
+        if use_transcript:
+            transcript_result = transcript_anonymizer.anonymize(text)
+
+            if transcript_result.total_replacements > 0:
+                result.anonymization_applied = True
+                result.anonymization_type = "transcript"
+
+                if config.store_mapping:
+                    result.anonymization_mapping = {
+                        mapping.original: mapping.anonymized
+                        for mapping in transcript_result.speaker_mappings.values()
+                    }
+
+                self._logger.info(
+                    "TRANSCRIPT_ANONYMIZED",
+                    speakers=transcript_result.speaker_count,
+                    replacements=transcript_result.total_replacements,
+                )
+
+                return transcript_result.anonymized_text
+
+        # Apply LLM-based anonymization for general documents
+        if use_llm:
+            try:
+                feature = AnonymizationFeature()
+                llm_result = await feature.execute(
+                    provider=self._provider,
+                    system_prompt="",
+                    text=text,
+                )
+
+                if llm_result.entities:
+                    result.anonymization_applied = True
+                    result.anonymization_type = "llm"
+
+                    if config.store_mapping:
+                        result.anonymization_mapping = llm_result.entity_mapping
+
+                    if llm_result.keywords_extracted:
+                        result.keywords_from_anonymization = llm_result.keywords_extracted
+
+                    self._logger.info(
+                        "LLM_ANONYMIZED",
+                        entities=len(llm_result.entities),
+                        keywords=len(llm_result.keywords_extracted),
+                    )
+
+                    return llm_result.anonymized_text
+
+            except Exception as e:
+                self._logger.error(
+                    "LLM_ANONYMIZATION_ERROR",
+                    error=str(e),
+                )
+                # Fall through to return original text
+
+        return text
 
     async def extract_themes(self, input_text: str) -> List[ExtractedTheme]:
         """
         Extract relevant themes from input text for each category.
+
+        For long documents, processes in chunks and deduplicates themes.
 
         Args:
             input_text: Markdown content from field input
 
         Returns:
             List of extracted themes with category assignments
+
+        Raises:
+            RuntimeError: If Ollama provider is not available
         """
-        themes = []
+        # Check Ollama availability before processing (fail fast)
+        if self._provider_name == "ollama":
+            if hasattr(self._provider, 'health_check'):
+                is_healthy = await self._provider.health_check()
+                if not is_healthy:
+                    self._logger.error(
+                        "PROVIDER_UNAVAILABLE",
+                        provider="ollama",
+                        host=getattr(self._provider, '_host', 'unknown'),
+                        hint="Is Ollama running? Try: ollama serve"
+                    )
+                    raise RuntimeError(
+                        "Ollama is not available. Please ensure Ollama is running (ollama serve) "
+                        "and the model is pulled (ollama pull mistral:latest)"
+                    )
+
+        # Chunk size for processing (characters)
+        # Most LLMs can handle 15-30k chars comfortably
+        CHUNK_SIZE = 15000
+        CHUNK_OVERLAP = 500  # Overlap to avoid cutting mid-sentence
+
         categories_config = self._themes_config.get("categories", {})
 
-        prompt = f"""Tu es un assistant qui analyse des documents municipaux pour la commune d'Audierne.
+        # If categories config is empty, use CATEGORIES as fallback
+        if not categories_config:
+            self._logger.warning("EMPTY_CATEGORIES_CONFIG", using_fallback=True)
+            categories_config = {cat: {"label": cat.replace("-", " ").title()} for cat in CATEGORIES}
 
-Analyse le texte suivant et identifie les thèmes pertinents pour chaque catégorie de contribution citoyenne.
+        # Split text into chunks if needed
+        chunks = self._split_into_chunks(input_text, CHUNK_SIZE, CHUNK_OVERLAP)
+        self._logger.info("CHUNKING", total_length=len(input_text), chunks=len(chunks))
+
+        all_themes = []
+
+        for i, chunk in enumerate(chunks):
+            chunk_themes = await self._extract_themes_from_chunk(
+                chunk, categories_config, chunk_index=i, total_chunks=len(chunks)
+            )
+            all_themes.extend(chunk_themes)
+
+        # Deduplicate themes by category + theme name
+        seen = set()
+        unique_themes = []
+        for theme in all_themes:
+            key = (theme.category, theme.theme.lower())
+            if key not in seen:
+                seen.add(key)
+                unique_themes.append(theme)
+
+        self._logger.info("THEMES_EXTRACTED", total=len(all_themes), unique=len(unique_themes))
+        return unique_themes
+
+    def _split_into_chunks(self, text: str, chunk_size: int, overlap: int) -> List[str]:
+        """Split text into overlapping chunks, trying to break at paragraph boundaries."""
+        if len(text) <= chunk_size:
+            return [text]
+
+        chunks = []
+        start = 0
+
+        while start < len(text):
+            end = start + chunk_size
+
+            # Try to find a paragraph break near the end
+            if end < len(text):
+                # Look for double newline (paragraph break) within last 500 chars
+                search_start = max(end - 500, start)
+                para_break = text.rfind("\n\n", search_start, end)
+                if para_break > start:
+                    end = para_break + 2  # Include the newlines
+
+            chunk = text[start:end].strip()
+            if chunk:
+                chunks.append(chunk)
+
+            # Move start, accounting for overlap
+            start = end - overlap if end < len(text) else len(text)
+
+        return chunks
+
+    async def _extract_themes_from_chunk(
+        self,
+        chunk: str,
+        categories_config: Dict[str, Any],
+        chunk_index: int = 0,
+        total_chunks: int = 1,
+    ) -> List[ExtractedTheme]:
+        """Extract themes from a single chunk of text."""
+        themes = []
+
+        # Build category labels for prompt
+        category_labels = {k: v.get("label", k) for k, v in categories_config.items()}
+
+        prompt = f"""Tu es un assistant qui analyse des documents municipaux pour la commune d'Audierne-Esquibien.
+
+Analyse le texte suivant et identifie les thèmes pertinents pour les catégories de contribution citoyenne.
+
+{"[PARTIE " + str(chunk_index + 1) + "/" + str(total_chunks) + "]" if total_chunks > 1 else ""}
 
 TEXTE À ANALYSER:
-{input_text[:4000]}  # Limit to avoid token overflow
+{chunk}
 
 CATÉGORIES DISPONIBLES:
-{json.dumps({k: v.get("label", k) for k, v in categories_config.items()}, ensure_ascii=False, indent=2)}
+{json.dumps(category_labels, ensure_ascii=False, indent=2)}
 
 Pour chaque thème identifié, réponds en JSON avec ce format:
 {{
   "themes": [
     {{
       "category": "economie",
-      "theme": "renovation_ecole",
-      "keywords": ["école", "budget", "travaux"],
-      "context": "extrait pertinent du texte"
+      "theme": "renovation_port",
+      "keywords": ["port", "rénovation", "tourisme"],
+      "context": "extrait pertinent du texte (max 200 caractères)"
     }}
   ]
 }}
 
-Identifie 3-5 thèmes principaux couvrant différentes catégories.
-Réponds UNIQUEMENT avec le JSON, sans explication."""
+Instructions:
+- Identifie 3-7 thèmes principaux couvrant différentes catégories
+- Utilise uniquement les catégories listées ci-dessus
+- Le "theme" doit être un identifiant court (snake_case)
+- Le "context" doit être un extrait direct du texte analysé
+- Réponds UNIQUEMENT avec le JSON valide, sans explication ni markdown"""
 
         try:
             messages = [Message(role="user", content=prompt)]
             response = await self._provider.complete(messages, json_mode=True)
             content = response.content.strip()
+
+            # Log raw response for debugging
+            self._logger.debug("LLM_RESPONSE", chunk=chunk_index, length=len(content))
 
             # Parse JSON response (provider may have already cleaned it)
             if "```json" in content:
@@ -219,22 +477,38 @@ Réponds UNIQUEMENT avec le JSON, sans explication."""
             elif "```" in content:
                 content = content.split("```")[1].split("```")[0]
 
+            # Clean potential issues
+            content = content.strip()
+
             data = json.loads(content)
 
             for theme_data in data.get("themes", []):
-                theme = ExtractedTheme(
-                    category=theme_data.get("category", ""),
-                    theme=theme_data.get("theme", ""),
-                    keywords=theme_data.get("keywords", []),
-                    context=theme_data.get("context", ""),
-                )
-                if theme.category in CATEGORIES:
+                raw_category = theme_data.get("category", "")
+                # Normalize category (remove accents, replace underscores)
+                category = _normalize_category(raw_category)
+                # Validate category is in allowed list
+                if category in CATEGORIES:
+                    theme = ExtractedTheme(
+                        category=category,
+                        theme=theme_data.get("theme", "unknown"),
+                        keywords=theme_data.get("keywords", []),
+                        context=theme_data.get("context", "")[:300],  # Limit context length
+                    )
                     themes.append(theme)
+                else:
+                    self._logger.warning(
+                        "INVALID_CATEGORY",
+                        raw=raw_category,
+                        normalized=category,
+                        chunk=chunk_index
+                    )
 
-            self._logger.info("THEMES_EXTRACTED", count=len(themes))
+            self._logger.info("CHUNK_THEMES", chunk=chunk_index, themes=len(themes))
 
+        except json.JSONDecodeError as e:
+            self._logger.error("JSON_PARSE_ERROR", chunk=chunk_index, error=str(e), response=content[:500])
         except Exception as e:
-            self._logger.error("THEME_EXTRACTION_ERROR", error=str(e))
+            self._logger.error("THEME_EXTRACTION_ERROR", chunk=chunk_index, error=str(e))
 
         return themes
 
@@ -364,6 +638,7 @@ Réponds UNIQUEMENT avec le JSON."""
         source_title: str = "",
         contributions_per_theme: int = 2,
         include_violations: bool = True,
+        anonymization_config: Optional[AnonymizationConfig] = None,
     ) -> FieldInputResult:
         """
         Process field input and generate themed contributions.
@@ -374,6 +649,7 @@ Réponds UNIQUEMENT avec le JSON."""
             source_title: Title of the source document
             contributions_per_theme: Number of contributions per extracted theme
             include_violations: Whether to include violation examples
+            anonymization_config: Configuration for PII anonymization (default: enabled, auto mode)
 
         Returns:
             FieldInputResult with generation statistics
@@ -390,8 +666,12 @@ Réponds UNIQUEMENT avec le JSON."""
             length=len(input_text),
         )
 
-        # Step 1: Extract themes
-        themes = await self.extract_themes(input_text)
+        # Step 0: Apply anonymization (before theme extraction)
+        anon_config = anonymization_config or AnonymizationConfig()
+        processed_text = await self._apply_anonymization(input_text, result, anon_config)
+
+        # Step 1: Extract themes (using anonymized text)
+        themes = await self.extract_themes(processed_text)
         result.themes = themes
         result.themes_extracted = len(themes)
         result.categories_covered = list(set(t.category for t in themes))
@@ -476,10 +756,11 @@ def process_field_input_sync(
     input_text: str,
     source_file: Optional[str] = None,
     source_title: str = "",
-    provider: ProviderType = "gemini",
+    provider: ProviderType = "ollama",
     model: Optional[str] = None,
     contributions_per_theme: int = 2,
     include_violations: bool = True,
+    anonymization_config: Optional[AnonymizationConfig] = None,
 ) -> FieldInputResult:
     """
     Synchronous wrapper for processing field input.
@@ -492,6 +773,7 @@ def process_field_input_sync(
         model: Optional model override
         contributions_per_theme: Contributions per theme
         include_violations: Include violation examples
+        anonymization_config: Configuration for PII anonymization
 
     Returns:
         FieldInputResult
@@ -504,5 +786,6 @@ def process_field_input_sync(
             source_title=source_title,
             contributions_per_theme=contributions_per_theme,
             include_violations=include_violations,
+            anonymization_config=anonymization_config,
         )
     )

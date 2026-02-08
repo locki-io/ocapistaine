@@ -13,7 +13,7 @@ Step 5: Save              -> Validate with Forseti 461 and store to Redis
 
 import streamlit as st
 
-from app.i18n import _, get_language
+from app.services.translations import _, get_language
 from app.agents.forseti import CATEGORIES
 from app.sidebar import get_selected_provider, get_model_id
 

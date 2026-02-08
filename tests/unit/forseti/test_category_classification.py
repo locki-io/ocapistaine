@@ -514,10 +514,10 @@ class TestCategoryEdgeCases:
 
         assert result.category in VALID_CATEGORIES
 
-    def test_preserves_current_category_on_error(
+    def test_preserves_category_on_error(
         self, classification_feature, mock_provider
     ):
-        """On error, preserves current category if provided."""
+        """On error, preserves category if provided."""
         mock_provider.complete.side_effect = Exception("API Error")
 
         result = run_async(
@@ -526,7 +526,7 @@ class TestCategoryEdgeCases:
                 system_prompt="You are Forseti 461...",
                 title="Test",
                 body="Test content",
-                current_category="logement",
+                category="logement",
             )
         )
 
@@ -552,7 +552,7 @@ class TestCategoryEdgeCases:
                 system_prompt="You are Forseti 461...",
                 title="Protection des oiseaux",
                 body="Les oiseaux migrateurs doivent être protégés.",
-                current_category="economie",  # Incorrect
+                category="economie",  # Incorrect
             )
         )
 

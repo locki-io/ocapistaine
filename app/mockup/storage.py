@@ -16,9 +16,9 @@ from typing import Optional, List, Dict, Any
 from dataclasses import dataclass, field, asdict
 
 from app.data.redis_client import redis_connection, get_redis_connection
-from app.services import AgentLogger
+from app.services.logging import MockupLogger
 
-_logger = AgentLogger("mockup_storage")
+_logger = MockupLogger("storage")
 
 
 # Redis key patterns for mockup storage
@@ -115,6 +115,12 @@ class ValidationRecord:
     trace_id: Optional[str] = None
     timestamp: str = field(default_factory=lambda: datetime.now().isoformat())
 
+    # GitHub-specific metadata (for issues from audierne2026/participons)
+    github_issue_id: Optional[int] = None
+    github_url: Optional[str] = None
+    github_user: Optional[str] = None
+    has_conforme_charte: bool = False
+
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for JSON storage."""
         return asdict(self)
@@ -185,7 +191,7 @@ class MockupStorage:
 
     def __init__(self):
         """Initialize storage manager."""
-        self._logger = AgentLogger("mockup_storage")
+        self._logger = MockupLogger("storage")
 
     def save_validation(self, record: ValidationRecord) -> bool:
         """
@@ -417,6 +423,58 @@ class MockupStorage:
             "accuracy": matches / len(with_expected) if with_expected else None,
             "sources": sources,
             "avg_confidence": sum(r.confidence for r in records) / len(records),
+        }
+
+    def get_source_counts(
+        self,
+        after_date: Optional[str] = None,
+        pending_only: bool = False,
+    ) -> Dict[str, Any]:
+        """
+        Get counts of records by source with optional filtering.
+
+        Args:
+            after_date: Only count records after this date (ISO format: YYYY-MM-DD)
+            pending_only: If True, only count records with confidence == 0
+
+        Returns:
+            Dict with total, pending, by_source counts
+        """
+        records = self.get_latest_validations(limit=10000)
+
+        # Filter by date if specified
+        if after_date:
+            records = [r for r in records if r.date >= after_date]
+
+        # Count totals
+        total = len(records)
+        pending = sum(1 for r in records if r.confidence == 0.0)
+
+        # Count by source
+        by_source = {}
+        pending_by_source = {}
+        for r in records:
+            source = r.source or "unknown"
+            by_source[source] = by_source.get(source, 0) + 1
+            if r.confidence == 0.0:
+                pending_by_source[source] = pending_by_source.get(source, 0) + 1
+
+        # Get date range
+        dates = [r.date for r in records if r.date]
+        min_date = min(dates) if dates else None
+        max_date = max(dates) if dates else None
+
+        return {
+            "total": total,
+            "pending": pending,
+            "validated": total - pending,
+            "by_source": by_source,
+            "pending_by_source": pending_by_source,
+            "date_range": {
+                "min": min_date,
+                "max": max_date,
+            },
+            "filter_after_date": after_date,
         }
 
     def clear_date(self, date_str: str) -> int:

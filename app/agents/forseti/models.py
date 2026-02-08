@@ -4,10 +4,24 @@ Forseti Agent Models
 Pydantic models for validation and classification results.
 """
 
+from enum import Enum
 from pydantic import BaseModel, Field
 
 # Import from central constants (single source of truth)
 from app.prompts.constants import CATEGORIES
+
+
+class EntityType(str, Enum):
+    """Type of entity detected for anonymization."""
+
+    PERSON = "person"
+    EMAIL = "email"
+    PHONE = "phone"
+    ADDRESS = "address"
+    ORGANIZATION = "organization"
+    # Not anonymized, but extracted as keywords
+    PLACE = "place"
+    INSTITUTION = "institution"
 
 # What the charter prohibits
 CHARTER_VIOLATIONS = [
@@ -158,3 +172,44 @@ class BatchResult(BaseModel):
     category: str = Field(default="economie")
     reasoning: str = Field(default="")
     confidence: float = Field(default=0.5)
+
+
+class DetectedEntity(BaseModel):
+    """A single PII entity detected in text."""
+
+    original: str = Field(description="Original text that was anonymized")
+    anonymized: str = Field(description="Anonymized replacement (e.g., [PERSONNE_1])")
+    entity_type: EntityType = Field(description="Type of entity")
+    start_pos: int | None = Field(
+        default=None, description="Start position in original text"
+    )
+    end_pos: int | None = Field(
+        default=None, description="End position in original text"
+    )
+
+
+class AnonymizationResult(BaseModel):
+    """Result of LLM-based document anonymization."""
+
+    original_text: str = Field(description="Original input text")
+    anonymized_text: str = Field(description="Text with PII replaced")
+    entities: list[DetectedEntity] = Field(
+        default_factory=list,
+        description="List of detected and anonymized entities",
+    )
+    entity_mapping: dict[str, str] = Field(
+        default_factory=dict,
+        description="Mapping of original text to anonymized placeholders",
+    )
+    keywords_extracted: list[str] = Field(
+        default_factory=list,
+        description="Non-PII keywords extracted (organizations, places)",
+    )
+    reasoning: str = Field(
+        default="",
+        description="Explanation of anonymization decisions",
+    )
+
+    def to_dict(self) -> dict:
+        """Convert to dictionary for JSON serialization."""
+        return self.model_dump()

@@ -123,7 +123,7 @@ class PromptRegistry:
             self._opik_client = opik.Opik()
             _logger.info("OPIK_INIT_SUCCESS")
         except ImportError:
-            _logger.warning("OPIK_NOT_INSTALLED", message="pip install opik")
+            _logger.warning("OPIK_NOT_INSTALLED: pip install opik")
             self._opik_client = None
         except Exception as e:
             _logger.warning("OPIK_INIT_FAILED", error=str(e))

@@ -7,6 +7,7 @@ User identification via single UUID (cookie-based).
 """
 
 import asyncio
+import json
 import time
 
 import requests
@@ -19,6 +20,32 @@ st.set_page_config(
     layout="wide",
 )
 
+
+@st.cache_resource
+def _init_scheduler():
+    """Initialize the APScheduler once per Streamlit server session."""
+    try:
+        from app.services.scheduler import start_scheduler, scheduler
+
+        # Only start if not already running
+        if scheduler is None or not scheduler.running:
+            # Run the async start_scheduler in an event loop
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            loop.run_until_complete(start_scheduler())
+
+        # Return scheduler reference to keep it alive
+        return scheduler
+    except Exception as e:
+        print(f"Scheduler initialization error: {e}")
+        return None
+
+
+# Start scheduler on app load
+_scheduler = _init_scheduler()
+if _scheduler is None:
+    print("Warning: Scheduler failed to initialize")
+
 # Authentication check (before loading any other content)
 from app.auth import check_password
 if not check_password():
@@ -26,8 +53,9 @@ if not check_password():
 
 from app.sidebar import sidebar_setup, get_user_id, get_selected_provider, get_model_id
 from app.agents.forseti import ForsetiAgent
+from app.agents.forseti.features import AnonymizationFeature
 from app.providers import get_provider
-from app.i18n import _
+from app.services.translations import _
 from app.services import PresentationLogger, ServiceLogger, AgentLogger
 from app.mockup.batch_view import batch_validation_view
 from app.auto_contribution import autocontribution_view
@@ -103,6 +131,7 @@ def main():
         "mockup": ("🧪", "tab_mockup"),
         "autocontrib": ("✨", "tab_autocontrib"),
         "documents": ("📄", "tab_documents"),
+        "admin": ("⚙️", "tab_admin"),
         "about": ("ℹ️", "tab_about"),
     }
     TAB_KEYS = list(TAB_CONFIG.keys())
@@ -141,6 +170,10 @@ def main():
         documents_view(user_id)
     elif current_tab == "mockup":
         mockup_view(user_id)
+    elif current_tab == "admin":
+        from app.admin import scheduler_dashboard_view
+
+        scheduler_dashboard_view(user_id)
     elif current_tab == "about":
         about_view()
 
@@ -283,6 +316,17 @@ def _validate_with_forseti(
                         "assigned_to_ocapistaine": False,
                         "reason": f"HTTP {label_response.status_code}",
                     }
+            except json.JSONDecodeError as e:
+                _agent_logger.warning(
+                    "N8N_CHARTER_WEBHOOK_INVALID_JSON",
+                    issue_id=issue_id,
+                    error=str(e),
+                )
+                n8n_action = {
+                    "success": False,
+                    "assigned_to_ocapistaine": False,
+                    "reason": "N8N returned invalid response",
+                }
             except requests.RequestException as e:
                 _agent_logger.warning(
                     "N8N_CHARTER_WEBHOOK_FAILED",
@@ -379,6 +423,169 @@ def _display_forseti_result(result: dict):
         else:
             reason = n8n_action.get("reason", "")
             st.info(f"ℹ️ {reason}")
+
+
+def _classify_with_forseti(
+    title: str, body: str, category: str | None, user_id: str
+) -> dict:
+    """Classify a contribution with Forseti agent."""
+    start_time = time.time()
+
+    _agent_logger.log_agent_start(
+        task="classify_contribution",
+        input_data=title,
+    )
+
+    try:
+        agent = get_forseti_agent()
+        result = asyncio.run(agent.classify_category(title=title, body=body, category=category))
+
+        latency_ms = (time.time() - start_time) * 1000
+
+        _agent_logger.log_agent_complete(
+            task="classify_contribution",
+            success=True,
+            latency_ms=latency_ms,
+            output_summary=f"category={result.category}, confidence={result.confidence:.2f}",
+        )
+
+        return {
+            "success": True,
+            "result_type": "classification",
+            "category": result.category,
+            "reasoning": result.reasoning,
+            "confidence": result.confidence,
+        }
+    except Exception as e:
+        latency_ms = (time.time() - start_time) * 1000
+
+        _agent_logger.log_agent_complete(
+            task="classify_contribution",
+            success=False,
+            latency_ms=latency_ms,
+            output_summary=str(e)[:50],
+        )
+
+        return {"success": False, "result_type": "classification", "error": str(e)}
+
+
+def _anonymize_with_forseti(
+    title: str, body: str, user_id: str
+) -> dict:
+    """Anonymize a contribution with Forseti anonymization feature."""
+    start_time = time.time()
+
+    _agent_logger.log_agent_start(
+        task="anonymize_contribution",
+        input_data=title,
+    )
+
+    try:
+        # Combine title and body for anonymization
+        text = f"{title}\n\n{body}"
+
+        # Get provider and run anonymization feature
+        provider_name = get_selected_provider()
+        model_id = get_model_id()
+        provider = get_provider(provider_name, model=model_id, cache=False)
+
+        feature = AnonymizationFeature()
+        result = asyncio.run(feature.execute(provider=provider, system_prompt="", text=text))
+
+        latency_ms = (time.time() - start_time) * 1000
+
+        _agent_logger.log_agent_complete(
+            task="anonymize_contribution",
+            success=True,
+            latency_ms=latency_ms,
+            output_summary=f"entities={len(result.entities)}, keywords={len(result.keywords_extracted)}",
+        )
+
+        return {
+            "success": True,
+            "result_type": "anonymization",
+            "anonymized_text": result.anonymized_text,
+            "entities": [
+                {"original": e.original, "anonymized": e.anonymized, "type": e.entity_type.value}
+                for e in result.entities
+            ],
+            "entity_mapping": result.entity_mapping,
+            "keywords_extracted": result.keywords_extracted,
+            "reasoning": result.reasoning,
+        }
+    except Exception as e:
+        latency_ms = (time.time() - start_time) * 1000
+
+        _agent_logger.log_agent_complete(
+            task="anonymize_contribution",
+            success=False,
+            latency_ms=latency_ms,
+            output_summary=str(e)[:50],
+        )
+
+        return {"success": False, "result_type": "anonymization", "error": str(e)}
+
+
+def _display_classification_result(result: dict):
+    """Display Forseti classification result."""
+    st.markdown("---")
+    st.markdown(f"**📊 {_('forseti_classification_title')}**")
+
+    if not result.get("success"):
+        st.error(
+            f"{_('forseti_error')}: {result.get('error', _('forseti_unknown_error'))}"
+        )
+        return
+
+    # Category
+    category = result.get("category")
+    if category:
+        st.success(f"📁 {_('forseti_category')}: **{category.capitalize()}**")
+
+    # Confidence
+    confidence = result.get("confidence", 0)
+    st.progress(confidence, text=f"{_('forseti_confidence')}: {confidence:.0%}")
+
+    # Reasoning (collapsed)
+    with st.expander(f"💭 {_('forseti_reasoning')}", expanded=False):
+        st.markdown(result.get("reasoning", ""))
+
+
+def _display_anonymization_result(result: dict):
+    """Display Forseti anonymization result."""
+    st.markdown("---")
+    st.markdown(f"**🔒 {_('forseti_anonymization_title')}**")
+
+    if not result.get("success"):
+        st.error(
+            f"{_('forseti_error')}: {result.get('error', _('forseti_unknown_error'))}"
+        )
+        return
+
+    # Entities found
+    entities = result.get("entities", [])
+    if entities:
+        st.metric(_("forseti_entities_found"), len(entities))
+        with st.expander("🔍 Entity mapping", expanded=False):
+            for e in entities:
+                st.markdown(f"- `{e['original']}` → `{e['anonymized']}` ({e['type']})")
+
+    # Keywords extracted
+    keywords = result.get("keywords_extracted", [])
+    if keywords:
+        st.markdown(f"**{_('forseti_keywords_extracted')}:** {', '.join(keywords)}")
+
+    # Anonymized preview
+    anonymized_text = result.get("anonymized_text", "")
+    if anonymized_text:
+        with st.expander(f"📄 {_('forseti_anonymized_preview')}", expanded=True):
+            st.markdown(anonymized_text[:500] + ("..." if len(anonymized_text) > 500 else ""))
+
+    # Reasoning (collapsed)
+    reasoning = result.get("reasoning")
+    if reasoning:
+        with st.expander(f"💭 {_('forseti_reasoning')}", expanded=False):
+            st.markdown(reasoning)
 
 
 def contributions_view(user_id: str):
@@ -487,8 +694,8 @@ def contributions_view(user_id: str):
             if body:
                 st.markdown(body[:500] + ("..." if len(body) > 500 else ""))
 
-            # Actions row
-            action_col1, action_col2 = st.columns([1, 3])
+            # Actions row - Forseti features
+            action_col1, action_col2, action_col3, action_col4 = st.columns([1, 1, 1, 2])
 
             with action_col1:
                 # Forseti validation button
@@ -508,16 +715,62 @@ def contributions_view(user_id: str):
                         st.session_state[f"forseti_result_{issue_id}"] = result
 
             with action_col2:
+                # Forseti classification button
+                if st.button(
+                    f"📊 {_('contributions_classify')}",
+                    key=f"classify_{issue_id}",
+                ):
+                    _ui_logger.log_user_action(
+                        action="classify_contribution",
+                        user_id=user_id,
+                        details=f"issue_id={issue_id}",
+                    )
+                    with st.spinner(_("forseti_classifying")):
+                        result = _classify_with_forseti(
+                            title, body, category, user_id
+                        )
+                        st.session_state[f"classify_result_{issue_id}"] = result
+
+            with action_col3:
+                # Forseti anonymization button
+                if st.button(
+                    f"🔒 {_('contributions_anonymize')}",
+                    key=f"anonymize_{issue_id}",
+                ):
+                    _ui_logger.log_user_action(
+                        action="anonymize_contribution",
+                        user_id=user_id,
+                        details=f"issue_id={issue_id}",
+                    )
+                    with st.spinner(_("forseti_anonymizing")):
+                        result = _anonymize_with_forseti(
+                            title, body, user_id
+                        )
+                        st.session_state[f"anonymize_result_{issue_id}"] = result
+
+            with action_col4:
                 # Link to GitHub
                 html_url = issue.get("html_url")
                 if html_url:
                     st.markdown(f"[{_('contributions_view_github')}]({html_url})")
 
-            # Display Forseti result if available
+            # Display Forseti validation result if available
             result_key = f"forseti_result_{issue_id}"
             if result_key in st.session_state:
                 result = st.session_state[result_key]
                 _display_forseti_result(result)
+
+            # Display classification result if available
+            classify_key = f"classify_result_{issue_id}"
+            if classify_key in st.session_state:
+                result = st.session_state[classify_key]
+                _display_classification_result(result)
+
+            # Display anonymization result if available
+            anonymize_key = f"anonymize_result_{issue_id}"
+            if anonymize_key in st.session_state:
+                result = st.session_state[anonymize_key]
+                _display_anonymization_result(result)
 
 
 def documents_view(user_id: str):

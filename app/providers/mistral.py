@@ -39,9 +39,9 @@ class MistralProvider(LLMProvider):
             )
 
         config = get_config()
-        key = api_key or config.mistral_api_key
+        key = api_key or config.effective_mistral_key
         if not key:
-            raise ValueError("MISTRAL_API_KEY not found in environment")
+            raise ValueError("MISTRAL_API_KEY or MISTRAL_STUDIO_API_KEY not found in environment")
 
         self._client = Mistral(api_key=key)
         self._model_name = model or config.mistral_model

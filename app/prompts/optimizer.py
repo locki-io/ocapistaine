@@ -146,7 +146,7 @@ def create_charter_metric() -> Callable:
 
 def create_validation_task(
     prompt_template: str,
-    provider_name: str = "gemini",
+    provider_name: str = "ollama",
     model: Optional[str] = None,
 ) -> Callable:
     """
@@ -312,7 +312,7 @@ def run_prompt_experiment(
     prompt_name: str,
     dataset_name: str,
     experiment_name: Optional[str] = None,
-    provider_name: str = "gemini",
+    provider_name: str = "ollama",
     model: Optional[str] = None,
 ) -> Dict[str, Any]:
     """

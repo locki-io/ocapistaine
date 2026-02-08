@@ -39,7 +39,7 @@ class CategoryClassificationFeature(FeatureBase):
         system_prompt: str,
         title: str,
         body: str,
-        current_category: str | None = None,
+        category: str | None = None,
         **kwargs,
     ) -> ClassificationResult:
         """
@@ -50,21 +50,21 @@ class CategoryClassificationFeature(FeatureBase):
             system_prompt: Agent persona prompt.
             title: Contribution title.
             body: Contribution body.
-            current_category: Optional existing category for reference.
+            category: Optional existing category for reference.
 
         Returns:
             ClassificationResult with assigned category.
         """
-        current_category_line = (
-            f"CURRENT CATEGORY: {current_category}"
-            if current_category
+        category_line = (
+            f"CATEGORY: {category}"
+            if category
             else ""
         )
 
         user_prompt = self.format_prompt(
             title=title,
             body=body,
-            current_category_line=current_category_line,
+            category_line=category_line,
         )
 
         try:
@@ -87,7 +87,7 @@ class CategoryClassificationFeature(FeatureBase):
             )
         except Exception as e:
             return ClassificationResult(
-                category=current_category or CATEGORIES[0],
+                category=category or CATEGORIES[0],
                 reasoning=f"Classification error: {e}",
                 confidence=0.5,
             )
