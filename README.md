@@ -1,10 +1,29 @@
 # Ò Capistaine
 
-AI-powered RAG system for civic transparency in Audierne, France.
+**Making local democracy accessible through AI — because understanding your town council shouldn't require a law degree.**
+
+> *"This year, I will finally understand my local elections and get involved as a citizen."* — Our 2026 resolution
+
+[![Demo Video](https://img.shields.io/badge/Demo-YouTube-red?logo=youtube)](https://youtu.be/EAZiVUMtfp8)
+[![Documentation](https://img.shields.io/badge/Docs-docs.locki.io-blue)](https://docs.locki.io)
+[![Encode Hackathon](https://img.shields.io/badge/Encode-Hackathon%202026-purple)](https://www.encode.club/)
+
+## 🎬 Demo
+
+**[Watch the 3-minute demo →](https://youtu.be/EAZiVUMtfp8)**
 
 ## Overview
 
-Ò Capistaine crawls, processes, and makes accessible 6 years of municipal documents (arrêtés, délibérations, commission reports) through a conversational AI interface. It supports the [audierne2026.fr](https://audierne2026.fr) participatory democracy platform.
+Ò Capistaine is an AI-powered civic transparency platform that crawls, processes, and makes accessible 6 years of municipal documents (arrêtés, délibérations, commission reports) for Audierne, France. It serves as a training ground for civic AI agents that help citizens engage with local democracy.
+
+**Key Features:**
+- 🔍 **Document Intelligence**: 4,000+ municipal documents indexed and searchable
+- 🤖 **Forseti 461**: AI agent for charter validation, category classification, and PII anonymization
+- 📊 **LLM Observability**: Full tracing via Opik with cost tracking and evaluation
+- 🔗 **Multi-channel Integration**: Facebook, email, chatbot via [Vaettir N8N workflows](https://github.com/locki-io/vaettir)
+- 🌐 **Bilingual**: French/English interface
+
+The platform supports [audierne2026.fr](https://audierne2026.fr), a real participatory democracy initiative.
 
 ## Tech Stack
 
@@ -172,9 +191,11 @@ git push
 
 ## Related Repositories
 
-- **[Vaettir](https://github.com/locki-io/vaettir)** - N8N workflows for decision-making
-- **[audierne2026/participons](https://github.com/audierne2026/participons)** - Public participation platform (Jekyll)
-- **[docs.locki.io](https://github.com/locki-io/docs.locki.io)** - Docusaurus documentation
+| Repository | Status | Description |
+|------------|--------|-------------|
+| **[Vaettir](https://github.com/locki-io/vaettir)** | ✅ Operational | N8N workflows connecting OCapistaine to audierne2026, Facebook, email |
+| **[docs.locki.io](https://docs.locki.io)** | ✅ Live | Technical documentation + [hackathon journey blog](https://docs.locki.io/blog) |
+| **[audierne2026/participons](https://github.com/audierne2026/participons)** | ✅ Live | Public participation platform (Jekyll) |
 
 ## Authentication
 
@@ -243,3 +264,18 @@ See [LICENSE](LICENSE) and [LICENSE-ELv2](LICENSE-ELv2) for full terms.
 ### Hackathon Note
 
 This structure complies with hackathon open-source requirements while protecting locki.io engineering IP for future commercialization.
+
+---
+
+## 🏆 Encode Hackathon 2026
+
+**Ò Capistaine** was built for the [Encode AI Hackathon 2026](https://www.encode.club/).
+
+| Resource | Link |
+|----------|------|
+| 🎬 Demo Video | [youtu.be/EAZiVUMtfp8](https://youtu.be/EAZiVUMtfp8) |
+| 📚 Documentation | [docs.locki.io](https://docs.locki.io) |
+| 📝 Hackathon Journey | [Blog posts](https://docs.locki.io/blog) |
+| 📊 Project Board | [GitHub Project](https://github.com/orgs/locki-io/projects/2) |
+
+*Built with ❤️ for local democracy in Audierne, Brittany, France.*
