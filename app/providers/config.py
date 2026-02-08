@@ -121,6 +121,15 @@ OLLAMA_MODEL_IDS = {k: v["name"] for k, v in OLLAMA_MODELS.items()}
 # PROVIDER UI CONFIGURATION
 # =============================================================================
 PROVIDER_UI_CONFIG = {
+    "openai": {
+        "name_key": "provider_openai",
+        "models": {
+            "gpt-4o-mini": "GPT-4o Mini (fast, cheap)",
+            "gpt-4o": "GPT-4o (best balance)",
+            "gpt-3.5-turbo": "GPT-3.5 Turbo (legacy)",
+        },
+        "default": "gpt-4o-mini",
+    },
     "gemini": {
         "name_key": "provider_google_gemini",
         "models": {
@@ -145,26 +154,12 @@ PROVIDER_UI_CONFIG = {
         },
         "default": "small",
     },
-    "ollama": {
-        "name_key": "provider_ollama",
-        "models": {
-            "deepseek-r1:7b": "DeepSeek R1 7B (reasoning)",
-            "mistral:7b": "Mistral 7B (balanced)",
-            "mistral:latest": "Mistral latest",
-            "llama3.2:latest": "Llama 3.2 latest",
-            "orca-mini:latest": "Orca Mini (light)",
-        },
-        "default": "deepseek-r1:7b",
-    },
-    "openai": {
-        "name_key": "provider_openai",
-        "models": {
-            "gpt-4o-mini": "GPT-4o Mini (fast, cheap)",
-            "gpt-4o": "GPT-4o (best balance)",
-            "gpt-3.5-turbo": "GPT-3.5 Turbo (legacy)",
-        },
-        "default": "gpt-4o-mini",
-    },
+    # Ollama disabled for cloud deployment (requires local installation)
+    # "ollama": {
+    #     "name_key": "provider_ollama",
+    #     "models": {...},
+    #     "default": "deepseek-r1:7b",
+    # },
 }
 
 
@@ -290,8 +285,8 @@ def get_recommended_model(
 class ProviderConfig(BaseSettings):
     """Configuration for all LLM providers."""
 
-    # Default provider selection (ollama for local-first development)
-    default_provider: str = Field(default="ollama", alias="DEFAULT_PROVIDER")
+    # Default provider selection (openai for cloud deployment)
+    default_provider: str = Field(default="openai", alias="DEFAULT_PROVIDER")
 
     # Google Gemini
     google_api_key: str | None = Field(default=None, alias="GOOGLE_API_KEY")

@@ -14,6 +14,7 @@
   "sidebar_footer_hackathon": "Encode Hackathon 2026",
   "sidebar_footer_license": "Apache 2.0 + ELv2",
 
+  "provider_openai": "OpenAI",
   "provider_google_gemini": "Google Gemini",
   "provider_anthropic_claude": "Anthropic Claude",
   "provider_mistral_ai": "Mistral AI",

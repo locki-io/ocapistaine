@@ -1,0 +1,58 @@
+# Git
+.git
+.gitignore
+.gitmodules
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv
+venv
+ENV
+.eggs
+*.egg-info
+.pytest_cache
+.coverage
+htmlcov
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# Logs (mounted as volume)
+logs/
+*.log
+
+# Environment (secrets)
+.env
+.env.local
+.env.*.local
+.streamlit/secrets.toml
+
+# Documentation (not needed in runtime)
+docs/
+docs.legacy/
+*.md
+!README.md
+
+# Tests
+tests/
+*_test.py
+test_*.py
+
+# Build artifacts
+dist/
+build/
+
+# Large data files (mounted as volume)
+ext_data/
+
+# Misc
+.DS_Store
+Thumbs.db
+*.bak

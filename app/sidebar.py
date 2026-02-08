@@ -193,9 +193,9 @@ def _display_provider_selector(user_id: str) -> None:
                 model=settings.model,
             )
         else:
-            # Default to Ollama
-            st.session_state.llm_provider = "ollama"
-            st.session_state.llm_model = "mistral"
+            # Default to OpenAI (cloud-friendly)
+            st.session_state.llm_provider = "openai"
+            st.session_state.llm_model = "gpt-4o-mini"
 
     # Set default user ID for background tasks
     set_default_user_id(user_id)
