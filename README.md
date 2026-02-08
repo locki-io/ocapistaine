@@ -138,9 +138,9 @@ ocapistaine/
 ```
 
 For detailed architecture, see **[docs.locki.io](https://docs.locki.io)**:
-- [Application Overview](https://docs.locki.io/docs/app/README) — Streamlit UI, Forseti agent, scheduler
+- [Application](https://docs.locki.io/docs/app) — Streamlit UI, Forseti agent, scheduler
 - [Architecture](https://docs.locki.io/docs/ARCHITECTURE) — System design and data flow
-- [Orchestration](https://docs.locki.io/docs/orchestration/INDEX) — Docker, N8N, observability
+- [Orchestration](https://docs.locki.io/docs/orchestration) — Docker, N8N, observability
 
 ## Working with Submodules
 
