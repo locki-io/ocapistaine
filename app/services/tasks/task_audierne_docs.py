@@ -257,7 +257,7 @@ def task_audierne_docs(
         if not all_docs:
             result["status"] = "skipped"
             result["reason"] = "no_docs_found"
-            logger.log_skipped(reason="no_docs_found")
+            logger.log_skipped(reason="no_docs_found", date_string=date_string or "", task_id=task_id)
             return result
 
         # Get next doc to process
@@ -290,7 +290,7 @@ def task_audierne_docs(
                 result["status"] = "skipped"
                 result["reason"] = "ollama_locked"
                 result["warnings"].append("Ollama is locked by another task")
-                logger.log_skipped(reason="ollama_locked")
+                logger.log_skipped(reason="ollama_locked", date_string=date_string or "", task_id=task_id)
                 return result
 
         # Read document content

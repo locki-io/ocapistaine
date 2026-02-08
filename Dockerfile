@@ -37,6 +37,17 @@ RUN poetry install --only main --no-root
 # Copy application code
 COPY . .
 
+# Fetch docs submodule if not present (Render doesn't init submodules)
+# docs/ contains audierne2026 documents needed for scheduled tasks
+RUN if [ ! -d docs/docs/audierne2026 ] || [ -z "$(ls -A docs/docs/audierne2026 2>/dev/null)" ]; then \
+    echo "Fetching docs submodule..." && \
+    rm -rf docs && \
+    git clone --depth 1 https://github.com/locki-io/docs.locki.io.git docs && \
+    echo "Docs submodule fetched successfully"; \
+    else \
+    echo "Docs submodule already present"; \
+    fi
+
 # Create logs directory
 RUN mkdir -p /app/logs
 
