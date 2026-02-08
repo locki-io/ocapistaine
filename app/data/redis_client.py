@@ -23,19 +23,32 @@ def get_redis_pool() -> redis.ConnectionPool:
     """
     Get or create Redis connection pool.
 
-    Uses REDIS_HOST/REDIS_PORT/REDIS_DB from environment or defaults to localhost.
+    Uses REDIS_HOST/REDIS_PORT/REDIS_PASSWORD/REDIS_DB from environment.
+    Supports Upstash and other cloud Redis providers.
     """
     global _redis_pool
 
     if _redis_pool is None:
         redis_host = os.getenv("REDIS_HOST", "localhost")
         redis_port = os.getenv("REDIS_PORT", "6379")
+        redis_password = os.getenv("REDIS_PASSWORD", "")
         redis_db = os.getenv("REDIS_DB", "5")
-        redis_url = f"redis://{redis_host}:{redis_port}/{redis_db}"
+
+        # Build URL with optional password
+        if redis_password:
+            redis_url = f"redis://default:{redis_password}@{redis_host}:{redis_port}/{redis_db}"
+        else:
+            redis_url = f"redis://{redis_host}:{redis_port}/{redis_db}"
+
+        # Upstash requires SSL
+        use_ssl = "upstash" in redis_host.lower()
+
         _redis_pool = redis.ConnectionPool.from_url(
             redis_url,
             decode_responses=True,
             max_connections=10,
+            ssl=use_ssl,
+            ssl_cert_reqs=None if use_ssl else None,
         )
 
     return _redis_pool

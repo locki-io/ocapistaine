@@ -26,17 +26,26 @@ def get_scheduler_redis() -> redis.Redis:
     Get Redis connection for scheduler locks and success keys.
 
     Uses dedicated database (db=6) to isolate scheduler state from app data.
+    Supports Upstash and other cloud Redis providers with password auth.
 
     Returns:
         redis.Redis: Redis client connected to scheduler database
     """
     redis_host = os.getenv("REDIS_HOST", "localhost")
     redis_port = os.getenv("REDIS_PORT", "6379")
+    redis_password = os.getenv("REDIS_PASSWORD", "") or None
+
+    # Upstash requires SSL
+    use_ssl = "upstash" in redis_host.lower()
+
     return redis.Redis(
         host=redis_host,
         port=int(redis_port),
+        password=redis_password,
         db=REDIS_DB_SCHEDULER,
         decode_responses=True,
+        ssl=use_ssl,
+        ssl_cert_reqs=None if use_ssl else None,
     )
 
 

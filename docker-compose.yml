@@ -10,9 +10,10 @@ services:
       - "8502:8502"  # Streamlit UI
       - "8050:8050"  # FastAPI backend
     environment:
-      # Redis connection
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
+      # Redis connection (use Upstash or local)
+      - REDIS_HOST=${REDIS_HOST:-redis}
+      - REDIS_PORT=${REDIS_PORT:-6379}
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-}
       # Authentication (optional - leave empty to disable)
       - STREAMLIT_AUTH_PASSWORD=${STREAMLIT_AUTH_PASSWORD:-}
       # Streamlit CORS settings

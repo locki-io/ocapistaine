@@ -224,10 +224,18 @@ def _get_task_provider_config() -> dict:
 def _display_todays_tasks():
     """Show task completion status for today."""
     from app.services.scheduler.utils import get_scheduler_redis
+    import redis as redis_lib
 
     st.markdown(f"### {_('admin_todays_tasks')}")
 
-    redis_conn = get_scheduler_redis()
+    try:
+        redis_conn = get_scheduler_redis()
+        redis_conn.ping()  # Test connection
+    except (redis_lib.exceptions.ConnectionError, redis_lib.exceptions.TimeoutError) as e:
+        st.warning("Redis not available - scheduler status unavailable")
+        st.caption(f"Connect Redis via REDIS_HOST env var. Error: {str(e)[:50]}")
+        return
+
     today = datetime.now().strftime("%Y%m%d")
 
     tasks = [
