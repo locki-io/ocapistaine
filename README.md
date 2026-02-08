@@ -2,7 +2,7 @@
 
 **Making local democracy accessible through AI — because understanding your town council shouldn't require a law degree.**
 
-> *"This year, I will finally understand my local elections and get involved as a citizen."* — Our 2026 resolution
+> _"This year, I will finally understand my local elections and get involved as a citizen."_ — Our 2026 resolution
 
 [![Demo Video](https://img.shields.io/badge/Demo-YouTube-red?logo=youtube)](https://youtu.be/EAZiVUMtfp8)
 [![Documentation](https://img.shields.io/badge/Docs-docs.locki.io-blue)](https://docs.locki.io)
@@ -23,6 +23,7 @@
 Ò Capistaine is an AI-powered civic transparency platform that crawls, processes, and makes accessible 6 years of municipal documents (arrêtés, délibérations, commission reports) for Audierne, France. It serves as a training ground for civic AI agents that help citizens engage with local democracy.
 
 **Key Features:**
+
 - 🤖 **Forseti 461 Agent**: Charter validation, category classification, wording correction
 - 🔒 **PII Anonymization**: Regex for transcripts (Speaker_1, Speaker_2...), LLM for general docs
 - 🔄 **Provider Failover**: Multi-LLM support (OpenAI, Gemini, Claude, Mistral, Ollama) with automatic failover
@@ -33,6 +34,24 @@
 - 🌐 **Bilingual Interface**: French/English with real-time switching
 
 The platform supports [audierne2026.fr](https://audierne2026.fr), a real participatory democracy initiative.
+
+## For Judges & Evaluators
+
+**New to OCapistaine?** Start here:
+
+| Resource                                                                | Description                                   |
+| ----------------------------------------------------------------------- | --------------------------------------------- |
+| [Getting Started](https://docs.locki.io/docs/usage/getting-started)     | Overview of the platform and quick start      |
+| [Judge Trial Guide](https://docs.locki.io/docs/usage/judge-trial-guide) | Step-by-step guide to test Forseti validation |
+
+**Quick Test:**
+
+1. Open the [Streamlit app](https://ocapistaine.onrender.com)
+2. Select **OpenAI** provider in sidebar
+3. Go to **Batch Validation** → **Single Contribution Test**
+4. Click **Random** to load a real contribution (with English translation)
+5. Click **Generate Variations** to create test cases
+6. **Validate** each to see Forseti in action
 
 ## Tech Stack
 
@@ -75,6 +94,7 @@ The primary way to start the OCapistaine interface is via the unified startup sc
 ```
 
 **Access Point:**
+
 - **Local**: [http://localhost:8502](http://localhost:8502)
 
 ### 2. Start the API Backend (Optional)
@@ -92,22 +112,23 @@ Access API documentation at [http://localhost:8050/docs](http://localhost:8050/d
 
 **Tasks** (Cmd+Shift+P → "Tasks: Run Task"):
 
-| Task | Description |
-|------|-------------|
-| 🚀 Start OCapistaine (Local) | One-click local startup |
-| 🛑 Stop OCapistaine | Stop the Streamlit process |
-| 📊 Check Status | View running services status |
-| 🔗 Open in Browser | Open http://localhost:8502 |
+| Task                         | Description                  |
+| ---------------------------- | ---------------------------- |
+| 🚀 Start OCapistaine (Local) | One-click local startup      |
+| 🛑 Stop OCapistaine          | Stop the Streamlit process   |
+| 📊 Check Status              | View running services status |
+| 🔗 Open in Browser           | Open http://localhost:8502   |
 
 **Debug Configurations** (F5 or Run & Debug panel):
 
-| Configuration | Description |
-|---------------|-------------|
-| Run Uvicorn (Poetry) | Start FastAPI server on port 8050 with debugger |
-| Run Streamlit (Debug) | Start Streamlit UI on port 8502 with debugger |
-| Full Stack (Uvicorn + Streamlit) | Both services with debugging |
+| Configuration                    | Description                                     |
+| -------------------------------- | ----------------------------------------------- |
+| Run Uvicorn (Poetry)             | Start FastAPI server on port 8050 with debugger |
+| Run Streamlit (Debug)            | Start Streamlit UI on port 8502 with debugger   |
+| Full Stack (Uvicorn + Streamlit) | Both services with debugging                    |
 
 **Quick Start:**
+
 - Press `Cmd+Shift+B` to run the default build task (starts everything)
 - Or use the Run & Debug panel to select a configuration
 
@@ -147,6 +168,7 @@ ocapistaine/
 ```
 
 For detailed architecture, see **[docs.locki.io](https://docs.locki.io)**:
+
 - [Application](https://docs.locki.io/docs/app) — Streamlit UI, Forseti agent, scheduler
 - [Architecture](https://docs.locki.io/docs/ARCHITECTURE) — System design and data flow
 - [Orchestration](https://docs.locki.io/docs/orchestration) — Docker, N8N, observability
@@ -201,11 +223,11 @@ git push
 
 ## Related Repositories
 
-| Repository | Status | Description |
-|------------|--------|-------------|
-| **[Vaettir](https://github.com/locki-io/vaettir)** | ✅ Operational | N8N workflows connecting OCapistaine to audierne2026, Facebook, email |
-| **[docs.locki.io](https://docs.locki.io)** | ✅ Live | Technical documentation + [hackathon journey blog](https://docs.locki.io/blog) |
-| **[audierne2026/participons](https://github.com/audierne2026/participons)** | ✅ Live | Public participation platform (Jekyll) |
+| Repository                                                                  | Status         | Description                                                                    |
+| --------------------------------------------------------------------------- | -------------- | ------------------------------------------------------------------------------ |
+| **[Vaettir](https://github.com/locki-io/vaettir)**                          | ✅ Operational | N8N workflows connecting OCapistaine to audierne2026, Facebook, email          |
+| **[docs.locki.io](https://docs.locki.io)**                                  | ✅ Live        | Technical documentation + [hackathon journey blog](https://docs.locki.io/blog) |
+| **[audierne2026/participons](https://github.com/audierne2026/participons)** | ✅ Live        | Public participation platform (Jekyll)                                         |
 
 ## Authentication
 
@@ -217,6 +239,7 @@ password = "your-secret-password"
 ```
 
 **Setup:**
+
 ```bash
 # Copy template
 cp .streamlit/secrets.toml.example .streamlit/secrets.toml
@@ -226,6 +249,7 @@ nano .streamlit/secrets.toml
 ```
 
 **For hashed passwords** (more secure):
+
 ```bash
 poetry run python -c "from app.auth import hash_password; print(hash_password('your-password'))"
 # Then use: password = "sha256:..."
@@ -235,13 +259,13 @@ poetry run python -c "from app.auth import hash_password; print(hash_password('y
 
 ## Environment Variables
 
-| Variable            | Description                        | Example |
-| ------------------- | ---------------------------------- | ------- |
-| `FIRECRAWL_API_KEY` | Firecrawl API key for web scraping | |
-| `OPIK_API_KEY`      | Opik API key for LLM observability | |
-| `OPIK_WORKSPACE`    | Opik workspace name                | |
-| `STREAMLIT_PORT`    | Local Streamlit port               | `8502` |
-| `DISCORD_INVITE_URL`| Discord invite link for auth page  | `https://discord.gg/yourserver` |
+| Variable             | Description                        | Example                         |
+| -------------------- | ---------------------------------- | ------------------------------- |
+| `FIRECRAWL_API_KEY`  | Firecrawl API key for web scraping |                                 |
+| `OPIK_API_KEY`       | Opik API key for LLM observability |                                 |
+| `OPIK_WORKSPACE`     | Opik workspace name                |                                 |
+| `STREAMLIT_PORT`     | Local Streamlit port               | `8502`                          |
+| `DISCORD_INVITE_URL` | Discord invite link for auth page  | `https://discord.gg/yourserver` |
 
 See `.env.example` for a complete template.
 
@@ -281,14 +305,14 @@ This structure complies with hackathon open-source requirements while protecting
 
 ### Current Status
 
-| Feature | Status | Notes |
-|---------|--------|-------|
-| Document Crawling | ✅ Operational | 4,000+ docs indexed |
-| Forseti 461 Agent | ✅ Operational | Charter validation, classification |
-| PII Anonymization | ✅ Operational | Transcript + LLM modes |
-| Contribution Wizard | ✅ Operational | 5-step workflow |
-| Provider Failover | ✅ Operational | Multi-LLM support |
-| RAG (Retrieval) | 🚧 In Development | Document search pending |
+| Feature             | Status            | Notes                              |
+| ------------------- | ----------------- | ---------------------------------- |
+| Document Crawling   | ✅ Operational    | 4,000+ docs indexed                |
+| Forseti 461 Agent   | ✅ Operational    | Charter validation, classification |
+| PII Anonymization   | ✅ Operational    | Transcript + LLM modes             |
+| Contribution Wizard | ✅ Operational    | 5-step workflow                    |
+| Provider Failover   | ✅ Operational    | Multi-LLM support                  |
+| RAG (Retrieval)     | 🚧 In Development | Document search pending            |
 
 ### Upcoming
 
@@ -302,10 +326,10 @@ The municipal elections in Audierne start **March 18th, 2026**. During this peri
 
 ### Deployment Strategy
 
-| Branch | Environment | Purpose |
-|--------|-------------|---------|
-| `main` | [Render (cloud)](https://ocapistaine.onrender.com) | Stable demo for hackathon judges |
-| `dev` | Local + ngrok | Active development, election support |
+| Branch | Environment                                        | Purpose                              |
+| ------ | -------------------------------------------------- | ------------------------------------ |
+| `main` | [Render (cloud)](https://ocapistaine.onrender.com) | Stable demo for hackathon judges     |
+| `dev`  | Local + ngrok                                      | Active development, election support |
 
 This ensures judges always have access to a stable, running application while development continues at full speed for the elections.
 
@@ -315,11 +339,11 @@ This ensures judges always have access to a stable, running application while de
 
 **Ò Capistaine** was built for the [Encode AI Hackathon 2026](https://www.encode.club/).
 
-| Resource | Link |
-|----------|------|
-| 🎬 Demo Video | [youtu.be/EAZiVUMtfp8](https://youtu.be/EAZiVUMtfp8) |
-| 📚 Documentation | [docs.locki.io](https://docs.locki.io) |
-| 📝 Hackathon Journey | [Blog posts](https://docs.locki.io/blog) |
-| 📊 Project Board | [GitHub Project](https://github.com/orgs/locki-io/projects/2) |
+| Resource             | Link                                                          |
+| -------------------- | ------------------------------------------------------------- |
+| 🎬 Demo Video        | [youtu.be/EAZiVUMtfp8](https://youtu.be/EAZiVUMtfp8)          |
+| 📚 Documentation     | [docs.locki.io](https://docs.locki.io)                        |
+| 📝 Hackathon Journey | [Blog posts](https://docs.locki.io/blog)                      |
+| 📊 Project Board     | [GitHub Project](https://github.com/orgs/locki-io/projects/2) |
 
-*Built with ❤️ for local democracy in Audierne, Brittany, France.*
+_Built with ❤️ for local democracy in Audierne, Brittany, France._
