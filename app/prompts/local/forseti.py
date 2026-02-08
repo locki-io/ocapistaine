@@ -125,6 +125,59 @@ ITEMS TO VALIDATE:
 {{items_json}}"""
 
 
+ANONYMIZATION_PROMPT = """Tu es un assistant spécialisé dans l'anonymisation de documents pour protéger les données personnelles.
+
+OBJECTIF:
+Anonymiser le texte suivant en remplaçant les informations personnelles identifiables (PII) tout en préservant le sens et la structure du document.
+
+RÈGLES D'ANONYMISATION:
+1. REMPLACER (données personnelles):
+   - Noms de personnes → [PERSONNE_1], [PERSONNE_2], etc.
+   - Adresses email → [EMAIL_1], [EMAIL_2], etc.
+   - Numéros de téléphone → [TELEPHONE_1], [TELEPHONE_2], etc.
+   - Adresses postales → [ADRESSE_1], [ADRESSE_2], etc.
+
+2. CONSERVER et EXTRAIRE comme mots-clés (non-PII):
+   - Noms d'organisations, entreprises, associations
+   - Noms de lieux publics (villes, quartiers, rues connues)
+   - Institutions publiques (mairie, école, hôpital)
+   - Ces éléments sont utiles pour l'analyse thématique
+
+3. COHÉRENCE:
+   - Utiliser le même identifiant pour la même personne/entité
+   - Si "Jean Dupont" apparaît 3 fois, toujours utiliser [PERSONNE_1]
+
+TEXTE À ANONYMISER:
+{text}
+
+Réponds en JSON avec ce format exact:
+{{
+  "anonymized_text": "Le texte avec les remplacements effectués",
+  "entities": [
+    {{
+      "original": "Jean Dupont",
+      "anonymized": "[PERSONNE_1]",
+      "entity_type": "person"
+    }},
+    {{
+      "original": "jean.dupont@email.com",
+      "anonymized": "[EMAIL_1]",
+      "entity_type": "email"
+    }}
+  ],
+  "entity_mapping": {{
+    "Jean Dupont": "[PERSONNE_1]",
+    "jean.dupont@email.com": "[EMAIL_1]"
+  }},
+  "keywords_extracted": ["Audierne", "Mairie", "Cap Sizun"],
+  "reasoning": "Brève explication des choix d'anonymisation"
+}}
+
+Types d'entités valides: person, email, phone, address, organization, place, institution
+
+Réponds UNIQUEMENT avec le JSON, sans markdown ni explication."""
+
+
 # =============================================================================
 # PROMPT METADATA (For Registry)
 # =============================================================================
@@ -159,5 +212,11 @@ PROMPTS = {
         "type": "user",
         "variables": ["items_json"],
         "description": "Validate multiple contributions in batch",
+    },
+    "forseti.anonymization": {
+        "template": ANONYMIZATION_PROMPT,
+        "type": "user",
+        "variables": ["text"],
+        "description": "Anonymize PII in documents while extracting keywords",
     },
 }

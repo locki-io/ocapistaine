@@ -16,7 +16,7 @@ import json
 import asyncio
 from pathlib import Path
 from datetime import date
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Literal
 from dataclasses import dataclass, field
 
 from app.services.logging import MockupLogger
@@ -25,11 +25,18 @@ from app.mockup.generator import (
     save_contributions,
     load_contributions,
 )
+from app.mockup.anonymizer import (
+    TranscriptAnonymizer,
+    DocumentType,
+    TranscriptAnonymizationResult,
+)
 from app.providers import get_provider, Message
 from app.providers.config import ProviderName, get_recommended_model
 
 # Import categories from Forseti (single source of truth)
 from app.agents.forseti import CATEGORIES
+from app.agents.forseti.features import AnonymizationFeature
+from app.agents.forseti.models import AnonymizationResult
 
 # Provider type for field input - use centralized type
 ProviderType = ProviderName
@@ -71,6 +78,16 @@ AUDIERNE_DOCS_PATH = (
 
 
 @dataclass
+class AnonymizationConfig:
+    """Configuration for document anonymization."""
+
+    enabled: bool = True
+    mode: Literal["auto", "transcript", "llm", "none"] = "auto"
+    similarity_threshold: float = 0.85  # For fuzzy speaker name matching
+    store_mapping: bool = True  # Whether to store entity mappings in result
+
+
+@dataclass
 class ExtractedTheme:
     """A theme extracted from field input."""
 
@@ -99,9 +116,14 @@ class FieldInputResult:
     contributions_generated: int = 0
     categories_covered: List[str] = field(default_factory=list)
     themes: List[ExtractedTheme] = field(default_factory=list)
+    # Anonymization fields
+    anonymization_applied: bool = False
+    anonymization_type: Optional[str] = None  # "transcript" | "llm" | None
+    anonymization_mapping: Optional[Dict[str, str]] = None
+    keywords_from_anonymization: Optional[List[str]] = None
 
     def to_dict(self) -> Dict[str, Any]:
-        return {
+        result = {
             "source_file": self.source_file,
             "source_title": self.source_title,
             "input_length": self.input_length,
@@ -109,7 +131,14 @@ class FieldInputResult:
             "contributions_generated": self.contributions_generated,
             "categories_covered": self.categories_covered,
             "themes": [t.to_dict() for t in self.themes],
+            "anonymization_applied": self.anonymization_applied,
+            "anonymization_type": self.anonymization_type,
         }
+        if self.anonymization_mapping:
+            result["anonymization_mapping"] = self.anonymization_mapping
+        if self.keywords_from_anonymization:
+            result["keywords_from_anonymization"] = self.keywords_from_anonymization
+        return result
 
 
 def load_category_themes() -> Dict[str, Any]:
@@ -188,6 +217,112 @@ class FieldInputGenerator:
             self._provider = get_provider(provider)
         self._themes_config = load_category_themes()
         self._logger = MockupLogger("field_input_generator")
+
+    async def _apply_anonymization(
+        self,
+        text: str,
+        result: FieldInputResult,
+        config: AnonymizationConfig,
+    ) -> str:
+        """
+        Apply anonymization to input text based on configuration.
+
+        Args:
+            text: Input text to anonymize.
+            result: FieldInputResult to update with anonymization metadata.
+            config: Anonymization configuration.
+
+        Returns:
+            Anonymized text (or original if no anonymization needed).
+        """
+        if not config.enabled or config.mode == "none":
+            return text
+
+        # First, try transcript detection
+        transcript_anonymizer = TranscriptAnonymizer(
+            similarity_threshold=config.similarity_threshold
+        )
+        doc_type = transcript_anonymizer.detect_document_type(text)
+
+        self._logger.info(
+            "ANONYMIZATION_DETECT",
+            document_type=doc_type.value,
+            configured_mode=config.mode,
+        )
+
+        # Determine which method to use
+        use_transcript = False
+        use_llm = False
+
+        if config.mode == "auto":
+            if doc_type == DocumentType.TRANSCRIPT_NAMED:
+                use_transcript = True
+            elif doc_type == DocumentType.GENERAL:
+                use_llm = True
+            # TRANSCRIPT_ANONYMOUS needs no processing
+        elif config.mode == "transcript":
+            use_transcript = True
+        elif config.mode == "llm":
+            use_llm = True
+
+        # Apply transcript anonymization
+        if use_transcript:
+            transcript_result = transcript_anonymizer.anonymize(text)
+
+            if transcript_result.total_replacements > 0:
+                result.anonymization_applied = True
+                result.anonymization_type = "transcript"
+
+                if config.store_mapping:
+                    result.anonymization_mapping = {
+                        mapping.original: mapping.anonymized
+                        for mapping in transcript_result.speaker_mappings.values()
+                    }
+
+                self._logger.info(
+                    "TRANSCRIPT_ANONYMIZED",
+                    speakers=transcript_result.speaker_count,
+                    replacements=transcript_result.total_replacements,
+                )
+
+                return transcript_result.anonymized_text
+
+        # Apply LLM-based anonymization for general documents
+        if use_llm:
+            try:
+                feature = AnonymizationFeature()
+                llm_result = await feature.execute(
+                    provider=self._provider,
+                    system_prompt="",
+                    text=text,
+                )
+
+                if llm_result.entities:
+                    result.anonymization_applied = True
+                    result.anonymization_type = "llm"
+
+                    if config.store_mapping:
+                        result.anonymization_mapping = llm_result.entity_mapping
+
+                    if llm_result.keywords_extracted:
+                        result.keywords_from_anonymization = llm_result.keywords_extracted
+
+                    self._logger.info(
+                        "LLM_ANONYMIZED",
+                        entities=len(llm_result.entities),
+                        keywords=len(llm_result.keywords_extracted),
+                    )
+
+                    return llm_result.anonymized_text
+
+            except Exception as e:
+                self._logger.error(
+                    "LLM_ANONYMIZATION_ERROR",
+                    error=str(e),
+                )
+                # Fall through to return original text
+
+        return text
 
     async def extract_themes(self, input_text: str) -> List[ExtractedTheme]:
         """
@@ -503,6 +638,7 @@ Réponds UNIQUEMENT avec le JSON."""
         source_title: str = "",
         contributions_per_theme: int = 2,
         include_violations: bool = True,
+        anonymization_config: Optional[AnonymizationConfig] = None,
     ) -> FieldInputResult:
         """
         Process field input and generate themed contributions.
@@ -513,6 +649,7 @@ Réponds UNIQUEMENT avec le JSON."""
             source_title: Title of the source document
             contributions_per_theme: Number of contributions per extracted theme
             include_violations: Whether to include violation examples
+            anonymization_config: Configuration for PII anonymization (default: enabled, auto mode)
 
         Returns:
             FieldInputResult with generation statistics
@@ -529,8 +666,12 @@ Réponds UNIQUEMENT avec le JSON."""
             length=len(input_text),
         )
 
-        # Step 1: Extract themes
-        themes = await self.extract_themes(input_text)
+        # Step 0: Apply anonymization (before theme extraction)
+        anon_config = anonymization_config or AnonymizationConfig()
+        processed_text = await self._apply_anonymization(input_text, result, anon_config)
+
+        # Step 1: Extract themes (using anonymized text)
+        themes = await self.extract_themes(processed_text)
         result.themes = themes
         result.themes_extracted = len(themes)
         result.categories_covered = list(set(t.category for t in themes))
@@ -619,6 +760,7 @@ def process_field_input_sync(
     model: Optional[str] = None,
     contributions_per_theme: int = 2,
     include_violations: bool = True,
+    anonymization_config: Optional[AnonymizationConfig] = None,
 ) -> FieldInputResult:
     """
     Synchronous wrapper for processing field input.
@@ -631,6 +773,7 @@ def process_field_input_sync(
         model: Optional model override
         contributions_per_theme: Contributions per theme
         include_violations: Include violation examples
+        anonymization_config: Configuration for PII anonymization
 
     Returns:
         FieldInputResult
@@ -643,5 +786,6 @@ def process_field_input_sync(
             source_title=source_title,
             contributions_per_theme=contributions_per_theme,
             include_violations=include_violations,
+            anonymization_config=anonymization_config,
         )
     )

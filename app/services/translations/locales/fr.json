@@ -1,7 +1,7 @@
 {
   "app_title": "Ò Capistaine",
   "app_subtitle": "Transparence civique pour Audierne",
-  "app_header": "Posez vos questions sur la vie municipale d'Audierne",
+  "app_header": "Centre d'entraînement pour agents IA civiques",
 
   "sidebar_session": "Session",
   "sidebar_session_id": "ID: `{user_id}...`",
@@ -63,6 +63,8 @@
   "contributions_by": "par",
   "contributions_charter_compliant": "Conforme à la charte",
   "contributions_verify_charter": "Vérifier charte",
+  "contributions_classify": "Classifier",
+  "contributions_anonymize": "Anonymiser",
   "contributions_view_github": "Voir sur GitHub",
 
   "forseti_title": "Analyse Forseti 461",
@@ -77,6 +79,13 @@
   "forseti_confidence": "Confiance",
   "forseti_reasoning": "Raisonnement",
   "forseti_analyzing": "Analyse par Forseti 461...",
+  "forseti_classifying": "Classification par Forseti 461...",
+  "forseti_anonymizing": "Anonymisation par Forseti 461...",
+  "forseti_classification_title": "Classification de catégorie",
+  "forseti_anonymization_title": "Résultat d'anonymisation",
+  "forseti_entities_found": "Entités anonymisées",
+  "forseti_keywords_extracted": "Mots-clés extraits",
+  "forseti_anonymized_preview": "Aperçu anonymisé",
   "forseti_init_error": "Erreur initialisation {provider}",
   "forseti_assigned_ocapistaine": "Tâche assignée à OCapistaine",
 
