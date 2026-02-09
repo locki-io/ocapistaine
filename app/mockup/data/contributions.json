@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-02-08T22:44:14.051828",
-  "count": 549,
+  "generated_at": "2026-02-09T10:25:15.748086",
+  "count": 557,
   "contributions": [
     {
       "id": "base_ass_001",
@@ -11966,6 +11966,182 @@
       },
       "title": "À Audierne, les acteurs économiques semblent être laissés pour compte, avec u...",
       "body": "**Constat factuel:**\nÀ Audierne, les acteurs économiques semblent être laissés pour compte, avec une absence de réelle consultation qui les implique dans les décisions. Les associations qui devraient jouer un rôle clé dans la dynamisation de l'économie locale ne sont pas suffisamment soutenues par les élus, qui semblent plus préoccupés par leurs propres intérêts que par le développement de notre commune.\n\n**Vos idées d'améliorations:**\nIl est impératif de mettre en place des réunions régulières entre les acteurs économiques et les élus pour discuter des enjeux locaux. De plus, il faudrait créer un fonds de soutien pour les associations afin qu'elles puissent organiser des événements qui dynamisent notre tissu économique. Enfin, une transparence totale sur les décisions et les budgets alloués doit être exigée pour que nous puissions tous voir où vont nos impôts."
+    },
+    {
+      "id": "field_logement_8c48f1ba",
+      "category": "logement",
+      "constat_factuel": "L'achat du site de l'éducation et son rénovation sont des actions cruciales pour améliorer l'intégration urbaine et le bien-être émotionnel des élèves de l'Audierne. Cependant, la situation actuelle semble rester limitée dans ce domaine, nécessitant des investissements significatifs pour rafraîchir l'environnement et améliorer la qualité de vie des habitants.",
+      "idees_ameliorations": "Pour améliorer le bien-être émotionnel et l'intégration urbaine des élèves, il est recommandé d'agrandir les espaces verts autour du site de l'éducation. De plus, l'extension des infrastructures et services accessibles pourrait renforcer la qualité de vie des habitants. Enfin, une attention particulière aux éléments culturels et l'élaboration de zones partagees pourrait stimuler la cohésion sociale dans la communauté.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "renovation_habitat",
+        "source_title": "Ai Project Todefuseconflict",
+        "generated_date": "2026-02-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'achat du site de l'éducation et son rénovation sont des actions cruciales p...",
+      "body": "**Constat factuel:**\nL'achat du site de l'éducation et son rénovation sont des actions cruciales pour améliorer l'intégration urbaine et le bien-être émotionnel des élèves de l'Audierne. Cependant, la situation actuelle semble rester limitée dans ce domaine, nécessitant des investissements significatifs pour rafraîchir l'environnement et améliorer la qualité de vie des habitants.\n\n**Vos idées d'améliorations:**\nPour améliorer le bien-être émotionnel et l'intégration urbaine des élèves, il est recommandé d'agrandir les espaces verts autour du site de l'éducation. De plus, l'extension des infrastructures et services accessibles pourrait renforcer la qualité de vie des habitants. Enfin, une attention particulière aux éléments culturels et l'élaboration de zones partagees pourrait stimuler la cohésion sociale dans la communauté."
+    },
+    {
+      "id": "field_logement_dcd6ce08",
+      "category": "logement",
+      "constat_factuel": "L'achat du site actuel de l'éducation dans Audierne a montré qu'il n'est pas optimal pour une meilleure integration urbaine. Des voix des citoyens ont demandé un rénovation plus globale et pensée pour une meilleureOpensite du habitat.",
+      "idees_ameliorations": "L'agrandissement et la réorganisation du site devraient inclure des espaces communautaires ouverts à l'external, permettant une meilleure integration et une bien-être émotionnel plus harmonieuse pour les élèves.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "renovation_habitat",
+        "source_title": "Ai Project Todefuseconflict",
+        "generated_date": "2026-02-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'achat du site actuel de l'éducation dans Audierne a montré qu'il n'est pas ...",
+      "body": "**Constat factuel:**\nL'achat du site actuel de l'éducation dans Audierne a montré qu'il n'est pas optimal pour une meilleure integration urbaine. Des voix des citoyens ont demandé un rénovation plus globale et pensée pour une meilleureOpensite du habitat.\n\n**Vos idées d'améliorations:**\nL'agrandissement et la réorganisation du site devraient inclure des espaces communautaires ouverts à l'external, permettant une meilleure integration et une bien-être émotionnel plus harmonieuse pour les élèves."
+    },
+    {
+      "id": "field_logement_d64450d5",
+      "category": "logement",
+      "constat_factuel": "Le site de l'éducation à Audierne est actuellement en possession et prévoit une rénovation pour améliorer son intégration urbaine et garantir un bien-être émotionnel pour les élèves.",
+      "idees_ameliorations": "Pour renforcer l'intégration urbaine, il serait pertinent d'agrandir les espaces verts autour du site, permettant une meilleure connectivité et un environnement plus épanouisseur. Par ailleurs, améliorer les infrastructures locales, comme les carrières ou les services de santé, pourrait renforcer la qualité de vie des habitants tout en offrant des opportunities supplémentaires aux élèves.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "renovation_habitat",
+        "source_title": "Ai Project Todefuseconflict",
+        "generated_date": "2026-02-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Le site de l'éducation à Audierne est actuellement en possession et prévoit u...",
+      "body": "**Constat factuel:**\nLe site de l'éducation à Audierne est actuellement en possession et prévoit une rénovation pour améliorer son intégration urbaine et garantir un bien-être émotionnel pour les élèves.\n\n**Vos idées d'améliorations:**\nPour renforcer l'intégration urbaine, il serait pertinent d'agrandir les espaces verts autour du site, permettant une meilleure connectivité et un environnement plus épanouisseur. Par ailleurs, améliorer les infrastructures locales, comme les carrières ou les services de santé, pourrait renforcer la qualité de vie des habitants tout en offrant des opportunities supplémentaires aux élèves."
+    },
+    {
+      "id": "field_logement_8a24d520",
+      "category": "logement",
+      "constat_factuel": "L'ACTUELLE SITUATION À AUDIERNE EST MALgreÉE PAR L'ABSence DE RENovation du SITE D'ÉduCation. Les Élèves ne bénéficient pas de Une MejOre INTégration urbaine et de Un bien-Être ÉMOTIONnel, ce qui constitue une GRANLE INJUSTE.",
+      "idees_ameliorations": "Pouvez-vous AUGMENTer les fonds dispoSables pour renoverer le SITE et améliorer son accès et son equipage ? Une PREMIÈRE IDée est de Créezc un Plan détaillé qui met en Cause les besoins et les attentes des citoyens. Par ailleurs, il est Utile de Promouvoir la collaboration entre les difFérents acteurs, tels que les PME et les experts du domaine, pour garantir la QUAntité et la qualité du Renovation. Enfin, veuillez Publier régulièrement des rapports sur les Progrès realized pour maintenir un OMBREILLAGE sur le processus.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "renovation_habitat",
+        "source_title": "Ai Project Todefuseconflict",
+        "generated_date": "2026-02-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'ACTUELLE SITUATION À AUDIERNE EST MALgreÉE PAR L'ABSence DE RENovation du S...",
+      "body": "**Constat factuel:**\nL'ACTUELLE SITUATION À AUDIERNE EST MALgreÉE PAR L'ABSence DE RENovation du SITE D'ÉduCation. Les Élèves ne bénéficient pas de Une MejOre INTégration urbaine et de Un bien-Être ÉMOTIONnel, ce qui constitue une GRANLE INJUSTE.\n\n**Vos idées d'améliorations:**\nPouvez-vous AUGMENTer les fonds dispoSables pour renoverer le SITE et améliorer son accès et son equipage ? Une PREMIÈRE IDée est de Créezc un Plan détaillé qui met en Cause les besoins et les attentes des citoyens. Par ailleurs, il est Utile de Promouvoir la collaboration entre les difFérents acteurs, tels que les PME et les experts du domaine, pour garantir la QUAntité et la qualité du Renovation. Enfin, veuillez Publier régulièrement des rapports sur les Progrès realized pour maintenir un OMBREILLAGE sur le processus."
+    },
+    {
+      "id": "field_associations_7bab16ca",
+      "category": "associations",
+      "constat_factuel": "L'éducation de la commune de Audierne fait face à un renouvellement des écoles mais les financements sont en question. Les voix locales ont été limitées dans cette discussion et il est nécessaire d'agir constructivement pour permettre une rénovation efficace.",
+      "idees_ameliorations": "Créer un comité de la communauté pour structurer les discussions sur la rénovation et les financements. proposer un modèle de financement incluant des contributions locales. organiser des ateliers éducatifs sur l'implantation du renouvellement pour les parents et les résidents. établir des réunions annuelles pour maintenir un suivi continu et assurer la transparence.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "engagement_communautaire",
+        "source_title": "Ai Project Todefuseconflict",
+        "generated_date": "2026-02-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'éducation de la commune de Audierne fait face à un renouvellement des école...",
+      "body": "**Constat factuel:**\nL'éducation de la commune de Audierne fait face à un renouvellement des écoles mais les financements sont en question. Les voix locales ont été limitées dans cette discussion et il est nécessaire d'agir constructivement pour permettre une rénovation efficace.\n\n**Vos idées d'améliorations:**\nCréer un comité de la communauté pour structurer les discussions sur la rénovation et les financements. proposer un modèle de financement incluant des contributions locales. organiser des ateliers éducatifs sur l'implantation du renouvellement pour les parents et les résidents. établir des réunions annuelles pour maintenir un suivi continu et assurer la transparence."
+    },
+    {
+      "id": "field_associations_4f96954c",
+      "category": "associations",
+      "constat_factuel": "L'école de l'audierne est en difficultés financières avec des infrastructures anciennes qui nulent le service éducatif. Une rénovation renforcée et une financersisation amélioreront la situation et permettront d'augmenter les capacités scolaires.",
+      "idees_ameliorations": "Proposer un soutien financier supplémentaire aux projets de rénovation permettra de mener à bien des travaux nécessaires. Organiser des ateliers collaboratifs entre différents acteurs (éducation, milice et citoyens) pour débattre des financements raffinés. Une assistance financière pour les artistes locaux permettra d'agrandir la contribution culturelle de la commune à travers l'éducation.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "engagement_communautaire",
+        "source_title": "Ai Project Todefuseconflict",
+        "generated_date": "2026-02-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'école de l'audierne est en difficultés financières avec des infrastructures...",
+      "body": "**Constat factuel:**\nL'école de l'audierne est en difficultés financières avec des infrastructures anciennes qui nulent le service éducatif. Une rénovation renforcée et une financersisation amélioreront la situation et permettront d'augmenter les capacités scolaires.\n\n**Vos idées d'améliorations:**\nProposer un soutien financier supplémentaire aux projets de rénovation permettra de mener à bien des travaux nécessaires. Organiser des ateliers collaboratifs entre différents acteurs (éducation, milice et citoyens) pour débattre des financements raffinés. Une assistance financière pour les artistes locaux permettra d'agrandir la contribution culturelle de la commune à travers l'éducation."
+    },
+    {
+      "id": "field_associations_e501d1f3",
+      "category": "associations",
+      "constat_factuel": "L'école de l'audierne semble actuellement en trouble, avec des murs peuplés de traces de l'âge et des dommages visibles, ce qui soulève des questions sur la durabilité de son existence et son potentielle à l'aide d'une rénovation adéquate.",
+      "idees_ameliorations": "1. Renforcer la contribution publique pour soutenir les actions de rénovation et la maintien d'une éducation de qualité.\n2. Organiser des missions locales pour recueillir des offres ou des contributions personnelles.\n3. Contacter une firme de renovation pour estimer les coûts et proposer un plan détaillé.\n4. Renforcer l'engagement des parents et des citoyens dans la gestion scolaire.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "engagement_communautaire",
+        "source_title": "Ai Project Todefuseconflict",
+        "generated_date": "2026-02-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'école de l'audierne semble actuellement en trouble, avec des murs peuplés d...",
+      "body": "**Constat factuel:**\nL'école de l'audierne semble actuellement en trouble, avec des murs peuplés de traces de l'âge et des dommages visibles, ce qui soulève des questions sur la durabilité de son existence et son potentielle à l'aide d'une rénovation adéquate.\n\n**Vos idées d'améliorations:**\n1. Renforcer la contribution publique pour soutenir les actions de rénovation et la maintien d'une éducation de qualité.\n2. Organiser des missions locales pour recueillir des offres ou des contributions personnelles.\n3. Contacter une firme de renovation pour estimer les coûts et proposer un plan détaillé.\n4. Renforcer l'engagement des parents et des citoyens dans la gestion scolaire."
+    },
+    {
+      "id": "field_associations_74ba4ea6",
+      "category": "associations",
+      "constat_factuel": "L'école de l'audierne nécessite des renouvelements importants pour garantir son optimalité pédagogique et infrastructurelle, tout en étant insuffisamment soutenue financièrement.",
+      "idees_ameliorations": "Créer un financement communautaire dédié aux renouvelements de l'école et permettre à l'audience d'y contribuer directement. Organiser des ateliers hebdomadaires pour échanger entre les parents et les décideurs locaux sur la rénovation de l'école. Utiliser un outil de débat en ligne pour rassembler les意见 et les suggestions de la communauté concernant l'infrastructure de l'école. Enfin, impliquer des representative de la communauté dans le processus de réécriture du plan de rénovation pour des solutions plus adaptées à nos besoins.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "engagement_communautaire",
+        "source_title": "Ai Project Todefuseconflict",
+        "generated_date": "2026-02-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'école de l'audierne nécessite des renouvelements importants pour garantir s...",
+      "body": "**Constat factuel:**\nL'école de l'audierne nécessite des renouvelements importants pour garantir son optimalité pédagogique et infrastructurelle, tout en étant insuffisamment soutenue financièrement.\n\n**Vos idées d'améliorations:**\nCréer un financement communautaire dédié aux renouvelements de l'école et permettre à l'audience d'y contribuer directement. Organiser des ateliers hebdomadaires pour échanger entre les parents et les décideurs locaux sur la rénovation de l'école. Utiliser un outil de débat en ligne pour rassembler les意见 et les suggestions de la communauté concernant l'infrastructure de l'école. Enfin, impliquer des representative de la communauté dans le processus de réécriture du plan de rénovation pour des solutions plus adaptées à nos besoins."
     }
   ]
 }
