@@ -696,8 +696,9 @@ def get_composite_performance(
         except Exception:
             pass
 
-        # Strategy 2: Search experiments by experiment_type from AGENT_FEATURE_REGISTRY
-        # Experiment names follow: "{experiment_type}-eval-{YYYYMMDD}-{HHMMSS}"
+        # Strategy 2: Search experiments by feature name from AGENT_FEATURE_REGISTRY
+        # Experiment names follow: "{feature}-eval-{YYYYMMDD}-{HHMMSS}"
+        # Legacy names used experiment_type: "{experiment_type}-eval-..."
         if not experiments_data:
             config = COMPOSITE_PROMPTS.get(composite_name, {})
             user_prompt_name = config.get("user_prompt", "")
@@ -705,21 +706,24 @@ def get_composite_performance(
             # Find matching registry entry by prompt_key
             from app.services.tasks import AGENT_FEATURE_REGISTRY
 
+            feature_name = None
             experiment_type = None
             for exp_type, feat_config in AGENT_FEATURE_REGISTRY.items():
                 if feat_config.get("prompt_key") == user_prompt_name:
+                    feature_name = feat_config.get("feature")
                     experiment_type = exp_type
                     break
 
-            if experiment_type:
-                try:
-                    found = client.get_experiments_by_name(experiment_type)
-                    # get_experiments_by_name returns Experiment objects, get full data
-                    for exp in found:
-                        exp_data = exp.get_experiment_data()
-                        experiments_data.append(exp_data)
-                except Exception:
-                    pass
+            # Try feature name first, then fall back to experiment_type (legacy)
+            for search_term in [feature_name, experiment_type]:
+                if search_term and not experiments_data:
+                    try:
+                        found = client.get_experiments_by_name(search_term)
+                        for exp in found:
+                            exp_data = exp.get_experiment_data()
+                            experiments_data.append(exp_data)
+                    except Exception:
+                        pass
 
         if not experiments_data:
             return {

@@ -40,7 +40,7 @@ _loop: Optional[asyncio.AbstractEventLoop] = None
 # Cron schedules (staggered to avoid Ollama conflicts)
 # Tasks are spaced 20+ minutes apart to allow completion before next starts
 TASK_CHAIN_CRON = "0 6-23 * * *"  # Hourly at :00, 6 AM - 11 PM
-AUDIERNE_DOCS_CRON = "20 */8 * * *"  # Every 8 hours at :20 (e.g., 6:20, 8:20)
+AUDIERNE_DOCS_CRON = "20 */2 * * *"  # Every 8 hours at :20 (e.g., 6:20, 8:20)
 OPIK_EVALUATE_CRON = (
     "40 */3 * * *"  # Hourly at :40, every six hours (e.g., 6:40, 12:40, 18:40)
 )
