@@ -70,9 +70,9 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:8501",      # Streamlit dev
-        "https://audierne2026.fr",    # Production
-        "https://docs.locki.io",      # Documentation
+        "http://localhost:8501",  # Streamlit dev
+        "https://audierne2026.fr",  # Production
+        "https://docs.locki.io",  # Documentation
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -86,6 +86,7 @@ app.include_router(validate_router, prefix="/api/v1")
 # =============================================================================
 # Health & Status Routes
 # =============================================================================
+
 
 @app.get("/")
 async def root():
@@ -115,6 +116,7 @@ async def status():
     """Detailed status endpoint."""
     # Check Opik availability
     from app.agents.tracing import get_tracer
+
     tracer = get_tracer()
     opik_status = "connected" if tracer.enabled else "not_configured"
 
@@ -124,7 +126,7 @@ async def status():
         "components": {
             "redis": "connected" if redis_health_check() else "disconnected",
             "firecrawl": "not_configured",  # TODO: Check Firecrawl
-            "rag": "not_implemented",        # TODO: Check RAG
+            "rag": "not_implemented",  # TODO: Check RAG
             "opik": opik_status,
             "forseti": "available",
         },
@@ -134,6 +136,7 @@ async def status():
 # =============================================================================
 # Chat Routes (Placeholder)
 # =============================================================================
+
 
 @app.post("/api/v1/chat")
 async def chat_endpoint(request: Request):
@@ -176,6 +179,7 @@ async def chat_endpoint(request: Request):
 # =============================================================================
 # Document Routes (Placeholder)
 # =============================================================================
+
 
 @app.get("/api/v1/documents")
 async def list_documents():
@@ -226,6 +230,7 @@ async def get_document(doc_id: str):
 # Webhook Routes (for N8N / Vaettir integration)
 # =============================================================================
 
+
 @app.post("/api/v1/webhooks/message")
 async def webhook_message(request: Request):
     """
@@ -258,6 +263,7 @@ async def webhook_message(request: Request):
 # Admin Routes (protected in production)
 # =============================================================================
 
+
 @app.post("/api/v1/admin/crawl")
 async def trigger_crawl(request: Request):
     """
@@ -274,9 +280,10 @@ async def trigger_crawl(request: Request):
 # Entry point for development
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(
         "app.main:app",
         host="0.0.0.0",
         port=8000,
-        reload=True,
+        reload=False,
     )

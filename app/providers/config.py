@@ -154,12 +154,11 @@ PROVIDER_UI_CONFIG = {
         },
         "default": "small",
     },
-    # Ollama disabled for cloud deployment (requires local installation)
-    # "ollama": {
-    #     "name_key": "provider_ollama",
-    #     "models": {...},
-    #     "default": "deepseek-r1:7b",
-    # },
+    "ollama": {
+        "name_key": "provider_ollama",
+        "models": {k: v["description"] for k, v in OLLAMA_MODELS.items()},
+        "default": "deepseek-r1:7b",
+    },
 }
 
 
