@@ -21,6 +21,11 @@ st.set_page_config(
     layout="wide",
 )
 
+if "session_id" not in st.session_state:
+    import uuid
+
+    st.session_state.session_id = str(uuid.uuid4())
+
 
 @st.cache_resource
 def _init_scheduler():

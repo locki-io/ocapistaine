@@ -724,6 +724,23 @@ class TaskLogger(BaseLogger):
             confidence=f"{confidence:.2f}" if confidence else None,
         )
 
+    def log_trigger(
+        self,
+        trigger_type: str,
+        user_id: str | None = None,
+        session_id: str | None = None,
+        **config,
+    ) -> None:
+        """Log a manual or automated task trigger with audit context."""
+        self.info(
+            "TASK_TRIGGERED",
+            task=self.task_name,
+            trigger=trigger_type,
+            user_id=user_id[:8] if user_id else None,
+            session_id=session_id[:8] if session_id else None,
+            **config,
+        )
+
 
 # =============================================================================
 # Mockup Layer Logger
