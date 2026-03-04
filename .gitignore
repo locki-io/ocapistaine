@@ -11,6 +11,7 @@ __pycache__/
 .venv
 poetry.lock
 .env
+secrets.toml
 
 # Streamlit secrets (keep config.toml, ignore secrets)
 .streamlit/secrets.toml

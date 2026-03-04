@@ -34,8 +34,14 @@ def _init_scheduler():
     Disabled by default on cloud deployments (DISABLE_SCHEDULER=true)
     to reduce memory footprint on free tier instances.
     """
+    from app.providers.health import check_providers
+
     # Skip scheduler on demo/cloud instances to save memory
     if os.getenv("DISABLE_SCHEDULER", "false").lower() == "true":
+        # Still run health check so sidebar can filter models
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        loop.run_until_complete(check_providers())
         return "disabled"
 
     try:
@@ -46,6 +52,7 @@ def _init_scheduler():
             # Run the async start_scheduler in an event loop
             loop = asyncio.new_event_loop()
             asyncio.set_event_loop(loop)
+            loop.run_until_complete(check_providers())
             loop.run_until_complete(start_scheduler())
 
         # Return scheduler reference to keep it alive
@@ -83,6 +90,29 @@ from app.ui.floating_overlay import init_floating_overlay, render_floating_overl
 _ui_logger = PresentationLogger("streamlit")
 _svc_logger = ServiceLogger("chat")
 _agent_logger = AgentLogger("forseti")
+
+
+def _friendly_error(error: str) -> str:
+    """Translate cryptic LLM/JSON errors into user-friendly messages."""
+    if "Expecting value: line 1 column 1" in error:
+        return (
+            "Le modèle a retourné une réponse vide. "
+            "Essayez un modèle plus performant (Claude, Gemini) "
+            "ou un modèle local plus grand."
+        )
+    if "json" in error.lower() and ("expecting" in error.lower() or "decode" in error.lower()):
+        return (
+            "Le modèle n'a pas produit de JSON valide. "
+            "Certains modèles locaux (7B) ont du mal avec les sorties structurées. "
+            "Essayez un modèle plus performant."
+        )
+    if "timed out" in error.lower() or "timeout" in error.lower():
+        return (
+            "Le modèle a dépassé le délai de réponse. "
+            "Le document est peut-être trop long pour ce modèle. "
+            "Essayez un modèle cloud ou réduisez la taille du document."
+        )
+    return error
 
 
 def get_forseti_agent():
@@ -383,9 +413,8 @@ def _display_forseti_result(result: dict):
     st.markdown(f"**🔍 {_('forseti_title')}**")
 
     if not result.get("success"):
-        st.error(
-            f"{_('forseti_error')}: {result.get('error', _('forseti_unknown_error'))}"
-        )
+        raw_error = result.get("error", _("forseti_unknown_error"))
+        st.error(f"{_('forseti_error')}: {_friendly_error(raw_error)}")
         return
 
     # Validation status
@@ -552,9 +581,8 @@ def _display_classification_result(result: dict):
     st.markdown(f"**📊 {_('forseti_classification_title')}**")
 
     if not result.get("success"):
-        st.error(
-            f"{_('forseti_error')}: {result.get('error', _('forseti_unknown_error'))}"
-        )
+        raw_error = result.get("error", _("forseti_unknown_error"))
+        st.error(f"{_('forseti_error')}: {_friendly_error(raw_error)}")
         return
 
     # Category
@@ -577,9 +605,8 @@ def _display_anonymization_result(result: dict):
     st.markdown(f"**🔒 {_('forseti_anonymization_title')}**")
 
     if not result.get("success"):
-        st.error(
-            f"{_('forseti_error')}: {result.get('error', _('forseti_unknown_error'))}"
-        )
+        raw_error = result.get("error", _("forseti_unknown_error"))
+        st.error(f"{_('forseti_error')}: {_friendly_error(raw_error)}")
         return
 
     # Entities found

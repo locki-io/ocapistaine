@@ -39,6 +39,11 @@ async def lifespan(app: FastAPI):
     else:
         logger.warning("Redis not available - some features may be limited")
 
+    # Check provider availability
+    from app.providers.health import check_providers
+
+    await check_providers()
+
     # Start scheduler
     from app.services.scheduler import start_scheduler
 
@@ -120,6 +125,18 @@ async def status():
     tracer = get_tracer()
     opik_status = "connected" if tracer.enabled else "not_configured"
 
+    # Check provider availability
+    from app.providers.health import get_provider_status
+
+    provider_report = get_provider_status()
+    providers_component = {}
+    if provider_report:
+        providers_component = {
+            "ollama": provider_report["ollama"],
+            "cloud": provider_report["cloud"],
+            "checked_at": provider_report["checked_at"],
+        }
+
     return {
         "service": "ocapistaine",
         "version": "0.1.0",
@@ -129,6 +146,7 @@ async def status():
             "rag": "not_implemented",  # TODO: Check RAG
             "opik": opik_status,
             "forseti": "available",
+            "providers": providers_component,
         },
     }
 

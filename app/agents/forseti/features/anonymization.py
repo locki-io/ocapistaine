@@ -114,7 +114,7 @@ class AnonymizationFeature(FeatureBase):
         except Exception as e:
             _logger.error(
                 "ANONYMIZATION_ERROR",
-                error=str(e),
+                error=str(e) or type(e).__name__,
                 text_preview=text[:100] if text else "",
             )
             # Return original text on error (fail open)

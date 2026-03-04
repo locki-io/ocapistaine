@@ -243,6 +243,15 @@ def _display_provider_selector(user_id: str) -> None:
     # Model selection for current provider
     provider_config = PROVIDERS[selected_provider]
     model_keys = list(provider_config["models"].keys())
+
+    # Filter Ollama models to only show those actually pulled
+    if selected_provider == "ollama":
+        from app.providers.health import get_provider_status
+
+        status = get_provider_status()
+        if status and status["ollama"]["available_models"]:
+            model_keys = [k for k in model_keys if k in status["ollama"]["available_models"]]
+
     current_model = st.session_state.llm_model
 
     # Ensure current model is valid for this provider
