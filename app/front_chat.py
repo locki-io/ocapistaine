@@ -385,6 +385,8 @@ def _collect_stream(async_gen):
             except StopAsyncIteration:
                 break
     finally:
+        # Properly close the async generator before shutting down the loop
+        loop.run_until_complete(ait.aclose())
         loop.close()
 
 
