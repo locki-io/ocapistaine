@@ -1,3 +1,6 @@
+# Vector store (rebuilt from source data)
+data/chromadb/
+
 # IDE files
 # .vscode/
 # compiled/test python files
