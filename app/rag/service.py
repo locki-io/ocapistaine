@@ -14,21 +14,37 @@ from .prompts import (
     RAG_USER_TEMPLATE,
     COMPARE_SYSTEM_PROMPT,
     COMPARE_USER_TEMPLATE,
+    OVERVIEW_SYSTEM_PROMPT,
+    OVERVIEW_USER_TEMPLATE,
 )
 from .store import collection_stats
+
+# Keywords that signal a broad/overview question (not a specific topic)
+_OVERVIEW_KEYWORDS = [
+    "municipales", "élections", "listes", "candidats", "que sais-tu",
+    "vue d'ensemble", "résumé", "présente", "quelles listes", "qui se présente",
+    "combien de listes", "overview", "général",
+]
+
+
+def _is_overview_question(question: str) -> bool:
+    """Detect broad overview questions that need panoramic retrieval."""
+    q = question.lower()
+    return sum(1 for kw in _OVERVIEW_KEYWORDS if kw in q) >= 2
 
 
 class RAGService:
     """Main RAG service for OCapistaine."""
 
-    def __init__(self, primary_provider: str = "ollama"):
-        self.provider = ProviderWithFailover(primary=primary_provider)
+    def __init__(self, primary_provider: str = "ollama", model_override: str | None = None):
+        overrides = {primary_provider: model_override} if model_override else {}
+        self.provider = ProviderWithFailover(primary=primary_provider, model_overrides=overrides)
         self.tracer = get_tracer()
 
     async def query(
         self,
         question: str,
-        n_results: int = 5,
+        n_results: int = 10,
         filters: dict | None = None,
         thread_id: str | None = None,
     ) -> dict:
@@ -60,13 +76,19 @@ class RAGService:
             tags=["rag", "chat"],
         ) as trace:
 
+            # Detect overview questions
+            is_overview = _is_overview_question(question) and not filters
+
             # === Span: Retrieval ===
             with self.tracer.span(
                 name="rag_retrieval",
-                input={"query": question, "n_results": n_results, "filters": filters},
+                input={"query": question, "n_results": n_results, "filters": filters, "overview": is_overview},
                 span_type="tool",
             ) as retrieval_span:
-                results = retrieval.search(question, n_results=n_results, where=filters)
+                if is_overview:
+                    results = retrieval.search_overview(question)
+                else:
+                    results = retrieval.search(question, n_results=n_results, where=filters)
 
                 retrieval_output = {
                     "chunks_found": len(results),
@@ -99,9 +121,16 @@ class RAGService:
             context = "\n---\n".join(context_parts)
 
             # === Span: LLM Synthesis ===
+            if is_overview:
+                sys_prompt = OVERVIEW_SYSTEM_PROMPT
+                user_prompt = OVERVIEW_USER_TEMPLATE.format(context=context, question=question)
+            else:
+                sys_prompt = SYSTEM_PROMPT
+                user_prompt = RAG_USER_TEMPLATE.format(context=context, question=question)
+
             messages = [
-                Message("system", SYSTEM_PROMPT),
-                Message("user", RAG_USER_TEMPLATE.format(context=context, question=question)),
+                Message("system", sys_prompt),
+                Message("user", user_prompt),
             ]
 
             with self.tracer.span(
@@ -116,7 +145,7 @@ class RAGService:
                 response = await self.provider.complete(
                     messages=messages,
                     temperature=0.3,
-                    max_tokens=1500,
+                    max_tokens=2500 if is_overview else 1500,
                 )
 
                 synthesis_span.update(output={

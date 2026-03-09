@@ -8,6 +8,7 @@
 ---
 
 <!-- Page 1 -->
+
 ![img-0.jpeg](img-0.jpeg)
 
 02-06
@@ -20,4 +21,4 @@ Directeur en santé &amp; action sociale
 
 ---
 
-*Extrait via Mistral OCR API (`mistral-ocr-latest`)*
+_Extrait via Mistral OCR API (`mistral-ocr-latest`)_

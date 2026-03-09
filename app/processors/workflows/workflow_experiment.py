@@ -444,6 +444,8 @@ def _create_evaluation_task(config: OpikExperimentConfig) -> Callable:
         return _create_charter_task(config.task_provider)
     elif config.experiment_type == "category_optimization":
         return _create_category_task(config.task_provider)
+    elif config.experiment_type in ("rag_chat_evaluation", "rag_compare_evaluation"):
+        return _create_rag_task(config.task_provider, config.experiment_type)
     else:
         return _create_generic_task(config.task_provider)
 
@@ -511,6 +513,49 @@ def _create_category_task(provider: str) -> Callable:
             "category": result.category,
             "confidence": result.confidence,
             "reasoning": result.reasoning,
+        }
+
+    return evaluation_task
+
+
+def _create_rag_task(provider: str, experiment_type: str) -> Callable:
+    """Create evaluation task for RAG chat or compare."""
+
+    def evaluation_task(dataset_item: dict) -> dict:
+        """Run OCapistaine RAG agent on dataset item."""
+        from app.agents.ocapistaine import OCapistaineAgent
+
+        input_data = dataset_item.get("input", {})
+        question = input_data.get("question", "")
+        mode = input_data.get("mode", "chat")
+        lists = input_data.get("lists", [])
+
+        agent = OCapistaineAgent(provider_name=provider)
+
+        if mode == "compare" and lists:
+            result = asyncio.run(
+                agent.compare(question=question, list_names=lists)
+            )
+        else:
+            result = asyncio.run(agent.chat(question=question))
+
+        result_dict = result.to_dict()
+        response = result_dict["response"]
+        sources = result_dict.get("sources", [])
+
+        # Build context strings for Opik RAG metrics
+        context = [
+            f"{s.get('title', '')} ({s.get('list_name', '')})"
+            for s in sources
+        ] or ["No sources retrieved"]
+
+        return {
+            "input": question,
+            "output": response,
+            "context": context,
+            "confidence": result_dict.get("confidence", 0),
+            "sources_count": len(sources),
+            "model": result_dict.get("model", ""),
         }
 
     return evaluation_task

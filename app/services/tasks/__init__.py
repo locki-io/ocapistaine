@@ -81,23 +81,19 @@ AGENT_FEATURE_REGISTRY: dict[str, dict] = {
         "dataset_prefix": "category-optimization",
         "description": "Category classification - assigns contributions to one of 7 categories",
     },
-    # Future: Forseti wording_correction (when Correctness feedback is added)
-    # "wording_optimization": {
-    #     "agent": "forseti",
-    #     "feature": "wording_correction",
-    #     "prompt_key": "forseti.wording_correction",
-    #     "dataset_prefix": "wording-optimization",
-    #     "description": "Wording suggestions - improves contribution text",
-    # },
-    #
-    # Future: Other agents
-    # "draft_optimization": {
-    #     "agent": "contribution_assistant",
-    #     "feature": "draft_generation",
-    #     "prompt_key": "autocontrib.draft_fr",
-    #     "dataset_prefix": "draft-optimization",
-    #     "description": "Draft generation quality for auto-contribution",
-    # },
+    # OCapistaine RAG Agent Features
+    "rag_chat_evaluation": {
+        "agent": "ocapistaine",
+        "feature": "rag_chat",
+        "dataset_prefix": "rag-chat-eval",
+        "description": "RAG Q&A evaluation - retrieval quality + synthesis accuracy",
+    },
+    "rag_compare_evaluation": {
+        "agent": "ocapistaine",
+        "feature": "rag_compare",
+        "dataset_prefix": "rag-compare-eval",
+        "description": "RAG comparison evaluation - cross-list program comparison",
+    },
 }
 
 

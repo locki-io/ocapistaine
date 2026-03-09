@@ -113,6 +113,7 @@ class AgentTracer:
         self._project = None
         self._current_experiment = None
         self._current_trace = None
+        self._current_thread_id: str | None = None
         self._opik_module = None
 
         try:
@@ -191,6 +192,32 @@ class AgentTracer:
         """End the current experiment."""
         self._current_experiment = None
 
+    @contextmanager
+    def start_thread(self, thread_id: str) -> Generator[str, None, None]:
+        """
+        Start a thread scope — all traces created within inherit the thread_id.
+
+        Opik threads group traces into a conversation view, so each user
+        session becomes a thread with multiple traces (one per question).
+
+        Usage:
+            with tracer.start_thread(session_id) as tid:
+                with tracer.start_trace("rag_chat", ...) as trace:
+                    ...  # trace is automatically part of the thread
+
+        Args:
+            thread_id: Unique thread identifier (typically the session ID)
+
+        Yields:
+            The thread_id being used
+        """
+        previous = self._current_thread_id
+        self._current_thread_id = thread_id
+        try:
+            yield thread_id
+        finally:
+            self._current_thread_id = previous
+
     def trace(
         self,
         name: str,
@@ -199,6 +226,7 @@ class AgentTracer:
         metadata: dict | None = None,
         tags: list[str] | None = None,
         provider_info: dict | None = None,
+        thread_id: str | None = None,
     ) -> str | None:
         """
         Record a trace.
@@ -210,6 +238,7 @@ class AgentTracer:
             metadata: Optional metadata dict.
             tags: Optional list of tags.
             provider_info: Optional provider info (auto-populated from session if None).
+            thread_id: Optional thread ID to group traces into a conversation.
 
         Returns:
             Trace ID if successful, None otherwise
@@ -234,13 +263,20 @@ class AgentTracer:
             if meta.get("provider") and meta["provider"] not in trace_tags:
                 trace_tags.append(meta["provider"])
 
-            trace = self._client.trace(
+            # Use explicit thread_id or inherit from start_thread() scope
+            effective_thread_id = thread_id or self._current_thread_id
+
+            kwargs = dict(
                 name=name,
                 input=input,
                 output=output,
                 metadata=meta,
                 tags=trace_tags,
             )
+            if effective_thread_id:
+                kwargs["thread_id"] = effective_thread_id
+
+            trace = self._client.trace(**kwargs)
             return trace.id if hasattr(trace, 'id') else None
         except Exception as e:
             logger.error(f"OPIK: Failed to trace: {e}")
@@ -254,12 +290,13 @@ class AgentTracer:
         metadata: dict | None = None,
         tags: list[str] | None = None,
         provider_info: dict | None = None,
+        thread_id: str | None = None,
     ) -> Generator[Any, None, None]:
         """
         Start a trace context for grouping spans.
 
         Usage:
-            with tracer.start_trace("validate", input={...}) as trace:
+            with tracer.start_trace("validate", input={...}, thread_id="abc") as trace:
                 with tracer.span("step1", input={...}) as span:
                     ...
                     span.update(output={...})
@@ -270,6 +307,7 @@ class AgentTracer:
             metadata: Optional metadata
             tags: Optional tags
             provider_info: Optional provider info (auto-populated from session if None)
+            thread_id: Optional thread ID to group traces into a conversation
 
         Yields:
             Trace object (or None if disabled)
@@ -278,6 +316,7 @@ class AgentTracer:
             yield None
             return
 
+        trace = None
         try:
             # Add provider info to metadata
             meta = metadata or {}
@@ -291,17 +330,24 @@ class AgentTracer:
             if meta.get("provider") and meta["provider"] not in trace_tags:
                 trace_tags.append(meta["provider"])
 
-            trace = self._client.trace(
+            # Use explicit thread_id or inherit from start_thread() scope
+            effective_thread_id = thread_id or self._current_thread_id
+
+            kwargs = dict(
                 name=name,
                 input=input or {},
                 metadata=meta,
                 tags=trace_tags,
             )
+            if effective_thread_id:
+                kwargs["thread_id"] = effective_thread_id
+
+            trace = self._client.trace(**kwargs)
             self._current_trace = trace
-            yield trace
         except Exception as e:
             logger.error(f"OPIK: Failed to start trace: {e}")
-            yield None
+        try:
+            yield trace
         finally:
             self._current_trace = None
 
@@ -337,6 +383,7 @@ class AgentTracer:
             yield DummySpan()
             return
 
+        s = DummySpan()
         try:
             # Add provider info to metadata
             meta = metadata or {}
@@ -345,16 +392,15 @@ class AgentTracer:
             else:
                 meta.update(_get_provider_metadata())
 
-            span = self._current_trace.span(
+            s = self._current_trace.span(
                 name=name,
                 input=input or {},
                 metadata=meta,
                 type=span_type,
             )
-            yield span
         except Exception as e:
             logger.error(f"OPIK: Failed to create span: {e}")
-            yield DummySpan()
+        yield s
 
     def trace_validation(
         self,

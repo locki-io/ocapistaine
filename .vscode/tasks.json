@@ -125,6 +125,34 @@
       }
     },
     {
+      "label": "💬 Start Chat (port 8503)",
+      "type": "shell",
+      "command": "poetry",
+      "args": [
+        "run", "streamlit", "run", "app/front_chat.py",
+        "--server.port", "8503",
+        "--server.enableCORS", "true",
+        "--server.enableXsrfProtection", "false"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "isBackground": true
+    },
+    {
+      "label": "💬 Open Chat in Browser",
+      "type": "shell",
+      "command": "open",
+      "args": ["http://localhost:8503"],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent"
+      }
+    },
+    {
       "label": "🔗 Open in Browser (Local)",
       "type": "shell",
       "command": "open",

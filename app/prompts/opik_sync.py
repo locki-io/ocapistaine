@@ -44,20 +44,43 @@ _logger = AgentLogger("opik_sync")
 # These combine persona (system) + task (user) prompts for playground use
 
 COMPOSITE_PROMPTS = {
+    # ── Forseti composites ──────────────────────────────
     "forseti-persona-charter": {
         "system_prompt": "forseti.persona",
         "user_prompt": "forseti.charter_validation",
         "description": "Forseti persona + charter validation (for playground)",
+        "json_file": "forseti_charter.json",
     },
     "forseti-persona-category": {
         "system_prompt": "forseti.persona",
         "user_prompt": "forseti.category_classification",
         "description": "Forseti persona + category classification (for playground)",
+        "json_file": "forseti_charter.json",
     },
     "forseti-persona-wording": {
         "system_prompt": "forseti.persona",
         "user_prompt": "forseti.wording_correction",
         "description": "Forseti persona + wording correction (for playground)",
+        "json_file": "forseti_charter.json",
+    },
+    # ── OCapistaine RAG composites ─────────────────────
+    "ocapistaine-rag-chat": {
+        "system_prompt": ["ocapistaine.persona", "ocapistaine.rag_chat_system"],
+        "user_prompt": "ocapistaine.rag_chat_user",
+        "description": "OCapistaine persona + RAG chat Q&A (for playground)",
+        "json_file": "ocapistaine_rag.json",
+    },
+    "ocapistaine-rag-overview": {
+        "system_prompt": "ocapistaine.overview_system",
+        "user_prompt": "ocapistaine.overview_user",
+        "description": "OCapistaine overview — panoramic election response (for playground)",
+        "json_file": "ocapistaine_rag.json",
+    },
+    "ocapistaine-rag-compare": {
+        "system_prompt": ["ocapistaine.persona", "ocapistaine.compare_system"],
+        "user_prompt": "ocapistaine.compare_user",
+        "description": "OCapistaine persona + program comparison (for playground)",
+        "json_file": "ocapistaine_rag.json",
     },
 }
 
@@ -323,6 +346,9 @@ def build_composite_prompt(composite_name: str) -> Optional[Dict[str, Any]]:
     """
     Build a composite chat prompt from system + user prompts.
 
+    system_prompt can be a string (single prompt name) or a list of prompt
+    names that get concatenated with ``\\n\\n``.
+
     Args:
         composite_name: Name of the composite prompt from COMPOSITE_PROMPTS
 
@@ -334,17 +360,25 @@ def build_composite_prompt(composite_name: str) -> Optional[Dict[str, Any]]:
         return None
 
     config = COMPOSITE_PROMPTS[composite_name]
-    system_name = config["system_prompt"]
+    system_names = config["system_prompt"]
     user_name = config["user_prompt"]
 
-    # Get content from individual prompts
-    system_content = _get_prompt_content(system_name)
+    # Normalize system_prompt to a list
+    if isinstance(system_names, str):
+        system_names = [system_names]
+
+    # Get and concatenate system content
+    system_parts = []
+    for name in system_names:
+        content = _get_prompt_content(name)
+        if not content:
+            _logger.error("SYSTEM_PROMPT_NOT_FOUND", name=name)
+            return None
+        system_parts.append(content)
+    system_content = "\n\n".join(system_parts)
+
+    # Get user content
     user_content = _get_prompt_content(user_name)
-
-    if not system_content:
-        _logger.error("SYSTEM_PROMPT_NOT_FOUND", name=system_name)
-        return None
-
     if not user_content:
         _logger.error("USER_PROMPT_NOT_FOUND", name=user_name)
         return None
@@ -363,7 +397,7 @@ def build_composite_prompt(composite_name: str) -> Optional[Dict[str, Any]]:
         "variables": user_variables,
         "description": config.get("description", ""),
         "components": {
-            "system": system_name,
+            "system": system_names if len(system_names) > 1 else system_names[0],
             "user": user_name,
         },
     }
@@ -468,8 +502,13 @@ def pull_composite_from_opik(
         return {"success": False, "name": composite_name, "error": f"Unknown composite: {composite_name}"}
 
     config = COMPOSITE_PROMPTS[composite_name]
-    system_name = config["system_prompt"]
+    system_names = config["system_prompt"]
     user_name = config["user_prompt"]
+    json_file = config.get("json_file", "forseti_charter.json")
+
+    # Normalize system_prompt to a list
+    if isinstance(system_names, str):
+        system_names = [system_names]
 
     try:
         # Fetch the composite prompt from Opik
@@ -493,7 +532,9 @@ def pull_composite_from_opik(
         opik_user_content = user_msg.get("content", "") if isinstance(user_msg, dict) else getattr(user_msg, "content", "")
 
         # Compare with current local content
-        local_system_content = _get_prompt_content(system_name)
+        # For multi-system composites, compare the concatenated version
+        local_system_parts = [_get_prompt_content(n) or "" for n in system_names]
+        local_system_content = "\n\n".join(local_system_parts)
         local_user_content = _get_prompt_content(user_name)
 
         changed = []
@@ -503,16 +544,29 @@ def pull_composite_from_opik(
         user_changed = opik_user_content != local_user_content
 
         if system_changed:
-            changed.append(system_name)
-            # Warn: system prompt is shared across all composites
-            other_composites = [
-                n for n, c in COMPOSITE_PROMPTS.items()
-                if c["system_prompt"] == system_name and n != composite_name
-            ]
-            if other_composites:
+            if len(system_names) == 1:
+                changed.append(system_names[0])
+            else:
+                # Multi-system: warn that pull updates the LAST system prompt only
+                # (persona stays stable, feature-specific prompt gets the update)
+                changed.append(system_names[-1])
                 warnings.append(
-                    f"Shared prompt '{system_name}' changed — also used by: {', '.join(other_composites)}"
+                    f"Composite has {len(system_names)} system prompts ({', '.join(system_names)}). "
+                    f"Only the last one ({system_names[-1]}) will be updated on pull. "
+                    f"Edit individual prompts directly if you need to change the persona."
                 )
+
+            # Warn about shared prompts
+            for sname in system_names:
+                other_composites = [
+                    n for n, c in COMPOSITE_PROMPTS.items()
+                    if sname in (c["system_prompt"] if isinstance(c["system_prompt"], list) else [c["system_prompt"]])
+                    and n != composite_name
+                ]
+                if other_composites:
+                    warnings.append(
+                        f"Shared prompt '{sname}' — also used by: {', '.join(other_composites)}"
+                    )
 
         if user_changed:
             changed.append(user_name)
@@ -528,10 +582,23 @@ def pull_composite_from_opik(
             }
 
         # Apply changes to local JSON
-        if system_changed:
-            _update_json_prompt_file(system_name, opik_system_content, commit)
+        if system_changed and len(system_names) == 1:
+            _update_json_prompt_file(system_names[0], opik_system_content, commit, json_file=json_file)
+        elif system_changed:
+            # Multi-system: extract the feature-specific part (after persona)
+            # by removing the persona prefix from the pulled content
+            persona_content = _get_prompt_content(system_names[0]) or ""
+            separator = "\n\n"
+            if opik_system_content.startswith(persona_content + separator):
+                feature_content = opik_system_content[len(persona_content) + len(separator):]
+                _update_json_prompt_file(system_names[-1], feature_content, commit, json_file=json_file)
+            else:
+                # Can't cleanly split — update last prompt with full content and warn
+                warnings.append("Could not cleanly separate persona from feature prompt; updating last system prompt with full content")
+                _update_json_prompt_file(system_names[-1], opik_system_content, commit, json_file=json_file)
+
         if user_changed:
-            _update_json_prompt_file(user_name, opik_user_content, commit)
+            _update_json_prompt_file(user_name, opik_user_content, commit, json_file=json_file)
 
         if changed:
             _logger.info(

@@ -187,22 +187,22 @@ async def chat_endpoint(request: Request):
             "n_results": 5  // optional
         }
     """
-    from app.rag import RAGService
+    from app.agents.ocapistaine import OCapistaineAgent
 
     body = await request.json()
     message = body.get("message", "")
     filters = body.get("filters")
-    n_results = body.get("n_results", 5)
+    n_results = body.get("n_results", 10)
     thread_id = body.get("thread_id")
 
     if not message:
         return {"error": "message is required"}
 
-    service = RAGService()
-    result = await service.query(
-        message, n_results=n_results, filters=filters, thread_id=thread_id
+    agent = OCapistaineAgent()
+    result = await agent.chat(
+        question=message, n_results=n_results, filters=filters, thread_id=thread_id
     )
-    return result
+    return result.to_dict()
 
 
 @app.post("/api/v1/chat/compare")
@@ -216,7 +216,7 @@ async def chat_compare_endpoint(request: Request):
             "list_names": ["audierne2026", "liste-opposition-1", ...]
         }
     """
-    from app.rag import RAGService
+    from app.agents.ocapistaine import OCapistaineAgent
 
     body = await request.json()
     question = body.get("question", "")
@@ -226,9 +226,9 @@ async def chat_compare_endpoint(request: Request):
     if not question or not list_names:
         return {"error": "question and list_names are required"}
 
-    service = RAGService()
-    result = await service.compare(question, list_names, thread_id=thread_id)
-    return result
+    agent = OCapistaineAgent()
+    result = await agent.compare(question, list_names, thread_id=thread_id)
+    return result.to_dict()
 
 
 # =============================================================================
@@ -239,10 +239,9 @@ async def chat_compare_endpoint(request: Request):
 @app.get("/api/v1/documents")
 async def list_documents():
     """List indexed document sources from the RAG vector store."""
-    from app.rag import RAGService
+    from app.rag.store import collection_stats
 
-    stats = RAGService.stats()
-    return stats
+    return collection_stats()
 
 
 @app.get("/api/v1/documents/ingest")

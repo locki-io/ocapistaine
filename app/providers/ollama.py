@@ -2,6 +2,7 @@
 Ollama Provider
 
 Async LLM provider for local Ollama instances.
+Supports resource controls: keep_alive, num_thread, num_ctx.
 """
 
 import httpx
@@ -15,6 +16,11 @@ class OllamaProvider(LLMProvider):
     Ollama provider for local LLM inference.
 
     Connects to a local Ollama instance via HTTP API.
+
+    Resource controls (via .env or constructor):
+        OLLAMA_KEEP_ALIVE: How long to keep model loaded after use ("0"=unload immediately, "2m"=default)
+        OLLAMA_NUM_THREAD: CPU threads to use (None=all cores)
+        OLLAMA_NUM_CTX: Context window size (None=model default, e.g. 2048)
     """
 
     def __init__(
@@ -22,19 +28,17 @@ class OllamaProvider(LLMProvider):
         host: str | None = None,
         model: str | None = None,
         timeout: float = 120.0,
+        keep_alive: str | None = None,
+        num_thread: int | None = None,
+        num_ctx: int | None = None,
     ):
-        """
-        Initialize Ollama provider.
-
-        Args:
-            host: Ollama host URL (default: http://localhost:11434).
-            model: Model name (default: mistral:latest).
-            timeout: Request timeout in seconds.
-        """
         config = get_config()
         self._host = (host or config.ollama_host).rstrip("/")
         self._model_name = model or config.ollama_model
         self._timeout = timeout
+        self._keep_alive = keep_alive or config.ollama_keep_alive
+        self._num_thread = num_thread or config.ollama_num_thread
+        self._num_ctx = num_ctx or config.ollama_num_ctx
 
     @property
     def name(self) -> str:
@@ -43,6 +47,17 @@ class OllamaProvider(LLMProvider):
     @property
     def model(self) -> str:
         return self._model_name
+
+    def _build_options(self, temperature: float, max_tokens: int | None = None) -> dict:
+        """Build Ollama options dict with resource controls."""
+        options = {"temperature": temperature}
+        if max_tokens:
+            options["num_predict"] = max_tokens
+        if self._num_thread:
+            options["num_thread"] = self._num_thread
+        if self._num_ctx:
+            options["num_ctx"] = self._num_ctx
+        return options
 
     async def complete(
         self,
@@ -84,12 +99,9 @@ class OllamaProvider(LLMProvider):
             "model": self._model_name,
             "messages": ollama_messages,
             "stream": False,
-            "options": {
-                "temperature": temperature,
-            },
+            "options": self._build_options(temperature, max_tokens),
+            "keep_alive": self._keep_alive,
         }
-        if max_tokens:
-            payload["options"]["num_predict"] = max_tokens
         if json_mode:
             payload["format"] = "json"
 
@@ -140,12 +152,9 @@ class OllamaProvider(LLMProvider):
             "model": self._model_name,
             "messages": ollama_messages,
             "stream": True,
-            "options": {
-                "temperature": temperature,
-            },
+            "options": self._build_options(temperature, max_tokens),
+            "keep_alive": self._keep_alive,
         }
-        if max_tokens:
-            payload["options"]["num_predict"] = max_tokens
 
         async with httpx.AsyncClient(timeout=self._timeout) as client:
             async with client.stream(
@@ -161,6 +170,30 @@ class OllamaProvider(LLMProvider):
                         content = chunk.get("message", {}).get("content", "")
                         if content:
                             yield content
+
+    async def unload(self) -> bool:
+        """
+        Explicitly unload the model from memory.
+
+        Sends keep_alive=0 to force immediate unload.
+        Useful after batch jobs or when switching models.
+
+        Returns:
+            True if unload succeeded.
+        """
+        try:
+            async with httpx.AsyncClient(timeout=10.0) as client:
+                response = await client.post(
+                    f"{self._host}/api/chat",
+                    json={
+                        "model": self._model_name,
+                        "messages": [],
+                        "keep_alive": 0,
+                    },
+                )
+                return response.status_code == 200
+        except Exception:
+            return False
 
     async def health_check(self) -> bool:
         """

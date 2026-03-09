@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-04T22:44:21.848698",
-  "count": 1000,
+  "generated_at": "2026-03-09T08:39:47.051137",
+  "count": 1064,
   "contributions": [
     {
       "id": "base_ass_001",
@@ -21884,6 +21884,1414 @@
       },
       "title": "Il y a un PROJET DE CONSTRUCTION EN PRAIRISER UNE ZONE INONDABLE, avec des FE...",
       "body": "**Constat factuel:**\nIl y a un PROJET DE CONSTRUCTION EN PRAIRISER UNE ZONE INONDABLE, avec des FENÊtres cassées et un SIège instable, menaçant les VASÉITés et les VASÉITÉS.\n\n**Vos idées d'améliorations:**\nFAIRE UN EXAMEN Régulier des SIéges et FENêtres pour éviter les INJCTIONS d'eau, compensation aux DOMINICs pour leur déplacement, et établir des STANDARDS DE CONSTRUCTION RAPIDEMENTS dans la ZONE INUNDABLE."
+    },
+    {
+      "id": "field_culture_a21cccf9",
+      "category": "culture",
+      "constat_factuel": "Le lancement d'un nouveau site web et des campagnes locales dans la ville de Audierne met en lumière l'importance de la communication et des activités culturelles dans la maintenance et la promotion du patrimoine local.",
+      "idees_ameliorations": "Améliorer la visibilité des événements culturels grâce à un site web dédié, et organiser des ateliers de diffusion plus réguliers pour renforcer la communication entre la communauté et les institutions locales.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "evenements_culturels",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Le lancement d'un nouveau site web et des campagnes locales dans la ville de ...",
+      "body": "**Constat factuel:**\nLe lancement d'un nouveau site web et des campagnes locales dans la ville de Audierne met en lumière l'importance de la communication et des activités culturelles dans la maintenance et la promotion du patrimoine local.\n\n**Vos idées d'améliorations:**\nAméliorer la visibilité des événements culturels grâce à un site web dédié, et organiser des ateliers de diffusion plus réguliers pour renforcer la communication entre la communauté et les institutions locales."
+    },
+    {
+      "id": "field_culture_b9672582",
+      "category": "culture",
+      "constat_factuel": "Au collège d'Audierne, les ressources numériques pour organiser des événements culturels et des campagnes locales sont déployées sous forme d'un site web et de campagnes locales. Cependant, la participation active des citoyens semble faible, malgré la présence de ces outils, ce qui limitent l'engagement et la préservation du patrimoine local.",
+      "idees_ameliorations": "Créer une campagne de promotion active du site web via les réseaux sociaux pour sensibiliser au downdoad des événements. Organiser des ateliers ou des expériences pratiques pour tester le site et éduquer le public à son utilisation. Améliorer la dysfunctionnalité du site web pour un usage plus accessible par tous. Créer un système de retrograding pour collecter les retours des utilisateurs et renforcer l'outil en fonction de la demande.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "evenements_culturels",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Au collège d'Audierne, les ressources numériques pour organiser des événement...",
+      "body": "**Constat factuel:**\nAu collège d'Audierne, les ressources numériques pour organiser des événements culturels et des campagnes locales sont déployées sous forme d'un site web et de campagnes locales. Cependant, la participation active des citoyens semble faible, malgré la présence de ces outils, ce qui limitent l'engagement et la préservation du patrimoine local.\n\n**Vos idées d'améliorations:**\nCréer une campagne de promotion active du site web via les réseaux sociaux pour sensibiliser au downdoad des événements. Organiser des ateliers ou des expériences pratiques pour tester le site et éduquer le public à son utilisation. Améliorer la dysfunctionnalité du site web pour un usage plus accessible par tous. Créer un système de retrograding pour collecter les retours des utilisateurs et renforcer l'outil en fonction de la demande."
+    },
+    {
+      "id": "field_culture_c834eb9d",
+      "category": "culture",
+      "constat_factuel": "Le récent lancé d’un nouveau site web et des campagnes locales ont renforcé l’intérêt pour les événements culturels dans la commune de Audierne, mais soulignent également l’absence de communication efficace visant à des publics moins Young ou moins connectés.",
+      "idees_ameliorations": "Intégrer plus activement les événements numériques dans les ateliers culturels pour cibler mieux l’audience.\nOrganiser des ateliers interactifs sur les réseaux sociaux pour stimuler la participation.\nExploiter les outils numériques pour diversifier les canaux de diffusion des informations et des demandes d’participations.\nCréer un espace communautaire en ligne et en线下 pour fonder des réseaux et organiser des réunions annuelles des citoyens motivés par la culture.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "evenements_culturels",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Le récent lancé d’un nouveau site web et des campagnes locales ont renforcé l...",
+      "body": "**Constat factuel:**\nLe récent lancé d’un nouveau site web et des campagnes locales ont renforcé l’intérêt pour les événements culturels dans la commune de Audierne, mais soulignent également l’absence de communication efficace visant à des publics moins Young ou moins connectés.\n\n**Vos idées d'améliorations:**\nIntégrer plus activement les événements numériques dans les ateliers culturels pour cibler mieux l’audience.\nOrganiser des ateliers interactifs sur les réseaux sociaux pour stimuler la participation.\nExploiter les outils numériques pour diversifier les canaux de diffusion des informations et des demandes d’participations.\nCréer un espace communautaire en ligne et en线下 pour fonder des réseaux et organiser des réunions annuelles des citoyens motivés par la culture."
+    },
+    {
+      "id": "field_culture_a16172c1",
+      "category": "culture",
+      "constat_factuel": "LE Lancement DU SITE WEB ET LES CAMPAIGNES LOCALES NE S'EST PAS ÉVOLU EN MATTERIE DE REACH, EN NANCELAGE, OU EN INFLUENCE, C-A-D ELLE/ELLE NE REMET PAS EN L'ÉCLAT LA VRAIE VIBRANCE CULTURELLE DE LA COMMUNE AUDIERNE.",
+      "idees_ameliorations": "PONDEZ LES RECHERCHE EN LIEU DE LANCER UNE ANCIENNE STRATEGIE, INCLUDEZ LES COCACONS DANS LES CAMPAIGNES, ET FONDEZ-LES SOUS UN MÊME THÈME POUR UN RÉSULTAT COordinated ET Mieux Concentré.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "evenements_culturels",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "LE Lancement DU SITE WEB ET LES CAMPAIGNES LOCALES NE S'EST PAS ÉVOLU EN MATT...",
+      "body": "**Constat factuel:**\nLE Lancement DU SITE WEB ET LES CAMPAIGNES LOCALES NE S'EST PAS ÉVOLU EN MATTERIE DE REACH, EN NANCELAGE, OU EN INFLUENCE, C-A-D ELLE/ELLE NE REMET PAS EN L'ÉCLAT LA VRAIE VIBRANCE CULTURELLE DE LA COMMUNE AUDIERNE.\n\n**Vos idées d'améliorations:**\nPONDEZ LES RECHERCHE EN LIEU DE LANCER UNE ANCIENNE STRATEGIE, INCLUDEZ LES COCACONS DANS LES CAMPAIGNES, ET FONDEZ-LES SOUS UN MÊME THÈME POUR UN RÉSULTAT COordinated ET Mieux Concentré."
+    },
+    {
+      "id": "field_economie_68562091",
+      "category": "economie",
+      "constat_factuel": "L'economie de l'Arrondissement de l'Est de Quimper, port du Esquibien, évoque une situation où les recettes locales ont connu une croissance modérée en 2023, mais où la portée du budget reste critique pour soutenir les investissements locaux et les services publics.",
+      "idees_ameliorations": "Afin d'améliorer la situation économique, il serait pertinent de renforcer les investissements dans des projets locaux durables et de renforcer la gestion du budget pour garantir une meilleure allocation des ressources. Une augmentation du taux d'impôt sur la rente brute pourrait stimuler l'Investissement de l'ordonnance municipale, tout en respectant les contraintes fiscales. Enfin, il serait pertinent de mettre en place des stratégies de promotion de l'économie locale pour stimuler les investissements et les activités économiques enaudierne.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "economie",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'economie de l'Arrondissement de l'Est de Quimper, port du Esquibien, évoque...",
+      "body": "**Constat factuel:**\nL'economie de l'Arrondissement de l'Est de Quimper, port du Esquibien, évoque une situation où les recettes locales ont connu une croissance modérée en 2023, mais où la portée du budget reste critique pour soutenir les investissements locaux et les services publics.\n\n**Vos idées d'améliorations:**\nAfin d'améliorer la situation économique, il serait pertinent de renforcer les investissements dans des projets locaux durables et de renforcer la gestion du budget pour garantir une meilleure allocation des ressources. Une augmentation du taux d'impôt sur la rente brute pourrait stimuler l'Investissement de l'ordonnance municipale, tout en respectant les contraintes fiscales. Enfin, il serait pertinent de mettre en place des stratégies de promotion de l'économie locale pour stimuler les investissements et les activités économiques enaudierne."
+    },
+    {
+      "id": "field_economie_49760586",
+      "category": "economie",
+      "constat_factuel": "Le budget de la commune de Audierne reflète une situation économique globale avec des retombées réduites pour l'annexes port d'Esquibien, impactant la compétitivité locale et la capacité d'attribution des financements publics.",
+      "idees_ameliorations": "Pour renforcer le développement économique local, il est recommandé d'agir sur les investissements en tourisme tout en soutenant les petites entreprises locales. De plus, une attention particulière devrait être portée aux infrastructures pour stimuler l'agriculture durable et le développement renforcé de l'industrie minière.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "economie",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Le budget de la commune de Audierne reflète une situation économique globale ...",
+      "body": "**Constat factuel:**\nLe budget de la commune de Audierne reflète une situation économique globale avec des retombées réduites pour l'annexes port d'Esquibien, impactant la compétitivité locale et la capacité d'attribution des financements publics.\n\n**Vos idées d'améliorations:**\nPour renforcer le développement économique local, il est recommandé d'agir sur les investissements en tourisme tout en soutenant les petites entreprises locales. De plus, une attention particulière devrait être portée aux infrastructures pour stimuler l'agriculture durable et le développement renforcé de l'industrie minière."
+    },
+    {
+      "id": "field_economie_2bcbf21c",
+      "category": "economie",
+      "constat_factuel": "L'analyse du budget et des recettes du port d'Esquibien révèlate des perspectives pour le développement économique de la commune de Audierne.",
+      "idees_ameliorations": "Pour renforcer l'investissement dans le transport en Haute-Saône, il serait pertinent de realiser des actions pour stimuler les exports. En outre, une gestion plus efficace des déchets et une gestion de l'énergie pourraient réduire les coûts et améliorer la durabilité de la commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "economie",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'analyse du budget et des recettes du port d'Esquibien révèlate des perspect...",
+      "body": "**Constat factuel:**\nL'analyse du budget et des recettes du port d'Esquibien révèlate des perspectives pour le développement économique de la commune de Audierne.\n\n**Vos idées d'améliorations:**\nPour renforcer l'investissement dans le transport en Haute-Saône, il serait pertinent de realiser des actions pour stimuler les exports. En outre, une gestion plus efficace des déchets et une gestion de l'énergie pourraient réduire les coûts et améliorer la durabilité de la commune."
+    },
+    {
+      "id": "field_economie_da61d21a",
+      "category": "economie",
+      "constat_factuel": "LE BUDGET DE LA COMMUNE DE AUDIERNE NE PARTE PAS DANS TOUT SA VALEUR. LES REVENUS GÉNÉrés PAR L'ANALYSE DU BUDGET DE L'PORT DE ESQUIBIEU S'ÉLOignent DE LA VALEUR MAXIMUM. LES EXPENSES S'AGGLOMERENT SUR QUELQUES ItemS, CA CAUSANT UNE INEFFICACITÉ ET UNE Perte DE PROSPÉRITÉ POUR LA COMMUNE.",
+      "idees_ameliorations": "IL Faut D'ABONNEURS plus transparents sur LES ALLOCATIONs DE BUDGET. LA Transparence dans les Répartitions du Budget devrait être un Objet de Priorité pour Améliorer la Transparence et la Confiance des citoyens. En outre, les Révenues devraient être Evaluées en tenant compte de TOUT les Facteurs Pertinentes pour éviter la DEGRADATION des VALEURS. La COMMUNE devrait aussi Considérer des Solutions plus Dynamiques pour stimuler la Croissance Économique et Renforcer son Attractivité envers les Investisseurs.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "economie",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "LE BUDGET DE LA COMMUNE DE AUDIERNE NE PARTE PAS DANS TOUT SA VALEUR. LES REV...",
+      "body": "**Constat factuel:**\nLE BUDGET DE LA COMMUNE DE AUDIERNE NE PARTE PAS DANS TOUT SA VALEUR. LES REVENUS GÉNÉrés PAR L'ANALYSE DU BUDGET DE L'PORT DE ESQUIBIEU S'ÉLOignent DE LA VALEUR MAXIMUM. LES EXPENSES S'AGGLOMERENT SUR QUELQUES ItemS, CA CAUSANT UNE INEFFICACITÉ ET UNE Perte DE PROSPÉRITÉ POUR LA COMMUNE.\n\n**Vos idées d'améliorations:**\nIL Faut D'ABONNEURS plus transparents sur LES ALLOCATIONs DE BUDGET. LA Transparence dans les Répartitions du Budget devrait être un Objet de Priorité pour Améliorer la Transparence et la Confiance des citoyens. En outre, les Révenues devraient être Evaluées en tenant compte de TOUT les Facteurs Pertinentes pour éviter la DEGRADATION des VALEURS. La COMMUNE devrait aussi Considérer des Solutions plus Dynamiques pour stimuler la Croissance Économique et Renforcer son Attractivité envers les Investisseurs."
+    },
+    {
+      "id": "field_ecologie_88a740d2",
+      "category": "ecologie",
+      "constat_factuel": "L'exploitation de l'énergie renouvelable dans la commune d'Audierne est en pleine expansion, avec des potentialités de développement en électricité solaire et électricité wind. Cependant, la#undefisation des réseaux énergétiques et la diversification des sources d'énergie peuvent apporter des enjeux de gestion et de sécurisation pour la commune.",
+      "idees_ameliorations": "Pour améliorer l'exploitation de l'énergie renouvelable, il serait pertinent d'agir sur l'amélioration des infrastructures énergétiques, en soutenant les PME locales et en dégager les opportunités de développement. Il serait également pertinent de sensibiliser le citoyen à l'importance de l'énergy renouvelable et de fonder des associations locales pour la gestion et l'utilisation responsable de l'électricité renouvelée.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "énergie renouvelable",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'exploitation de l'énergie renouvelable dans la commune d'Audierne est en pl...",
+      "body": "**Constat factuel:**\nL'exploitation de l'énergie renouvelable dans la commune d'Audierne est en pleine expansion, avec des potentialités de développement en électricité solaire et électricité wind. Cependant, la#undefisation des réseaux énergétiques et la diversification des sources d'énergie peuvent apporter des enjeux de gestion et de sécurisation pour la commune.\n\n**Vos idées d'améliorations:**\nPour améliorer l'exploitation de l'énergie renouvelable, il serait pertinent d'agir sur l'amélioration des infrastructures énergétiques, en soutenant les PME locales et en dégager les opportunités de développement. Il serait également pertinent de sensibiliser le citoyen à l'importance de l'énergy renouvelable et de fonder des associations locales pour la gestion et l'utilisation responsable de l'électricité renouvelée."
+    },
+    {
+      "id": "field_ecologie_ad34b769",
+      "category": "ecologie",
+      "constat_factuel": "En Audierne, l'utilisation des énergies renouvelables est déjà bien établie avec des sources comme l'électricité solaire et le wind. Cependant, la diversité des sources d'énergie et la gestion des énergies renouvelables restent des défis pour la commune.",
+      "idees_ameliorations": "Pour améliorer la gestion des énergies renouvelables, il serait utile d'installer des batteries d'énergie pour stocker l'électricité solaire et du wind. De plus, une collaboration avec des industries locales pourrait stimuler l'adoption des énergies renouvelables et permettre une réduction des coûts associés.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "énergie renouvelable",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "En Audierne, l'utilisation des énergies renouvelables est déjà bien établie a...",
+      "body": "**Constat factuel:**\nEn Audierne, l'utilisation des énergies renouvelables est déjà bien établie avec des sources comme l'électricité solaire et le wind. Cependant, la diversité des sources d'énergie et la gestion des énergies renouvelables restent des défis pour la commune.\n\n**Vos idées d'améliorations:**\nPour améliorer la gestion des énergies renouvelables, il serait utile d'installer des batteries d'énergie pour stocker l'électricité solaire et du wind. De plus, une collaboration avec des industries locales pourrait stimuler l'adoption des énergies renouvelables et permettre une réduction des coûts associés."
+    },
+    {
+      "id": "field_ecologie_ae53d84b",
+      "category": "ecologie",
+      "constat_factuel": "L'exploitation des énergies renouvelables possède des potentialités significatives pour la transition énergétique, mais l'investissement local semble manquer dans ce domaine.",
+      "idees_ameliorations": "1. Intégration d'infrastructures locales pour le stockage et la production d'électricité à l'échelle commune. 2. Animation des ménages à investir dans des Superchargers Tesla locaux pour accélérer la transition électronique. 3. Promotion d'énergies locales et d'échanges énergétiques entre les ménages pour stimuler la production renouvelable.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "énergie renouvelable",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'exploitation des énergies renouvelables possède des potentialités significa...",
+      "body": "**Constat factuel:**\nL'exploitation des énergies renouvelables possède des potentialités significatives pour la transition énergétique, mais l'investissement local semble manquer dans ce domaine.\n\n**Vos idées d'améliorations:**\n1. Intégration d'infrastructures locales pour le stockage et la production d'électricité à l'échelle commune. 2. Animation des ménages à investir dans des Superchargers Tesla locaux pour accélérer la transition électronique. 3. Promotion d'énergies locales et d'échanges énergétiques entre les ménages pour stimuler la production renouvelable."
+    },
+    {
+      "id": "field_ecologie_28b045aa",
+      "category": "ecologie",
+      "constat_factuel": "L'exploitation d'énergies renouvelables est une pré vision cruciale pour le développement durable de la commune.",
+      "idees_ameliorations": "Il est recommandé d'agir pour renforcer l'engagement des citoyens dans la gestion des projets énergétiques renouvelables et de promouvoir des bourses ou des réductions tarifaires pour les entreprises locales.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "énergie renouvelable",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'exploitation d'énergies renouvelables est une pré vision cruciale pour le d...",
+      "body": "**Constat factuel:**\nL'exploitation d'énergies renouvelables est une pré vision cruciale pour le développement durable de la commune.\n\n**Vos idées d'améliorations:**\nIl est recommandé d'agir pour renforcer l'engagement des citoyens dans la gestion des projets énergétiques renouvelables et de promouvoir des bourses ou des réductions tarifaires pour les entreprises locales."
+    },
+    {
+      "id": "field_associations_6cce1f8f",
+      "category": "associations",
+      "constat_factuel": "La situation actuelle dans la commune de Audierne semble affaiblir les chances de succès pour les chaînes traversières en raison des difficultés liées aux subventions disponibles.",
+      "idees_ameliorations": "Pour améliorer la situation, il serait pertinent de revoir les modalités d'attribution des subventions existantes pour soutenir ces projets. De plus, créer un funde dédié pour soutenir les projets de synthèse entre unités sociales pourrait stimuler ce sector important.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "subventions",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "La situation actuelle dans la commune de Audierne semble affaiblir les chance...",
+      "body": "**Constat factuel:**\nLa situation actuelle dans la commune de Audierne semble affaiblir les chances de succès pour les chaînes traversières en raison des difficultés liées aux subventions disponibles.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il serait pertinent de revoir les modalités d'attribution des subventions existantes pour soutenir ces projets. De plus, créer un funde dédié pour soutenir les projets de synthèse entre unités sociales pourrait stimuler ce sector important."
+    },
+    {
+      "id": "field_associations_c753650e",
+      "category": "associations",
+      "constat_factuel": "La commune d'Audierne fait face à des difficultés liées à l'accès aux ressources nécessaires pour soutenir ses initiatives associatives, avec des subventions limitées et des investissements incertains.",
+      "idees_ameliorations": "Créer un funde dédié aux investissements pour les chaînes traversières pour stimuler l'action citoyenne et la durabilité des projets associatifs. Evaluer les projets et les financements pour garantir une allocation adaptée et efficace. Organiser des ateliers pour informer et guider la communauté sur l'utilisation optimale des ressources.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "subventions",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "La commune d'Audierne fait face à des difficultés liées à l'accès aux ressour...",
+      "body": "**Constat factuel:**\nLa commune d'Audierne fait face à des difficultés liées à l'accès aux ressources nécessaires pour soutenir ses initiatives associatives, avec des subventions limitées et des investissements incertains.\n\n**Vos idées d'améliorations:**\nCréer un funde dédié aux investissements pour les chaînes traversières pour stimuler l'action citoyenne et la durabilité des projets associatifs. Evaluer les projets et les financements pour garantir une allocation adaptée et efficace. Organiser des ateliers pour informer et guider la communauté sur l'utilisation optimale des ressources."
+    },
+    {
+      "id": "field_associations_5d09e13e",
+      "category": "associations",
+      "constat_factuel": "Il semble que les appels à subventions dans la commune d'Audierne soient trop nombreux et mal coordonnés, ce qui entraîne un conflit d'intérêts et des inefficacités dans le processus de拨款。",
+      "idees_ameliorations": "Enfin, il serait Utile de mettre en place un système de reporting transparent pour les demandants et lesmandataires, en permettant d'accéder aux informations nécessaires pour évoluer dans un cadre équitable et équitable.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "subventions",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Il semble que les appels à subventions dans la commune d'Audierne soient trop...",
+      "body": "**Constat factuel:**\nIl semble que les appels à subventions dans la commune d'Audierne soient trop nombreux et mal coordonnés, ce qui entraîne un conflit d'intérêts et des inefficacités dans le processus de拨款。\n\n**Vos idées d'améliorations:**\nEnfin, il serait Utile de mettre en place un système de reporting transparent pour les demandants et lesmandataires, en permettant d'accéder aux informations nécessaires pour évoluer dans un cadre équitable et équitable."
+    },
+    {
+      "id": "field_associations_813156e6",
+      "category": "associations",
+      "constat_factuel": "Les subventions et investissements pour les chaînes traversières dans la commune de Audierne manquent de transparence et defficacité. Il est apparu que certains projets sont financés sans la vérification rigoureuse de leur viabilité et de leur impact sur la communauté.",
+      "idees_ameliorations": "Les officialisations devraient être plus actives et engagées. Les investisseurs devraientdemoexteriser leurs projets et éduquer le public à leur importance pour la sustainableité locale et éthique.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "subventions",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les subventions et investissements pour les chaînes traversières dans la comm...",
+      "body": "**Constat factuel:**\nLes subventions et investissements pour les chaînes traversières dans la commune de Audierne manquent de transparence et defficacité. Il est apparu que certains projets sont financés sans la vérification rigoureuse de leur viabilité et de leur impact sur la communauté.\n\n**Vos idées d'améliorations:**\nLes officialisations devraient être plus actives et engagées. Les investisseurs devraientdemoexteriser leurs projets et éduquer le public à leur importance pour la sustainableité locale et éthique."
+    },
+    {
+      "id": "field_economie_0343b994",
+      "category": "economie",
+      "constat_factuel": "L'approbation du plan de financement pour l'école Pierre Le Lec, avec un allocation de 25 000 € pour les frais de construction, montre une progression concrete dans le financement public local. Cependant, il reste nécessaire d'agir pour renforcer la contribution financière aux services publics et aux institutions culturelles.",
+      "idees_ameliorations": "Aumenter la subvention aux investissements publics pour soutenir les infrastructures et services locaux.\n Renforcer la subvention aux institutions culturelles pour stimuler le tourisme et l'échanges.\n Investir dans le systeme de transport public pour améliorer l'accès aux zones rurales et économiques basses.\n Soutenir les PME (Entreprises de Petites et Médias tailles) pour stimuler l'emploi local et le développement économique.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "subventions_financières",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'approbation du plan de financement pour l'école Pierre Le Lec, avec un allo...",
+      "body": "**Constat factuel:**\nL'approbation du plan de financement pour l'école Pierre Le Lec, avec un allocation de 25 000 € pour les frais de construction, montre une progression concrete dans le financement public local. Cependant, il reste nécessaire d'agir pour renforcer la contribution financière aux services publics et aux institutions culturelles.\n\n**Vos idées d'améliorations:**\nAumenter la subvention aux investissements publics pour soutenir les infrastructures et services locaux.\n Renforcer la subvention aux institutions culturelles pour stimuler le tourisme et l'échanges.\n Investir dans le systeme de transport public pour améliorer l'accès aux zones rurales et économiques basses.\n Soutenir les PME (Entreprises de Petites et Médias tailles) pour stimuler l'emploi local et le développement économique."
+    },
+    {
+      "id": "field_economie_00372ef5",
+      "category": "economie",
+      "constat_factuel": "La construction de l'école Pierre Le Lec a été financée avec un budget de 25 000 €, mais l'approbation du projet est仍旧 pending. Cela soulève des questions concernant la gestion effective des ressources et le suivi des projets communautaires.",
+      "idees_ameliorations": "Pour améliorer cette situation, il serait pertinent de demander l'approbation finale du budget avant de commencer la construction. De plus, il serait bon d'établir une mécanisme de review pour tous les projets communautaires pour éviter les retards et mieux utiliser les fonds. Enfin, une participation active des citoyens aux décisions concernant les projets pourrait renforcer la liens entre la communauté et l'administration.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "subventions_financières",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "La construction de l'école Pierre Le Lec a été financée avec un budget de 25 ...",
+      "body": "**Constat factuel:**\nLa construction de l'école Pierre Le Lec a été financée avec un budget de 25 000 €, mais l'approbation du projet est仍旧 pending. Cela soulève des questions concernant la gestion effective des ressources et le suivi des projets communautaires.\n\n**Vos idées d'améliorations:**\nPour améliorer cette situation, il serait pertinent de demander l'approbation finale du budget avant de commencer la construction. De plus, il serait bon d'établir une mécanisme de review pour tous les projets communautaires pour éviter les retards et mieux utiliser les fonds. Enfin, une participation active des citoyens aux décisions concernant les projets pourrait renforcer la liens entre la communauté et l'administration."
+    },
+    {
+      "id": "field_economie_0414b7e8",
+      "category": "economie",
+      "constat_factuel": "Bien que l'approbation du plan de financement du Fonds Vert et des subventions pour l'école Pierre Le Lec ait été validée, il reste une crise de subsistance dans la Communauté d'Audierne, avec des besoins éducatifs et infrastructuraux insuffisants pour répondre à la demande de population actuelle.",
+      "idees_ameliorations": "Pour améliorer la situation, il serait pertinent d'augmenter les subventions financières pour l'éducation, de way de renforcer l'infrastructure scolaire et les services de transport en communautés éloignées. En outre, une attention particulière devrait être portée aux zones rurales pour améliorer les infrastructures et les services publics, permettant une meilleure qualité de vie pour tous les habitants.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "subventions_financières",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Bien que l'approbation du plan de financement du Fonds Vert et des subvention...",
+      "body": "**Constat factuel:**\nBien que l'approbation du plan de financement du Fonds Vert et des subventions pour l'école Pierre Le Lec ait été validée, il reste une crise de subsistance dans la Communauté d'Audierne, avec des besoins éducatifs et infrastructuraux insuffisants pour répondre à la demande de population actuelle.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il serait pertinent d'augmenter les subventions financières pour l'éducation, de way de renforcer l'infrastructure scolaire et les services de transport en communautés éloignées. En outre, une attention particulière devrait être portée aux zones rurales pour améliorer les infrastructures et les services publics, permettant une meilleure qualité de vie pour tous les habitants."
+    },
+    {
+      "id": "field_economie_dbbda56f",
+      "category": "economie",
+      "constat_factuel": "LE DECISION DE PROPOSER 25 000 € POUR LES FRAIS D'EDIFICATION À L'ÉCOLE PIERRLE LEC ÉCLATÉE, LES ENFANTS NE PENDENT PAS DE SA FONCTION, LES FONDS VERT NE PEUvent pas se concentrer sur les AMBITIONS LOCALES, LE SILENT DES ÉLUS EST TÉRÉ et les REMS Ne peuvent pas rester EN CÔTE. LEURS PRÉTENDINGES INSTITUTIONNELLES Ne Sont Pas PRÉVUES Pour TRAIRE Les PROBLÈMES De L'APPARTENANCE DÉSIRABLE De L'ÉCOLE.",
+      "idees_ameliorations": "Pouvoir Élevé Les Subventions Pour Les ProJETS LOCAUX, En Particulier Pour Les Écoles Et Les Services Publics, En Nécessitant Une Réalisation Plus RapidE Des ProJETS. Promouvoir La Collaboration Entre Les ÉLUS, Les ENTREPRISES Et Les COMMUNITÉS Pour Renforcer La RESISTANCE Aux RéFUS. Renforcer La Maintenance Et La Réparation Des TRAS portionNÉES Pour Les transports Et Les Services Publics, En Nécessitant Une Plus grande Concentration Des Ressources. Soutenir Les Actions D'éducation Et De Solidarité Chez Les ÉLUS Pour Renforcer Le SILE Des ProJéets Citoyens Et Les REMS. ",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "subventions_financières",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "LE DECISION DE PROPOSER 25 000 € POUR LES FRAIS D'EDIFICATION À L'ÉCOLE PIERR...",
+      "body": "**Constat factuel:**\nLE DECISION DE PROPOSER 25 000 € POUR LES FRAIS D'EDIFICATION À L'ÉCOLE PIERRLE LEC ÉCLATÉE, LES ENFANTS NE PENDENT PAS DE SA FONCTION, LES FONDS VERT NE PEUvent pas se concentrer sur les AMBITIONS LOCALES, LE SILENT DES ÉLUS EST TÉRÉ et les REMS Ne peuvent pas rester EN CÔTE. LEURS PRÉTENDINGES INSTITUTIONNELLES Ne Sont Pas PRÉVUES Pour TRAIRE Les PROBLÈMES De L'APPARTENANCE DÉSIRABLE De L'ÉCOLE.\n\n**Vos idées d'améliorations:**\nPouvoir Élevé Les Subventions Pour Les ProJETS LOCAUX, En Particulier Pour Les Écoles Et Les Services Publics, En Nécessitant Une Réalisation Plus RapidE Des ProJETS. Promouvoir La Collaboration Entre Les ÉLUS, Les ENTREPRISES Et Les COMMUNITÉS Pour Renforcer La RESISTANCE Aux RéFUS. Renforcer La Maintenance Et La Réparation Des TRAS portionNÉES Pour Les transports Et Les Services Publics, En Nécessitant Une Plus grande Concentration Des Ressources. Soutenir Les Actions D'éducation Et De Solidarité Chez Les ÉLUS Pour Renforcer Le SILE Des ProJéets Citoyens Et Les REMS. "
+    },
+    {
+      "id": "field_logement_7db7eebc",
+      "category": "logement",
+      "constat_factuel": "L'installation récente d'énergies renouvelables, comme les éoliennes et les énergies solaires, a permis d'intégrer des sources d'électricité plus éco-concrètes dans la commune.",
+      "idees_ameliorations": "Pour améliorer la gestion énergétique, il serait utile d'installer des batteries d'électricité pour stocker l'énergie renouvelable et de mettre à jour les compteurs électroniques pour une meilleure gestion de l'électricité.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "énergie_rénouvelable",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'installation récente d'énergies renouvelables, comme les éoliennes et les é...",
+      "body": "**Constat factuel:**\nL'installation récente d'énergies renouvelables, comme les éoliennes et les énergies solaires, a permis d'intégrer des sources d'électricité plus éco-concrètes dans la commune.\n\n**Vos idées d'améliorations:**\nPour améliorer la gestion énergétique, il serait utile d'installer des batteries d'électricité pour stocker l'énergie renouvelable et de mettre à jour les compteurs électroniques pour une meilleure gestion de l'électricité."
+    },
+    {
+      "id": "field_logement_f42f801f",
+      "category": "logement",
+      "constat_factuel": "Les énergies renouvelables sont de plus en plus intégrées dans les constructions locales, notamment avec l' installation des éoliennes à l'audierne. L'intégration de ces énergies dans le réseaux électrique renforce la production énergétique et diminue l'émission des émissions polluantes.",
+      "idees_ameliorations": "Améliorer l'infrastructure pour soutenir l'intégration des éoliennes, proposer des ateliers éducatifs sur l'énergie renouvelable, créer un lieu communautaire pour partageer les ressources énergétiques et stimuler les investissements locaux dans les businesses éoliennes.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "énergie_rénouvelable",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les énergies renouvelables sont de plus en plus intégrées dans les constructi...",
+      "body": "**Constat factuel:**\nLes énergies renouvelables sont de plus en plus intégrées dans les constructions locales, notamment avec l' installation des éoliennes à l'audierne. L'intégration de ces énergies dans le réseaux électrique renforce la production énergétique et diminue l'émission des émissions polluantes.\n\n**Vos idées d'améliorations:**\nAméliorer l'infrastructure pour soutenir l'intégration des éoliennes, proposer des ateliers éducatifs sur l'énergie renouvelable, créer un lieu communautaire pour partageer les ressources énergétiques et stimuler les investissements locaux dans les businesses éoliennes."
+    },
+    {
+      "id": "field_logement_1de33bc6",
+      "category": "logement",
+      "constat_factuel": "L'installation de l'électricité à l'ouvrage dans le cadre de la的能量_rénouvelable montre une progression dans la gestion de l'énergie éolienne.",
+      "idees_ameliorations": "Pour améliorer la gestion de l'énergie éolienne, il serait pertinent d'agir sur les aspects financiers en renforçant les subsides pour les investissements éolien. De plus, le renforcement des infrastructures énergétiques, en particulier dans les rues et les voies d'approvisionnement en électricité, serait essentiel pour soutenir cette transition énergétique. Enfin, établir des objectifs clairs et mesurables pour une utilisation plus efficace de l'énergie éolienne pourrait stimuler l'adoption durable des solutions éolienne dans la commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "énergie_rénouvelable",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'installation de l'électricité à l'ouvrage dans le cadre de la的能量_rénouvelab...",
+      "body": "**Constat factuel:**\nL'installation de l'électricité à l'ouvrage dans le cadre de la的能量_rénouvelable montre une progression dans la gestion de l'énergie éolienne.\n\n**Vos idées d'améliorations:**\nPour améliorer la gestion de l'énergie éolienne, il serait pertinent d'agir sur les aspects financiers en renforçant les subsides pour les investissements éolien. De plus, le renforcement des infrastructures énergétiques, en particulier dans les rues et les voies d'approvisionnement en électricité, serait essentiel pour soutenir cette transition énergétique. Enfin, établir des objectifs clairs et mesurables pour une utilisation plus efficace de l'énergie éolienne pourrait stimuler l'adoption durable des solutions éolienne dans la commune."
+    },
+    {
+      "id": "field_logement_4128836d",
+      "category": "logement",
+      "constat_factuel": "OBSERVATION CONCRÈTE SUR LA SITUATION ACTUELLE\nL'électricité à l'ouvrage dans la commune d'Audierne est en grande partie basée sur des énergies non renouvelables, ce qui soulève des préoccupations liées à la durabilité et au développement durable.",
+      "idees_ameliorations": "Idées d'Améliorations\n1. L'installation d'énergies éolennes comme les éoliennes pour diversifier l'énergie et réduire les impacts environnementaux.\n2. La promotion des partenariats avec des entreprises renouvelables pour stimuler l' investissement et la production.\n3. L'implémentation d'infrastructures smarties pour améliorer la gestion et la distribution de l'énergie renouvelable.\n4. La soutien aux initiatives locales pour le développement de la énergie éolienne et son intégration dans le système énergétique local.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "énergie_rénouvelable",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "OBSERVATION CONCRÈTE SUR LA SITUATION ACTUELLE\nL'électricité à l'ouvrage dans...",
+      "body": "**Constat factuel:**\nOBSERVATION CONCRÈTE SUR LA SITUATION ACTUELLE\nL'électricité à l'ouvrage dans la commune d'Audierne est en grande partie basée sur des énergies non renouvelables, ce qui soulève des préoccupations liées à la durabilité et au développement durable.\n\n**Vos idées d'améliorations:**\nIdées d'Améliorations\n1. L'installation d'énergies éolennes comme les éoliennes pour diversifier l'énergie et réduire les impacts environnementaux.\n2. La promotion des partenariats avec des entreprises renouvelables pour stimuler l' investissement et la production.\n3. L'implémentation d'infrastructures smarties pour améliorer la gestion et la distribution de l'énergie renouvelable.\n4. La soutien aux initiatives locales pour le développement de la énergie éolienne et son intégration dans le système énergétique local."
+    },
+    {
+      "id": "field_culture_9c911ea2",
+      "category": "culture",
+      "constat_factuel": "Les musées publics de l'audierne ne sont pas assez connus ou utilisés par la population pour renforcer la présention des expositions culturelles et les cérémonies citoyennes.",
+      "idees_ameliorations": "Organiser des événements culturels rares et des expositions d'art ou d'histoire pour éduquer et réduire la distance entre les citoyens et les musées. Créer un espace dédié aux expositions pour les artistes et les groupes citoyens pour stimuler la creativity et la participation active.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "musees_expositions",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les musées publics de l'audierne ne sont pas assez connus ou utilisés par la ...",
+      "body": "**Constat factuel:**\nLes musées publics de l'audierne ne sont pas assez connus ou utilisés par la population pour renforcer la présention des expositions culturelles et les cérémonies citoyennes.\n\n**Vos idées d'améliorations:**\nOrganiser des événements culturels rares et des expositions d'art ou d'histoire pour éduquer et réduire la distance entre les citoyens et les musées. Créer un espace dédié aux expositions pour les artistes et les groupes citoyens pour stimuler la creativity et la participation active."
+    },
+    {
+      "id": "field_culture_f7b95654",
+      "category": "culture",
+      "constat_factuel": "L'aube Audierne est riche en héritage culturel mais manque d'expositions et d'activités culturelles pour stimuler la participation active de la communauté.",
+      "idees_ameliorations": "Organiser des expositions culturelles et des ateliers artistiques dans les écoles locales pour éduquer et inspirer les enfants.\nParticiper à des partenariats avec des musées rurales pour accéder à des collections rares.\nUtiliser des QR codes sur les places pour indiquer les itinéraires culturels et les informations utiles.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "musees_expositions",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'aube Audierne est riche en héritage culturel mais manque d'expositions et d...",
+      "body": "**Constat factuel:**\nL'aube Audierne est riche en héritage culturel mais manque d'expositions et d'activités culturelles pour stimuler la participation active de la communauté.\n\n**Vos idées d'améliorations:**\nOrganiser des expositions culturelles et des ateliers artistiques dans les écoles locales pour éduquer et inspirer les enfants.\nParticiper à des partenariats avec des musées rurales pour accéder à des collections rares.\nUtiliser des QR codes sur les places pour indiquer les itinéraires culturels et les informations utiles."
+    },
+    {
+      "id": "field_culture_b4eeadcc",
+      "category": "culture",
+      "constat_factuel": "L'audierne fait face à une situation où les musées et les expositions ne remettent pas全程 de la diversité culturelle presentee aux citoyens.",
+      "idees_ameliorations": "Pour améliorer cela, il serait pertinent d'organiser des expositions variées et épurées qui reflètent la diversité des besoins culturels des populations. De plus, renforcer la collaboration avec les établissements culturels locaux pour prévoir des programmes éducatifs plus riche. Enfin, il est essentiel de valoriser les contributions des citoyens pour inspirer et éduquer l'ensemble de la communauté à des projets plus évolués.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "musees_expositions",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'audierne fait face à une situation où les musées et les expositions ne reme...",
+      "body": "**Constat factuel:**\nL'audierne fait face à une situation où les musées et les expositions ne remettent pas全程 de la diversité culturelle presentee aux citoyens.\n\n**Vos idées d'améliorations:**\nPour améliorer cela, il serait pertinent d'organiser des expositions variées et épurées qui reflètent la diversité des besoins culturels des populations. De plus, renforcer la collaboration avec les établissements culturels locaux pour prévoir des programmes éducatifs plus riche. Enfin, il est essentiel de valoriser les contributions des citoyens pour inspirer et éduquer l'ensemble de la communauté à des projets plus évolués."
+    },
+    {
+      "id": "field_culture_a0cef2c5",
+      "category": "culture",
+      "constat_factuel": "L'Audierne fait face à une situation où les musées et expositions sont mal-considérées par la société. Les expositions culturelles sont souvent déplacées ou mal financées, ce qui nuage le pouvoir de communication circulaire de la cité. Cela manque de solidarité entre les habitants et les institutions publices.",
+      "idees_ameliorations": "Accrochez à l'action urgent pour restaurer les expositions culturelles dans la ville. Supprimez les empêchements techniques et financiers qui empêchent l'exposition des œuvres maîtresses. Créez un circuit culturel integral en favorisant les ateliers artistiques et les récitals de musée. Promotez cette activité en l'ayant intégrer dans les circuits de bernoulli des villes. Identifiez et rapprochez les Lieux de l'Art par des actions locales et tangibles. Cela permettra de renforcer la cohesion sociale et culturelle de la communauté.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "musees_expositions",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'Audierne fait face à une situation où les musées et expositions sont mal-co...",
+      "body": "**Constat factuel:**\nL'Audierne fait face à une situation où les musées et expositions sont mal-considérées par la société. Les expositions culturelles sont souvent déplacées ou mal financées, ce qui nuage le pouvoir de communication circulaire de la cité. Cela manque de solidarité entre les habitants et les institutions publices.\n\n**Vos idées d'améliorations:**\nAccrochez à l'action urgent pour restaurer les expositions culturelles dans la ville. Supprimez les empêchements techniques et financiers qui empêchent l'exposition des œuvres maîtresses. Créez un circuit culturel integral en favorisant les ateliers artistiques et les récitals de musée. Promotez cette activité en l'ayant intégrer dans les circuits de bernoulli des villes. Identifiez et rapprochez les Lieux de l'Art par des actions locales et tangibles. Cela permettra de renforcer la cohesion sociale et culturelle de la communauté."
+    },
+    {
+      "id": "field_ecologie_327a85cd",
+      "category": "ecologie",
+      "constat_factuel": "La Haute-Étapa de l'île d'Elba, située à 30 km de l'ouvrage de l'électricité, intègre déjà des énergies renouvelables avec l'installation des éoliennes dans le cadre de la transition énergétique.",
+      "idees_ameliorations": "Intégrer davantage d'énergies renouvelables dans la commune, renforcer l'infrastructure énergétique pour une transition éolienne plus efficace, et organiser des ateliers pédagogiques pour sensibiliser le public aux énergies renouvelables.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "énergies_rénouvelables",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "La Haute-Étapa de l'île d'Elba, située à 30 km de l'ouvrage de l'électricité,...",
+      "body": "**Constat factuel:**\nLa Haute-Étapa de l'île d'Elba, située à 30 km de l'ouvrage de l'électricité, intègre déjà des énergies renouvelables avec l'installation des éoliennes dans le cadre de la transition énergétique.\n\n**Vos idées d'améliorations:**\nIntégrer davantage d'énergies renouvelables dans la commune, renforcer l'infrastructure énergétique pour une transition éolienne plus efficace, et organiser des ateliers pédagogiques pour sensibiliser le public aux énergies renouvelables."
+    },
+    {
+      "id": "field_ecologie_8a4d55dc",
+      "category": "ecologie",
+      "constat_factuel": "La mise en place de l'électricité à l'ouvrage et l'intégration d'énergies renouvelables, comme l'éolienne, permettent de réduire la contribution de lahouse aux émissions de CO2 et d'approfondir la transition énergétique.",
+      "idees_ameliorations": "Investir dans des technologies d'éolienne évoluées pour renforcer la productivité énergétique. Améliorer l'efficacité énergétique des constructions existantes pour réduire leur consommation d'énergie. Organiser des campagnes éducatives pour sensibiliser à l'importance des énergies renouvelables.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "énergies_rénouvelables",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "La mise en place de l'électricité à l'ouvrage et l'intégration d'énergies ren...",
+      "body": "**Constat factuel:**\nLa mise en place de l'électricité à l'ouvrage et l'intégration d'énergies renouvelables, comme l'éolienne, permettent de réduire la contribution de lahouse aux émissions de CO2 et d'approfondir la transition énergétique.\n\n**Vos idées d'améliorations:**\nInvestir dans des technologies d'éolienne évoluées pour renforcer la productivité énergétique. Améliorer l'efficacité énergétique des constructions existantes pour réduire leur consommation d'énergie. Organiser des campagnes éducatives pour sensibiliser à l'importance des énergies renouvelables."
+    },
+    {
+      "id": "field_ecologie_bb51d3be",
+      "category": "ecologie",
+      "constat_factuel": "En Audierne, une installation de électricité à l'ouvrage intègre une énergie renouvelable dans le système énergétique de la commune. Des turbines à l' wind sont déjà installées pour contribuer à la production énergétique locale.",
+      "idees_ameliorations": "Pour améliorer la situation, il est recommandé de renforcer la grid énergétique pour une meilleure intégration des énergies renouvelables. Ensuite, on pourrait ajouter plus de turbines à l' wind pour améliorer la production énergétique. Enfin, une investment régulière dans le maintien des turbines et du système permittrait de garantir une fiabilité énergétique supérieure.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "énergies_rénouvelables",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "En Audierne, une installation de électricité à l'ouvrage intègre une énergie ...",
+      "body": "**Constat factuel:**\nEn Audierne, une installation de électricité à l'ouvrage intègre une énergie renouvelable dans le système énergétique de la commune. Des turbines à l' wind sont déjà installées pour contribuer à la production énergétique locale.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il est recommandé de renforcer la grid énergétique pour une meilleure intégration des énergies renouvelables. Ensuite, on pourrait ajouter plus de turbines à l' wind pour améliorer la production énergétique. Enfin, une investment régulière dans le maintien des turbines et du système permittrait de garantir une fiabilité énergétique supérieure."
+    },
+    {
+      "id": "field_ecologie_f0abf8d4",
+      "category": "ecologie",
+      "constat_factuel": "L'installation de l'électricité au point de works de l'église d'Audierne amène à l'intégration d'énergies renouvelables, notamment l'éolienne. Cependant, les turbines éolienne situées à proximité du site induisent des perturbations pour les habitants du paysage, en particulier en ce qui concerne le bruit et la visibilité.",
+      "idees_ameliorations": "Pour améliorer la situation, il serait pertinent de déplacer les turbines éolienne à un endroit plus éloigné pour réduire les effets sonores et visuels. De plus, l'ajout d'un cheminoux accessible permettrait de faciliter l'accès aux éoliens et de promouvoir la collaboration entre les habitants et les collectivités rurales.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "énergies_rénouvelables",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'installation de l'électricité au point de works de l'église d'Audierne amèn...",
+      "body": "**Constat factuel:**\nL'installation de l'électricité au point de works de l'église d'Audierne amène à l'intégration d'énergies renouvelables, notamment l'éolienne. Cependant, les turbines éolienne situées à proximité du site induisent des perturbations pour les habitants du paysage, en particulier en ce qui concerne le bruit et la visibilité.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il serait pertinent de déplacer les turbines éolienne à un endroit plus éloigné pour réduire les effets sonores et visuels. De plus, l'ajout d'un cheminoux accessible permettrait de faciliter l'accès aux éoliens et de promouvoir la collaboration entre les habitants et les collectivités rurales."
+    },
+    {
+      "id": "field_associations_3f8367b9",
+      "category": "associations",
+      "constat_factuel": "La construction de l'école Pierre Le Lec et la cession de places du CIVOM/SIPON montrent un besoin croissant pour une éducation de qualité et une allocation humaine dans la communauté.",
+      "idees_ameliorations": "Améliorer la capacité scolaire pour accueillir plus d'élèves et établir un programme de bourses pour soutenir les familles en difficultés.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "subventions_et_benevolat",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "La construction de l'école Pierre Le Lec et la cession de places du CIVOM/SIP...",
+      "body": "**Constat factuel:**\nLa construction de l'école Pierre Le Lec et la cession de places du CIVOM/SIPON montrent un besoin croissant pour une éducation de qualité et une allocation humaine dans la communauté.\n\n**Vos idées d'améliorations:**\nAméliorer la capacité scolaire pour accueillir plus d'élèves et établir un programme de bourses pour soutenir les familles en difficultés."
+    },
+    {
+      "id": "field_associations_64950a1d",
+      "category": "associations",
+      "constat_factuel": "L'audierne fait face à des besoins éducatifs importants, notamment la construction de l'école Pierre Le Lec qui est essentielle pour accueillir les enfants de la commune. De plus, la cession de places dans CIVOM/SIPON soulève des préoccupations quant à la gestion de ces places et à la fiabilité de l'Organisation.",
+      "idees_ameliorations": "Pour améliorer la situation, il serait utile d'obtenir des subventions pour soutenir le projet scolaire. Par ailleurs, des initiatives pour renforcer les dons versés à l'éducation seraient greatly appréciés. Enfin, une étude approfondie sur la gestion des places dans CIVOM/SIPON pourrait permettre d'optimiser leur allocation et garantir une meilleure fiabilité.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "subventions_et_benevolat",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'audierne fait face à des besoins éducatifs importants, notamment la constru...",
+      "body": "**Constat factuel:**\nL'audierne fait face à des besoins éducatifs importants, notamment la construction de l'école Pierre Le Lec qui est essentielle pour accueillir les enfants de la commune. De plus, la cession de places dans CIVOM/SIPON soulève des préoccupations quant à la gestion de ces places et à la fiabilité de l'Organisation.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il serait utile d'obtenir des subventions pour soutenir le projet scolaire. Par ailleurs, des initiatives pour renforcer les dons versés à l'éducation seraient greatly appréciés. Enfin, une étude approfondie sur la gestion des places dans CIVOM/SIPON pourrait permettre d'optimiser leur allocation et garantir une meilleure fiabilité."
+    },
+    {
+      "id": "field_associations_2e918acb",
+      "category": "associations",
+      "constat_factuel": "Les subventions pour la construction de l'école Pierre Le Lec et la cession de terres du CIVOM/SIPON sont des mouvements visant l'éducation et la communauté. Cependant, la concentration de ressources éducatives peut nuire à l'engagement citoyen et nuire à la cohérence éthique des décisions politiques.",
+      "idees_ameliorations": "Intégrer l'école Pierre Le Lec dans les objectifs pédagogiques de la commune pour renforcer l'éducation. Renforcer les initiatives de cession de terres pour soutenir des projets locaux et éducatifs. Faire de l'éducation à l'éducation pour renforcer la citoyennité et la solidarité. Parler aux citoyens et aux élus sur les subventions pour évaluer si ces ressources sont utilisées de manière efficace et transparente.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "subventions_et_benevolat",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les subventions pour la construction de l'école Pierre Le Lec et la cession d...",
+      "body": "**Constat factuel:**\nLes subventions pour la construction de l'école Pierre Le Lec et la cession de terres du CIVOM/SIPON sont des mouvements visant l'éducation et la communauté. Cependant, la concentration de ressources éducatives peut nuire à l'engagement citoyen et nuire à la cohérence éthique des décisions politiques.\n\n**Vos idées d'améliorations:**\nIntégrer l'école Pierre Le Lec dans les objectifs pédagogiques de la commune pour renforcer l'éducation. Renforcer les initiatives de cession de terres pour soutenir des projets locaux et éducatifs. Faire de l'éducation à l'éducation pour renforcer la citoyennité et la solidarité. Parler aux citoyens et aux élus sur les subventions pour évaluer si ces ressources sont utilisées de manière efficace et transparente."
+    },
+    {
+      "id": "field_associations_1c71f264",
+      "category": "associations",
+      "constat_factuel": "APPROBATION DE SUBVENTIONS POUR LA CONSTRUCTION DE L'ÉCOLE PIERRE LE LEC ET LA Cession De Places du CIVOM/SIPON CEST ANCIEN ET INJUSTE car les besoins éducatifs dans la COMMUNE ne sont PAS ÉLIMINÉS et IL FAUT AUSSI Prendre en COMPTE le role des ENTITE'S SOCIALES ET LOCALES.",
+      "idees_ameliorations": "Donc pour améliorer la situation il faut Augmenter la Support pour les ÉCOLES Publiques réduire le nombre de FAMILLES en situation Crise et Renforcer l/utilité des ENTITE'S DE RENTRÉE comme CIVOM/SIPON.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "subventions_et_benevolat",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "APPROBATION DE SUBVENTIONS POUR LA CONSTRUCTION DE L'ÉCOLE PIERRE LE LEC ET L...",
+      "body": "**Constat factuel:**\nAPPROBATION DE SUBVENTIONS POUR LA CONSTRUCTION DE L'ÉCOLE PIERRE LE LEC ET LA Cession De Places du CIVOM/SIPON CEST ANCIEN ET INJUSTE car les besoins éducatifs dans la COMMUNE ne sont PAS ÉLIMINÉS et IL FAUT AUSSI Prendre en COMPTE le role des ENTITE'S SOCIALES ET LOCALES.\n\n**Vos idées d'améliorations:**\nDonc pour améliorer la situation il faut Augmenter la Support pour les ÉCOLES Publiques réduire le nombre de FAMILLES en situation Crise et Renforcer l/utilité des ENTITE'S DE RENTRÉE comme CIVOM/SIPON."
+    },
+    {
+      "id": "field_jeunesse_4cca25f9",
+      "category": "jeunesse",
+      "constat_factuel": "Les jeunes de Audierne ne bénéficient pas de suffisamment d'activités sportives et éducatives pour renforcer leur intégration sociale et leur développement physique.,",
+      "idees_ameliorations": "Intégrer de nouvelles modalités sportives dans les programmes éducatifs locales pour stimuler l'engagement des jeunes., Créer des partenariats avec des organizations locales pour accéder à de nouvelles infrastructures sportives., Organiser des ateliers de sport junior pour éduquer les jeunes sur les bases du sport de base., Augmenter la accessibility des stades et des infrastructures sportives pour les jeunes en situation fragile.,",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation_et_sport",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les jeunes de Audierne ne bénéficient pas de suffisamment d'activités sportiv...",
+      "body": "**Constat factuel:**\nLes jeunes de Audierne ne bénéficient pas de suffisamment d'activités sportives et éducatives pour renforcer leur intégration sociale et leur développement physique.,\n\n**Vos idées d'améliorations:**\nIntégrer de nouvelles modalités sportives dans les programmes éducatifs locales pour stimuler l'engagement des jeunes., Créer des partenariats avec des organizations locales pour accéder à de nouvelles infrastructures sportives., Organiser des ateliers de sport junior pour éduquer les jeunes sur les bases du sport de base., Augmenter la accessibility des stades et des infrastructures sportives pour les jeunes en situation fragile.,"
+    },
+    {
+      "id": "field_jeunesse_846de18b",
+      "category": "jeunesse",
+      "constat_factuel": "Les enfants de la commune Audierne manquent d'accès à des écoles locales et d'activités sportives, limitant leur développement social et émotionnel.",
+      "idees_ameliorations": "Créer un nouveau point scolaire dans la commune pour accueillir plus d'élèves, permettre d'accéder à des formations sportives diversifiées, collaborer avec des entreprises locales pour organiser des ateliers sportifs et des events scolaires, et stimuler l'activeité physique et le bien-être des jeunes.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation_et_sport",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les enfants de la commune Audierne manquent d'accès à des écoles locales et d...",
+      "body": "**Constat factuel:**\nLes enfants de la commune Audierne manquent d'accès à des écoles locales et d'activités sportives, limitant leur développement social et émotionnel.\n\n**Vos idées d'améliorations:**\nCréer un nouveau point scolaire dans la commune pour accueillir plus d'élèves, permettre d'accéder à des formations sportives diversifiées, collaborer avec des entreprises locales pour organiser des ateliers sportifs et des events scolaires, et stimuler l'activeité physique et le bien-être des jeunes."
+    },
+    {
+      "id": "field_jeunesse_7948c713",
+      "category": "jeunesse",
+      "constat_factuel": "Les conditions sportives et éducatives dans la commune de Audierne paraissent parfois sous-optimisées, malgré les bonnes infrastructures existantes. Il semble que les Lieux de Sport et les Écoles locales ne soient pas utilisés de la manière optimale pour stimuler le développement de la Jeunesse.",
+      "idees_ameliorations": "Pour améliorer la situation, il serait utile de coordonner plus efficacement les ateliers sportifs et éducatifs. Une activation plus régulière des événements scolaires et sportifs pourrait sensiblement renforcer l'intérêt des jeunes pour ces lieux. Par ailleurs, une augmentation de la subvention pour les Lieux de Sport pourrait stimuler leur développement. Enfin, une meilleure communication avec les écoles et les associations sportives pourrait faciliter la mise en œuvre de projets conjoints.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation_et_sport",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les conditions sportives et éducatives dans la commune de Audierne paraissent...",
+      "body": "**Constat factuel:**\nLes conditions sportives et éducatives dans la commune de Audierne paraissent parfois sous-optimisées, malgré les bonnes infrastructures existantes. Il semble que les Lieux de Sport et les Écoles locales ne soient pas utilisés de la manière optimale pour stimuler le développement de la Jeunesse.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il serait utile de coordonner plus efficacement les ateliers sportifs et éducatifs. Une activation plus régulière des événements scolaires et sportifs pourrait sensiblement renforcer l'intérêt des jeunes pour ces lieux. Par ailleurs, une augmentation de la subvention pour les Lieux de Sport pourrait stimuler leur développement. Enfin, une meilleure communication avec les écoles et les associations sportives pourrait faciliter la mise en œuvre de projets conjoints."
+    },
+    {
+      "id": "field_jeunesse_982f208c",
+      "category": "jeunesse",
+      "constat_factuel": "LE SYSTÈME D'ÉCOLEDIVRÉ ET LES ACTIVITIES SPORTIVITES EN ADELME N'ONT PAS ÉTEINT LA Notice qui Les Oubient Pas encore\n\n LES ENFANTS DE ADELME MANquent De Receiving Des Outils Pour Leur Développement\n\n LES initialized ÉCOLEDIVRÉS Ne Sont Pas Unification Pour La COMMUNauté Local eSuffisante",
+      "idees_ameliorations": "Accorder De Plus Grands Importance AUX ÉCOLEDIVRÉS ET AUX ACTIVITIES SPORTIVITES\n\n Augmente Le Financement Des programmes Éducatifs\n\nCréer Des Partenariats Entre ÉCOLES ET Organisations SPORTIVITES\n\n renforcer La support du Public Pour les initiatives Éducatives et Sportives",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation_et_sport",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "LE SYSTÈME D'ÉCOLEDIVRÉ ET LES ACTIVITIES SPORTIVITES EN ADELME N'ONT PAS ÉTE...",
+      "body": "**Constat factuel:**\nLE SYSTÈME D'ÉCOLEDIVRÉ ET LES ACTIVITIES SPORTIVITES EN ADELME N'ONT PAS ÉTEINT LA Notice qui Les Oubient Pas encore\n\n LES ENFANTS DE ADELME MANquent De Receiving Des Outils Pour Leur Développement\n\n LES initialized ÉCOLEDIVRÉS Ne Sont Pas Unification Pour La COMMUNauté Local eSuffisante\n\n**Vos idées d'améliorations:**\nAccorder De Plus Grands Importance AUX ÉCOLEDIVRÉS ET AUX ACTIVITIES SPORTIVITES\n\n Augmente Le Financement Des programmes Éducatifs\n\nCréer Des Partenariats Entre ÉCOLES ET Organisations SPORTIVITES\n\n renforcer La support du Public Pour les initiatives Éducatives et Sportives"
+    },
+    {
+      "id": "field_alimentation-bien-etre-soins_75522c91",
+      "category": "alimentation-bien-etre-soins",
+      "constat_factuel": "La communauté a approbé des subventions pour la construction de l'école Pierre Le Lec et pour la cession de places du CIVOM/SIPON, mais ce projet reste à l'ordre des listes.",
+      "idees_ameliorations": "En profitant de la construction de l'école Pierre Le Lec, il serait logique d'ajouter des infrastructures sportives sur site pour stimuler l'activité physique des élèves et des citoyens. Les places cessionnaires pourraient être exploitées pour organiser ateliers culturels ou d'éducation morale. Un espace dédié à la sportivité dans lailton du collège pourrait stimuler l'apprentissage des valeurs et la collaboration. Enfin, un engagement public pour la pratique reglementaire des sports pourrait renforcer le bien-être moral et la solidarité de la communauté.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation morale",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "La communauté a approbé des subventions pour la construction de l'école Pierr...",
+      "body": "**Constat factuel:**\nLa communauté a approbé des subventions pour la construction de l'école Pierre Le Lec et pour la cession de places du CIVOM/SIPON, mais ce projet reste à l'ordre des listes.\n\n**Vos idées d'améliorations:**\nEn profitant de la construction de l'école Pierre Le Lec, il serait logique d'ajouter des infrastructures sportives sur site pour stimuler l'activité physique des élèves et des citoyens. Les places cessionnaires pourraient être exploitées pour organiser ateliers culturels ou d'éducation morale. Un espace dédié à la sportivité dans lailton du collège pourrait stimuler l'apprentissage des valeurs et la collaboration. Enfin, un engagement public pour la pratique reglementaire des sports pourrait renforcer le bien-être moral et la solidarité de la communauté."
+    },
+    {
+      "id": "field_alimentation-bien-etre-soins_c3a4a2a8",
+      "category": "alimentation-bien-etre-soins",
+      "constat_factuel": "L'insuffisance de fonds pour l'école Pierre Le Lec et la cession de places du CIVOM/SIPON montrent une absence de ressources éducatives conformes aux besoins de la communauté de Audierne.",
+      "idees_ameliorations": "Créer un financement plus abondant pour l'école Pierre Le Lec pour renforcer son infrastructure et son personnel pédagogique. Transférer des places supplémentaires du CIVOM/SIPON pour accroître l'accès aux études dans la commune.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation morale",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'insuffisance de fonds pour l'école Pierre Le Lec et la cession de places du...",
+      "body": "**Constat factuel:**\nL'insuffisance de fonds pour l'école Pierre Le Lec et la cession de places du CIVOM/SIPON montrent une absence de ressources éducatives conformes aux besoins de la communauté de Audierne.\n\n**Vos idées d'améliorations:**\nCréer un financement plus abondant pour l'école Pierre Le Lec pour renforcer son infrastructure et son personnel pédagogique. Transférer des places supplémentaires du CIVOM/SIPON pour accroître l'accès aux études dans la commune."
+    },
+    {
+      "id": "field_alimentation-bien-etre-soins_27743405",
+      "category": "alimentation-bien-etre-soins",
+      "constat_factuel": "L'audierne fait face à un manque de ressources pour le financement de l'école Pierre Le Lec et les places cessionnées par le CIVOM/SIPON, ce qui soulève des questions sur la disponibilité des fonds locaux pour soutenir ces initiatives clés en matter of éducation morale et formation sportive.",
+      "idees_ameliorations": "Pour améliorer cette situation, il serait pertinent de renforcer les ressources financières pour soutenir ces écoles et projets. Une collaboration avec d'autres organismes locaux ou nationaux pourrait apporter des solutions supplémentaires. De plus, une expansion des programmes de formation sportive pourrait renforcer l'engagement des citoyens et les améliorer de manière positive.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation morale",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'audierne fait face à un manque de ressources pour le financement de l'école...",
+      "body": "**Constat factuel:**\nL'audierne fait face à un manque de ressources pour le financement de l'école Pierre Le Lec et les places cessionnées par le CIVOM/SIPON, ce qui soulève des questions sur la disponibilité des fonds locaux pour soutenir ces initiatives clés en matter of éducation morale et formation sportive.\n\n**Vos idées d'améliorations:**\nPour améliorer cette situation, il serait pertinent de renforcer les ressources financières pour soutenir ces écoles et projets. Une collaboration avec d'autres organismes locaux ou nationaux pourrait apporter des solutions supplémentaires. De plus, une expansion des programmes de formation sportive pourrait renforcer l'engagement des citoyens et les améliorer de manière positive."
+    },
+    {
+      "id": "field_alimentation-bien-etre-soins_56bc07e4",
+      "category": "alimentation-bien-etre-soins",
+      "constat_factuel": "LE PROBLEME DE L'ACCES A L'ÉCOULE EN audierne est CRITIQUE. les subventions pour la construction de l'école pierre le lec et la cession de places du CIVOM/SIPON S'ÉTABLISSENT, mais la qualité de l'éducation reste Insuffisante. les enfants ne bénéficient pas de l'ENSEIGNEMENT de HAUT NIVEAU, ce qui affecte leur Paradise MoraL e éducaTIOn. Il est urgent de renforcer les conditions éducaTIOnnelles pour renforcer la citoyennete et éduquer les citoyens.",
+      "idees_ameliorations": "",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation morale",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "LE PROBLEME DE L'ACCES A L'ÉCOULE EN audierne est CRITIQUE. les subventions p...",
+      "body": "**Constat factuel:**\nLE PROBLEME DE L'ACCES A L'ÉCOULE EN audierne est CRITIQUE. les subventions pour la construction de l'école pierre le lec et la cession de places du CIVOM/SIPON S'ÉTABLISSENT, mais la qualité de l'éducation reste Insuffisante. les enfants ne bénéficient pas de l'ENSEIGNEMENT de HAUT NIVEAU, ce qui affecte leur Paradise MoraL e éducaTIOn. Il est urgent de renforcer les conditions éducaTIOnnelles pour renforcer la citoyennete et éduquer les citoyens."
+    },
+    {
+      "id": "field_economie_71a526bf",
+      "category": "economie",
+      "constat_factuel": "Il semble manquer une documentation claire des subventions disponibles dans la commune de Audierne, ce qui rend difficile l'assimilation des bayonnets financials par la population.",
+      "idees_ameliorations": "Créer un rapport détaillé des subventions pour une meilleure compréhension et une meilleure allocation des ressources. Organiser un atelier ou un débat open-source pour allower une consultation active et épanouie sur les propositions de financement. Intégrer des aids financières spécifiques pour soutenir les initiatives locales. Établir un système de feedback pour recueillir les commentaires et améliorer les propositions en temps réel.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "subventions",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Il semble manquer une documentation claire des subventions disponibles dans l...",
+      "body": "**Constat factuel:**\nIl semble manquer une documentation claire des subventions disponibles dans la commune de Audierne, ce qui rend difficile l'assimilation des bayonnets financials par la population.\n\n**Vos idées d'améliorations:**\nCréer un rapport détaillé des subventions pour une meilleure compréhension et une meilleure allocation des ressources. Organiser un atelier ou un débat open-source pour allower une consultation active et épanouie sur les propositions de financement. Intégrer des aids financières spécifiques pour soutenir les initiatives locales. Établir un système de feedback pour recueillir les commentaires et améliorer les propositions en temps réel."
+    },
+    {
+      "id": "field_economie_6b395d2e",
+      "category": "economie",
+      "constat_factuel": "Il semble qu'il y ait une absence de monitoring rigoureux des subventions attribuées à l'audierne, ce qui soulève des questions sur la transparence et la fiabilité des provisions financières.",
+      "idees_ameliorations": "Pour améliorer la transparence, il serait pertinent de créer un register détaillant toutes les subventions attribuées avec les coûts engendrés. Ensuite, des rapports trimestriel et annuels devraient être publiés pour permettre une meilleure visualisation de la gestion des fonds. Enfin, l'élaboration d'un comité de suivi des subventions et du suivi des coûts pourrait permettre une gestion plus efficace des ressources locales.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "subventions",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Il semble qu'il y ait une absence de monitoring rigoureux des subventions att...",
+      "body": "**Constat factuel:**\nIl semble qu'il y ait une absence de monitoring rigoureux des subventions attribuées à l'audierne, ce qui soulève des questions sur la transparence et la fiabilité des provisions financières.\n\n**Vos idées d'améliorations:**\nPour améliorer la transparence, il serait pertinent de créer un register détaillant toutes les subventions attribuées avec les coûts engendrés. Ensuite, des rapports trimestriel et annuels devraient être publiés pour permettre une meilleure visualisation de la gestion des fonds. Enfin, l'élaboration d'un comité de suivi des subventions et du suivi des coûts pourrait permettre une gestion plus efficace des ressources locales."
+    },
+    {
+      "id": "field_economie_9d2d360e",
+      "category": "economie",
+      "constat_factuel": "Les recettes des subventions distribuées à la commune de Audierne présentent un écart significatif entre les coûts journaliers observés et les coûts prévus. La publication d'un récapitulatif détaillé permettrait de mieux éclairer cette situation et de demander une clarification des attentes des citoyens.",
+      "idees_ameliorations": "Il serait pertinent de standardiser les formats des rapports de subventions pour faciliter la comparaison et la transparency. Une base de données publique accessible par les citoyens pourrait renforcer la transparence dans la gestion des subventions. Par ailleurs, une date limite claire pour mettre à jour les informations pourrait stimuler l'engagement des institutions. Enfin, desforums de discussion ouverts pour discuter des priorités et des solutions pourrait renforcer la responsabilité des élus.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "subventions",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les recettes des subventions distribuées à la commune de Audierne présentent ...",
+      "body": "**Constat factuel:**\nLes recettes des subventions distribuées à la commune de Audierne présentent un écart significatif entre les coûts journaliers observés et les coûts prévus. La publication d'un récapitulatif détaillé permettrait de mieux éclairer cette situation et de demander une clarification des attentes des citoyens.\n\n**Vos idées d'améliorations:**\nIl serait pertinent de standardiser les formats des rapports de subventions pour faciliter la comparaison et la transparency. Une base de données publique accessible par les citoyens pourrait renforcer la transparence dans la gestion des subventions. Par ailleurs, une date limite claire pour mettre à jour les informations pourrait stimuler l'engagement des institutions. Enfin, desforums de discussion ouverts pour discuter des priorités et des solutions pourrait renforcer la responsabilité des élus."
+    },
+    {
+      "id": "field_economie_9d010044",
+      "category": "economie",
+      "constat_factuel": "L'absence de publication des subventions pré visionnelles dans la commune deAudierne soulève une question de transparence et de responsabilité publique. Il est attendu que ces subventions soient disponibles sous forme d'un récapitulatif détaillé, permettant aux citoyens de bien informer leur engagement dans les projets locaux.",
+      "idees_ameliorations": "Organiser un atelier avec les acteurs locaux pour discuter des subventions et des projets associés ; Publier les subventions pré visionnelles sur une plateforme électronique accessible et en format simple ; Faire une réunion de lecture et de consultation pour recueillir les commentaires et suggestions des citoyens concernés.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "subventions",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'absence de publication des subventions pré visionnelles dans la commune deA...",
+      "body": "**Constat factuel:**\nL'absence de publication des subventions pré visionnelles dans la commune deAudierne soulève une question de transparence et de responsabilité publique. Il est attendu que ces subventions soient disponibles sous forme d'un récapitulatif détaillé, permettant aux citoyens de bien informer leur engagement dans les projets locaux.\n\n**Vos idées d'améliorations:**\nOrganiser un atelier avec les acteurs locaux pour discuter des subventions et des projets associés ; Publier les subventions pré visionnelles sur une plateforme électronique accessible et en format simple ; Faire une réunion de lecture et de consultation pour recueillir les commentaires et suggestions des citoyens concernés."
+    },
+    {
+      "id": "field_logement_4f55c9cf",
+      "category": "logement",
+      "constat_factuel": "L'audierne fait face à des défis dans l'accès aux logements habituels, ce qui limite l'accès aux établissements secondaires et soulève des questions de fiscalité et de sécurité social.",
+      "idees_ameliorations": "Créer un système d'application en ligne simplifié pour les demandes d'établissement, augmenter la subvention pour les projets logement, renforcer les contrôles des codes de construction, et favoriser une collaboration entre les Differentes entités pour maximiser l'efficacité des ressources.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "logement affordable",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'audierne fait face à des défis dans l'accès aux logements habituels, ce qui...",
+      "body": "**Constat factuel:**\nL'audierne fait face à des défis dans l'accès aux logements habituels, ce qui limite l'accès aux établissements secondaires et soulève des questions de fiscalité et de sécurité social.\n\n**Vos idées d'améliorations:**\nCréer un système d'application en ligne simplifié pour les demandes d'établissement, augmenter la subvention pour les projets logement, renforcer les contrôles des codes de construction, et favoriser une collaboration entre les Differentes entités pour maximiser l'efficacité des ressources."
+    },
+    {
+      "id": "field_logement_0dceb220",
+      "category": "logement",
+      "constat_factuel": "La situation actuelle dans la commune de Audierne réside dans la manque de logements accessibles et durables pour les familles, en particulier celles de single-parents.,",
+      "idees_ameliorations": "Pour améliorer cette situation, il est recommandé de renforcer les financements pour les logements affordables et de proposer des contrats de location plus compétitifs., De plus, il est suggéré de développer des partenariats avec des associations locales et des institutions financières pour améliorer la quality des logements disponibles.,",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "logement affordable",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "La situation actuelle dans la commune de Audierne réside dans la manque de lo...",
+      "body": "**Constat factuel:**\nLa situation actuelle dans la commune de Audierne réside dans la manque de logements accessibles et durables pour les familles, en particulier celles de single-parents.,\n\n**Vos idées d'améliorations:**\nPour améliorer cette situation, il est recommandé de renforcer les financements pour les logements affordables et de proposer des contrats de location plus compétitifs., De plus, il est suggéré de développer des partenariats avec des associations locales et des institutions financières pour améliorer la quality des logements disponibles.,"
+    },
+    {
+      "id": "field_logement_26e62179",
+      "category": "logement",
+      "constat_factuel": "Il semble que le logement dans la commune d'Audierne ne soit pas assez accessible ou économe pour soutenir un établissement éducatif de qualité.",
+      "idees_ameliorations": "Pour améliorer la situation, il serait bon de considérer une initiative de construction prédictive avec des mises en place financières attractives. De plus, il serait utile de collaborer avec des associations locales pour recueillir des demandes et améliorer les infrastructures existantes. On pourrait également explorer des scénarios de financement personnalisé pour les familles economicment sensibles et renforcer la qualité des établissements existants pour attirer plus d'élèves.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "logement affordable",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Il semble que le logement dans la commune d'Audierne ne soit pas assez access...",
+      "body": "**Constat factuel:**\nIl semble que le logement dans la commune d'Audierne ne soit pas assez accessible ou économe pour soutenir un établissement éducatif de qualité.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il serait bon de considérer une initiative de construction prédictive avec des mises en place financières attractives. De plus, il serait utile de collaborer avec des associations locales pour recueillir des demandes et améliorer les infrastructures existantes. On pourrait également explorer des scénarios de financement personnalisé pour les familles economicment sensibles et renforcer la qualité des établissements existants pour attirer plus d'élèves."
+    },
+    {
+      "id": "field_logement_7f876aea",
+      "category": "logement",
+      "constat_factuel": "L'Audierne fait face à un manque de logement immobilier assurable et équitable pour les établissements secondaires, ce qui engendre une congestion et des difficultés pour l'attribution de postes.",
+      "idees_ameliorations": "1. Créer des unités de logement affordable avec des partenaires locaux pour les établissements secondaires.\n2. OBTENIR Un soutien financier du Département pour faciliter la réalisation des projets logements.\n3. Mettre à jour les paramètres de sélection pour permettre l'admission des logements assurables et équitable.\n4. Engager les citoyens dans le processus de décision pour garantir la transparence et la transparence des décisions.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "logement affordable",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "L'Audierne fait face à un manque de logement immobilier assurable et équitabl...",
+      "body": "**Constat factuel:**\nL'Audierne fait face à un manque de logement immobilier assurable et équitable pour les établissements secondaires, ce qui engendre une congestion et des difficultés pour l'attribution de postes.\n\n**Vos idées d'améliorations:**\n1. Créer des unités de logement affordable avec des partenaires locaux pour les établissements secondaires.\n2. OBTENIR Un soutien financier du Département pour faciliter la réalisation des projets logements.\n3. Mettre à jour les paramètres de sélection pour permettre l'admission des logements assurables et équitable.\n4. Engager les citoyens dans le processus de décision pour garantir la transparence et la transparence des décisions."
+    },
+    {
+      "id": "field_culture_4612061b",
+      "category": "culture",
+      "constat_factuel": "Le calendrier Jalonné pour l'année scolaire 2026-2028 est préparé, et les mesures pour réduire le taux de déstémentation dans la commune ont été estimées à 75%. Ces initiatives sont liées aux attentes du secteur éducatif et des communautés locales.",
+      "idees_ameliorations": "Organiser des ateliers pour la formation des parents à l'aide en devoirs et à l'utilisation des ressources éducatives locales.\n Établir une bibliothèque communautaire avec accès à des technologie éducatives.\n Créer un plateforme pour les élèves du collège ou lycée pour soutenir leurs projets scolaires.\n Fonder un programme de mentorat pour les élèves en difficultés scolaires.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Le calendrier Jalonné pour l'année scolaire 2026-2028 est préparé, et les mes...",
+      "body": "**Constat factuel:**\nLe calendrier Jalonné pour l'année scolaire 2026-2028 est préparé, et les mesures pour réduire le taux de déstémentation dans la commune ont été estimées à 75%. Ces initiatives sont liées aux attentes du secteur éducatif et des communautés locales.\n\n**Vos idées d'améliorations:**\nOrganiser des ateliers pour la formation des parents à l'aide en devoirs et à l'utilisation des ressources éducatives locales.\n Établir une bibliothèque communautaire avec accès à des technologie éducatives.\n Créer un plateforme pour les élèves du collège ou lycée pour soutenir leurs projets scolaires.\n Fonder un programme de mentorat pour les élèves en difficultés scolaires."
+    },
+    {
+      "id": "field_culture_e14f532b",
+      "category": "culture",
+      "constat_factuel": "Les prévisions pour l'année scolaire 2026–2028 dans la commune de Audierne sont structurées autour d'un plan d'action citoyen et d'éducation, avec un impact prévisible sur la readmission des enfants. Cependant, les attentes en matière de protected population indicator (ppi) sont inférieures au niveau de 80%, ce qui engendre une hausse des taux de readmission supérieure à 25%.",
+      "idees_ameliorations": "Pour améliorer la situation éduclative et la readmission des enfants, il est recommandé de renforcer les services de soutien-familyire et de développer des initiatives pédagogiques et culturelles pour stimuler l'engagement des families à l'éducation. En outre, il est suggéré de Renforcer les partenariats entre établissements scolaires et communautés locales pour améliorer l'accès aux formations supplémentaires et à la counselling family orientée.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Les prévisions pour l'année scolaire 2026–2028 dans la commune de Audierne so...",
+      "body": "**Constat factuel:**\nLes prévisions pour l'année scolaire 2026–2028 dans la commune de Audierne sont structurées autour d'un plan d'action citoyen et d'éducation, avec un impact prévisible sur la readmission des enfants. Cependant, les attentes en matière de protected population indicator (ppi) sont inférieures au niveau de 80%, ce qui engendre une hausse des taux de readmission supérieure à 25%.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation éduclative et la readmission des enfants, il est recommandé de renforcer les services de soutien-familyire et de développer des initiatives pédagogiques et culturelles pour stimuler l'engagement des families à l'éducation. En outre, il est suggéré de Renforcer les partenariats entre établissements scolaires et communautés locales pour améliorer l'accès aux formations supplémentaires et à la counselling family orientée."
+    },
+    {
+      "id": "field_culture_015ba340",
+      "category": "culture",
+      "constat_factuel": "En 2026, 2027 et 2028, les écoles de l'authlorne ont l'ici situation fragile face à un taux de readmission de 75 %, ce qui soulève des préoccupations quant à la durabilité de l'éducation pour les enfants de cette région.",
+      "idees_ameliorations": "Pour améliorer cette situation, il serait pertinent de renforcer l'intégration des écoles avec la communauté locale. En outre, des formations spécifiques pour les enseignants pour une meilleure préparation aux attentes des parents et des élèves serait bénéfique. Enfin, une attention particulière aux demandes de parents avec des enfants en situation speciale pourrait renforcer la readmission et la durabilité de l'éducation égalitaire.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "En 2026, 2027 et 2028, les écoles de l'authlorne ont l'ici situation fragile ...",
+      "body": "**Constat factuel:**\nEn 2026, 2027 et 2028, les écoles de l'authlorne ont l'ici situation fragile face à un taux de readmission de 75 %, ce qui soulève des préoccupations quant à la durabilité de l'éducation pour les enfants de cette région.\n\n**Vos idées d'améliorations:**\nPour améliorer cette situation, il serait pertinent de renforcer l'intégration des écoles avec la communauté locale. En outre, des formations spécifiques pour les enseignants pour une meilleure préparation aux attentes des parents et des élèves serait bénéfique. Enfin, une attention particulière aux demandes de parents avec des enfants en situation speciale pourrait renforcer la readmission et la durabilité de l'éducation égalitaire."
+    },
+    {
+      "id": "field_culture_01e1c536",
+      "category": "culture",
+      "constat_factuel": "La prévoyance pour l'année scolaire 2026-2028 n'a pas atteint le seuil de 85 % prévu, ce qui soulève des préoccupations concernant la qualité de l'éducation à l'audierne. Le ratio de désdétenabilité est affecté, ce qui soulève des préoccupations pour le bien-être des élèves et des families localisées dans cette région.",
+      "idees_ameliorations": "",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "La prévoyance pour l'année scolaire 2026-2028 n'a pas atteint le seuil de 85 ...",
+      "body": "**Constat factuel:**\nLa prévoyance pour l'année scolaire 2026-2028 n'a pas atteint le seuil de 85 % prévu, ce qui soulève des préoccupations concernant la qualité de l'éducation à l'audierne. Le ratio de désdétenabilité est affecté, ce qui soulève des préoccupations pour le bien-être des élèves et des families localisées dans cette région."
+    },
+    {
+      "id": "field_associations_25b13a1f",
+      "category": "associations",
+      "constat_factuel": "Au sein de la commune de Audierne, une association de citizens s'intéresse à l'obtention d'une charte associative pour des groupements locaux visant à un objectif commun.",
+      "idees_ameliorations": "Pour évoluer vers un model associatif, il faudrait\n1. Organiser un assemblage de citoyens pour échanger des idées et des propositions concrètes.\n2. Proposer des modèles templates et templates juridiques simplifiés pour faciliter la compilation.\n3. Organiser des ateliers de formation pour mieux comprendre le statut des associations.\n4. Établir un réseaux de dialogue pour renforcer les interactions entre les collectivités et les entreprises.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": ">réclamation",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Au sein de la commune de Audierne, une association de citizens s'intéresse à ...",
+      "body": "**Constat factuel:**\nAu sein de la commune de Audierne, une association de citizens s'intéresse à l'obtention d'une charte associative pour des groupements locaux visant à un objectif commun.\n\n**Vos idées d'améliorations:**\nPour évoluer vers un model associatif, il faudrait\n1. Organiser un assemblage de citoyens pour échanger des idées et des propositions concrètes.\n2. Proposer des modèles templates et templates juridiques simplifiés pour faciliter la compilation.\n3. Organiser des ateliers de formation pour mieux comprendre le statut des associations.\n4. Établir un réseaux de dialogue pour renforcer les interactions entre les collectivités et les entreprises."
+    },
+    {
+      "id": "field_associations_73f76935",
+      "category": "associations",
+      "constat_factuel": "À l'audierne, les entreprises encounterent des situations où les litiges juridiques engendrent des difficultés dans la communication avec les communes.",
+      "idees_ameliorations": "Créer un protocole standardisé pour les clauses juridiques et informer les entreprises de la procédure à suivre. Organiser des ateliers de formation pour les équipes locales.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": ">réclamation",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "À l'audierne, les entreprises encounterent des situations où les litiges juri...",
+      "body": "**Constat factuel:**\nÀ l'audierne, les entreprises encounterent des situations où les litiges juridiques engendrent des difficultés dans la communication avec les communes.\n\n**Vos idées d'améliorations:**\nCréer un protocole standardisé pour les clauses juridiques et informer les entreprises de la procédure à suivre. Organiser des ateliers de formation pour les équipes locales."
+    },
+    {
+      "id": "field_associations_ce034bd6",
+      "category": "associations",
+      "constat_factuel": "Au sein de la commune d'Audierne, il semble que les clauses contractuelles en vigueur pour les transactions commerciales ne soient pas optimales. Les PME voient leur intérêt de receiving information claire et accessible, tout en respectant les normes juridiques établies.",
+      "idees_ameliorations": "1. Intégrer des directives simplifiées et concrètes dans les clauses contractuelles.\n2. Organiser un processus de review des clauses contractuelles pour les rendre plus adaptables.\n3. Créer un Flux d'information et de consultation citoyenne pour les PME et les entreprises.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": ">réclamation",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Au sein de la commune d'Audierne, il semble que les clauses contractuelles en...",
+      "body": "**Constat factuel:**\nAu sein de la commune d'Audierne, il semble que les clauses contractuelles en vigueur pour les transactions commerciales ne soient pas optimales. Les PME voient leur intérêt de receiving information claire et accessible, tout en respectant les normes juridiques établies.\n\n**Vos idées d'améliorations:**\n1. Intégrer des directives simplifiées et concrètes dans les clauses contractuelles.\n2. Organiser un processus de review des clauses contractuelles pour les rendre plus adaptables.\n3. Créer un Flux d'information et de consultation citoyenne pour les PME et les entreprises."
+    },
+    {
+      "id": "field_associations_f3bbb97a",
+      "category": "associations",
+      "constat_factuel": "THE SITUATION IN AUDIERNE IS URGENT. LOCAL AUTHORITIES ARE FAILING TO PROVIDE CLEAR AND TIMELY INFORMATION ABOUT CONTRACT CLAUSES, CAUSING BUSINESSES TO SUFFER.",
+      "idees_ameliorations": "WE URGENTLY RECOMMEND A TRANSPARENT INFORMATION PLAN AND ENSURING EQUAL TREATY FOR ALL BUSINESSES. CONDUCT PUBLIC CONSULTATIONS TO REFINE THESE CLAUSES AND ENSURE JUST PROCESSES.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": ">réclamation",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "THE SITUATION IN AUDIERNE IS URGENT. LOCAL AUTHORITIES ARE FAILING TO PROVIDE...",
+      "body": "**Constat factuel:**\nTHE SITUATION IN AUDIERNE IS URGENT. LOCAL AUTHORITIES ARE FAILING TO PROVIDE CLEAR AND TIMELY INFORMATION ABOUT CONTRACT CLAUSES, CAUSING BUSINESSES TO SUFFER.\n\n**Vos idées d'améliorations:**\nWE URGENTLY RECOMMEND A TRANSPARENT INFORMATION PLAN AND ENSURING EQUAL TREATY FOR ALL BUSINESSES. CONDUCT PUBLIC CONSULTATIONS TO REFINE THESE CLAUSES AND ENSURE JUST PROCESSES."
+    },
+    {
+      "id": "field_jeunesse_e0282b06",
+      "category": "jeunesse",
+      "constat_factuel": "Au cours des années 2026–2028, les encaisements scolaires enaudierne reflètent les impacts d'un PPI de 75%, ce qui affecte la capacité à attirer les jeunes sur les écoles et les lieux youthful, décrivant une situation où la motivation scolaire pourrait être abaissée.",
+      "idees_ameliorations": "Intégrer des ressources supplémentaires pour les écoles existantes, renforcer les infrastructures scolaires pour permettre un meilleur accès aux études, et engager la communauté à dégager un soutien accru aux youth et aux écoles pour stimuler leur engagement scolaire.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Au cours des années 2026–2028, les encaisements scolaires enaudierne reflèten...",
+      "body": "**Constat factuel:**\nAu cours des années 2026–2028, les encaisements scolaires enaudierne reflètent les impacts d'un PPI de 75%, ce qui affecte la capacité à attirer les jeunes sur les écoles et les lieux youthful, décrivant une situation où la motivation scolaire pourrait être abaissée.\n\n**Vos idées d'améliorations:**\nIntégrer des ressources supplémentaires pour les écoles existantes, renforcer les infrastructures scolaires pour permettre un meilleur accès aux études, et engager la communauté à dégager un soutien accru aux youth et aux écoles pour stimuler leur engagement scolaire."
+    },
+    {
+      "id": "field_jeunesse_2cb6d311",
+      "category": "jeunesse",
+      "constat_factuel": "Au sein de la commune d'Audierne, la situation actuelle relève de défis éducatifs, en particulier en ce qui concerne l'alignement du calendrier scolaire pour les années 2026-2028. Une scénario de prévision scolaire (PPI) estimée à 75% indique un impact significatif sur la desidétenabilité des étudiants, ce qui soulève des préoccupations quant à l'engagement et la progression scolaire.",
+      "idees_ameliorations": "Pour améliorer la situation, il serait pertinent de renforcer l'alignement du calendrier scolaire et de proposer des interventions supplémentaires pour soutenir l'engagement scolaire. Par exemple, une expansion du calendrier scolaire et des ressources pour les étudiants souffrant de desidétenabilité pourraient renforcer la motivation et la progression scolaire. De plus, une space de dialogue entre les parents et les autorités locales pourrait permettre de mieux adapter les ressources et les outils pédagogiques.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": true,
+      "violations_injected": null,
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Au sein de la commune d'Audierne, la situation actuelle relève de défis éduca...",
+      "body": "**Constat factuel:**\nAu sein de la commune d'Audierne, la situation actuelle relève de défis éducatifs, en particulier en ce qui concerne l'alignement du calendrier scolaire pour les années 2026-2028. Une scénario de prévision scolaire (PPI) estimée à 75% indique un impact significatif sur la desidétenabilité des étudiants, ce qui soulève des préoccupations quant à l'engagement et la progression scolaire.\n\n**Vos idées d'améliorations:**\nPour améliorer la situation, il serait pertinent de renforcer l'alignement du calendrier scolaire et de proposer des interventions supplémentaires pour soutenir l'engagement scolaire. Par exemple, une expansion du calendrier scolaire et des ressources pour les étudiants souffrant de desidétenabilité pourraient renforcer la motivation et la progression scolaire. De plus, une space de dialogue entre les parents et les autorités locales pourrait permettre de mieux adapter les ressources et les outils pédagogiques."
+    },
+    {
+      "id": "field_jeunesse_90827a99",
+      "category": "jeunesse",
+      "constat_factuel": "Au collège de Audierne, le calendrier scolaire de 2026–2028 prévoit une scénario de prevéningence par population (PPPI) de 75%, ce qui devrait réduire le ratio de readmission aux établissements de formation supérieure à 20%.",
+      "idees_ameliorations": "Pour renforcer l'éducation dans la commune, il est recommandé d'agir sur plusieurs fronts : 1) Intégrer plus de activités éducatives dans les écoles pour renforcer la motivation et la performance scolaire ; 2) Renforcer la participation active des parents à l'éducation de leur enfance ; 3) Étudier de manière plus approfondie les causes des faits éducatifs problématiques et élaborer des stratégies ciblées ; 4) Fonder des organismes de soutien scolaire à l'extériture pour soutenre les élèves en difficultés.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "subtle_violation"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "Au collège de Audierne, le calendrier scolaire de 2026–2028 prévoit une scéna...",
+      "body": "**Constat factuel:**\nAu collège de Audierne, le calendrier scolaire de 2026–2028 prévoit une scénario de prevéningence par population (PPPI) de 75%, ce qui devrait réduire le ratio de readmission aux établissements de formation supérieure à 20%.\n\n**Vos idées d'améliorations:**\nPour renforcer l'éducation dans la commune, il est recommandé d'agir sur plusieurs fronts : 1) Intégrer plus de activités éducatives dans les écoles pour renforcer la motivation et la performance scolaire ; 2) Renforcer la participation active des parents à l'éducation de leur enfance ; 3) Étudier de manière plus approfondie les causes des faits éducatifs problématiques et élaborer des stratégies ciblées ; 4) Fonder des organismes de soutien scolaire à l'extériture pour soutenre les élèves en difficultés."
+    },
+    {
+      "id": "field_jeunesse_218d5baa",
+      "category": "jeunesse",
+      "constat_factuel": "TOUTE VAIRE EN FORME DE CALENDRIER 2026–2028, L'UTILISATION MAJESTUEUSE DE L'YPAGINE PPI (75%) PAR LES ÉLUS RÉPONSES INCONNUES, SOUS-entendu. Ainsi, Le Ratio Des Désétabilité Reste Incertain Et Peut Évoluer vers Des Valeurs Non Optimales, Posant Des Problèmes Pour Les Élèves De Jeunesse De Audierne.",
+      "idees_ameliorations": "AUGMENTER LE PPI EN SYNERGIE WITH L'INSTITUTION, RÉDUIR LES BARRIERS D'accès, AMéliorer La Connectivité Publice ET Renforcer Les Activités Culturelles Pour Renforcer La Sénescence Des Élèves De Jeunesse.",
+      "source": "derived",
+      "parent_id": null,
+      "distance_from_parent": null,
+      "similarity_to_parent": null,
+      "expected_valid": false,
+      "violations_injected": [
+        "aggressive"
+      ],
+      "metadata": {
+        "field_input": true,
+        "theme": "éducation",
+        "source_title": "02 18 Municipal Meeting Budget",
+        "generated_date": "2026-03-09",
+        "llm_model": "deepseek-r1:7b"
+      },
+      "title": "TOUTE VAIRE EN FORME DE CALENDRIER 2026–2028, L'UTILISATION MAJESTUEUSE DE L'...",
+      "body": "**Constat factuel:**\nTOUTE VAIRE EN FORME DE CALENDRIER 2026–2028, L'UTILISATION MAJESTUEUSE DE L'YPAGINE PPI (75%) PAR LES ÉLUS RÉPONSES INCONNUES, SOUS-entendu. Ainsi, Le Ratio Des Désétabilité Reste Incertain Et Peut Évoluer vers Des Valeurs Non Optimales, Posant Des Problèmes Pour Les Élèves De Jeunesse De Audierne.\n\n**Vos idées d'améliorations:**\nAUGMENTER LE PPI EN SYNERGIE WITH L'INSTITUTION, RÉDUIR LES BARRIERS D'accès, AMéliorer La Connectivité Publice ET Renforcer Les Activités Culturelles Pour Renforcer La Sénescence Des Élèves De Jeunesse."
     }
   ]
 }

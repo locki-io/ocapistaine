@@ -31,6 +31,23 @@
       }
     },
     {
+      "name": "Run Chat (Debug)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "streamlit",
+      "args": ["run", "app/front_chat.py", "--server.port", "8503"],
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "cwd": "${workspaceFolder}",
+      "envFile": "${workspaceFolder}/.env",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}",
+        "STREAMLIT_SERVER_ENABLE_CORS": "true",
+        "STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION": "false",
+        "STREAMLIT_SERVER_ALLOWED_ORIGINS": "http://localhost:8503,http://127.0.0.1:8503,https://programchat.ngrok-free.app,https://chat.vaettir.locki.io"
+      }
+    },
+    {
       "name": "Run Jupyter Kernel (Poetry)",
       "type": "debugpy",
       "request": "launch",

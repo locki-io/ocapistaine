@@ -33,7 +33,7 @@ Ce sera l'occasion de marquer votre volonté d'agir à nos côtés.
 
 Nous ne sommes pas des marchands de rêves et nous ne vous ferons jamais de promesses irréalisables. Avec nous, vous savez que la maison « Mairie » sera bien tenue.
 
-PIDER Guillon
+Didier Guillon
 
 ---
 

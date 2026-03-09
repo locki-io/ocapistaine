@@ -64,10 +64,12 @@ class ProviderWithFailover:
 
         self._current_provider: LLMProvider | None = None
         self._current_name: str | None = None
+        self._failover_occurred: bool = False
+        self._errors: list[tuple[str, str]] = []
 
     @property
     def name(self) -> str:
-        """Current provider name."""
+        """Current provider name (actual, after failover)."""
         return self._current_name or self._primary
 
     @property
@@ -76,6 +78,41 @@ class ProviderWithFailover:
         if self._current_provider:
             return self._current_provider.model
         return "unknown"
+
+    @property
+    def requested_provider(self) -> str:
+        """The provider originally requested (before failover)."""
+        return self._primary
+
+    @property
+    def failover_occurred(self) -> bool:
+        """Whether failover happened on the last call."""
+        return self._failover_occurred
+
+    @property
+    def failover_errors(self) -> list[tuple[str, str]]:
+        """Errors from providers that failed before the successful one."""
+        return self._errors.copy()
+
+    def get_provider_info(self) -> dict:
+        """
+        Get provider metadata for tracing — reflects actual state after execution.
+
+        Returns dict with requested_provider, actual_provider, model, failover flag.
+        """
+        info = {
+            "provider": self._current_name or self._primary,
+            "model_key": self.model,
+            "model_id": self.model,
+            "requested_provider": self._primary,
+        }
+        if self._failover_occurred:
+            info["failover"] = True
+            info["failover_from"] = self._primary
+            info["failover_errors"] = "; ".join(
+                f"{p}: {e}" for p, e in self._errors
+            )
+        return info
 
     def _get_provider(self, name: ProviderName) -> LLMProvider:
         """Get a provider instance by name."""
@@ -171,6 +208,8 @@ class ProviderWithFailover:
         """
         errors = []
         ollama_locked = False
+        self._failover_occurred = False
+        self._errors = []
 
         for provider_name in self._chain:
             try:
@@ -209,6 +248,16 @@ class ProviderWithFailover:
                 )
 
                 logger.info(f"Success with provider: {provider_name}")
+
+                # Track failover state
+                self._errors = errors
+                if provider_name != self._primary:
+                    self._failover_occurred = True
+                    logger.info(
+                        f"Failover: requested={self._primary}, "
+                        f"actual={provider_name}"
+                    )
+
                 return response
 
             except Exception as e:
@@ -229,6 +278,84 @@ class ProviderWithFailover:
         # All providers failed
         error_summary = "; ".join([f"{p}: {e}" for p, e in errors])
         raise Exception(f"All providers failed: {error_summary}")
+
+    async def stream(
+        self,
+        messages: list[Message],
+        temperature: float = 0.7,
+        max_tokens: int | None = None,
+        task_id: str | None = None,
+    ):
+        """
+        Stream completion with automatic failover.
+
+        Tries each provider in the chain. Failover happens at connection time —
+        once streaming starts, chunks are yielded directly.
+
+        Yields:
+            String chunks as they are generated.
+        """
+        errors = []
+        ollama_locked = False
+        self._failover_occurred = False
+        self._errors = []
+
+        for provider_name in self._chain:
+            try:
+                # Special handling for Ollama
+                if provider_name == "ollama":
+                    if not await self._check_ollama_available():
+                        errors.append(("ollama", "unavailable or locked"))
+                        continue
+                    if task_id:
+                        if not await self._acquire_ollama_lock(task_id):
+                            errors.append(("ollama", "lock acquisition failed"))
+                            continue
+                        ollama_locked = True
+
+                provider = self._get_provider(provider_name)
+                self._current_provider = provider
+                self._current_name = provider_name
+
+                logger.debug(f"Trying stream: {provider_name} ({provider.model})")
+
+                # Try to get the stream — failover happens here if connection fails
+                chunk_count = 0
+                async for chunk in provider.stream(
+                    messages=messages,
+                    temperature=temperature,
+                    max_tokens=max_tokens,
+                ):
+                    chunk_count += 1
+                    yield chunk
+
+                # Stream completed successfully
+                self._errors = errors
+                if provider_name != self._primary:
+                    self._failover_occurred = True
+                    logger.info(
+                        f"Stream failover: requested={self._primary}, "
+                        f"actual={provider_name}"
+                    )
+                else:
+                    logger.info(f"Stream success: {provider_name}")
+                return
+
+            except NotImplementedError:
+                logger.info(f"{provider_name} does not support streaming, skipping")
+                errors.append((provider_name, "streaming not supported"))
+            except Exception as e:
+                error_msg = str(e)
+                logger.warning(f"Stream {provider_name} failed: {error_msg}")
+                errors.append((provider_name, error_msg))
+            finally:
+                if ollama_locked and task_id:
+                    await self._release_ollama_lock(task_id)
+                    ollama_locked = False
+
+        # All providers failed — raise
+        error_summary = "; ".join([f"{p}: {e}" for p, e in errors])
+        raise Exception(f"All stream providers failed: {error_summary}")
 
 
 async def with_failover(

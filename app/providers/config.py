@@ -310,6 +310,9 @@ class ProviderConfig(BaseSettings):
     # Local Ollama
     ollama_host: str = Field(default="http://localhost:11434", alias="OLLAMA_HOST")
     ollama_model: str = Field(default="deepseek-r1:7b", alias="OLLAMA_MODEL")
+    ollama_keep_alive: str = Field(default="2m", alias="OLLAMA_KEEP_ALIVE")  # Unload model after idle (0=immediate, 5m=default)
+    ollama_num_thread: int | None = Field(default=None, alias="OLLAMA_NUM_THREAD")  # CPU threads (None=all cores)
+    ollama_num_ctx: int | None = Field(default=None, alias="OLLAMA_NUM_CTX")  # Context window size (None=model default)
 
     # OpenAI
     openai_api_key: str | None = Field(default=None, alias="OPENAI_API_KEY")
