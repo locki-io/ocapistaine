@@ -191,10 +191,10 @@ def _send_feedback(trace_id: str, score: float, msg_index: int):
 
 LISTS = {
     "audierne2026": "Audierne-Esquibien 2026 (programme co-construit)",
-    "construire-avenir": "Construire l'Avenir (LDVG – Florent Lardic)",
+    "ca": "Construire l'Avenir (LDVG – Florent Lardic)",
     "paa": "Passons à l'Action ! (LDVD – Didier Guillon)",
     "spae": "S'unir pour Audierne-Esquibien (LDVG – Michel Van Praët)",
-    "csnfa": "Cap sur Notre Futur (LDVD – Eric Bosser)",
+    "csnf": "Cap sur Notre Futur (LDVD – Eric Bosser)",
 }
 
 with st.sidebar:

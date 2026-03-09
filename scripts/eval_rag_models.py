@@ -80,14 +80,14 @@ TEST_QUESTIONS = {
     "compare_economy": {
         "question": "Que proposent les listes sur l'économie locale ?",
         "mode": "compare",
-        "lists": ["audierne2026", "paa", "construire-avenir", "spae", "csnfa"],
+        "lists": ["audierne2026", "paa", "ca", "spae", "csnf"],
         "expected_keywords": ["économie"],
         "category": "compare",
     },
     "compare_environment": {
         "question": "Comparez les propositions environnementales des listes.",
         "mode": "compare",
-        "lists": ["audierne2026", "paa", "construire-avenir", "spae"],
+        "lists": ["audierne2026", "paa", "ca", "spae"],
         "expected_keywords": ["environnement"],
         "category": "compare",
     },

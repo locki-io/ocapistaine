@@ -26,16 +26,16 @@ GITHUB_BASE = "https://github.com/audierne2026/participons/blob/main/programmes"
 # Map directory name -> (list_name slug, official name)
 # Keys match directory names in participons/programmes/
 PROGRAM_DIRS = {
-    "construire-avenir": ("construire-avenir", "Construire l'Avenir"),
-    "cap-sur-notre-futur": ("csnfa", "Cap sur Notre Futur"),
+    "construire-avenir": ("ca", "Construire l'Avenir"),
+    "cap-sur-notre-futur": ("csnf", "Cap sur Notre Futur"),
     "passons-a-laction": ("paa", "Passons à l'Action !"),
     "sunir-pour-audierne": ("spae", "S'unir pour Audierne-Esquibien"),
 }
 
 # Legacy mapping (ext_data/program_* -> list slug) for fallback
 LEGACY_DIRS = {
-    "program_ca": ("construire-avenir", "Construire l'Avenir"),
-    "program_csnfa": ("csnfa", "Cap sur Notre Futur"),
+    "program_ca": ("ca", "Construire l'Avenir"),
+    "program_csnfa": ("csnf", "Cap sur Notre Futur"),
     "program_paa": ("paa", "Passons à l'Action !"),
     "program_spae": ("spae", "S'unir pour Audierne-Esquibien"),
 }

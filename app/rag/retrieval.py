@@ -75,7 +75,7 @@ def search_overview(
     all_results.extend(ref_results)
 
     # 2. Get top chunks from each list
-    list_names = ["audierne2026", "construire-avenir", "paa", "spae", "csnfa"]
+    list_names = ["audierne2026", "ca", "paa", "spae", "csnf"]
     for name in list_names:
         results = search(query, n_results=n_per_list, where={"list_name": name})
         all_results.extend(results)

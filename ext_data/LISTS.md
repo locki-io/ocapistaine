@@ -12,8 +12,8 @@ Data: [data.gouv.fr](https://www.data.gouv.fr/datasets/elections-municipales-202
 | # | Official Name | Slug (RAG) | Directory | Nuance | Tête de liste | Docs |
 |---|---|---|---|---|---|---|
 | 1 | S'unir pour Audierne-Esquibien | `spae` | `program_spae/` | LDVG | Michel Van Praët | 15 |
-| 2 | Cap sur Notre Futur | `csnfa` | `program_csnfa/` | LDVD | Eric Bosser | 5 |
-| 3 | Construire l'Avenir | `construire-avenir` | `program_ca/` | LDVG | Florent Lardic | 17 |
+| 2 | Cap sur Notre Futur | `csnf` | `program_csnfa/` | LDVD | Eric Bosser | 5 |
+| 3 | Construire l'Avenir | `ca` | `program_ca/` | LDVG | Florent Lardic | 17 |
 | 4 | Passons à l'Action ! | `paa` | `program_paa/` | LDVD | Didier Guillon | 24 |
 
 ## Participatory Program (non-electoral)
@@ -71,7 +71,7 @@ All program documents were processed via Mistral Document AI (`scripts/ocr_progr
 | Abbreviation | Meaning |
 |---|---|
 | SPAE | S'unir Pour Audierne-Esquibien |
-| CSNFA | Cap Sur Notre Futur (Audierne) |
+| CSNF | Cap Sur Notre Futur |
 | PAA | Passons À l'Action ! |
 | CA | Construire l'Avenir |
 | LDVG | Liste Divers Gauche |

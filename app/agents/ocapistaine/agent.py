@@ -30,7 +30,7 @@ class OCapistaineAgent(BaseAgent):
     Usage:
         agent = OCapistaineAgent(provider_name="gemini")
         result = await agent.chat("Que proposent les listes sur l'école ?")
-        result = await agent.compare("économie locale", ["paa", "spae", "construire-avenir"])
+        result = await agent.compare("économie locale", ["paa", "spae", "ca"])
     """
 
     def __init__(
