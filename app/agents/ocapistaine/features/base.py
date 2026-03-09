@@ -7,6 +7,7 @@ from typing import Any
 
 from app.providers import LLMProvider, Message
 from app.rag import retrieval
+from ..models import RetrievalMetrics
 
 
 # Slug → official list name (for prompts and LLM context)
@@ -77,6 +78,39 @@ class RAGFeatureBase(ABC):
                     "distance": r.distance,
                 })
         return sources
+
+    # Distance below which a chunk is considered "confidently relevant"
+    _RELEVANCE_THRESHOLD = 0.5
+
+    def _compute_retrieval_metrics(
+        self, results: list[retrieval.RetrievalResult],
+    ) -> RetrievalMetrics:
+        """Compute retrieval quality metrics from raw results (no LLM call needed)."""
+        if not results:
+            return RetrievalMetrics()
+
+        distances = [r.distance for r in results]
+        doc_ids = [r.metadata.get("doc_id", "") for r in results]
+        list_names_set = set(r.metadata.get("list_name", "") for r in results)
+        categories_set = set(r.metadata.get("category", "") for r in results)
+        total_chars = sum(len(r.content) for r in results)
+
+        return RetrievalMetrics(
+            chunks_found=len(results),
+            best_distance=round(min(distances), 4),
+            mean_distance=round(sum(distances) / len(distances), 4),
+            distance_spread=round(max(distances) - min(distances), 4),
+            distance_gap_1_2=round(distances[1] - distances[0], 4) if len(distances) > 1 else 0.0,
+            unique_docs=len(set(doc_ids)),
+            unique_lists=len(list_names_set - {""}),
+            unique_categories=len(categories_set - {""}),
+            list_names=sorted(list_names_set - {""}),
+            total_context_chars=total_chars,
+            mean_chunk_chars=round(total_chars / len(results)),
+            above_threshold_count=sum(1 for d in distances if d < self._RELEVANCE_THRESHOLD),
+            distances=[round(d, 4) for d in distances],
+            doc_ids=doc_ids,
+        )
 
     async def _complete(
         self,

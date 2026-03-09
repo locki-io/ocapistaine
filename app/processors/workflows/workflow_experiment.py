@@ -417,6 +417,7 @@ def _build_metrics(metric_names: list[str]) -> list:
         "charter_compliance": create_charter_compliance_metric,
         "confidence": create_confidence_metric,
         "output_format": create_output_format_metric,
+        "refine_accuracy": create_refine_accuracy_metric,
     }
 
     metrics = []
@@ -446,6 +447,8 @@ def _create_evaluation_task(config: OpikExperimentConfig) -> Callable:
         return _create_category_task(config.task_provider)
     elif config.experiment_type in ("rag_chat_evaluation", "rag_compare_evaluation"):
         return _create_rag_task(config.task_provider, config.experiment_type)
+    elif config.experiment_type == "query_refine_evaluation":
+        return _create_refine_task()
     else:
         return _create_generic_task(config.task_provider)
 
@@ -556,6 +559,44 @@ def _create_rag_task(provider: str, experiment_type: str) -> Callable:
             "confidence": result_dict.get("confidence", 0),
             "sources_count": len(sources),
             "model": result_dict.get("model", ""),
+        }
+
+    return evaluation_task
+
+
+def _create_refine_task() -> Callable:
+    """Create evaluation task for query refinement + wording correction.
+
+    Uses OpenAI gpt-4o-mini (the refiner's own model) — no provider parameter
+    needed since the refiner always uses the same cheap model.
+    """
+
+    def evaluation_task(dataset_item: dict) -> dict:
+        """Run QueryRefiner on dataset item and compare with expected."""
+        from app.agents.ocapistaine.features.refine import QueryRefiner
+
+        input_data = dataset_item.get("input", {})
+        original = input_data.get("original_query", "")
+        history = input_data.get("history")
+
+        # Run refiner
+        refiner = QueryRefiner()
+        if not refiner.available:
+            return {
+                "input": original,
+                "output": original,
+                "error": "QueryRefiner unavailable (no OpenAI key)",
+            }
+
+        result = asyncio.run(refiner.refine(question=original, history=history))
+
+        return {
+            "input": original,
+            "output": result.query,
+            "corrections": result.corrections,
+            "corrections_count": len(result.corrections),
+            "was_refined": result.was_refined,
+            "was_corrected": result.was_corrected,
         }
 
     return evaluation_task
@@ -839,6 +880,147 @@ def create_output_format_metric():
     return OutputFormatComplianceMetric()
 
 
+def create_refine_accuracy_metric():
+    """
+    Create custom metric for query refinement accuracy.
+
+    Scores three dimensions:
+    - Name correction accuracy: Did corrected names match expected corrections?
+    - Meaning preservation: Is the output semantically consistent with input intent?
+    - Refinement quality: Length ratio and keyword presence check.
+
+    Scoring (0.0 to 1.0):
+    - 0.4: Name/wording corrections match expected (precision + recall)
+    - 0.3: Meaning preservation (output contains key terms from input)
+    - 0.3: Refinement quality (reasonable expansion, not over-verbose)
+    """
+    from opik.evaluation.metrics import BaseMetric
+    from opik.evaluation.metrics.score_result import ScoreResult
+
+    class RefineAccuracyMetric(BaseMetric):
+        """Custom metric for query refinement accuracy."""
+
+        name = "refine_accuracy"
+
+        def score(self, output: str = None, expected_output: str = None, **kwargs) -> ScoreResult:
+            """Score refinement accuracy against expected output."""
+            reasons = []
+            total_score = 0.0
+
+            if not output:
+                return ScoreResult(name=self.name, value=0.0, reason="No output")
+
+            # Get expected data from dataset item
+            expected = kwargs.get("expected_output", {})
+            if isinstance(expected, str):
+                expected = {"expected_query": expected}
+
+            expected_query = expected.get("expected_query", "")
+            expected_corrections = expected.get("expected_corrections", [])
+            actual_corrections = kwargs.get("corrections", [])
+            if isinstance(actual_corrections, str):
+                actual_corrections = [actual_corrections]
+
+            # --- Dimension 1: Correction accuracy (0.4) ---
+            correction_score = 0.0
+            if expected_corrections:
+                # Check how many expected corrections were made
+                expected_set = {c.lower().strip() for c in expected_corrections}
+                actual_set = {c.lower().strip() for c in (actual_corrections or [])}
+
+                # Fuzzy match: check if the "to" part of each correction appears
+                matched = 0
+                for exp in expected_corrections:
+                    parts = exp.split("→")
+                    if len(parts) == 2:
+                        target = parts[1].strip().lower()
+                        # Check if target appears in output
+                        if target in output.lower():
+                            matched += 1
+
+                recall = matched / len(expected_corrections) if expected_corrections else 1.0
+                # Precision: penalize false corrections (extras)
+                extra = len(actual_set - expected_set)
+                precision = 1.0 - min(extra * 0.2, 0.5)
+
+                correction_score = (recall * 0.7 + precision * 0.3) * 0.4
+                reasons.append(f"corrections: {matched}/{len(expected_corrections)} matched, {extra} extra")
+            else:
+                # No corrections expected — score 0.4 if none were made
+                if not actual_corrections:
+                    correction_score = 0.4
+                    reasons.append("no corrections expected, none made")
+                else:
+                    correction_score = 0.2
+                    reasons.append(f"no corrections expected but {len(actual_corrections)} made")
+
+            total_score += correction_score
+
+            # --- Dimension 2: Meaning preservation (0.3) ---
+            input_text = kwargs.get("input", "") or ""
+            if input_text and output:
+                # Check that key content words from input appear in output
+                input_words = {w.lower() for w in input_text.split() if len(w) > 3}
+                output_lower = output.lower()
+                preserved = sum(1 for w in input_words if w in output_lower)
+                preservation = preserved / len(input_words) if input_words else 1.0
+                meaning_score = preservation * 0.3
+                reasons.append(f"meaning: {preserved}/{len(input_words)} key words preserved")
+            else:
+                meaning_score = 0.15
+                reasons.append("meaning: no input to compare")
+
+            total_score += meaning_score
+
+            # --- Dimension 3: Refinement quality (0.3) ---
+            if expected_query and output:
+                # Compare with expected query (fuzzy)
+                output_lower = output.lower().strip().rstrip("?").strip()
+                expected_lower = expected_query.lower().strip().rstrip("?").strip()
+
+                if output_lower == expected_lower:
+                    quality_score = 0.3
+                    reasons.append("quality: exact match")
+                else:
+                    # Partial match: check overlap of significant words
+                    expected_words = {w for w in expected_lower.split() if len(w) > 3}
+                    output_words = {w for w in output_lower.split() if len(w) > 3}
+                    if expected_words:
+                        overlap = len(expected_words & output_words) / len(expected_words)
+                        quality_score = overlap * 0.3
+                        reasons.append(f"quality: {overlap:.0%} word overlap with expected")
+                    else:
+                        quality_score = 0.15
+                        reasons.append("quality: no significant expected words")
+            elif output and input_text:
+                # No expected query — check reasonable expansion
+                ratio = len(output) / max(len(input_text), 1)
+                if 1.0 <= ratio <= 5.0:
+                    quality_score = 0.3
+                    reasons.append(f"quality: good expansion ratio {ratio:.1f}x")
+                elif ratio < 1.0:
+                    quality_score = 0.1
+                    reasons.append(f"quality: output shorter than input ({ratio:.1f}x)")
+                else:
+                    quality_score = 0.15
+                    reasons.append(f"quality: over-verbose ({ratio:.1f}x)")
+            else:
+                quality_score = 0.0
+                reasons.append("quality: insufficient data")
+
+            total_score += quality_score
+
+            final_score = max(0.0, min(1.0, total_score))
+
+            return ScoreResult(
+                name=self.name,
+                value=round(final_score, 3),
+                reason=" | ".join(reasons[:5]),
+            )
+
+    return RefineAccuracyMetric()
+
+
 # =============================================================================
 # Utilities
 # =============================================================================
@@ -919,6 +1101,11 @@ def list_available_metrics() -> list[dict]:
         {
             "name": "output_format",
             "description": "Custom: Measures output format compliance (0-1 scale)",
+            "type": "custom",
+        },
+        {
+            "name": "refine_accuracy",
+            "description": "Custom: Query refinement accuracy (name corrections + meaning preservation)",
             "type": "custom",
         },
     ]

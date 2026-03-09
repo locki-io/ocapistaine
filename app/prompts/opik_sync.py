@@ -82,6 +82,12 @@ COMPOSITE_PROMPTS = {
         "description": "OCapistaine persona + program comparison (for playground)",
         "json_file": "ocapistaine_rag.json",
     },
+    "ocapistaine-query-refine": {
+        "system_prompt": "ocapistaine.refine_system",
+        "user_prompt": "ocapistaine.refine_user",
+        "description": "OCapistaine query refinement + wording correction (for playground)",
+        "json_file": "ocapistaine_rag.json",
+    },
 }
 
 

@@ -94,6 +94,15 @@ AGENT_FEATURE_REGISTRY: dict[str, dict] = {
         "dataset_prefix": "rag-compare-eval",
         "description": "RAG comparison evaluation - cross-list program comparison",
     },
+    # OCapistaine Query Refinement
+    "query_refine_evaluation": {
+        "agent": "ocapistaine",
+        "feature": "query_refine",
+        "prompt_key": "ocapistaine.refine_system",
+        "dataset_prefix": "query-refine-eval",
+        "description": "Query refinement + wording correction - pre-processes user input for better retrieval",
+        "mockup_data": "refine_queries.json",
+    },
 }
 
 

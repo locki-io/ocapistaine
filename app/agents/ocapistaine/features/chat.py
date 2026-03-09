@@ -104,12 +104,13 @@ class RAGChatFeature(RAGFeatureBase):
             )
 
         sources = self._deduplicate_sources(results)
-        best_distance = min(r.distance for r in results)
-        confidence = max(0.0, 1.0 - best_distance)
+        metrics = self._compute_retrieval_metrics(results)
+        confidence = max(0.0, 1.0 - metrics.best_distance)
 
         return ChatResult(
             response=content, sources=sources, model=model,
             confidence=round(confidence, 3), is_overview=is_overview,
+            retrieval_metrics=metrics,
         )
 
     async def stream_execute(
@@ -172,11 +173,12 @@ class RAGChatFeature(RAGFeatureBase):
             return
 
         sources = self._deduplicate_sources(results)
-        best_distance = min(r.distance for r in results)
-        confidence = max(0.0, 1.0 - best_distance)
+        metrics = self._compute_retrieval_metrics(results)
+        confidence = max(0.0, 1.0 - metrics.best_distance)
         model_name = getattr(provider, "model", "unknown")
 
         yield ChatResult(
             response=full_response, sources=sources, model=model_name,
             confidence=round(confidence, 3), is_overview=is_overview,
+            retrieval_metrics=metrics,
         )

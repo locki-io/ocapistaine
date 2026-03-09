@@ -356,6 +356,18 @@ for i, msg in enumerate(st.session_state.messages):
                         _send_feedback(msg.get("trace_id"), 0.0, i)
                         st.rerun()
 
+# Auto-scroll to bottom after rendering message history
+if st.session_state.messages:
+    import streamlit.components.v1 as components
+    components.html("""
+    <script>
+        window.parent.document.querySelector('section.main').scrollTo({
+            top: window.parent.document.querySelector('section.main').scrollHeight,
+            behavior: 'smooth'
+        });
+    </script>
+    """, height=0)
+
 # ── Streaming helpers ─────────────────────────────────────
 
 

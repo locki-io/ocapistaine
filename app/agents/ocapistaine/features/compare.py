@@ -58,8 +58,10 @@ class RAGCompareFeature(RAGFeatureBase):
         # Build context per list
         list_context_parts = []
         all_sources = []
+        all_results = []
         for name, results in results_by_list.items():
             if results:
+                all_results.extend(results)
                 excerpts = "\n".join(r.content for r in results)
                 list_context_parts.append(f"### {display_name(name)}\n{excerpts}")
                 for r in results:
@@ -72,6 +74,7 @@ class RAGCompareFeature(RAGFeatureBase):
             else:
                 list_context_parts.append(f"### {display_name(name)}\n(Aucun document trouvé)")
 
+        metrics = self._compute_retrieval_metrics(all_results) if all_results else None
         list_contexts = "\n\n".join(list_context_parts)
 
         sys_prompt = f"{system_prompt}\n\n{COMPARE_SYSTEM_PROMPT}"
@@ -94,12 +97,15 @@ class RAGCompareFeature(RAGFeatureBase):
                 confidence=0.0,
             )
 
+        confidence = max(0.0, 1.0 - metrics.best_distance) if metrics else 0.7
+
         return CompareResult(
             response=content,
             lists_compared=list_names,
             sources=all_sources,
             model=model,
-            confidence=0.7,  # Comparison doesn't have distance-based confidence
+            confidence=round(confidence, 3),
+            retrieval_metrics=metrics,
         )
 
     async def stream_execute(
@@ -128,8 +134,10 @@ class RAGCompareFeature(RAGFeatureBase):
 
         list_context_parts = []
         all_sources = []
+        all_results = []
         for name, results in results_by_list.items():
             if results:
+                all_results.extend(results)
                 excerpts = "\n".join(r.content for r in results)
                 list_context_parts.append(f"### {display_name(name)}\n{excerpts}")
                 for r in results:
@@ -142,6 +150,7 @@ class RAGCompareFeature(RAGFeatureBase):
             else:
                 list_context_parts.append(f"### {display_name(name)}\n(Aucun document trouvé)")
 
+        metrics = self._compute_retrieval_metrics(all_results) if all_results else None
         list_contexts = "\n\n".join(list_context_parts)
 
         sys_prompt = f"{system_prompt}\n\n{COMPARE_SYSTEM_PROMPT}"
@@ -169,11 +178,13 @@ class RAGCompareFeature(RAGFeatureBase):
             return
 
         model_name = getattr(provider, "model", "unknown")
+        confidence = max(0.0, 1.0 - metrics.best_distance) if metrics else 0.7
 
         yield CompareResult(
             response=full_response,
             lists_compared=list_names,
             sources=all_sources,
             model=model_name,
-            confidence=0.7,
+            confidence=round(confidence, 3),
+            retrieval_metrics=metrics,
         )
