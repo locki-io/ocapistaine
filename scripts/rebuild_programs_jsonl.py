@@ -18,10 +18,19 @@ JSONL_PATH = Path("data/audierne2026/rag/documents.jsonl")
 
 # Submodule path (primary) and legacy fallback
 PARTICIPONS_DIR = Path("ext_data/audierne2026/programmes")
+PARTICIPONS_DOCS = Path("ext_data/audierne2026/docs")
 EXT_DATA = Path("ext_data")
 
 # GitHub base URL for source links
 GITHUB_BASE = "https://github.com/audierne2026/participons/blob/main/programmes"
+GITHUB_DOCS_BASE = "https://github.com/audierne2026/participons/blob/main/docs"
+
+# Context documents to ingest from participons/docs/ (general municipal context)
+CONTEXT_DOCS = [
+    "reunion_municipale_feb2026.md",
+    "reunion_municipale_jan2026.md",
+    "voeux_maire_jan2026.md",
+]
 
 # Map directory name -> (list_name slug, official name)
 # Keys match directory names in participons/programmes/
@@ -42,7 +51,7 @@ LEGACY_DIRS = {
 
 
 def load_existing_non_program(path: Path) -> list[dict]:
-    """Load JSONL entries that are NOT from program_* directories."""
+    """Load JSONL entries that are NOT rebuilt from the submodule."""
     kept = []
     with open(path) as f:
         for line in f:
@@ -51,10 +60,44 @@ def load_existing_non_program(path: Path) -> list[dict]:
                 continue
             doc = json.loads(line)
             source_type = doc.get("source_type", "")
-            # Keep everything except OCR program docs
-            if source_type not in ("ocr", "program"):
+            # Keep everything except OCR programs and council-reports (both rebuilt from submodule)
+            if source_type not in ("ocr", "program", "council-report"):
                 kept.append(doc)
     return kept
+
+
+def build_context_docs() -> list[dict]:
+    """Build JSONL entries from participons/docs/ context files."""
+    docs = []
+    if not PARTICIPONS_DOCS.exists():
+        return docs
+
+    for filename in CONTEXT_DOCS:
+        filepath = PARTICIPONS_DOCS / filename
+        if not filepath.exists():
+            print(f"  WARN: context doc {filepath} not found")
+            continue
+
+        content = filepath.read_text(encoding="utf-8")
+        if not content.strip():
+            continue
+
+        doc_id = filepath.stem
+        title = filepath.stem.replace("_", " ").title()
+        url = f"{GITHUB_DOCS_BASE}/{filename}"
+
+        docs.append({
+            "id": doc_id,
+            "category": "",
+            "category_title": "",
+            "source_type": "council-report",
+            "title": title,
+            "url": url,
+            "content": content.strip(),
+            "list_name": "",
+        })
+
+    return docs
 
 
 def _build_docs_from_dir(
@@ -151,11 +194,17 @@ def main():
     for ln, count in sorted(list_counts.items()):
         print(f"    {ln}: {count} docs")
 
-    # Check URLs
-    with_url = sum(1 for d in program_docs if d.get("url"))
-    print(f"  Docs with GitHub URL: {with_url}/{len(program_docs)}")
+    print("Building context docs...")
+    context_docs = build_context_docs()
+    print(f"  Context docs built: {len(context_docs)}")
 
-    all_docs = non_program + program_docs
+    submodule_docs = program_docs + context_docs
+
+    # Check URLs
+    with_url = sum(1 for d in submodule_docs if d.get("url"))
+    print(f"  Docs with GitHub URL: {with_url}/{len(submodule_docs)}")
+
+    all_docs = non_program + submodule_docs
     print(f"\nTotal: {len(all_docs)} docs")
 
     if apply:

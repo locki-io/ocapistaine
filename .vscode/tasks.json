@@ -49,10 +49,35 @@
       }
     },
     {
-      "label": "Start ngrok Tunnel",
+      "label": "Start ngrok (Training Center → 8502)",
+      "detail": "Tunnel to ocapistaine.ngrok-free.app",
       "type": "shell",
       "command": "poetry",
       "args": ["run", "python", "${workspaceFolder}/scripts/start_ngrok.py"],
+      "group": "none",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^Starting ngrok tunnel",
+          "endsPattern": "^Fixed domain:"
+        }
+      }
+    },
+    {
+      "label": "Start ngrok (Chat → 8503)",
+      "detail": "Tunnel to ocap-beta.ngrok-free.app",
+      "type": "shell",
+      "command": "poetry",
+      "args": ["run", "python", "${workspaceFolder}/scripts/start_ngrok.py", "--chat"],
       "group": "none",
       "presentation": {
         "reveal": "always",
@@ -83,9 +108,9 @@
       }
     },
     {
-      "label": "🚀 Start OCapistaine (Streamlit + ngrok)",
-      "detail": "Starts Streamlit on port 8502 and ngrok tunnel to ocapistaine.ngrok-free.app",
-      "dependsOn": ["Start Streamlit (with CORS)", "Start ngrok Tunnel"],
+      "label": "🚀 Start Training Center (8502 + ngrok)",
+      "detail": "Streamlit on port 8502 → ocapistaine.ngrok-free.app",
+      "dependsOn": ["Start Streamlit (with CORS)", "Start ngrok (Training Center → 8502)"],
       "dependsOrder": "sequence",
       "problemMatcher": [],
       "presentation": {
@@ -95,6 +120,17 @@
       "group": {
         "kind": "build",
         "isDefault": true
+      }
+    },
+    {
+      "label": "💬 Start Chat (8503 + ngrok)",
+      "detail": "Chat on port 8503 → ocap-beta.ngrok-free.app",
+      "dependsOn": ["💬 Start Chat (port 8503)", "Start ngrok (Chat → 8503)"],
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
       }
     },
     {

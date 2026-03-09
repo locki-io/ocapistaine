@@ -45,7 +45,7 @@ LISTS = {
     "program_ca": "Construire l'Avenir (Florent Lardic)",
     "program_paa": "PAA",
     "program_spae": "SPAE",
-    "program_csnfa": "CSNFA",
+    "program_csnfa": "CSNF",
 }
 
 # Supported file types

@@ -8,6 +8,8 @@ from app.providers.base import Message
 from app.providers.failover import ProviderWithFailover
 from app.agents.tracing import get_tracer
 
+from app.agents.ocapistaine.features.base import display_name
+
 from . import retrieval
 from .prompts import (
     SYSTEM_PROMPT,
@@ -238,7 +240,7 @@ class RAGService:
             for name, results in results_by_list.items():
                 if results:
                     excerpts = "\n".join(r.content for r in results)
-                    list_contexts_parts.append(f"### {name}\n{excerpts}")
+                    list_contexts_parts.append(f"### {display_name(name)}\n{excerpts}")
                     for r in results:
                         all_sources.append({
                             "doc_id": r.metadata.get("doc_id", ""),
@@ -247,7 +249,7 @@ class RAGService:
                             "distance": r.distance,
                         })
                 else:
-                    list_contexts_parts.append(f"### {name}\n(Aucun document trouvé)")
+                    list_contexts_parts.append(f"### {display_name(name)}\n(Aucun document trouvé)")
 
             list_contexts = "\n\n".join(list_contexts_parts)
 

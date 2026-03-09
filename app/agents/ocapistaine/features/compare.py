@@ -9,7 +9,7 @@ from app.rag import retrieval
 from app.rag.prompts import COMPARE_SYSTEM_PROMPT, COMPARE_USER_TEMPLATE
 
 from ..models import CompareResult
-from .base import RAGFeatureBase
+from .base import RAGFeatureBase, display_name
 
 
 class RAGCompareFeature(RAGFeatureBase):
@@ -61,7 +61,7 @@ class RAGCompareFeature(RAGFeatureBase):
         for name, results in results_by_list.items():
             if results:
                 excerpts = "\n".join(r.content for r in results)
-                list_context_parts.append(f"### {name}\n{excerpts}")
+                list_context_parts.append(f"### {display_name(name)}\n{excerpts}")
                 for r in results:
                     all_sources.append({
                         "doc_id": r.metadata.get("doc_id", ""),
@@ -70,7 +70,7 @@ class RAGCompareFeature(RAGFeatureBase):
                         "distance": r.distance,
                     })
             else:
-                list_context_parts.append(f"### {name}\n(Aucun document trouvé)")
+                list_context_parts.append(f"### {display_name(name)}\n(Aucun document trouvé)")
 
         list_contexts = "\n\n".join(list_context_parts)
 
@@ -131,7 +131,7 @@ class RAGCompareFeature(RAGFeatureBase):
         for name, results in results_by_list.items():
             if results:
                 excerpts = "\n".join(r.content for r in results)
-                list_context_parts.append(f"### {name}\n{excerpts}")
+                list_context_parts.append(f"### {display_name(name)}\n{excerpts}")
                 for r in results:
                     all_sources.append({
                         "doc_id": r.metadata.get("doc_id", ""),
@@ -140,7 +140,7 @@ class RAGCompareFeature(RAGFeatureBase):
                         "distance": r.distance,
                     })
             else:
-                list_context_parts.append(f"### {name}\n(Aucun document trouvé)")
+                list_context_parts.append(f"### {display_name(name)}\n(Aucun document trouvé)")
 
         list_contexts = "\n\n".join(list_context_parts)
 

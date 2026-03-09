@@ -9,6 +9,21 @@ from app.providers import LLMProvider, Message
 from app.rag import retrieval
 
 
+# Slug → official list name (for prompts and LLM context)
+LIST_NAMES = {
+    "audierne2026": "Audierne-Esquibien 2026",
+    "ca": "Construire l'Avenir",
+    "paa": "Passons à l'Action !",
+    "spae": "S'unir pour Audierne-Esquibien",
+    "csnf": "Cap sur Notre Futur",
+}
+
+
+def display_name(slug: str) -> str:
+    """Return the official list name for a slug, or the slug itself as fallback."""
+    return LIST_NAMES.get(slug, slug)
+
+
 class RAGFeatureBase(ABC):
     """Base class for OCapistaine RAG features."""
 
@@ -34,10 +49,10 @@ class RAGFeatureBase(ABC):
         for r in results:
             label = r.metadata.get("title") or r.metadata.get("doc_id", "")
             cat = r.metadata.get("category", "")
-            list_name = r.metadata.get("list_name", "")
+            list_slug = r.metadata.get("list_name", "")
             header_parts = [f"[{label}]"]
-            if list_name:
-                header_parts.append(f"({list_name})")
+            if list_slug:
+                header_parts.append(f"({display_name(list_slug)})")
             if cat:
                 header_parts.append(f"({cat})")
             parts.append(f"{' '.join(header_parts)}\n{r.content}")
