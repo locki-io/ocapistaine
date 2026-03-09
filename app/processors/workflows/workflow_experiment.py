@@ -910,8 +910,8 @@ def create_refine_accuracy_metric():
             if not output:
                 return ScoreResult(name=self.name, value=0.0, reason="No output")
 
-            # Get expected data from dataset item
-            expected = kwargs.get("expected_output", {})
+            # Get expected data — named param, not kwargs
+            expected = expected_output if expected_output is not None else {}
             if isinstance(expected, str):
                 expected = {"expected_query": expected}
 
@@ -957,12 +957,17 @@ def create_refine_accuracy_metric():
             total_score += correction_score
 
             # --- Dimension 2: Meaning preservation (0.3) ---
+            import unicodedata
+
+            def _strip_accents(s: str) -> str:
+                return "".join(c for c in unicodedata.normalize("NFD", s) if unicodedata.category(c) != "Mn")
+
             input_text = kwargs.get("input", "") or ""
             if input_text and output:
-                # Check that key content words from input appear in output
-                input_words = {w.lower() for w in input_text.split() if len(w) > 3}
-                output_lower = output.lower()
-                preserved = sum(1 for w in input_words if w in output_lower)
+                # Check that key content words from input appear in output (accent-insensitive)
+                input_words = {_strip_accents(w.lower()) for w in input_text.split() if len(w) > 3}
+                output_normalized = _strip_accents(output.lower())
+                preserved = sum(1 for w in input_words if w in output_normalized)
                 preservation = preserved / len(input_words) if input_words else 1.0
                 meaning_score = preservation * 0.3
                 reasons.append(f"meaning: {preserved}/{len(input_words)} key words preserved")
@@ -1500,6 +1505,19 @@ def _format_item_for_experiment(item: dict, experiment_type: str) -> Optional[di
                     "category": input_data.get("category", "general"),
                     "confidence": expected.get("confidence", 0.8),
                     "reasoning": expected.get("reasoning", ""),
+                },
+            }
+
+        elif experiment_type == "query_refine_evaluation":
+            # Query refinement format
+            formatted = {
+                "input": {
+                    "original_query": input_data.get("original_query", ""),
+                    "history": input_data.get("history"),
+                },
+                "expected_output": {
+                    "expected_query": expected.get("expected_query", ""),
+                    "expected_corrections": expected.get("expected_corrections", []),
                 },
             }
 
