@@ -1032,6 +1032,12 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
         with col4:
             st.metric("Input Length", f"{result.input_length:,}")
 
+        # Show errors if extraction failed
+        if getattr(result, "errors", None):
+            with st.expander(f"⚠️ Extraction errors ({len(result.errors)})", expanded=True):
+                for err in result.errors:
+                    st.error(err)
+
         # Show extracted themes
         if result.themes:
             st.markdown("#### Extracted Themes")

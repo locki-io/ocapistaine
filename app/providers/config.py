@@ -29,11 +29,11 @@ GEMINI_MODELS = {
     "pro-preview": "gemini-2.5-pro-preview",  # Bleeding-edge
 }
 
-# Claude models (Anthropic)
+# Claude models (Anthropic) - updated March 2026
 CLAUDE_MODELS = {
-    "haiku": "claude-3-haiku-20240307",  # Fast, cheap
-    "sonnet": "claude-3-5-sonnet-20241022",  # Balanced
-    "opus": "claude-3-opus-20240229",  # Most capable
+    "haiku": "claude-haiku-4-5-20251001",  # Fast, affordable
+    "sonnet": "claude-sonnet-4-6",  # Best speed/intelligence ratio
+    "opus": "claude-opus-4-6",  # Most capable
 }
 
 # OpenAI models
@@ -141,8 +141,9 @@ PROVIDER_UI_CONFIG = {
     "claude": {
         "name_key": "provider_anthropic_claude",
         "models": {
-            "haiku": "claude-3-haiku (fast, cheap)",
-            "sonnet": "claude-3.5-sonnet (balanced)",
+            "haiku": "claude-haiku-4.5 (fast, affordable)",
+            "sonnet": "claude-sonnet-4.6 (balanced)",
+            "opus": "claude-opus-4.6 (most capable)",
         },
         "default": "haiku",
     },
@@ -182,7 +183,7 @@ def get_model_id(provider: str, model_key: str) -> str:
     if provider == "gemini":
         return GEMINI_MODELS.get(model_key, "gemini-2.5-flash-lite")
     elif provider == "claude":
-        return CLAUDE_MODELS.get(model_key, "claude-3-haiku-20240307")
+        return CLAUDE_MODELS.get(model_key, "claude-haiku-4-5-20251001")
     elif provider == "mistral":
         return MISTRAL_MODELS.get(model_key, "mistral-small-latest")
     elif provider == "openai":
@@ -297,7 +298,7 @@ class ProviderConfig(BaseSettings):
 
     # Anthropic Claude
     anthropic_api_key: str | None = Field(default=None, alias="ANTHROPIC_API_KEY")
-    claude_model: str = Field(default="claude-3-haiku-20240307", alias="CLAUDE_MODEL")
+    claude_model: str = Field(default="claude-haiku-4-5-20251001", alias="CLAUDE_MODEL")
 
     # Mistral AI
     mistral_api_key: str | None = Field(default=None, alias="MISTRAL_API_KEY")

@@ -119,6 +119,8 @@ class FieldInputResult:
     contributions_generated: int = 0
     categories_covered: List[str] = field(default_factory=list)
     themes: List[ExtractedTheme] = field(default_factory=list)
+    # Errors surfaced from extraction (for UI display)
+    errors: List[str] = field(default_factory=list)
     # Anonymization fields
     anonymization_applied: bool = False
     anonymization_type: Optional[str] = None  # "transcript" | "llm" | None
@@ -388,7 +390,7 @@ class FieldInputGenerator:
 
         return text
 
-    async def extract_themes(self, input_text: str) -> List[ExtractedTheme]:
+    async def extract_themes(self, input_text: str) -> tuple[List[ExtractedTheme], List[str]]:
         """
         Extract relevant themes from input text for each category.
 
@@ -398,7 +400,7 @@ class FieldInputGenerator:
             input_text: Markdown content from field input
 
         Returns:
-            List of extracted themes with category assignments
+            Tuple of (extracted themes, error messages for UI display)
 
         Raises:
             RuntimeError: If Ollama provider is not available
@@ -436,12 +438,14 @@ class FieldInputGenerator:
         self._logger.info("CHUNKING", total_length=len(input_text), chunks=len(chunks))
 
         all_themes = []
+        extraction_errors: List[str] = []
 
         for i, chunk in enumerate(chunks):
-            chunk_themes = await self._extract_themes_from_chunk(
+            chunk_themes, chunk_errors = await self._extract_themes_from_chunk(
                 chunk, categories_config, chunk_index=i, total_chunks=len(chunks)
             )
             all_themes.extend(chunk_themes)
+            extraction_errors.extend(chunk_errors)
 
         # Deduplicate themes by category + theme name
         seen = set()
@@ -453,7 +457,7 @@ class FieldInputGenerator:
                 unique_themes.append(theme)
 
         self._logger.info("THEMES_EXTRACTED", total=len(all_themes), unique=len(unique_themes))
-        return unique_themes
+        return unique_themes, extraction_errors
 
     def _split_into_chunks(self, text: str, chunk_size: int, overlap: int) -> List[str]:
         """Split text into overlapping chunks, trying to break at paragraph boundaries."""
@@ -489,9 +493,10 @@ class FieldInputGenerator:
         categories_config: Dict[str, Any],
         chunk_index: int = 0,
         total_chunks: int = 1,
-    ) -> List[ExtractedTheme]:
-        """Extract themes from a single chunk of text."""
+    ) -> tuple[List[ExtractedTheme], List[str]]:
+        """Extract themes from a single chunk of text. Returns (themes, errors)."""
         themes = []
+        errors: List[str] = []
 
         # Build structured category reference with keys, labels, and predefined themes
         valid_keys = list(categories_config.keys())
@@ -583,6 +588,7 @@ RÈGLES STRICTES:
         except json.JSONDecodeError as e:
             # Detect empty response (model returned nothing parseable)
             if not content:
+                msg = f"Chunk {chunk_index}: Model returned empty response ({self._provider_name}/{self._model})"
                 self._logger.error(
                     "EMPTY_LLM_RESPONSE",
                     chunk=chunk_index,
@@ -591,6 +597,7 @@ RÈGLES STRICTES:
                     hint="Model returned empty response. Try a more capable model (e.g. claude, gemini) or a larger local model.",
                 )
             else:
+                msg = f"Chunk {chunk_index}: JSON parse error ({self._provider_name}/{self._model})"
                 self._logger.error(
                     "JSON_PARSE_ERROR",
                     chunk=chunk_index,
@@ -599,11 +606,13 @@ RÈGLES STRICTES:
                     error=str(e),
                     response=content[:200],
                 )
+            errors.append(msg)
         except Exception as e:
             error_msg = str(e) or type(e).__name__
             self._logger.error("THEME_EXTRACTION_ERROR", chunk=chunk_index, error=error_msg)
+            errors.append(f"Chunk {chunk_index}: {error_msg[:200]}")
 
-        return themes
+        return themes, errors
 
     async def generate_contribution(
         self,
@@ -786,10 +795,11 @@ Réponds UNIQUEMENT avec le JSON."""
         processed_text = await self._apply_anonymization(input_text, result, anon_config)
 
         # Step 1: Extract themes (using anonymized text)
-        themes = await self.extract_themes(processed_text)
+        themes, extraction_errors = await self.extract_themes(processed_text)
         result.themes = themes
         result.themes_extracted = len(themes)
         result.categories_covered = list(set(t.category for t in themes))
+        result.errors = extraction_errors
 
         if not themes:
             self._logger.warning("NO_THEMES_EXTRACTED")
