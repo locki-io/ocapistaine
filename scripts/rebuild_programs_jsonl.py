@@ -16,14 +16,14 @@ from pathlib import Path
 
 JSONL_PATH = Path("data/audierne2026/rag/documents.jsonl")
 
-# Submodule path (primary) and legacy fallback
-PARTICIPONS_DIR = Path("ext_data/audierne2026/programmes")
-PARTICIPONS_DOCS = Path("ext_data/audierne2026/docs")
+# audierne2026 repo (primary) and legacy fallback
+PARTICIPONS_DIR = Path(__file__).resolve().parents[1].parent / "audierne" / "docs" / "programmes"
+PARTICIPONS_DOCS = Path(__file__).resolve().parents[1].parent / "audierne" / "docs"
 EXT_DATA = Path("ext_data")
 
 # GitHub base URL for source links
-GITHUB_BASE = "https://github.com/audierne2026/participons/blob/main/programmes"
-GITHUB_DOCS_BASE = "https://github.com/audierne2026/participons/blob/main/docs"
+GITHUB_BASE = "https://audierne2026.fr/programmes"
+GITHUB_DOCS_BASE = "https://raw.githubusercontent.com/audierne2026/participons/main/docs"
 
 # Context documents to ingest from participons/docs/ (general municipal context)
 CONTEXT_DOCS = [
