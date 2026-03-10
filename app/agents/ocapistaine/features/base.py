@@ -80,7 +80,9 @@ class RAGFeatureBase(ABC):
         return sources
 
     # Distance below which a chunk is considered "confidently relevant"
-    _RELEVANCE_THRESHOLD = 0.5
+    # Calibrated for all-MiniLM-L6-v2 on French civic content (generic model).
+    # With French-optimized embeddings, tighten back to 0.5.
+    _RELEVANCE_THRESHOLD = 0.55
 
     def _compute_retrieval_metrics(
         self, results: list[retrieval.RetrievalResult],

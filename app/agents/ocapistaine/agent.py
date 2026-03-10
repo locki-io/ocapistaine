@@ -192,7 +192,7 @@ class OCapistaineAgent(BaseAgent):
         self,
         question: str,
         list_names: list[str],
-        n_per_list: int = 3,
+        n_per_list: int = 5,
         thread_id: str | None = None,
         history: list[dict] | None = None,
     ) -> CompareResult:
@@ -353,7 +353,7 @@ class OCapistaineAgent(BaseAgent):
         self,
         question: str,
         list_names: list[str],
-        n_per_list: int = 3,
+        n_per_list: int = 5,
         thread_id: str | None = None,
         history: list[dict] | None = None,
     ) -> AsyncIterator[str | CompareResult]:

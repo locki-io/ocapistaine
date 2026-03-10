@@ -112,7 +112,7 @@ Quatre listes électorales sont en lice :
 Tu effectues QUATRE tâches en une seule réponse :
 
 1. **CORRECTION** : corrige l'orthographe, la grammaire, les accents, et surtout les noms propres (candidats, lieux). Utilise la casse correcte pour les noms.
-2. **REFORMULATION** : si la question est vague, reformule-la pour qu'elle soit précise et efficace pour une recherche documentaire. Si elle est déjà précise, garde-la telle quelle. IMPORTANT : si un nom de candidat ou de tête de liste est mentionné, ENRICHIS la question en ajoutant le NOM COMPLET DE LA LISTE entre parenthèses. Exemple : "Que propose Bosser ?" → "Que propose Éric Bosser (Cap sur Notre Futur) ?" Cela améliore la recherche documentaire.
+2. **REFORMULATION ET EXPANSION** : reformule la question pour qu'elle soit efficace pour une recherche sémantique dans une base vectorielle. TOUJOURS enrichir avec des termes associés quand un lieu, projet ou candidat est mentionné — même si la question semble déjà précise. Les noms courts ("pierre le lec", "le port") doivent être SYSTÉMATIQUEMENT expansés avec leurs termes associés pour la recherche documentaire. Exemple candidat : "Que propose Bosser ?" → "Que propose Éric Bosser (Cap sur Notre Futur) ?" Exemple lieu : "pierre le lec" → "projet de rénovation de l'école Pierre-Le-Lec, regroupement scolaire".
 3. **CATÉGORISATION** : identifie la catégorie thématique principale de la question parmi les catégories suivantes. Si aucune ne correspond clairement, renvoie null.
 4. **DÉTECTION DE LISTE** : si la question cible une liste électorale spécifique (via le nom d'un candidat ou le nom de la liste), renvoie le code de la liste (ca, paa, spae, csnf). Si la question porte sur plusieurs listes ou aucune en particulier, renvoie null.
 
@@ -122,16 +122,29 @@ CATÉGORIES THÉMATIQUES :
 NOMS CONNUS DES CANDIDATS :
 {names_gazetteer}
 
+LIEUX ET PROJETS CONNUS D'AUDIERNE-ESQUIBIEN :
+- École Pierre-Le-Lec : projet de rénovation et regroupement scolaire sur le site du front de mer, programme Petites Villes de Demain
+- Port d'Audierne : port de pêche, criée, activité langoustière
+- Pointe du Raz, Raz de Sein, rivière du Goyen : patrimoine naturel
+- Centre-bourg : commerces, dynamisation, logements vacants
+- Halles, marché : vie économique locale
+
 Règles :
 - Si c'est un suivi de conversation, résous les références ("eux", "pareil") grâce à l'historique
 - Conserve le sens original — ne change pas l'intention de l'utilisateur
 - Corrige les noms même s'ils sont écrits sans majuscule ou avec des fautes (ex: "van praet" → "Van Praët", "bosser" → "Bosser" s'il s'agit clairement du candidat)
 - Quand un candidat est mentionné, AJOUTE le nom de sa liste dans la reformulation pour enrichir le contexte de recherche
+- Quand un lieu ou projet local est mentionné, ENRICHIS la question avec des termes associés pour améliorer la recherche. Exemple : "pierre le lec" → "projet de rénovation de l'école Pierre-Le-Lec, regroupement scolaire, Petites Villes de Demain"
 - Pour la catégorie, choisis celle qui correspond le mieux au SUJET de la question. Si la question porte sur un candidat sans thème précis, renvoie null.
 - Pour list_code, ne renvoie un code que si la question cible UNE SEULE liste. Les questions comparatives ("que proposent les listes", "comparer") → null.
 
 Réponds UNIQUEMENT en JSON avec ce format exact :
 {"query": "la question corrigée et reformulée", "corrections": ["florent lardic → Florent Lardic"], "category": "economie", "list_code": "ca"}
+
+Exemples de reformulation attendue :
+- "pierre le lec" → "projet de rénovation de l'école Pierre-Le-Lec, regroupement scolaire, programme Petites Villes de Demain"
+- "le port" → "le port d'Audierne, criée, activité de pêche et économie portuaire"
+- "bosser ecole" → "Que propose Éric Bosser (Cap sur Notre Futur) pour l'école Pierre-Le-Lec et le regroupement scolaire ?"
 
 Si aucune correction n'est nécessaire, renvoie une liste corrections vide.
 Si aucune catégorie ne correspond, renvoie "category": null.
@@ -366,11 +379,23 @@ class QueryRefiner:
         ]
         return any(m in q_lower for m in follow_up_markers)
 
+    # Local places/projects that benefit from query expansion by the LLM
+    _LOCAL_PLACES = [
+        "pierre le lec", "pierre-le-lec",
+        "goyen", "raz de sein", "pointe du raz",
+        "grand-rue", "grand rue", "centre-bourg",
+        "halles", "criée", "port d'audierne",
+        "petites villes de demain",
+    ]
+
     def _may_contain_names(self, question: str) -> bool:
-        """Heuristic: detect if the question might mention candidate names."""
+        """Heuristic: detect if the question mentions candidate names or local places."""
+        q_lower = question.lower()
+        # Check local places/projects (need expansion for better retrieval)
+        if any(place in q_lower for place in self._LOCAL_PLACES):
+            return True
         if not _CANDIDATE_NAMES:
             return False
-        q_lower = question.lower()
         # Check against lowercased last names and common first names
         for name in _CANDIDATE_NAMES:
             parts = name.lower().split()

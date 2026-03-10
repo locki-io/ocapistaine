@@ -55,16 +55,44 @@ def load_jsonl(path: Path) -> list[dict]:
     return docs
 
 
+def _build_chunk_prefix(doc: dict) -> str:
+    """Build a metadata prefix to prepend to chunks for better embedding context.
+
+    Separation of Concerns: this is a *data preparation* step that enriches
+    what the embedding model sees, without touching retrieval or synthesis.
+    The prefix is stored in the document text (what gets embedded), not in metadata.
+    """
+    parts = []
+    title = doc.get("title", "").strip()
+    if title:
+        parts.append(title)
+    category = doc.get("category", "").strip()
+    if category:
+        parts.append(category)
+    list_name = doc.get("list_name", "").strip()
+    if list_name:
+        from app.agents.ocapistaine.features.base import display_name
+        parts.append(display_name(list_name))
+    if not parts:
+        return ""
+    return f"[{' | '.join(parts)}] "
+
+
 def ingest_documents(
     docs: list[dict],
     collection=None,
     batch_size: int = 100,
+    enrich_chunks: bool = True,
 ) -> dict:
     """
     Chunk and ingest documents into ChromaDB.
 
     Each doc should have at minimum: {id, content}
     Optional metadata: category, source_type, title, url, list_name
+
+    Args:
+        enrich_chunks: If True, prepend metadata context (title, category, list)
+            to each chunk text so the embedding captures topic signal.
     """
     if collection is None:
         collection = get_collection()
@@ -79,6 +107,7 @@ def ingest_documents(
         if not content.strip():
             continue
 
+        prefix = _build_chunk_prefix(doc) if enrich_chunks else ""
         chunks = chunk_text(content)
         for i, chunk in enumerate(chunks):
             chunk_id = make_chunk_id(doc_id, i)
@@ -93,7 +122,7 @@ def ingest_documents(
                 "list_name": doc.get("list_name", ""),
             }
             all_ids.append(chunk_id)
-            all_docs.append(chunk)
+            all_docs.append(f"{prefix}{chunk}" if prefix else chunk)
             all_metas.append(metadata)
 
     # Batch upsert

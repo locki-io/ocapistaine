@@ -29,7 +29,7 @@ class RAGCompareFeature(RAGFeatureBase):
         system_prompt: str,
         question: str = "",
         list_names: list[str] | None = None,
-        n_per_list: int = 3,
+        n_per_list: int = 5,
         history: list[dict] | None = None,
         **kwargs,
     ) -> CompareResult:
@@ -114,7 +114,7 @@ class RAGCompareFeature(RAGFeatureBase):
         system_prompt: str,
         question: str = "",
         list_names: list[str] | None = None,
-        n_per_list: int = 3,
+        n_per_list: int = 5,
         history: list[dict] | None = None,
         **kwargs,
     ) -> AsyncIterator[str | CompareResult]:
