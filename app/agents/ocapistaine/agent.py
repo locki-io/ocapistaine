@@ -101,16 +101,22 @@ class OCapistaineAgent(BaseAgent):
         # Refine + correct wording before retrieval
         refine_result = await self._refiner.refine(question, history)
 
+        # Merge detected category into retrieval filters
+        effective_filters = self._merge_category_filter(filters, refine_result.category, refine_result.detected_list)
+
         # Execute feature with refined query
         result: ChatResult = await self.execute_feature(
             "rag_chat",
             question=refine_result.query,
             n_results=n_results,
-            filters=filters,
+            filters=effective_filters,
             history=history,
         )
 
         result.thread_id = thread_id
+        result.detected_category = refine_result.category
+        result.refined_query = refine_result.query
+        result.detected_list = refine_result.detected_list
 
         # Skip tracing on errors (Forseti pattern)
         if result.confidence == 0.0:
@@ -310,6 +316,9 @@ class OCapistaineAgent(BaseAgent):
         # Refine + correct wording before retrieval
         refine_result = await self._refiner.refine(question, history)
 
+        # Merge detected category into retrieval filters
+        effective_filters = self._merge_category_filter(filters, refine_result.category, refine_result.detected_list)
+
         feature: RAGChatFeature = self._features["rag_chat"]
 
         result = None
@@ -318,7 +327,7 @@ class OCapistaineAgent(BaseAgent):
             system_prompt=self.persona_prompt,
             question=refine_result.query,
             n_results=n_results,
-            filters=filters,
+            filters=effective_filters,
             history=history,
         ):
             if isinstance(item, ChatResult):
@@ -330,6 +339,9 @@ class OCapistaineAgent(BaseAgent):
             return
 
         result.thread_id = thread_id
+        result.detected_category = refine_result.category
+        result.detected_list = refine_result.detected_list
+        result.refined_query = refine_result.query
 
         # Trace after stream completes
         if result.confidence > 0.0:
@@ -586,12 +598,38 @@ class OCapistaineAgent(BaseAgent):
 
     _OPENAI_PROV = {"provider": "openai", "model_key": "gpt-4o-mini", "model_id": "gpt-4o-mini"}
 
+    @staticmethod
+    def _merge_category_filter(
+        filters: dict | None,
+        category: str | None,
+        detected_list: str | None = None,
+    ) -> dict | None:
+        """Merge detected category and list into retrieval filters.
+
+        When a specific list is detected (e.g., user asks about "Bosser"),
+        adds a list_name filter so ChromaDB targets that list's chunks.
+        Combines with category using ChromaDB's $and operator.
+        """
+        parts = []
+        if filters:
+            parts.append(filters)
+        if category:
+            parts.append({"category": category})
+        if detected_list:
+            parts.append({"list_name": detected_list})
+
+        if not parts:
+            return None
+        if len(parts) == 1:
+            return parts[0]
+        return {"$and": parts}
+
     def _trace_preprocess_spans(
         self,
         refine_result: RefineResult,
         prov_info: dict,
     ) -> None:
-        """Log wording correction and query refinement as separate Opik spans."""
+        """Log wording correction, query refinement, and category detection as Opik spans."""
         # Wording correction span (name fixes, spelling, grammar)
         if refine_result.was_corrected:
             with self._tracer.span(
@@ -618,4 +656,5 @@ class OCapistaineAgent(BaseAgent):
                     "refined_query": refine_result.query,
                     "original_length": len(refine_result.original),
                     "refined_length": len(refine_result.query),
+                    "detected_category": refine_result.category,
                 })

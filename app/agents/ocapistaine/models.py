@@ -35,6 +35,9 @@ class ChatResult(BaseModel):
     thread_id: str = ""
     trace_id: str | None = None
     retrieval_metrics: RetrievalMetrics | None = None
+    detected_category: str | None = None
+    detected_list: str | None = None
+    refined_query: str | None = None
 
     def to_dict(self) -> dict:
         return self.model_dump()

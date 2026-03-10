@@ -109,10 +109,15 @@ Quatre listes électorales sont en lice :
 - S'unir pour Audierne-Esquibien (spae) — tête de liste : Michel Van Praët
 - Cap sur Notre Futur (csnf) — tête de liste : Eric Bosser
 
-Tu effectues DEUX tâches en une seule réponse :
+Tu effectues QUATRE tâches en une seule réponse :
 
 1. **CORRECTION** : corrige l'orthographe, la grammaire, les accents, et surtout les noms propres (candidats, lieux). Utilise la casse correcte pour les noms.
-2. **REFORMULATION** : si la question est vague, reformule-la pour qu'elle soit précise et efficace pour une recherche documentaire. Si elle est déjà précise, garde-la telle quelle.
+2. **REFORMULATION** : si la question est vague, reformule-la pour qu'elle soit précise et efficace pour une recherche documentaire. Si elle est déjà précise, garde-la telle quelle. IMPORTANT : si un nom de candidat ou de tête de liste est mentionné, ENRICHIS la question en ajoutant le NOM COMPLET DE LA LISTE entre parenthèses. Exemple : "Que propose Bosser ?" → "Que propose Éric Bosser (Cap sur Notre Futur) ?" Cela améliore la recherche documentaire.
+3. **CATÉGORISATION** : identifie la catégorie thématique principale de la question parmi les catégories suivantes. Si aucune ne correspond clairement, renvoie null.
+4. **DÉTECTION DE LISTE** : si la question cible une liste électorale spécifique (via le nom d'un candidat ou le nom de la liste), renvoie le code de la liste (ca, paa, spae, csnf). Si la question porte sur plusieurs listes ou aucune en particulier, renvoie null.
+
+CATÉGORIES THÉMATIQUES :
+{categories_text}
 
 NOMS CONNUS DES CANDIDATS :
 {names_gazetteer}
@@ -121,11 +126,16 @@ Règles :
 - Si c'est un suivi de conversation, résous les références ("eux", "pareil") grâce à l'historique
 - Conserve le sens original — ne change pas l'intention de l'utilisateur
 - Corrige les noms même s'ils sont écrits sans majuscule ou avec des fautes (ex: "van praet" → "Van Praët", "bosser" → "Bosser" s'il s'agit clairement du candidat)
+- Quand un candidat est mentionné, AJOUTE le nom de sa liste dans la reformulation pour enrichir le contexte de recherche
+- Pour la catégorie, choisis celle qui correspond le mieux au SUJET de la question. Si la question porte sur un candidat sans thème précis, renvoie null.
+- Pour list_code, ne renvoie un code que si la question cible UNE SEULE liste. Les questions comparatives ("que proposent les listes", "comparer") → null.
 
 Réponds UNIQUEMENT en JSON avec ce format exact :
-{"query": "la question corrigée et reformulée", "corrections": ["florent lardic → Florent Lardic", "audierne → Audierne"]}
+{"query": "la question corrigée et reformulée", "corrections": ["florent lardic → Florent Lardic"], "category": "economie", "list_code": "ca"}
 
 Si aucune correction n'est nécessaire, renvoie une liste corrections vide.
+Si aucune catégorie ne correspond, renvoie "category": null.
+Si la question ne cible pas une liste précise, renvoie "list_code": null.
 Réponds UNIQUEMENT avec le JSON, sans markdown ni explication."""
 
 _USER_PROMPT_FALLBACK = """Question originale : {question}"""
@@ -165,14 +175,17 @@ _MIN_WORDS_PRECISE = 5
 
 
 class RefineResult:
-    """Result of query refinement + wording correction."""
+    """Result of query refinement, wording correction, category and list detection."""
 
-    __slots__ = ("query", "corrections", "original")
+    __slots__ = ("query", "corrections", "original", "category", "detected_list")
 
-    def __init__(self, query: str, corrections: list[str], original: str):
+    def __init__(self, query: str, corrections: list[str], original: str,
+                 category: str | None = None, detected_list: str | None = None):
         self.query = query
         self.corrections = corrections
         self.original = original
+        self.category = category
+        self.detected_list = detected_list
 
     @property
     def was_refined(self) -> bool:
@@ -206,6 +219,13 @@ class QueryRefiner:
         self._provider = None
         self._model = model
         self._names_gazetteer = ", ".join(_CANDIDATE_NAMES) if _CANDIDATE_NAMES else "(aucun)"
+        # Load categories from Forseti's single source of truth
+        from app.prompts.constants import CATEGORIES, CATEGORY_DESCRIPTIONS
+        self._categories = CATEGORIES
+        self._categories_text = "\n".join(
+            f"- {cat}: {CATEGORY_DESCRIPTIONS.get(cat, {}).get('fr', cat)}"
+            for cat in CATEGORIES
+        )
         try:
             from app.providers.openai import OpenAIProvider
             self._provider = OpenAIProvider(model=model)
@@ -242,7 +262,11 @@ class QueryRefiner:
 
         try:
             # Use .replace() for system prompt (safe with single-brace JSON examples)
-            system = REFINE_SYSTEM_PROMPT.replace("{names_gazetteer}", self._names_gazetteer)
+            system = REFINE_SYSTEM_PROMPT.replace(
+                "{names_gazetteer}", self._names_gazetteer
+            ).replace(
+                "{categories_text}", self._categories_text
+            )
 
             if history and len(history) > 0:
                 history_text = "\n".join(
@@ -285,15 +309,29 @@ class QueryRefiner:
                 corrections = []
             corrections = [str(c) for c in corrections if c]
 
+            # Parse category (validate against known categories)
+            category = data.get("category")
+            if category and category not in self._categories:
+                log.debug("QueryRefiner: unknown category '%s', ignoring", category)
+                category = None
+
+            # Parse list_code (validate against known list codes)
+            _VALID_LISTS = {"ca", "paa", "spae", "csnf"}
+            list_code = data.get("list_code")
+            if list_code and list_code not in _VALID_LISTS:
+                log.debug("QueryRefiner: unknown list_code '%s', ignoring", list_code)
+                list_code = None
+
             # Sanity check
             if not query or len(query) > max(len(original) * 5, 300):
                 return RefineResult(query=original, corrections=[], original=original)
 
             if query != original:
-                log.info("QueryRefiner: '%s' → '%s' (%d corrections)",
-                         original[:60], query[:60], len(corrections))
+                log.info("QueryRefiner: '%s' → '%s' (%d corrections, cat=%s, list=%s)",
+                         original[:60], query[:60], len(corrections), category, list_code)
 
-            return RefineResult(query=query, corrections=corrections, original=original)
+            return RefineResult(query=query, corrections=corrections, original=original,
+                                category=category, detected_list=list_code)
 
         except (json.JSONDecodeError, KeyError, TypeError) as e:
             log.warning("QueryRefiner: parse error (%s), using original", e)

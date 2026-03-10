@@ -1,12 +1,13 @@
 {
-  "description": "Test cases for OCapistaine query refinement + wording correction evaluation",
-  "version": "1.0",
+  "description": "Test cases for OCapistaine query refinement + wording correction + category detection",
+  "version": "1.1",
   "test_cases": [
     {
       "id": "name_correction_01",
       "original_query": "que propose van praet",
       "expected_query": "Que propose Van Praët ?",
       "expected_corrections": ["van praet → Van Praët"],
+      "expected_category": null,
       "tags": ["name_correction", "accent", "case"],
       "difficulty": "easy"
     },
@@ -15,6 +16,7 @@
       "original_query": "le programme de bosser",
       "expected_query": "Le programme de Bosser",
       "expected_corrections": ["bosser → Bosser"],
+      "expected_category": null,
       "tags": ["name_correction", "ambiguous_word"],
       "difficulty": "medium",
       "notes": "bosser is also a French verb — must disambiguate from candidate Eric Bosser"
@@ -24,6 +26,7 @@
       "original_query": "florent lardic ecole",
       "expected_query": "Florent Lardic école",
       "expected_corrections": ["florent lardic → Florent Lardic", "ecole → école"],
+      "expected_category": "jeunesse",
       "tags": ["name_correction", "accent", "case"],
       "difficulty": "easy"
     },
@@ -32,6 +35,7 @@
       "original_query": "que fait guillon pour le port",
       "expected_query": "Que fait Guillon pour le port ?",
       "expected_corrections": ["guillon → Guillon"],
+      "expected_category": "economie",
       "tags": ["name_correction", "case"],
       "difficulty": "easy"
     },
@@ -40,6 +44,7 @@
       "original_query": "eric bosser et michel van praet comparaison",
       "expected_query": "Eric Bosser et Michel Van Praët comparaison",
       "expected_corrections": ["eric bosser → Eric Bosser", "michel van praet → Michel Van Praët"],
+      "expected_category": null,
       "tags": ["name_correction", "multi_name", "accent"],
       "difficulty": "medium"
     },
@@ -48,6 +53,7 @@
       "original_query": "la liste de lardic",
       "expected_query": "La liste de Lardic",
       "expected_corrections": ["lardic → Lardic"],
+      "expected_category": null,
       "tags": ["name_correction", "last_name_only"],
       "difficulty": "easy"
     },
@@ -56,6 +62,7 @@
       "original_query": "les listes",
       "expected_query": "Quelles sont les listes électorales pour les municipales 2026 d'Audierne-Esquibien ?",
       "expected_corrections": [],
+      "expected_category": null,
       "tags": ["refinement", "vague"],
       "difficulty": "easy"
     },
@@ -64,6 +71,7 @@
       "original_query": "école",
       "expected_query": "Quelles sont les propositions des listes concernant l'école et l'éducation à Audierne ?",
       "expected_corrections": [],
+      "expected_category": "jeunesse",
       "tags": ["refinement", "single_word"],
       "difficulty": "easy"
     },
@@ -72,6 +80,7 @@
       "original_query": "le port",
       "expected_query": "Quelles sont les propositions des listes concernant le port d'Audierne ?",
       "expected_corrections": [],
+      "expected_category": "economie",
       "tags": ["refinement", "short"],
       "difficulty": "easy"
     },
@@ -80,6 +89,7 @@
       "original_query": "environnement",
       "expected_query": "Quelles sont les propositions des listes électorales concernant l'environnement et l'écologie à Audierne-Esquibien ?",
       "expected_corrections": [],
+      "expected_category": "ecologie",
       "tags": ["refinement", "single_word"],
       "difficulty": "easy"
     },
@@ -88,6 +98,7 @@
       "original_query": "logement",
       "expected_query": "Quelles sont les propositions des listes sur le logement à Audierne-Esquibien ?",
       "expected_corrections": [],
+      "expected_category": "logement",
       "tags": ["refinement", "single_word"],
       "difficulty": "easy"
     },
@@ -96,6 +107,7 @@
       "original_query": "van praet ecole",
       "expected_query": "Que propose Van Praët pour l'école à Audierne-Esquibien ?",
       "expected_corrections": ["van praet → Van Praët", "ecole → école"],
+      "expected_category": "jeunesse",
       "tags": ["name_correction", "refinement", "combined"],
       "difficulty": "medium"
     },
@@ -104,6 +116,7 @@
       "original_query": "guillon logement",
       "expected_query": "Que propose Guillon sur le logement à Audierne-Esquibien ?",
       "expected_corrections": ["guillon → Guillon"],
+      "expected_category": "logement",
       "tags": ["name_correction", "refinement", "combined"],
       "difficulty": "medium"
     },
@@ -112,6 +125,7 @@
       "original_query": "bosser et lardic economie",
       "expected_query": "Que proposent Bosser et Lardic pour l'économie locale ?",
       "expected_corrections": ["bosser → Bosser", "lardic → Lardic", "economie → économie"],
+      "expected_category": "economie",
       "tags": ["name_correction", "refinement", "multi_name", "combined"],
       "difficulty": "hard"
     },
@@ -119,6 +133,7 @@
       "id": "followup_01",
       "original_query": "et pour eux ?",
       "expected_corrections": [],
+      "expected_category": "culture",
       "tags": ["followup", "anaphora"],
       "difficulty": "hard",
       "history": [
@@ -131,6 +146,7 @@
       "id": "followup_02",
       "original_query": "même question pour spae",
       "expected_corrections": [],
+      "expected_category": "logement",
       "tags": ["followup", "same_question"],
       "difficulty": "hard",
       "history": [
@@ -143,6 +159,7 @@
       "id": "followup_03",
       "original_query": "plus de détails",
       "expected_corrections": [],
+      "expected_category": "economie",
       "tags": ["followup", "detail_request"],
       "difficulty": "medium",
       "history": [
@@ -156,6 +173,7 @@
       "original_query": "Que propose la liste Construire l'Avenir pour l'école publique ?",
       "expected_query": "Que propose la liste Construire l'Avenir pour l'école publique ?",
       "expected_corrections": [],
+      "expected_category": "jeunesse",
       "tags": ["no_change", "already_precise"],
       "difficulty": "easy",
       "notes": "Already precise and well-formed — should pass through unchanged"
@@ -165,6 +183,7 @@
       "original_query": "Quels sont les engagements de Cap sur Notre Futur concernant le budget municipal ?",
       "expected_query": "Quels sont les engagements de Cap sur Notre Futur concernant le budget municipal ?",
       "expected_corrections": [],
+      "expected_category": "economie",
       "tags": ["no_change", "already_precise"],
       "difficulty": "easy"
     },
@@ -173,6 +192,7 @@
       "original_query": "Comment les listes proposent-elles de dynamiser le centre-bourg d'Audierne ?",
       "expected_query": "Comment les listes proposent-elles de dynamiser le centre-bourg d'Audierne ?",
       "expected_corrections": [],
+      "expected_category": "economie",
       "tags": ["no_change", "already_precise"],
       "difficulty": "easy"
     },
@@ -181,6 +201,7 @@
       "original_query": "les deliberations du conseil municipal",
       "expected_query": "Les délibérations du conseil municipal",
       "expected_corrections": ["deliberations → délibérations"],
+      "expected_category": null,
       "tags": ["accent", "no_names"],
       "difficulty": "easy"
     },
@@ -189,6 +210,7 @@
       "original_query": "ecologie et economie locale",
       "expected_query": "Écologie et économie locale",
       "expected_corrections": ["ecologie → écologie", "economie → économie"],
+      "expected_category": "ecologie",
       "tags": ["accent", "refinement"],
       "difficulty": "easy"
     },
@@ -197,6 +219,7 @@
       "original_query": "que propose les liste sur l'ecole",
       "expected_query": "Que proposent les listes sur l'école ?",
       "expected_corrections": ["propose → proposent", "liste → listes", "ecole → école"],
+      "expected_category": "jeunesse",
       "tags": ["grammar", "accent", "plural"],
       "difficulty": "medium"
     },
@@ -205,6 +228,7 @@
       "original_query": "qui est le meilleur candidat",
       "expected_query": "Qui sont les candidats têtes de liste pour les municipales 2026 d'Audierne-Esquibien ?",
       "expected_corrections": [],
+      "expected_category": null,
       "tags": ["refinement", "neutral_redirect"],
       "difficulty": "hard",
       "notes": "Should reformulate away from subjective 'meilleur' toward neutral information"
@@ -214,6 +238,7 @@
       "original_query": "propostions passons a laction",
       "expected_query": "Propositions de Passons à l'Action",
       "expected_corrections": ["propostions → propositions", "passons a laction → Passons à l'Action"],
+      "expected_category": null,
       "tags": ["typo", "list_name", "accent"],
       "difficulty": "medium"
     }

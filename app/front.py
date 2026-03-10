@@ -79,6 +79,7 @@ from app.providers import get_provider
 from app.services.translations import _
 from app.services import PresentationLogger, ServiceLogger, AgentLogger
 from app.mockup.batch_view import batch_validation_view
+from app.mockup.refine_view import refine_test_view
 from app.auto_contribution import autocontribution_view
 from app.ui.floating_overlay import init_floating_overlay, render_floating_overlay, add_to_overlay, clear_overlay
 
@@ -882,13 +883,28 @@ def documents_view(user_id: str):
 
 
 def mockup_view(user_id: str):
-    """Mockup batch validation view."""
+    """Mockup testing view with agent switcher."""
 
-    # Wrapper for validate function that matches the expected signature
-    def validate_wrapper(title: str, body: str, category: str | None) -> dict:
-        return _validate_with_forseti(title, body, category, user_id, 0)
+    # Agent switcher
+    agent = st.radio(
+        "Agent",
+        options=["forseti", "ocapistaine"],
+        format_func=lambda x: {
+            "forseti": "⚖️ Forseti — Charter Validation",
+            "ocapistaine": "🔍 OCapistaine — Query Refinement",
+        }[x],
+        horizontal=True,
+        key="mockup_agent",
+    )
 
-    batch_validation_view(user_id, validate_wrapper)
+    if agent == "forseti":
+        # Wrapper for validate function that matches the expected signature
+        def validate_wrapper(title: str, body: str, category: str | None) -> dict:
+            return _validate_with_forseti(title, body, category, user_id, 0)
+
+        batch_validation_view(user_id, validate_wrapper)
+    else:
+        refine_test_view(user_id)
 
 
 def about_view():

@@ -27,7 +27,8 @@ st.set_page_config(
 # ── audierne2026.fr theme ─────────────────────────────────
 # Colors from the "air" skin of audierne2026.fr
 # Primary: #0092ca  |  Text: #222831  |  Links: #393e46  |  BG: #eeeeee
-st.markdown("""
+st.markdown(
+    """
 <style>
 /* ── Global ─────────────────────────────────────── */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
@@ -146,7 +147,9 @@ hr {
     text-decoration: none;
 }
 </style>
-""", unsafe_allow_html=True)
+""",
+    unsafe_allow_html=True,
+)
 
 # Session ID = thread_id for Opik tracing
 if "session_id" not in st.session_state:
@@ -187,6 +190,130 @@ def _send_feedback(trace_id: str, score: float, msg_index: int):
         st.session_state.messages[msg_index]["feedback"] = score
 
 
+# ── Suggestion engine ────────────────────────────────────
+
+CATEGORY_LABELS_FR = {
+    "economie": "Economie & commerce",
+    "logement": "Logement & urbanisme",
+    "culture": "Culture & patrimoine",
+    "ecologie": "Ecologie & environnement",
+    "associations": "Vie associative",
+    "jeunesse": "Jeunesse & éducation",
+    "alimentation-bien-etre-soins": "Santé & bien-être",
+}
+
+CATEGORY_ICONS = {
+    "economie": "🏗️",
+    "logement": "🏠",
+    "culture": "🎭",
+    "ecologie": "🌿",
+    "associations": "🤝",
+    "jeunesse": "📚",
+    "alimentation-bien-etre-soins": "💊",
+}
+
+LIST_SHORT_NAMES = {
+    "ca": "Construire l'Avenir",
+    "paa": "Passons à l'Action",
+    "spae": "S'unir pour Audierne-Esquibien",
+    "csnf": "Cap sur Notre Futur",
+}
+
+
+def _build_suggestions(
+    result_dict: dict, original_question: str, active_filter: str
+) -> list[dict]:
+    """
+    Build follow-up suggestions based on the result context.
+
+    Returns list of {"label": str, "query": str, "type": "category"|"list"|"followup"}
+
+    Logic:
+    - No category detected → suggest category chips
+    - Category detected, no list filter → suggest list chips
+    - Category + list → suggest template follow-ups
+    """
+    suggestions = []
+
+    detected_cat = result_dict.get("detected_category")
+    sources = result_dict.get("sources", [])
+    source_lists = list({s.get("list_name", "") for s in sources if s.get("list_name")})
+    refined_query = result_dict.get("refined_query") or original_question
+
+    # ── No category → suggest thematic categories ───────
+    if not detected_cat:
+        for cat_key, cat_label in CATEGORY_LABELS_FR.items():
+            icon = CATEGORY_ICONS.get(cat_key, "📌")
+            suggestions.append(
+                {
+                    "label": f"{icon} {cat_label}",
+                    "query": f"{original_question} — thème : {cat_label.lower()}",
+                    "type": "category",
+                    "filter_category": cat_key,
+                }
+            )
+        return suggestions
+
+    # ── Category detected, no list filter → suggest per-list deep dive ──
+    if not active_filter:
+        cat_label = CATEGORY_LABELS_FR.get(detected_cat, detected_cat)
+        for list_key, list_name in LIST_SHORT_NAMES.items():
+            suggestions.append(
+                {
+                    "label": f"📋 {list_name}",
+                    "query": f"Que propose {list_name} sur {cat_label.lower()} ?",
+                    "type": "list",
+                    "filter_list": list_key,
+                }
+            )
+        # Also suggest comparison mode
+        suggestions.append(
+            {
+                "label": "⚖️ Comparer les programmes",
+                "query": f"Comparer les programmes des listes sur {cat_label.lower()}",
+                "type": "compare",
+            }
+        )
+        return suggestions
+
+    # ── Category + list filter → template follow-ups ────
+    cat_label = CATEGORY_LABELS_FR.get(detected_cat, detected_cat)
+
+    # "What about the other lists?"
+    other_lists = [n for k, n in LIST_SHORT_NAMES.items() if k != active_filter]
+    if other_lists:
+        suggestions.append(
+            {
+                "label": f"📋 Et {other_lists[0]} ?",
+                "query": f"Que propose {other_lists[0]} sur {cat_label.lower()} ?",
+                "type": "followup",
+                "filter_list": next(
+                    k for k, n in LIST_SHORT_NAMES.items() if n == other_lists[0]
+                ),
+            }
+        )
+
+    # "More details"
+    suggestions.append(
+        {
+            "label": "🔍 Plus de détails",
+            "query": f"Plus de détails sur les propositions concernant {cat_label.lower()}",
+            "type": "followup",
+        }
+    )
+
+    # "Compare all lists"
+    suggestions.append(
+        {
+            "label": "⚖️ Comparer les listes",
+            "query": f"Comparer les programmes des listes sur {cat_label.lower()}",
+            "type": "compare",
+        }
+    )
+
+    return suggestions
+
+
 # ── Sidebar ──────────────────────────────────────────────
 
 LISTS = {
@@ -197,61 +324,15 @@ LISTS = {
     "csnf": "Cap sur Notre Futur (LDVD – Eric Bosser)",
 }
 
+# Electoral lists only (exclude co-constructed program from comparisons)
+COMPARE_LISTS = {k: v for k, v in LISTS.items() if k != "audierne2026"}
+
 with st.sidebar:
     st.markdown("### ⚓ Ò Capistaine")
     st.caption(f"Session: `{st.session_state.session_id[:8]}...`")
 
-    # ── Provider / Model selector ─────────────────────────
-    from app.providers.config import PROVIDER_UI_CONFIG, get_model_id
-
-    # Check which providers are actually available
-    available_providers = []
-    try:
-        from app.providers.health import get_provider_status
-
-        health = get_provider_status()
-        if health:
-            if health["ollama"].get("status") == "available":
-                available_providers.append("ollama")
-            for name in ["openai", "claude", "mistral", "gemini"]:
-                if health["cloud"].get(name, {}).get("configured"):
-                    available_providers.append(name)
-    except Exception:
-        pass
-
-    # Fallback: show all if health check unavailable
-    if not available_providers:
-        available_providers = list(PROVIDER_UI_CONFIG.keys())
-
-    provider_labels = {
-        "ollama": "🖥️ Ollama (local)",
-        "openai": "🟢 OpenAI",
-        "claude": "🟣 Claude",
-        "mistral": "🔵 Mistral",
-        "gemini": "🔴 Gemini",
-    }
-
-    selected_provider = st.selectbox(
-        "Fournisseur LLM",
-        options=available_providers,
-        format_func=lambda x: provider_labels.get(x, x),
-    )
-
-    # Model selector for chosen provider
-    provider_models = PROVIDER_UI_CONFIG.get(selected_provider, {}).get("models", {})
-    default_model = PROVIDER_UI_CONFIG.get(selected_provider, {}).get("default", "")
-    default_idx = (
-        list(provider_models.keys()).index(default_model)
-        if default_model in provider_models
-        else 0
-    )
-
-    selected_model_key = st.selectbox(
-        "Modèle",
-        options=list(provider_models.keys()),
-        index=default_idx,
-        format_func=lambda x: provider_models.get(x, x),
-    )
+    # ── Fixed provider: Mistral medium (failover handles fallback) ──
+    st.caption("🔵 Mistral AI")
 
     st.divider()
 
@@ -262,9 +343,9 @@ with st.sidebar:
     if st.session_state.mode == "compare":
         selected_lists = st.multiselect(
             "Listes à comparer",
-            options=list(LISTS.keys()),
-            default=list(LISTS.keys()),
-            format_func=lambda x: LISTS[x],
+            options=list(COMPARE_LISTS.keys()),
+            default=list(COMPARE_LISTS.keys()),
+            format_func=lambda x: COMPARE_LISTS[x],
         )
     else:
         selected_lists = []
@@ -294,11 +375,20 @@ with st.sidebar:
 # ── Chat area ────────────────────────────────────────────
 
 # Branded header with Audierne blason
-_blason_path = Path(__file__).resolve().parent.parent / "ext_data" / "audierne2026" / "assets" / "images" / "Blason_fr_Audierne.svg.png"
+_blason_path = (
+    Path(__file__).resolve().parent.parent
+    / "ext_data"
+    / "audierne2026"
+    / "assets"
+    / "images"
+    / "Blason_fr_Audierne.svg.png"
+)
 if _blason_path.exists():
     import base64
+
     _blason_b64 = base64.b64encode(_blason_path.read_bytes()).decode()
-    st.markdown(f"""
+    st.markdown(
+        f"""
     <div class="audierne-header">
         <img src="data:image/png;base64,{_blason_b64}" alt="Audierne">
         <div>
@@ -306,16 +396,18 @@ if _blason_path.exists():
             <div class="subtitle">Ensemble, écoutons et co-construisons — Audierne-Esquibien 2026</div>
         </div>
     </div>
-    """, unsafe_allow_html=True)
+    """,
+        unsafe_allow_html=True,
+    )
 else:
     st.title("Ò Capistaine")
 
 if st.session_state.mode == "compare":
-    st.info(
-        "Mode comparaison : posez une question pour comparer les programmes des listes sélectionnées."
-    )
+    st.info("Comparons les programmes des listes ")
 else:
-    st.info("En savoir plus sur les municipales d'Audierne-Esquibien.")
+    st.info(
+        "Ici l'IA n'est pas une boite noire, c'est notre phare vers les élections municipales d'Audierne-Esquibien"
+    )
 
 # Display history with feedback buttons
 for i, msg in enumerate(st.session_state.messages):
@@ -334,39 +426,83 @@ for i, msg in enumerate(st.session_state.messages):
                     else:
                         st.markdown(f"- **{title}**{name_label}")
 
-        # Feedback buttons for all assistant messages
+        # Feedback + suggestions for assistant messages
         if msg["role"] == "assistant":
             existing_feedback = msg.get("feedback")
 
+            # Check if this is the last assistant message (for suggestions)
+            is_last_assistant = i == max(
+                j
+                for j, m in enumerate(st.session_state.messages)
+                if m["role"] == "assistant"
+            )
+            suggestions = msg.get("suggestions", []) if is_last_assistant else []
+
+            # ── Row: [👍] [👎] [suggestion chips...] ──
             if existing_feedback is not None:
-                # Already rated — show static indicator
                 if existing_feedback > 0.5:
                     st.caption("👍 Merci pour votre retour !")
                 else:
                     st.caption("👎 Merci, nous allons améliorer.")
             else:
-                # Not yet rated — show interactive buttons
-                col1, col2, col3 = st.columns([1, 1, 10])
-                with col1:
+                # Feedback + suggestions on one line
+                n_sug = min(len(suggestions), 4)  # max 4 chips on first row
+                widths = (
+                    [1, 1]
+                    + [2] * n_sug
+                    + ([max(1, 8 - 2 * n_sug)] if n_sug < 4 else [])
+                )
+                cols = st.columns(widths)
+
+                with cols[0]:
                     if st.button("👍", key=f"up_{i}", help="Bonne réponse"):
                         _send_feedback(msg.get("trace_id"), 1.0, i)
                         st.rerun()
-                with col2:
+                with cols[1]:
                     if st.button("👎", key=f"down_{i}", help="Réponse à améliorer"):
                         _send_feedback(msg.get("trace_id"), 0.0, i)
                         st.rerun()
 
+                for idx, sug in enumerate(suggestions[:n_sug]):
+                    with cols[2 + idx]:
+                        if st.button(
+                            sug["label"],
+                            key=f"sug_{i}_{idx}",
+                            use_container_width=True,
+                        ):
+                            st.session_state["_pending_suggestion"] = sug
+                            st.rerun()
+
+            # Overflow suggestion rows (if more than 4)
+            if suggestions and len(suggestions) > 4:
+                for row_start in range(4, len(suggestions), 4):
+                    row = suggestions[row_start : row_start + 4]
+                    row_cols = st.columns(len(row))
+                    for col, sug in zip(row_cols, row):
+                        with col:
+                            if st.button(
+                                sug["label"],
+                                key=f"sug_{i}_{row_start}_{sug['label'][:10]}",
+                                use_container_width=True,
+                            ):
+                                st.session_state["_pending_suggestion"] = sug
+                                st.rerun()
+
 # Auto-scroll to bottom after rendering message history
 if st.session_state.messages:
     import streamlit.components.v1 as components
-    components.html("""
+
+    components.html(
+        """
     <script>
         window.parent.document.querySelector('section.main').scrollTo({
             top: window.parent.document.querySelector('section.main').scrollHeight,
             behavior: 'smooth'
         });
     </script>
-    """, height=0)
+    """,
+        height=0,
+    )
 
 # ── Streaming helpers ─────────────────────────────────────
 
@@ -398,13 +534,27 @@ def _collect_stream(async_gen):
                 break
     finally:
         # Properly close the async generator before shutting down the loop
-        loop.run_until_complete(ait.aclose())
+        try:
+            loop.run_until_complete(ait.aclose())
+        except Exception:
+            pass
         loop.close()
 
 
 # ── Input ─────────────────────────────────────────────────
 
-if prompt := st.chat_input("Votre question..."):
+# Handle suggestion click — inject as prompt
+_pending = st.session_state.pop("_pending_suggestion", None)
+if _pending:
+    # Apply filter overrides from the suggestion
+    if _pending.get("filter_list"):
+        filter_list = _pending["filter_list"]
+    if _pending.get("type") == "compare":
+        st.session_state.mode = "compare"
+
+prompt = _pending["query"] if _pending else st.chat_input("Votre question...")
+
+if prompt:
     # Add user message
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
@@ -412,12 +562,10 @@ if prompt := st.chat_input("Votre question..."):
 
     # Build agent
     from app.agents.ocapistaine import OCapistaineAgent
-    from app.providers.config import get_model_id
 
-    model_id = get_model_id(selected_provider, selected_model_key)
     agent = OCapistaineAgent(
-        provider_name=selected_provider,
-        model_override=model_id,
+        provider_name="mistral",
+        model_override="mistral-medium-latest",
     )
 
     # Build conversation history (last 6 turns = 3 exchanges)
@@ -479,6 +627,10 @@ if prompt := st.chat_input("Votre question..."):
                 meta_parts.append(f"Trace: `{trace_id[:8]}...`")
             st.caption(" | ".join(meta_parts))
 
+            # Build suggestions for follow-up
+            active_list_filter = filter_list if filter_list else ""
+            suggestions = _build_suggestions(result, prompt, active_list_filter)
+
             # Save assistant message
             st.session_state.messages.append(
                 {
@@ -487,6 +639,8 @@ if prompt := st.chat_input("Votre question..."):
                     "sources": sources,
                     "trace_id": trace_id,
                     "feedback": None,
+                    "suggestions": suggestions,
+                    "detected_category": result.get("detected_category"),
                 }
             )
         else:
@@ -505,9 +659,12 @@ if prompt := st.chat_input("Votre question..."):
     st.rerun()
 
 # ── Footer ───────────────────────────────────────────────
-st.markdown("""
+st.markdown(
+    """
 <div class="audierne-footer">
     <a href="https://audierne2026.fr" target="_blank">audierne2026.fr</a>
     &nbsp;·&nbsp; Participons — Audierne-Esquibien 2026
 </div>
-""", unsafe_allow_html=True)
+""",
+    unsafe_allow_html=True,
+)
