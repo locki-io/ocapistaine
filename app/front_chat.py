@@ -275,18 +275,55 @@ with col_compare:
         st.session_state.mode = "compare"
         st.rerun()
 
-# ── List selector (tête de liste avatars) ────────────────
-from app.ui.list_selector import render_list_selector
-
-render_list_selector(COMPARE_LISTS, include_all=True)
+# ── Compare mode: category button grid ───────────────────
+selected_lists = list(COMPARE_LISTS.keys()) if st.session_state.mode == "compare" else []
 filter_list = ""
-selected_lists = []
 
-# ── Empty state ───────────────────────────────────────────
-if not st.session_state.messages:
+if st.session_state.mode == "compare" and not st.session_state.get("_pending_suggestion"):
+    st.markdown(
+        "<p style='text-align:center; color:#9b9b9d; margin-top:1rem;'>"
+        "Choisissez un thème pour comparer les 4 listes</p>",
+        unsafe_allow_html=True,
+    )
+    # 2 rows of buttons: 4 + 3
+    row1_cats = list(CATEGORY_LABELS_FR.items())[:4]
+    row2_cats = list(CATEGORY_LABELS_FR.items())[4:]
+
+    cols1 = st.columns(len(row1_cats), gap="small")
+    for col, (cat_key, cat_label) in zip(cols1, row1_cats):
+        icon = CATEGORY_ICONS.get(cat_key, "")
+        with col:
+            if st.button(
+                f"{icon}\n{cat_label}",
+                key=f"compare_cat_{cat_key}",
+                use_container_width=True,
+            ):
+                st.session_state["_pending_suggestion"] = {
+                    "query": f"Comparer les programmes des listes sur {cat_label.lower()}",
+                    "type": "compare",
+                }
+                st.rerun()
+
+    cols2 = st.columns(len(row2_cats) + 1, gap="small")  # +1 for balanced spacing
+    for col, (cat_key, cat_label) in zip(cols2, row2_cats):
+        icon = CATEGORY_ICONS.get(cat_key, "")
+        with col:
+            if st.button(
+                f"{icon}\n{cat_label}",
+                key=f"compare_cat_{cat_key}",
+                use_container_width=True,
+            ):
+                st.session_state["_pending_suggestion"] = {
+                    "query": f"Comparer les programmes des listes sur {cat_label.lower()}",
+                    "type": "compare",
+                }
+                st.rerun()
+
+# ── Empty state (chat mode only) ─────────────────────────
+elif st.session_state.mode == "chat" and not st.session_state.messages:
     st.markdown(
         "<p style='text-align:center; color:#9b9b9d; margin-top:2rem;'>"
-        "Posez une question ou cliquez sur un candidat ←</p>",
+        "Posez votre question sur les municipales d'Audierne-Esquibien</p>",
         unsafe_allow_html=True,
     )
 
@@ -398,6 +435,8 @@ def _collect_stream(async_gen):
                     yield item
             except StopAsyncIteration:
                 break
+            except GeneratorExit:
+                break
     finally:
         try:
             loop.run_until_complete(ait.aclose())
@@ -415,8 +454,16 @@ if _pending:
         filter_list = _pending["filter_list"]
     if _pending.get("type") == "compare":
         st.session_state.mode = "compare"
+        selected_lists = list(COMPARE_LISTS.keys())
 
-prompt = _pending["query"] if _pending else st.chat_input("Votre question...")
+# In compare mode: no chat input (category buttons handle it)
+# In chat mode: native st.chat_input()
+if _pending:
+    prompt = _pending["query"]
+elif st.session_state.mode == "chat":
+    prompt = st.chat_input("Votre question...")
+else:
+    prompt = None
 
 if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
@@ -443,6 +490,9 @@ if prompt:
 
     with st.chat_message("assistant"):
         with st.status("Recherche dans les documents...", expanded=False) as status:
+            # Refresh selected_lists in case mode changed via _pending
+            if st.session_state.mode == "compare":
+                selected_lists = list(COMPARE_LISTS.keys())
             if st.session_state.mode == "compare" and selected_lists:
                 stream = agent.stream_compare(
                     question=prompt,

@@ -80,6 +80,102 @@ All UI text in French. Technical English only in developer-facing elements (sour
 - Links: audierne2026.fr, Le Manifeste du Phare, Code source ouvert
 - "Nouvelle conversation" button only when messages exist
 
+## Streamlit for Municipal Chatbot — Fitness Assessment
+
+### Why Streamlit Works for Audierne (~4000 inhabitants)
+
+**Verdict: Excellent fit** — Streamlit is one of the best effort/result ratios for a civic AI chatbot at this scale (2025–2027).
+
+| Strength | Why it matters for us |
+|----------|----------------------|
+| 50–150 lines for a full chatbot | One Python-literate person can maintain it |
+| Hosting: €4–12/month VPS | OVH/Hetzner/Scaleway, or Streamlit Community Cloud free tier |
+| Native `st.chat_message` + `st.chat_input` | WhatsApp/Messenger-like UX, acceptable for citizens 18–75 |
+| Works with any LLM backend | Ollama local, OpenAI, Anthropic, Mistral, Gemini — all via our failover chain |
+| `st.query_params` for session sharing | Bookmarkable/shareable chat URLs |
+
+### Known Limitations & Mitigations
+
+| Limitation | Reality at 4000 inhab | Our mitigation |
+|------------|----------------------|----------------|
+| Full page re-run per interaction | Noticeable only with >8–15 simultaneous users | Unlikely to exceed 5–12 concurrent |
+| Poor native concurrency (1 process/user) | Very rarely >10 people chatting at once | Acceptable; uvicorn handles API side |
+| Mobile experience needs CSS work | 60–75% will use phone | Custom theme.py + media queries |
+| No real WebSockets | Streaming works but typing indicator less smooth | MutationObserver auto-scroll compensates |
+| Memory grows with long sessions | Some citizens ask 20+ questions | Rolling window + Redis TTL (see below) |
+| Struggles above ~50–100 simultaneous | Extreme edge case at this scale | Would only happen during major campaign |
+
+### When to Consider Alternatives
+
+If requirements change, evaluate:
+- **Ultra-smooth mobile streaming** → Chainlit, Reflex, NiceGUI
+- **Hundreds of concurrent users** → FastAPI + React/HTMX
+- **Zero Python skill in team** → Voiceflow, Botpress, Dify
+- **Exact Messenger/WhatsApp look** → Custom React + FastAPI
+
+### Session Context Management (CRITICAL for Cost & Quality)
+
+Most citizens have short sessions (1–8 messages), but some go long. Without limits: token costs explode, answers degrade, server memory grows.
+
+**Recommended: Hybrid strategy** (button + auto-limit)
+
+```python
+# Strategy 1: "Nouvelle conversation" button (explicit reset)
+if st.button("Nouvelle conversation"):
+    st.session_state.messages = [st.session_state.messages[0]]  # keep system prompt
+    st.rerun()
+
+# Strategy 2: Rolling window (automatic, invisible to user)
+# Before calling LLM — keep system prompt + last 13 exchanges
+context_to_send = messages[:1] + messages[-13:]
+
+# Strategy 3: Time-based reset (for shared devices / kiosks)
+# If >20 min idle → clear on next message
+```
+
+| Strategy | When | Pros | Cons |
+|----------|------|------|------|
+| Button "Nouvelle conversation" | User clicks | Explicit, understandable | Users forget |
+| Max messages (rolling window ~14) | Every request, automatic | Prevents huge contexts | Loses old context |
+| Max tokens (tiktoken count) | Every request | Precise cost control | Extra tokenizer code |
+| Auto-truncate + summarize | Threshold (>20 msgs) | Keeps semantic continuity | Summary can hallucinate |
+| Time-based reset (>20 min idle) | On next message | Good for public kiosks | Extra timestamp logic |
+| **Hybrid (our approach)** | **Button + auto-max 14** | **Best balance** | Slightly more code |
+
+**Best practices:**
+- Keep system prompt **outside** the rolling window (always first message)
+- Show subtle caption when truncation happens: _"Anciens messages supprimés pour garder des réponses rapides"_
+- Redis TTL (1h) handles abandoned sessions automatically
+
+### Native Overlay Capabilities (No CSS)
+
+Streamlit has **limited** native overlay support. Know what's possible before reaching for CSS:
+
+| Feature | Native? | API | True overlay? | Can contain buttons? |
+|---------|---------|-----|---------------|---------------------|
+| Modal dialog | **Yes** (since ~1.32) | `@st.dialog` | Yes (blocks interaction) | Yes |
+| Popover | **Yes** | `st.popover` | Partial (small, attached) | Limited |
+| Toast | **Partial** | `st.toast` | No (temporary, top-right) | No |
+| Full-screen overlay | **No** | — | — | — |
+| Persistent floating button (FAB) | **No** | — | — | — |
+
+**`@st.dialog` — best native overlay:**
+```python
+@st.dialog("Actions rapides", width="medium")
+def quick_actions():
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("Option A", use_container_width=True):
+            st.session_state["action"] = "a"
+            st.rerun()
+
+# Trigger from any button
+if st.button("Actions", type="primary", icon=":material/apps:"):
+    quick_actions()
+```
+
+**For persistent floating elements** (our list selector, Forseti overlay) → `streamlit-float` remains necessary. See "Floating Containers" section below.
+
 ## Streamlit Hard-Won Lessons
 
 ### streamlit-float API — CRITICAL

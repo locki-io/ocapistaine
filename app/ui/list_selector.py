@@ -5,17 +5,17 @@ List Selector — Tête de Liste Avatar Chips (Floating)
 Compact avatar strip that floats just above st.chat_input().
 Citizens tap a portrait to filter by list — visual, intuitive, no dropdown.
 
+Click = select filter (blue ring). Click again = deselect.
+Does NOT auto-fire a query — the citizen types their question with the filter active.
+
 Photos live in app/ui/assets/tete_{list_key}.png
 Falls back to initials when image is missing.
 
 Usage:
     from app.ui.list_selector import render_list_selector
 
-    # Chat mode: single selection (or none)
-    filter_list = render_list_selector(LISTS, mode="single")
-
-    # Compare mode: multi selection
-    selected_lists = render_list_selector(COMPARE_LISTS, mode="multi")
+    # Renders floating avatars, returns selected list key (or "")
+    filter_list = render_list_selector(LISTS, include_all=True)
 """
 
 import base64
@@ -64,7 +64,7 @@ def _inject_float_css() -> None:
     st.markdown(
         """
     <style>
-    /* Strip all padding/margin from the floating avatar panel */
+    /* Strip padding from the floating avatar panel */
     div[style*="position: fixed"][style*="z-index: 9980"],
     div[style*="position: fixed"][style*="z-index: 9980"] > div,
     div[style*="position: fixed"][style*="z-index: 9980"] [data-testid="stVerticalBlock"],
@@ -76,12 +76,12 @@ def _inject_float_css() -> None:
     /* Each column is a positioning context for the absolute button */
     div[style*="position: fixed"][style*="z-index: 9980"] [data-testid="stColumn"] {
         position: relative !important;
-        min-height: 40px !important;
-        max-height: 40px !important;
-        width: 40px !important;
+        min-height: 56px !important;
+        max-height: 56px !important;
+        width: 56px !important;
         overflow: visible !important;
     }
-    /* Button container: zero height, no flow impact */
+    /* Button: covers the entire avatar area for easy clicking */
     div[style*="position: fixed"][style*="z-index: 9980"] .stButton {
         padding: 0 !important;
         margin: 0 !important;
@@ -93,10 +93,10 @@ def _inject_float_css() -> None:
         width: 100% !important;
     }
     div[style*="position: fixed"][style*="z-index: 9980"] .stButton > button {
-        min-height: 40px !important;
-        height: 40px !important;
-        width: 40px !important;
-        min-width: 40px !important;
+        min-height: 56px !important;
+        height: 56px !important;
+        width: 56px !important;
+        min-width: 56px !important;
         padding: 0 !important;
         margin: 0 !important;
         background: transparent !important;
@@ -108,7 +108,7 @@ def _inject_float_css() -> None:
     /* Stack vertically with spacing */
     div[style*="position: fixed"][style*="z-index: 9980"] [data-testid="stHorizontalBlock"] {
         flex-direction: column !important;
-        gap: 12px !important;
+        gap: 10px !important;
         align-items: center !important;
         padding: 0 !important;
         margin: 0 !important;
@@ -135,18 +135,27 @@ def _inject_float_css() -> None:
 def render_list_selector(
     lists: dict[str, str],
     include_all: bool = True,
-) -> None:
+) -> str:
     """
     Render floating tête de liste avatar chips above st.chat_input().
 
-    Clicking an avatar injects a prompt with the candidate's name and list
-    into st.session_state["_pending_suggestion"], triggering a chat query.
+    Click = select (blue ring + name label). Click again = deselect.
+    Does NOT fire a query — just sets the filter for the next question.
 
     Args:
         lists: Dict of {list_key: list_display_name}
         include_all: Include "Toutes les sources" option
+
+    Returns:
+        Selected list key (str), or "" if none selected.
     """
     _inject_float_css()
+
+    # Initialize selection state
+    if "_selected_list" not in st.session_state:
+        st.session_state._selected_list = ""
+
+    current_selection = st.session_state._selected_list
 
     # Build the list of chips to display
     chip_keys = []
@@ -165,25 +174,31 @@ def render_list_selector(
                 # Get metadata
                 if key == "":
                     tete_name = "Toutes les sources"
-                    list_name = "Programme co-construit"
                     lookup_key = "audierne2026"
                 else:
                     meta = TETE_DE_LISTE.get(key)
                     if meta:
-                        tete_name, _, list_name = meta
+                        tete_name, _, _ = meta
                     else:
                         tete_name = lists.get(key, key)
-                        list_name = tete_name
                     lookup_key = key
 
                 # Load image
                 img_b64 = _load_image_b64(lookup_key)
 
-                # Avatar size: compact for floating strip
-                size = 40
-                border_color = "#0092ca"
-                border_width = "2px"
-                opacity = "1"
+                # Visual state: selected = thick blue ring, unselected = thin grey
+                is_selected = current_selection == key
+                size = 52
+                if is_selected:
+                    border_color = "#0092ca"
+                    border_width = "3px"
+                    opacity = "1"
+                    shadow = "0 0 0 3px rgba(0,146,202,0.3)"
+                else:
+                    border_color = "#cecfd1"
+                    border_width = "2px"
+                    opacity = "0.7"
+                    shadow = "none"
 
                 if img_b64:
                     avatar_html = (
@@ -191,18 +206,20 @@ def render_list_selector(
                         f'style="width:{size}px;min-width:{size}px;height:{size}px;'
                         f"border-radius:50%;aspect-ratio:1;"
                         f"object-fit:cover;border:{border_width} solid {border_color};"
-                        f'opacity:{opacity};display:block;margin:0 auto;">'
+                        f"opacity:{opacity};display:block;margin:0 auto;"
+                        f'box-shadow:{shadow};">'
                     )
                 else:
-                    bg = "#0092ca"
+                    bg = "#0092ca" if is_selected else "#cecfd1"
                     fg = "#fff"
                     ini = _initials(tete_name)
                     avatar_html = (
                         f'<div style="width:{size}px;height:{size}px;border-radius:50%;'
                         f"background:{bg};color:{fg};display:flex;align-items:center;"
-                        f"justify-content:center;font-weight:bold;font-size:12px;"
+                        f"justify-content:center;font-weight:bold;font-size:13px;"
                         f"font-family:Inter,sans-serif;border:{border_width} solid {border_color};"
-                        f'opacity:{opacity};margin:0 auto;">{ini}</div>'
+                        f"opacity:{opacity};margin:0 auto;"
+                        f'box-shadow:{shadow};">{ini}</div>'
                     )
 
                 st.markdown(
@@ -210,20 +227,18 @@ def render_list_selector(
                     unsafe_allow_html=True,
                 )
 
+                # Invisible button covering the avatar — toggle on click
                 if st.button(
                     "\u200b",
                     key=f"list_chip_{key or 'all'}",
                     use_container_width=True,
                 ):
-                    # Inject candidate prompt into chat
-                    if key == "":
-                        query = "Que proposent les listes sur "
+                    if is_selected:
+                        # Deselect: click again to clear
+                        st.session_state._selected_list = ""
                     else:
-                        query = f"Que propose {tete_name} ({list_name}) sur "
-                    st.session_state["_pending_suggestion"] = {
-                        "query": query,
-                        "filter_list": key,
-                    }
+                        # Select this list
+                        st.session_state._selected_list = key
                     st.rerun()
 
     # Float the strip just above st.chat_input (~56px from bottom)
@@ -236,8 +251,8 @@ def render_list_selector(
             border="1px solid #cecfd1",
             z_index="9980",
             css=(
-                "padding: 6px; margin: 0; "
-                "border-radius: 24px; "
+                "padding: 8px; margin: 0; "
+                "border-radius: 28px; "
                 "backdrop-filter: blur(8px); "
                 "box-shadow: 0 2px 12px rgba(0,0,0,0.08); "
                 "right: auto;"
@@ -245,4 +260,4 @@ def render_list_selector(
         )
     )
 
-    return None
+    return current_selection

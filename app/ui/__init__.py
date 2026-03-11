@@ -16,7 +16,6 @@ from app.ui.theme import apply_theme
 from app.ui.header import render_header
 from app.ui.footer import render_footer
 from app.ui.chat_input import init_chat_float, scroll_to_bottom, scroll_to_bottom_streaming
-from app.ui.list_selector import render_list_selector
 from app.ui.floating_overlay import (
     init_floating_overlay,
     render_floating_overlay,
@@ -35,8 +34,6 @@ __all__ = [
     "init_chat_float",
     "scroll_to_bottom",
     "scroll_to_bottom_streaming",
-    # List selector (tête de liste avatars)
-    "render_list_selector",
     # Floating overlay (Forseti results)
     "init_floating_overlay",
     "render_floating_overlay",
