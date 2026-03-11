@@ -5,7 +5,11 @@ RAG Chat Feature — citizen Q&A with retrieval.
 from typing import AsyncIterator
 
 from app.providers import LLMProvider
+from app.providers.logging import get_provider_logger
+from app.providers.pricing import compute_cost
 from app.rag import retrieval
+
+_cost_logger = get_provider_logger("chat")
 from app.rag.prompts import (
     SYSTEM_PROMPT,
     RAG_USER_TEMPLATE,
@@ -110,7 +114,7 @@ class RAGChatFeature(RAGFeatureBase):
         return ChatResult(
             response=content, sources=sources, model=model,
             confidence=round(confidence, 3), is_overview=is_overview,
-            retrieval_metrics=metrics,
+            retrieval_metrics=metrics, usage=usage,
         )
 
     async def stream_execute(
@@ -177,8 +181,16 @@ class RAGChatFeature(RAGFeatureBase):
         confidence = max(0.0, 1.0 - metrics.best_distance)
         model_name = getattr(provider, "model", "unknown")
 
+        # Estimate tokens from char counts (streaming has no usage data)
+        est_in = len(user_prompt + sys_prompt) // 4
+        est_out = len(full_response) // 4
+        cost = compute_cost(model_name, est_in, est_out)
+        usage = {"input_tokens": est_in, "output_tokens": est_out, "cost_usd": cost, "estimated": True}
+        if cost is not None:
+            _cost_logger.log_cost(model_name, est_in, est_out, cost)
+
         yield ChatResult(
             response=full_response, sources=sources, model=model_name,
             confidence=round(confidence, 3), is_overview=is_overview,
-            retrieval_metrics=metrics,
+            retrieval_metrics=metrics, usage=usage,
         )

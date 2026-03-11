@@ -9,6 +9,7 @@ from typing import Callable, TypeVar
 from .base import LLMProvider, Message, CompletionResponse
 from .config import get_config, ProviderName
 from .logging import get_provider_logger
+from .pricing import compute_cost, normalize_usage
 
 logger = get_provider_logger(__name__)
 
@@ -248,6 +249,16 @@ class ProviderWithFailover:
                 )
 
                 logger.info(f"Success with provider: {provider_name}")
+
+                # Njörðr: compute and log cost
+                if response.usage:
+                    in_t, out_t = normalize_usage(response.usage)
+                    cost = compute_cost(provider.model, in_t, out_t)
+                    response.usage["cost_usd"] = cost
+                    response.usage["input_tokens"] = in_t
+                    response.usage["output_tokens"] = out_t
+                    if cost is not None:
+                        logger.log_cost(provider.model, in_t, out_t, cost)
 
                 # Track failover state
                 self._errors = errors

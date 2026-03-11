@@ -154,6 +154,7 @@ class RAGService:
                     "response_length": len(response.content),
                     "model": response.model,
                     "usage": response.usage,
+                    "cost_usd": response.usage.get("cost_usd"),
                 })
 
             # Deduplicate sources by doc_id
@@ -182,6 +183,7 @@ class RAGService:
                 "confidence": round(confidence, 3),
                 "thread_id": thread_id,
                 "trace_id": trace.id if trace else None,
+                "usage": response.usage,
             }
 
             # Update trace with final output
@@ -280,6 +282,7 @@ class RAGService:
                     "response_length": len(response.content),
                     "model": response.model,
                     "usage": response.usage,
+                    "cost_usd": response.usage.get("cost_usd"),
                 })
 
             result = {
@@ -289,6 +292,7 @@ class RAGService:
                 "model": f"{self.provider.name}/{self.provider.model}",
                 "thread_id": thread_id,
                 "trace_id": trace.id if trace else None,
+                "usage": response.usage,
             }
 
             if trace:

@@ -248,7 +248,12 @@ LISTS = {
 COMPARE_LISTS = {k: v for k, v in LISTS.items() if k != "audierne2026"}
 
 # ── Header ────────────────────────────────────────────────
-render_header()
+_session_cost = st.session_state.get("session_cost_usd", 0.0)
+_cost_eur = _session_cost * 0.92  # USD→EUR approximate
+_cost_tag = f" — {_cost_eur:.4f} € cette session" if _cost_eur > 0 else ""
+render_header(
+    tagline=f"Ici l'IA n'est pas une boite noire, c'est notre phare vers les municipales{_cost_tag}",
+)
 
 # ── Inline mode toggle ───────────────────────────────────
 col_clear, col_chat, col_compare, col_spacer = st.columns([1, 2, 2, 3], gap="medium")
@@ -552,12 +557,19 @@ if prompt:
             model = result.get("model", "")
             confidence = result.get("confidence")
             trace_id = result.get("trace_id")
+            usage = result.get("usage", {})
+            cost_usd = usage.get("cost_usd")
             meta_parts = [f"Modèle: {model}"]
             if confidence is not None:
                 meta_parts.append(f"Confiance: {confidence:.1%}")
             if trace_id:
                 meta_parts.append(f"Trace: `{trace_id[:8]}...`")
             st.caption(" | ".join(meta_parts))
+
+            # Accumulate session cost
+            if cost_usd is not None:
+                st.session_state.setdefault("session_cost_usd", 0.0)
+                st.session_state["session_cost_usd"] += cost_usd
 
             active_list_filter = filter_list if filter_list else ""
             suggestions = _build_suggestions(result, prompt, active_list_filter)
@@ -598,7 +610,13 @@ if st.session_state.get("_session_restored"):
     del st.session_state._session_restored
 
 if st.session_state.messages:
-    st.caption(f"Session : `{st.session_state.session_id}` — valide 1h")
+    session_cost = st.session_state.get("session_cost_usd", 0.0)
+    opik_url = "https://www.comet.com/opik/ocapistaine-dev/dashboards/019bfeab-a248-7385-84ca-54391e73af42"
+    session_meta = f"Session : `{st.session_state.session_id}` — valide 1h"
+    if session_cost > 0:
+        session_meta += f" | Coût session : ${session_cost:.6f}"
+    session_meta += f" | [Traces Opik]({opik_url})"
+    st.caption(session_meta)
 
 # ── Footer ───────────────────────────────────────────────
 

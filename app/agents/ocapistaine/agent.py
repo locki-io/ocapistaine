@@ -158,11 +158,15 @@ class OCapistaineAgent(BaseAgent):
                     span_type="llm",
                     provider_info=prov_info,
                 ) as synthesis_span:
-                    synthesis_span.update(output={
+                    synthesis_output = {
                         "response_length": len(result.response),
                         "model": result.model,
                         "confidence": result.confidence,
-                    })
+                    }
+                    if result.usage:
+                        synthesis_output["usage"] = result.usage
+                        synthesis_output["cost_usd"] = result.usage.get("cost_usd")
+                    synthesis_span.update(output=synthesis_output)
                     if hasattr(synthesis_span, "id") and synthesis_span.id:
                         self._tracer.log_span_feedback(
                             span_id=synthesis_span.id,
@@ -173,12 +177,16 @@ class OCapistaineAgent(BaseAgent):
 
                 if trace and hasattr(trace, "id") and trace.id:
                     result.trace_id = trace.id
-                    trace.update(output={
+                    trace_output = {
                         "response": result.response,
                         "confidence": result.confidence,
                         "model": result.model,
                         "sources_count": len(result.sources),
-                    })
+                    }
+                    if result.usage:
+                        trace_output["usage"] = result.usage
+                        trace_output["cost_usd"] = result.usage.get("cost_usd")
+                    trace.update(output=trace_output)
                     self._tracer.log_feedback(
                         trace_id=trace.id,
                         score=result.confidence,
@@ -434,11 +442,15 @@ class OCapistaineAgent(BaseAgent):
                     span_type="llm",
                     provider_info=prov_info,
                 ) as synthesis_span:
-                    synthesis_span.update(output={
+                    synthesis_output = {
                         "response_length": len(result.response),
                         "model": result.model,
                         "confidence": result.confidence,
-                    })
+                    }
+                    if result.usage:
+                        synthesis_output["usage"] = result.usage
+                        synthesis_output["cost_usd"] = result.usage.get("cost_usd")
+                    synthesis_span.update(output=synthesis_output)
                     if hasattr(synthesis_span, "id") and synthesis_span.id:
                         self._tracer.log_span_feedback(
                             span_id=synthesis_span.id,
@@ -449,12 +461,16 @@ class OCapistaineAgent(BaseAgent):
 
                 if trace and hasattr(trace, "id") and trace.id:
                     result.trace_id = trace.id
-                    trace.update(output={
+                    trace_output = {
                         "response": result.response,
                         "confidence": result.confidence,
                         "model": result.model,
                         "sources_count": len(result.sources),
-                    })
+                    }
+                    if result.usage:
+                        trace_output["usage"] = result.usage
+                        trace_output["cost_usd"] = result.usage.get("cost_usd")
+                    trace.update(output=trace_output)
                     self._tracer.log_feedback(
                         trace_id=trace.id,
                         score=result.confidence,
@@ -502,10 +518,14 @@ class OCapistaineAgent(BaseAgent):
                     span_type="llm",
                     provider_info=prov_info,
                 ) as synthesis_span:
-                    synthesis_span.update(output={
+                    synthesis_output = {
                         "response_length": len(result.response),
                         "model": result.model,
-                    })
+                    }
+                    if result.usage:
+                        synthesis_output["usage"] = result.usage
+                        synthesis_output["cost_usd"] = result.usage.get("cost_usd")
+                    synthesis_span.update(output=synthesis_output)
                     if hasattr(synthesis_span, "id") and synthesis_span.id:
                         self._tracer.log_span_feedback(
                             span_id=synthesis_span.id,
@@ -516,12 +536,16 @@ class OCapistaineAgent(BaseAgent):
 
                 if trace and hasattr(trace, "id") and trace.id:
                     result.trace_id = trace.id
-                    trace.update(output={
+                    trace_output = {
                         "response": result.response,
                         "model": result.model,
                         "lists_compared": result.lists_compared,
                         "sources_count": len(result.sources),
-                    })
+                    }
+                    if result.usage:
+                        trace_output["usage"] = result.usage
+                        trace_output["cost_usd"] = result.usage.get("cost_usd")
+                    trace.update(output=trace_output)
                     self._tracer.log_feedback(
                         trace_id=trace.id,
                         score=result.confidence,
