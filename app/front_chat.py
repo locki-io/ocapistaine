@@ -263,6 +263,7 @@ with col_chat:
         "💬 Poser une question",
         use_container_width=True,
         type="primary" if st.session_state.mode == "chat" else "secondary",
+        disabled=False,
     ):
         st.session_state.mode = "chat"
         st.rerun()
@@ -271,8 +272,11 @@ with col_compare:
         "⚖️ Comparer les programmes",
         use_container_width=True,
         type="primary" if st.session_state.mode == "compare" else "secondary",
+        disabled=False,
     ):
         st.session_state.mode = "compare"
+        st.session_state.messages = []
+        st.session_state.session_id = generate_session_id()
         st.rerun()
 
 # ── Compare mode: category button grid ───────────────────
@@ -297,7 +301,10 @@ if st.session_state.mode == "compare" and not st.session_state.get("_pending_sug
                 f"{icon}\n{cat_label}",
                 key=f"compare_cat_{cat_key}",
                 use_container_width=True,
+                disabled=False,
             ):
+                st.session_state.messages = []
+                st.session_state.session_id = generate_session_id()
                 st.session_state["_pending_suggestion"] = {
                     "query": f"Comparer les programmes des listes sur {cat_label.lower()}",
                     "type": "compare",
@@ -312,7 +319,10 @@ if st.session_state.mode == "compare" and not st.session_state.get("_pending_sug
                 f"{icon}\n{cat_label}",
                 key=f"compare_cat_{cat_key}",
                 use_container_width=True,
+                disabled=False,
             ):
+                st.session_state.messages = []
+                st.session_state.session_id = generate_session_id()
                 st.session_state["_pending_suggestion"] = {
                     "query": f"Comparer les programmes des listes sur {cat_label.lower()}",
                     "type": "compare",
@@ -469,6 +479,16 @@ if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
+
+    # Lock ALL buttons during streaming (CSS injection — Streamlit can't re-render mid-stream)
+    st.markdown(
+        """
+    <style>
+    .stButton > button { pointer-events: none !important; opacity: 0.5 !important; }
+    </style>
+    """,
+        unsafe_allow_html=True,
+    )
 
     # Scroll: snap to user message, then install streaming observer
     scroll_to_bottom(smooth=False)

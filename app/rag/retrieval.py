@@ -2,6 +2,7 @@
 Retrieval module — query the vector store and return ranked results.
 """
 
+import random
 from dataclasses import dataclass
 
 from .store import get_collection
@@ -74,8 +75,9 @@ def search_overview(
     ref_results = search(query, n_results=3, where={"category": "reference"})
     all_results.extend(ref_results)
 
-    # 2. Get top chunks from each list
+    # 2. Get top chunks from each list (shuffled for neutrality)
     list_names = ["audierne2026", "ca", "paa", "spae", "csnf"]
+    random.shuffle(list_names)
     for name in list_names:
         results = search(query, n_results=n_per_list, where={"list_name": name})
         all_results.extend(results)

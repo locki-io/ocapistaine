@@ -2,6 +2,7 @@
 RAG Compare Feature — cross-list program comparison.
 """
 
+import random
 from typing import AsyncIterator
 
 from app.providers import LLMProvider
@@ -55,11 +56,16 @@ class RAGCompareFeature(RAGFeatureBase):
         # Multi-list retrieval
         results_by_list = retrieval.search_compare(question, list_names, n_per_list)
 
+        # Shuffle list order to avoid systematic bias (neutrality)
+        shuffled_names = list(results_by_list.keys())
+        random.shuffle(shuffled_names)
+
         # Build context per list
         list_context_parts = []
         all_sources = []
         all_results = []
-        for name, results in results_by_list.items():
+        for name in shuffled_names:
+            results = results_by_list[name]
             if results:
                 all_results.extend(results)
                 excerpts = "\n".join(r.content for r in results)
@@ -132,10 +138,15 @@ class RAGCompareFeature(RAGFeatureBase):
 
         results_by_list = retrieval.search_compare(question, list_names, n_per_list)
 
+        # Shuffle list order to avoid systematic bias (neutrality)
+        shuffled_names = list(results_by_list.keys())
+        random.shuffle(shuffled_names)
+
         list_context_parts = []
         all_sources = []
         all_results = []
-        for name, results in results_by_list.items():
+        for name in shuffled_names:
+            results = results_by_list[name]
             if results:
                 all_results.extend(results)
                 excerpts = "\n".join(r.content for r in results)
