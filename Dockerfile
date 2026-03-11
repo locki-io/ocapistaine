@@ -37,9 +37,9 @@ RUN poetry install --only main --no-root
 # Copy application code
 COPY . .
 
-# Fetch docs submodule if not present (Render doesn't init submodules)
-# docs/ contains audierne2026 documents needed for scheduled tasks
-# Non-fatal: scheduler is disabled on Render, so docs are optional
+# Fetch submodules not present (Render doesn't init submodules)
+# docs/ = private docs (optional, scheduler disabled on Render)
+# ext_data/audierne2026/ = public civic data + blason image (required for UI)
 RUN if [ ! -d docs/docs/audierne2026 ] || [ -z "$(ls -A docs/docs/audierne2026 2>/dev/null)" ]; then \
     echo "Fetching docs submodule..." && \
     rm -rf docs && \
@@ -49,6 +49,24 @@ RUN if [ ! -d docs/docs/audierne2026 ] || [ -z "$(ls -A docs/docs/audierne2026 2
     else \
     echo "Docs submodule already present"; \
     fi
+
+RUN if [ ! -d ext_data/audierne2026/assets ] || [ -z "$(ls -A ext_data/audierne2026/assets 2>/dev/null)" ]; then \
+    echo "Fetching audierne2026 submodule..." && \
+    rm -rf ext_data/audierne2026 && \
+    mkdir -p ext_data && \
+    git clone --depth 1 https://github.com/audierne2026/participons.git ext_data/audierne2026 && \
+    echo "audierne2026 submodule fetched successfully" || \
+    echo "WARNING: Could not fetch audierne2026 submodule - blason will be missing"; \
+    else \
+    echo "audierne2026 submodule already present"; \
+    fi
+
+# Build ChromaDB vector store from JSONL source data
+# data/audierne2026/rag/documents.jsonl is copied via COPY . .
+# data/chromadb/ is gitignored but built here at image time
+RUN python -m app.rag.ingest --reset && \
+    echo "ChromaDB built successfully" || \
+    echo "WARNING: ChromaDB ingest failed - RAG will have no data"
 
 # Create logs directory
 RUN mkdir -p /app/logs
