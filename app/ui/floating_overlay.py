@@ -98,13 +98,13 @@ def render_floating_overlay() -> None:
         bottom="20px",
         right="10px",
         width="min(380px, calc(100vw - 40px))",  # Responsive: max 380px or viewport - 40px
-        max_height="70vh",
         background="#ffffff",  # Light background
-        border_radius="10px",
-        custom=(
-            "overflow-y: auto; padding: 12px; "
-            "box-shadow: 0 4px 16px rgba(0,0,0,0.12); z-index: 9999; "
-            "border: 1px solid #e0e0e0; "
+        border="1px solid #e0e0e0",
+        z_index="9999",
+        css=(
+            "overflow-y: auto; padding: 12px; max-height: 70vh; "
+            "box-shadow: 0 4px 16px rgba(0,0,0,0.12); "
+            "border-radius: 10px; "
             "color: #1a1a1a; font-size: 0.9em;"
         ),
     )

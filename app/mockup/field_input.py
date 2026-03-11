@@ -29,6 +29,9 @@ from app.mockup.anonymizer import (
     TranscriptAnonymizer,
     DocumentType,
     TranscriptAnonymizationResult,
+    detect_pii_entities,
+    apply_pii_replacements,
+    validate_no_pii,
 )
 from app.providers import get_provider, Message
 from app.providers.config import ProviderName, get_recommended_model, get_document_provider
@@ -116,6 +119,8 @@ class FieldInputResult:
     contributions_generated: int = 0
     categories_covered: List[str] = field(default_factory=list)
     themes: List[ExtractedTheme] = field(default_factory=list)
+    # Errors surfaced from extraction (for UI display)
+    errors: List[str] = field(default_factory=list)
     # Anonymization fields
     anonymization_applied: bool = False
     anonymization_type: Optional[str] = None  # "transcript" | "llm" | None
@@ -294,44 +299,98 @@ class FieldInputGenerator:
 
                 return transcript_result.anonymized_text
 
-        # Apply LLM-based anonymization for general documents
+        # Apply PII-first anonymization for general documents
         if use_llm:
-            try:
-                feature = AnonymizationFeature()
-                llm_result = await feature.execute(
-                    provider=self._provider,
-                    system_prompt="",
-                    text=text,
+            working_text = text
+            combined_mapping: Dict[str, str] = {}
+
+            # B.1 — PII first-pass (no LLM, no context limit, fast)
+            pii_result = detect_pii_entities(working_text)
+
+            if pii_result.has_pii:
+                working_text, pii_mapping = apply_pii_replacements(
+                    working_text, pii_result.entities
+                )
+                combined_mapping.update(pii_mapping)
+
+                result.anonymization_applied = True
+
+                self._logger.info(
+                    "PII_FIRST_PASS",
+                    entities=len(pii_result.entities),
+                    replacements=len(pii_mapping),
+                    text_length=len(text),
+                )
+            elif pii_result.error:
+                self._logger.warning(
+                    "PII_FIRST_PASS_ERROR",
+                    error=pii_result.error,
                 )
 
-                if llm_result.entities:
-                    result.anonymization_applied = True
-                    result.anonymization_type = "llm"
-
-                    if config.store_mapping:
-                        result.anonymization_mapping = llm_result.entity_mapping
-
-                    if llm_result.keywords_extracted:
-                        result.keywords_from_anonymization = llm_result.keywords_extracted
-
-                    self._logger.info(
-                        "LLM_ANONYMIZED",
-                        entities=len(llm_result.entities),
-                        keywords=len(llm_result.keywords_extracted),
+            # B.2 — LLM enrichment (conditional)
+            # Skip LLM if PII pass already handled entities AND text is large
+            skip_llm = pii_result.has_pii and len(text) > 15000
+            if skip_llm:
+                self._logger.info(
+                    "LLM_SKIPPED",
+                    reason="pii_found_and_large_doc",
+                    text_length=len(text),
+                    pii_entities=len(pii_result.entities),
+                )
+            else:
+                try:
+                    feature = AnonymizationFeature()
+                    llm_result = await feature.execute(
+                        provider=self._provider,
+                        system_prompt="",
+                        text=working_text,
                     )
 
-                    return llm_result.anonymized_text
+                    if llm_result.entities:
+                        result.anonymization_applied = True
+                        combined_mapping.update(llm_result.entity_mapping)
 
-            except Exception as e:
-                self._logger.error(
-                    "LLM_ANONYMIZATION_ERROR",
-                    error=str(e),
+                        if llm_result.keywords_extracted:
+                            result.keywords_from_anonymization = (
+                                llm_result.keywords_extracted
+                            )
+
+                        working_text = llm_result.anonymized_text
+
+                        self._logger.info(
+                            "LLM_ENRICHMENT",
+                            entities=len(llm_result.entities),
+                            keywords=len(llm_result.keywords_extracted),
+                        )
+
+                except Exception as e:
+                    self._logger.error(
+                        "LLM_ANONYMIZATION_ERROR",
+                        error=str(e) or type(e).__name__,
+                    )
+                    # Non-fatal: PII pass already handled the bulk
+
+            # B.3 — Post-validation
+            post_check = validate_no_pii(working_text)
+            if not post_check.is_clean:
+                self._logger.warning(
+                    "POST_VALIDATION_PII_REMAINING",
+                    error=post_check.error,
                 )
-                # Fall through to return original text
+
+            # B.4 — Update result metadata
+            if result.anonymization_applied:
+                result.anonymization_type = (
+                    "pii" if skip_llm else "pii+llm"
+                )
+                if config.store_mapping and combined_mapping:
+                    result.anonymization_mapping = combined_mapping
+
+                return working_text
 
         return text
 
-    async def extract_themes(self, input_text: str) -> List[ExtractedTheme]:
+    async def extract_themes(self, input_text: str) -> tuple[List[ExtractedTheme], List[str]]:
         """
         Extract relevant themes from input text for each category.
 
@@ -341,7 +400,7 @@ class FieldInputGenerator:
             input_text: Markdown content from field input
 
         Returns:
-            List of extracted themes with category assignments
+            Tuple of (extracted themes, error messages for UI display)
 
         Raises:
             RuntimeError: If Ollama provider is not available
@@ -363,8 +422,8 @@ class FieldInputGenerator:
                     )
 
         # Chunk size for processing (characters)
-        # Most LLMs can handle 15-30k chars comfortably
-        CHUNK_SIZE = 15000
+        # 8k chars keeps within comfortable limits for 7B models with JSON output
+        CHUNK_SIZE = 8000
         CHUNK_OVERLAP = 500  # Overlap to avoid cutting mid-sentence
 
         categories_config = self._themes_config.get("categories", {})
@@ -379,12 +438,14 @@ class FieldInputGenerator:
         self._logger.info("CHUNKING", total_length=len(input_text), chunks=len(chunks))
 
         all_themes = []
+        extraction_errors: List[str] = []
 
         for i, chunk in enumerate(chunks):
-            chunk_themes = await self._extract_themes_from_chunk(
+            chunk_themes, chunk_errors = await self._extract_themes_from_chunk(
                 chunk, categories_config, chunk_index=i, total_chunks=len(chunks)
             )
             all_themes.extend(chunk_themes)
+            extraction_errors.extend(chunk_errors)
 
         # Deduplicate themes by category + theme name
         seen = set()
@@ -396,7 +457,7 @@ class FieldInputGenerator:
                 unique_themes.append(theme)
 
         self._logger.info("THEMES_EXTRACTED", total=len(all_themes), unique=len(unique_themes))
-        return unique_themes
+        return unique_themes, extraction_errors
 
     def _split_into_chunks(self, text: str, chunk_size: int, overlap: int) -> List[str]:
         """Split text into overlapping chunks, trying to break at paragraph boundaries."""
@@ -432,42 +493,54 @@ class FieldInputGenerator:
         categories_config: Dict[str, Any],
         chunk_index: int = 0,
         total_chunks: int = 1,
-    ) -> List[ExtractedTheme]:
-        """Extract themes from a single chunk of text."""
+    ) -> tuple[List[ExtractedTheme], List[str]]:
+        """Extract themes from a single chunk of text. Returns (themes, errors)."""
         themes = []
+        errors: List[str] = []
 
-        # Build category labels for prompt
-        category_labels = {k: v.get("label", k) for k, v in categories_config.items()}
+        # Build structured category reference with keys, labels, and predefined themes
+        valid_keys = list(categories_config.keys())
+        categories_block = "\n".join(
+            f'- "{k}": {v.get("label", k)} (thèmes: {", ".join(v.get("themes", []))})'
+            for k, v in categories_config.items()
+        )
+
+        # Adjust theme budget for multi-chunk documents
+        max_themes = 4 if total_chunks > 4 else (5 if total_chunks > 1 else 7)
+
+        chunk_label = (
+            f"[PARTIE {chunk_index + 1}/{total_chunks}] "
+            if total_chunks > 1
+            else ""
+        )
 
         prompt = f"""Tu es un assistant qui analyse des documents municipaux pour la commune d'Audierne-Esquibien.
 
 Analyse le texte suivant et identifie les thèmes pertinents pour les catégories de contribution citoyenne.
 
-{"[PARTIE " + str(chunk_index + 1) + "/" + str(total_chunks) + "]" if total_chunks > 1 else ""}
-
-TEXTE À ANALYSER:
+{chunk_label}TEXTE À ANALYSER:
 {chunk}
 
-CATÉGORIES DISPONIBLES:
-{json.dumps(category_labels, ensure_ascii=False, indent=2)}
+CATÉGORIES (utilise EXACTEMENT ces clés dans le champ "category"):
+{categories_block}
 
 Pour chaque thème identifié, réponds en JSON avec ce format:
 {{
   "themes": [
     {{
       "category": "economie",
-      "theme": "renovation_port",
+      "theme": "tourisme_port",
       "keywords": ["port", "rénovation", "tourisme"],
       "context": "extrait pertinent du texte (max 200 caractères)"
     }}
   ]
 }}
 
-Instructions:
-- Identifie 3-7 thèmes principaux couvrant différentes catégories
-- Utilise uniquement les catégories listées ci-dessus
-- Le "theme" doit être un identifiant court (snake_case)
-- Le "context" doit être un extrait direct du texte analysé
+RÈGLES STRICTES:
+- Identifie 2-{max_themes} thèmes principaux (pas plus)
+- Le champ "category" DOIT être une de ces valeurs exactes: {json.dumps(valid_keys)}
+- Le champ "theme" DOIT être choisi parmi les thèmes listés ci-dessus pour chaque catégorie (préférer les thèmes prédéfinis)
+- Le "context" doit être un extrait DIRECT du texte analysé
 - Réponds UNIQUEMENT avec le JSON valide, sans explication ni markdown"""
 
         try:
@@ -513,11 +586,33 @@ Instructions:
             self._logger.info("CHUNK_THEMES", chunk=chunk_index, themes=len(themes))
 
         except json.JSONDecodeError as e:
-            self._logger.error("JSON_PARSE_ERROR", chunk=chunk_index, error=str(e), response=content[:500])
+            # Detect empty response (model returned nothing parseable)
+            if not content:
+                msg = f"Chunk {chunk_index}: Model returned empty response ({self._provider_name}/{self._model})"
+                self._logger.error(
+                    "EMPTY_LLM_RESPONSE",
+                    chunk=chunk_index,
+                    provider=self._provider_name,
+                    model=self._model,
+                    hint="Model returned empty response. Try a more capable model (e.g. claude, gemini) or a larger local model.",
+                )
+            else:
+                msg = f"Chunk {chunk_index}: JSON parse error ({self._provider_name}/{self._model})"
+                self._logger.error(
+                    "JSON_PARSE_ERROR",
+                    chunk=chunk_index,
+                    provider=self._provider_name,
+                    model=self._model,
+                    error=str(e),
+                    response=content[:200],
+                )
+            errors.append(msg)
         except Exception as e:
-            self._logger.error("THEME_EXTRACTION_ERROR", chunk=chunk_index, error=str(e))
+            error_msg = str(e) or type(e).__name__
+            self._logger.error("THEME_EXTRACTION_ERROR", chunk=chunk_index, error=error_msg)
+            errors.append(f"Chunk {chunk_index}: {error_msg[:200]}")
 
-        return themes
+        return themes, errors
 
     async def generate_contribution(
         self,
@@ -632,9 +727,31 @@ Réponds UNIQUEMENT avec le JSON."""
 
             return contribution
 
+        except json.JSONDecodeError as e:
+            if not content:
+                self._logger.error(
+                    "EMPTY_LLM_RESPONSE",
+                    task="contribution_generation",
+                    theme=theme.theme,
+                    provider=self._provider_name,
+                    model=self._model,
+                    hint="Model returned empty response. Try a more capable model (e.g. claude, gemini) or a larger local model.",
+                )
+            else:
+                self._logger.error(
+                    "CONTRIBUTION_GENERATION_ERROR",
+                    theme=theme.theme,
+                    provider=self._provider_name,
+                    model=self._model,
+                    error=str(e),
+                    response=content[:200],
+                )
+            return None
         except Exception as e:
             self._logger.error(
-                "CONTRIBUTION_GENERATION_ERROR", error=str(e), theme=theme.theme
+                "CONTRIBUTION_GENERATION_ERROR",
+                error=str(e) or type(e).__name__,
+                theme=theme.theme,
             )
             return None
 
@@ -678,10 +795,11 @@ Réponds UNIQUEMENT avec le JSON."""
         processed_text = await self._apply_anonymization(input_text, result, anon_config)
 
         # Step 1: Extract themes (using anonymized text)
-        themes = await self.extract_themes(processed_text)
+        themes, extraction_errors = await self.extract_themes(processed_text)
         result.themes = themes
         result.themes_extracted = len(themes)
         result.categories_covered = list(set(t.category for t in themes))
+        result.errors = extraction_errors
 
         if not themes:
             self._logger.warning("NO_THEMES_EXTRACTED")
@@ -719,6 +837,23 @@ Réponds UNIQUEMENT avec le JSON."""
                         contributions.append(contrib)
 
         result.contributions_generated = len(contributions)
+
+        # Calculate expected vs actual to detect model capability issues
+        expected_per_theme = contributions_per_theme + (2 if include_violations else 0)
+        expected_total = len(themes) * expected_per_theme
+        failure_count = expected_total - len(contributions)
+        if failure_count > 0:
+            failure_rate = failure_count / expected_total if expected_total > 0 else 0
+            self._logger.warning(
+                "GENERATION_FAILURES",
+                expected=expected_total,
+                generated=len(contributions),
+                failed=failure_count,
+                failure_rate=f"{failure_rate:.0%}",
+                provider=self._provider_name,
+                model=self._model,
+                hint="High failure rate may indicate the model struggles with JSON output. Consider using a more capable model." if failure_rate > 0.3 else None,
+            )
 
         # Step 3: Save contributions
         if contributions:

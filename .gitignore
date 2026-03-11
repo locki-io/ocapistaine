@@ -1,3 +1,6 @@
+# Vector store (rebuilt from source data)
+data/chromadb/
+
 # IDE files
 # .vscode/
 # compiled/test python files
@@ -11,6 +14,7 @@ __pycache__/
 .venv
 poetry.lock
 .env
+secrets.toml
 
 # Streamlit secrets (keep config.toml, ignore secrets)
 .streamlit/secrets.toml

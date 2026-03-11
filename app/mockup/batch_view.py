@@ -71,6 +71,7 @@ def _get_forseti_agent() -> ForsetiAgent:
     global _forseti_agent
     if _forseti_agent is None:
         from app.providers.config import get_config
+
         config = get_config()
         provider = get_provider(config.default_provider)
         _forseti_agent = ForsetiAgent(provider)
@@ -101,6 +102,7 @@ def _anonymize_mockup_contribution(title: str, body: str) -> dict:
     try:
         text = f"{title}\n\n{body}"
         from app.providers.config import get_config
+
         config = get_config()
         provider = get_provider(config.default_provider, cache=False)
 
@@ -134,7 +136,9 @@ def _display_classification_result(result: dict):
     st.markdown(f"**📊 {_('forseti_classification_title')}**")
 
     if not result.get("success"):
-        st.error(f"{_('forseti_error')}: {result.get('error', _('forseti_unknown_error'))}")
+        st.error(
+            f"{_('forseti_error')}: {result.get('error', _('forseti_unknown_error'))}"
+        )
         return
 
     category = result.get("category")
@@ -153,7 +157,9 @@ def _display_anonymization_result(result: dict):
     st.markdown(f"**🔒 {_('forseti_anonymization_title')}**")
 
     if not result.get("success"):
-        st.error(f"{_('forseti_error')}: {result.get('error', _('forseti_unknown_error'))}")
+        st.error(
+            f"{_('forseti_error')}: {result.get('error', _('forseti_unknown_error'))}"
+        )
         return
 
     entities = result.get("entities", [])
@@ -170,7 +176,9 @@ def _display_anonymization_result(result: dict):
     anonymized_text = result.get("anonymized_text", "")
     if anonymized_text:
         with st.expander(f"📄 {_('forseti_anonymized_preview')}", expanded=True):
-            st.markdown(anonymized_text[:500] + ("..." if len(anonymized_text) > 500 else ""))
+            st.markdown(
+                anonymized_text[:500] + ("..." if len(anonymized_text) > 500 else "")
+            )
 
     reasoning = result.get("reasoning")
     if reasoning:
@@ -255,7 +263,9 @@ def _load_contributions_with_redis_fallback() -> tuple[list, str]:
                     idees_ameliorations=r.idees_ameliorations,
                     source=r.source,
                     expected_valid=r.expected_valid,
-                    violations_injected=r.violations_injected if r.violations_injected else None,
+                    violations_injected=(
+                        r.violations_injected if r.violations_injected else None
+                    ),
                     parent_id=r.parent_id,
                     similarity_to_parent=r.similarity_to_parent,
                     distance_from_parent=r.distance_from_parent,
@@ -275,7 +285,9 @@ def _load_existing_view(user_id: str, validate_func: Callable) -> None:
     st.session_state["current_batch_view"] = "load_existing"
 
     # Cache contributions in session state to avoid reloading on every rerun
-    if "cached_contributions" not in st.session_state or st.session_state.get("reload_contributions"):
+    if "cached_contributions" not in st.session_state or st.session_state.get(
+        "reload_contributions"
+    ):
         contributions, source = _load_contributions_with_redis_fallback()
         st.session_state["cached_contributions"] = contributions
         st.session_state["cached_contributions_source"] = source
@@ -308,9 +320,7 @@ def _load_existing_view(user_id: str, validate_func: Callable) -> None:
             key="source_filter",
         )
     with col2:
-        categories = list(
-            set(c.category for c in contributions if c.category)
-        )
+        categories = list(set(c.category for c in contributions if c.category))
         category_filter = st.multiselect(
             "Category",
             options=categories,
@@ -470,7 +480,9 @@ def _load_random_contribution(category: str | None, language: str) -> bool:
 
         # Translate if English
         if language == "en" and (constat or idees):
-            translated_constat, translated_idees = _translate_contribution(constat, idees)
+            translated_constat, translated_idees = _translate_contribution(
+                constat, idees
+            )
             if translated_constat != constat or translated_idees != idees:
                 st.session_state["loaded_contrib_constat_en"] = translated_constat
                 st.session_state["loaded_contrib_idees_en"] = translated_idees
@@ -492,7 +504,12 @@ def _load_random_contribution(category: str | None, language: str) -> bool:
         st.session_state["loaded_contrib_constat"] = constat
         st.session_state["loaded_contrib_idees"] = idees
 
-        _logger.info("RANDOM_CONTRIB_LOADED", issue=issue_number, category=category, translated=(language == "en"))
+        _logger.info(
+            "RANDOM_CONTRIB_LOADED",
+            issue=issue_number,
+            category=category,
+            translated=(language == "en"),
+        )
         return True
 
     except Exception as e:
@@ -524,15 +541,15 @@ def _parse_contribution_body(body: str) -> tuple[str, str]:
 
     if constat_start != -1 and idees_start != -1:
         # Extract constat (between constat marker and idees marker)
-        constat = body[constat_start + len(constat_marker):idees_start].strip()
+        constat = body[constat_start + len(constat_marker) : idees_start].strip()
         # Extract idees (after idees marker)
-        idees = body[idees_start + len(idees_marker):].strip()
+        idees = body[idees_start + len(idees_marker) :].strip()
     elif constat_start != -1:
         # Only constat found
-        constat = body[constat_start + len(constat_marker):].strip()
+        constat = body[constat_start + len(constat_marker) :].strip()
     elif idees_start != -1:
         # Only idees found
-        idees = body[idees_start + len(idees_marker):].strip()
+        idees = body[idees_start + len(idees_marker) :].strip()
     else:
         # No markers - use entire body as constat
         constat = body.strip()
@@ -612,24 +629,37 @@ def _from_contribution_view(user_id: str, validate_func: Callable) -> None:
         )
 
     with col2:
-        if st.button("🎲 Random", key="random_contrib_btn", help="Load a random real contribution"):
+        if st.button(
+            "🎲 Random",
+            key="random_contrib_btn",
+            help="Load a random real contribution",
+        ):
             lang = get_language()
             spinner_msg = "Loading & translating..." if lang == "en" else "Loading..."
             with st.spinner(spinner_msg):
                 if _load_random_contribution(category, lang):
                     # Update the text area values from loaded contribution
-                    st.session_state["contrib_constat"] = st.session_state.get("loaded_contrib_constat", default_constat)
-                    st.session_state["contrib_idees"] = st.session_state.get("loaded_contrib_idees", default_idees)
+                    st.session_state["contrib_constat"] = st.session_state.get(
+                        "loaded_contrib_constat", default_constat
+                    )
+                    st.session_state["contrib_idees"] = st.session_state.get(
+                        "loaded_contrib_idees", default_idees
+                    )
                     issue_num = st.session_state.get("loaded_contrib_issue", "?")
                     st.toast(f"Loaded #{issue_num}" + (" (EN)" if lang == "en" else ""))
                     st.rerun()
 
     # Show source info if loaded from random
     if st.session_state.get("loaded_contrib_issue"):
-        st.caption(f"📋 Source: GitHub issue #{st.session_state['loaded_contrib_issue']}")
+        st.caption(
+            f"📋 Source: GitHub issue #{st.session_state['loaded_contrib_issue']}"
+        )
 
     # Check if we have English translations to show side by side
-    has_translation = bool(st.session_state.get("loaded_contrib_constat_en") or st.session_state.get("loaded_contrib_idees_en"))
+    has_translation = bool(
+        st.session_state.get("loaded_contrib_constat_en")
+        or st.session_state.get("loaded_contrib_idees_en")
+    )
 
     if has_translation:
         # Two-column layout: French | English
@@ -695,7 +725,11 @@ def _from_contribution_view(user_id: str, validate_func: Callable) -> None:
             key="input_inject_violations",
         )
     # LLM provider from sidebar
-    from app.services.session import get_session_provider, get_session_model, get_full_model_id
+    from app.services.session import (
+        get_session_provider,
+        get_session_model,
+        get_full_model_id,
+    )
 
     session_provider = get_session_provider(user_id)
     session_model = get_session_model(user_id)
@@ -855,7 +889,11 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
     st.markdown("#### 2b. LLM Provider")
     st.caption("Uses the provider/model selected in the sidebar.")
 
-    from app.services.session import get_session_provider, get_session_model, get_full_model_id
+    from app.services.session import (
+        get_session_provider,
+        get_session_model,
+        get_full_model_id,
+    )
 
     # Get provider/model from sidebar session
     session_provider = get_session_provider(user_id)
@@ -890,7 +928,9 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
             from app.providers import get_provider
 
             try:
-                provider = get_provider(session_provider, cache=False, model=full_model_id)
+                provider = get_provider(
+                    session_provider, cache=False, model=full_model_id
+                )
                 st.success(f"✓ {session_provider} ({provider.model}) ready")
             except Exception as e:
                 st.warning(f"✗ {session_provider}: {e}")
@@ -923,7 +963,9 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
             st.session_state["ollama_processing"] = True
 
         # Show input info for debugging
-        st.info(f"Processing {len(input_text):,} characters from: {source_title or 'direct input'}")
+        st.info(
+            f"Processing {len(input_text):,} characters from: {source_title or 'direct input'}"
+        )
 
         # Use sidebar session provider
         spinner_text = f"Extracting themes from {len(input_text):,} chars using {session_provider}..."
@@ -990,6 +1032,12 @@ def _field_input_view(user_id: str, validate_func: Callable) -> None:
         with col4:
             st.metric("Input Length", f"{result.input_length:,}")
 
+        # Show errors if extraction failed
+        if getattr(result, "errors", None):
+            with st.expander(f"⚠️ Extraction errors ({len(result.errors)})", expanded=True):
+                for err in result.errors:
+                    st.error(err)
+
         # Show extracted themes
         if result.themes:
             st.markdown("#### Extracted Themes")
@@ -1044,7 +1092,7 @@ def _run_field_experiment(validate_func: Callable, user_id: str) -> None:
             st.info(
                 f"✅ Validated {validation_count} contributions. "
                 f"Spans will appear in Opik in ~3 minutes. "
-                f"Use **task_opik_evaluate** (runs every 30min) to create dataset and run experiment."
+                f"Use **task_opik_evaluate** (runs every 2hours) to create dataset and run experiment."
             )
 
     except Exception as e:
@@ -1066,7 +1114,9 @@ def _display_contributions_list(
     # Batch validation controls
     col1, col2, col3, col4 = st.columns([1, 1, 1, 2])
     with col1:
-        st.caption("💡 Spans take ~3min to appear in Opik. Use **task_opik_evaluate** scheduled task to run experiments on recent spans.")
+        st.caption(
+            "💡 Spans take ~3min to appear in Opik. Use **task_opik_evaluate** scheduled task to run experiments on recent spans."
+        )
 
     with col2:
         if st.button("🚀 Validate All", type="primary", key="validate_all_btn"):
@@ -1173,7 +1223,11 @@ def _display_contribution_card(
 
         # Parent info for derived contributions
         if contrib.parent_id:
-            parent_display = contrib.parent_id[6:] if contrib.parent_id.startswith("field_") else contrib.parent_id[:8]
+            parent_display = (
+                contrib.parent_id[6:]
+                if contrib.parent_id.startswith("field_")
+                else contrib.parent_id[:8]
+            )
             st.caption(f"↳ Derived from `{parent_display}`")
 
         # Violations injected

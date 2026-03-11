@@ -11,6 +11,7 @@ import json
 from app.providers import LLMProvider
 from app.agents.base import BaseAgent
 from app.agents.tracing import AgentTracer, get_tracer
+from app.services.logging import AgentLogger
 
 from .models import (
     FullValidationResult,
@@ -69,8 +70,9 @@ class ForsetiAgent(BaseAgent):
         if enable_wording:
             self.register_feature(WordingCorrectionFeature())
 
-        # Tracer
+        # Tracer and logger
         self._tracer = tracer or get_tracer()
+        self._logger = AgentLogger("forseti")
 
     @property
     def persona_prompt(self) -> str:
@@ -93,34 +95,70 @@ class ForsetiAgent(BaseAgent):
         Returns:
             FullValidationResult with validation and classification.
         """
-        # Start a trace for the full validation with spans for each step
+        # Execute features first (outside trace) to detect errors early
+        validation: ValidationResult = await self.execute_feature(
+            "charter_validation",
+            title=title,
+            body=body,
+        )
+        classification: ClassificationResult = await self.execute_feature(
+            "category_classification",
+            title=title,
+            body=body,
+            category=category,
+        )
+
+        # Detect provider errors (confidence=0.0 signals feature-level failure)
+        has_error = validation.confidence == 0.0 or classification.confidence == 0.0
+
+        # Build result
+        result = FullValidationResult(
+            is_valid=validation.is_valid,
+            category=classification.category,
+            original_category=category,
+            violations=validation.violations,
+            encouraged_aspects=validation.encouraged_aspects,
+            reasoning=(
+                f"Charter: {validation.reasoning} | "
+                f"Category: {classification.reasoning}"
+            ),
+            confidence=min(validation.confidence, classification.confidence),
+        )
+
+        # Skip Opik tracing entirely on provider errors (avoids polluting traces)
+        if has_error:
+            self._logger.warning(
+                "VALIDATION_SKIPPED_TRACE",
+                reason="provider_error",
+                charter_error=validation.reasoning if validation.confidence == 0.0 else None,
+                category_error=classification.reasoning if classification.confidence == 0.0 else None,
+                provider=self._provider.name,
+                model=self._provider.model,
+            )
+            return result
+
+        # Only trace successful validations
         with self._tracer.start_trace(
             name="forseti_validate",
             input={"title": title, "body": body, "category": category},
-            tags=["forseti", "validation"],
+            tags=["forseti", self._provider.name, "validation"],
         ) as trace:
-            # Step 1: Charter validation
+            # Log charter validation span
             with self._tracer.span(
                 name="charter_validation",
                 input={"title": title, "body": body},
                 span_type="llm",
             ) as charter_span:
-                validation: ValidationResult = await self.execute_feature(
-                    "charter_validation",
-                    title=title,
-                    body=body,
-                )
                 charter_span.update(
                     output=validation.model_dump(),
                     metadata={
                         "confidence": validation.confidence,
                         "is_valid": validation.is_valid,
-                        "added_to_dataset": False,  # Track if span was added to dataset
+                        "added_to_dataset": False,
                         "provider": self._provider.name,
                         "model": self._provider.model,
                     },
                 )
-                # Log Correctness feedback to span for Opik-native querying
                 charter_span_id = getattr(charter_span, "id", None)
                 if charter_span_id:
                     self._tracer.log_span_feedback(
@@ -130,29 +168,22 @@ class ForsetiAgent(BaseAgent):
                         comment=f"is_valid={validation.is_valid}, violations={len(validation.violations)}",
                     )
 
-            # Step 2: Category classification
+            # Log category classification span
             with self._tracer.span(
                 name="category_classification",
                 input={"title": title, "body": body, "category": category},
                 span_type="llm",
             ) as category_span:
-                classification: ClassificationResult = await self.execute_feature(
-                    "category_classification",
-                    title=title,
-                    body=body,
-                    category=category,
-                )
                 category_span.update(
                     output=classification.model_dump(),
                     metadata={
                         "confidence": classification.confidence,
                         "category": classification.category,
-                        "added_to_dataset": False,  # Track if span was added to dataset
+                        "added_to_dataset": False,
                         "provider": self._provider.name,
                         "model": self._provider.model,
                     },
                 )
-                # Log Correctness feedback to span for Opik-native querying
                 category_span_id = getattr(category_span, "id", None)
                 if category_span_id:
                     self._tracer.log_span_feedback(
@@ -161,20 +192,6 @@ class ForsetiAgent(BaseAgent):
                         feedback_type="Correctness",
                         comment=f"category={classification.category}, original={category}",
                     )
-
-            # Build result
-            result = FullValidationResult(
-                is_valid=validation.is_valid,
-                category=classification.category,
-                original_category=category,
-                violations=validation.violations,
-                encouraged_aspects=validation.encouraged_aspects,
-                reasoning=(
-                    f"Charter: {validation.reasoning} | "
-                    f"Category: {classification.reasoning}"
-                ),
-                confidence=min(validation.confidence, classification.confidence),
-            )
 
             # Update trace with final output
             trace_id = None

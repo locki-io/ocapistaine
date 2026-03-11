@@ -486,3 +486,174 @@ def validate_no_pii(
             is_clean=True,  # Fail open
             error=str(e),
         )
+
+
+# =============================================================================
+# PII Entity Detection & Replacement (First-Pass Anonymization)
+# =============================================================================
+
+
+@dataclass
+class PIIEntity:
+    """A single PII entity detected by Presidio via Opik."""
+
+    text: str
+    entity_type: str
+    start: int
+    end: int
+    score: float
+
+
+@dataclass
+class PIIDetectionResult:
+    """Result of PII entity detection."""
+
+    entities: List[PIIEntity] = field(default_factory=list)
+    error: Optional[str] = None
+
+    @property
+    def has_pii(self) -> bool:
+        return len(self.entities) > 0
+
+
+# Mapping from Presidio entity types to French placeholders
+# Matches conventions used by the LLM anonymization prompt
+PRESIDIO_TO_PLACEHOLDER = {
+    "PERSON": "PERSONNE",
+    "EMAIL_ADDRESS": "EMAIL",
+    "PHONE_NUMBER": "TELEPHONE",
+    "CREDIT_CARD": "CARTE_CREDIT",
+    "IBAN_CODE": "IBAN",
+    "IP_ADDRESS": "IP",
+    "URL": "URL",
+    "MEDICAL_LICENSE": "LICENCE_MEDICALE",
+    "LOCATION": "LIEU",
+    "DATE_TIME": "DATE",
+    "NRP": "NUMERO_NATIONAL",
+}
+
+
+def detect_pii_entities(
+    text: str,
+    blocked_entities: Optional[List[str]] = None,
+    language: str = "fr",
+    threshold: float = 0.5,
+) -> PIIDetectionResult:
+    """
+    Detect PII entities in text using Opik's Presidio-based guardrail.
+
+    No LLM call, no context limit — runs locally via NLP models.
+
+    Args:
+        text: Text to scan for PII.
+        blocked_entities: Entity types to detect (default: PERSON, EMAIL, PHONE).
+        language: Language code for NER model.
+        threshold: Confidence threshold (0.0-1.0).
+
+    Returns:
+        PIIDetectionResult with list of detected entities. Fails open on error.
+    """
+    try:
+        from opik.guardrails import Guardrail, PII
+        from opik import exceptions
+    except ImportError:
+        _logger.warning("OPIK_GUARDRAILS_UNAVAILABLE")
+        return PIIDetectionResult(error="Opik guardrails not available")
+
+    if blocked_entities is None:
+        blocked_entities = ["PERSON", "EMAIL_ADDRESS", "PHONE_NUMBER"]
+
+    try:
+        guardrail = Guardrail(
+            guards=[
+                PII(
+                    blocked_entities=blocked_entities,
+                    language=language,
+                    threshold=threshold,
+                )
+            ]
+        )
+        guardrail.validate(text)
+        # No exception means no PII found
+        return PIIDetectionResult()
+
+    except exceptions.GuardrailValidationFailed as e:
+        entities = []
+        for failed in e.failed_validations:
+            detected = failed.validation_details.get("detected_entities", [])
+            for ent in detected:
+                entities.append(
+                    PIIEntity(
+                        text=ent.get("value", ""),
+                        entity_type=ent.get("entity_type", "UNKNOWN"),
+                        start=ent.get("start", 0),
+                        end=ent.get("end", 0),
+                        score=ent.get("confidence", 0.0),
+                    )
+                )
+
+        _logger.info(
+            "PII_ENTITIES_DETECTED",
+            count=len(entities),
+            types=list({e.entity_type for e in entities}),
+        )
+        return PIIDetectionResult(entities=entities)
+
+    except Exception as e:
+        _logger.error("PII_DETECTION_ERROR", error=str(e))
+        return PIIDetectionResult(error=str(e))
+
+
+def apply_pii_replacements(
+    text: str,
+    entities: List[PIIEntity],
+) -> Tuple[str, Dict[str, str]]:
+    """
+    Apply deterministic placeholder replacements for detected PII entities.
+
+    Builds consistent numbered placeholders per type: [PERSONNE_1], [PERSONNE_2], etc.
+    Replaces longest matches first to avoid partial substitutions.
+
+    Args:
+        text: Original text.
+        entities: PII entities from detect_pii_entities().
+
+    Returns:
+        Tuple of (anonymized_text, entity_mapping).
+        entity_mapping maps original text → placeholder (e.g. "Jean Dupont" → "[PERSONNE_1]").
+    """
+    if not entities:
+        return text, {}
+
+    # Build unique entities by text value (deduplicate)
+    unique_map: Dict[str, PIIEntity] = {}
+    for ent in entities:
+        if ent.text and ent.text not in unique_map:
+            unique_map[ent.text] = ent
+
+    # Assign numbered placeholders per type
+    type_counters: Dict[str, int] = {}
+    entity_mapping: Dict[str, str] = {}
+
+    # Sort by length descending for longest-first replacement
+    sorted_entities = sorted(unique_map.values(), key=lambda e: len(e.text), reverse=True)
+
+    for ent in sorted_entities:
+        placeholder_base = PRESIDIO_TO_PLACEHOLDER.get(ent.entity_type, ent.entity_type)
+        type_counters.setdefault(placeholder_base, 0)
+        type_counters[placeholder_base] += 1
+        placeholder = f"[{placeholder_base}_{type_counters[placeholder_base]}]"
+        entity_mapping[ent.text] = placeholder
+
+    # Apply replacements longest-first
+    result = text
+    for original, placeholder in entity_mapping.items():
+        result = result.replace(original, placeholder)
+
+    _logger.info(
+        "PII_REPLACEMENTS_APPLIED",
+        replacements=len(entity_mapping),
+        types=list(type_counters.keys()),
+    )
+
+    return result, entity_mapping

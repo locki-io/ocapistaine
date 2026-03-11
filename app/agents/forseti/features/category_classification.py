@@ -89,5 +89,5 @@ class CategoryClassificationFeature(FeatureBase):
             return ClassificationResult(
                 category=category or CATEGORIES[0],
                 reasoning=f"Classification error: {e}",
-                confidence=0.5,
+                confidence=0.0,  # Signal error to callers (real results have > 0)
             )

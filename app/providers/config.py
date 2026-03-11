@@ -29,11 +29,11 @@ GEMINI_MODELS = {
     "pro-preview": "gemini-2.5-pro-preview",  # Bleeding-edge
 }
 
-# Claude models (Anthropic)
+# Claude models (Anthropic) - updated March 2026
 CLAUDE_MODELS = {
-    "haiku": "claude-3-haiku-20240307",  # Fast, cheap
-    "sonnet": "claude-3-5-sonnet-20241022",  # Balanced
-    "opus": "claude-3-opus-20240229",  # Most capable
+    "haiku": "claude-haiku-4-5-20251001",  # Fast, affordable
+    "sonnet": "claude-sonnet-4-6",  # Best speed/intelligence ratio
+    "opus": "claude-opus-4-6",  # Most capable
 }
 
 # OpenAI models
@@ -141,8 +141,9 @@ PROVIDER_UI_CONFIG = {
     "claude": {
         "name_key": "provider_anthropic_claude",
         "models": {
-            "haiku": "claude-3-haiku (fast, cheap)",
-            "sonnet": "claude-3.5-sonnet (balanced)",
+            "haiku": "claude-haiku-4.5 (fast, affordable)",
+            "sonnet": "claude-sonnet-4.6 (balanced)",
+            "opus": "claude-opus-4.6 (most capable)",
         },
         "default": "haiku",
     },
@@ -154,12 +155,11 @@ PROVIDER_UI_CONFIG = {
         },
         "default": "small",
     },
-    # Ollama disabled for cloud deployment (requires local installation)
-    # "ollama": {
-    #     "name_key": "provider_ollama",
-    #     "models": {...},
-    #     "default": "deepseek-r1:7b",
-    # },
+    "ollama": {
+        "name_key": "provider_ollama",
+        "models": {k: v["description"] for k, v in OLLAMA_MODELS.items()},
+        "default": "deepseek-r1:7b",
+    },
 }
 
 
@@ -183,7 +183,7 @@ def get_model_id(provider: str, model_key: str) -> str:
     if provider == "gemini":
         return GEMINI_MODELS.get(model_key, "gemini-2.5-flash-lite")
     elif provider == "claude":
-        return CLAUDE_MODELS.get(model_key, "claude-3-haiku-20240307")
+        return CLAUDE_MODELS.get(model_key, "claude-haiku-4-5-20251001")
     elif provider == "mistral":
         return MISTRAL_MODELS.get(model_key, "mistral-small-latest")
     elif provider == "openai":
@@ -298,7 +298,7 @@ class ProviderConfig(BaseSettings):
 
     # Anthropic Claude
     anthropic_api_key: str | None = Field(default=None, alias="ANTHROPIC_API_KEY")
-    claude_model: str = Field(default="claude-3-haiku-20240307", alias="CLAUDE_MODEL")
+    claude_model: str = Field(default="claude-haiku-4-5-20251001", alias="CLAUDE_MODEL")
 
     # Mistral AI
     mistral_api_key: str | None = Field(default=None, alias="MISTRAL_API_KEY")
@@ -310,6 +310,9 @@ class ProviderConfig(BaseSettings):
     # Local Ollama
     ollama_host: str = Field(default="http://localhost:11434", alias="OLLAMA_HOST")
     ollama_model: str = Field(default="deepseek-r1:7b", alias="OLLAMA_MODEL")
+    ollama_keep_alive: str = Field(default="2m", alias="OLLAMA_KEEP_ALIVE")  # Unload model after idle (0=immediate, 5m=default)
+    ollama_num_thread: int | None = Field(default=None, alias="OLLAMA_NUM_THREAD")  # CPU threads (None=all cores)
+    ollama_num_ctx: int | None = Field(default=None, alias="OLLAMA_NUM_CTX")  # Context window size (None=model default)
 
     # OpenAI
     openai_api_key: str | None = Field(default=None, alias="OPENAI_API_KEY")

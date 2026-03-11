@@ -80,5 +80,5 @@ class CharterValidationFeature(FeatureBase):
                 violations=[],
                 encouraged_aspects=[],
                 reasoning=f"Validation error: {e}",
-                confidence=0.5,
+                confidence=0.0,  # Signal error to callers (real results have > 0)
             )

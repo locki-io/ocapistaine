@@ -38,6 +38,7 @@ from .failover import (
     get_available_provider,
     DEFAULT_FAILOVER_CHAIN,
 )
+from .health import check_providers, get_provider_status
 
 
 __all__ = [
@@ -78,6 +79,9 @@ __all__ = [
     "with_failover",
     "get_available_provider",
     "DEFAULT_FAILOVER_CHAIN",
+    # Health check
+    "check_providers",
+    "get_provider_status",
 ]
 
 

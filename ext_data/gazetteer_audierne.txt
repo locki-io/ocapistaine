@@ -1,0 +1,110 @@
+# Gazetteer — Audierne-Esquibien Place Names
+# Source: audierne.info, annuaire-mairie.fr, audierne.bzh
+# Used by scripts/correct_ocr_programs.py to prevent false OCR corrections
+# One name per line. Lines starting with # are comments.
+
+# === Quartiers historiques d'Audierne ===
+Menez Bihan
+Roz ar Prefed
+Kerbuzulig
+La Haie
+Le Stum
+Keristum
+Kersudal
+Kerivoas
+Kervreac'h
+Le Stiri
+Stiri
+Roz Kriben
+Le Kastell
+Kastell
+Kermabon
+Penn al Liorz
+Kergadec
+Trezkadeg
+Cadillac
+Kerifreuff
+Keridreuff
+Kerhuon
+La Garenne
+Koz Fornig
+Kervihan
+La Montagne
+Roz An Dour
+
+# === Lieux-dits d'Esquibien ===
+4 Vents
+Brenellec
+Cosquer Bihan
+Cosquer Bras
+Custren
+Gorrequer
+Kelornet
+Kerandraon
+Kerboul
+Kerennec
+Kergadou
+Kerguerrien
+Kerguiniou
+Kerlan
+Kerlaouen
+Kerleyou
+Kermaviou
+Kerneyen
+Kernod
+Keromen
+Kerorval
+Kerouarne
+Kerounous
+Kerscao
+Kersiviant
+Kersorn
+Kerunus
+Kerveoch
+La Croix Neuve
+La Metairie
+Landuguentel
+Le Lannou
+Lesnoal
+Lezongard
+Penfrat
+Pennaros
+Pont Quillioc
+Pontprenn
+Porsfeunteun
+Roz Ar Floch
+Roz Lezongard
+Suguensou
+Toulemonde
+Tremaria
+Trevarha
+Trevenouen
+Trez Goarem
+Trobay
+Troloan
+Tromao
+
+# === Reperes geographiques ===
+Goyen
+Sainte-Evette
+Poulgoazec
+Loquéran
+Kéréon
+Raoulic
+Grande Plage
+Raz de Sein
+Pointe du Raz
+Cap Sizun
+Ile de Sein
+
+# === Communes voisines ===
+Plogoff
+Pont-Croix
+Plouhinec
+Landudec
+Cleden-Cap-Sizun
+Primelin
+Goulien
+Beuzec-Cap-Sizun
+Confort-Meilars
+Mahalon

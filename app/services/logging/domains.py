@@ -35,6 +35,11 @@ class BaseLogger:
         parts = [f"{k}={v}" for k, v in kwargs.items() if v is not None]
         return " | ".join(parts)
 
+    @staticmethod
+    def _strip_reserved(kwargs: dict) -> dict:
+        """Strip keys that collide with log method signatures (e.g. 'message')."""
+        return {k: v for k, v in kwargs.items() if k != "message"}
+
     def debug(self, message: str, **kwargs) -> None:
         """Log debug message with optional structured data."""
         if kwargs:
@@ -576,7 +581,7 @@ class TaskLogger(BaseLogger):
             task_id=task_id[:8] if task_id else None,
             date=date_string,
             pid=pid or os.getpid(),
-            **extra_params,
+            **self._strip_reserved(extra_params),
         )
 
     def log_skipped(
@@ -603,7 +608,7 @@ class TaskLogger(BaseLogger):
 
     def log_progress(
         self,
-        message: str,
+        step: str,
         current: int | None = None,
         total: int | None = None,
         **metrics,
@@ -612,7 +617,7 @@ class TaskLogger(BaseLogger):
         Log task progress update.
 
         Args:
-            message: Progress message
+            step: Progress step description
             current: Current item number
             total: Total items to process
             **metrics: Additional metrics
@@ -621,9 +626,9 @@ class TaskLogger(BaseLogger):
         self.info(
             "TASK_PROGRESS",
             task=self.task_name,
-            step=message,
+            step=step,
             progress=progress,
-            **metrics,
+            **self._strip_reserved(metrics),
         )
 
     def log_completed(
@@ -647,7 +652,7 @@ class TaskLogger(BaseLogger):
             task=self.task_name,
             status=status,
             duration_ms=f"{duration_ms:.0f}" if duration_ms else None,
-            **result_metrics,
+            **self._strip_reserved(result_metrics),
         )
 
     def log_failed(
@@ -674,7 +679,7 @@ class TaskLogger(BaseLogger):
             error=error[:200],
             recoverable=recoverable,
             duration_ms=f"{duration_ms:.0f}" if duration_ms else None,
-            **context,
+            **self._strip_reserved(context),
         )
 
     def log_provider_failover(
@@ -722,6 +727,23 @@ class TaskLogger(BaseLogger):
             valid=is_valid,
             provider=provider,
             confidence=f"{confidence:.2f}" if confidence else None,
+        )
+
+    def log_trigger(
+        self,
+        trigger_type: str,
+        user_id: str | None = None,
+        session_id: str | None = None,
+        **config,
+    ) -> None:
+        """Log a manual or automated task trigger with audit context."""
+        self.info(
+            "TASK_TRIGGERED",
+            task=self.task_name,
+            trigger=trigger_type,
+            user_id=user_id[:8] if user_id else None,
+            session_id=session_id[:8] if session_id else None,
+            **self._strip_reserved(config),
         )
 
 

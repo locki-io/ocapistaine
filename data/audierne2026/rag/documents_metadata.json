@@ -1,0 +1,19 @@
+{
+  "updated_at": "2026-03-09",
+  "total_documents": 164,
+  "by_type": {
+    "readme": 7,
+    "contribution": 44,
+    "pdf_extract": 52,
+    "program": 61
+  },
+  "by_list": {
+    "audierne2026": 51,
+    "": 52,
+    "ca": 17,
+    "paa": 24,
+    "spae": 15,
+    "csnf": 5
+  },
+  "total_characters": 467951
+}

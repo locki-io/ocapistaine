@@ -117,6 +117,18 @@ class ProviderLogger:
         self.provider = provider_name
         self._logger = get_logger()
 
+    def debug(self, msg: str) -> None:
+        self._logger.debug(f"{self.provider} | {msg}")
+
+    def info(self, msg: str) -> None:
+        self._logger.info(f"{self.provider} | {msg}")
+
+    def warning(self, msg: str) -> None:
+        self._logger.warning(f"{self.provider} | {msg}")
+
+    def error(self, msg: str) -> None:
+        self._logger.error(f"{self.provider} | {msg}")
+
     def log_request(
         self,
         model: str,

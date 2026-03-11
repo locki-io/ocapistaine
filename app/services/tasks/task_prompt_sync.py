@@ -1,12 +1,13 @@
 """
 Prompt Sync Task
 
-Synchronizes local prompts to Opik Prompt Library.
-Runs daily at midnight to ensure Opik has the latest prompt versions.
+Bidirectional sync with Opik Prompt Library.
+Runs daily at midnight to ensure Opik and local prompts stay in sync.
 
-Syncs:
-- Individual prompts (forseti.*, autocontrib.*)
-- Composite chat prompts (forseti-persona-*)
+Steps:
+0. Pull optimized composites from Opik (update local JSON)
+1. Push individual prompts (forseti.*, autocontrib.*)
+2. Push composite chat prompts (forseti-persona-*)
 """
 
 from app.services.tasks import _task_boilerplate, TaskError, REDIS_SUCCESS_TTL
@@ -14,9 +15,10 @@ from app.services.tasks import _task_boilerplate, TaskError, REDIS_SUCCESS_TTL
 
 def task_prompt_sync(date_string: str = None) -> dict:
     """
-    Sync all prompts to Opik Prompt Library.
+    Sync all prompts to Opik Prompt Library (bidirectional).
 
     Workflow:
+    0. Pull optimized composites from Opik (update locals)
     1. Sync individual prompts (text type)
     2. Sync composite prompts (chat type)
     3. Log results
@@ -39,14 +41,35 @@ def task_prompt_sync(date_string: str = None) -> dict:
         return result
 
     try:
-        from app.prompts.opik_sync import sync_all_prompts, sync_all_composites
+        from app.prompts.opik_sync import (
+            sync_all_prompts,
+            sync_all_composites,
+            pull_all_composites,
+        )
 
         # Initialize counters
+        result["pull_changed"] = 0
+        result["pull_failed"] = 0
         result["individual_synced"] = 0
         result["individual_failed"] = 0
         result["composite_synced"] = 0
         result["composite_failed"] = 0
         result["prompts"] = []
+
+        # Step 0: Pull optimized composites from Opik (before pushing)
+        logger.log_progress("Pulling optimized composites from Opik")
+        pull_result = pull_all_composites()
+
+        if pull_result.get("error"):
+            result["warnings"].append(f"Pull warning: {pull_result['error']}")
+        else:
+            for item in pull_result.get("pulled", []):
+                changed = item.get("changed", [])
+                if changed:
+                    result["pull_changed"] += len(changed)
+                for w in item.get("warnings", []):
+                    result["warnings"].append(f"Pull: {w}")
+            result["pull_failed"] = len(pull_result.get("failed", []))
 
         # Step 1: Sync individual prompts
         logger.log_progress("Syncing individual prompts")
@@ -119,6 +142,8 @@ def task_prompt_sync(date_string: str = None) -> dict:
             redis_conn.set(success_key, "completed", ex=REDIS_SUCCESS_TTL)
             logger.log_completed(
                 status="success",
+                pull_changed=result["pull_changed"],
+                pull_failed=result["pull_failed"],
                 individual_synced=result["individual_synced"],
                 individual_failed=result["individual_failed"],
                 composite_synced=result["composite_synced"],

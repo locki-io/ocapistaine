@@ -39,13 +39,24 @@ async def lifespan(app: FastAPI):
     else:
         logger.warning("Redis not available - some features may be limited")
 
+    # Check provider availability
+    from app.providers.health import check_providers
+
+    await check_providers()
+
     # Start scheduler
     from app.services.scheduler import start_scheduler
 
     await start_scheduler()
 
-    # TODO: Initialize vector store connection
-    # TODO: Warm embedding model cache
+    # Initialize RAG vector store
+    try:
+        from app.rag.store import get_collection
+
+        col = get_collection()
+        logger.info(f"RAG vector store ready: {col.count()} chunks indexed")
+    except Exception as e:
+        logger.warning(f"RAG initialization failed (non-blocking): {e}")
 
     yield
 
@@ -70,10 +81,10 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:8501",      # Streamlit dev
-        "https://audierne2026.fr",    # Production
+        "http://localhost:8501",  # Streamlit dev
+        "https://audierne2026.fr",  # Production
         "https://cap.audierne2026.fr", # Citizen RAG chat
-        "https://docs.locki.io",      # Documentation
+        "https://docs.locki.io",  # Documentation
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -84,9 +95,23 @@ app.add_middleware(
 app.include_router(validate_router, prefix="/api/v1")
 
 
+def _rag_status() -> dict | str:
+    """Check RAG system status."""
+    try:
+        from app.rag.store import collection_stats
+
+        stats = collection_stats()
+        if stats["total_chunks"] > 0:
+            return {"status": "ready", **stats}
+        return "empty"
+    except Exception:
+        return "not_available"
+
+
 # =============================================================================
 # Health & Status Routes
 # =============================================================================
+
 
 @app.get("/")
 async def root():
@@ -116,18 +141,32 @@ async def status():
     """Detailed status endpoint."""
     # Check Opik availability
     from app.agents.tracing import get_tracer
+
     tracer = get_tracer()
     opik_status = "connected" if tracer.enabled else "not_configured"
+
+    # Check provider availability
+    from app.providers.health import get_provider_status
+
+    provider_report = get_provider_status()
+    providers_component = {}
+    if provider_report:
+        providers_component = {
+            "ollama": provider_report["ollama"],
+            "cloud": provider_report["cloud"],
+            "checked_at": provider_report["checked_at"],
+        }
 
     return {
         "service": "ocapistaine",
         "version": "0.1.0",
         "components": {
             "redis": "connected" if redis_health_check() else "disconnected",
-            "firecrawl": "not_configured",  # TODO: Check Firecrawl
-            "rag": "not_implemented",        # TODO: Check RAG
+            "firecrawl": "not_configured",
+            "rag": _rag_status(),
             "opik": opik_status,
             "forseti": "available",
+            "providers": providers_component,
         },
     }
 
@@ -136,96 +175,89 @@ async def status():
 # Chat Routes (Placeholder)
 # =============================================================================
 
+
 @app.post("/api/v1/chat")
 async def chat_endpoint(request: Request):
     """
-    Citizen Q&A endpoint.
-
-    TODO: Implement RAG-based response generation.
+    Citizen Q&A endpoint — RAG-powered answers with sources.
 
     Request body:
         {
-            "user_id": "uuid",
             "message": "Question about municipal decisions",
-            "thread_id": "optional-thread-id"
-        }
-
-    Response:
-        {
-            "response": "Answer with sources",
-            "sources": ["doc1.pdf", "doc2.pdf"],
-            "confidence": 0.85
+            "filters": {"category": "economie"},  // optional
+            "n_results": 5  // optional
         }
     """
+    from app.agents.ocapistaine import OCapistaineAgent
+
     body = await request.json()
-    user_id = body.get("user_id", "anonymous")
     message = body.get("message", "")
-    thread_id = body.get("thread_id", "default")
+    filters = body.get("filters")
+    n_results = body.get("n_results", 10)
+    thread_id = body.get("thread_id")
 
-    # TODO: Replace with actual RAG call
-    # from app.services.rag_service import RAGService
-    # response = await RAGService.query(message, user_id, thread_id)
+    if not message:
+        return {"error": "message is required"}
 
-    return {
-        "response": f"🚧 RAG system en développement. Votre question: '{message}'",
-        "sources": [],
-        "confidence": 0.0,
-        "thread_id": thread_id,
-    }
+    agent = OCapistaineAgent()
+    result = await agent.chat(
+        question=message, n_results=n_results, filters=filters, thread_id=thread_id
+    )
+    return result.to_dict()
+
+
+@app.post("/api/v1/chat/compare")
+async def chat_compare_endpoint(request: Request):
+    """
+    Compare electoral programs across lists.
+
+    Request body:
+        {
+            "question": "Que proposent les listes sur l'économie locale ?",
+            "list_names": ["audierne2026", "liste-opposition-1", ...]
+        }
+    """
+    from app.agents.ocapistaine import OCapistaineAgent
+
+    body = await request.json()
+    question = body.get("question", "")
+    list_names = body.get("list_names", [])
+    thread_id = body.get("thread_id")
+
+    if not question or not list_names:
+        return {"error": "question and list_names are required"}
+
+    agent = OCapistaineAgent()
+    result = await agent.compare(question, list_names, thread_id=thread_id)
+    return result.to_dict()
 
 
 # =============================================================================
 # Document Routes (Placeholder)
 # =============================================================================
 
+
 @app.get("/api/v1/documents")
 async def list_documents():
-    """
-    List available document sources.
+    """List indexed document sources from the RAG vector store."""
+    from app.rag.store import collection_stats
 
-    TODO: Implement document listing from vector store.
-    """
-    return {
-        "sources": [
-            {
-                "name": "mairie_arretes",
-                "description": "Arrêtés municipaux",
-                "count": 0,
-                "status": "not_crawled",
-            },
-            {
-                "name": "mairie_deliberations",
-                "description": "Délibérations du conseil",
-                "count": 0,
-                "status": "not_crawled",
-            },
-            {
-                "name": "gwaien",
-                "description": "Bulletins municipaux",
-                "count": 42,
-                "status": "partial",
-            },
-        ],
-        "total_indexed": 42,
-    }
+    return collection_stats()
 
 
-@app.get("/api/v1/documents/{doc_id}")
-async def get_document(doc_id: str):
-    """
-    Get a specific document.
+@app.get("/api/v1/documents/ingest")
+async def trigger_ingest(reset: bool = False):
+    """Trigger document ingestion (admin). Use ?reset=true to rebuild."""
+    from app.rag.ingest import ingest_from_jsonl
 
-    TODO: Implement document retrieval.
-    """
-    return {
-        "error": "not_implemented",
-        "message": f"Document {doc_id} retrieval not yet implemented",
-    }
+    result = ingest_from_jsonl(reset=reset)
+    return result
 
 
 # =============================================================================
 # Webhook Routes (for N8N / Vaettir integration)
 # =============================================================================
+
 
 @app.post("/api/v1/webhooks/message")
 async def webhook_message(request: Request):
@@ -259,6 +291,7 @@ async def webhook_message(request: Request):
 # Admin Routes (protected in production)
 # =============================================================================
 
+
 @app.post("/api/v1/admin/crawl")
 async def trigger_crawl(request: Request):
     """
@@ -275,9 +308,10 @@ async def trigger_crawl(request: Request):
 # Entry point for development
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(
         "app.main:app",
         host="0.0.0.0",
         port=8000,
-        reload=True,
+        reload=False,
     )

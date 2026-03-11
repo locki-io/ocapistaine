@@ -295,9 +295,13 @@ def _run_experiment(
     """
     from app.processors.workflows import OpikExperimentConfig, run_opik_experiment
 
+    # Include the feature name so the experiment is identifiable
+    feature_config = get_feature_config(experiment_type)
+    feature = feature_config["feature"] if feature_config else experiment_type
+
     today = datetime.now().strftime("%Y%m%d")
     timestamp = datetime.now().strftime("%H%M%S")
-    experiment_name = f"{experiment_type}-eval-{today}-{timestamp}"
+    experiment_name = f"{feature}-eval-{today}-{timestamp}"
 
     logger.log_progress(f"Starting experiment: {experiment_name}")
 

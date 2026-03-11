@@ -702,6 +702,15 @@ def _display_internal_confidence_stats(max_confidence: float):
         st.caption(f"⚠️ Storage error: {str(e)[:50]}")
 
 
+def _log_trigger(task_name: str, trigger_type: str, user_id: str, **config):
+    """Log a manual task trigger with audit context."""
+    from app.services.logging.domains import TaskLogger
+
+    session_id = st.session_state.get("session_id")
+    logger = TaskLogger(task_name)
+    logger.log_trigger(trigger_type, user_id=user_id, session_id=session_id, **config)
+
+
 def _run_task_with_global_config(
     task_name: str,
     user_id: str,
@@ -717,6 +726,8 @@ def _run_task_with_global_config(
     model_key = cfg["model"]
     enable_failover = cfg["enable_failover"]
     ollama_sleep = cfg.get("ollama_sleep", 2.0) if provider == "ollama" else None
+
+    _log_trigger(task_name, "manual:run_now", user_id, provider=provider, model=model_key)
 
     # Resolve model key to full ID for ollama
     ollama_model = model_key if provider == "ollama" else None
@@ -757,6 +768,8 @@ def _clear_and_run_task_with_global_config(
     """Clear success key and re-run task using global config."""
     from app.services.scheduler.utils import get_scheduler_redis, sched_key
 
+    _log_trigger(task_name, "manual:clear_and_run", user_id)
+
     redis_conn = get_scheduler_redis()
     today = datetime.now().strftime("%Y%m%d")
     success_key = sched_key(f"success:{task_name}:{today}")
@@ -773,6 +786,8 @@ def _force_revalidate_and_run_with_global_config(task_name: str, user_id: str):
     from app.services.scheduler.utils import get_scheduler_redis, sched_key
     from app.mockup.storage import get_storage
     from datetime import date, timedelta
+
+    _log_trigger(task_name, "manual:force_revalidate", user_id)
 
     storage = get_storage()
     reset_count = 0
@@ -806,7 +821,7 @@ def _run_task_simple(
     source_config: dict | None = None,
 ):
     """Execute a task that doesn't need LLM provider (dataset creation, crawling)."""
-    _ = user_id  # unused but kept for consistent API
+    _log_trigger(task_name, "manual:run_now", user_id)
     from app.services.scheduler import run_task_now
 
     with st.spinner(f"{_('admin_running_task')} {task_name}..."):
@@ -840,7 +855,8 @@ def _clear_and_run_task_simple(
 ):
     """Clear success key and re-run task (no LLM needed)."""
     from app.services.scheduler.utils import get_scheduler_redis, sched_key
-    _ = user_id  # unused but kept for consistent API
+
+    _log_trigger(task_name, "manual:clear_and_run", user_id)
 
     redis_conn = get_scheduler_redis()
     today = datetime.now().strftime("%Y%m%d")

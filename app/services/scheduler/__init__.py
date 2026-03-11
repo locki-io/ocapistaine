@@ -40,11 +40,14 @@ _loop: Optional[asyncio.AbstractEventLoop] = None
 # Cron schedules (staggered to avoid Ollama conflicts)
 # Tasks are spaced 20+ minutes apart to allow completion before next starts
 TASK_CHAIN_CRON = "0 6-23 * * *"  # Hourly at :00, 6 AM - 11 PM
-AUDIERNE_DOCS_CRON = "20 */2 * * *"  # Every 2 hours at :20 (e.g., 6:20, 8:20)
-OPIK_EVALUATE_CRON = "40 7-22 * * *"  # Hourly at :40, 7 AM - 10 PM
+AUDIERNE_DOCS_CRON = "20 */2 * * *"  # Every 8 hours at :20 (e.g., 6:20, 8:20)
+OPIK_EVALUATE_CRON = (
+    "40 */3 * * *"  # Hourly at :40, every six hours (e.g., 6:40, 12:40, 18:40)
+)
 CRAWL_CRON = "0 3 * * *"  # Daily at 3 AM
 OPIK_EXPERIMENT_CRON = "0 5 * * *"  # Daily at 5 AM (dataset creation)
 PROMPT_SYNC_CRON = "0 0 * * *"  # Daily at midnight
+COST_AUDIT_CRON = "50 * * * *"  # Hourly at :50
 
 
 async def start_scheduler():
@@ -106,6 +109,7 @@ def _register_jobs():
         task_prompt_sync,
         task_audierne_docs,
     )
+    from app.services.tasks.task_cost_audit import task_cost_audit
 
     # Daily task chain orchestrator
     # Runs every 7 minutes during active hours to check and execute pending tasks
@@ -162,6 +166,15 @@ def _register_jobs():
         misfire_grace_time=1800,  # 30 min grace (long-running task)
     )
 
+    # Njörðr - Hourly cost audit (read-only, no lock needed)
+    scheduler.add_job(
+        func=task_cost_audit,
+        trigger=CronTrigger.from_crontab(COST_AUDIT_CRON),
+        id="task_cost_audit",
+        replace_existing=True,
+        misfire_grace_time=300,
+    )
+
     logger.info(f"Registered {len(scheduler.get_jobs())} scheduled jobs")
 
 
@@ -214,7 +227,8 @@ def orchestrate_task_chain():
 
         # Check if all dependencies are met
         deps_met = all(
-            l.exists(sched_key(f"success:{dep}:{today}")) for dep in task.get("depends_on", [])
+            l.exists(sched_key(f"success:{dep}:{today}"))
+            for dep in task.get("depends_on", [])
         )
 
         if not deps_met:
