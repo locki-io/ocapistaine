@@ -20,6 +20,7 @@ Lífþrasir (root: "I am Red Threaaaasd")
 ├── Mimir → /mimir — docs.locki.io + audierne2026.fr
 ├── Forseti → /forseti — charter + neutrality audit
 ├── Niove → /niove — Streamlit UI for citizens
+├── Njörðr → /njordr — cost tracking, token treasury
 └── [Valkyria] — first breath (future)
 ```
 
@@ -36,6 +37,7 @@ The living map of how universal skills became Audierne-specific:
 | `/niove` | `/niove` (workspace) | 2026-03-11 | Streamlit UI for citizen chat interface |
 | `/forseti` | `/forseti` (workspace) | 2026-03-11 | Adélie's ordering bias report → neutrality audit feature |
 | `/lifprasir` | `/lifprasir` (workspace) | 2026-03-11 | The metamorphosis pattern itself needed to be incarnated |
+| `/njordr` | `/njordr` (workspace) | 2026-03-11 | Token data flows but never aggregated — need cost measurement agent |
 | `/archi` | _(not yet incarnated)_ | — | Workspace incarnation pending |
 | `/ocapistaine` | _(not yet incarnated)_ | — | Workspace incarnation pending |
 
