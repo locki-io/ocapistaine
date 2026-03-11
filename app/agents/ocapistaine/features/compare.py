@@ -8,6 +8,7 @@ from typing import AsyncIterator
 from app.providers import LLMProvider
 from app.providers.logging import get_provider_logger
 from app.providers.pricing import compute_cost
+from app.services.cost import record_cost
 from app.rag import retrieval
 
 _cost_logger = get_provider_logger("compare")
@@ -109,6 +110,10 @@ class RAGCompareFeature(RAGFeatureBase):
 
         confidence = max(0.0, 1.0 - metrics.best_distance) if metrics else 0.7
 
+        cost_usd = usage.get("cost_usd") if usage else None
+        if cost_usd is not None:
+            record_cost(cost_usd, model)
+
         return CompareResult(
             response=content,
             lists_compared=list_names,
@@ -203,6 +208,7 @@ class RAGCompareFeature(RAGFeatureBase):
         usage = {"input_tokens": est_in, "output_tokens": est_out, "cost_usd": cost, "estimated": True}
         if cost is not None:
             _cost_logger.log_cost(model_name, est_in, est_out, cost)
+            record_cost(cost, model_name)
 
         yield CompareResult(
             response=full_response,

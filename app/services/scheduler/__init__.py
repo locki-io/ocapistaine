@@ -47,6 +47,7 @@ OPIK_EVALUATE_CRON = (
 CRAWL_CRON = "0 3 * * *"  # Daily at 3 AM
 OPIK_EXPERIMENT_CRON = "0 5 * * *"  # Daily at 5 AM (dataset creation)
 PROMPT_SYNC_CRON = "0 0 * * *"  # Daily at midnight
+COST_AUDIT_CRON = "50 * * * *"  # Hourly at :50
 
 
 async def start_scheduler():
@@ -108,6 +109,7 @@ def _register_jobs():
         task_prompt_sync,
         task_audierne_docs,
     )
+    from app.services.tasks.task_cost_audit import task_cost_audit
 
     # Daily task chain orchestrator
     # Runs every 7 minutes during active hours to check and execute pending tasks
@@ -162,6 +164,15 @@ def _register_jobs():
         id="task_audierne_docs",
         replace_existing=True,
         misfire_grace_time=1800,  # 30 min grace (long-running task)
+    )
+
+    # Njörðr - Hourly cost audit (read-only, no lock needed)
+    scheduler.add_job(
+        func=task_cost_audit,
+        trigger=CronTrigger.from_crontab(COST_AUDIT_CRON),
+        id="task_cost_audit",
+        replace_existing=True,
+        misfire_grace_time=300,
     )
 
     logger.info(f"Registered {len(scheduler.get_jobs())} scheduled jobs")

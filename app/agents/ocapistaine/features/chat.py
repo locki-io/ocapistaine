@@ -7,6 +7,7 @@ from typing import AsyncIterator
 from app.providers import LLMProvider
 from app.providers.logging import get_provider_logger
 from app.providers.pricing import compute_cost
+from app.services.cost import record_cost
 from app.rag import retrieval
 
 _cost_logger = get_provider_logger("chat")
@@ -111,6 +112,10 @@ class RAGChatFeature(RAGFeatureBase):
         metrics = self._compute_retrieval_metrics(results)
         confidence = max(0.0, 1.0 - metrics.best_distance)
 
+        cost_usd = usage.get("cost_usd") if usage else None
+        if cost_usd is not None:
+            record_cost(cost_usd, model)
+
         return ChatResult(
             response=content, sources=sources, model=model,
             confidence=round(confidence, 3), is_overview=is_overview,
@@ -188,6 +193,7 @@ class RAGChatFeature(RAGFeatureBase):
         usage = {"input_tokens": est_in, "output_tokens": est_out, "cost_usd": cost, "estimated": True}
         if cost is not None:
             _cost_logger.log_cost(model_name, est_in, est_out, cost)
+            record_cost(cost, model_name)
 
         yield ChatResult(
             response=full_response, sources=sources, model=model_name,

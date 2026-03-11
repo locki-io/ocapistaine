@@ -247,10 +247,21 @@ LISTS = {
 
 COMPARE_LISTS = {k: v for k, v in LISTS.items() if k != "audierne2026"}
 
-# ── Header ────────────────────────────────────────────────
+# ── Header (with cost counter) ────────────────────────────
+from app.services.cost import get_total_cost
+
 _session_cost = st.session_state.get("session_cost_usd", 0.0)
-_cost_eur = _session_cost * 0.92  # USD→EUR approximate
-_cost_tag = f" — {_cost_eur:.4f} € cette session" if _cost_eur > 0 else ""
+_session_eur = _session_cost * 0.92  # USD→EUR approximate
+_total_usd, _total_queries = get_total_cost()
+_total_eur = _total_usd * 0.92
+
+_cost_parts = []
+if _session_eur > 0:
+    _cost_parts.append(f"session : {_session_eur:.4f} €")
+if _total_queries > 0:
+    _cost_parts.append(f"total : {_total_eur:.4f} € ({_total_queries} requêtes)")
+_cost_tag = f" — {' | '.join(_cost_parts)}" if _cost_parts else ""
+
 render_header(
     tagline=f"Ici l'IA n'est pas une boite noire, c'est notre phare vers les municipales{_cost_tag}",
 )
