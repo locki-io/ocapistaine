@@ -72,6 +72,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:8501",      # Streamlit dev
         "https://audierne2026.fr",    # Production
+        "https://cap.audierne2026.fr", # Citizen RAG chat
         "https://docs.locki.io",      # Documentation
     ],
     allow_credentials=True,

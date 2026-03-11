@@ -162,8 +162,8 @@ def get_features_by_agent(agent_name: str) -> list[dict]:
         if config.get("agent") == agent_name
     ]
 
-# Redis configuration
-REDIS_DB_SCHEDULER = 6  # Dedicated Redis DB for scheduler
+# Redis: all keys in shared db, separated by prefix (sched:, app:)
+# See app/services/scheduler/utils.py for scheduler key prefix
 
 # TTL Constants
 REDIS_LOCK_TIMEOUT = 300  # 5 minutes - lock expires if task hangs
