@@ -282,13 +282,25 @@ render_list_selector(COMPARE_LISTS, include_all=True)
 filter_list = ""
 selected_lists = []
 
-# ── Empty state ───────────────────────────────────────────
+# ── Empty state: starter suggestions ──────────────────────
 if not st.session_state.messages:
     st.markdown(
         "<p style='text-align:center; color:#9b9b9d; margin-top:2rem;'>"
-        "Posez une question ou cliquez sur un candidat ←</p>",
+        "Posez une question ou essayez :</p>",
         unsafe_allow_html=True,
     )
+    _starters = [
+        ("🏠 Logement", "Que proposent les listes sur le logement ?"),
+        ("🌿 Ecologie", "Quelles mesures pour l'environnement ?"),
+        ("🏗️ Economie", "Que proposent les listes pour l'economie locale ?"),
+        ("📚 Jeunesse", "Quelles propositions pour la jeunesse et l'education ?"),
+    ]
+    _starter_cols = st.columns(len(_starters))
+    for _col, (_label, _query) in zip(_starter_cols, _starters):
+        with _col:
+            if st.button(_label, key=f"starter_{_label}", use_container_width=True):
+                st.session_state["_pending_suggestion"] = {"query": _query}
+                st.rerun()
 
 # ── Chat history ──────────────────────────────────────────
 for i, msg in enumerate(st.session_state.messages):
