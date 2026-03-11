@@ -2,7 +2,7 @@
 """
 Chat Session Persistence
 
-Stores chat sessions in Redis (DB5) with short TTL for session recovery.
+Stores chat sessions in Redis (app:chat:session:* prefix) with short TTL for session recovery.
 Anonymous users get a short session ID they can bookmark via URL param.
 
 Key format: app:chat:session:{session_id}

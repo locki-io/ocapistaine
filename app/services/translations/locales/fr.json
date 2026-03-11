@@ -235,7 +235,7 @@
   "admin_task_result": "Résultat de la tâche",
   "admin_error": "Erreur",
   "admin_cleared_key": "Clé effacée",
-  "admin_redis_keys": "Clés Redis (db=6)",
+  "admin_redis_keys": "Clés Redis (sched:*)",
   "admin_refresh_keys": "Actualiser",
   "admin_no_keys_found": "Aucune clé scheduler trouvée pour aujourd'hui",
   "admin_no_ttl": "Pas de TTL",

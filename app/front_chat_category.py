@@ -38,7 +38,7 @@ from app.ui import (
 apply_theme(hide_sidebar=True)
 init_chat_float()
 
-# ── Session persistence (Redis DB5, 1h TTL) ─────────────
+# ── Session persistence (app:chat:session:*, 1h TTL) ─────────────
 from app.services.chat_session import (
     generate_session_id,
     save_chat_session,

@@ -2,7 +2,7 @@
 Daily Contributions Analysis Task
 
 Analyzes and validates pending citizen contributions from various sources:
-- Mockup storage (Redis db=5) - ValidationRecords awaiting Forseti analysis
+- MockupStorage (Redis, app: prefix) - ValidationRecords awaiting Forseti analysis
 - GitHub issues (audierne2026/participons) - Fetched via N8N webhook
 - Facebook/Email submissions (via Vaettir) - Future integration
 
@@ -94,12 +94,12 @@ def task_contributions_analysis(
     Analyze and validate pending contributions from MockupStorage.
 
     Workflow:
-    1. Fetch latest validations from MockupStorage (Redis db=5)
+    1. Fetch latest validations from MockupStorage
     2. Filter for records needing validation (confidence == 0)
     3. Apply date filter if specified
     4. Run Forseti validation on each contribution
     5. Update records in MockupStorage with results
-    6. Mark task completed in scheduler db (Redis db=6)
+    6. Mark task completed via sched: prefix key
 
     Args:
         date_string: Date in YYYYMMDD format. Defaults to today.

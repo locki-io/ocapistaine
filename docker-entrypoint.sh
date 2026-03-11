@@ -29,7 +29,7 @@ echo "Starting Streamlit on port $STREAMLIT_PORT..."
 echo "  CORS enabled: $ENABLE_CORS"
 echo "  XSRF protection: $ENABLE_XSRF"
 
-streamlit run app/front.py \
+streamlit run app/front_chat.py \
     --server.port $STREAMLIT_PORT \
     --server.address 0.0.0.0 \
     --server.headless true \

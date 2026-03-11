@@ -2,7 +2,7 @@
 """
 Sync mockup keys from local Redis to Upstash.
 
-Copies all app:contribution_mockup:* keys from local Redis (db=5)
+Copies all app:contribution_mockup:* keys from local Redis (REDIS_DB env, default 5)
 to Upstash Redis (db=0).
 
 Run: python scripts/sync_mockup_to_upstash.py

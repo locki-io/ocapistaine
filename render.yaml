@@ -22,7 +22,7 @@ services:
       - key: STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION
         value: "false"
       - key: STREAMLIT_SERVER_ALLOWED_ORIGINS
-        value: "https://ocapistaine.onrender.com,https://ocapistaine.vaettir.locki.io,https://vaettir.locki.io"
+        value: "https://ocapistaine.onrender.com,https://ocapistaine.vaettir.locki.io,https://vaettir.locki.io,https://cap.audierne2026.fr"
       # LLM Providers
       - key: DEFAULT_PROVIDER
         value: openai
