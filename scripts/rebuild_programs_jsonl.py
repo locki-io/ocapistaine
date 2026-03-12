@@ -9,6 +9,7 @@ Usage:
     python scripts/rebuild_programs_jsonl.py --apply   # write changes
 """
 
+import hashlib
 import json
 import re
 import sys
@@ -21,9 +22,9 @@ PARTICIPONS_DIR = Path(__file__).resolve().parents[1].parent / "audierne" / "doc
 PARTICIPONS_DOCS = Path(__file__).resolve().parents[1].parent / "audierne" / "docs"
 EXT_DATA = Path("ext_data")
 
-# GitHub base URL for source links
-GITHUB_BASE = "https://audierne2026.fr/programmes"
-GITHUB_DOCS_BASE = "https://raw.githubusercontent.com/audierne2026/participons/main/docs"
+# audierne2026.fr URL bases (Jekyll serves .html, not .md)
+SITE_PROGRAMMES_BASE = "https://audierne2026.fr/docs/programmes"
+SITE_DOCS_BASE = "https://audierne2026.fr/docs"
 
 # Context documents to ingest from participons/docs/ (general municipal context)
 CONTEXT_DOCS = [
@@ -84,7 +85,7 @@ def build_context_docs() -> list[dict]:
 
         doc_id = filepath.stem
         title = filepath.stem.replace("_", " ").title()
-        url = f"{GITHUB_DOCS_BASE}/{filename}"
+        url = f"{SITE_DOCS_BASE}/{filepath.stem}.html"
 
         docs.append({
             "id": doc_id,
@@ -130,10 +131,10 @@ def _build_docs_from_dir(
         doc_id = f"{md_file.stem} ({list_name})"
         title = f"{md_file.stem} ({official_name})"
 
-        # Generate GitHub URL if using submodule
+        # Generate audierne2026.fr URL (Jekyll serves .html)
         url = ""
         if github_url_prefix:
-            url = f"{github_url_prefix}/{dir_name}/{md_file.name}"
+            url = f"{github_url_prefix}/{dir_name}/{md_file.stem}.html"
 
         docs.append({
             "id": doc_id,
@@ -157,7 +158,7 @@ def build_program_docs() -> list[dict]:
         print(f"  Source: {PARTICIPONS_DIR} (submodule)")
         for dir_name, (list_name, official_name) in sorted(PROGRAM_DIRS.items()):
             dir_docs = _build_docs_from_dir(
-                PARTICIPONS_DIR, dir_name, list_name, official_name, GITHUB_BASE,
+                PARTICIPONS_DIR, dir_name, list_name, official_name, SITE_PROGRAMMES_BASE,
             )
             if not dir_docs:
                 print(f"  WARN: {PARTICIPONS_DIR / dir_name} not found or empty")
@@ -205,6 +206,37 @@ def main():
     print(f"  Docs with GitHub URL: {with_url}/{len(submodule_docs)}")
 
     all_docs = non_program + submodule_docs
+
+    # Fix URLs for non-program docs (contributions pointing to .md instead of .html)
+    fixed_urls = 0
+    for doc in all_docs:
+        url = doc.get("url", "")
+        # audierne2026.fr .md → .html (Jekyll doesn't serve raw .md)
+        if "audierne2026.fr" in url and url.endswith(".md"):
+            doc["url"] = url[:-3] + ".html"
+            fixed_urls += 1
+        # raw.githubusercontent → audierne2026.fr/docs/ .html
+        elif "raw.githubusercontent.com/audierne2026/participons/main/docs/" in url:
+            filename = url.split("/main/docs/")[-1]
+            stem = filename.rsplit(".", 1)[0] if "." in filename else filename
+            doc["url"] = f"{SITE_DOCS_BASE}/{stem}.html"
+            fixed_urls += 1
+    if fixed_urls:
+        print(f"  URLs fixed (.md → .html): {fixed_urls}")
+
+    # Deduplicate by content hash
+    seen = set()
+    deduped = []
+    for doc in all_docs:
+        h = hashlib.md5(doc["content"].encode()).hexdigest()
+        if h not in seen:
+            seen.add(h)
+            deduped.append(doc)
+    removed = len(all_docs) - len(deduped)
+    if removed:
+        print(f"  Duplicates removed: {removed}")
+    all_docs = deduped
+
     print(f"\nTotal: {len(all_docs)} docs")
 
     if apply:
