@@ -140,6 +140,10 @@ CATEGORY_ICONS = {
 LIST_SHORT_NAMES = {
     "ca": "Construire l'Avenir",
     "paa": "Passons à l'Action",
+}
+
+# Historical lists (withdrawn/fused after first round — docs still in RAG)
+LIST_SHORT_NAMES_HISTORICAL = {
     "spae": "S'unir pour Audierne-Esquibien",
     "csnf": "Cap sur Notre Futur",
 }
@@ -245,7 +249,11 @@ LISTS = {
     "csnf": "Cap sur Notre Futur",
 }
 
-COMPARE_LISTS = {k: v for k, v in LISTS.items() if k != "audierne2026"}
+# Second round: only 2 lists for comparison (SPAE fused into CA, CSNF withdrawn)
+COMPARE_LISTS = {
+    "ca": "Construire l'Avenir",
+    "paa": "Passons à l'Action !",
+}
 
 # ── Header (with cost counter) ────────────────────────────
 from app.services.cost import get_total_cost
@@ -302,7 +310,7 @@ filter_list = ""
 if st.session_state.mode == "compare" and not st.session_state.get("_pending_suggestion"):
     st.markdown(
         "<p style='text-align:center; color:#9b9b9d; margin-top:1rem;'>"
-        "Choisissez un thème pour comparer les 4 listes</p>",
+        "Choisissez un thème pour comparer les 2 listes du second tour</p>",
         unsafe_allow_html=True,
     )
     # 2 rows of buttons: 4 + 3
@@ -354,6 +362,8 @@ elif st.session_state.mode == "chat" and not st.session_state.messages:
     )
 
 # ── Chat history ──────────────────────────────────────────
+from app.agents.ocapistaine.features.base import display_name as _display_name
+
 for i, msg in enumerate(st.session_state.messages):
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
@@ -362,9 +372,9 @@ for i, msg in enumerate(st.session_state.messages):
             with st.expander(f"Sources ({len(msg['sources'])})"):
                 for s in msg["sources"]:
                     title = s.get("title") or s.get("doc_id", "")
-                    list_name = s.get("list_name", "")
+                    list_slug = s.get("list_name", "")
                     url = s.get("url", "")
-                    name_label = f" — {list_name}" if list_name else ""
+                    name_label = f" — {_display_name(list_slug)}" if list_slug else ""
                     if url:
                         st.markdown(f"- [**{title}**]({url}){name_label}")
                     else:
@@ -557,9 +567,9 @@ if prompt:
                 with st.expander(f"Sources ({len(sources)})"):
                     for s in sources:
                         title = s.get("title") or s.get("doc_id", "")
-                        list_name = s.get("list_name", "")
+                        list_slug = s.get("list_name", "")
                         url = s.get("url", "")
-                        name_label = f" — {list_name}" if list_name else ""
+                        name_label = f" — {_display_name(list_slug)}" if list_slug else ""
                         if url:
                             st.markdown(f"- [**{title}**]({url}){name_label}")
                         else:

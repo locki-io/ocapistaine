@@ -7,7 +7,21 @@ Data: [data.gouv.fr](https://www.data.gouv.fr/datasets/elections-municipales-202
 
 ---
 
-## Official Lists
+## Second Round Lists (22 March 2026)
+
+After the first round (15 March), two lists remain for the second round:
+
+| # | Official Name | Slug (RAG) | Directory | Nuance | Tête de liste | Docs |
+|---|---|---|---|---|---|---|
+| 1 | Construire l'Avenir | `ca` | `program_ca/` | LDVG | Florent Lardic | 17 |
+| 2 | Passons à l'Action ! | `paa` | `program_paa/` | LDVD | Didier Guillon | 24 |
+
+## Recomposition After First Round
+
+- **S'unir pour Audierne-Esquibien** (Michel Van Praët, LDVG) — Fusion with Construire l'Avenir. 5 colistiers in eligible positions on the new combined list: Danièle Priol-Thomas, Adélie Castel, Christian Neveu (proposed as adjoint), Georges Castel, Michel Van Praët. Source: Facebook post by Michel Van Praët (17 March 2026).
+- **Cap sur Notre Futur** (Éric Bosser, LDVD) — Withdrawal.
+
+## First Round Lists (historical — all documents preserved in RAG)
 
 | # | Official Name | Slug (RAG) | Directory | Nuance | Tête de liste | Docs |
 |---|---|---|---|---|---|---|

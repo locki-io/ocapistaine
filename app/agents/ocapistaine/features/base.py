@@ -19,10 +19,20 @@ LIST_NAMES = {
     "csnf": "Cap sur Notre Futur",
 }
 
+# Lists withdrawn or fused after first round (15 March 2026)
+WITHDRAWN_LISTS = {
+    "spae": "fusionnée avec Construire l'Avenir",
+    "csnf": "retrait",
+}
+
 
 def display_name(slug: str) -> str:
-    """Return the official list name for a slug, or the slug itself as fallback."""
-    return LIST_NAMES.get(slug, slug)
+    """Return the official list name for a slug, with recomposition context if withdrawn."""
+    name = LIST_NAMES.get(slug, slug)
+    context = WITHDRAWN_LISTS.get(slug)
+    if context:
+        return f"{name} ({context})"
+    return name
 
 
 class RAGFeatureBase(ABC):

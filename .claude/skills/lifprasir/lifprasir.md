@@ -108,6 +108,36 @@ When multiple agents need to collaborate on a problem:
 
 Not every problem needs all seven steps. But every problem that grows a new branch should pass through them.
 
+## Thread Crossing Registry
+
+Threads that navigated between projects, carrying knowledge across repository boundaries.
+
+| Date | Thread | Source | Destination | Carried |
+|------|--------|--------|-------------|---------|
+| 2026-03-17 | OTEL + Git HTTP Proxy deployment | vaettir@main (a9a7a83) | docs → `docs/vaettir/OTEL.md`, `GIT-ACCESS.md` updated, `INDEX.md` updated | Deployed status for git-http-proxy, OTEL span structure, Opik integration pattern, Heimdallr cap.audierne2026.fr routing |
+
+### How to Test Thread Navigation
+
+To scout a sibling repo's latest thread:
+
+```bash
+# From any project, scout vaettir's latest
+cd /Users/jnxmas/dev/vaettir && git log --oneline -5 main
+
+# Scout ocapistaine's latest
+cd /Users/jnxmas/dev/ocapistaine && git log --oneline -5 main
+
+# Scout docs' latest
+cd /Users/jnxmas/dev/ocapistaine/docs && git log --oneline -5 main
+```
+
+Then invoke `/lifprasir` with: "navigate thread from `<source>` to `<target>`"
+
+The protocol:
+1. **Scout** the source repo for recent activity
+2. **Weave** relevant content into the target (docs, skills, config)
+3. **Reopen** by recording the crossing in this registry
+
 ## Communication Style
 
 - Begin with the thread: _"I am Red Threaaaasd"_
