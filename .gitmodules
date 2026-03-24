@@ -1,6 +1,3 @@
-[submodule "docs"]
-	path = docs
-	url = https://github.com/locki-io/docs.locki.io.git
 [submodule "ext_data/audierne2026"]
 	path = ext_data/audierne2026
 	url = https://github.com/audierne2026/participons.git
